@@ -1,6 +1,10 @@
 # WG-CAVEaT-data
 WG-CAVEaT-data
 
+# TODO
+
+* Identify which CAVEaT files are vendor specific and need a more vendor neutral writeup and coverage with AWS/Azure/GCE.
+
 ## Mappings
 
 * Mapping to categories from ATT&CK, FIGHT and so on
