@@ -27,3 +27,4 @@ WG-CAVEaT-data
 ## Additional sources for new CAVEaT
 
 * https://cloudsecurityalliance.org/artifacts/top-threats-to-cloud-computing-pandemic-eleven-deep-dive
+* https://www.cisa.gov/resources-tools/resources/cyber-safety-review-board-releases-report-microsoft-online-exchange-incident-summer-2023
