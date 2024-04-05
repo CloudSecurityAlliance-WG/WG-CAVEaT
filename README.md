@@ -21,3 +21,6 @@ WG-CAVEaT-data
 * Mapping to CSA Top Threats report (https://cloudsecurityalliance.org/research/topics/top-threats) including mitigations, controls, etc.
 * Mapping to CWE (https://cwe.mitre.org/)
 
+## Additional sources for new CAVEaT
+
+* https://cloudsecurityalliance.org/artifacts/top-threats-to-cloud-computing-pandemic-eleven-deep-dive
