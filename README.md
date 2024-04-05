@@ -13,6 +13,9 @@ WG-CAVEaT-data
 * Additional data
   * AWS/Azure/GCE and other vendor and service specific information
   * Mappings to other standards
+  * Controls
+  * Technical Impact
+  * Business Impact
 
 ## Mappings
 
