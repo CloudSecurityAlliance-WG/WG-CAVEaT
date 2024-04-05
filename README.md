@@ -4,6 +4,15 @@ WG-CAVEaT-data
 # TODO
 
 * Identify which CAVEaT files are vendor specific and need a more vendor neutral writeup and coverage with AWS/Azure/GCE.
+* Figure out a new template
+  * Description
+  * Examples
+  * Mitigations
+  * Detection
+  * References
+* Additional data
+  * AWS/Azure/GCE and other vendor and service specific information
+  * Mappings to other standards
 
 ## Mappings
 
@@ -11,4 +20,4 @@ WG-CAVEaT-data
 * Mapping to CSA CCM (https://cloudsecurityalliance.org/artifacts/cloud-controls-matrix-v4) including mitigations, controls, etc.
 * Mapping to CSA Top Threats report (https://cloudsecurityalliance.org/research/topics/top-threats) including mitigations, controls, etc.
 * Mapping to CWE (https://cwe.mitre.org/)
-* 
+
