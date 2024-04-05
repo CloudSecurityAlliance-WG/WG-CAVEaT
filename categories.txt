@@ -1,0 +1,70 @@
+ATLAS
+https://atlas.mitre.org/
+==================================================
+Reconnaissance
+Resource Development
+Initial Access
+ML Model Access	
+Execution
+Persistence
+Privilege Escalation
+Defense Evasion
+Credential Access
+Discovery
+Collection
+ML Attack Staging	
+Exfiltration
+Impact
+
+ATT&CK
+https://attack.mitre.org/
+==================================================
+Reconnaissance
+Resource Development
+Initial Access
+Execution
+Persistence
+Privilege Escalation
+Defense Evasion
+Credential Access
+Discovery
+Lateral Movement
+Collection
+Command and Control
+Exfiltration
+Impact
+
+FiGHT
+https://fight.mitre.org/
+==================================================
+Reconnaissance
+Resource Development
+Initial Access
+Execution
+Persistence
+Privilege Escalation
+Defense Evasion
+Credential Access
+Discovery
+Lateral Movement
+Collection
+Command and Control
+Exfiltration
+Impact
+Fraud
+
+ICS Matrix
+https://attack.mitre.org/matrices/ics/
+==================================================
+Initial Access
+Execution
+Persistence
+Privilege Escalation
+Evasion
+Discovery
+Lateral Movement
+Collection
+Command and Control
+Inhibit Response Function
+Impair Process Control
+Impact
