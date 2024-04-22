@@ -19,10 +19,11 @@ WG-CAVEaT-data
 
 ## Mappings
 
-* Mapping to categories from ATT&CK, FIGHT and so on
+* Mapping to categories from ATT&CK, FIGHT and so on - DONE
 * Mapping to CSA CCM (https://cloudsecurityalliance.org/artifacts/cloud-controls-matrix-v4) including mitigations, controls, etc.
 * Mapping to CSA Top Threats report (https://cloudsecurityalliance.org/research/topics/top-threats) including mitigations, controls, etc.
 * Mapping to CWE (https://cwe.mitre.org/)
+* Mapping to https://cloudsecurityalliance.org/artifacts/top-threats-to-cloud-computing-pandemic-eleven-deep-dive and other top 10s
 
 ## Additional sources for new CAVEaT
 
