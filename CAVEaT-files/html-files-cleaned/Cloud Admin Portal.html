@@ -1,0 +1,193 @@
+<html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta content="Microsoft Word 15 (filtered)" name="Generator"/></head><body link="blue" vlink="purple"><div><p>Cloud Admin Portal/API(version 1.0)</p>
+
+<p><b>Cloud Service Label: IaaS, PaaS, SaaS</b></p>
+
+<p>Description</p>
+<p>The cloud admin portal/API is accessible from any place in the world. By design, all Azure and AWS resources are theoretically accessible from this universal interface. Only identity credentials stand in the way of anyone accessing anyone else’s resources and information. The circumstance is not much improved for unclassified government only clouds, which also widely expose their portal and API and again rely on credentials to arbitrate access.</p>
+
+<p>An adversary may use a portal with stolen credentials to gain useful information from an operational cloud environment, such as specific services, resources, and features. For example, the GCP Command Center can be used to view all assets, findings of potential security risks, and to run additional queries, such as finding public IP addresses and open ports.</p>
+
+<p>Passwords to gain access to the portal/API can be stolen from administrator or privileged user workstations that interact with the portal/API through traditional harvesting techniques like spear phishing. 2FA greatly reduces the chance that such attacks will work. However even with 2FA, it may be possible for adversaries to use the token obtained after 2FA authentication for some brief period of time to gain access to your resources, if they have access to the machine that was granted access by 2FA. Within AWS, other accounts without 2FA may still be granted access to some or all of your resources through IAM roles. The portal/APIs themselves are complex web applications that change constantly. As such they may have intermittent security flaws that enable adversaries to by-pass the credential process and gain access to your resources.</p>
+
+
+<p>Examples</p>
+<table border="1" cellpadding="0" cellspacing="0" width="624"><tr><td valign="top" width="214"><p><b>Name</b></p>
+</td>
+<td valign="top" width="410"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="214"><p>Azure Portal Vulnerability</p>
+
+</td>
+<td valign="top" width="410"><p>Azure API was theorized to have a significant flaw checking credentials for certain API routines based on successful demonstrations on Azure Stack Hub version of the portal.</p>
+</td>
+</tr>
+</table>
+
+<p>Mitigations</p>
+<table border="1" cellpadding="0" cellspacing="0"><tr><td colspan="2" valign="top" width="216"><p><b>Mitigation</b></p>
+</td>
+<td valign="top" width="407"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td colspan="2" valign="top" width="216"><p><a href="https://attack.mitre.org/mitigations/M1032">Multi-factor Authentication</a></p>
+
+</td>
+<td valign="top" width="407"><p>Use multi-factor authentication for user and privileged accounts. Do not manage Cloud portals from machines that perform user email and web browsing tasks. All users should be required to utilize two factor authentication.</p>
+</td>
+</tr>
+<tr><td valign="top" width="100">
+</td>
+<td valign="top" width="116"><p><i>AWS</i></p>
+</td>
+<td valign="top" width="407"><p>This can be enforced by first creating a policy that would prohibit actions except those that allow a user to change their password or manage 2FA, then attaching a policy to a group that includes all user accounts where they can be allowed all access if they sign in with 2FA. Once these actions are completed it should be tested to verify the access is given correctly. To see full details on how to complete this view AWS documentation at:<b>https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_users-self-manage-mfa-and-creds.html.</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="100">
+</td>
+<td valign="top" width="116"><p><i>Azure</i></p>
+</td>
+<td valign="top" width="407"><p>This can be done by creating a MFA registration policy. It can than be assigned to all users (with the ability to exclude some if need be, but is not recommended). Make sure once the policy is created and added to users that it is then being enforced, once enforced it should be tested for verification. To see full details on how to complete this view Azure documentation at:<b>https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/howto-identity-protection-configure-mfa-policy.</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="100">
+</td>
+<td valign="top" width="116"><p><i>GCP</i></p>
+</td>
+<td valign="top" width="407"><p>This can be done by first enabling it on the current account being used by admin to assign the roles, then enable two factor on an instance by instance or project by project basis, then assigning the requirements based on IAM roles and applying it to all users. To see full details on how to complete this view Azure documentation at:<b>https://cloud.google.com/compute/docs/oslogin/setup-two-factor-authentication.</b></p>
+</td>
+</tr>
+<tr><td colspan="2" valign="top" width="216"><p>Least Privilege</p>
+
+</td>
+<td valign="top" width="407"><p>All access given to users in the cloud environment should be assigned by the necessary privileges needed for team members to complete their job responsibilities.Ensure that temporary access tokens are issued rather than permanent credentials, especially when access is being granted to entities outside of the internal security boundary.</p>
+</td>
+</tr>
+<tr><td valign="top" width="100">
+</td>
+<td valign="top" width="116"><p><i>AWS</i></p>
+</td>
+<td valign="top" width="407"><p>To implement least privilege in an AWS environment IAM policies will be used. This gives the ability to allow users to perform list, read, write, permissions management, or tagging actions. AWS suggests utilizing<i>last accessed information</i>and A<i>WS CloudTrail event history</i>to get a better understanding of privileges that might be needed or reduced based on a specific role. Full details can be found at<b>https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#grant-least-privilege.</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="100">
+</td>
+<td valign="top" width="116"><p><i>Azure</i></p>
+</td>
+<td valign="top" width="407"><p>To implement least privilege in an Azure environment Azure Active Directory roles will be used. Azure outlines different tasks and the least privileged role that are suggested to be associated with the task. Those details can be found at:<b>https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/roles-delegate-by-task.</b>To learn how to assign specific roles it can be done via the Azure Active Directory Portal. Instructions on how to assign roles can be found here:<b>https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-manage-roles-portal.</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="100">
+</td>
+<td valign="top" width="116"><p><i>GCP</i></p>
+</td>
+<td valign="top" width="407"><p>To implement least privilege in GCP it is recommended to use predefined roles (which allow for granular access permissions) instead of primitive roles (roles/owner, roles/editor, and roles/viewer). Full details on the difference between types of roles can be found here:<b>https://cloud.google.com/iam/docs/understanding-roles.</b>To assign these roles IAM service accounts are used and complete details can be found at:<b>https://cloud.google.com/iam/docs/using-iam-securely#least_privilege.</b></p>
+</td>
+</tr>
+</table>
+<p>Detection</p>
+<p>Monitor account activity logs to see actions performed and activity associated with the cloud service management console. Some cloud providers, such as AWS and Azure, provide distinct log events for login attempts to the management console.</p>
+
+<table border="1" cellpadding="0" cellspacing="0"><tr><td valign="top" width="312"><p><b>Detection</b></p>
+</td>
+<td valign="top" width="312"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Create Log Metric Filters and Alarms for AWS</p>
+</td>
+<td valign="top" width="312"><p>To create a metric filter and alarm:</p>
+<p>1.Create a metric filter that checks for IAM policy changes and the<i>&lt;cloudtrail_log_group_name&gt;</i></p>
+<p>2.Create an SNS topic</p>
+<p>3.Create an SNS subscription to the above topic</p>
+<p>4.Create an alarm associated with the filter and SNS topic created in steps 1 and 2 respectively</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Monitor Activity in AWS Account</p>
+</td>
+<td valign="top" width="312"><p>Various services in AWS offer logging features that allow for detection capabilities. These include CloudFront, CloudTrail, CloudWatch, Config, and S3.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Monitor for Suspicious Activity in Azure</p>
+</td>
+<td valign="top" width="312"><p>Azure AD can generate anomaly reports than can be run on a daily basis. Azure AD Identity Protection show current risks in its dashboard and provides daily email summary notifications. Policies can also be configured to alert to specific issues.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Create Log Metric Filters and Alarms for CloudTrail</p>
+</td>
+<td valign="top" width="312"><p>To create a metric filter and alarm:</p>
+<p>1.Create a filter that checks for CloudTrail changes and the specific<i>&lt;cloudtrail_log_group_name&gt;</i></p>
+<p>2.Create an SNS topic that the alarm will notify</p>
+<p>3.Create an SNS subscription to the above topic</p>
+<p>4.Create an alarm associated with the filter from step 1 and SNS topic in step 2</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Create Activity Log Alerts in Azure</p>
+</td>
+<td valign="top" width="312"><p>To create log activity alerts for deletion in the Azure Console:</p>
+<p>1.Navigate to<i>Monitor’ / ‘Alerts</i></p>
+<p>2.Select<i>Manage alert rules</i></p>
+<p>3.Click on the Alert<i>Name</i>where Condition contains<i>operationName equals Microsoft.Network/networkSecurityGroups/securityRules/delete</i></p>
+<p>4.Hover a mouse over<i>Condition</i>to ensure it is set to<i>Whenever the Administrative Activity Log “Delete Security Rule (networkSecurityGroups/securityRules)” has “any” level with “any” status and event is initiated by “any</i>”</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Create, View, and Manage Activity Alerts in Azure Monitor</p>
+</td>
+<td valign="top" width="312"><p>To create a log alert in the Azure portal:</p>
+<p>1.Select<b>Monitor -&gt; Alerts</b></p>
+<p>2.Select<b>New alert rule</b>of the<b>Alerts</b>window</p>
+<p>3.Provide information in<b>Define alert condition</b></p>
+<p>4.Provide details in<b>Define alert details</b></p>
+<p>5.Specify action group for new alert rule under<b>Action group</b>, or create a new action group with +<b>New group</b></p>
+<p>6.Select<b>Yes</b>for the<b>Enable rule upon creation</b>option</p>
+<p>7.Select<b>Create alert rule</b></p>
+
+<p>To view and manage alerts:</p>
+<p>1.Select<b>Monitor -&gt; Alerts -&gt; Manage alert rules</b></p>
+<p>2.Select the rule you want to modify and double-click to edit the rule options</p>
+<p>3.Click<b>Save</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Azure Resource Manager Templates</p>
+</td>
+<td valign="top" width="312"><p>Azure Resource Manager templates in the format of JSON files that can be used to configure metric alerts in Azure Monitor. These templates can be used for simple static and dynamic threshold metric alerts, availability tests, and monitoring multiple resources.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Enable CloudTrail across all regions in AWS</p>
+</td>
+<td valign="top" width="312"><p>To enable CloudTrail across all regions:</p>
+<p>1.Sign into the AWS Management Console and open the CloudTrail console</p>
+<p>2.Click on<i>Trails</i></p>
+<p>3.Set necessary Trails to All option in the I column</p>
+<p>4.Click on a trail via the link<i>Name</i>column</p>
+<p>5.Set<i>Logging</i>to<i>ON</i></p>
+<p>6.Set<i>Apply trail to all regions</i>to<i>Yes</i></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Configure log profile to capture activity logs for all regions in Azure</p>
+</td>
+<td valign="top" width="312"><p>To set up activity logs for all regions:</p>
+<p>1.Navigate to Azure console</p>
+<p>2.Go to<i>Activity log</i></p>
+<p>3.Select<i>Export</i></p>
+<p>4.Select<i>Subscription</i></p>
+<p>5.Check<i>Select all</i>in<i>Regions</i></p>
+<p>6.Select<i>Save</i></p>
+</td>
+</tr>
+</table>
+
+<p>References</p>
+<p>1.<a href="https://aws.amazon.com/blogs/security/how-do-i-protect-cross-account-access-using-mfa-2/">https://aws.amazon.com/blogs/security/how-do-i-protect-cross-account-access-using-mfa-2/</a>. Accessed February 15, 2020</p>
+<p>2.<a href="https://research.checkpoint.com/2020/remote-cloud-execution-critical-vulnerabilities-in-azure-cloud-infrastructure-part-i/">https://research.checkpoint.com/2020/remote-cloud-execution-critical-vulnerabilities-in-azure-cloud-infrastructure-part-i/</a>. Accessed February 15, 2020</p>
+<p>3.<a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_users-self-manage-mfa-and-creds.html">https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_users-self-manage-mfa-and-creds.html</a>. Accessed July 28, 2020</p>
+<p>4.<a href="https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/howto-identity-protection-configure-mfa-policy">https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/howto-identity-protection-configure-mfa-policy</a>. Accessed July 28, 2020</p>
+<p>5.https://cloud.google.com/compute/docs/oslogin/setup-two-factor-authentication. Accessed July 28, 2020</p>
+<p>6.<a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#grant-least-privilege">https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#grant-least-privilege</a><u>.Accessed July 29, 2020</u></p>
+<p>7.<a href="https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/roles-delegate-by-task">https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/roles-delegate-by-task</a><u>.</u>Accessed July 29, 2020</p>
+<p>8.<a href="https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-manage-roles-portal">https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-manage-roles-portal</a>.Accessed July 29, 2020</p>
+<p>9.<a href="https://cloud.google.com/iam/docs/understanding-roles">https://cloud.google.com/iam/docs/understanding-roles</a>.Accessed July 29, 2020</p>
+<p><b>10.</b><a href="https://cloud.google.com/iam/docs/using-iam-securely#least_privilege">https://cloud.google.com/iam/docs/using-iam-securely#least_privilege</a>.Accessed July 29, 2020<br/><br/></p>
+
+
+
+</div></body></html>

@@ -1,0 +1,89 @@
+<html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta content="Microsoft Word 15 (filtered)" name="Generator"/></head><body link="#0563C1" vlink="#954F72"><div><p><i>(rough draft – currently editing)</i></p>
+<p>Remote Code Execution(version 1.1)</p>
+
+<p><b>Cloud Service Label: IaaS, PaaS</b></p>
+
+<p>Description</p>
+<p>Adversaries may be able to utilize remote code execution</p>
+
+<p>Examples</p>
+<table border="1" cellpadding="0" cellspacing="0" width="624"><tr><td valign="top" width="181"><p><b>Name</b></p>
+</td>
+<td valign="top" width="443"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="181"><h2>CVE-2019-1372</h2></td>
+<td valign="top" width="443"><p>“A remote code execution vulnerability exists when Azure App Service/ Antares on Azure Stack fails to check the length of a buffer prior to copying memory to it. An attacker who successfully exploited this vulnerability could allow an unprivileged function run by the user to execute code in the context of NT AUTHORITY\system thereby escaping the Sandbox. The security update addresses the vulnerability by ensuring that Azure App Service sanitizes user inputs., aka 'Azure App Service Remote Code Execution Vulnerability'.”</p>
+</td>
+</tr>
+</table>
+<p>Mitigations</p>
+<table border="1" cellpadding="0" cellspacing="0" width="624"><tr><td colspan="2" valign="top" width="185"><p><b>Mitigation</b></p>
+</td>
+<td valign="top" width="439"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td colspan="2" valign="top" width="185"><p>Two Factor Authentication</p>
+</td>
+<td valign="top" width="439"><p>Use multi-factor authentication for user and privileged accounts. Do not manage Cloud portals from machines that perform user email and web browsing tasks. All users should be required to utilize two factor authentication.</p>
+</td>
+</tr>
+<tr><td valign="top" width="88">
+</td>
+<td valign="top" width="97"><p><i>AWS</i></p>
+</td>
+<td valign="top" width="439"><p>This can be enforced by first creating a policy that would prohibit actions except those that allow a user to change their password or manage 2FA, then attaching a policy to a group that includes all user accounts where they can be allowed all access if they sign in with 2FA. Once these actions are completed it should be tested to verify the access is given correctly. To see full details on how to complete this view AWS documentation at:<b>https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_users-self-manage-mfa-and-creds.html.</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="88">
+</td>
+<td valign="top" width="97"><p><i>Azure</i></p>
+</td>
+<td valign="top" width="439"><p>This can be done by creating a MFA registration policy. It can than be assigned to all users (with the ability to exclude some if need be, but is not recommended). Make sure once the policy is created and added to users that it is then being enforced, once enforced it should be tested for verification. To see full details on how to complete this view Azure documentation at:<b>https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/howto-identity-protection-configure-mfa-policy.</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="88">
+</td>
+<td valign="top" width="97"><p><i>GCP</i></p>
+</td>
+<td valign="top" width="439"><p>This can be done by first enabling it on the current account being used by admin to assign the roles, then enable two factor on an instance by instance or project by project basis, then assigning the requirements based on IAM roles and applying it to all users. To see full details on how to complete this view Azure documentation at:<b>https://cloud.google.com/compute/docs/oslogin/setup-two-factor-authentication.</b></p>
+</td>
+</tr>
+<tr><td colspan="2" valign="top" width="185"><p>Enable GKE Metadata Server</p>
+</td>
+<td valign="top" width="439"><p>Consider enabling GKE Metadata Server which improves security and replaces Compute Engine VM instances Metadata Server.</p>
+</td>
+</tr>
+<tr><td colspan="2" valign="top" width="185"><p>Least Privilege</p>
+</td>
+<td valign="top" width="439"><p>All access given to users in the cloud environment should be assigned by the necessary privileges needed for team members to complete their job responsibilities.Ensure that temporary access tokens are issued rather than permanent credentials, especially when access is being granted to entities outside of the internal security boundary .</p>
+</td>
+</tr>
+<tr><td valign="top" width="88">
+</td>
+<td valign="top" width="97"><p>AWS</p>
+</td>
+<td valign="top" width="439"><p>To implement least privilege in an AWS environment IAM policies will be used. This gives the ability to allow users to perform list, read, write, permissions management, or tagging actions. AWS suggests utilizing<i>last accessed information</i>and A<i>WS CloudTrail event history</i>to get a better understanding of privileges that might be needed or reduced based on a specific role. Full details can be found at<b>https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#grant-least-privilege.</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="88">
+</td>
+<td valign="top" width="97"><p>Azure</p>
+</td>
+<td valign="top" width="439"><p>To implement least privilege in an Azure environment Azure Active Directory roles will be used. Azure outlines different tasks and the least privileged role that are suggested to be associated with the task. Those details can be found at:<b>https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/roles-delegate-by-task.</b>To learn how to assign specific roles it can be done via the Azure Active Directory Portal. Instructions on how to assign roles can be found here:<b>https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-manage-roles-portal.</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="88">
+</td>
+<td valign="top" width="97"><p>GCP</p>
+</td>
+<td valign="top" width="439"><p>To implement least privilege in GCP it is recommended to use predefined roles (which allow for granular access permissions) instead of primitive roles (roles/owner, roles/editor, and roles/viewer). Full details on the difference between types of roles can be found here:<b>https://cloud.google.com/iam/docs/understanding-roles.</b>To assign these roles IAM service accounts are used and complete details can be found at:<b>https://cloud.google.com/iam/docs/using-iam-securely#least_privilege.</b></p>
+</td>
+</tr>
+</table>
+<p>Detection</p>
+
+<p>References</p>
+<p>1.https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1372.Accessed July 2, 2020.</p>
+
+</div></body></html>

@@ -1,0 +1,37 @@
+<html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta content="Microsoft Word 15 (filtered)" name="Generator"/></head><body link="blue" vlink="purple"><div><p>Data from VM Local File System(version 1.0)</p>
+
+<p><b>Cloud Service Label: IaaS</b></p>
+
+<p><b>Description</b></p>
+<p>Sensitive data can be collected from VM local (ephemeral) file systems or resident databases residing on the system prior to Exfiltration.</p>
+<p>Adversaries will often search the file system on computers they have compromised to find files of interest. They may do this using a<a href="https://attack.mitre.org/techniques/T1059">Command-Line Interface</a>, such as cmd, which has functionality to interact with the file system to gather information. Some adversaries may also use<a href="https://attack.mitre.org/techniques/T1119">Automated Collection</a>on the local system.</p>
+
+<p>Examples</p>
+<table border="1" cellpadding="0" cellspacing="0"><tr><td valign="top" width="312"><p><b>Name</b></p>
+</td>
+<td valign="top" width="312"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312">
+</td>
+<td valign="top" width="312">
+</td>
+</tr>
+</table>
+<p>Mitigations</p>
+<table border="1" cellpadding="0" cellspacing="0"><tr><td valign="top" width="312"><p><b>Mitigation</b></p>
+</td>
+<td valign="top" width="312"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312">
+</td>
+<td valign="top" width="312"><p>This type of attack technique cannot be easily mitigated with preventive controls since it is based on the abuse of system features.</p>
+</td>
+</tr>
+</table>
+<p>Detection</p>
+<p>Monitor processes and command-line arguments for actions that could be taken to collect files from a system. Remote access tools with built-in features may interact directly with the Windows API to gather data. Data may also be acquired through Windows system management tools such as<a href="https://attack.mitre.org/techniques/T1047">Windows ManagementInstrumentation</a>and<a href="https://attack.mitre.org/techniques/T1086">PowerShell</a>.</p>
+
+<p><a name="scite-1">Reference</a></p>
+</div></body></html>

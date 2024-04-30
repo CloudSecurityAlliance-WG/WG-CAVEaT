@@ -1,0 +1,279 @@
+<html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta content="Microsoft Word 15 (filtered)" name="Generator"/></head><body link="blue" vlink="#954F72"><div><p>S3/Blob Manipulation(version 1.0)</p>
+
+<p><b>Cloud Service Label: IaaS, PaaS</b></p>
+
+<p>Description</p>
+<p>By default S3/Blobs are accessible from the public internet if the S3/blob identifier is known and you have the proper credentials. Given this, an adversary with stolen storage credentials can read from existing buckets from anywhere on the Internet and exfiltrate the data stored on them. Malicious actors with more expansive cloud access can stage collected data from other cloud assets within a bucket and then remove contents from the bucket to any external host. They can be also serve out content via HTTPS to allow public consumption of new code.</p>
+
+<p>Although often intended as a temporary solution while working on more challenging aspects of code development, storing code in cloud storage can unintentionally be incorporated into production, leaving consumers of this software vulnerable to code modification when a container or bucket is misconfigured. Adversaries can modify code stored in buckets to implant backdoor software to gain a foothold in what would otherwise be a well-protected enclave. If a storage bucket used for hosting code is ever deleted in the future, adversaries can reclaim the bucket name and without any special privileges stage code for unsuspecting people to invoke. This is especially problematic if web servers are pointing at the repo to fetch some forgotten piece of code.</p>
+
+<p>Examples</p>
+<table border="1" cellpadding="0" cellspacing="0"><tr><td valign="top" width="312"><p><b>Name</b></p>
+</td>
+<td valign="top" width="312"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Capitol One Data Breach</p>
+</td>
+<td valign="top" width="312"><p>Using previously obtained credentials attackers accessed sensitive data stored within S3 buckets and exfiltrated it.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Hackerone</p>
+</td>
+<td valign="top" width="312"><p>The Rocket Chat install application was grabbing code from a publicly accessible S3 bucket. When the S3 bucket was deleted, this made the situation even worse. Once a bucket is deleted, anyone with access to AWS can create a bucket of the same name. In this case putting a malicious script within the bucket and waiting for unsuspecting users of the Rocket Chat installation script to fetch and run their payload.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Subjack</p>
+</td>
+<td valign="top" width="312"><p>Open source tool that automates the search for s3 buckets and other cloud resources that are registered in DNS but which no longer exist indicating a possible hijacking opportunity.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Scout Suite</p>
+</td>
+<td valign="top" width="312"><p>Scout Suite is an open source multi-cloud security tool that will check exposed storage APIs for misconfigurations and risks. The tool is compatible with cloud providers like AWS, Azure, GCP, and Alpha versions for Alibaba Cloud and Oracle Cloud Infrastructure.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Prowler</p>
+</td>
+<td valign="top" width="312"><p>Prowler is open source tool on GitHub checks security best practices against AWS CIS Benchmark standards. This includes coverage of IAM, logging, monitoring, networking, CIS Levels 1 and 2, forensics, and even GDPR and HIPAA. Prowler also looks for resources that may or may not be intentionally configured in a way that violates the standards. For example, it will check for an open S3 bucket or a security group with an open port.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>S3 Inspector</p>
+</td>
+<td valign="top" width="312"><p>S3 Inspector is an open source tool used to check AWS S3 bucket permissions. The tool will check all account buckets for public access and provide a list of URLs that can be used to access that said public bucket. S3 Inspector can be used as a normal CLI utility or as an AWS Lambda function.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>DNS Enumeration</p>
+</td>
+<td valign="top" width="312"><p>An OWASP Bay Area presentation in August 2019 covered the process of performing a port scan on an IP address found in the TXT records of a DNS enumeration process and revealed ssh keys that were used to log into servers hosted with AWS. These private keys were found in a zip file of an open S3 bucket. An RDS database server configuration file was found and username and password hashes were subsequently dumped.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>S3_download_Bucket</p>
+</td>
+<td valign="top" width="312"><p>Publicly available Pacu module that scans the current account for AWS buckets and prints/stores as much data as it can about each one. With no arguments, this module will enumerate all buckets the account has access to, then prompt you to download all files in the bucket or not.</p>
+</td>
+</tr>
+</table>
+<p>Mitigations</p>
+<table border="1" cellpadding="0" cellspacing="0" width="624"><tr><td colspan="2" valign="top" width="312"><p><b>Mitigation</b></p>
+</td>
+<td valign="top" width="312"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td colspan="2" valign="top" width="312"><p>Use<a href="https://attack.mitre.org/mitigations/M1037">Network Traffic</a>Policies</p>
+
+</td>
+<td valign="top" width="312"><p>Create and apply AWS/Azure policies that restrict access to S3 buckets or Azure Blobs from external networks. In Azure you can restrict access to blobs to certain networks only during blob creation.</p>
+</td>
+</tr>
+<tr><td valign="top" width="156">
+</td>
+<td valign="top" width="156"><p>AWS</p>
+</td>
+<td valign="top" width="312"><p>An AWS environment can be configured with network ACLs (access control lists) to allow or deny inbound and outbound traffic. This can be accomplished by accessing Amazon VPC and navigating to either inbound or outbound rules depending on the rule the user wishes to add and they can be added, removed, or edited from that panel. Full details about ACLs and how to add rules in AWS can be found here:<b>https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html.</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="156">
+</td>
+<td valign="top" width="156"><p>Azure</p>
+</td>
+<td valign="top" width="312"><p>In Azure storage resources can be tied exclusively to a particular virtual network reducing the chances that it can be accessed externally or from other cloud assets. This can be done multiple ways including the Azure Portal, Azure PowerShell, and Azure CLI (Command Line Interface). Depending on the method used to implement this the procedure can vary, but will include the need to create a security group, create a network security group, associate that network security group with a specific subnet and then create security rules that are associated to the inbound and outbound rules for that subnet. Full details on how to configure this utilizing the various methods can be found below:</p>
+<p>Azure PowerShell:<b>https://docs.microsoft.com/en-us/azure/virtual-network/tutorial-filter-network-traffic-powershell</b></p>
+<p>Azure CLI:<b>https://docs.microsoft.com/en-us/azure/virtual-network/tutorial-filter-network-traffic-cli</b></p>
+</td>
+</tr>
+<tr><td colspan="2" valign="top" width="312"><p>Audit</p>
+</td>
+<td valign="top" width="312"><p>Frequently check permissions on cloud storage to ensure proper permissions are set to deny open or unprivileged access to resources. Consider using automated resource checkers such as CloudSploit or Divvycloud .</p>
+</td>
+</tr>
+<tr><td valign="top" width="156">
+</td>
+<td valign="top" width="156"><p>AWS</p>
+</td>
+<td valign="top" width="312"><p>To perform an audit via AWS it is suggested to review information such as account details (credentials, users, groups, roles, etc), mobile applications, EC2 configurations, policies, and account activity. How to audit these different factors can be found in detail at:<b>https://docs.aws.amazon.com/general/latest/gr/aws-security-audit-guide.html.</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="156">
+</td>
+<td valign="top" width="156"><p>Azure</p>
+</td>
+<td valign="top" width="312"><p>To perform an audit via Azure an administrator can review the audit logs that are recorded under Azure’s monitoring for active directory. The audit logs allow for filtering, as well as looking at users, groups, and enterprise specific information. Full details on how to access this information can be found at:<b>https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/concept-audit-logs.</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="156">
+</td>
+<td valign="top" width="156"><p>GCP</p>
+</td>
+<td valign="top" width="312"><p>To perform an audit via GCP the logs can be reviewed. GCP breaks this down into three categories; admin activity, data access, and system events. The audit logs can be viewed a few different ways- the console, API, or gcloud. Full details on how to view these logs, how to export, and for how to configure the retention period can be found here:<b>https://cloud.google.com/logging/docs/audit.</b></p>
+</td>
+</tr>
+<tr><td colspan="2" valign="top" width="312"><p>Don’t Do it</p>
+
+</td>
+<td valign="top" width="312"><p>Don’t store executable code within cloud storage repos.</p>
+</td>
+</tr>
+<tr><td colspan="2" valign="top" width="312"><p>Encrypt Sensitive Information</p>
+
+</td>
+<td valign="top" width="312"><p>Encrypt data stored at rest in cloud storage. Managed encryption keys can be rotated by most providers. At a minimum, ensure an incident response plan to storage breach includes rotating the keys and test for impact on client applications.</p>
+</td>
+</tr>
+<tr><td valign="top" width="156">
+</td>
+<td valign="top" width="156"><p>AWS</p>
+</td>
+<td valign="top" width="312"><p>To encrypt data at rest in an AWS environment first start by configuring the IAM roles and permissions. A policy will need to be created to specify that the data is to be encrypted and then the policy is attached to the instance. Full details on how to accomplish this can be found at:<b>https://aws.amazon.com/blogs/security/how-to-protect-data-at-rest-with-amazon-ec2-instance-store-encryption/</b>.</p>
+</td>
+</tr>
+<tr><td valign="top" width="156">
+</td>
+<td valign="top" width="156"><p>Azure</p>
+</td>
+<td valign="top" width="312"><p>To encrypt data at rest in an Azure environment it can be done differently depending on the cloud service the customer is utilizing - normally a check box is presented enabling encryption for data at rest. For SaaS customers this can be enabled or available on each specific service. For PaaS customers there are specific storage and application platforms that are supported. In terms of IaaS customers Azure storage components such as queues and blobs are encrypted by selecting a check box during creation. Azure also allows customers to employ their own encryption in addition to the server side encryption provided by Azure –effectively creating two layers of encryption for all storage assets. Currently this must be done programtically as described here:<b>https://docs.microsoft.com/en-us/azure/virtual-network/tutorial-filter-network-traffic</b></p>
+<p>Encrypted compute allows for all managed disks, snapshots, and images to be encrypted utilizing a service managed key. The keys are stored in the Azure key vault. Full details on how to accomplish this can be found at:<b><u>https://docs.microsoft.com/en-us/azure/security/fundamentals/encryption-atrest.</u></b></p>
+</td>
+</tr>
+<tr><td colspan="2" valign="top" width="312"><p>Least Privilege</p>
+
+</td>
+<td valign="top" width="312"><p>All access given to users in the cloud environment should be assigned by the necessary privileges needed for team members to complete their job responsibilities.Ensure that temporary access tokens are issued rather than permanent credentials, especially when access is being granted to entities outside of the internal security boundary .</p>
+</td>
+</tr>
+<tr><td valign="top" width="156">
+</td>
+<td valign="top" width="156"><p>AWS</p>
+</td>
+<td valign="top" width="312"><p>Ensure only administrators have access to the S3 Permissions management actions. Grant actions like<i>List</i>,<i>Read</i>, and<i>Write</i>on a by-need basis, with particular attention on the<i>Write</i>action. Those with the<i>Write</i>action have the ability to delete or put objects into S3 buckets. To implement least privilege in an AWS environment IAM policies will be used. This gives the ability to allow users to perform list, read, write, permissions management, or tagging actions. AWS suggests utilizing<i>last accessed information</i>and A<i>WS CloudTrail event history</i>to get a better understanding of privileges that might be needed or reduced based on a specific role. Full details can be found at<b>https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#grant-least-privilege.</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="156">
+</td>
+<td valign="top" width="156"><p>Azure</p>
+</td>
+<td valign="top" width="312"><p>Disable anonymous access to blob containers with the following steps:</p>
+<p>1.Go to<i>Storage Accounts</i></p>
+<p>2.For each storage account, go to<i>Containers</i>under<i>BLOB SERVICE</i></p>
+<p><i>3.</i>For each container, click<i>Access policy</i></p>
+<p>4.Ensure<i>Public access level</i>is set to<i>Private</i></p>
+</td>
+</tr>
+<tr><td colspan="2" valign="top" width="312"><p>Microsoft Blob Storage Security Recommendations</p>
+
+</td>
+<td valign="top" width="312"><p>Microsoft’s article contains recommendations for blob storage related to data protection, identity and access management, networking, logging, and monitoring. Azure Security Center is highly recommended to protect resources within Azure. It also provides recommendations on how to fix vulnerabilities.</p>
+<p>Full details for Microsoft’s security recommendations for blob storage can be found at<a href="https://docs.microsoft.com/en-us/azure/storage/blobs/security-recommendations"><b>https://docs.microsoft.com/en-us/azure/storage/blobs/security-recommendations</b></a><b>.</b></p>
+</td>
+</tr>
+<tr><td colspan="2" valign="top" width="312"><p>AWS S3 Security Best Practices</p>
+</td>
+<td valign="top" width="312"><p>Amazon’s article highlights best practices for S3 like ensuring S3 buckets are not publicly accessible, using IAM roles for applications services as related to S3, implementing encryption of data at rest, data in transit, and many others.</p>
+<p>Full details for AWS’s security best practices for S3 can be found at<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/security-best-practices.html"><b>https://docs.aws.amazon.com/AmazonS3/latest/dev/security-best-practices.html</b></a><b>.</b></p>
+</td>
+</tr>
+<tr><td colspan="2" valign="top" width="312"><p>Multi-factor Authentication</p>
+</td>
+<td valign="top" width="312"><p>Use multi-factor authentication for user and privileged accounts. Do not manage Cloud portals from machines that perform user email and web browsing tasks. All users should be required to utilize two factor authentication.</p>
+
+</td>
+</tr>
+<tr><td valign="top" width="156">
+</td>
+<td valign="top" width="156"><p>AWS</p>
+</td>
+<td valign="top" width="312"><p>This can be enforced by first creating a policy that would prohibit actions except those that allow a user to change their password or manage 2FA, then attaching a policy to a group that includes all user accounts where they can be allowed all access if they sign in with 2FA. Once these actions are completed it should be tested to verify the access is given correctly. To see full details on how to complete this view AWS documentation at:<b>https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_users-self-manage-mfa-and-creds.html.</b></p>
+
+</td>
+</tr>
+<tr><td valign="top" width="156">
+</td>
+<td valign="top" width="156"><p>Azure</p>
+</td>
+<td valign="top" width="312"><p>This can be done by creating a MFA registration policy. It can than be assigned to all users (with the ability to exclude some if need be, but is not recommended). Make sure once the policy is created and added to users that it is then being enforced, once enforced it should be tested for verification. To see full details on how to complete this view Azure documentation at:<b>https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/howto-identity-protection-configure-mfa-policy.</b></p>
+
+</td>
+</tr>
+<tr><td valign="top" width="156">
+</td>
+<td valign="top" width="156"><p>GCP</p>
+</td>
+<td valign="top" width="312"><p>This can be done by first enabling it on the current account being used by admin to assign the roles, then enable two factor on an instance by instance or project by project basis, then assigning the requirements based on IAM roles and applying it to all users. To see full details on how to complete this view Azure documentation at:<b>https://cloud.google.com/compute/docs/oslogin/setup-two-factor-authentication.</b></p>
+
+</td>
+</tr>
+<tr><td colspan="2" valign="top" width="312"><p>Restrict File and Directory Permissions</p>
+</td>
+<td valign="top" width="312"><p>Users should have limited access to files and directories depending on their need for access. The file and directory permissions should be restricted on the basis of least privilege.</p>
+
+</td>
+</tr>
+<tr><td valign="top" width="156">
+</td>
+<td valign="top" width="156"><p>AWS</p>
+</td>
+<td valign="top" width="312"><p>To manage the files and directory permissions in AWS, IAM policies can be used. This can be done by utilizing group policies and policy variables. The policy would be created specifying the folder, then the permissions attached to that folder (whether the user has access to list out the objects within the directory, if they have read permissions, if they have write permissions, etc.), lastly the group that it applies to would be specified. The users can that be added and removed from that group as needed. Full details on how this can be done is explained here:<b>https://aws.amazon.com/blogs/security/writing-iam-policies-grant-access-to-user-specific-folders-in-an-amazon-s3-bucket/.</b></p>
+
+</td>
+</tr>
+<tr><td valign="top" width="156">
+</td>
+<td valign="top" width="156"><p>Azure</p>
+</td>
+<td valign="top" width="312"><p>To manage the files and directory permissions in an Azure environment basic and advanced system defined controls. This will be dependent on the type of system being used (Windows, Linux, etc). The permissions will be set individually or by group using the system commands or controls needed.. Full details on how this can be done is explained here:<a href="https://docs.microsoft.com/en-us/azure/storage/files/storage-files-identity-ad-ds-configure-permissions"><b>https://docs.microsoft.com/en-us/azure/storage/files/storage-files-identity-ad-ds-configure-permissions</b></a><b>.</b></p>
+
+</td>
+</tr>
+</table>
+<p>Detection</p>
+
+<table border="1" cellpadding="0" cellspacing="0"><tr><td valign="top" width="312"><p><b>Detection</b></p>
+</td>
+<td valign="top" width="312"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Enable S3 Bucket Logging</p>
+
+</td>
+<td valign="top" width="312"><p>To enable CloudTrail S3 bucket logging:</p>
+<p>1.Navigate to CloudTrail console at Go to the Amazon CloudTrail console</p>
+<p>2.Click Trails in the API activity history pane on the left</p>
+<p>3.Sign into AWS Management Console and open the S3 console Sign in to the AWS Management Console and open the S3 console</p>
+<p>4.Click on a bucket under<i>All Buckets</i></p>
+<p>5.Click on<i>Properties</i></p>
+<p>6.Under<i>Bucket:_&lt;bucket_name&gt;_</i>click<i>Logging</i></p>
+<p>7.Ensure<i>Enabled</i>is checked</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Create Log Metric Filters and Alarms for S3</p>
+</td>
+<td valign="top" width="312"><p>To create a metric filter and alarm:</p>
+<p>1.Create a filter that checks for S3 bucket policy changes and the specific<i>&lt;cloudtrail_log_group_name&gt;</i></p>
+<p>2.Create an SNS topic that the alarm will notify</p>
+<p>3.Create an SNS subscription to the above topic</p>
+<p>4.Create an alarm associated with the filter from step 1 and SNS topic in step 2</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Enable Azure Storage Logging</p>
+</td>
+<td valign="top" width="312"><p>This is used to track how requests made to Azure Storage were authorized. Enabling logs provides visibility into whether a request was anonymous, made with an OAuth2.0 token, a shared key, or shared access signature (SAS). Full Azure Storage analytics logging details can be found at<a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-analytics-logging?tabs=dotnet"><b>https://docs.microsoft.com/en-us/azure/storage/common/storage-analytics-logging?tabs=dotnet</b></a><b>.</b></p>
+</td>
+</tr>
+</table>
+
+
+
+<p><a name="scite-1"></a>References</p>
+<p>1.https://hackerone.com/reports/399166. Accessed 02/12/2020</p>
+<p>2.techcommunity.microsoft.com/t5/azure-sentinel/hunting-for-capital-one-breach-ttps-in-aws-logs-using-azure/ba-p/1014258#. Accessed Feb. 21, 2020</p>
+<p>3.<a href="https://github.com/nccgroup/ScoutSuite">https://github.com/nccgroup/ScoutSuite</a>. Accessed July 27, 2020.</p>
+<p>4.<a href="https://github.com/toniblyx/prowler">https://github.com/toniblyx/prowler</a>. Accessed July 27, 2020.</p>
+<p>5.<a href="https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf">https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf</a>. Accessed July 27, 2020.</p>
+<p>6.<a href="https://github.com/clario-tech/s3-inspector">https://github.com/clario-tech/s3-inspector</a>. Accessed July 27, 2020.</p>
+<p>7.<a href="https://blog.appsecco.com/getting-shell-and-data-access-in-aws-by-chaining-vulnerabilities-7630fa57c7ed">https://blog.appsecco.com/getting-shell-and-data-access-in-aws-by-chaining-vulnerabilities-7630fa57c7ed</a>. Accessed July 27, 2020.</p>
+<p>8.<a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html">https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html</a>. Accessed July 31, 2020.</p>
+<p>9.<a href="https://docs.microsoft.com/en-us/azure/storage/blobs/security-recommendations">https://docs.microsoft.com/en-us/azure/storage/blobs/security-recommendations</a>. Accessed August 3, 2020.</p>
+<p>10.<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/security-best-practices.html">https://docs.aws.amazon.com/AmazonS3/latest/dev/security-best-practices.html</a>. Accessed August 3, 2020.</p>
+<p>11.<a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-analytics-logging?tabs=dotnet">https://docs.microsoft.com/en-us/azure/storage/common/storage-analytics-logging?tabs=dotnet</a>. Accessed August 3, 2020.</p>
+
+</div></body></html>

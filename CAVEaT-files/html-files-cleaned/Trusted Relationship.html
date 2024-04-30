@@ -1,0 +1,156 @@
+<html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta content="Microsoft Word 15 (filtered)" name="Generator"/></head><body link="blue" vlink="#954F72"><div><p>Trusted Relationship(version 1.0)</p>
+
+<p><b>Cloud Service Label: IaaS ,PaaS, SaaS</b></p>
+
+<p>Description</p>
+<p>Adversaries may breach or otherwise leverage organizations and systems that have access to targeted cloud assets. Access through a trusted relationship exploits an existing connection that may not be protected or receives less scrutiny than standard mechanisms of gaining access to a network. These connections include on-premise assets and logically separate cloud assets that afford special access to a customer’s cloud resources. Organizations often grant elevated access to on-premise systems and third party external providers including SaaS providers in order to allow them to manage cloud assets or share information. Some examples of these relationships include IT services contractors, managed security providers, and infrastructure contractors. Azure permits the creation of guest accounts to allow external organizations to access certain resources. These accounts probably will not be automatically culled from the system if the user leaves the guest organization as would likely happen in the host organization. This could result in accesses being permitted for unauthorized persons.</p>
+
+<p>Examples</p>
+<table border="1" cellpadding="0" cellspacing="0" width="624"><tr><td valign="top" width="229"><p><b>Name</b></p>
+</td>
+<td valign="top" width="395"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="229"><p>Co-Residence Identification and Information Leakage</p>
+
+</td>
+<td valign="top" width="395"><p>As pointed out in a research paper written by the University of California San Diego and the Massachusetts Institute of Technology, co-residence is the process of identifying cloud instances that share the same underlying physical infrastructure, despite being separated virtually. Cloud users trust the cloud provider to ensure separation between different customers, however it is possible for a motivated customer to theoretically ensure co-residence with another customer on the same physical cloud host. Once virtual machine co-residence has been established, it might be possible to infer keys or other access credentials from co-resident machines leveraging their shared cache.</p>
+
+</td>
+</tr>
+</table>
+<p>Mitigations</p>
+<table border="1" cellpadding="0" cellspacing="0" width="624"><tr><td colspan="2" valign="top" width="229"><p><b>Mitigation</b></p>
+</td>
+<td valign="top" width="395"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td colspan="2" valign="top" width="229"><p>Audit for unusual activities that might be related to this activity</p>
+</td>
+<td valign="top" width="395"><p>Guest accounts should be audited more frequently to ensure external relationships are still valid.</p>
+</td>
+</tr>
+<tr><td valign="top" width="104">
+</td>
+<td valign="top" width="125"><p>AWS</p>
+</td>
+<td valign="top" width="395"><p>To perform an audit via AWS it is suggested to review information such as account details (credentials, users, groups, roles, etc), mobile applications, EC2 configurations, policies, and account activity. How to audit these different factors can be found in detail at:<b>https://docs.aws.amazon.com/general/latest/gr/aws-security-audit-guide.html.</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="104">
+</td>
+<td valign="top" width="125"><p>Azure</p>
+</td>
+<td valign="top" width="395"><p>To perform an audit via Azure an administrator can review the audit logs that are recorded under Azure’s monitoring for active directory. The audit logs allow for filtering, as well as looking at users, groups, and enterprise specific information. Full details on how to access this information can be found at:<b>https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/concept-audit-logs.</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="104">
+</td>
+<td valign="top" width="125"><p>GCP</p>
+</td>
+<td valign="top" width="395"><p>To perform an audit via GCP the logs can be reviewed. GCP breaks this down into three categories; admin activity, data access, and system events. The audit logs can be viewed a few different ways- the console, API, or gcloud. Full details on how to view these logs, how to export, and for how to configure the retention period can be found here:<b>https://cloud.google.com/logging/docs/audit.</b></p>
+</td>
+</tr>
+<tr><td colspan="2" valign="top" width="229"><p>Network Segmentation</p>
+</td>
+<td valign="top" width="395"><p>Network segmentation can be used to isolate IaaS components that do not require broad network access.</p>
+</td>
+</tr>
+<tr><td colspan="2" valign="top" width="229"><p>User Account Control</p>
+</td>
+<td valign="top" width="395"><p>Properly manage accounts and permissions used by parties in trusted relationships to minimize potential abuse by the party and if the party is compromised by an adversary. AWS and Azure can assign roles to its entities, which allows for strong IAM policies for various services like serverless functions, containers, or workloads.</p>
+</td>
+</tr>
+<tr><td colspan="2" valign="top" width="229"><p>Making Trust Determinations</p>
+</td>
+<td valign="top" width="395"><p>Trust determinations in Azure AD can be made through Hybrid Identity, Azure AD Connect, password hash synchronization, pass-through authentication, federation, and single sign-on.</p>
+</td>
+</tr>
+<tr><td colspan="2" valign="top" width="229"><p>Least Privilege</p>
+</td>
+<td valign="top" width="395"><p>All access given to users in the cloud environment should be assigned by the necessary privileges needed for team members to complete their job responsibilities.</p>
+</td>
+</tr>
+<tr><td valign="top" width="104">
+</td>
+<td valign="top" width="125"><p><i>AWS</i></p>
+</td>
+<td valign="top" width="395"><p>To implement least privilege in an AWS environment IAM policies will be used. This gives the ability to allow users to perform list, read, write, permissions management, or tagging actions. AWS suggests utilizing<i>last accessed information</i>and A<i>WS CloudTrail event history</i>to get a better understanding of privileges that might be needed or reduced based on a specific role. Full details can be found at<b>https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#grant-least-privilege.</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="104">
+</td>
+<td valign="top" width="125"><p><i>Azure</i></p>
+</td>
+<td valign="top" width="395"><p>To implement least privilege in an Azure environment Azure Active Directory roles will be used. Azure outlines different tasks and the least privileged role that are suggested to be associated with the task. Those details can be found at:<b>https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/roles-delegate-by-task.</b>To learn how to assign specific roles it can be done via the Azure Active Directory Portal. Instructions on how to assign roles can be found here:<b>https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-manage-roles-portal.</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="104">
+</td>
+<td valign="top" width="125"><p><i>GCP</i></p>
+</td>
+<td valign="top" width="395"><p>To implement least privilege in GCP it is recommended to use predefined roles (which allow for granular access permissions) instead of primitive roles (roles/owner, roles/editor, and roles/viewer). Full details on the difference between types of roles can be found here:<b>https://cloud.google.com/iam/docs/understanding-roles.</b>To assign these roles IAM service accounts are used and complete details can be found at:<b>https://cloud.google.com/iam/docs/using-iam-securely#least_privilege.</b></p>
+</td>
+</tr>
+</table>
+
+<p>Detection</p>
+<table border="1" cellpadding="0" cellspacing="0"><tr><td colspan="2" valign="top" width="229"><p><b>Mitigation</b></p>
+</td>
+<td valign="top" width="395"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td colspan="2" valign="top" width="229"><p>Monitoring</p>
+</td>
+<td valign="top" width="395"><p>Establish monitoring for activity conducted by second and third party providers and other trusted entities that may be leveraged as a means to gain access to the network. Depending on the type of relationship, an adversary may have access to significant amounts of information about the target before conducting an operation, especially if the trusted relationship is based on IT services. Adversaries may be able to act quickly towards an objective, so proper monitoring for behavior related to Credential Access, Lateral Movement, and Collection will be important to detect the intrusion.</p>
+</td>
+</tr>
+<tr><td valign="top" width="104">
+</td>
+<td valign="top" width="125"><p>AWS</p>
+</td>
+<td valign="top" width="395"><p>Various services in AWS offer logging features that allow for detection capabilities. These include CloudFront, CloudTrail, CloudWatch, Config, and S3.</p>
+<p>To create a metric filter and alarm:</p>
+<p>1.Create a metric filter that checks for IAM policy changes and the<i>&lt;cloudtrail_log_group_name&gt;</i></p>
+<p>2.Create an SNS topic</p>
+<p>3.Create an SNS subscription to the above topic</p>
+<p>4.Create an alarm associated with the filter and SNS topic created in steps 1 and 2 respectively</p>
+</td>
+</tr>
+<tr><td valign="top" width="104">
+</td>
+<td valign="top" width="125"><p>Azure</p>
+</td>
+<td valign="top" width="395"><p>Azure AD can generate anomaly reports than can be run on a daily basis. Azure AD Identity Protection show current risks in its dashboard and provides daily email summary notifications. Policies can also be configured to alert to specific issues.</p>
+<p>To create a log alert in the Azure portal:</p>
+<p>1.Select<b>Monitor -&gt; Alerts</b></p>
+<p>2.Select<b>New alert rule</b>of the<b>Alerts</b>window</p>
+<p>3.Provide information in<b>Define alert condition</b></p>
+<p>4.Provide details in<b>Define alert details</b></p>
+<p>5.Specify action group for new alert rule under<b>Action group</b>, or create a new action group with +<b>New group</b></p>
+<p>6.Select<b>Yes</b>for the<b>Enable rule upon creation</b>option</p>
+<p>7.Select<b>Create alert rule</b></p>
+
+<p>To view and manage alerts:</p>
+<p>1.Select<b>Monitor -&gt; Alerts -&gt; Manage alert rules</b></p>
+<p>2.Select the rule you want to modify and double-click to edit the rule options</p>
+<p>3.Click<b>Save</b></p>
+</td>
+</tr>
+<tr><td colspan="2" valign="top" width="229"><p>CASB (Cloud Access Security Broker)</p>
+</td>
+<td valign="top" width="395"><p>Consider employing a CASB to monitor access between SaaS accounts and AWS/Azure resources.</p>
+</td>
+</tr>
+</table>
+
+
+<p><a name="scite-1"></a><a name="scite-2"></a><a name="scite-3"></a>References</p>
+<p>1.<a href="https://sonraisecurity.com/education/aws-azure-google-cloud-security-iam/">https://sonraisecurity.com/education/aws-azure-google-cloud-security-iam/</a>. Accessed July 27, 2020.</p>
+<p>2.<a href="https://devblogs.microsoft.com/azuregov/implementing-zero-trust-with-microsoft-azure-identity-and-access-management-1-of-6/">https://devblogs.microsoft.com/azuregov/implementing-zero-trust-with-microsoft-azure-identity-and-access-management-1-of-6/</a>. Accessed July 27, 2020.</p>
+<p>3.https://cseweb.ucsd.edu/~savage/papers/CCS09.pdf. Accessed July 2, 2020.</p>
+<p>4.Wait a minute! A fast, Cross-VM attack on AES Gorka Irazoqui, Mehmet Sinan Inci, Thomas Eisenbarth, and Berk Sunar Worcester Polytechnic Institute, Worcester, MA, USA – Accessed August 6,2020</p>
+
+
+
+</div></body></html>

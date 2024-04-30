@@ -1,0 +1,259 @@
+<html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta content="Microsoft Word 15 (filtered)" name="Generator"/></head><body link="blue" vlink="#954F72"><div><p>Loss of Reputation/Value(version 1.0)</p>
+
+<p><b>Cloud Service Label: IaaS, PaaS, SaaS</b></p>
+
+<p>Description</p>
+<p>Consumers of cloud services and especially IaaS resources have effectively accepted responsibility (liability?) of all such resources. In the public’s view there is little distinction between an organization’s effectiveness and its ability to manage its computing resources. If cloud resources under the purview of an organization are used for malicious or salacious purposes, the damage to intuitional reputation could be immense. HB Gary, a computer security company, suffered severe reputational and financial harm after an affiliate’s website was compromised. Capitol One suffered reputational and financial harm after a former AWS employee compromised thousands of Capitol One customer’s data inside AWS S3 buckets. AWS did not seem to suffer significantly, but Capitol One shares dropped almost 7% because of the incident.</p>
+<p>In the cloud, S3 buckets that are controlled by an organization and misconfigured to allow writes can be accessed and used by any third party to store and distribute illicit material and have the organization foot the bill.</p>
+
+<p>Examples</p>
+<table border="1" cellpadding="0" cellspacing="0" width="624"><tr><td valign="top" width="183"><p><b>Name</b></p>
+</td>
+<td valign="top" width="441"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="183"><p>GhostWriter</p>
+</td>
+<td valign="top" width="441"><p>McAfee initiative discovered thousands of S3 buckets configured to allow anonymous, unauthenticated writes among some of the largest corporations in the world.</p>
+</td>
+</tr>
+</table>
+<p>Mitigations</p>
+<table border="1" cellpadding="0" cellspacing="0" width="624"><tr><td colspan="2" valign="top" width="184"><p><b>Mitigation</b></p>
+</td>
+<td valign="top" width="440"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td colspan="2" valign="top" width="184"><p>Audit</p>
+</td>
+<td valign="top" width="440"><p>Frequently check permissions on cloud storage to ensure proper permissions are set to deny open or unprivileged access to resources. Consider using automated resource checkers such as CloudSploit or Divvycloud.</p>
+</td>
+</tr>
+<tr><td valign="top" width="80">
+</td>
+<td valign="top" width="104"><p><i>AWS</i></p>
+</td>
+<td valign="top" width="440"><p>To perform an audit via AWS it is suggested to review information such as account details (credentials, users, groups, roles, etc), mobile applications, EC2 configurations, policies, and account activity. How to audit these different factors can be found in detail at:<b>https://docs.aws.amazon.com/general/latest/gr/aws-security-audit-guide.html.</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="80">
+</td>
+<td valign="top" width="104"><p><i>Azure</i></p>
+</td>
+<td valign="top" width="440"><p>To perform an audit via Azure an administrator can review the audit logs that are recorded under Azure’s monitoring for active directory. The audit logs allow for filtering, as well as looking at users, groups, and enterprise specific information. Full details on how to access this information can be found at:<b>https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/concept-audit-logs.</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="80">
+</td>
+<td valign="top" width="104"><p><i>GCP</i></p>
+</td>
+<td valign="top" width="440"><p>To perform an audit via GCP the logs can be reviewed. GCP breaks this down into three categories; admin activity, data access, and system events. The audit logs can be viewed a few different ways- the console, API, or gcloud. Full details on how to view these logs, how to export, and for how to configure the retention period can be found here:<b>https://cloud.google.com/logging/docs/audit.</b></p>
+</td>
+</tr>
+<tr><td colspan="2" valign="top" width="184"><p>Encrypt Sensitive Information</p>
+</td>
+<td valign="top" width="440"><p>Encrypt data stored at rest in cloud storage. Managed encryption keys can be rotated by most providers. At a minimum, ensure an incident response plan to storage breach includes rotating the keys and test for impact on client applications.</p>
+</td>
+</tr>
+<tr><td valign="top" width="80">
+</td>
+<td valign="top" width="104"><p>AWS</p>
+</td>
+<td valign="top" width="440"><p>To encrypt data at rest in an AWS environment first start by configuring the IAM roles and permissions. A policy will need to be created to specify that the data is to be encrypted and then the policy is attached to the instance. Full details on how to accomplish this can be found at:<b>https://aws.amazon.com/blogs/security/how-to-protect-data-at-rest-with-amazon-ec2-instance-store-encryption/</b>.</p>
+</td>
+</tr>
+<tr><td valign="top" width="80">
+</td>
+<td valign="top" width="104"><p>Azure</p>
+</td>
+<td valign="top" width="440"><p>To encrypt data at rest in an Azure environment it can be done differently depending on the cloud service the customer is utilizing. For SaaS customers this can be enabled or available on each specific service. For PaaS customers there are specific storage and application platforms that can be used. In terms of IaaS customers this can be broken down to a couple different aspects. Encrypted storage can be enabled the same as PaaS services, utilizing other Azure services. Encrypted compute allows for all managed disks, snapshots, and images to be encrypted utilizing a service managed key. The keys are stored in the Azure key vault. Full details on how to accomplish this can be found at:<b><u>https://docs.microsoft.com/en-us/azure/security/fundamentals/encryption-atrest.</u></b></p>
+</td>
+</tr>
+<tr><td colspan="2" valign="top" width="184"><p>Filter Network Traffic</p>
+</td>
+<td valign="top" width="440"><p>Cloud service providers support IP-based restrictions when accessing cloud resources. Consider using IP whitelisting along with user account management to ensure that data access is restricted not only to valid users but only from expected IP ranges to mitigate the use of stolen credentials to access data. In Azure storage resources can be tied exclusively to a particular virtual network reducing the chances that it can be accessed externally or from other cloud assets.</p>
+</td>
+</tr>
+<tr><td valign="top" width="80">
+</td>
+<td valign="top" width="104"><p><i>AWS</i></p>
+</td>
+<td valign="top" width="440"><p>An AWS environment can be configured with network ACLs (access control lists) to allow or deny inbound and outbound traffic. This can be accomplished by accessing Amazon VPC and navigating to either inbound or outbound rules depending on the rule the user wishes to add and they can be added, removed, or edited from that panel. Full details about ACLs and how to add rules in AWS can be found here:<b>https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html.</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="80">
+</td>
+<td valign="top" width="104"><p><i>Azure</i></p>
+</td>
+<td valign="top" width="440"><p>In Azure storage resources can be tied exclusively to a particular virtual network reducing the chances that it can be accessed externally or from other cloud assets. This can be done multiple ways including the Azure Portal, Azure PowerShell, and Azure CLI (Command Line Interface). Depending on the method used to implement this the procedure can vary, but will include the need to create a security group, create a network security group, associate that network security group with a specific subnet and then create security rules that are associated to the inbound and outbound rules for that subnet. Full details on how to configure this utilizing the various methods can be found below:</p>
+<p>Azure Portal:<b>https://docs.microsoft.com/en-us/azure/virtual-network/tutorial-filter-network-traffic</b></p>
+<p>Azure PowerShell:<b>https://docs.microsoft.com/en-us/azure/virtual-network/tutorial-filter-network-traffic-powershell</b></p>
+<p>Azure CLI:<b>https://docs.microsoft.com/en-us/azure/virtual-network/tutorial-filter-network-traffic-cli</b></p>
+</td>
+</tr>
+<tr><td colspan="2" valign="top" width="184"><p>Multi-Factor Authentication</p>
+</td>
+<td valign="top" width="440"><p>Use multi-factor authentication for user and privileged accounts. Do not manage Cloud portals from machines that perform user email and web browsing tasks. All users should be required to utilize two factor authentication.</p>
+</td>
+</tr>
+<tr><td valign="top" width="80">
+</td>
+<td valign="top" width="104"><p><i>AWS</i></p>
+</td>
+<td valign="top" width="440"><p>This can be enforced by first creating a policy that would prohibit actions except those that allow a user to change their password or manage 2FA, then attaching a policy to a group that includes all user accounts where they can be allowed all access if they sign in with 2FA. Once these actions are completed it should be tested to verify the access is given correctly. To see full details on how to complete this view AWS documentation at:<b>https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_users-self-manage-mfa-and-creds.html.</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="80">
+</td>
+<td valign="top" width="104"><p><i>Azure</i></p>
+</td>
+<td valign="top" width="440"><p>This can be done by creating a MFA registration policy. It can than be assigned to all users (with the ability to exclude some if need be, but is not recommended). Make sure once the policy is created and added to users that it is then being enforced, once enforced it should be tested for verification. To see full details on how to complete this view Azure documentation at:<b>https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/howto-identity-protection-configure-mfa-policy.</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="80">
+</td>
+<td valign="top" width="104"><p><i>GCP</i></p>
+</td>
+<td valign="top" width="440"><p>This can be done by first enabling it on the current account being used by admin to assign the roles, then enable two factor on an instance by instance or project by project basis, then assigning the requirements based on IAM roles and applying it to all users. To see full details on how to complete this view Azure documentation at:<b>https://cloud.google.com/compute/docs/oslogin/setup-two-factor-authentication.</b></p>
+</td>
+</tr>
+<tr><td colspan="2" valign="top" width="184"><p>Restrict File and Directory Permissions</p>
+</td>
+<td valign="top" width="440"><p>Users should have limited access to files and directories depending on their need for access. The file and directory permissions should be restricted on the basis of least privilege.</p>
+</td>
+</tr>
+<tr><td valign="top" width="80">
+</td>
+<td valign="top" width="104"><p><i>AWS</i></p>
+</td>
+<td valign="top" width="440"><p>To manage the files and directory permissions in AWS, IAM policies can be used. This can be done by utilizing group policies and policy variables. The policy would be created specifying the folder, then the permissions attached to that folder (whether the user has access to list out the objects within the directory, if they have read permissions, if they have write permissions, etc.), lastly the group that it applies to would be specified. The users can that be added and removed from that group as needed. Full details on how this can be done is explained here:<b>https://aws.amazon.com/blogs/security/writing-iam-policies-grant-access-to-user-specific-folders-in-an-amazon-s3-bucket/.</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="80">
+</td>
+<td valign="top" width="104"><p><i>Azure</i></p>
+</td>
+<td valign="top" width="440"><p>To manage the files and directory permissions in an Azure environment basic and advanced system defined controls. This will be dependent on the type of system being used (Windows, Linux, etc). The permissions will be set individually or by group using the system commands or controls needed.. Full details on how this can be done is explained here:<b>https://docs.microsoft.com/en-us/azure/storage/files/storage-files-identity-ad-ds-configure-permissions.</b></p>
+</td>
+</tr>
+</table>
+
+<p>Detection</p>
+<table border="1" cellpadding="0" cellspacing="0"><tr><td valign="top" width="312"><p><b>Detection</b></p>
+</td>
+<td valign="top" width="312"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Create Log Metric Filters and Alarms for AWS</p>
+</td>
+<td valign="top" width="312"><p>To create a metric filter and alarm:</p>
+<p>1.Create a metric filter that checks for IAM policy changes and the<i>&lt;cloudtrail_log_group_name&gt;</i></p>
+<p>2.Create an SNS topic</p>
+<p>3.Create an SNS subscription to the above topic</p>
+<p>4.Create an alarm associated with the filter and SNS topic created in steps 1 and 2 respectively</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Monitor Activity in AWS Account</p>
+</td>
+<td valign="top" width="312"><p>Various services in AWS offer logging features that allow for detection capabilities. These include CloudFront, CloudTrail, CloudWatch, Config, and S3.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Monitor for Suspicious Activity in Azure</p>
+</td>
+<td valign="top" width="312"><p>Azure AD can generate anomaly reports than can be run on a daily basis. Azure AD Identity Protection show current risks in its dashboard and provides daily email summary notifications. Policies can also be configured to alert to specific issues.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Create Log Metric Filters and Alarms for CloudTrail</p>
+</td>
+<td valign="top" width="312"><p>To create a metric filter and alarm:</p>
+<p>1.Create a filter that checks for CloudTrail changes and the specific<i>&lt;cloudtrail_log_group_name&gt;</i></p>
+<p>2.Create an SNS topic that the alarm will notify</p>
+<p>3.Create an SNS subscription to the above topic</p>
+<p>4.Create an alarm associated with the filter from step 1 and SNS topic in step 2</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Create Activity Log Alerts in Azure</p>
+</td>
+<td valign="top" width="312"><p>To create log activity alerts for deletion in the Azure Console:</p>
+<p>1.Navigate to<i>Monitor’ / ‘Alerts</i></p>
+<p>2.Select<i>Manage alert rules</i></p>
+<p>3.Click on the Alert<i>Name</i>where Condition contains<i>operationName equals Microsoft.Network/networkSecurityGroups/securityRules/delete</i></p>
+<p>4.Hover a mouse over<i>Condition</i>to ensure it is set to<i>Whenever the Administrative Activity Log “Delete Security Rule (networkSecurityGroups/securityRules)” has “any” level with “any” status and event is initiated by “any</i>”</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Create, View, and Manage Activity Alerts in Azure Monitor</p>
+</td>
+<td valign="top" width="312"><p>To create a log alert in the Azure portal:</p>
+<p>1.Select<b>Monitor -&gt; Alerts</b></p>
+<p>2.Select<b>New alert rule</b>of the<b>Alerts</b>window</p>
+<p>3.Provide information in<b>Define alert condition</b></p>
+<p>4.Provide details in<b>Define alert details</b></p>
+<p>5.Specify action group for new alert rule under<b>Action group</b>, or create a new action group with +<b>New group</b></p>
+<p>6.Select<b>Yes</b>for the<b>Enable rule upon creation</b>option</p>
+<p>7.Select<b>Create alert rule</b></p>
+
+<p>To view and manage alerts:</p>
+<p>1.Select<b>Monitor -&gt; Alerts -&gt; Manage alert rules</b></p>
+<p>2.Select the rule you want to modify and double-click to edit the rule options</p>
+<p>3.Click<b>Save</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Azure Resource Manager Templates</p>
+</td>
+<td valign="top" width="312"><p>Azure Resource Manager templates in the format of JSON files that can be used to configure metric alerts in Azure Monitor. These templates can be used for simple static and dynamic threshold metric alerts, availability tests, and monitoring multiple resources.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Enable S3 Bucket Logging</p>
+
+</td>
+<td valign="top" width="312"><p>To enable CloudTrail S3 bucket logging:</p>
+<p>1.Navigate to CloudTrail console at Go to the Amazon CloudTrail console</p>
+<p>2.Click Trails in the API activity history pane on the left</p>
+<p>3.Sign into AWS Management Console and open the S3 console Sign in to the AWS Management Console and open the S3 console</p>
+<p>4.Click on a bucket under<i>All Buckets</i></p>
+<p>5.Click on<i>Properties</i></p>
+<p>6.Under<i>Bucket:_&lt;bucket_name&gt;_</i>click<i>Logging</i></p>
+<p>7.Ensure<i>Enabled</i>is checked</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Enable Azure Storage Logging</p>
+</td>
+<td valign="top" width="312"><p>This is used to track how requests made to Azure Storage were authorized. Enabling logs provides visibility into whether a request was anonymous, made with an OAuth2.0 token, a shared key, or shared access signature (SAS). Full Azure Storage analytics logging details can be found at<a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-analytics-logging?tabs=dotnet"><b>https://docs.microsoft.com/en-us/azure/storage/common/storage-analytics-logging?tabs=dotnet</b></a><b>.</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Enable CloudTrail across all regions in AWS</p>
+</td>
+<td valign="top" width="312"><p>To enable CloudTrail across all regions:</p>
+<p>1.Sign into the AWS Management Console and open the CloudTrail console</p>
+<p>2.Click on<i>Trails</i></p>
+<p>3.Set necessary Trails to All option in the I column</p>
+<p>4.Click on a trail via the link<i>Name</i>column</p>
+<p>5.Set<i>Logging</i>to<i>ON</i></p>
+<p>6.Set<i>Apply trail to all regions</i>to<i>Yes</i></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Configure log profile to capture activity logs for all regions in Azure</p>
+</td>
+<td valign="top" width="312"><p>To set up activity logs for all regions:</p>
+<p>1.Navigate to Azure console</p>
+<p>2.Go to<i>Activity log</i></p>
+<p>3.Select<i>Export</i></p>
+<p>4.Select<i>Subscription</i></p>
+<p>5.Check<i>Select all</i>in<i>Regions</i></p>
+<p>6.Select<i>Save</i></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Monitoring for Regional Activity</p>
+</td>
+<td valign="top" width="312"><p>Tools like Splunk or even CloudSploit have the ability to alert based on region and ingest CloudTrail logs. In CloudSploit, a plugin called EC2 Max Count can be configured to alert after a certain threshold of EC2 instances is met. Real-Time Events service is another feature of CloudSploit that allows alerts for activity in unused regions.</p>
+</td>
+</tr>
+</table>
+
+<p>References</p>
+<p>1.https://www.skyhighnetworks.com/cloud-security-blog/skyhigh-discovers-ghostwriter-a-pervasive-aws-s3-man-in-the-middle-exposure - Accessed Feb 12, 2020</p>
+<p>2.https://www.bloomberg.com/news/articles/2019-07-29/capital-one-data-systems-breached-by-seattle-woman-u-s-says -Accessed March 2, 2020</p>
+
+
+
+</div></body></html>

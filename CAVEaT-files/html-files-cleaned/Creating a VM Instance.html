@@ -1,0 +1,52 @@
+<html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta content="Microsoft Word 15 (filtered)" name="Generator"/></head><body link="blue" vlink="#954F72"><div><p>Creating a VM instance(version 1.1)</p>
+
+<p><b>Cloud Service Label: IaaS</b></p>
+
+<p>Description</p>
+<p>It may be possible for an adversary to steal credentials that allow him to create IaaS assets like VM’s without granting him access to a user’s data sources or security services. However, by creating a VM inside a user’s account an adversary may be able to use the new VM as a means of achieving those accesses. New VM’s may be created with default IAM roles or be permitted through firewalls based on their presence within an existing VPC or virtual network.</p>
+
+<p>Examples</p>
+<table border="1" cellpadding="0" cellspacing="0"><tr><td valign="top" width="312"><p><b>Name</b></p>
+</td>
+<td valign="top" width="312"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Co-residence identification</p>
+</td>
+<td valign="top" width="312"><p>As pointed out in a research paper written by the University of CaIifornia San Diego and the Massachusetts Institute of Technology, massive or targeted generation of VM instances could be used to identify a specific availability zone for a target cloud instance. EC2 instances in AWS utilize the Xen hypervisor, and identifying the privileged virtual machine (Domain0 or Dom0) can help determine physical co-residence location.</p>
+</td>
+</tr>
+</table>
+<p>Mitigations</p>
+<table border="1" cellpadding="0" cellspacing="0"><tr><td valign="top" width="312"><p><b>Mitigation</b></p>
+</td>
+<td valign="top" width="312"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Adhere to zero trust policies</p>
+
+
+</td>
+<td valign="top" width="312"><p>Inspect hosts for listening ports that are unexpected.</p>
+
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Prevent traceroute</p>
+</td>
+<td valign="top" width="312"><p>Disables adversaries from identifying privileged VM’s (Dom0 in EC2)</p>
+</td>
+</tr>
+</table>
+<p>Detection</p>
+<p>Detecting the presence of port-knocking command and control might be possible based on an examination of simple network flow records. In the known exploit, source ports of packets were not increasing monotonically as is the custom from the same IP client. An inspection of flow records from the host would reveal odd behavior as the source ports of packets were jumping around and were both increasing and decreasing by huge amounts in short order.</p>
+
+<p>References</p>
+<p>1. https://www.threatstack.com/security-operations-center/cloud-attack. Accessed Feb 28,2020.</p>
+<p>2.<a href="https://cseweb.ucsd.edu/~savage/papers/CCS09.pdf">https://cseweb.ucsd.edu/~savage/papers/CCS09.pdf</a>. Accessed July 2, 2020.</p>
+
+
+
+
+
+
+</div></body></html>

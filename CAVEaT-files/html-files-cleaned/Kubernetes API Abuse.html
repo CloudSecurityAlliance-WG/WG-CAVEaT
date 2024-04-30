@@ -1,0 +1,137 @@
+<html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta content="Microsoft Word 15 (filtered)" name="Generator"/></head><body link="#0563C1" vlink="#954F72"><div><p>Kubernetes API Abuse(version 1.0)</p>
+
+<p><b>Cloud Service Label: IaaS, PaaS</b></p>
+
+<p>Description</p>
+<p>Cloud workloads are becoming more and more dependent on Kubernetes. Kubernetes is a complex piece of software with a rich and complex API that can be exposed inadvertently through simple misconfigurations. Even when not misconfigured, it can still introduce access opportunities for attackers. In 2018 (CVE-2018-1002105), the first major vulnerability was reported that could compromise the integrity of an entire Kubernetes cluster due to a flaw in the Kubernetes API. Since then several other flaws have been discovered within the Kubernetes API with varying degrees of severity. The remediation in every case has been to upgrade Kubernetes to the latest version. This however may become more problematic as more cloud workloads rely on Kubernetes clusters to handle workloads with strict uptime requirements. If past is prologue, new critical API vulnerabilities can be expected in the coming years. Similar to the Kubernetes API but distinct is the Kubectl command line utility that can also control a Kubernetes cluster. Key vulnerabilities have begun to be found in this software also that could enable an adversary with some cloud console access to increase his capabilities.</p>
+
+<p>Examples</p>
+<table border="1" cellpadding="0" cellspacing="0"><tr><td valign="top" width="312"><p><b>Name</b></p>
+</td>
+<td valign="top" width="312"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>CVE-2019-1002101</p>
+</td>
+<td valign="top" width="312"><p>Allowed adversaries to inject random code running at the privileges of a container if they could simply replace the tar binary in any running container with an executable named tar.</p>
+</td>
+</tr>
+</table>
+<p>Mitigations</p>
+<table border="1" cellpadding="0" cellspacing="0"><tr><td valign="top" width="312"><p><b>Mitigation</b></p>
+</td>
+<td valign="top" width="312"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Limit API Server Access</p>
+</td>
+<td valign="top" width="312"><p>Ensure the API server is accessible only from trusted subnets in a Virtual network.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>No Anonymous Authentication</p>
+</td>
+<td valign="top" width="312"><p>Ensure that anonymous authentication is disabled.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Periodic Vulnerability Scanning</p>
+</td>
+<td valign="top" width="312"><p>Periodically use a Kubernetes vulnerability scanner on any Kubernetes clusters deployed on IaaS.</p>
+</td>
+</tr>
+</table>
+<p>Detection</p>
+<p>Monitor Kubernetes cluster activity to locate unexplained stoppage and starting of containers which could be indicative of adversary experimentation utilizing the Kubernetes API.</p>
+
+<table border="1" cellpadding="0" cellspacing="0"><tr><td valign="top" width="312"><p><b>Detection</b></p>
+</td>
+<td valign="top" width="312"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Create Log Metric Filters and Alarms for AWS</p>
+</td>
+<td valign="top" width="312"><p>To create a metric filter and alarm:</p>
+<p>1.Create a metric filter that checks for IAM policy changes and the<i>&lt;cloudtrail_log_group_name&gt;</i></p>
+<p>2.Create an SNS topic</p>
+<p>3.Create an SNS subscription to the above topic</p>
+<p>4.Create an alarm associated with the filter and SNS topic created in steps 1 and 2 respectively</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Monitor Activity in AWS Account</p>
+</td>
+<td valign="top" width="312"><p>Various services in AWS offer logging features that allow for detection capabilities. These include CloudFront, CloudTrail, CloudWatch, Config, and S3.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Monitor for Suspicious Activity in Azure</p>
+</td>
+<td valign="top" width="312"><p>Azure AD can generate anomaly reports than can be run on a daily basis. Azure AD Identity Protection show current risks in its dashboard and provides daily email summary notifications. Policies can also be configured to alert to specific issues.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Create Log Metric Filters and Alarms for CloudTrail</p>
+</td>
+<td valign="top" width="312"><p>To create a metric filter and alarm:</p>
+<p>1.Create a filter that checks for CloudTrail changes and the specific<i>&lt;cloudtrail_log_group_name&gt;</i></p>
+<p>2.Create an SNS topic that the alarm will notify</p>
+<p>3.Create an SNS subscription to the above topic</p>
+<p>4.Create an alarm associated with the filter from step 1 and SNS topic in step 2</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Create Activity Log Alerts in Azure</p>
+</td>
+<td valign="top" width="312"><p>To create log activity alerts for deletion in the Azure Console:</p>
+<p>1.Navigate to<i>Monitor’ / ‘Alerts</i></p>
+<p>2.Select<i>Manage alert rules</i></p>
+<p>3.Click on the Alert<i>Name</i>where Condition contains<i>operationName equals Microsoft.Network/networkSecurityGroups/securityRules/delete</i></p>
+<p>4.Hover a mouse over<i>Condition</i>to ensure it is set to<i>Whenever the Administrative Activity Log “Delete Security Rule (networkSecurityGroups/securityRules)” has “any” level with “any” status and event is initiated by “any</i>”</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Create, View, and Manage Activity Alerts in Azure Monitor</p>
+</td>
+<td valign="top" width="312"><p>To create a log alert in the Azure portal:</p>
+<p>1.Select<b>Monitor -&gt; Alerts</b></p>
+<p>2.Select<b>New alert rule</b>of the<b>Alerts</b>window</p>
+<p>3.Provide information in<b>Define alert condition</b></p>
+<p>4.Provide details in<b>Define alert details</b></p>
+<p>5.Specify action group for new alert rule under<b>Action group</b>, or create a new action group with +<b>New group</b></p>
+<p>6.Select<b>Yes</b>for the<b>Enable rule upon creation</b>option</p>
+<p>7.Select<b>Create alert rule</b></p>
+
+<p>To view and manage alerts:</p>
+<p>1.Select<b>Monitor -&gt; Alerts -&gt; Manage alert rules</b></p>
+<p>2.Select the rule you want to modify and double-click to edit the rule options</p>
+<p>3.Click<b>Save</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Azure Resource Manager Templates</p>
+</td>
+<td valign="top" width="312"><p>Azure Resource Manager templates in the format of JSON files that can be used to configure metric alerts in Azure Monitor. These templates can be used for simple static and dynamic threshold metric alerts, availability tests, and monitoring multiple resources.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Enable CloudTrail across all regions in AWS</p>
+</td>
+<td valign="top" width="312"><p>To enable CloudTrail across all regions:</p>
+<p>1.Sign into the AWS Management Console and open the CloudTrail console</p>
+<p>2.Click on<i>Trails</i></p>
+<p>3.Set necessary Trails to All option in the I column</p>
+<p>4.Click on a trail via the link<i>Name</i>column</p>
+<p>5.Set<i>Logging</i>to<i>ON</i></p>
+<p>6.Set<i>Apply trail to all regions</i>to<i>Yes</i></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Configure log profile to capture activity logs for all regions in Azure</p>
+</td>
+<td valign="top" width="312"><p>To set up activity logs for all regions:</p>
+<p>1.Navigate to Azure console</p>
+<p>2.Go to<i>Activity log</i></p>
+<p>3.Select<i>Export</i></p>
+<p>4.Select<i>Subscription</i></p>
+<p>5.Check<i>Select all</i>in<i>Regions</i></p>
+<p>6.Select<i>Save</i></p>
+</td>
+</tr>
+</table>
+
+<p>References</p>
+<p>1.<a href="https://www.stackrox.com/post/2020/01/top-5-kubernetes-vulnerabilities-of-2019-the-year-in-review/">https://www.stackrox.com/post/2020/01/top-5-kubernetes-vulnerabilities-of-2019-the-year-in-review/</a>- Accessed March 8,2020</p>
+<p>2.https://arstechnica.com/information-technology/2018/02/tesla-cloud-resources-are-hacked-to-run-cryptocurrency-mining-malware – Accessed March 8, 2020</p>
+<p>3.<a href="https://github.com/aquasecurity/kube-hunter">https://github.com/aquasecurity/kube-hunter</a>- Accessed March 8, 2020</p>
+</div></body></html>

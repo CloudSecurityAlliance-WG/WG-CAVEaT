@@ -1,0 +1,243 @@
+<html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta content="Microsoft Word 15 (filtered)" name="Generator"/></head><body link="#0563C1" vlink="#954F72"><div><p>Cloud Service Enumeration(version 1.1)</p>
+
+<p><b>Cloud Service Label: IaaS, PaaS</b></p>
+
+<p>Description</p>
+<p>An adversary may attempt to enumerate the cloud security services running on a system after gaining initial access. These services can differ depending on if it's platform-as-a-service (PaaS), or infrastructure-as-a-service (IaaS). Most security aspects of Cloud services are easily viewed and configured from the cloud service dashboard/portal. Even without the ability to change security settings, the ability to read the security configurations of network firewalls, monitoring agents, etc., enable a significantly greater opportunity to defeat these defenses.</p>
+
+<p>Examples</p>
+<table border="1" cellpadding="0" cellspacing="0" width="624"><tr><td valign="top" width="198"><p><b>Name</b></p>
+</td>
+<td valign="top" width="426"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="198"><p>AWS Service Enumeration</p>
+</td>
+<td valign="top" width="426"><p>Matching a collected AWS credential with its associated services.<b>aws_service_enum.py</b>on the NotSoSecure GitHub page helps identify various AWS services based on the found access or secret key like S3 buckets, service region, Route53 domains, IP addresses, etc.</p>
+</td>
+</tr>
+<tr><td valign="top" width="198"><p>Azure Service Enumeration</p>
+</td>
+<td valign="top" width="426"><p>Matching a collected Managed Identity access token with its associated services. Providing an access key to<b>azure_service_enum.py</b>on the NotSoSecure GitHub page will enumerate information related to VM ID’s, hardware and storage profiles, operation system types, etc.</p>
+</td>
+</tr>
+<tr><td valign="top" width="198"><p>GCP Service Enumeration</p>
+</td>
+<td valign="top" width="426"><p>Matching a collected OAuth Access Token with its associated services. The list of services can be accessed through the REST API interface, but this process is automated through<b>gcp_service_enum.py</b>on the NotSoSecure GitHub page, where information related to e-mails, applications, storage buckets, can be found.</p>
+</td>
+</tr>
+<tr><td valign="top" width="198"><p>Aws_pwn</p>
+</td>
+<td valign="top" width="426"><p>The aws_pwn GitHub repo has a script named<i>dump_account_data.sh,</i>which calls account-based read, list, get, and describe functions and saves the data to a given location.</p>
+</td>
+</tr>
+<tr><td valign="top" width="198"><p>CloudSploit</p>
+</td>
+<td valign="top" width="426"><p>Once an attacker has gained initial access to a cloud environment, whether it is through credentials or exploitation of a vulnerable service, an open-source tool like CloudSploit can be used to detect security risks and potential misconfigurations in various cloud platforms like AWS, Azure, GCP or Oracle Cloud Infrastructure.</p>
+</td>
+</tr>
+<tr><td valign="top" width="198"><p>Barq</p>
+</td>
+<td valign="top" width="426"><p>Open-source GitHub post-exploitation framework for AWS, created by Voulnet. Features include performing further attacks after intitial access like launching Metasploit and Empire payloads, as well as enumerating information related to EC2 instances, secrets, and metadata.</p>
+</td>
+</tr>
+<tr><td valign="top" width="198"><p>Pacu</p>
+</td>
+<td valign="top" width="426"><p>Post-exploitation tool created by Rhino Security Labs that enables plug-in functionality for enumeration, privilege escalation, data exfiltration, service exploitation, and log manipulation within AWS.</p>
+</td>
+</tr>
+</table>
+
+<p>Mitigations</p>
+<table border="1" cellpadding="0" cellspacing="0" width="624"><tr><td colspan="2" valign="top" width="199"><p><b>Mitigation</b></p>
+</td>
+<td valign="top" width="425"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td colspan="2" valign="top" width="199"><p>Multi-factor Authentication</p>
+</td>
+<td valign="top" width="425"><p>Use multi-factor authentication for user and privileged accounts. Do not manage Cloud portals from machines that perform user email and web browsing tasks. All users should be required to utilize two factor authentication.</p>
+</td>
+</tr>
+<tr><td valign="top" width="106">
+</td>
+<td valign="top" width="93"><p><i>AWS</i></p>
+</td>
+<td valign="top" width="425"><p>This can be enforced by first creating a policy that would prohibit actions except those that allow a user to change their password or manage 2FA, then attaching a policy to a group that includes all user accounts where they can be allowed all access if they sign in with 2FA. Once these actions are completed it should be tested to verify the access is given correctly. To see full details on how to complete this view AWS documentation at:<b>https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_users-self-manage-mfa-and-creds.html.</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="106">
+</td>
+<td valign="top" width="93"><p><i>Azure</i></p>
+</td>
+<td valign="top" width="425"><p>This can be done by creating a MFA registration policy. It can than be assigned to all users (with the ability to exclude some if need be, but is not recommended). Make sure once the policy is created and added to users that it is then being enforced, once enforced it should be tested for verification. To see full details on how to complete this view Azure documentation at:<b>https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/howto-identity-protection-configure-mfa-policy.</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="106">
+</td>
+<td valign="top" width="93"><p><i>GCP</i></p>
+</td>
+<td valign="top" width="425"><p>This can be done by first enabling it on the current account being used by admin to assign the roles, then enable two factor on an instance by instance or project by project basis, then assigning the requirements based on IAM roles and applying it to all users. To see full details on how to complete this view Azure documentation at:<b>https://cloud.google.com/compute/docs/oslogin/setup-two-factor-authentication.</b></p>
+</td>
+</tr>
+<tr><td colspan="2" valign="top" width="199"><p>Privileged Account Management</p>
+</td>
+<td valign="top" width="425"><p>Do not allow subscription-level administrator accounts to be used for day-to-day operations that may expose them to potential adversaries on unprivileged systems. This can be done by first limiting the access that these accounts have outside of the administrative rights, but then also monitoring (details in detection) for events that might show a compromised account.</p>
+</td>
+</tr>
+<tr><td valign="top" width="106">
+</td>
+<td valign="top" width="93"><p>AWS</p>
+</td>
+<td valign="top" width="425"><p>To manage the access that privileged accounts have on the AWS cloud system to only allow administrators to perform administrative tasks on such accounts can be accomplished utilizing limited IAM administrator accounts. To configure this the administrator would have two accounts; one would have administrative rights and no basic access while the other account has basic access with no administrative rights. To limit the administrative account the IAM limited administrator would be used. This is done by creating a policy that gives a user admin rights, but disallows the other actions using the AWS command line interface. This is outlined at:<a href="https://aws.amazon.com/blogs/security/how-to-create-a-limited-iam-administrator-by-using-managed-policies/"><b>https://aws.amazon.com/blogs/security/how-to-create-a-limited-iam-administrator-by-using-managed-policies/</b></a><b>.</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="106">
+</td>
+<td valign="top" width="93"><p>Azure</p>
+</td>
+<td valign="top" width="425"><p>To manage the access that privilege accounts have on the Azure cloud system to only allow administrators to perform administrative tasks on such accounts can be accomplished utilizing limited IAM administrator accounts. To configure this the administrator would have two accounts; one would have administrative rights and no basic access while the other account has basic access with no administrative rights. To limit the administrative account the specific administrative needs can be picked from a number of options available (Azure DevOps Administrator, Billing Administrator, Cloud Application Administrator, etc.) These different options can be edited to fit the needs and limit the basic access. This is outlined at:<a href="https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles"><b>https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles</b></a><b>.</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="106">
+</td>
+<td valign="top" width="93"><p>GCP</p>
+</td>
+<td valign="top" width="425"><p>To manage the access that privilege accounts have on the Azure cloud system to only allow administrators to perform administrative tasks on such accounts can be accomplished utilizing limited IAM administrator accounts. To configure this the administrator would have two accounts; one would have administrative rights and no basic access while the other account has basic access with no administrative rights. To limit the administrative account pre-defined administrator accounts can be used (mobile admin, Google voice admin, help desk admin, etc.). These accounts can be used with their pre-defined settings, or modified depending on specific use cases. These can limit access to basic functionality needed. This is outlined at:<b>https://support.google.com/a/answer/2405986?hl=en.</b></p>
+</td>
+</tr>
+<tr><td colspan="2" valign="top" width="199"><p>Least Privilege</p>
+</td>
+<td valign="top" width="425"><p>All access given to users in the cloud environment should be assigned by the necessary privileges needed for team members to complete their job responsibilities.Ensure that temporary access tokens are issued rather than permanent credentials, especially when access is being granted to entities outside of the internal security boundary .</p>
+</td>
+</tr>
+<tr><td valign="top" width="106">
+</td>
+<td valign="top" width="93"><p>AWS</p>
+</td>
+<td valign="top" width="425"><p>To implement least privilege in an AWS environment IAM policies will be used. This gives the ability to allow users to perform list, read, write, permissions management, or tagging actions. AWS suggests utilizing<i>last accessed information</i>and A<i>WS CloudTrail event history</i>to get a better understanding of privileges that might be needed or reduced based on a specific role. Full details can be found at<b>https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#grant-least-privilege.</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="106">
+</td>
+<td valign="top" width="93"><p>Azure</p>
+</td>
+<td valign="top" width="425"><p>To implement least privilege in an Azure environment Azure Active Directory roles will be used. Azure outlines different tasks and the least privileged role that are suggested to be associated with the task. Those details can be found at:<b>https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/roles-delegate-by-task.</b>To learn how to assign specific roles it can be done via the Azure Active Directory Portal. Instructions on how to assign roles can be found here:<b>https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-manage-roles-portal.</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="106">
+</td>
+<td valign="top" width="93"><p>GCP</p>
+</td>
+<td valign="top" width="425"><p>To implement least privilege in GCP it is recommended to use predefined roles (which allow for granular access permissions) instead of primitive roles (roles/owner, roles/editor, and roles/viewer). Full details on the difference between types of roles can be found here:<b>https://cloud.google.com/iam/docs/understanding-roles.</b>To assign these roles IAM service accounts are used and complete details can be found at:<b>https://cloud.google.com/iam/docs/using-iam-securely#least_privilege.</b></p>
+</td>
+</tr>
+<tr><td colspan="2" valign="top" width="199"><p>Temporary Access Tokens</p>
+</td>
+<td valign="top" width="425"><p>Rotate access keys often to shorten abuse potential</p>
+</td>
+</tr>
+<tr><td colspan="2" valign="top" width="199"><p>Block Network Discovery Tools</p>
+</td>
+<td valign="top" width="425"><p>Prevent tools like nmap, traceroute, ping from non-whitelisted accounts</p>
+</td>
+</tr>
+</table>
+<p>Detection</p>
+<table border="1" cellpadding="0" cellspacing="0"><tr><td valign="top" width="312"><p><b>Detection</b></p>
+</td>
+<td valign="top" width="312"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Create Log Metric Filters and Alarms for AWS</p>
+</td>
+<td valign="top" width="312"><p>To create a metric filter and alarm:</p>
+<p>1.Create a metric filter that checks for IAM policy changes and the<i>&lt;cloudtrail_log_group_name&gt;</i></p>
+<p>2.Create an SNS topic</p>
+<p>3.Create an SNS subscription to the above topic</p>
+<p>4.Create an alarm associated with the filter and SNS topic created in steps 1 and 2 respectively</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Monitor Activity in AWS Account</p>
+</td>
+<td valign="top" width="312"><p>Various services in AWS offer logging features that allow for detection capabilities. These include CloudFront, CloudTrail, CloudWatch, Config, and S3.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Monitor for Suspicious Activity in Azure</p>
+</td>
+<td valign="top" width="312"><p>Azure AD can generate anomaly reports than can be run on a daily basis. Azure AD Identity Protection show current risks in its dashboard and provides daily email summary notifications. Policies can also be configured to alert to specific issues.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Create Log Metric Filters and Alarms for CloudTrail</p>
+</td>
+<td valign="top" width="312"><p>To create a metric filter and alarm:</p>
+<p>1.Create a filter that checks for CloudTrail changes and the specific<i>&lt;cloudtrail_log_group_name&gt;</i></p>
+<p>2.Create an SNS topic that the alarm will notify</p>
+<p>3.Create an SNS subscription to the above topic</p>
+<p>4.Create an alarm associated with the filter from step 1 and SNS topic in step 2</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Create Activity Log Alerts in Azure</p>
+</td>
+<td valign="top" width="312"><p>To create log activity alerts for deletion in the Azure Console:</p>
+<p>1.Navigate to<i>Monitor’ / ‘Alerts</i></p>
+<p>2.Select<i>Manage alert rules</i></p>
+<p>3.Click on the Alert<i>Name</i>where Condition contains<i>operationName equals Microsoft.Network/networkSecurityGroups/securityRules/delete</i></p>
+<p>4.Hover a mouse over<i>Condition</i>to ensure it is set to<i>Whenever the Administrative Activity Log “Delete Security Rule (networkSecurityGroups/securityRules)” has “any” level with “any” status and event is initiated by “any</i>”</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Create, View, and Manage Activity Alerts in Azure Monitor</p>
+</td>
+<td valign="top" width="312"><p>To create a log alert in the Azure portal:</p>
+<p>1.Select<b>Monitor -&gt; Alerts</b></p>
+<p>2.Select<b>New alert rule</b>of the<b>Alerts</b>window</p>
+<p>3.Provide information in<b>Define alert condition</b></p>
+<p>4.Provide details in<b>Define alert details</b></p>
+<p>5.Specify action group for new alert rule under<b>Action group</b>, or create a new action group with +<b>New group</b></p>
+<p>6.Select<b>Yes</b>for the<b>Enable rule upon creation</b>option</p>
+<p>7.Select<b>Create alert rule</b></p>
+
+<p>To view and manage alerts:</p>
+<p>1.Select<b>Monitor -&gt; Alerts -&gt; Manage alert rules</b></p>
+<p>2.Select the rule you want to modify and double-click to edit the rule options</p>
+<p>3.Click<b>Save</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Azure Resource Manager Templates</p>
+</td>
+<td valign="top" width="312"><p>Azure Resource Manager templates in the format of JSON files that can be used to configure metric alerts in Azure Monitor. These templates can be used for simple static and dynamic threshold metric alerts, availability tests, and monitoring multiple resources.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Enable CloudTrail across all regions in AWS</p>
+</td>
+<td valign="top" width="312"><p>To enable CloudTrail across all regions:</p>
+<p>1.Sign into the AWS Management Console and open the CloudTrail console</p>
+<p>2.Click on<i>Trails</i></p>
+<p>3.Set necessary Trails to All option in the I column</p>
+<p>4.Click on a trail via the link<i>Name</i>column</p>
+<p>5.Set<i>Logging</i>to<i>ON</i></p>
+<p>6.Set<i>Apply trail to all regions</i>to<i>Yes</i></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Configure log profile to capture activity logs for all regions in Azure</p>
+</td>
+<td valign="top" width="312"><p>To set up activity logs for all regions:</p>
+<p>1.Navigate to Azure console</p>
+<p>2.Go to<i>Activity log</i></p>
+<p>3.Select<i>Export</i></p>
+<p>4.Select<i>Subscription</i></p>
+<p>5.Check<i>Select all</i>in<i>Regions</i></p>
+<p>6.Select<i>Save</i></p>
+</td>
+</tr>
+</table>
+
+<p>References</p>
+<p>1.<a href="https://cseweb.ucsd.edu/~savage/papers/CCS09.pdf">https://cseweb.ucsd.edu/~savage/papers/CCS09.pdf</a>. Accessed July 2, 2020.</p>
+<p>2.<a href="https://github.com/NotSoSecure/cloud-service-enum/">https://github.com/NotSoSecure/cloud-service-enum/</a>. Accessed July 6, 2020.</p>
+<p>3.<a href="https://github.com/dagrz/aws_pwn">https://github.com/dagrz/aws_pwn</a>. Accessed July 16. 2020.</p>
+<p>4.https://github.com/cloudsploit/scans. Accessed July 22, 2020.</p>
+<p>5.https://github.com/Voulnet/barq. Accessed July 23, 2020.</p>
+<p>6.https://github.com/RhinoSecurityLabs/pacu. Accessed July 24, 2020.</p>
+
+</div></body></html>

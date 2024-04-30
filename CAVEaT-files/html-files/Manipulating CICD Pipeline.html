@@ -1,0 +1,651 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Segoe UI";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+p.paragraph, li.paragraph, div.paragraph
+	{mso-style-name:paragraph;
+	margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+span.normaltextrun
+	{mso-style-name:normaltextrun;}
+span.eop
+	{mso-style-name:eop;}
+.MsoChpDefault
+	{font-size:12.0pt;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-CA link=blue vlink="#954F72" style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:white'><span lang=EN style='font-size:24.0pt;
+font-family:"Arial",sans-serif;color:black'>Manipulating CI/CD Pipeline </span><span
+lang=EN style='font-family:"Arial",sans-serif;color:black'>(version 1.0)</span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt'><b><span lang=EN-US
+style='font-size:14.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-top:6.0pt'><b><span lang=EN-US
+style='font-size:14.0pt;font-family:"Arial",sans-serif;color:#404040'>Cloud
+Service Label:  IaaS, PaaS</span></b></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:white'><span lang=EN style='font-size:24.0pt;
+font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:white'><span lang=EN style='font-size:16.0pt;
+font-family:"Arial",sans-serif;color:black'>Description</span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:white'><span lang=EN style='font-family:"Arial",sans-serif;
+color:black'>Many cloud providers support automated integration of various
+Continuous Integration/Continuous Deployment tools such as Jenkins, GitLab,
+Travis CI, or Circle CI. However, there are downsides for faster and more
+efficient code releases through a CI/CD pipeline. Some include oversight and
+lack of testing for deployment systems. An attacker who gains permission to
+these services could add code that as long as it passes quality checks will
+likely be incorporated in cloud applications allowing code execution with the
+permissions of the application.  Adversaries may even attempt to sign code in
+an attempt to thwart CI/CD security checks.</span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:white'><span lang=EN style='font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:16.0pt;font-family:"Arial",sans-serif'>Examples</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='font-family:"Arial",sans-serif'>Name</span></b><span
+  lang=EN-US style='font-family:"Arial",sans-serif'>&nbsp;</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='font-family:"Arial",sans-serif'>Description</span></b><span
+  lang=EN-US style='font-family:"Arial",sans-serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>Jenkins
+  CVE’s</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif;
+  color:black'>There are many related vulnerabilities related to Jenkins
+  modules and plug-ins. They include </span><span lang=EN-US><a
+  href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=2016-0788"><span
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif;
+  color:black'>CVE-2016-0788</span></a></span><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif;
+  color:black'>, </span><span lang=EN-US><a
+  href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=2017-2652"><span
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif;
+  color:black'>CVE-2017-2652</span></a></span><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif;
+  color:black'>, </span><span lang=EN-US><a
+  href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=2015-7539"><span
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif;
+  color:black'>CVE-2015-7539</span></a></span><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif;
+  color:black'>, and many others. Full list can be found on the </span><span
+  lang=EN-US><a href="https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=jenkins"><span
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif;
+  color:black'>CVE website</span></a></span><span lang=EN-US style='font-size:
+  9.0pt;line-height:107%;font-family:"Arial",sans-serif;color:black'>.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>Configuration
+  Files</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif;
+  color:black'>At DEFCON 25, spaceb0x covered environment variable
+  manipulation, command injection, and malicious resource provisioning by
+  editing public configuration files and sending them to build or deployment
+  servers.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>CIDER</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif;
+  color:black'>Spaceb0x presented the Continuous Integration and Deployment
+  Exploiter (or CIDER) at DEFCON 25, which is a framework aimed to exploit
+  CI/CD pipelines through GitHub pull requests of both public and private
+  source code repositories.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>Rotten
+  Apple</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif;
+  color:black'>Rotten Apple is a CI/CD audit framework used to identify if the
+  root user is being used to build projects and if attackers can deploy
+  malicious code to steal API keys, to pivot to private networks, to
+  authenticate using GitHub credentials, to create reverse shells, to
+  exfiltrate data, to access other projects on the same server or to steal SSH
+  keys. The framework also has an attack mode, which can be used for
+  penetration testing.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN style='font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:16.0pt;font-family:"Arial",sans-serif'>Mitigations</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='font-family:"Arial",sans-serif'>Mitigation</span></b></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='font-family:"Arial",sans-serif'>Description</span></b><span
+  lang=EN-US style='font-family:"Arial",sans-serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>Limit
+  Permissions for Applications</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span class=normaltextrun><span lang=EN-US
+  style='font-size:9.0pt;font-family:"Arial",sans-serif;color:#404040'>If code
+  is inserted into a CI/CD pipeline a cloud administrator is unlikely to know. 
+  By ensuring applications have only the permissions absolutely required will
+  minimize the impact of compromise.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>Patches
+  and Updates</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span class=normaltextrun><span lang=EN-US
+  style='font-size:9.0pt;font-family:"Arial",sans-serif;color:#404040'>Always
+  ensure applications used in the pipeline and the CI/CD pipeline itself are
+  updated and patched to their most recent versions.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>Zero
+  Trust</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span class=normaltextrun><span lang=EN-US
+  style='font-size:9.0pt;font-family:"Arial",sans-serif;color:#404040'>Disable
+  transitive/implied trust between applications.</span></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:18.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=paragraph style='margin:0in;vertical-align:baseline'><span
+class=normaltextrun><span lang=EN-US style='font-size:16.0pt;font-family:"Arial",sans-serif'>Detection</span></span><span
+class=eop><span lang=EN-US style='font-size:16.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></span></p>
+
+<div style='border:none;border-bottom:solid #A2A9B1 1.0pt;padding:0in 0in 10.0pt 0in'>
+
+<p class=paragraph style='margin:0in;border:none;padding:0in'><span class=eop><span
+lang=EN-US style='font-family:"Arial",sans-serif'>There is the potential that a
+code review of an application or hash comparison of application files from some
+trusted repo might detect additions to code. Network sockets and connections
+created by code could be detected by network flow logs. Scanning, monitoring,
+and alerting tools built into the pipeline can be utilized to notify of any
+malicious changes or new vulnerabilities.</span></span></p>
+
+</div>
+
+<p class=paragraph style='margin:0in'><span class=eop><span lang=EN-US
+style='font-family:"Arial",sans-serif'>&nbsp;</span></span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US>Detection of unusual behavior after
+  exploit</span></b></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US>Description</span></b><span
+  lang=EN-US>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt'>Create Log Metric
+  Filters and Alarms for AWS</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt'>To create a
+  metric filter and alarm:</span></p>
+  <p class=MsoListParagraphCxSpFirst style='margin-bottom:8.0pt;text-indent:
+  -.25in'><span lang=EN-US style='font-size:9.0pt'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt'>Create a metric filter
+  that checks for IAM policy changes and the <i>&lt;cloudtrail_log_group_name&gt;</i></span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in'><span lang=EN-US style='font-size:9.0pt'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt'>Create an SNS topic</span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in'><span lang=EN-US style='font-size:9.0pt'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt'>Create an SNS
+  subscription to the above topic</span></p>
+  <p class=MsoListParagraphCxSpLast style='margin-bottom:8.0pt;text-indent:
+  -.25in'><span lang=EN-US style='font-size:9.0pt'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt'>Create an alarm
+  associated with the filter and SNS topic created in steps 1 and 2
+  respectively</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt'>Monitor Activity
+  in AWS Account</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt'>Various services
+  in AWS offer logging features that allow for detection capabilities. These
+  include CloudFront, CloudTrail, CloudWatch, Config, and S3. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt'>Monitor for
+  Suspicious Activity in Azure</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt'>Azure AD can
+  generate anomaly reports than can be run on a daily basis. Azure AD Identity
+  Protection show current risks in its dashboard and provides daily email
+  summary notifications. Policies can also be configured to alert to specific
+  issues.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt'>Create Log Metric
+  Filters and Alarms for CloudTrail</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt'>To create a
+  metric filter and alarm:</span></p>
+  <p class=MsoListParagraphCxSpFirst style='margin-bottom:8.0pt;text-indent:
+  -.25in'><span lang=EN-US style='font-size:9.0pt'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt'>Create a filter that
+  checks for CloudTrail changes and the specific <i>&lt;cloudtrail_log_group_name&gt;</i></span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in'><span lang=EN-US style='font-size:9.0pt'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt'>Create an SNS topic
+  that the alarm will notify</span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in'><span lang=EN-US style='font-size:9.0pt'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt'>Create an SNS
+  subscription to the above topic</span></p>
+  <p class=MsoListParagraphCxSpLast style='margin-bottom:8.0pt;text-indent:
+  -.25in'><span lang=EN-US style='font-size:9.0pt'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt'>Create an alarm
+  associated with the filter from step 1 and SNS topic in step 2</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt'>Create Activity
+  Log Alerts in Azure</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt'>To create log
+  activity alerts for deletion in the Azure Console:</span></p>
+  <p class=MsoListParagraphCxSpFirst style='margin-bottom:8.0pt;text-indent:
+  -.25in'><span lang=EN-US style='font-size:9.0pt'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt'>Navigate to <i>Monitor’
+  / ‘Alerts</i></span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in'><span lang=EN-US style='font-size:9.0pt'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt'>Select <i>Manage alert
+  rules</i></span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in'><span lang=EN-US style='font-size:9.0pt'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt'>Click on the Alert <i>Name</i>
+  where Condition contains <i>operationName equals
+  Microsoft.Network/networkSecurityGroups/securityRules/delete</i></span></p>
+  <p class=MsoListParagraphCxSpLast style='margin-bottom:8.0pt;text-indent:
+  -.25in'><span lang=EN-US style='font-size:9.0pt'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt'>Hover a mouse over <i>Condition</i>
+  to ensure it is set to <i>Whenever the Administrative Activity Log “Delete
+  Security Rule (networkSecurityGroups/securityRules)” has “any” level with
+  “any” status and event is initiated by “any</i>”</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt'>Create, View, and
+  Manage Activity Alerts in Azure Monitor</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt'>To create a log
+  alert in the Azure portal:</span></p>
+  <p class=MsoListParagraphCxSpFirst style='margin-bottom:8.0pt;text-indent:
+  -.25in'><span lang=EN-US style='font-size:9.0pt'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt'>Select <b>Monitor
+  -&gt; Alerts</b></span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in'><span lang=EN-US style='font-size:9.0pt'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt'>Select <b>New alert
+  rule</b> of the <b>Alerts</b> window</span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in'><span lang=EN-US style='font-size:9.0pt'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt'>Provide information in
+  <b>Define alert condition</b></span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in'><span lang=EN-US style='font-size:9.0pt'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt'>Provide details in <b>Define
+  alert details</b></span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in'><span lang=EN-US style='font-size:9.0pt'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt'>Specify action group
+  for new alert rule under <b>Action group</b>, or create a new action group
+  with + <b>New group</b></span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in'><span lang=EN-US style='font-size:9.0pt'>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt'>Select <b>Yes</b> for
+  the <b>Enable rule upon creation</b> option</span></p>
+  <p class=MsoListParagraphCxSpLast style='margin-bottom:8.0pt;text-indent:
+  -.25in'><span lang=EN-US style='font-size:9.0pt'>7.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt'>Select <b>Create alert
+  rule</b></span></p>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt'>&nbsp;</span></p>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt'>To view and
+  manage alerts:</span></p>
+  <p class=MsoListParagraphCxSpFirst style='margin-bottom:8.0pt;text-indent:
+  -.25in'><span lang=EN-US style='font-size:9.0pt'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt'>Select <b>Monitor
+  -&gt; Alerts -&gt; Manage alert rules</b></span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in'><span lang=EN-US style='font-size:9.0pt'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt'>Select the rule you
+  want to modify and double-click to edit the rule options</span></p>
+  <p class=MsoListParagraphCxSpLast style='margin-bottom:8.0pt;text-indent:
+  -.25in'><span lang=EN-US style='font-size:9.0pt'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt'>Click <b>Save</b></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt'>Azure Resource
+  Manager Templates</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt'>Azure Resource
+  Manager templates in the format of JSON files that can be used to configure
+  metric alerts in Azure Monitor. These templates can be used for simple static
+  and dynamic threshold metric alerts, availability tests, and monitoring
+  multiple resources.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt'>Enable CloudTrail
+  across all regions in AWS</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt'>To enable
+  CloudTrail across all regions:</span></p>
+  <p class=MsoListParagraphCxSpFirst style='margin-bottom:8.0pt;text-indent:
+  -.25in'><span lang=EN-US style='font-size:9.0pt'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt'>Sign into the AWS
+  Management Console and open the CloudTrail console</span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in'><span lang=EN-US style='font-size:9.0pt'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt'>Click on <i>Trails</i>
+  </span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in'><span lang=EN-US style='font-size:9.0pt'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt'>Set necessary Trails
+  to All option in the I column</span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in'><span lang=EN-US style='font-size:9.0pt'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt'>Click on a trail via
+  the link <i>Name</i> column</span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in'><span lang=EN-US style='font-size:9.0pt'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt'>Set <i>Logging</i> to <i>ON</i></span></p>
+  <p class=MsoListParagraphCxSpLast style='margin-bottom:8.0pt;text-indent:
+  -.25in'><span lang=EN-US style='font-size:9.0pt'>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt'>Set <i>Apply trail to
+  all regions</i> to <i>Yes</i></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt'>Configure log
+  profile to capture activity logs for all regions in Azure</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt'>To set up
+  activity logs for all regions:</span></p>
+  <p class=MsoListParagraphCxSpFirst style='margin-bottom:8.0pt;text-indent:
+  -.25in'><span lang=EN-US style='font-size:9.0pt'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt'>Navigate to Azure
+  console</span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in'><span lang=EN-US style='font-size:9.0pt'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt'>Go to <i>Activity log</i></span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in'><span lang=EN-US style='font-size:9.0pt'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt'>Select <i>Export</i></span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in'><span lang=EN-US style='font-size:9.0pt'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt'>Select <i>Subscription</i></span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in'><span lang=EN-US style='font-size:9.0pt'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt'>Check <i>Select all</i>
+  in <i>Regions</i></span></p>
+  <p class=MsoListParagraphCxSpLast style='margin-bottom:8.0pt;text-indent:
+  -.25in'><span lang=EN-US style='font-size:9.0pt'>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt'>Select <i>Save</i></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=paragraph style='margin:0in'><span class=eop><span lang=EN-US
+style='font-family:"Arial",sans-serif'>&nbsp;</span></span></p>
+
+<div style='border:none;border-bottom:solid #A2A9B1 1.0pt;padding:0in 0in 10.0pt 0in'>
+
+<p class=paragraph style='margin:0in;border:none;padding:0in'><span lang=EN
+style='font-size:16.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=paragraph style='margin:0in;border:none;padding:0in'><span lang=EN
+style='font-size:16.0pt;font-family:"Arial",sans-serif'>References</span></p>
+
+</div>
+
+<p class=MsoListParagraphCxSpFirst style='margin-top:12.0pt;margin-right:0in;
+margin-bottom:3.0pt;margin-left:.5in;text-indent:-.25in;background:white'><span
+lang=EN style='color:black'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='color:black'><a
+href="https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=jenkins"><span lang=EN
+style='font-family:"Arial",sans-serif'>https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=jenkins</span></a></span><span
+lang=EN style='font-family:"Arial",sans-serif;color:black'>. Accessed July 13,
+2020.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:12.0pt;margin-right:0in;
+margin-bottom:3.0pt;margin-left:.5in;text-indent:-.25in;background:white'><span
+lang=EN style='font-family:"Arial",sans-serif;color:black'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN style='font-family:"Arial",sans-serif;color:black'>https://thenewstack.io/poorly-configured-ci-cd-systems-can-be-a-backdoor-into-your-infrastructure/.
+Accessed July 06, 2020.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:12.0pt;margin-right:0in;
+margin-bottom:3.0pt;margin-left:.5in;text-indent:-.25in;background:white'><span
+lang=EN style='font-family:"Arial",sans-serif;color:black'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN style='font-family:"Arial",sans-serif;color:black'>https://www.youtube.com/watch?v=mpUDqo7tIk8.
+Accessed July 06, 2020</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:12.0pt;margin-right:0in;
+margin-bottom:3.0pt;margin-left:.5in;text-indent:-.25in;background:white'><span
+lang=EN style='font-family:"Arial",sans-serif;color:black'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN style='font-family:"Arial",sans-serif;color:black'>https://github.com/spaceB0x/cider.
+Accessed July 07, 2020</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-top:12.0pt;margin-right:0in;
+margin-bottom:3.0pt;margin-left:.5in;text-indent:-.25in;background:white'><span
+lang=EN style='font-family:"Arial",sans-serif;color:black'>5.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN style='font-family:"Arial",sans-serif;color:black'>https://github.com/claudijd/rotten_apple.
+Accessed July 07, 2020</span></p>
+
+<p class=MsoNormal style='margin-bottom:1.2pt;margin-left:38.4pt;background:
+white'><span lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>

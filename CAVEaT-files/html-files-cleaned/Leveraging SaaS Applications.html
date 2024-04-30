@@ -1,0 +1,165 @@
+<html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta content="Microsoft Word 15 (filtered)" name="Generator"/></head><body link="blue" vlink="#954F72"><div><p>Leveraging SaaS Applications(version 1.0)</p>
+
+<p><b>Cloud Service Label: SaaS, IaaS</b></p>
+
+<p>Description</p>
+<p>The adversary is trying to communicate with compromised systems to control them.</p>
+<p>Command and Control consists of techniques that adversaries may use to communicate with systems under their control within a victim network. Adversaries commonly attempt to mimic normal, expected traffic to avoid detection. There are many ways an adversary can establish command and control with various levels of stealth depending on the victim’s network structure and defenses.</p>
+
+<p>Examples</p>
+<table border="1" cellpadding="0" cellspacing="0"><tr><td valign="top" width="312"><p><b>Name</b></p>
+</td>
+<td valign="top" width="312"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>SLUB</p>
+</td>
+<td valign="top" width="312"><p>Malware spreading unique watering hole websites and through<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-8174">CVE-2018-8174</a>and<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-0752">CVE-2019-0752</a>. Command and Control vectors include GitHub and Slack, with much more focus on the latter. Utilizes TLS from API’s to evade detection since it is presented as normal network traffic.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p><a href="https://github.com/netskopeOSS/saasy_boi">SaaSy_boi</a></p>
+</td>
+<td valign="top" width="312"><p>Proof-of-Concept project presented at DEFCON27. Purpose is to establish CnC vectors through various SaaS and social media services. Examples include Slack, Twitter, and GitHub and starts by retrieving their respective API keys. SaaSy_boi offers file upload, download, and execute functionality, creating reverse shells, and actively taking screenshots of the compromised machine.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p><a href="https://github.com/byt3bl33d3r/gcat">Gcat</a></p>
+</td>
+<td valign="top" width="312"><p>Python based backdoor that uses G-mail as a CnC server.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p><a href="https://github.com/PaulSec/twittor">Twittor</a></p>
+</td>
+<td valign="top" width="312"><p>Python based backdoor that uses Twitter direct messages (DM’s) as a CnC server.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p><a href="https://github.com/Coalfire-Research/Slackor">Slackor</a></p>
+</td>
+<td valign="top" width="312"><p>A GoLang project that uses Slack as a CnC server.</p>
+</td>
+</tr>
+</table>
+<p>Mitigations</p>
+<table border="1" cellpadding="0" cellspacing="0"><tr><td valign="top" width="312"><p><b>Mitigation</b></p>
+</td>
+<td valign="top" width="312"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Manage log data like other sensitive data</p>
+
+</td>
+<td valign="top" width="312"><p>Ensure log data is protected and managed like any other confidential data source with encryption at rest and positive control.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Cloud Access Security Broker</p>
+</td>
+<td valign="top" width="312"><p>Implement CASB solutions to ensure cloud resources are being properly accessed.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Endpoint Detection</p>
+</td>
+<td valign="top" width="312"><p>Anti-virus or malware detection services will flag and protect against any suspicious information and files.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Disable unnecessary SaaS</p>
+</td>
+<td valign="top" width="312"><p>Adversaries could potentially exploit available Enterprise SaaS the same as an open port or service on a machine. Harden, lockdown, or outright disable any SaaS that is not needed.</p>
+</td>
+</tr>
+</table>
+<p>Detections</p>
+<table border="1" cellpadding="0" cellspacing="0"><tr><td valign="top" width="312"><p><b>Detection</b></p>
+</td>
+<td valign="top" width="312"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Create Log Metric Filters and Alarms for AWS</p>
+</td>
+<td valign="top" width="312"><p>To create a metric filter and alarm:</p>
+<p>1.Create a metric filter that checks for IAM policy changes and the<i>&lt;cloudtrail_log_group_name&gt;</i></p>
+<p>2.Create an SNS topic</p>
+<p>3.Create an SNS subscription to the above topic</p>
+<p>4.Create an alarm associated with the filter and SNS topic created in steps 1 and 2 respectively</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Monitor Activity in AWS Account</p>
+</td>
+<td valign="top" width="312"><p>Various services in AWS offer logging features that allow for detection capabilities. These include CloudFront, CloudTrail, CloudWatch, Config, and S3.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Monitor for Suspicious Activity in Azure</p>
+</td>
+<td valign="top" width="312"><p>Azure AD can generate anomaly reports than can be run on a daily basis. Azure AD Identity Protection show current risks in its dashboard and provides daily email summary notifications. Policies can also be configured to alert to specific issues.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Create Log Metric Filters and Alarms for CloudTrail</p>
+</td>
+<td valign="top" width="312"><p>To create a metric filter and alarm:</p>
+<p>1.Create a filter that checks for CloudTrail changes and the specific<i>&lt;cloudtrail_log_group_name&gt;</i></p>
+<p>2.Create an SNS topic that the alarm will notify</p>
+<p>3.Create an SNS subscription to the above topic</p>
+<p>4.Create an alarm associated with the filter from step 1 and SNS topic in step 2</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Create Activity Log Alerts in Azure</p>
+</td>
+<td valign="top" width="312"><p>To create log activity alerts for deletion in the Azure Console:</p>
+<p>1.Navigate to<i>Monitor’ / ‘Alerts</i></p>
+<p>2.Select<i>Manage alert rules</i></p>
+<p>3.Click on the Alert<i>Name</i>where Condition contains<i>operationName equals Microsoft.Network/networkSecurityGroups/securityRules/delete</i></p>
+<p>4.Hover a mouse over<i>Condition</i>to ensure it is set to<i>Whenever the Administrative Activity Log “Delete Security Rule (networkSecurityGroups/securityRules)” has “any” level with “any” status and event is initiated by “any</i>”</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Create, View, and Manage Activity Alerts in Azure Monitor</p>
+</td>
+<td valign="top" width="312"><p>To create a log alert in the Azure portal:</p>
+<p>1.Select<b>Monitor -&gt; Alerts</b></p>
+<p>2.Select<b>New alert rule</b>of the<b>Alerts</b>window</p>
+<p>3.Provide information in<b>Define alert condition</b></p>
+<p>4.Provide details in<b>Define alert details</b></p>
+<p>5.Specify action group for new alert rule under<b>Action group</b>, or create a new action group with +<b>New group</b></p>
+<p>6.Select<b>Yes</b>for the<b>Enable rule upon creation</b>option</p>
+<p>7.Select<b>Create alert rule</b></p>
+
+<p>To view and manage alerts:</p>
+<p>1.Select<b>Monitor -&gt; Alerts -&gt; Manage alert rules</b></p>
+<p>2.Select the rule you want to modify and double-click to edit the rule options</p>
+<p>3.Click<b>Save</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Azure Resource Manager Templates</p>
+</td>
+<td valign="top" width="312"><p>Azure Resource Manager templates in the format of JSON files that can be used to configure metric alerts in Azure Monitor. These templates can be used for simple static and dynamic threshold metric alerts, availability tests, and monitoring multiple resources.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Enable CloudTrail across all regions in AWS</p>
+</td>
+<td valign="top" width="312"><p>To enable CloudTrail across all regions:</p>
+<p>1.Sign into the AWS Management Console and open the CloudTrail console</p>
+<p>2.Click on<i>Trails</i></p>
+<p>3.Set necessary Trails to All option in the I column</p>
+<p>4.Click on a trail via the link<i>Name</i>column</p>
+<p>5.Set<i>Logging</i>to<i>ON</i></p>
+<p>6.Set<i>Apply trail to all regions</i>to<i>Yes</i></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Configure log profile to capture activity logs for all regions in Azure</p>
+</td>
+<td valign="top" width="312"><p>To set up activity logs for all regions:</p>
+<p>1.Navigate to Azure console</p>
+<p>2.Go to<i>Activity log</i></p>
+<p>3.Select<i>Export</i></p>
+<p>4.Select<i>Subscription</i></p>
+<p>5.Check<i>Select all</i>in<i>Regions</i></p>
+<p>6.Select<i>Save</i></p>
+</td>
+</tr>
+</table>
+
+<p>References</p>
+<p>1.<a href="https://blog.trendmicro.com/trendlabs-security-intelligence/slub-gets-rid-of-github-intensifies-slack-use/">https://blog.trendmicro.com/trendlabs-security-intelligence/slub-gets-rid-of-github-intensifies-slack-use/</a>. Accessed July 9, 2020.</p>
+<p>2.<a href="https://www.youtube.com/watch?v=m5NxE9yZjR4">https://www.youtube.com/watch?v=m5NxE9yZjR4</a>. Accessed July 9, 2020.</p>
+<p>3.<a href="https://github.com/netskopeOSS/saasy_boi">https://github.com/netskopeOSS/saasy_boi</a>. Accessed July 9, 2020.</p>
+<p>4.<a href="https://github.com/byt3bl33d3r/gcat">https://github.com/byt3bl33d3r/gcat</a>. Accessed July 9, 2020.</p>
+<p>5.<a href="https://github.com/PaulSec/twittor">https://github.com/PaulSec/twittor</a>. Accessed July 9, 2020.</p>
+<p>6.<a href="https://github.com/Coalfire-Research/Slackor">https://github.com/Coalfire-Research/Slackor</a>. Accessed July 9, 2020.</p>
+</div></body></html>

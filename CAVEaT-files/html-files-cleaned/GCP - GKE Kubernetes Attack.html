@@ -1,0 +1,46 @@
+<html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta content="Microsoft Word 15 (filtered)" name="Generator"/></head><body link="#0563C1" vlink="#954F72"><div><p>GKE (Google Kubernetes Engine) Kubernetes Attack(version 1.1)</p>
+
+<p><b>Cloud Service Label: IaaS, PaaS</b></p>
+
+<p>Description</p>
+<p>Kubernetes is becoming extremely popular and due to containers being popular in the cloud this has led to many clients of providers such as GCP, AWS, and Azure utilizing Kubernetes to orchestrate containerized applications. Google Kubernetes Engine (GKE) is Google Cloud Platform’s Kubernetes management system. There are ways that an adversary might exploit GKE to perform privilege escalation.</p>
+
+<p>Examples</p>
+<table border="1" cellpadding="0" cellspacing="0"><tr><td valign="top" width="312"><p><b>Name</b></p>
+</td>
+<td valign="top" width="312"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Rhino Security Labs</p>
+</td>
+<td valign="top" width="312"><p>Start with compromised GCP Credentials. Then list compute engine VM instances and log HTTP requests and responses. Then adversary would steal Kubelet bootstrap TLS credentials from the HTTP requests and responses log file that was listed. They would then submit certificate signing request to Kubernetes control plane, act as Kubernetes worker node, and steal Kubernetes secrets with worker node credentials; these steps can be repeated until the adversary is able to gain cluster-admin access. Once the cluster-admin access is gained they can list Kubernetes pods, execute into container, steal container service account, access the computer engine instance meta data server, steal GCP service account token, and access GCP cloud resources.</p>
+</td>
+</tr>
+</table>
+<p>Mitigations</p>
+<table border="1" cellpadding="0" cellspacing="0" width="624"><tr><td valign="top" width="312"><p><b>Mitigation</b></p>
+</td>
+<td valign="top" width="312"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Two Factor Authentication</p>
+</td>
+<td valign="top" width="312"><p>Use two factor authentication for user accounts.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Enable GKE Metadata Server</p>
+</td>
+<td valign="top" width="312"><p>Consider enabling GKE Metadata Server which improves security and replaces Compute Engine VM instances Metadata Server.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Least Privilege</p>
+</td>
+<td valign="top" width="312"><p>Use the concept of least privilege for management accounts.</p>
+</td>
+</tr>
+</table>
+<p>Detection</p>
+<p>References</p>
+<p>1.<a href="https://cseweb.ucsd.edu/~savage/papers/CCS09.pdf">https://cseweb.ucsd.edu/~savage/papers/CCS09.pdf</a>. Accessed July 2, 2020.</p>
+
+</div></body></html>
