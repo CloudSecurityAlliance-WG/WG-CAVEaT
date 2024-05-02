@@ -1,5 +1,5 @@
-# WG-CAVEaT-data
-WG-CAVEaT-data
+# WG-CAVEaT
+WG-CAVEaT Working Group data
 
 # TODO
 
