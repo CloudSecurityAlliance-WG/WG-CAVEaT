@@ -1,6 +1,8 @@
-# WG-CAVEaT
+# WG-CAVEaT (Cloud Adversarial Vectors, Exploits, and Threats)
 
-WG-CAVEaT Working Group data
+WG-CAVEaT Working Group data, you can find out more about the (CAVEaT Working Group in Circle)[https://circle.cloudsecurityalliance.org/community-home1?communitykey=cce2fd58-ba71-4280-9e3d-018c352d4100].
+
+If you are interested in this project feel free to (sign up with your email address)[https://csaurl.org/WG-CAVEaT-Form]
 
 ## CAVEaT Chatbot:
 
