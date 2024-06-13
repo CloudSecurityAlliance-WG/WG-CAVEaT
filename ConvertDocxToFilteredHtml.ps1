@@ -1,3 +1,7 @@
+#
+# To make this work you will need to be able to run local scripts:
+# Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
+#
 # Get the path to the current directory
 $currentDirectory = Get-Location
 
