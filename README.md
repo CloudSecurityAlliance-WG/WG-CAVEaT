@@ -8,6 +8,8 @@ If you are interested in this project feel free to (sign up with your email addr
 
 https://csaurl.org/WG-CAVEaT-Chatbot
 
+https://github.com/Cloudsecurityalliance-Chatbots/chatbot-CAVEaT-data
+
 The prompt is:
 
 > The GPT-powered chatbot is designed to assist users in exploring and understanding the Cloud Adversarial, Vectors,
