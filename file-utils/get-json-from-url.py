@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+#!/usr/bin/env python3
+
 import argparse
 import subprocess
 import tempfile
@@ -16,10 +18,11 @@ def get_dom_from_url(url):
         dom_data = file.read()
     return dom_data
 
-def get_output_filename_from_url(url):
+def get_output_filename_from_url(url, root_url):
     parsed_url = urlparse(url)
-    path = parsed_url.path.rstrip('/')
-    filename = os.path.basename(path)
+    parsed_root_url = urlparse(root_url)
+    path = parsed_url.path.replace(parsed_root_url.path, '').strip('/')
+    filename = path.replace('/', '-')
     if not filename:
         filename = 'index'
     return f"{filename}.json"
@@ -27,11 +30,13 @@ def get_output_filename_from_url(url):
 def main():
     parser = argparse.ArgumentParser(description="Extract data from a HTML page which is a DOM dump using Google Chrome headless and FoundationModelAPIClient.")
     parser.add_argument('url', type=str, help='The URL of the web page to process.')
+    parser.add_argument('root_url', type=str, help='The root URL to be removed from the URL to create the output filename.')
     args = parser.parse_args()
 
     url = args.url
+    root_url = args.root_url
     dom_data = get_dom_from_url(url)
-    output_file = get_output_filename_from_url(url)
+    output_file = get_output_filename_from_url(url, root_url)
 
     model = 'chatgpt'
     system_prompt = "You are a helpful AI that takes HTML content (a dump of the Document Object Model or DOM from google chrome headless) and extracts data from it into a JSON format and then gives that back to the user. Do not include anything like ```json at the start, I just want raw JSON"
