@@ -66,7 +66,6 @@ Creating a VM instance(version 1.1),Identity & Access Management,IAM-09,"Creatin
 "Loss of Availability(version 1.0)",Business Continuity Management and Operational Resilience,BCR-01,"Loss of availability in CAVEaT is directly related to CCM's policies and procedures for business continuity and operational resilience.",10
 "Loss of Availability(version 1.0)",Change Control and Configuration Management,CCC-01,"Loss of availability as described in CAVEaT could result from unauthorized changes, so CCM's change management policies are relevant.",5
 "Loss of Reputation/Value(version 1.0)","Governance, Risk and Compliance",GRC-01,"Loss of reputation/value in CAVEaT is a governance issue and should be included in CCM's information governance program policies and procedures.",9
-CAVEaT Item,CCM Control Title,CCM Control ID,Justification,Relevance Score
 Abuse Queue Services(version 1.0),Application & Interface Security,AIS-05,"CAVEaT discusses securing queue services, which aligns with CCM's control on application security testing to maintain compliance and enable secure delivery.",8
 Abuse Queue Services(version 1.0),Infrastructure & Virtualization Security,IVS-09,"Abusing queue services in CAVEaT is a type of attack that CCM's control on defense-in-depth aims to detect and respond to.",5
 Abuse Queue Services(version 1.0),Application & Interface Security,AIS-02,"CCM requires establishing application security baselines, which should include secure configurations for queue services to prevent abuse as mentioned in CAVEaT.",7
@@ -103,7 +102,6 @@ Account Manipulation(version 1.0),Change Control & Configuration Management,CCC-
 "Collecting Data from Cloud Logs(version 1.0)",Data Security and Privacy Lifecycle Management,DSP-01,"CAVEaT describes collecting potentially sensitive data from cloud logs, which relates to CCM's policies on handling data securely throughout its lifecycle.",4
 "Collecting Data from Cloud Logs(version 1.0)",Identity & Access Management,IAM-09,"Collecting data from logs as described in CAVEaT likely requires privileged access, which should be segregated and controlled per CCM.",6
 "Collecting Data from Cloud Logs(version 1.0)",Threat & Vulnerability Management,TVM-03,"The ability to collect data from logs is a vulnerability that should have a defined remediation schedule based on CCM.",5
-CAVEaT Item,CCM Control Title,CCM Control ID,Justification,Relevance Score
 "Data/VM Backups(version 1.0)",Data Security and Privacy Lifecycle Management,DSP-03,"CAVEaT discusses data/VM backup security, which relates to CCM's control about creating a data inventory to track where sensitive data is stored.",6
 "Data/VM Backups(version 1.0)",Business Continuity Management and Operational Resilience,BCR-08,"Backups are important for business continuity and operational resilience, so CCM's control requiring backups directly aligns with the topic in CAVEaT.",7
 "Data/VM Backups(version 1.0)",Logging and Monitoring,LOG-03,"Unauthorized access to backups as described in CAVEaT should trigger security alerts per CCM's logging and monitoring control.",5
@@ -140,7 +138,6 @@ CAVEaT Item,CCM Control Title,CCM Control ID,Justification,Relevance Score
 "Exploiting Containers(version 1.0)",Infrastructure & Virtualization Security,IVS-01,"CAVEaT discusses exploiting containers, which is directly related to CCM's policies and procedures for infrastructure and virtualization security.",10
 "Exploiting Containers(version 1.0)",Threat & Vulnerability Management,TVM-08,"Exploiting containers as mentioned in CAVEaT represents a vulnerability that CCM requires prioritizing for remediation based on risk.",6
 "Exploiting Containers(version 1.0)",Logging and Monitoring,LOG-03,"Attempts to exploit containers as described in CAVEaT should be detected as security events per CCM's logging and monitoring control.",7
-CAVEaT Item,CCM Control Title,CCM Control ID,Justification,Relevance Score
 "GKE (Google Kubernetes Engine) Kubernetes Attack(version 1.1)",Infrastructure & Virtualization Security,IVS-06,"CAVEaT outlines an attack on GKE, Google's managed Kubernetes service. CCM specifies controls for properly segmenting and restricting access within infrastructures such as Kubernetes clusters.",9
 "GKE (Google Kubernetes Engine) Kubernetes Attack(version 1.1)",Logging and Monitoring,LOG-03,"The GKE attack described in CAVEaT should trigger security alerts based on CCM's logging and monitoring control.",5
 "GKE (Google Kubernetes Engine) Kubernetes Attack(version 1.1)",Threat & Vulnerability Management,TVM-01,"The GKE attack leverages vulnerabilities that should be identified and remediated per CCM's vulnerability management policies.",7
@@ -174,7 +171,6 @@ CAVEaT Item,CCM Control Title,CCM Control ID,Justification,Relevance Score
 "Manipulate Cloud Configuration(version 1.0)",Change Control and Configuration Management,CCC-01,"CAVEaT discusses manipulating cloud configurations, which falls under CCM's policies and procedures for change management and risks associated with changes.",8
 "Manipulate Cloud Configuration(version 1.0)",Identity & Access Management,IAM-01,"Manipulating cloud configurations requires access that should be controlled per CCM's IAM policies and procedures.",7
 "Manipulate Cloud Configuration(version 1.0)","Governance, Risk and Compliance",GRC-02,"The risks of manipulated configurations as described in CAVEaT should be assessed as part of CCM's risk management program.",6
-CAVEaT Item,CCM Control Title,CCM Control ID,Justification,Relevance Score
 "Manipulating CI/CD Pipeline(version 1.0)",Change Control and Configuration Management,CCC-02,"CAVEaT is about CI/CD pipeline manipulation, which would be prevented by CCM's control requiring a defined quality change control, testing, and release process.",9
 "Manipulating CI/CD Pipeline(version 1.0)",Threat & Vulnerability Management,TVM-03,"Vulnerabilities in the CI/CD pipeline that enable manipulation as described in CAVEaT should have a defined remediation schedule per CCM.",7
 "Manipulating CI/CD Pipeline(version 1.0)","Supply Chain Management, Transparency, and Accountability",STA-03,"CI/CD pipelines may be managed by third parties, so CCM's control about CSPs providing guidance on the shared responsibility model is relevant.",5
@@ -205,7 +201,6 @@ Remote Code Execution(version 1.1),Threat & Vulnerability Management,TVM-03,"The
 "Revert Cloud Instance(version 1.0)",Infrastructure & Virtualization Security,IVS-07,"Reverting cloud instances in CAVEaT to remove evidence of compromise bypasses secure migration procedures that CCM requires.",8
 "Revert Cloud Instance(version 1.0)",Change Control and Configuration Management,CCC-03,"Reverting instances represents a change to the environment that should be managed per CCM's change management technology control.",6
 "Revert Cloud Instance(version 1.0)",Business Continuity Management & Operational Resilience,BCR-05,"Instance reversion relates to backup and recovery, so documentation required by CCM's BCR control is relevant.",5
-CAVEaT Item,CCM Control Title,CCM Control ID,Justification,Relevance Score
 "S3/Blob Manipulation(version 1.0)",Threat & Vulnerability Management,TVM-03,"Adversaries modifying S3/blob data in CAVEaT is a vulnerability that requires establishing a remediation schedule as per CCM.",8
 "S3/Blob Manipulation(version 1.0)",Logging and Monitoring,LOG-03,"Unauthorized access and modifications to S3/blobs should trigger security alerts per CCM's logging and monitoring control.",7
 "S3/Blob Manipulation(version 1.0)",Infrastructure & Virtualization Security,IVS-06,"S3/blob manipulation relates to segmentation and segregation of access to infrastructure components, as required by CCM.",6
@@ -236,7 +231,6 @@ CAVEaT Item,CCM Control Title,CCM Control ID,Justification,Relevance Score
 "Unencrypted Network Traffic(version 1.0)","Cryptography, Encryption & Key Management",CEK-03,"Unencrypted traffic mentioned in CAVEaT can be addressed through CCM's control requiring cryptographic protection of data in-transit.",9
 "Unencrypted Network Traffic(version 1.0)",Infrastructure & Virtualization Security,IVS-03,"CCM requires encrypting communications, which directly addresses the unencrypted traffic issue in CAVEaT.",8
 "Unencrypted Network Traffic(version 1.0)",Threat & Vulnerability Management,TVM-03,"Transmitting sensitive data over unencrypted channels is a vulnerability that requires a defined remediation schedule per CCM.",7
-CAVEaT Item,CCM Control Title,CCM Control ID,Justification,Relevance Score
 "Unused (Unsupported) Cloud Regions(version 1.0)",Logging and Monitoring,LOG-03,"Using unused cloud regions to evade detection in CAVEaT can be mitigated by CCM's control to monitor security events and generate alerts.",8
 "Unused (Unsupported) Cloud Regions(version 1.0)",Infrastructure & Virtualization Security,IVS-08,"CCM requires identifying high-risk environments, which would include unused regions as mentioned in CAVEaT.",6
 "Unused (Unsupported) Cloud Regions(version 1.0)",Change Control and Configuration Management,CCC-01,"Enabling unused regions represents a change that should go through CCM's change management policies and procedures.",5
@@ -252,7 +246,6 @@ CAVEaT Item,CCM Control Title,CCM Control ID,Justification,Relevance Score
 "White Listing(version 1.0)",Infrastructure & Virtualization Security,IVS-09,"CAVEaT discusses whitelisting to evade detection, which can be addressed by the defense-in-depth techniques for timely attack response required by CCM.",7
 "White Listing(version 1.0)",Change Control and Configuration Management,CCC-01,"Adding entries to whitelists is a change that should be managed through CCM's change management policies and procedures.",6
 "White Listing(version 1.0)",Threat & Vulnerability Management,TVM-03,"Improperly configured whitelists enable vulnerabilities that should have a defined remediation schedule per CCM.",8
-CAVEaT Item,CCM Control Title,CCM Control ID,Justification,Relevance Score
 "Leveraging Cloud Shells(version 1.0)",Identity & Access Management,IAM-09,"CAVEaT discusses misusing cloud shells, which often have high privileges. CCM requires segregating privileged access roles to mitigate this risk.",8
 "Leveraging Cloud Shells(version 1.0)",Logging and Monitoring,LOG-01,"Actions performed in cloud shells as described in CAVEaT should be logged and monitored based on CCM's policies and procedures.",6
 "Leveraging Cloud Shells(version 1.0)",Infrastructure & Virtualization Security,IVS-09,"Leveraging cloud shells for malicious purposes as described in CAVEaT requires defense-in-depth controls defined in CCM.",7
