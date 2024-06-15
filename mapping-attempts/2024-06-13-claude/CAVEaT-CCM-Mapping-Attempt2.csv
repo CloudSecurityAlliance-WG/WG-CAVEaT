@@ -205,7 +205,6 @@ Remote Code Execution(version 1.1),Threat & Vulnerability Management,TVM-03,"The
 "Revert Cloud Instance(version 1.0)",Infrastructure & Virtualization Security,IVS-07,"Reverting cloud instances in CAVEaT to remove evidence of compromise bypasses secure migration procedures that CCM requires.",8
 "Revert Cloud Instance(version 1.0)",Change Control and Configuration Management,CCC-03,"Reverting instances represents a change to the environment that should be managed per CCM's change management technology control.",6
 "Revert Cloud Instance(version 1.0)",Business Continuity Management & Operational Resilience,BCR-05,"Instance reversion relates to backup and recovery, so documentation required by CCM's BCR control is relevant.",5
-Here is the mapping for CAVEaT entries 41-50 with relevant CCM controls and justifications:
 CAVEaT Item,CCM Control Title,CCM Control ID,Justification,Relevance Score
 "S3/Blob Manipulation(version 1.0)",Threat & Vulnerability Management,TVM-03,"Adversaries modifying S3/blob data in CAVEaT is a vulnerability that requires establishing a remediation schedule as per CCM.",8
 "S3/Blob Manipulation(version 1.0)",Logging and Monitoring,LOG-03,"Unauthorized access and modifications to S3/blobs should trigger security alerts per CCM's logging and monitoring control.",7
