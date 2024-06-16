@@ -1,0 +1,133 @@
+{
+  "id": "T1105",
+  "name": "Ingress Tool Transfer",
+  "description": "Adversaries may transfer tools or other files from an external system into a compromised environment. Tools or files may be copied from an external adversary-controlled system to the victim network through the command and control channel or through alternate protocols such as ftp. Once present, adversaries may also transfer/spread tools between victim devices within a compromised environment (i.e. Lateral Tool Transfer).",
+  "procedureExamples": [
+    {
+      "id": "C0028",
+      "name": "2015 Ukraine Electric Power Attack",
+      "description": "During the 2015 Ukraine Electric Power Attack, Sandworm Team pushed additional malicious tools onto an infected system to steal user credentials, move laterally, and destroy data.",
+      "urls": [
+        "https://attack.mitre.org/campaigns/C0028",
+        "https://www.boozallen.com/content/dam/boozallen/documents/2016/09/ukraine-report-when-the-lights-went-out.pdf"  
+      ]
+    },
+    {
+      "id": "S0469",
+      "name": "ABK",
+      "description": "ABK has the ability to download files from C2.",
+      "urls": [
+        "https://documents.trendmicro.com/assets/pdf/Operation-ENDTRADE-TICK-s-Multi-Stage-Backdoors-for-Attacking-Industries-and-Stealing-Classified-Data.pdf"
+      ]
+    },
+    {
+      "id": "S1028",
+      "name": "Action RAT",
+      "description": "Action RAT has the ability to download additional payloads onto an infected machine.",
+      "urls": [
+        "https://www.malwarebytes.com/blog/news/2021/12/sidecopy-apt-connecting-lures-to-victims-payloads-to-infrastructure"
+      ]
+    },
+    {
+      "id": "S0331",
+      "name": "Agent Tesla",
+      "description": "Agent Tesla can download additional files for execution on the victim's machine.",
+      "urls": [
+        "https://blog.trendmicro.com/trendlabs-security-intelligence/old-dog-new-tricks-analysing-new-rtf_15.html",
+        "https://www.cybereason.com/blog/information-stealing-malware-targeting-brazil-full-research"  
+      ]
+    },
+    {
+      "id": "S1087",
+      "name": "AsyncRAT",
+      "description": "AsyncRAT has the ability to download files over SFTP.",
+      "urls": [
+        "https://github.com/NYAN-x-CAT/AsyncRAT-C-Sharp/blob/master/README.md"
+      ]
+    },
+    {
+      "id": "S0438",
+      "name": "Attor",
+      "description": "Attor can download additional plugins, updates and other files.",
+      "urls": [
+        "https://www.welivesecurity.com/wp-content/uploads/2019/10/ESET_Attor.pdf"  
+      ]
+    },
+    {
+      "id": "S0347",
+      "name": "AuditCred",
+      "description": "AuditCred can download files and additional malware.",
+      "urls": [
+        "https://blog.trendmicro.com/trendlabs-security-intelligence/lazarus-continues-heists-mounts-attacks-on-financial-organizations-in-latin-america/"
+      ]
+    },
+    {
+      "id": "S0473", 
+      "name": "Avenger",
+      "description": "Avenger has the ability to download files from C2 to a compromised host.",
+      "urls": [
+        "https://documents.trendmicro.com/assets/pdf/Operation-ENDTRADE-TICK-s-Multi-Stage-Backdoors-for-Attacking-Industries-and-Stealing-Classified-Data.pdf"
+      ]
+    },
+    {
+      "id": "S0344",
+      "name": "Azorult",
+      "description": "Azorult can download and execute additional files. Azorult has also downloaded a ransomware payload called Hermes.",
+      "urls": [
+        "https://researchcenter.paloaltonetworks.com/2018/11/unit42-new-wine-old-bottle-new-azorult-variant-found-findmyname-campaign-using-fallout-exploit-kit/",
+        "https://www.proofpoint.com/us/threat-insight/post/new-version-azorult-stealer-improves-loading-features-spreads-alongside"
+      ] 
+    },
+    {
+      "id": "S0414",
+      "name": "BabyShark",
+      "description": "BabyShark has downloaded additional files from the C2.",
+      "urls": [
+        "https://unit42.paloaltonetworks.com/babyshark-malware-part-two-attacks-continue-using-kimjongrat-and-pcrat/",
+        "https://us-cert.cisa.gov/ncas/alerts/aa20-301a"
+      ]
+    }
+  ],
+  "mitigations": [
+    {
+      "id": "M1031",
+      "name": "Network Intrusion Prevention",
+      "description": "Network intrusion detection and prevention systems that use network signatures to identify traffic for specific adversary malware or unusual data transfer over known protocols like FTP can be used to mitigate activity at the network level. Signatures are often for unique indicators within protocols and may be based on the specific obfuscation technique used by a particular adversary or tool, and will likely be different across various malware families and versions. Adversaries will likely change tool C2 signatures over time or construct protocols in such a way as to avoid detection by common defensive tools.",
+      "urls": [
+        "https://arxiv.org/ftp/arxiv/papers/1408/1408.1136.pdf"
+      ]
+    }
+  ],
+  "detection": [
+    {
+      "dataSource": "DS0017",
+      "dataSourceName": "Command",
+      "dataComponent": "Command Execution",
+      "description": "Monitor executed commands and arguments for suspicious activity associated with downloading external content."
+    },
+    {  
+      "dataSource": "DS0022",
+      "dataSourceName": "File",
+      "dataComponent": "File Creation",
+      "description": "Monitor for file creation and files transferred into the network"
+    },
+    {
+      "dataSource": "DS0029",
+      "dataSourceName": "Network Traffic",  
+      "dataComponent": "Network Connection Creation",
+      "description": "Monitor for newly constructed network connections that are sent or received by untrusted hosts or creating files on-system may be suspicious. Use of utilities, such as FTP, that does not normally occur may also be suspicious."
+    },
+    {
+      "dataSource": "DS0029",
+      "dataSourceName": "Network Traffic",
+      "dataComponent": "Network Traffic Content",  
+      "description": "Monitor network traffic content for files and other potentially malicious content, especially data coming in from abnormal/unknown domain and IPs."
+    },
+    {
+      "dataSource": "DS0029",
+      "dataSourceName": "Network Traffic",
+      "dataComponent": "Network Traffic Flow",
+      "description": "Monitor network data for uncommon data flows (e.g., a client sending significantly more data than it receives from a server). Processes utilizing the network that do not normally have network communication or have never been seen before are suspicious."
+    }
+  ]
+}

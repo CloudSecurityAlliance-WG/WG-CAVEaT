@@ -1,0 +1,128 @@
+{
+  "id": "T1203",
+  "name": "Exploitation for Client Execution",
+  "description": "Adversaries may exploit software vulnerabilities in client applications to execute code. Vulnerabilities can exist in software due to unsecure coding practices that can lead to unanticipated behavior. Adversaries can take advantage of certain vulnerabilities through targeted exploitation for the purpose of arbitrary code execution. Oftentimes the most valuable exploits to an offensive toolkit are those that can be used to obtain code execution on a remote system because they can be used to gain access to that system. Users will expect to see files related to the applications they commonly used to do work, so they are a useful target for exploit research and development because of their high utility.",
+  "procedures": [
+    {
+      "groupId": "G0018",
+      "groupName": "admin@338",
+      "description": "admin@338 has exploited client software vulnerabilities for execution, such as Microsoft Word CVE-2012-0158.",
+      "url": "https://www.fireeye.com/blog/threat-research/2015/11/china-based-threat.html"
+    },
+    {
+      "softwareId": "S0331", 
+      "softwareName": "Agent Tesla",
+      "description": "Agent Tesla has exploited Office vulnerabilities such as CVE-2017-11882 and CVE-2017-8570 for execution during delivery.",
+      "url": "https://labs.sentinelone.com/agent-tesla-old-rat-uses-new-tricks-to-stay-on-top/"
+    },
+    {
+      "groupId": "G0138",
+      "groupName": "Andariel",
+      "description": "Andariel has exploited numerous ActiveX vulnerabilities, including zero-days.",
+      "urls": [
+        "https://www.fsec.or.kr/user/bbs/fsec/163/344/bbsDataView/1680.do",
+        "http://www.issuemakerslab.com/research3/",
+        "https://www.trendmicro.com/en_us/research/18/g/new-andariel-reconnaissance-tactics-hint-at-next-targets.html"
+      ]
+    },
+    {
+      "groupId": "G1007",
+      "groupName": "Aoqin Dragon",
+      "description": "Aoqin Dragon has exploited CVE-2012-0158 and CVE-2010-3333 for execution against targeted systems.",
+      "url": "https://www.sentinelone.com/labs/aoqin-dragon-newly-discovered-chinese-linked-apt-has-been-quietly-spying-on-organizations-for-10-years/"
+    },
+    {
+      "groupId": "G0005",
+      "groupName": "APT12",
+      "description": "APT12 has exploited multiple vulnerabilities for execution, including Microsoft Office vulnerabilities (CVE-2009-3129, CVE-2012-0158) and vulnerabilities in Adobe Reader and Flash (CVE-2009-4324, CVE-2009-0927, CVE-2011-0609, CVE-2011-0611).",
+      "urls": [
+        "https://www.fireeye.com/blog/threat-research/2014/09/darwins-favorite-apt-group-2.html",
+        "https://www.trendmicro.de/cloud-content/us/pdfs/security-intelligence/white-papers/wp_ixeshe.pdf"  
+      ]
+    },
+    {
+      "groupId": "G0007",
+      "groupName": "APT28",
+      "description": "APT28 has exploited Microsoft Office vulnerability CVE-2017-0262 for execution.",
+      "url": "https://securelist.com/a-slice-of-2017-sofacy-activity/83930/"
+    },
+    {
+      "groupId": "G0016",
+      "groupName": "APT29",
+      "description": "APT29 has used multiple software exploits for common client software, like Microsoft Word, Exchange, and Adobe Reader, to gain code execution.",
+      "urls": [
+        "https://www.f-secure.com/documents/996508/1030745/dukes_whitepaper.pdf",
+        "https://www.ncsc.gov.uk/files/Advisory-further-TTPs-associated-with-SVR-cyber-actors.pdf",
+        "https://www.microsoft.com/security/blog/2021/05/27/new-sophisticated-email-based-attack-from-nobelium/"
+      ]
+    },
+    {
+      "groupId": "G0022",
+      "groupName": "APT3",
+      "description": "APT3 has exploited the Adobe Flash Player vulnerability CVE-2015-3113 and Internet Explorer vulnerability CVE-2014-1776.",
+      "urls": [
+        "https://www.fireeye.com/blog/threat-research/2015/06/operation-clandestine-wolf-adobe-flash-zero-day.html",
+        "https://www.fireeye.com/blog/threat-research/2014/04/new-zero-day-exploit-targeting-internet-explorer-versions-9-through-11-identified-in-targeted-attacks.html"
+      ]
+    },
+    {
+      "groupId": "G0050",
+      "groupName": "APT32",
+      "description": "APT32 has used RTF document that includes an exploit to execute malicious code. (CVE-2017-11882)",
+      "url": "https://www.welivesecurity.com/2019/03/20/fake-or-fake-keeping-up-with-oceanlotus-decoys/"
+    },
+    {
+      "groupId": "G0064",
+      "groupName": "APT33",
+      "description": "APT33 has attempted to exploit a known vulnerability in WinRAR (CVE-2018-20250), and attempted to gain remote code execution via a security bypass vulnerability (CVE-2017-11774).",
+      "urls": [
+        "https://www.symantec.com/blogs/threat-intelligence/elfin-apt33-espionage",
+        "https://www.microsoft.com/security/blog/2020/06/18/inside-microsoft-threat-protection-mapping-attack-chains-from-cloud-to-endpoint/"
+      ]
+    }
+  ],
+  "mitigations": [
+    {
+      "id": "M1048",
+      "name": "Application Isolation and Sandboxing",
+      "description": "Browser sandboxes can be used to mitigate some of the impact of exploitation, but sandbox escapes may still exist. Other types of virtualization and application microsegmentation may also mitigate the impact of client-side exploitation. Risks of additional exploits and weaknesses in those systems may still exist.",
+      "urls": [
+        "https://blogs.windows.com/msedgedev/2017/03/23/strengthening-microsoft-edge-sandbox/",
+        "https://arstechnica.com/information-technology/2017/03/hack-that-escapes-vm-by-exploiting-edge-browser-fetches-105000-at-pwn2own/"
+      ]
+    },
+    {
+      "id": "M1050",
+      "name": "Exploit Protection",
+      "description": "Security applications that look for behavior used during exploitation such as Windows Defender Exploit Guard (WDEG) and the Enhanced Mitigation Experience Toolkit (EMET) can be used to mitigate some exploitation behavior. Control flow integrity checking is another way to potentially identify and stop a software exploit from occurring. Many of these protections depend on the architecture and target application binary for compatibility.",
+      "urls": [
+        "https://blogs.technet.microsoft.com/srd/2017/08/09/moving-beyond-emet-ii-windows-defender-exploit-guard/",
+        "https://en.wikipedia.org/wiki/Control-flow_integrity"
+      ]
+    }
+  ],
+  "detection": [
+    {
+      "dataSourceId": "DS0015",
+      "dataSourceName": "Application Log",
+      "dataComponent": "Application Log Content",
+      "description": "Detecting software exploitation may be difficult depending on the tools available. Software exploits may not always succeed or may cause the exploited process to become unstable or crash."
+    },
+    {
+      "dataSourceId": "DS0009", 
+      "dataSourceName": "Process",
+      "dataComponent": "Process Creation",
+      "description": "Monitor for abnormal process creations, such as a Command and Scripting Interpreter spawning from a potentially exploited application. Also look for other behavior on the endpoint system that might indicate successful compromise, such as abnormal behavior of browser or Office processes.",
+      "detectionAnalytics": [
+        {
+          "description": "Office Application Process Execution",
+          "query": "(source=\"*WinEventLog:Microsoft-Windows-Sysmon/Operational\" EventCode=\"1\") OR (source=\"*WinEventLog:Security\" EventCode=\"4688\") AND (Image= \"\\winword.exe\" OR Image= \"\\excel.exe\" OR Image= \"*\\powerpnt.exe\") AND (CommandLine= \"*macro*\" OR CommandLine= \"*automation*\" OR CommandLine= \"*shellcode*\") AND ParentCommandLine= \"*open*\""
+        },
+        {  
+          "description": "Unusual Child Process Creation",
+          "query": "(source=\"*WinEventLog:Microsoft-Windows-Sysmon/Operational\" EventCode=\"1\") OR (source=\"*WinEventLog:Security\" EventCode=\"4688\") AND (ParentImage= \"\\winword.exe\" OR ParentImage= \"\\excel.exe\" OR ParentImage= \"\\powerpnt.exe\") AND (Image != \"\\system32\\\" OR Image != \"*\\program files\")"
+        }
+      ]
+    }
+  ]
+}
