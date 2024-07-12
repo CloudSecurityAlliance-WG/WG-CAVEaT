@@ -65,6 +65,7 @@ And the data is the CAVEaT-files/CAVEaT-all-entries.html file
   * CWE - https://cwe.mitre.org/
   * CVE - https://github.com/cveproject/cvelistV5/
 * Center for Threat Informed Defense https://center-for-threat-informed-defense.github.io/mappings-explorer/ (get JSON files)
+  * ALL DATA: https://github.com/center-for-threat-informed-defense/mappings-explorer/tree/main/mappings
   * AWS - https://center-for-threat-informed-defense.github.io/mappings-explorer/external/aws/ 
   * Azure - https://center-for-threat-informed-defense.github.io/mappings-explorer/external/aws/
   * CVE - https://center-for-threat-informed-defense.github.io/mappings-explorer/external/cve/
@@ -73,3 +74,6 @@ And the data is the CAVEaT-files/CAVEaT-all-entries.html file
   * M365 - https://center-for-threat-informed-defense.github.io/mappings-explorer/external/m365/
   * VERIS - https://center-for-threat-informed-defense.github.io/mappings-explorer/external/veris/
 
+## A note on data formats
+
+JSON is preferred, then either HTML or MD, finally text.
