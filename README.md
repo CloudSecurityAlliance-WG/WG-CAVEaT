@@ -52,11 +52,19 @@ And the data is the CAVEaT-files/CAVEaT-all-entries.html file
 
 ### Mappings
 
-* Mapping to categories from ATT&CK, FIGHT and so on - DONE
-* Mapping to CSA CCM (https://cloudsecurityalliance.org/artifacts/cloud-controls-matrix-v4) including mitigations, controls, etc.
-* Mapping to CSA Top Threats report (https://cloudsecurityalliance.org/research/topics/top-threats) including mitigations, controls, etc.
-* Mapping to CWE (https://cwe.mitre.org/)
-* Mapping to https://cloudsecurityalliance.org/artifacts/top-threats-to-cloud-computing-pandemic-eleven-deep-dive and other top 10s
+* MITRE
+  * ATLAS - https://atlas.mitre.org/
+  * ATT&CK - https://attack.mitre.org/ https://github.com/mitre-attack/attack-stix-data
+  * CAVEaT - https://github.com/CloudSecurityAlliance-WG/WG-CAVEaT 
+  * FIGHT - https://fight.mitre.org/
+  * ICS - https://attack.mitre.org/techniques/ics/
+  * CWE - https://cwe.mitre.org/
+  * CVE - https://github.com/cveproject/cvelistV5/
+* Cloud Security Alliance
+  * Mapping to CSA CCM (https://cloudsecurityalliance.org/artifacts/cloud-controls-matrix-v4) including mitigations, controls, etc.
+  * Mapping to CSA Top Threats report (https://cloudsecurityalliance.org/research/topics/top-threats) including mitigations, controls, etc.
+  * Mapping to CSA Pandemic 11 https://cloudsecurityalliance.org/artifacts/top-threats-to-cloud-computing-pandemic-eleven-deep-dive and other top 10s
+
 
 ### Additional sources for new CAVEaT
 
