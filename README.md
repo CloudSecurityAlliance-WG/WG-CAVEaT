@@ -52,21 +52,24 @@ And the data is the CAVEaT-files/CAVEaT-all-entries.html file
 
 ### Mappings
 
-* MITRE
-  * ATLAS - https://atlas.mitre.org/
+* Cloud Security Alliance
+  * Mapping to CSA CAIQ/CCM (https://cloudsecurityalliance.org/artifacts/cloud-controls-matrix-v4)
+  * Mapping to CSA Top Threats report (https://cloudsecurityalliance.org/research/topics/top-threats) including mitigations, controls, etc.
+  * Mapping to CSA Pandemic 11 https://cloudsecurityalliance.org/artifacts/top-threats-to-cloud-computing-pandemic-eleven-deep-dive and other top 10s
+* MITRE 
+  * ATLAS - https://atlas.mitre.org/ https://atlas.mitre.org/resources/info
   * ATT&CK - https://attack.mitre.org/ https://github.com/mitre-attack/attack-stix-data
-  * CAVEaT - https://github.com/CloudSecurityAlliance-WG/WG-CAVEaT 
-  * FIGHT - https://fight.mitre.org/
+  * CAVEaT - https://github.com/CloudSecurityAlliance-WG/WG-CAVEaT/tree/main/CAVEaT-files/md-files
+  * FIGHT - https://fight.mitre.org/ https://fight.mitre.org/fight.yaml
   * ICS - https://attack.mitre.org/techniques/ics/
   * CWE - https://cwe.mitre.org/
   * CVE - https://github.com/cveproject/cvelistV5/
-* Cloud Security Alliance
-  * Mapping to CSA CCM (https://cloudsecurityalliance.org/artifacts/cloud-controls-matrix-v4) including mitigations, controls, etc.
-  * Mapping to CSA Top Threats report (https://cloudsecurityalliance.org/research/topics/top-threats) including mitigations, controls, etc.
-  * Mapping to CSA Pandemic 11 https://cloudsecurityalliance.org/artifacts/top-threats-to-cloud-computing-pandemic-eleven-deep-dive and other top 10s
+* Center for Threat Informed Defense https://center-for-threat-informed-defense.github.io/mappings-explorer/ (get JSON files)
+  * AWS - https://center-for-threat-informed-defense.github.io/mappings-explorer/external/aws/ 
+  * Azure - https://center-for-threat-informed-defense.github.io/mappings-explorer/external/aws/
+  * CVE - https://center-for-threat-informed-defense.github.io/mappings-explorer/external/cve/
+  * GCP - https://center-for-threat-informed-defense.github.io/mappings-explorer/external/gcp/
+  * NIST 800-53 - https://center-for-threat-informed-defense.github.io/mappings-explorer/external/nist/
+  * M365 - https://center-for-threat-informed-defense.github.io/mappings-explorer/external/m365/
+  * VERIS - https://center-for-threat-informed-defense.github.io/mappings-explorer/external/veris/
 
-
-### Additional sources for new CAVEaT
-
-* https://cloudsecurityalliance.org/artifacts/top-threats-to-cloud-computing-pandemic-eleven-deep-dive
-* https://www.cisa.gov/resources-tools/resources/cyber-safety-review-board-releases-report-microsoft-online-exchange-incident-summer-2023
