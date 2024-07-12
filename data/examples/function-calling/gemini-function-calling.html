@@ -1,0 +1,4071 @@
+<!doctype html>
+<html 
+      lang="en"
+      dir="ltr">
+  <head>
+    <meta name="google-signin-client-id" content="157101835696-ooapojlodmuabs2do2vuhhnf90bccmoi.apps.googleusercontent.com">
+    <meta name="google-signin-scope"
+          content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award">
+    <meta property="og:site_name" content="Google for Developers">
+    <meta property="og:type" content="website"><meta name="theme-color" content="#1967d2"><meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <link rel="manifest" href="/_pwa/googledevai/manifest.json"
+          crossorigin="use-credentials">
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="//apis.google.com" crossorigin>
+    <link rel="preconnect" href="//www.google-analytics.com" crossorigin><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700&display=swap">
+      <link rel="stylesheet"
+            href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block"><link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/v158caafe57d4670a8abac19430cb93c14f6b6846e8f3012a57383593e392bfd9/googledevai/css/app.css">
+      <link rel="shortcut icon" href="https://www.gstatic.com/devrel-devsite/prod/v158caafe57d4670a8abac19430cb93c14f6b6846e8f3012a57383593e392bfd9/googledevai/images/favicon-new.png">
+    <link rel="apple-touch-icon" href="https://www.gstatic.com/devrel-devsite/prod/v158caafe57d4670a8abac19430cb93c14f6b6846e8f3012a57383593e392bfd9/googledevai/images/touchicon-180-new.png"><link rel="canonical" href="https://ai.google.dev/gemini-api/docs/function-calling"><link rel="search" type="application/opensearchdescription+xml"
+            title="Google for Developers" href="https://ai.google.dev/s/opensearch.xml">
+      <link rel="alternate" hreflang="en"
+          href="https://ai.google.dev/gemini-api/docs/function-calling" /><link rel="alternate" hreflang="x-default" href="https://ai.google.dev/gemini-api/docs/function-calling" /><link rel="alternate" hreflang="ar"
+          href="https://ai.google.dev/gemini-api/docs/function-calling?hl=ar" /><link rel="alternate" hreflang="bn"
+          href="https://ai.google.dev/gemini-api/docs/function-calling?hl=bn" /><link rel="alternate" hreflang="zh-Hans"
+          href="https://ai.google.dev/gemini-api/docs/function-calling?hl=zh-cn" /><link rel="alternate" hreflang="zh-Hant"
+          href="https://ai.google.dev/gemini-api/docs/function-calling?hl=zh-tw" /><link rel="alternate" hreflang="fa"
+          href="https://ai.google.dev/gemini-api/docs/function-calling?hl=fa" /><link rel="alternate" hreflang="fr"
+          href="https://ai.google.dev/gemini-api/docs/function-calling?hl=fr" /><link rel="alternate" hreflang="de"
+          href="https://ai.google.dev/gemini-api/docs/function-calling?hl=de" /><link rel="alternate" hreflang="he"
+          href="https://ai.google.dev/gemini-api/docs/function-calling?hl=he" /><link rel="alternate" hreflang="hi"
+          href="https://ai.google.dev/gemini-api/docs/function-calling?hl=hi" /><link rel="alternate" hreflang="id"
+          href="https://ai.google.dev/gemini-api/docs/function-calling?hl=id" /><link rel="alternate" hreflang="it"
+          href="https://ai.google.dev/gemini-api/docs/function-calling?hl=it" /><link rel="alternate" hreflang="ja"
+          href="https://ai.google.dev/gemini-api/docs/function-calling?hl=ja" /><link rel="alternate" hreflang="ko"
+          href="https://ai.google.dev/gemini-api/docs/function-calling?hl=ko" /><link rel="alternate" hreflang="pl"
+          href="https://ai.google.dev/gemini-api/docs/function-calling?hl=pl" /><link rel="alternate" hreflang="pt-BR"
+          href="https://ai.google.dev/gemini-api/docs/function-calling?hl=pt-br" /><link rel="alternate" hreflang="ru"
+          href="https://ai.google.dev/gemini-api/docs/function-calling?hl=ru" /><link rel="alternate" hreflang="es-419"
+          href="https://ai.google.dev/gemini-api/docs/function-calling?hl=es-419" /><link rel="alternate" hreflang="th"
+          href="https://ai.google.dev/gemini-api/docs/function-calling?hl=th" /><link rel="alternate" hreflang="tr"
+          href="https://ai.google.dev/gemini-api/docs/function-calling?hl=tr" /><link rel="alternate" hreflang="vi"
+          href="https://ai.google.dev/gemini-api/docs/function-calling?hl=vi" /><title>Intro to Function Calling with Gemini API &nbsp;|&nbsp; Google for Developers</title>
+
+<meta property="og:title" content="Intro to Function Calling with Gemini API &nbsp;|&nbsp; Google for Developers"><meta property="og:url" content="https://ai.google.dev/gemini-api/docs/function-calling"><meta property="og:image" content="https://ai.google.dev/static/site-assets/images/share.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675"><meta property="og:locale" content="en"><meta name="twitter:card" content="summary_large_image"><script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    
+    "headline": "Intro to Function Calling with Gemini API"
+  }
+</script><script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Gemini API",
+      "item": "https://ai.google.dev/gemini-api"
+    },{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Intro to Function Calling with Gemini API",
+      "item": "https://ai.google.dev/gemini-api/docs/function-calling"
+    }]
+  }
+  </script>
+  <meta name="xsrf_token" content="1mJK2SelzRIEnj3SX4V-HcesAupYQbE33pWWyJ6pIGY6MTcyMDgyNjgyNTA5MjkyNA">
+  
+
+  <meta name="session_expiry" content="1720830305">
+  <meta name="uid" content="112969240696754954097">
+  
+
+  
+
+  
+
+
+    
+      <link rel="stylesheet" href="/extras.css"></head>
+  <body class=""
+        template="page"
+        theme="googledevai-theme"
+        type="article"
+        
+        
+        
+        layout="docs"
+        
+        
+        
+        
+        display-toc
+        pending>
+    <devsite-progress type="indeterminate" id="app-progress"></devsite-progress>
+  
+    <section class="devsite-wrapper">
+      
+      <devsite-cookie-notification-bar></devsite-cookie-notification-bar>
+      <devsite-header role="banner" keep-tabs-visible>
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-header--inner nocontent">
+  <div class="devsite-top-logo-row-wrapper-wrapper">
+    <div class="devsite-top-logo-row-wrapper">
+      <div class="devsite-top-logo-row">
+        <button type="button" id="devsite-hamburger-menu"
+          class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+          data-category="Site-Wide Custom Events"
+          data-label="Navigation menu button"
+          visually-hidden
+          aria-label="Open menu">
+        </button>
+        <div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="geminiAPI" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <img src="https://ai.google.dev/_static/googledevai/images/lockup-new.svg" class="devsite-site-logo" alt="Gemini API">
+  </picture>
+  
+</a>
+
+
+
+  
+  
+  <span class="devsite-product-name">
+    <ul class="devsite-breadcrumb-list"
+  >
+  
+  <li class="devsite-breadcrumb-item
+             ">
+    
+    
+    
+      
+      
+    
+  </li>
+  
+</ul>
+  </span>
+
+</div>
+        <div class="devsite-top-logo-row-middle">
+          <div class="devsite-header-upper-tabs">
+            
+              
+              
+  <devsite-tabs class="upper-tabs">
+
+    <nav class="devsite-tabs-wrapper" aria-label="Upper tabs">
+      
+        
+          <tab  class="devsite-active">
+            
+    <a href="https://ai.google.dev/gemini-api"
+      track-metadata-eventdetail="https://ai.google.dev/gemini-api"
+    
+       class="devsite-tabs-content gc-analytics-event "
+       track-type="nav"
+       track-metadata-position="nav - gemini api"
+       track-metadata-module="primary nav"
+       aria-label="Gemini API, selected" 
+       
+         
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Tab: Gemini API"
+         
+           track-name="gemini api"
+         
+       >
+    Gemini API
+  
+    </a>
+  
+  
+          </tab>
+        
+      
+        
+          <tab  >
+            
+    <a href="https://ai.google.dev/gemma"
+      track-metadata-eventdetail="https://ai.google.dev/gemma"
+    
+       class="devsite-tabs-content gc-analytics-event "
+       track-type="nav"
+       track-metadata-position="nav - gemma"
+       track-metadata-module="primary nav"
+       
+       
+         
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Tab: Gemma"
+         
+           track-name="gemma"
+         
+       >
+    Gemma
+  
+    </a>
+  
+  
+          </tab>
+        
+      
+        
+          <tab  >
+            
+    <a href="https://ai.google.dev/edge"
+      track-metadata-eventdetail="https://ai.google.dev/edge"
+    
+       class="devsite-tabs-content gc-analytics-event "
+       track-type="nav"
+       track-metadata-position="nav - google ai edge"
+       track-metadata-module="primary nav"
+       
+       
+         
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Tab: Google AI Edge"
+         
+           track-name="google ai edge"
+         
+       >
+    Google AI Edge
+  
+    </a>
+  
+  
+          </tab>
+        
+      
+        
+          <tab class="devsite-dropdown
+    
+    
+    
+    ">
+  
+    <span
+  
+       class="devsite-tabs-content gc-analytics-event "
+       track-type="nav"
+       track-metadata-position="nav - tools"
+       track-metadata-module="primary nav"
+       
+       
+         
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Tab: Tools"
+         
+           track-name="tools"
+         
+       >
+    Tools
+  
+    </span>
+  
+  
+    <a href="#"
+       role="button"
+       aria-haspopup="true"
+       aria-expanded="false"
+       aria-label="Dropdown menu for Tools"
+       track-type="nav"
+       track-metadata-eventdetail=""
+       track-metadata-position="nav - tools"
+       track-metadata-module="primary nav"
+       
+        
+          data-category="Site-Wide Custom Events"
+        
+          data-label="Tab: Tools"
+        
+          track-name="tools"
+        
+      
+       class="devsite-tabs-dropdown-toggle devsite-icon devsite-icon-arrow-drop-down"></a>
+  
+  <div class="devsite-tabs-dropdown" aria-label="submenu" hidden>
+    
+    <div class="devsite-tabs-dropdown-content">
+      
+        <div class="devsite-tabs-dropdown-column
+                    ">
+          
+            <ul class="devsite-tabs-dropdown-section
+                       ">
+              
+              
+              
+                <li class="devsite-nav-item">
+                  <a href="https://ai.google.dev/aistudio"
+                     track-type="nav"
+                     track-metadata-eventdetail="https://ai.google.dev/aistudio"
+                     track-metadata-position="nav - tools"
+                     track-metadata-module="tertiary nav"
+                     
+                     tooltip
+                  >
+                    
+                    <div class="devsite-nav-item-title">
+                      Google AI Studio
+                    </div>
+                    
+                  </a>
+                </li>
+              
+                <li class="devsite-nav-item">
+                  <a href="https://colab.google/"
+                     track-type="nav"
+                     track-metadata-eventdetail="https://colab.google/"
+                     track-metadata-position="nav - tools"
+                     track-metadata-module="tertiary nav"
+                     
+                     tooltip
+                  >
+                    
+                    <div class="devsite-nav-item-title">
+                      Colab
+                    </div>
+                    
+                  </a>
+                </li>
+              
+                <li class="devsite-nav-item">
+                  <a href="https://firebase.google.com/docs/genkit"
+                     track-type="nav"
+                     track-metadata-eventdetail="https://firebase.google.com/docs/genkit"
+                     track-metadata-position="nav - tools"
+                     track-metadata-module="tertiary nav"
+                     
+                     tooltip
+                  >
+                    
+                    <div class="devsite-nav-item-title">
+                      Firebase Genkit
+                    </div>
+                    
+                  </a>
+                </li>
+              
+                <li class="devsite-nav-item">
+                  <a href="https://jax.readthedocs.io/"
+                     track-type="nav"
+                     track-metadata-eventdetail="https://jax.readthedocs.io/"
+                     track-metadata-position="nav - tools"
+                     track-metadata-module="tertiary nav"
+                     
+                     tooltip
+                  >
+                    
+                    <div class="devsite-nav-item-title">
+                      JAX
+                    </div>
+                    
+                  </a>
+                </li>
+              
+                <li class="devsite-nav-item">
+                  <a href="https://keras.io/"
+                     track-type="nav"
+                     track-metadata-eventdetail="https://keras.io/"
+                     track-metadata-position="nav - tools"
+                     track-metadata-module="tertiary nav"
+                     
+                     tooltip
+                  >
+                    
+                    <div class="devsite-nav-item-title">
+                      Keras
+                    </div>
+                    
+                  </a>
+                </li>
+              
+                <li class="devsite-nav-item">
+                  <a href="https://www.tensorflow.org/"
+                     track-type="nav"
+                     track-metadata-eventdetail="https://www.tensorflow.org/"
+                     track-metadata-position="nav - tools"
+                     track-metadata-module="tertiary nav"
+                     
+                     tooltip
+                  >
+                    
+                    <div class="devsite-nav-item-title">
+                      TensorFlow
+                    </div>
+                    
+                  </a>
+                </li>
+              
+                <li class="devsite-nav-item">
+                  <a href="https://cloud.google.com/vertex-ai"
+                     track-type="nav"
+                     track-metadata-eventdetail="https://cloud.google.com/vertex-ai"
+                     track-metadata-position="nav - tools"
+                     track-metadata-module="tertiary nav"
+                     
+                     tooltip
+                  >
+                    
+                    <div class="devsite-nav-item-title">
+                      Vertex AI
+                    </div>
+                    
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </div>
+      
+    </div>
+  </div>
+</tab>
+        
+      
+        
+          <tab  >
+            
+    <a href="https://discuss.ai.google.dev/"
+      track-metadata-eventdetail="https://discuss.ai.google.dev/"
+    
+       class="devsite-tabs-content gc-analytics-event external"
+       track-type="nav"
+       track-metadata-position="nav - community"
+       track-metadata-module="primary nav"
+       
+       
+         
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Tab: Community"
+         
+           track-name="community"
+         
+       >
+    Community
+  
+    </a>
+  
+  
+          </tab>
+        
+      
+    </nav>
+
+  </devsite-tabs>
+
+            
+           </div>
+          
+<devsite-search
+    enable-signin
+    enable-search
+    enable-suggestions
+      enable-query-completion
+    
+    
+    project-name="Gemini API"
+    tenant-name="Google for Developers"
+    
+    
+    
+    
+    
+    >
+  <form class="devsite-search-form" action="https://ai.google.dev/s/results" method="GET">
+    <div class="devsite-search-container">
+      <button type="button"
+              search-open
+              class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+              
+              aria-label="Open search"></button>
+      <div class="devsite-searchbox">
+        <input
+          aria-activedescendant=""
+          aria-autocomplete="list"
+          
+          aria-label="Search"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          autocomplete="off"
+          class="devsite-search-field devsite-search-query"
+          name="q"
+          
+          placeholder="Search"
+          role="combobox"
+          type="text"
+          value=""
+          >
+          <div class="devsite-search-image material-icons" aria-hidden="true">
+            
+          </div>
+          <div class="devsite-search-shortcut-icon-container" aria-hidden="true">
+            <kbd class="devsite-search-shortcut-icon">/</kbd>
+          </div>
+      </div>
+    </div>
+  </form>
+  <button type="button"
+          search-close
+          class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+          
+          aria-label="Close search"></button>
+</devsite-search>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        
+          aria-current="true">English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="it"
+        >Italiano</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="tr"
+        >Türkçe</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ru"
+        >Русский</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="he"
+        >עברית</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ar"
+        >العربيّة</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fa"
+        >فارسی</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="hi"
+        >हिंदी</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="bn"
+        >বাংলা</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="th"
+        >ภาษาไทย</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+
+        
+
+        
+          
+          
+          <devsite-user signed-in
+                        
+                        
+                          enable-profiles
+                        
+                        
+                        id="devsite-user">
+            
+        </devsite-user>
+           
+        
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="devsite-collapsible-section
+    ">
+    <div class="devsite-header-background">
+      
+        
+      
+      
+        <div class="devsite-doc-set-nav-row">
+          
+          
+            
+            
+  <devsite-tabs class="lower-tabs">
+
+    <nav class="devsite-tabs-wrapper" aria-label="Lower tabs">
+      
+        
+          <tab  class="devsite-active">
+            
+    <a href="https://ai.google.dev/gemini-api/docs"
+      track-metadata-eventdetail="https://ai.google.dev/gemini-api/docs"
+    
+       class="devsite-tabs-content gc-analytics-event "
+       track-type="nav"
+       track-metadata-position="nav - docs"
+       track-metadata-module="primary nav"
+       aria-label="Docs, selected" 
+       
+         
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Tab: Docs"
+         
+           track-name="docs"
+         
+       >
+    Docs
+  
+    </a>
+  
+  
+          </tab>
+        
+      
+        
+          <tab  >
+            
+    <a href="https://ai.google.dev/api"
+      track-metadata-eventdetail="https://ai.google.dev/api"
+    
+       class="devsite-tabs-content gc-analytics-event "
+       track-type="nav"
+       track-metadata-position="nav - api reference"
+       track-metadata-module="primary nav"
+       
+       
+         
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Tab: API Reference"
+         
+           track-name="api reference"
+         
+       >
+    API Reference
+  
+    </a>
+  
+  
+          </tab>
+        
+      
+        
+          <tab  >
+            
+    <a href="https://ai.google.dev/gemini-api/cookbook"
+      track-metadata-eventdetail="https://ai.google.dev/gemini-api/cookbook"
+    
+       class="devsite-tabs-content gc-analytics-event "
+       track-type="nav"
+       track-metadata-position="nav - cookbook"
+       track-metadata-module="primary nav"
+       
+       
+         
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Tab: Cookbook"
+         
+           track-name="cookbook"
+         
+       >
+    Cookbook
+  
+    </a>
+  
+  
+          </tab>
+        
+      
+        
+          <tab  >
+            
+    <a href="https://ai.google.dev/aistudio"
+      track-metadata-eventdetail="https://ai.google.dev/aistudio"
+    
+       class="devsite-tabs-content gc-analytics-event "
+       track-type="nav"
+       track-metadata-position="nav - google ai studio"
+       track-metadata-module="primary nav"
+       
+       
+         
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Tab: Google AI Studio"
+         
+           track-name="google ai studio"
+         
+       >
+    Google AI Studio
+  
+    </a>
+  
+  
+          </tab>
+        
+      
+        
+          <tab  >
+            
+    <a href="https://ai.google.dev/gemini-api/prompts"
+      track-metadata-eventdetail="https://ai.google.dev/gemini-api/prompts"
+    
+       class="devsite-tabs-content gc-analytics-event "
+       track-type="nav"
+       track-metadata-position="nav - prompt gallery"
+       track-metadata-module="primary nav"
+       
+       
+         
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Tab: Prompt gallery"
+         
+           track-name="prompt gallery"
+         
+       >
+    Prompt gallery
+  
+    </a>
+  
+  
+          </tab>
+        
+      
+        
+          <tab  >
+            
+    <a href="https://ai.google.dev/pricing"
+      track-metadata-eventdetail="https://ai.google.dev/pricing"
+    
+       class="devsite-tabs-content gc-analytics-event "
+       track-type="nav"
+       track-metadata-position="nav - pricing"
+       track-metadata-module="primary nav"
+       
+       
+         
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Tab: Pricing"
+         
+           track-name="pricing"
+         
+       >
+    Pricing
+  
+    </a>
+  
+  
+          </tab>
+        
+      
+    </nav>
+
+  </devsite-tabs>
+
+          
+          
+        </div>
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+  
+
+  
+</devsite-header>
+      <devsite-book-nav scrollbars >
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-book-nav-filter"
+     >
+  <span class="filter-list-icon material-icons" aria-hidden="true"></span>
+  <input type="text"
+         placeholder="Filter"
+         
+         aria-label="Type to filter"
+         role="searchbox">
+  
+  <span class="filter-clear-button hidden"
+        data-title="Clear filter"
+        aria-label="Clear filter"
+        role="button"
+        tabindex="0"></span>
+</div>
+
+<nav class="devsite-book-nav devsite-nav nocontent"
+     aria-label="Side menu">
+  <div class="devsite-mobile-header">
+    <button type="button"
+            id="devsite-close-nav"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Close navigation"
+            aria-label="Close navigation">
+    </button>
+    <div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="geminiAPI" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <img src="https://ai.google.dev/_static/googledevai/images/lockup-new.svg" class="devsite-site-logo" alt="Gemini API">
+  </picture>
+  
+</a>
+
+
+  
+      <span class="devsite-product-name">
+        
+        
+        <ul class="devsite-breadcrumb-list"
+  >
+  
+  <li class="devsite-breadcrumb-item
+             ">
+    
+    
+    
+      
+      
+    
+  </li>
+  
+</ul>
+      </span>
+    
+
+</div>
+  </div>
+
+  <div class="devsite-book-nav-wrapper">
+    <div class="devsite-mobile-nav-top">
+      
+        <ul class="devsite-nav-list">
+          
+            <li class="devsite-nav-item">
+              
+  
+  <a href="/gemini-api"
+    
+       class="devsite-nav-title gc-analytics-event
+              
+              devsite-nav-active"
+    
+
+    
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Tab: Gemini API"
+      
+        track-name="gemini api"
+      
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Gemini API"
+     track-type="globalNav"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Gemini API
+   </span>
+    
+  
+  </a>
+  
+
+  
+              
+                <ul class="devsite-nav-responsive-tabs">
+                  
+                    
+                    
+                    
+                    <li class="devsite-nav-item">
+                      
+  
+  <a href="/gemini-api/docs"
+    
+       class="devsite-nav-title gc-analytics-event
+              devsite-nav-has-children
+              devsite-nav-active"
+    
+
+    
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Tab: Docs"
+      
+        track-name="docs"
+      
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Docs"
+     track-type="globalNav"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip menu="_book">
+      Docs
+   </span>
+    
+    <span class="devsite-nav-icon material-icons" data-icon="forward"
+          menu="_book">
+    </span>
+    
+  
+  </a>
+  
+
+  
+                    </li>
+                  
+                    
+                    
+                    
+                    <li class="devsite-nav-item">
+                      
+  
+  <a href="/api"
+    
+       class="devsite-nav-title gc-analytics-event
+              devsite-nav-has-children
+              "
+    
+
+    
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Tab: API Reference"
+      
+        track-name="api reference"
+      
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: API Reference"
+     track-type="globalNav"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      API Reference
+   </span>
+    
+    <span class="devsite-nav-icon material-icons" data-icon="forward"
+          >
+    </span>
+    
+  
+  </a>
+  
+
+  
+                    </li>
+                  
+                    
+                    
+                    
+                    <li class="devsite-nav-item">
+                      
+  
+  <a href="/gemini-api/cookbook"
+    
+       class="devsite-nav-title gc-analytics-event
+              
+              "
+    
+
+    
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Tab: Cookbook"
+      
+        track-name="cookbook"
+      
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Cookbook"
+     track-type="globalNav"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Cookbook
+   </span>
+    
+  
+  </a>
+  
+
+  
+                    </li>
+                  
+                    
+                    
+                    
+                    <li class="devsite-nav-item">
+                      
+  
+  <a href="/aistudio"
+    
+       class="devsite-nav-title gc-analytics-event
+              
+              "
+    
+
+    
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Tab: Google AI Studio"
+      
+        track-name="google ai studio"
+      
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Google AI Studio"
+     track-type="globalNav"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Google AI Studio
+   </span>
+    
+  
+  </a>
+  
+
+  
+                    </li>
+                  
+                    
+                    
+                    
+                    <li class="devsite-nav-item">
+                      
+  
+  <a href="/gemini-api/prompts"
+    
+       class="devsite-nav-title gc-analytics-event
+              
+              "
+    
+
+    
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Tab: Prompt gallery"
+      
+        track-name="prompt gallery"
+      
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Prompt gallery"
+     track-type="globalNav"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Prompt gallery
+   </span>
+    
+  
+  </a>
+  
+
+  
+                    </li>
+                  
+                    
+                    
+                    
+                    <li class="devsite-nav-item">
+                      
+  
+  <a href="/pricing"
+    
+       class="devsite-nav-title gc-analytics-event
+              
+              "
+    
+
+    
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Tab: Pricing"
+      
+        track-name="pricing"
+      
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Pricing"
+     track-type="globalNav"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Pricing
+   </span>
+    
+  
+  </a>
+  
+
+  
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li class="devsite-nav-item">
+              
+  
+  <a href="/gemma"
+    
+       class="devsite-nav-title gc-analytics-event
+              
+              "
+    
+
+    
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Tab: Gemma"
+      
+        track-name="gemma"
+      
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Gemma"
+     track-type="globalNav"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Gemma
+   </span>
+    
+  
+  </a>
+  
+
+  
+              
+            </li>
+          
+            <li class="devsite-nav-item">
+              
+  
+  <a href="/edge"
+    
+       class="devsite-nav-title gc-analytics-event
+              
+              "
+    
+
+    
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Tab: Google AI Edge"
+      
+        track-name="google ai edge"
+      
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Google AI Edge"
+     track-type="globalNav"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Google AI Edge
+   </span>
+    
+  
+  </a>
+  
+
+  
+              
+            </li>
+          
+            <li class="devsite-nav-item">
+              
+  
+  <span
+    
+       class="devsite-nav-title"
+       tooltip
+    
+    
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Tab: Tools"
+      
+        track-name="tools"
+      
+    >
+  
+    <span class="devsite-nav-text" tooltip >
+      Tools
+   </span>
+    
+  
+  </span>
+  
+
+  
+    <ul class="devsite-nav-responsive-tabs devsite-nav-has-menu
+               ">
+      
+<li class="devsite-nav-item">
+
+  
+  <span
+    
+       class="devsite-nav-title"
+       tooltip
+    
+    
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Tab: Tools"
+      
+        track-name="tools"
+      
+    >
+  
+    <span class="devsite-nav-text" tooltip menu="Tools">
+      More
+   </span>
+    
+    <span class="devsite-nav-icon material-icons" data-icon="forward"
+          menu="Tools">
+    </span>
+    
+  
+  </span>
+  
+
+</li>
+
+    </ul>
+  
+              
+            </li>
+          
+            <li class="devsite-nav-item">
+              
+  
+  <a href="https://discuss.ai.google.dev/"
+    
+       class="devsite-nav-title gc-analytics-event
+              
+              "
+    
+
+    
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Tab: Community"
+      
+        track-name="community"
+      
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Community"
+     track-type="globalNav"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Community
+   </span>
+    
+  
+  </a>
+  
+
+  
+              
+            </li>
+          
+          
+          
+        </ul>
+      
+    </div>
+    
+      <div class="devsite-mobile-nav-bottom">
+        
+          
+          <ul class="devsite-nav-list" menu="_book">
+            <li class="devsite-nav-item"><a href="/gemini-api/docs"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs"
+      ><span class="devsite-nav-text" tooltip>Overview</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip>Get started</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/api-key"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/api-key"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/api-key"
+      ><span class="devsite-nav-text" tooltip>API keys</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/quickstart"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/quickstart"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/quickstart"
+      ><span class="devsite-nav-text" tooltip>Quickstart</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/get-started/tutorial"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/get-started/tutorial"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/get-started/tutorial"
+      data-synonyms="Install SDKs, list models, generate content, chat conversation, get started, quickstart tutorial, image understanding, multi-modal"><span class="devsite-nav-text" tooltip>Getting started</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/downloads"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/downloads"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/downloads"
+      data-synonyms="SDKs, python, go, node.js, node, typescript, flutter, dart, install, library, libraries, swift, android"><span class="devsite-nav-text" tooltip>Libraries</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/changelog"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/changelog"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/changelog"
+      ><span class="devsite-nav-text" tooltip>Release notes</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip>Models</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/models/gemini"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/models/gemini"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/models/gemini"
+      data-synonyms="gemini-pro, gemini-pro-1.0, gemini-pro-vision, gemini 1.5 flash, gemini-1.5-flash, gemini, flash, pro, gemini-pro-1.5, gemini pro, text embedding, text embeddings, text-embedding-004"><span class="devsite-nav-text" tooltip>Gemini</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip>Capabilities</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/text-generation"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/text-generation"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/text-generation"
+      ><span class="devsite-nav-text" tooltip>Text generation</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/vision"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/vision"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/vision"
+      ><span class="devsite-nav-text" tooltip>Vision</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/audio"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/audio"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/audio"
+      ><span class="devsite-nav-text" tooltip>Audio</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/code-execution"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/code-execution"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/code-execution"
+      ><span class="devsite-nav-text" tooltip>Code execution</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/json-mode"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/json-mode"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/json-mode"
+      ><span class="devsite-nav-text" tooltip>JSON mode</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip>Fine-tuning</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/gemini-api/docs/model-tuning"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/model-tuning"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/model-tuning"
+      ><span class="devsite-nav-text" tooltip>Intro to fine-tuning</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/docs/model-tuning/tutorial"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/model-tuning/tutorial"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/model-tuning/tutorial"
+      ><span class="devsite-nav-text" tooltip>Fine-tuning tutorial</span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip>Function calling</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/gemini-api/docs/function-calling"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/function-calling"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/function-calling"
+      ><span class="devsite-nav-text" tooltip>Intro to function calling</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/docs/function-calling/tutorial"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/function-calling/tutorial"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/function-calling/tutorial"
+      ><span class="devsite-nav-text" tooltip>SDK platforms tutorial</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/tutorials/extract_structured_data"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/tutorials/extract_structured_data"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/tutorials/extract_structured_data"
+      ><span class="devsite-nav-text" tooltip>Extract structured data</span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/system-instructions"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/system-instructions"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/system-instructions"
+      ><span class="devsite-nav-text" tooltip>System instructions</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip>Embeddings</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/gemini-api/docs/embeddings"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/embeddings"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/embeddings"
+      ><span class="devsite-nav-text" tooltip>Intro to embeddings</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/tutorials/anomaly_detection"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/tutorials/anomaly_detection"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/tutorials/anomaly_detection"
+      ><span class="devsite-nav-text" tooltip>Anomaly detection</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/tutorials/clustering_with_embeddings"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/tutorials/clustering_with_embeddings"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/tutorials/clustering_with_embeddings"
+      ><span class="devsite-nav-text" tooltip>Clustering</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/tutorials/document_search"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/tutorials/document_search"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/tutorials/document_search"
+      ><span class="devsite-nav-text" tooltip>Document search</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/tutorials/text_classifier_embeddings"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/tutorials/text_classifier_embeddings"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/tutorials/text_classifier_embeddings"
+      ><span class="devsite-nav-text" tooltip>Train a text classifier</span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip>Safety</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/gemini-api/docs/safety-settings"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/safety-settings"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/safety-settings"
+      ><span class="devsite-nav-text" tooltip>Safety settings</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/docs/safety-guidance"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/safety-guidance"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/safety-guidance"
+      ><span class="devsite-nav-text" tooltip>Safety guidance</span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip>Guides</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/caching"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/caching"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/caching"
+      ><span class="devsite-nav-text" tooltip>Context caching</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/tokens"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/tokens"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/tokens"
+      ><span class="devsite-nav-text" tooltip>Tokens</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip>Prompting</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/gemini-api/docs/prompting-intro"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/prompting-intro"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/prompting-intro"
+      ><span class="devsite-nav-text" tooltip>Intro to prompting</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/docs/prompting_with_media"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/prompting_with_media"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/prompting_with_media"
+      ><span class="devsite-nav-text" tooltip>Prompting with media files</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/docs/prompting-strategies"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/prompting-strategies"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/prompting-strategies"
+      ><span class="devsite-nav-text" tooltip>Prompting strategies</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/docs/file-prompting-strategies"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/file-prompting-strategies"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/file-prompting-strategies"
+      ><span class="devsite-nav-text" tooltip>File prompting strategies</span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/semantic_retrieval"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/semantic_retrieval"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/semantic_retrieval"
+      ><span class="devsite-nav-text" tooltip>Semantic retrieval</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/models/generative-models"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/models/generative-models"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/models/generative-models"
+      ><span class="devsite-nav-text" tooltip>About generative models</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/billing"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/billing"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/billing"
+      ><span class="devsite-nav-text" tooltip>Billing FAQs</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/migrate-to-cloud"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/migrate-to-cloud"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/migrate-to-cloud"
+      ><span class="devsite-nav-text" tooltip>Migrate to Cloud</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip>Additional resources</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/gemini-api/docs/ai-studio-quickstart"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/ai-studio-quickstart"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/ai-studio-quickstart"
+      ><span class="devsite-nav-text" tooltip>Google AI Studio quickstart</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/docs/get-started/android_aicore"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/get-started/android_aicore"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/get-started/android_aicore"
+      ><span class="devsite-nav-text" tooltip>Android (on-device)</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/docs/firebase-extensions"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/firebase-extensions"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/firebase-extensions"
+      ><span class="devsite-nav-text" tooltip>Firebase extensions</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/docs/oauth"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/oauth"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/oauth"
+      ><span class="devsite-nav-text" tooltip>OAuth authentication</span></a></li><li class="devsite-nav-item"><a href="/docs/migration_guide"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /docs/migration_guide"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/docs/migration_guide"
+      ><span class="devsite-nav-text" tooltip>Migrate to Gemini</span></a></li><li class="devsite-nav-item
+           devsite-nav-external"><a href="/palm_docs"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /palm_docs"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/palm_docs"
+      ><span class="devsite-nav-text" tooltip>PaLM docs</span><span class="devsite-nav-icon material-icons"
+        data-icon="external"
+        data-title="External"
+        aria-hidden="true"></span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip>Use cases</span>
+      </div></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip>Applications</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/gemini-api/tutorials/pipet-code-agent"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/tutorials/pipet-code-agent"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/tutorials/pipet-code-agent"
+      ><span class="devsite-nav-text" tooltip>Code assistant</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/tutorials/flutter-theme-agent"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/tutorials/flutter-theme-agent"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/tutorials/flutter-theme-agent"
+      ><span class="devsite-nav-text" tooltip>Flutter code generator</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/tutorials/docs-agent"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/tutorials/docs-agent"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/tutorials/docs-agent"
+      ><span class="devsite-nav-text" tooltip>Content search</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/tutorials/sql-talk"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/tutorials/sql-talk"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/tutorials/sql-talk"
+      ><span class="devsite-nav-text" tooltip>Data exploration agent</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/tutorials/wordcraft"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/tutorials/wordcraft"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/tutorials/wordcraft"
+      ><span class="devsite-nav-text" tooltip>Writing assistant</span></a></li><li class="devsite-nav-item"><a href="/gemini-api/tutorials/slides-advisor"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/tutorials/slides-advisor"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/tutorials/slides-advisor"
+      ><span class="devsite-nav-text" tooltip>Slides reviewer</span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip>Troubleshooting</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/troubleshooting"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/troubleshooting"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/troubleshooting"
+      ><span class="devsite-nav-text" tooltip>API troubleshooting</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/troubleshoot-ai-studio"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/troubleshoot-ai-studio"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/troubleshoot-ai-studio"
+      ><span class="devsite-nav-text" tooltip>AI Studio troubleshooting</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/workspace"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/workspace"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/workspace"
+      ><span class="devsite-nav-text" tooltip>AI Studio with Google Workspace</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/quota"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/quota"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/quota"
+      ><span class="devsite-nav-text" tooltip>Request more quota</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip>Community</span>
+      </div></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-external"><a href="https://discuss.ai.google.dev/"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: https://discuss.ai.google.dev/"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="https://discuss.ai.google.dev/"
+      ><span class="devsite-nav-text" tooltip>Developer forum</span><span class="devsite-nav-icon material-icons"
+        data-icon="external"
+        data-title="External"
+        aria-hidden="true"></span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip>Legal</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/terms"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/terms"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/terms"
+      ><span class="devsite-nav-text" tooltip>Terms of service</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/gemini-api/docs/available-regions"
+        class="devsite-nav-title gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Book nav link, pathname: /gemini-api/docs/available-regions"
+        track-type="bookNav"
+        track-name="click"
+        track-metadata-eventdetail="/gemini-api/docs/available-regions"
+      ><span class="devsite-nav-text" tooltip>Available regions</span></a></li>
+          </ul>
+        
+        
+          
+    
+  
+    
+  
+    
+  
+    
+      
+      <ul class="devsite-nav-list" menu="Tools"
+          aria-label="Side menu" hidden>
+        
+          
+            
+            
+              
+<li class="devsite-nav-item">
+
+  
+  <a href="/aistudio"
+    
+       class="devsite-nav-title gc-analytics-event
+              
+              "
+    
+
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Google AI Studio"
+     track-type="navMenu"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Google AI Studio
+   </span>
+    
+  
+  </a>
+  
+
+</li>
+
+            
+              
+<li class="devsite-nav-item">
+
+  
+  <a href="https://colab.google/"
+    
+       class="devsite-nav-title gc-analytics-event
+              
+              "
+    
+
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Colab"
+     track-type="navMenu"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Colab
+   </span>
+    
+  
+  </a>
+  
+
+</li>
+
+            
+              
+<li class="devsite-nav-item">
+
+  
+  <a href="https://firebase.google.com/docs/genkit"
+    
+       class="devsite-nav-title gc-analytics-event
+              
+              "
+    
+
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Firebase Genkit"
+     track-type="navMenu"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Firebase Genkit
+   </span>
+    
+  
+  </a>
+  
+
+</li>
+
+            
+              
+<li class="devsite-nav-item">
+
+  
+  <a href="https://jax.readthedocs.io/"
+    
+       class="devsite-nav-title gc-analytics-event
+              
+              "
+    
+
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: JAX"
+     track-type="navMenu"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      JAX
+   </span>
+    
+  
+  </a>
+  
+
+</li>
+
+            
+              
+<li class="devsite-nav-item">
+
+  
+  <a href="https://keras.io/"
+    
+       class="devsite-nav-title gc-analytics-event
+              
+              "
+    
+
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Keras"
+     track-type="navMenu"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Keras
+   </span>
+    
+  
+  </a>
+  
+
+</li>
+
+            
+              
+<li class="devsite-nav-item">
+
+  
+  <a href="https://www.tensorflow.org/"
+    
+       class="devsite-nav-title gc-analytics-event
+              
+              "
+    
+
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: TensorFlow"
+     track-type="navMenu"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      TensorFlow
+   </span>
+    
+  
+  </a>
+  
+
+</li>
+
+            
+              
+<li class="devsite-nav-item">
+
+  
+  <a href="https://cloud.google.com/vertex-ai"
+    
+       class="devsite-nav-title gc-analytics-event
+              
+              "
+    
+
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Vertex AI"
+     track-type="navMenu"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Vertex AI
+   </span>
+    
+  
+  </a>
+  
+
+</li>
+
+            
+          
+        
+      </ul>
+    
+  
+    
+  
+        
+        
+          
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+        
+      </div>
+    
+  </div>
+</nav>
+        
+      </devsite-book-nav>
+      <section id="gc-wrapper">
+        <main role="main" class="devsite-main-content"
+            
+              has-book-nav
+              has-sidebar
+            >
+          
+          
+          <div class="devsite-sidebar">
+            <div class="devsite-sidebar-content">
+                
+                <devsite-toc class="devsite-nav"
+                            role="navigation"
+                            aria-label="On this page"
+                            depth="2"
+                            scrollbars
+                  ></devsite-toc>
+                <devsite-recommendations-sidebar class="nocontent devsite-nav">
+                </devsite-recommendations-sidebar>
+            </div>
+          </div>
+          
+          <devsite-content>
+            
+              
+
+
+
+
+
+
+
+
+
+
+
+<article class="devsite-article"><style>
+      /* Styles inlined from /site-assets/css/style.css */
+/* Ensure that full-bleed pages get the full width. */
+body[theme="googledevai-theme"][layout="full"] .devsite-main-content {
+  max-width: none;
+  padding: 0;
+}
+
+/* And ensure that any site banners/ACL warnings/etc don't get hidden on
+ * full-bleed pages. */
+body[theme="googledevai-theme"][layout="full"] .devsite-banner {
+  margin: 0;
+}
+
+tab:has(> a.hidden-tab) {
+  display: none;
+}
+
+.landing-page-card {
+  padding: 16px;
+  box-shadow: 0 0 36px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+/* Page section headings */
+.landing-page-heading h2, h2.landing-page-heading {
+  font-family: "Google Sans", sans-serif;
+  color: #425066;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 40px;
+}
+
+/* Item title headings */
+.landing-page-heading h3, h3.landing-page-heading,
+.landing-page-card h3, h3.landing-page-card {
+  font-family: "Google Sans", sans-serif;
+  color: #425066;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 26px;
+}
+
+/* Notebooks */
+devsite-code .tfo-notebook-code-cell-output {
+  max-height: 300px;
+  overflow: auto;
+  background: rgba(237, 247, 255, 1);  /* blue bg to distinguish from input code cells */
+}
+
+devsite-code .tfo-notebook-code-cell-output + .devsite-code-buttons-container button {
+  background: rgba(237, 247, 255, .7);  /* blue bg to distinguish from input code cells */
+}
+
+devsite-code[dark-code] .tfo-notebook-code-cell-output {
+  background: rgba(64, 78, 103, 1);  /* medium slate */
+}
+
+devsite-code[dark-code] .tfo-notebook-code-cell-output + .devsite-code-buttons-container button {
+  background: rgba(64, 78, 103, .7);  /* medium slate */
+}
+
+/* override default table styles for notebook buttons */
+.devsite-table-wrapper .tfo-notebook-buttons {
+  display: inline-block;
+  margin-left: 3px;
+  width: auto;
+}
+
+.tfo-notebook-buttons td {
+  padding-left: 0;
+  padding-right: 20px;
+}
+
+/* on rendered notebook page,
+   remove link to webpage since we're already here */
+.tfo-notebook-buttons:not(.tfo-api) td:first-child {
+    display: none;
+}
+
+
+.tfo-notebook-buttons a,
+.tfo-notebook-buttons :link,
+.tfo-notebook-buttons :visited {
+  border-radius: 8px;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .3), 0 1px 3px 1px rgba(60, 64, 67, .15);
+  color: #202124;
+  padding: 12px 17px;
+  transition: box-shadow 0.2s;
+}
+
+.tfo-notebook-buttons a:hover,
+.tfo-notebook-buttons a:focus {
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .3), 0 2px 6px 2px rgba(60, 64, 67, .15);
+}
+
+.tfo-notebook-buttons tr {
+  background: 0;
+  border: 0;
+}
+
+.tfo-notebook-buttons td > a {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.tfo-notebook-buttons td > a > img {
+  margin-right: 8px;
+}
+
+      </style>
+  
+  
+  
+    <div class="devsite-banner devsite-banner-announcement nocontent"
+      
+        
+    background="google-blue"
+  
+      >
+      <div class="devsite-banner-message">
+        <div class="devsite-banner-message-text">
+          Gemini 1.5 Pro 2M context window, code execution capabilities, and Gemma 2 are now available. <a class="button button-primary"
+   href="https://developers.googleblog.com/en/new-features-for-the-gemini-api-and-google-ai-studio/">Learn more</a>
+        </div>
+      </div>
+    </div>
+  
+  
+  
+
+  <div class="devsite-article-meta nocontent" role="navigation">
+    
+    
+    <ul class="devsite-breadcrumb-list"
+  
+    aria-label="Breadcrumb">
+  
+  <li class="devsite-breadcrumb-item
+             ">
+    
+    
+    
+      
+  <a href="https://ai.google.dev/"
+      
+        class="devsite-breadcrumb-link gc-analytics-event"
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Breadcrumbs"
+      
+        data-value="1"
+      
+        track-type="globalNav"
+      
+        track-name="breadcrumb"
+      
+        track-metadata-position="1"
+      
+        track-metadata-eventdetail=""
+      
+    >
+    
+        Home
+      
+  </a>
+  
+    
+  </li>
+  
+  <li class="devsite-breadcrumb-item
+             ">
+    
+      
+      <div class="devsite-breadcrumb-guillemet material-icons" aria-hidden="true"></div>
+    
+    
+    
+      
+  <a href="https://ai.google.dev/gemini-api"
+      
+        class="devsite-breadcrumb-link gc-analytics-event"
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Breadcrumbs"
+      
+        data-value="2"
+      
+        track-type="globalNav"
+      
+        track-name="breadcrumb"
+      
+        track-metadata-position="2"
+      
+        track-metadata-eventdetail="Gemini API"
+      
+    >
+    
+        Gemini API
+      
+  </a>
+  
+    
+  </li>
+  
+  <li class="devsite-breadcrumb-item
+             ">
+    
+      
+      <div class="devsite-breadcrumb-guillemet material-icons" aria-hidden="true"></div>
+    
+    
+    
+      
+  <a href="https://ai.google.dev/gemini-api/docs"
+      
+        class="devsite-breadcrumb-link gc-analytics-event"
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Breadcrumbs"
+      
+        data-value="3"
+      
+        track-type="globalNav"
+      
+        track-name="breadcrumb"
+      
+        track-metadata-position="3"
+      
+        track-metadata-eventdetail=""
+      
+    >
+    
+        Docs
+      
+  </a>
+  
+    
+  </li>
+  
+</ul>
+    
+      
+    <devsite-thumb-rating position="header">
+    </devsite-thumb-rating>
+  
+    
+  </div>
+  
+    <devsite-feedback
+  position="header"
+  project-name="Gemini API"
+  product-id="5292923"
+  bucket="documentation"
+  context=""
+  version="t-devsite-webserver-20240709-r00-rc00.461904466109631677"
+  data-label="Send Feedback Button"
+  track-type="feedback"
+  track-name="sendFeedbackLink"
+  track-metadata-position="header"
+  class="nocontent"
+  
+  
+  
+    project-icon="https://www.gstatic.com/devrel-devsite/prod/v158caafe57d4670a8abac19430cb93c14f6b6846e8f3012a57383593e392bfd9/googledevai/images/touchicon-180-new.png"
+  
+  
+  feedback-type="thumb-rating">
+
+  <button>
+  
+    
+    Send feedback
+  
+  </button>
+</devsite-feedback>
+  
+      <h1 class="devsite-page-title" tabindex="-1">Intro to Function Calling with Gemini API</h1>
+  <devsite-feature-tooltip
+          ack-key="AckCollectionsBookmarkTooltipDismiss"
+          analytics-category="Site-Wide Custom Events"
+          analytics-action-show="Callout Profile displayed"
+          analytics-action-close="Callout Profile dismissed"
+          analytics-label="Create Collection Callout"
+          class="devsite-page-bookmark-tooltip nocontent"
+          dismiss-button="true"
+          id="devsite-collections-dropdown"
+
+          
+          dismiss-button-text="Dismiss"
+
+          
+          close-button-text="Got it">
+
+        
+        <devsite-bookmark></devsite-bookmark>
+
+        <span slot="popout-heading">
+          
+          Stay organized with collections
+        </span>
+        <span slot="popout-contents">
+          
+          Save and categorize content based on your preferences.
+        </span>
+      </devsite-feature-tooltip>
+  <div class="devsite-page-title-meta"><devsite-view-release-notes></devsite-view-release-notes></div>
+  
+
+  <devsite-toc class="devsite-nav"
+    depth="2"
+    devsite-toc-embedded
+    >
+  </devsite-toc>
+  
+    
+  
+
+  
+
+
+
+
+
+
+<div class="devsite-article-body clearfix
+  ">
+
+  
+    
+<p></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Custom functions can be defined and provided to Gemini models using the Function
+Calling feature. The models do not directly invoke these functions, but instead
+generate structured data output that specifies the function name and suggested
+arguments. This output lets you write applications that take the structured
+output and call external APIs, and the resulting API output can then be
+incorporated into a further model prompt, allowing for more comprehensive query
+responses. Function calling empowers users to interact with real-time
+information and various services, such as databases, customer relationship
+management systems, and document repositories, enhancing their ability to
+provide relevant and contextual answers.</p>
+<aside class="beta"><strong>Beta:</strong><span> The Function Calling feature is in Beta release. For more information,
+  see the <a href="/docs/api_versions">API versions</a> page.</span></aside>
+<h2 id="how_it_works" data-text="How function calling works" tabindex="-1">How function calling works</h2>
+
+<p>You use the Function Calling feature by adding structured query data describing
+programing interfaces, called <em>function declarations</em>, to a model prompt. The
+function declarations provide the name of the API function, explain its purpose,
+any parameters it supports, and descriptions of those parameters. After you pass
+a list of function declarations in a query to the model, it analyzes function
+declarations and the rest of the query to determine how to use the declared
+API in response to the request.</p>
+
+<p>The model then returns an object in an
+<a href="https://spec.openapis.org/oas/v3.0.3#schema">OpenAPI compatible schema</a>
+specifying how to call one or more of the declared functions in order to respond
+to the user&#39;s question. You can then take the recommended function call
+parameters, call the actual API, get a response, and provide that response to
+the user or take further action. Note that the model doesn&#39;t actually call the
+declared functions. Instead, you use the returned schema object parameters to
+call the function. The Gemini API also supports parallel function calling, where
+the model recommends multiple API function calls based on a single request.</p>
+
+<h2 id="supported-models" data-text="Supported models" tabindex="-1">Supported models</h2>
+
+<p>The following models support the Function Calling feature:</p>
+
+<ul>
+<li><code translate="no" dir="ltr">gemini-1.0-pro</code></li>
+<li><code translate="no" dir="ltr">gemini-1.0-pro-001</code></li>
+<li><code translate="no" dir="ltr">gemini-1.5-flash-latest</code></li>
+<li><code translate="no" dir="ltr">gemini-1.5-pro-latest</code></li>
+</ul>
+
+<h2 id="function_declarations" data-text="Function declarations" tabindex="-1">Function declarations</h2>
+
+<p>When you implement function calling in a prompt, you create a <code translate="no" dir="ltr">tools</code> object,
+which contains one or more <em><code translate="no" dir="ltr">function declarations</code></em>. You define functions
+using JSON, specifically with a
+<a href="https://ai.google.dev/api/rest/v1beta/Tool#Schema">select subset</a>
+of the
+<a href="https://spec.openapis.org/oas/v3.0.3#schemawr">OpenAPI schema</a>
+format. A single function declaration can include the following parameters:</p>
+
+<ul>
+<li><strong><code translate="no" dir="ltr">name</code></strong> (string): The unique identifier for the function within the API
+call.</li>
+<li><strong><code translate="no" dir="ltr">description</code></strong> (string): A comprehensive explanation of the function&#39;s
+purpose and capabilities.</li>
+<li><strong><code translate="no" dir="ltr">parameters</code></strong> (object): Defines the input data required by the function.
+<ul>
+<li><strong><code translate="no" dir="ltr">type</code></strong> (string): Specifies the overall data type, such as <code translate="no" dir="ltr">object</code>.</li>
+<li><strong><code translate="no" dir="ltr">properties</code></strong> (object): Lists individual parameters, each with:
+<ul>
+<li><strong><code translate="no" dir="ltr">type</code></strong> (string): The data type of the parameter, such as
+<code translate="no" dir="ltr">string</code>, <code translate="no" dir="ltr">integer</code>, <code translate="no" dir="ltr">boolean</code>.</li>
+<li><strong><code translate="no" dir="ltr">description</code></strong> (string): A clear explanation of the parameter&#39;s
+purpose and expected format.</li>
+</ul></li>
+<li><strong><code translate="no" dir="ltr">required</code></strong> (array): An array of strings listing the parameter names
+that are mandatory for the function to operate.</li>
+</ul></li>
+</ul>
+
+<p>For code examples of a function declaration using cURL commands, see the
+<a href="#function-calling-curl-samples">Function calling examples</a>. For examples
+and information on creating function declarations for other platforms, see the
+<a href="/gemini-api/docs/function-calling/tutorial">Function Calling platforms guide</a>.</p>
+
+<h3 id="key-parameters-best-practices" data-text="Best practices for function declarations" tabindex="-1">Best practices for function declarations</h3>
+
+<p>Accurately defining your functions is essential when integrating them into your
+requests. Each function relies on specific parameters that guide its behavior
+and interaction with the model. The following listing provides guidance on
+defining the parameters of an individual function in a <code translate="no" dir="ltr">functions_declarations</code>
+array.</p>
+
+<ul>
+<li><p><strong><code translate="no" dir="ltr">name</code></strong>: Use clear, descriptive names without space, period
+(<code translate="no" dir="ltr">.</code>), or dash (<code translate="no" dir="ltr">-</code>) characters. Instead, use underscore (<code translate="no" dir="ltr">_</code>) characters
+or camel case.</p></li>
+<li><p><strong><code translate="no" dir="ltr">description</code></strong>: Provide detailed, clear, and specific in function
+descriptions, providing examples if necessary. For example, instead of
+<code translate="no" dir="ltr">find theaters</code>, use <code translate="no" dir="ltr">find theaters based on location and optionally movie
+title that is currently playing in theaters.</code> Avoid overly broad or ambiguous
+descriptions.</p></li>
+<li><p><strong><code translate="no" dir="ltr">properties</code> &gt; <code translate="no" dir="ltr">type</code></strong>: Use strongly typed parameters to reduce
+model hallucinations. For example, if the parameter values are from a finite
+set, use an <code translate="no" dir="ltr">enum</code> field instead of listing the values in the description
+(e.g., <code translate="no" dir="ltr">&quot;type&quot;: &quot;enum&quot;, &quot;values&quot;: [&quot;now_playing&quot;, &quot;upcoming&quot;]</code>). If the
+parameter value is always an integer, set the type to <code translate="no" dir="ltr">integer</code> rather than
+<code translate="no" dir="ltr">number</code>.</p></li>
+<li><p><strong><code translate="no" dir="ltr">properties</code> &gt; <code translate="no" dir="ltr">description</code></strong>: Provide concrete examples and constraints.
+For example, instead of <code translate="no" dir="ltr">the location to search</code>, use <code translate="no" dir="ltr">The city and state,
+e.g. San Francisco, CA or a zip code e.g. 95616</code>.</p></li>
+</ul>
+
+<p>For more best practices when using Function Calling, see the
+<a href="#best-practices">Best Practices</a> section.</p>
+
+<h2 id="function_calling_mode" data-text="Function calling mode" tabindex="-1">Function calling mode</h2>
+
+<p>You can use the Function Calling <em><code translate="no" dir="ltr">mode</code></em> parameter to modify the execution
+behavior of the feature. There are three modes available:</p>
+
+<ul>
+<li><strong><code translate="no" dir="ltr">AUTO</code></strong>: The default model behavior. The model decides to predict either a
+function call or a natural language response.</li>
+<li><strong><code translate="no" dir="ltr">ANY</code></strong>: The model is constrained to always predict a function call. If
+<code translate="no" dir="ltr">allowed_function_names</code> is <em>not</em> provided, the model picks from all of the
+available function declarations. If <code translate="no" dir="ltr">allowed_function_names</code> <em>is</em> provided,
+the model picks from the set of allowed functions.</li>
+<li><strong><code translate="no" dir="ltr">NONE</code></strong>: The model won&#39;t predict a function call. In this case, the model
+behavior is the same as if you don&#39;t pass any function declarations.</li>
+</ul>
+
+<p>You can also pass a set of <code translate="no" dir="ltr">allowed_function_names</code> that, when provided, limits
+the functions that the model will call. You should only include
+<code translate="no" dir="ltr">allowed_function_names</code> when the mode is <code translate="no" dir="ltr">ANY</code>. Function names should match
+function declaration names. With the mode set to <code translate="no" dir="ltr">ANY</code> and the
+<code translate="no" dir="ltr">allowed_function_names</code> set, the model will predict a function call from the
+set of function names provided. The following code snippet from an
+<a href="#single-turn-using-mode-and-allowed-functions">example request</a> shows how to
+sets the <code translate="no" dir="ltr">mode</code> to <code translate="no" dir="ltr">ANY</code> and specifies a list of allowed functions:</p>
+<pre class="prettyprint lang-json" translate="no" dir="ltr"><code translate="no" dir="ltr">&#34;tool_config&#34;: {
+  &#34;function_calling_config&#34;: {
+    &#34;mode&#34;: &#34;ANY&#34;,
+    &#34;allowed_function_names&#34;: [&#34;find_theaters&#34;, &#34;get_showtimes&#34;]
+  },
+}
+</code></pre>
+<h2 id="function-calling-curl-samples" data-text="Function calling examples" tabindex="-1">Function calling examples</h2>
+
+<p>This section provides example prompts for function calling using cURL commands.
+The examples include single turn and multiple-turn scenarios, and enabling
+different function calling modes.</p>
+
+<p>When using cURL commands with this feature, the function and parameter
+information is included in the <code translate="no" dir="ltr">tools</code> element. Each function declaration in the
+<code translate="no" dir="ltr">tools</code> element contains the function name, and you specify the parameters using
+an <a href="https://spec.openapis.org/oas/v3.0.3#schema">OpenAPI compatible schema</a>,
+and a function description.</p>
+
+<h3 id="function-calling-single-turn-curl-sample" data-text="Single-turn example" tabindex="-1">Single-turn example</h3>
+
+<p>Single-turn is when you call the language model one time. With function calling,
+a single-turn use case might be when you provide the model a natural language
+query and a list of functions. In this case, the model uses the function
+declaration, which includes the function name, parameters, and description, to
+predict which function to call and the arguments to call it with.</p>
+
+<p>The following curl sample is an example of passing in a description of a
+function that returns information about where a movie is playing. Several
+function declarations are included in the request, such as <code translate="no" dir="ltr">find_movies</code> and
+<code translate="no" dir="ltr">find_theaters</code>.</p>
+
+<div>
+  <devsite-expandable>
+    <h4 class="showalways" id="single-turn-function-calling-example-request" data-text="Single-turn function calling example request" tabindex="-1">Single-turn function calling example request</h4>
+    <pre class="devsite-click-to-copy" translate="no" dir="ltr">
+curl https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=$API_KEY \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "contents": {
+      "role": "user",
+      "parts": {
+        "text": "Which theaters in Mountain View show Barbie movie?"
+    }
+  },
+  "tools": [
+    {
+      "function_declarations": [
+        {
+          "name": "find_movies",
+          "description": "find movie titles currently playing in theaters based on any description, genre, title words, etc.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "location": {
+                "type": "string",
+                "description": "The city and state, e.g. San Francisco, CA or a zip code e.g. 95616"
+              },
+              "description": {
+                "type": "string",
+                "description": "Any kind of description including category or genre, title words, attributes, etc."
+              }
+            },
+            "required": [
+              "description"
+            ]
+          }
+        },
+        {
+          "name": "find_theaters",
+          "description": "find theaters based on location and optionally movie title which is currently playing in theaters",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "location": {
+                "type": "string",
+                "description": "The city and state, e.g. San Francisco, CA or a zip code e.g. 95616"
+              },
+              "movie": {
+                "type": "string",
+                "description": "Any movie title"
+              }
+            },
+            "required": [
+              "location"
+            ]
+          }
+        },
+        {
+          "name": "get_showtimes",
+          "description": "Find the start times for movies playing in a specific theater",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "location": {
+                "type": "string",
+                "description": "The city and state, e.g. San Francisco, CA or a zip code e.g. 95616"
+              },
+              "movie": {
+                "type": "string",
+                "description": "Any movie title"
+              },
+              "theater": {
+                "type": "string",
+                "description": "Name of the theater"
+              },
+              "date": {
+                "type": "string",
+                "description": "Date for requested showtime"
+              }
+            },
+            "required": [
+              "location",
+              "movie",
+              "theater",
+              "date"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}'
+    </pre>
+  </devsite-expandable>
+</div>
+
+<p>The response to this curl example might be similar to the following.</p>
+
+<div>
+  <devsite-expandable>
+    <h4 class="showalways" id="single-turn-function-calling-curl-example-response" data-text="Single-turn function calling curl example response" tabindex="-1">Single-turn function calling curl example response</h4>
+    <pre translate="no" dir="ltr">
+[{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "functionCall": {
+              "name": "find_theaters",
+              "args": {
+                "movie": "Barbie",
+                "location": "Mountain View, CA"
+              }
+            }
+          }
+        ]
+      },
+      "finishReason": "STOP",
+      "safetyRatings": [
+        {
+          "category": "HARM_CATEGORY_HARASSMENT",
+          "probability": "NEGLIGIBLE"
+        },
+        {
+          "category": "HARM_CATEGORY_HATE_SPEECH",
+          "probability": "NEGLIGIBLE"
+        },
+        {
+          "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+          "probability": "NEGLIGIBLE"
+        },
+        {
+          "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+          "probability": "NEGLIGIBLE"
+        }
+      ]
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 9,
+    "totalTokenCount": 9
+  }
+}]
+    </pre>
+  </devsite-expandable>
+</div>
+
+<h3 id="single-turn-any-mode" data-text="Single-turn example using ANY mode" tabindex="-1">Single-turn example using ANY mode</h3>
+
+<p>The following curl example is similar to the
+<a href="#function-calling-single-turn-curl-sample">single-turn example</a>, but it sets
+the <a href="#function_calling_mode">mode</a> to <code translate="no" dir="ltr">ANY</code>:</p>
+<pre class="prettyprint lang-json" translate="no" dir="ltr"><code translate="no" dir="ltr">&#34;tool_config&#34;: {
+  &#34;function_calling_config&#34;: {
+    &#34;mode&#34;: &#34;ANY&#34;
+  },
+}
+</code></pre>
+<div>
+  <devsite-expandable>
+    <h4 class="showalways" id="single-turn-function-calling-using-any-mode-request" data-text="Single-turn function calling using ANY mode (request)" tabindex="-1">Single-turn function calling using ANY mode (request)</h4>
+    <pre class="devsite-click-to-copy" translate="no" dir="ltr">
+curl https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=$API_KEY \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "contents": {
+      "role": "user",
+      "parts": {
+        "text": "What movies are showing in North Seattle tonight?"
+    }
+  },
+  "tools": [
+    {
+      "function_declarations": [
+        {
+          "name": "find_movies",
+          "description": "find movie titles currently playing in theaters based on any description, genre, title words, etc.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "location": {
+                "type": "string",
+                "description": "The city and state, e.g. San Francisco, CA or a zip code e.g. 95616"
+              },
+              "description": {
+                "type": "string",
+                "description": "Any kind of description including category or genre, title words, attributes, etc."
+              }
+            },
+            "required": [
+              "description"
+            ]
+          }
+        },
+        {
+          "name": "find_theaters",
+          "description": "find theaters based on location and optionally movie title which is currently playing in theaters",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "location": {
+                "type": "string",
+                "description": "The city and state, e.g. San Francisco, CA or a zip code e.g. 95616"
+              },
+              "movie": {
+                "type": "string",
+                "description": "Any movie title"
+              }
+            },
+            "required": [
+              "location"
+            ]
+          }
+        },
+        {
+          "name": "get_showtimes",
+          "description": "Find the start times for movies playing in a specific theater",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "location": {
+                "type": "string",
+                "description": "The city and state, e.g. San Francisco, CA or a zip code e.g. 95616"
+              },
+              "movie": {
+                "type": "string",
+                "description": "Any movie title"
+              },
+              "theater": {
+                "type": "string",
+                "description": "Name of the theater"
+              },
+              "date": {
+                "type": "string",
+                "description": "Date for requested showtime"
+              }
+            },
+            "required": [
+              "location",
+              "movie",
+              "theater",
+              "date"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "tool_config": {
+    "function_calling_config": {
+      "mode": "ANY"
+    },
+  }
+}'
+    </pre>
+  </devsite-expandable>
+</div>
+
+<p>The response might be similar to the following:</p>
+
+<div>
+  <devsite-expandable>
+    <h4 class="showalways" id="single-turn-function-calling-using-any-mode-response" data-text="Single-turn function calling using ANY mode (response)" tabindex="-1">Single-turn function calling using ANY mode (response)</h4>
+    <pre translate="no" dir="ltr">
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "functionCall": {
+              "name": "find_movies",
+              "args": {
+                "description": "",
+                "location": "North Seattle, WA"
+              }
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "index": 0,
+      "safetyRatings": [
+        {
+          "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+          "probability": "NEGLIGIBLE"
+        },
+        {
+          "category": "HARM_CATEGORY_HARASSMENT",
+          "probability": "NEGLIGIBLE"
+        },
+        {
+          "category": "HARM_CATEGORY_HATE_SPEECH",
+          "probability": "NEGLIGIBLE"
+        },
+        {
+          "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+          "probability": "NEGLIGIBLE"
+        }
+      ]
+    }
+  ],
+  "promptFeedback": {
+    "safetyRatings": [
+      {
+        "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+        "probability": "NEGLIGIBLE"
+      },
+      {
+        "category": "HARM_CATEGORY_HATE_SPEECH",
+        "probability": "NEGLIGIBLE"
+      },
+      {
+        "category": "HARM_CATEGORY_HARASSMENT",
+        "probability": "NEGLIGIBLE"
+      },
+      {
+        "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+        "probability": "NEGLIGIBLE"
+      }
+    ]
+  }
+}
+    </pre>
+  </devsite-expandable>
+</div>
+
+<h3 id="single-turn-using-mode-and-allowed-functions" data-text="Single-turn example using ANY mode and allowed functions" tabindex="-1">Single-turn example using ANY mode and allowed functions</h3>
+
+<p>The following curl example is similar to the
+<a href="#function-calling-single-turn-curl-sample">single-turn example</a>, but it sets
+the <a href="#function_calling_mode">mode</a> to <code translate="no" dir="ltr">ANY</code> and includes a list of allowed
+functions:</p>
+<pre class="prettyprint lang-json" translate="no" dir="ltr"><code translate="no" dir="ltr">&#34;tool_config&#34;: {
+  &#34;function_calling_config&#34;: {
+    &#34;mode&#34;: &#34;ANY&#34;,
+    &#34;allowed_function_names&#34;: [&#34;find_theaters&#34;, &#34;get_showtimes&#34;]
+  },
+}
+</code></pre>
+<div>
+  <devsite-expandable>
+    <h4 class="showalways" id="single-turn-function-calling-using-any-mode-and-allowed-functions-request" data-text="Single-turn function calling using ANY mode and allowed functions (request)" tabindex="-1">Single-turn function calling using ANY mode and allowed functions (request)</h4>
+    <pre class="devsite-click-to-copy" translate="no" dir="ltr">
+curl https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=$API_KEY \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "contents": {
+      "role": "user",
+      "parts": {
+        "text": "What movies are showing in North Seattle tonight?"
+    }
+  },
+  "tools": [
+    {
+      "function_declarations": [
+        {
+          "name": "find_movies",
+          "description": "find movie titles currently playing in theaters based on any description, genre, title words, etc.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "location": {
+                "type": "string",
+                "description": "The city and state, e.g. San Francisco, CA or a zip code e.g. 95616"
+              },
+              "description": {
+                "type": "string",
+                "description": "Any kind of description including category or genre, title words, attributes, etc."
+              }
+            },
+            "required": [
+              "description"
+            ]
+          }
+        },
+        {
+          "name": "find_theaters",
+          "description": "find theaters based on location and optionally movie title which is currently playing in theaters",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "location": {
+                "type": "string",
+                "description": "The city and state, e.g. San Francisco, CA or a zip code e.g. 95616"
+              },
+              "movie": {
+                "type": "string",
+                "description": "Any movie title"
+              }
+            },
+            "required": [
+              "location"
+            ]
+          }
+        },
+        {
+          "name": "get_showtimes",
+          "description": "Find the start times for movies playing in a specific theater",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "location": {
+                "type": "string",
+                "description": "The city and state, e.g. San Francisco, CA or a zip code e.g. 95616"
+              },
+              "movie": {
+                "type": "string",
+                "description": "Any movie title"
+              },
+              "theater": {
+                "type": "string",
+                "description": "Name of the theater"
+              },
+              "date": {
+                "type": "string",
+                "description": "Date for requested showtime"
+              }
+            },
+            "required": [
+              "location",
+              "movie",
+              "theater",
+              "date"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "tool_config": {
+    "function_calling_config": {
+      "mode": "ANY",
+      "allowed_function_names": ["find_theaters", "get_showtimes"]
+    },
+  }
+}'
+    </pre>
+  </devsite-expandable>
+</div>
+
+<p>The model can&#39;t predict the <code translate="no" dir="ltr">find_movies</code> function, because it&#39;s not on the list
+of allowed functions, so it predicts a different function instead. The response
+might be similar to the following:</p>
+
+<div>
+  <devsite-expandable>
+    <h4 class="showalways" id="single-turn-function-calling-using-any-mode-and-allowed-functions-response" data-text="Single-turn function calling using ANY mode and allowed functions (response)" tabindex="-1">Single-turn function calling using ANY mode and allowed functions (response)</h4>
+    <pre translate="no" dir="ltr">
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "functionCall": {
+              "name": "find_theaters",
+              "args": {
+                "location": "North Seattle, WA",
+                "movie": null
+              }
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "index": 0,
+      "safetyRatings": [
+        {
+          "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+          "probability": "NEGLIGIBLE"
+        },
+        {
+          "category": "HARM_CATEGORY_HARASSMENT",
+          "probability": "NEGLIGIBLE"
+        },
+        {
+          "category": "HARM_CATEGORY_HATE_SPEECH",
+          "probability": "NEGLIGIBLE"
+        },
+        {
+          "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+          "probability": "NEGLIGIBLE"
+        }
+      ]
+    }
+  ],
+  "promptFeedback": {
+    "safetyRatings": [
+      {
+        "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+        "probability": "NEGLIGIBLE"
+      },
+      {
+        "category": "HARM_CATEGORY_HATE_SPEECH",
+        "probability": "NEGLIGIBLE"
+      },
+      {
+        "category": "HARM_CATEGORY_HARASSMENT",
+        "probability": "NEGLIGIBLE"
+      },
+      {
+        "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+        "probability": "NEGLIGIBLE"
+      }
+    ]
+  }
+}
+    </pre>
+  </devsite-expandable>
+</div>
+
+<h3 id="function-calling-one-and-a-half-turn-curl-sample" data-text="Multi-turn examples" tabindex="-1">Multi-turn examples</h3>
+
+<p>You can implement a multi-turn function calling scenario by doing the following:</p>
+
+<ol>
+<li>Get a function call response by calling the language model. This is the first
+turn.</li>
+<li>Call the language model using the function call response from the first turn
+and the function response you get from calling that function. This is the
+second turn.</li>
+</ol>
+
+<p>The response from the second turn either summarizes the results to answer your
+query in the first turn, or contains a second function call you can use to get
+more information for your query.</p>
+
+<p>This topic includes two multi-turn curl examples:</p>
+
+<ul>
+<li><a href="#multi-turn-example-1">Curl example that uses a function response from a previous turn</a></li>
+<li><a href="#multi-turn-example-2">Curl example that calls a language model multiple times</a></li>
+</ul>
+
+<h4 id="multi-turn-example-1" data-text="Use a response from a previous turn" tabindex="-1">Use a response from a previous turn</h4>
+
+<p>The following curl sample calls the function and arguments returned by the
+previous single-turn example to get a response. The method and parameters
+returned by the single-turn example are in this JSON.</p>
+<pre class="prettyprint lang-json" translate="no" dir="ltr"><code translate="no" dir="ltr">&#34;functionCall&#34;: {
+  &#34;name&#34;: &#34;find_theaters&#34;,
+  &#34;args&#34;: {
+    &#34;movie&#34;: &#34;Barbie&#34;,
+    &#34;location&#34;: &#34;Mountain View, CA&#34;
+  }
+}
+</code></pre>
+<div>
+  <devsite-expandable>
+    <h4 class="showalways" id="multi-turn-function-calling-curl-example-request" data-text="Multi-turn function calling curl example request" tabindex="-1">Multi-turn function calling curl example request</h4>
+    <pre class="devsite-click-to-copy" translate="no" dir="ltr">
+curl https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=$API_KEY \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "contents": [{
+      "role": "user",
+      "parts": [{
+        "text": "Which theaters in Mountain View show Barbie movie?"
+    }]
+  }, {
+    "role": "model",
+    "parts": [{
+      "functionCall": {
+        "name": "find_theaters",
+        "args": {
+          "location": "Mountain View, CA",
+          "movie": "Barbie"
+        }
+      }
+    }]
+  }, {
+    "role": "function",
+    "parts": [{
+      "functionResponse": {
+        "name": "find_theaters",
+        "response": {
+          "name": "find_theaters",
+          "content": {
+            "movie": "Barbie",
+            "theaters": [{
+              "name": "AMC Mountain View 16",
+              "address": "2000 W El Camino Real, Mountain View, CA 94040"
+            }, {
+              "name": "Regal Edwards 14",
+              "address": "245 Castro St, Mountain View, CA 94040"
+            }]
+          }
+        }
+      }
+    }]
+  }],
+  "tools": [{
+    "functionDeclarations": [{
+      "name": "find_movies",
+      "description": "find movie titles currently playing in theaters based on any description, genre, title words, etc.",
+      "parameters": {
+        "type": "OBJECT",
+        "properties": {
+          "location": {
+            "type": "STRING",
+            "description": "The city and state, e.g. San Francisco, CA or a zip code e.g. 95616"
+          },
+          "description": {
+            "type": "STRING",
+            "description": "Any kind of description including category or genre, title words, attributes, etc."
+          }
+        },
+        "required": ["description"]
+      }
+    }, {
+      "name": "find_theaters",
+      "description": "find theaters based on location and optionally movie title which is currently playing in theaters",
+      "parameters": {
+        "type": "OBJECT",
+        "properties": {
+          "location": {
+            "type": "STRING",
+            "description": "The city and state, e.g. San Francisco, CA or a zip code e.g. 95616"
+          },
+          "movie": {
+            "type": "STRING",
+            "description": "Any movie title"
+          }
+        },
+        "required": ["location"]
+      }
+    }, {
+      "name": "get_showtimes",
+      "description": "Find the start times for movies playing in a specific theater",
+      "parameters": {
+        "type": "OBJECT",
+        "properties": {
+          "location": {
+            "type": "STRING",
+            "description": "The city and state, e.g. San Francisco, CA or a zip code e.g. 95616"
+          },
+          "movie": {
+            "type": "STRING",
+            "description": "Any movie title"
+          },
+          "theater": {
+            "type": "STRING",
+            "description": "Name of the theater"
+          },
+          "date": {
+            "type": "STRING",
+            "description": "Date for requested showtime"
+          }
+        },
+        "required": ["location", "movie", "theater", "date"]
+      }
+    }]
+  }]
+}'
+    </pre>
+  </devsite-expandable>
+</div>
+
+<p>The response to this curl example includes the result of calling the
+<code translate="no" dir="ltr">find_theaters</code> method. The response might be similar to the following:</p>
+
+<div>
+  <devsite-expandable>
+    <h4 class="showalways" id="multi-turn-function-calling-curl-example-response" data-text="Multi-turn function calling curl example response" tabindex="-1">Multi-turn function calling curl example response</h4>
+    <pre translate="no" dir="ltr">
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": " OK. Barbie is showing in two theaters in Mountain View, CA: AMC Mountain View 16 and Regal Edwards 14."
+          }
+        ]
+      }
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 9,
+    "candidatesTokenCount": 27,
+    "totalTokenCount": 36
+  }
+}
+    </pre>
+  </devsite-expandable>
+</div>
+
+<h4 id="multi-turn-example-2" data-text="Call the model multiple times" tabindex="-1">Call the model multiple times</h4>
+
+<p>The following cURL example calls the generative AI model multiple times to call
+a function. Each time the model calls the function, it can use a different
+function to answer a different user query in the request.</p>
+
+<div>
+  <devsite-expandable>
+    <h4 class="showalways" id="multi-turn-function-calling-curl-example-request_1" data-text="Multi-turn function calling curl example request" tabindex="-1">Multi-turn function calling curl example request</h4>
+   <pre class="devsite-click-to-copy" translate="no" dir="ltr">
+curl https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=$API_KEY \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "contents": [{
+      "role": "user",
+      "parts": [{
+        "text": "Which theaters in Mountain View show Barbie movie?"
+    }]
+  }, {
+    "role": "model",
+    "parts": [{
+      "functionCall": {
+        "name": "find_theaters",
+        "args": {
+          "location": "Mountain View, CA",
+          "movie": "Barbie"
+        }
+      }
+    }]
+  }, {
+    "role": "function",
+    "parts": [{
+      "functionResponse": {
+        "name": "find_theaters",
+        "response": {
+          "name": "find_theaters",
+          "content": {
+            "movie": "Barbie",
+            "theaters": [{
+              "name": "AMC Mountain View 16",
+              "address": "2000 W El Camino Real, Mountain View, CA 94040"
+            }, {
+              "name": "Regal Edwards 14",
+              "address": "245 Castro St, Mountain View, CA 94040"
+            }]
+          }
+        }
+      }
+    }]
+  },
+  {
+    "role": "model",
+    "parts": [{
+      "text": " OK. Barbie is showing in two theaters in Mountain View, CA: AMC Mountain View 16 and Regal Edwards 14."
+    }]
+  },{
+    "role": "user",
+    "parts": [{
+      "text": "Can we recommend some comedy movies on show in Mountain View?"
+    }]
+  }],
+  "tools": [{
+    "functionDeclarations": [{
+      "name": "find_movies",
+      "description": "find movie titles currently playing in theaters based on any description, genre, title words, etc.",
+      "parameters": {
+        "type": "OBJECT",
+        "properties": {
+          "location": {
+            "type": "STRING",
+            "description": "The city and state, e.g. San Francisco, CA or a zip code e.g. 95616"
+          },
+          "description": {
+            "type": "STRING",
+            "description": "Any kind of description including category or genre, title words, attributes, etc."
+          }
+        },
+        "required": ["description"]
+      }
+    }, {
+      "name": "find_theaters",
+      "description": "find theaters based on location and optionally movie title which is currently playing in theaters",
+      "parameters": {
+        "type": "OBJECT",
+        "properties": {
+          "location": {
+            "type": "STRING",
+            "description": "The city and state, e.g. San Francisco, CA or a zip code e.g. 95616"
+          },
+          "movie": {
+            "type": "STRING",
+            "description": "Any movie title"
+          }
+        },
+        "required": ["location"]
+      }
+    }, {
+      "name": "get_showtimes",
+      "description": "Find the start times for movies playing in a specific theater",
+      "parameters": {
+        "type": "OBJECT",
+        "properties": {
+          "location": {
+            "type": "STRING",
+            "description": "The city and state, e.g. San Francisco, CA or a zip code e.g. 95616"
+          },
+          "movie": {
+            "type": "STRING",
+            "description": "Any movie title"
+          },
+          "theater": {
+            "type": "STRING",
+            "description": "Name of the theater"
+          },
+          "date": {
+            "type": "STRING",
+            "description": "Date for requested showtime"
+          }
+        },
+        "required": ["location", "movie", "theater", "date"]
+      }
+    }]
+  }]
+}'
+    </pre>
+  </devsite-expandable>
+</div>
+
+<div>
+  <devsite-expandable>
+    <h4 class="showalways" id="multi-turn-function-calling-curl-example-response_1" data-text="Multi-turn function calling curl example response" tabindex="-1">Multi-turn function calling curl example response</h4>
+    <pre translate="no" dir="ltr">
+[{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "functionCall": {
+              "name": "find_movies",
+              "args": {
+                "description": "comedy",
+                "location": "Mountain View, CA"
+              }
+            }
+          }
+        ]
+      },
+      "finishReason": "STOP",
+      "safetyRatings": [
+        {
+          "category": "HARM_CATEGORY_HARASSMENT",
+          "probability": "NEGLIGIBLE"
+        },
+        {
+          "category": "HARM_CATEGORY_HATE_SPEECH",
+          "probability": "NEGLIGIBLE"
+        },
+        {
+          "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+          "probability": "NEGLIGIBLE"
+        },
+        {
+          "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+          "probability": "NEGLIGIBLE"
+        }
+      ]
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 48,
+    "totalTokenCount": 48
+  }
+}
+]
+    </pre>
+  </devsite-expandable>
+</div>
+
+<h2 id="best-practices" data-text="Best practices" tabindex="-1">Best practices</h2>
+
+<p>Follow these best practices to improve the accuracy and
+reliability of your function calls.</p>
+
+<h3 id="prompt-best-practices" data-text="User prompt" tabindex="-1">User prompt</h3>
+
+<p>For best results, prepend the user query with the following details:</p>
+
+<ul>
+<li>Additional context for the model. For example, <code translate="no" dir="ltr">You are a movie API assistant
+to help users find movies and showtimes based on their preferences.</code></li>
+<li>Details or instructions on how and when to use the functions. For example,
+<code translate="no" dir="ltr">Don&#39;t make assumptions on showtimes. Always use a future date for showtimes.</code></li>
+<li>Instructions to ask clarifying questions if user queries are ambiguous. For
+example, <code translate="no" dir="ltr">Ask clarifying questions if not enough information is available to
+complete the request.</code></li>
+</ul>
+
+<h3 id="sampling-parameters-best-practices" data-text="Sampling parameters" tabindex="-1">Sampling parameters</h3>
+
+<p>For the temperature parameter, use <code translate="no" dir="ltr">0</code> or another low value. This instructs
+the model to generate more confident results and reduces hallucinations.</p>
+
+<h3 id="invoke-api-best-practices" data-text="API invocation" tabindex="-1">API invocation</h3>
+
+<p>If the model proposes the invocation of a function that would send an order,
+update a database, or otherwise have significant consequences, validate the
+function call with the user before executing it.</p>
+
+  
+
+  
+</div>
+
+  
+
+  
+    
+    
+      
+    <devsite-thumb-rating position="footer">
+    </devsite-thumb-rating>
+  
+       
+         <devsite-feedback
+  position="footer"
+  project-name="Gemini API"
+  product-id="5292923"
+  bucket="documentation"
+  context=""
+  version="t-devsite-webserver-20240709-r00-rc00.461904466109631677"
+  data-label="Send Feedback Button"
+  track-type="feedback"
+  track-name="sendFeedbackLink"
+  track-metadata-position="footer"
+  class="nocontent"
+  
+  
+  
+    project-icon="https://www.gstatic.com/devrel-devsite/prod/v158caafe57d4670a8abac19430cb93c14f6b6846e8f3012a57383593e392bfd9/googledevai/images/touchicon-180-new.png"
+  
+  
+  feedback-type="thumb-rating">
+
+  <button>
+  
+    
+    Send feedback
+  
+  </button>
+</devsite-feedback>
+       
+    
+    
+  
+
+  
+  
+</article>
+
+
+<devsite-content-footer class="nocontent">
+  <p>Except as otherwise noted, the content of this page is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License</a>, and code samples are licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see the <a href="https://developers.google.com/site-policies">Google Developers Site Policies</a>. Java is a registered trademark of Oracle and/or its affiliates.</p>
+  <p>Last updated 2024-06-21 UTC.</p>
+</devsite-content-footer>
+
+
+<devsite-notification
+>
+</devsite-notification>
+
+
+  
+<div class="devsite-content-data">
+  <template class="devsite-thumb-rating-down-categories">
+  [{
+      "type": "thumb-down",
+      "id": "missingTheInformationINeed",
+      "label":"Missing the information I need"
+    },{
+      "type": "thumb-down",
+      "id": "tooComplicatedTooManySteps",
+      "label":"Too complicated / too many steps"
+    },{
+      "type": "thumb-down",
+      "id": "outOfDate",
+      "label":"Out of date"
+    },{
+      "type": "thumb-down",
+      "id": "samplesCodeIssue",
+      "label":"Samples / code issue"
+    },{
+      "type": "thumb-down",
+      "id": "otherDown",
+      "label":"Other"
+    }]
+  </template>
+  <template class="devsite-thumb-rating-up-categories">
+  [{
+      "type": "thumb-up",
+      "id": "easyToUnderstand",
+      "label":"Easy to understand"
+    },{
+      "type": "thumb-up",
+      "id": "solvedMyProblem",
+      "label":"Solved my problem"
+    },{
+      "type": "thumb-up",
+      "id": "otherUp",
+      "label":"Other"
+    }]
+  </template>
+  
+    
+    
+    <template class="devsite-thumb-rating-feedback">
+      <devsite-feedback
+  position="thumb-rating"
+  project-name="Gemini API"
+  product-id="5292923"
+  bucket="documentation"
+  context=""
+  version="t-devsite-webserver-20240709-r00-rc00.461904466109631677"
+  data-label="Send Feedback Button"
+  track-type="feedback"
+  track-name="sendFeedbackLink"
+  track-metadata-position="thumb-rating"
+  class="nocontent"
+  
+  
+  
+    project-icon="https://www.gstatic.com/devrel-devsite/prod/v158caafe57d4670a8abac19430cb93c14f6b6846e8f3012a57383593e392bfd9/googledevai/images/touchicon-180-new.png"
+  
+  
+  feedback-type="thumb-rating">
+
+  <button>
+  
+    Need to tell us more?
+  
+  </button>
+</devsite-feedback>
+    </template>
+  
+</div>
+            
+          </devsite-content>
+        </main>
+        <devsite-footer-promos class="devsite-footer">
+          
+            
+          
+        </devsite-footer-promos>
+        <devsite-footer-linkboxes class="devsite-footer">
+          
+            
+<nav class="devsite-footer-linkboxes nocontent" aria-label="Footer links">
+  
+</nav>
+          
+        </devsite-footer-linkboxes>
+        <devsite-footer-utility class="devsite-footer">
+          
+            
+
+<div class="devsite-footer-utility nocontent">
+  
+
+  
+  <nav class="devsite-footer-utility-links" aria-label="Utility links">
+    
+    <ul class="devsite-footer-utility-list">
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//policies.google.com/terms"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Terms link"
+         >
+          Terms
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//policies.google.com/privacy"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Privacy link"
+         >
+          Privacy
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 glue-cookie-notification-bar-control">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="#"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Manage cookies link"
+         
+           aria-hidden="true"
+         >
+          Manage cookies
+        </a>
+        
+      </li>
+      
+    </ul>
+    
+    
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        
+          aria-current="true">English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="it"
+        >Italiano</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="tr"
+        >Türkçe</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ru"
+        >Русский</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="he"
+        >עברית</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ar"
+        >العربيّة</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fa"
+        >فارسی</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="hi"
+        >हिंदी</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="bn"
+        >বাংলা</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="th"
+        >ภาษาไทย</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+  </nav>
+</div>
+          
+        </devsite-footer-utility>
+        <devsite-panel></devsite-panel>
+        
+      </section></section>
+    <devsite-sitemask></devsite-sitemask>
+    <devsite-snackbar
+    
+    >
+</devsite-snackbar>
+    <devsite-tooltip ></devsite-tooltip>
+    <devsite-heading-link></devsite-heading-link>
+    <devsite-analytics analytics-iframe>
+      
+        <script type="application/json" analytics>[]</script>
+<script type="application/json" tag-management>{&#34;at&#34;: &#34;True&#34;, &#34;ga4&#34;: [], &#34;ga4p&#34;: [], &#34;gtm&#34;: [{&#34;id&#34;: &#34;GTM-TC2MQKS8&#34;, &#34;purpose&#34;: 0}], &#34;parameters&#34;: {&#34;internalUser&#34;: &#34;False&#34;, &#34;language&#34;: {&#34;machineTranslated&#34;: &#34;False&#34;, &#34;requested&#34;: &#34;en&#34;, &#34;served&#34;: &#34;en&#34;}, &#34;pageType&#34;: &#34;article&#34;, &#34;projectName&#34;: &#34;Gemini API&#34;, &#34;signedIn&#34;: &#34;True&#34;, &#34;tenant&#34;: &#34;googledevai&#34;, &#34;recommendations&#34;: {&#34;sourcePage&#34;: &#34;&#34;, &#34;sourceType&#34;: 0, &#34;sourceRank&#34;: 0, &#34;sourceIdenticalDescriptions&#34;: 0, &#34;sourceTitleWords&#34;: 0, &#34;sourceDescriptionWords&#34;: 0, &#34;experiment&#34;: &#34;&#34;}, &#34;experiment&#34;: {&#34;ids&#34;: &#34;&#34;}}}</script>
+      
+    </devsite-analytics>
+    
+      <devsite-badger></devsite-badger>
+    
+    
+    <script nonce="QG9+g3b1lxcKwjPFOgF6yx2qdsm4XM">
+  
+  (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+    t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+    E.parentNode.insertBefore(t,E);})(window, document, 'script',
+    'https://www.gstatic.com/devrel-devsite/prod/v158caafe57d4670a8abac19430cb93c14f6b6846e8f3012a57383593e392bfd9/googledevai/js/app_loader.js', '[59,"en",null,"/js/devsite_app_module.js","https://www.gstatic.com/devrel-devsite/prod/v158caafe57d4670a8abac19430cb93c14f6b6846e8f3012a57383593e392bfd9","https://www.gstatic.com/devrel-devsite/prod/v158caafe57d4670a8abac19430cb93c14f6b6846e8f3012a57383593e392bfd9/googledevai","https://googledevai-dot-devsite-v2-prod-3p.appspot.com",1,null,["/_pwa/googledevai/manifest.json","https://www.gstatic.com/devrel-devsite/prod/v158caafe57d4670a8abac19430cb93c14f6b6846e8f3012a57383593e392bfd9/images/video-placeholder.svg","https://www.gstatic.com/devrel-devsite/prod/v158caafe57d4670a8abac19430cb93c14f6b6846e8f3012a57383593e392bfd9/googledevai/images/favicon-new.png","/_static/googledevai/images/lockup-new.svg","https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700&display=swap"],1,null,[1,6,8,12,14,17,21,25,50,52,63,70,75,76,80,87,91,92,93,97,98,100,101,102,103,104,105,107,108,109,110,112,113,116,117,118,120,122,124,125,126,127,129,130,131,132,133,134,135,136,138,140,141,147,148,149,151,152,156,157,158,159,161,163,164,168,169,170,179,180,182,183,186,191,193,196],"AIzaSyCNm9YxQumEXwGJgTDjxoxXK6m1F-9720Q","AIzaSyCc76DZePGtoyUjqKrLdsMGk_ry7sljLbY","ai.google.dev","AIzaSyB9bqgQ2t11WJsOX8qNsCQ6U-w91mmqF-I","AIzaSyAdYnStPdzjcJJtQ0mvIaeaMKj7_t6J_Fg",null,null,null,["Profiles__enable_developer_profiles_callout","Cloud__enable_free_trial_server_call","Search__enable_suggestions_from_borg","BookNav__enable_tenant_cache_key","TpcFeatures__enable_mirror_tenant_redirects","MiscFeatureFlags__enable_variable_operator","MiscFeatureFlags__developers_footer_image","Analytics__enable_all_tenant_analytics","Profiles__enable_page_saving","Concierge__enable_pushui","Profiles__enable_dashboard_curated_recommendations","Profiles__require_profile_eligibility_for_signin","Experiments__reqs_query_experiments","Profiles__enable_release_notes_notifications","CloudShell__cloud_shell_button","Cloud__enable_cloud_dlp_service","Cloud__enable_cloudx_ping","Cloud__enable_cloudx_experiment_ids","OnSwitch__enable","Search__enable_page_map","Search__enable_ai_eligibility_checks","Cloud__enable_cloud_facet_chat","CloudShell__cloud_code_overflow_menu","Cloud__enable_cloud_shell","Search__enable_dynamic_content_confidential_banner","Cloud__enable_cloud_shell_fte_user_flow","MiscFeatureFlags__enable_firebase_utm","Profiles__enable_recognition_badges","Analytics__enable_cookie_bar","MiscFeatureFlags__enable_project_variables","MiscFeatureFlags__developers_footer_dark_image","Profiles__enable_profile_collections","MiscFeatureFlags__emergency_css","Cloud__enable_llm_concierge_chat","MiscFeatureFlags__enable_explain_this_code","Profiles__enable_awarding_url","Profiles__enable_public_developer_profiles","EngEduTelemetry__enable_engedu_telemetry"],null,null,"AIzaSyA58TaKli1DculwmAmbpzLVGuWc8eCQgQc","https://developerscontentserving-pa.googleapis.com","AIzaSyDWBU60w0P9hEkr29kkksYs8Z7gvZ8u_wc","https://developerscontentsearch-pa.googleapis.com",2,4,null,"https://developerprofiles-pa.googleapis.com",[59,"googledevai","Google for Developers","ai.google.dev",null,"googledevai-dot-devsite-v2-prod-3p.appspot.com",null,null,[null,1,null,null,null,null,null,null,null,null,null,[1],null,null,null,null,null,null,[1],null,null,null,null,[1,null,1],[1,1,null,1,1]],null,[73,null,null,null,null,null,"/images/lockup-new.svg","/images/touchicon-180-new.png",null,null,null,null,1,1,null,null,null,null,null,null,null,1,null,null,null,"/images/lockup-dark-theme-new.svg",[]],[],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[[],[1,1]],[[null,null,null,null,null,["GTM-TC2MQKS8"],null,null,null,null,null,[["GTM-TC2MQKS8",1]],1]],null,4]]')
+  
+</script>
+    <devsite-a11y-announce></devsite-a11y-announce>
+  </body>
+</html>
