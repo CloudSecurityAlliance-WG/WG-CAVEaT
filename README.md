@@ -49,6 +49,7 @@ And the data is the CAVEaT-files/CAVEaT-all-entries.html file
   * Controls
   * Technical Impact
   * Business Impact
+* Have AI build the case studies to add additional entries e.g. https://github.com/mitre-atlas/atlas-data/tree/main/data/case-studies
 
 ### Mappings
 
