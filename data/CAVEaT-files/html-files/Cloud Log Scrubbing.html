@@ -1,0 +1,498 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Segoe UI";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+p.paragraph, li.paragraph, div.paragraph
+	{mso-style-name:paragraph;
+	margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+span.normaltextrun
+	{mso-style-name:normaltextrun;}
+span.eop
+	{mso-style-name:eop;}
+.MsoChpDefault
+	{font-size:12.0pt;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-CA link=blue vlink="#954F72" style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:white'><span lang=EN style='font-size:24.0pt;
+font-family:"Arial",sans-serif;color:black'>Cloud Log Scrubbing </span><span
+lang=EN style='font-family:"Arial",sans-serif;color:black'>(version 1.0)</span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:white'><span lang=EN style='font-family:"Arial",sans-serif;
+color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt'><b><span lang=EN-US
+style='font-size:14.0pt;font-family:"Arial",sans-serif;color:#39434C'>Cloud
+Service Label:  IaaS, PaaS, SaaS</span></b></p>
+
+<p class=MsoNormal style='margin-top:6.0pt'><b><span lang=EN-US
+style='font-size:14.0pt;font-family:"Arial",sans-serif;color:#39434C'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:white'><span lang=EN style='font-size:16.0pt;
+font-family:"Arial",sans-serif;color:black'>Description</span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:white'><span lang=EN style='font-family:"Arial",sans-serif;
+color:#252525'>Deletion of logs has been a universal technique of adversaries
+since the dawn of intrusions.  Cloud platforms make this practice far more
+convenient and thorough because most cloud services have a unified interface
+for accessing and collecting logs from disparate cloud services.  With legacy
+networks it would have required effort for an adversary to determine how a
+victim was logging each service and where the logs might reside. Logging is now
+a largely standardized process thanks to Azure and AWS efforts. Adversaries can
+use cloud provided API’s and logic functions to quickly eliminate problematic
+log entries.  Cloud logs usually leverage standard Cloud object storage which
+subjects them to data attacks associated with any data stored in Cloud object
+storage. </span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:white'><span lang=EN style='font-family:"Arial",sans-serif;
+color:#252525'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:16.0pt;font-family:"Arial",sans-serif'>Examples</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='font-family:"Arial",sans-serif'>Name</span></b><span
+  lang=EN-US style='font-family:"Arial",sans-serif'>&nbsp;</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='font-family:"Arial",sans-serif'>Description</span></b><span
+  lang=EN-US style='font-family:"Arial",sans-serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>Weird
+  All Cloud Trail Cleaning Scripts</span></p>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-right:.1in'><span lang=EN-US
+  style='font-size:9.0pt;font-family:"Arial",sans-serif;color:#404040'>Publicly
+  available scripts to remove log entries from AWS Cloud Trail.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>Pacu</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif;
+  color:black'>Pacu’s plug-in modules offer assistance for enumeration,
+  privilege escalation, data exfiltration, service exploitation, and log
+  manipulation within AWS.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>Delete
+  all AWS logs</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif;
+  color:black'>The <i>delete_all_awslogs.sh </i>script will delete AWS logs for
+  a specified region. You can also specify log group names like <i>/aws/lambda</i>.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>Delete
+  Azure Analytics Logs workspace</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif;
+  color:black'>Adding a ‘-ForceDelete’ tag to the Azure CLI deletion command
+  will permanently delete a workspace.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN style='font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN style='font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:16.0pt;font-family:"Arial",sans-serif'>Mitigations</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=624
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=312 colspan=2 valign=top style='width:3.25in;border:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='font-family:"Arial",sans-serif'>Mitigation</span></b></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='font-family:"Arial",sans-serif'>Description</span></b><span
+  lang=EN-US style='font-family:"Arial",sans-serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 colspan=2 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>Audit</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>Frequently
+  check permissions on cloud storage to ensure proper permissions are set to
+  deny open or unprivileged access to resources. Consider using automated
+  resource checkers such as CloudSploit or Divvycloud.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=156 valign=top style='width:117.0pt;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+  </td>
+  <td width=156 valign=top style='width:117.0pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>AWS</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>To
+  perform an audit via AWS it is suggested to review information such as
+  account details (credentials, users, groups, roles, etc), mobile
+  applications, EC2 configurations, policies, and account activity. How to
+  audit these different factors can be found in detail at: <b>https://docs.aws.amazon.com/general/latest/gr/aws-security-audit-guide.html.</b></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=156 valign=top style='width:117.0pt;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+  </td>
+  <td width=156 valign=top style='width:117.0pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>Azure</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>To
+  perform an audit via Azure an administrator can review the audit logs that
+  are recorded under Azure’s monitoring for active directory. The audit logs
+  allow for filtering, as well as looking at users, groups, and enterprise
+  specific information. Full details on how to access this information can be
+  found at: <b>https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/concept-audit-logs.</b></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=156 valign=top style='width:117.0pt;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+  </td>
+  <td width=156 valign=top style='width:117.0pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>GCP</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>To
+  perform an audit via GCP the logs can be reviewed. GCP breaks this down into
+  three categories; admin activity, data access, and system events. The audit
+  logs can be viewed a few different ways- the console, API, or gcloud. Full
+  details on how to view these logs, how to export, and for how to configure
+  the retention period can be found here: <b>https://cloud.google.com/logging/docs/audit.</b></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 colspan=2 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>Permissions</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span class=normaltextrun><span lang=EN-US
+  style='font-size:9.0pt;font-family:"Arial",sans-serif;color:black'>Remove
+  delete permissions to logs associated storage objects from most accounts.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 colspan=2 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>Offsite
+  Storage/Processing</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span class=normaltextrun><span lang=EN-US
+  style='font-size:9.0pt;font-family:"Arial",sans-serif;color:black'>Quickly
+  move logs off the cloud to a local repository,SIEM, or to another separate
+  account owner within the cloud.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 colspan=2 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>Recover
+  Azure Log Analytics Workspace</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span class=normaltextrun><span lang=EN-US
+  style='font-size:9.0pt;font-family:"Arial",sans-serif;color:black'>If an
+  Azure Log Analytics workspace is deleted, the workspace is placed in a
+  soft-delete state, which can be used to recover the deleted data,
+  configuration, and connected agents. </span></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN style='font-size:18.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=paragraph style='margin:0in'><span class=normaltextrun><span
+lang=EN-US style='font-size:16.0pt;font-family:"Arial",sans-serif'>Detection</span></span><span
+class=eop><span lang=EN-US style='font-size:16.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><b><span lang=EN-US
+  style='font-family:"Arial",sans-serif'>Detection</span></b></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='font-family:"Arial",sans-serif'>Description</span></b><span
+  lang=EN-US style='font-family:"Arial",sans-serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>Create
+  Log Metric Filters and Alarms for CloudTrail</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span class=normaltextrun><span lang=EN-US
+  style='font-size:9.0pt;font-family:"Arial",sans-serif;color:black'>To create
+  a metric filter and alarm:</span></span></p>
+  <p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'><span
+  lang=EN-US style='font-size:9.0pt;color:black'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>Create
+  a filter that checks for CloudTrail changes and the specific <i>&lt;cloudtrail_log_group_name&gt;</i></span></p>
+  <p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+  lang=EN-US style='font-size:9.0pt'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>Create
+  an SNS topic that the alarm will notify</span></p>
+  <p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+  lang=EN-US style='font-size:9.0pt'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>Create
+  an SNS subscription to the above topic</span></p>
+  <p class=MsoListParagraphCxSpLast style='text-indent:-.25in'><span
+  lang=EN-US style='font-size:9.0pt'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>Create
+  an alarm associated with the filter from step 1 and SNS topic in step 2</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>Create
+  Activity Log Alerts in Azure</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span class=normaltextrun><span lang=EN-US
+  style='font-size:9.0pt;font-family:"Arial",sans-serif;color:black'>To create
+  log activity alerts for deletion in the Azure Console:</span></span></p>
+  <p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'><span
+  class=normaltextrun><span lang=EN-US style='font-size:9.0pt;color:black'>1.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span
+  class=normaltextrun><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif;
+  color:black'>Navigate to <i>Monitor’ / ‘Alerts</i></span></span></p>
+  <p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+  class=normaltextrun><span lang=EN-US style='font-size:9.0pt;color:black'>2.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span
+  class=normaltextrun><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif;
+  color:black'>Select <i>Manage alert rules</i></span></span></p>
+  <p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+  class=normaltextrun><span lang=EN-US style='font-size:9.0pt;color:black'>3.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span
+  class=normaltextrun><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif;
+  color:black'>Click on the Alert <i>Name</i> where Condition contains <i>operationName
+  equals Microsoft.Network/networkSecurityGroups/securityRules/delete</i></span></span></p>
+  <p class=MsoListParagraphCxSpLast style='text-indent:-.25in'><span
+  class=normaltextrun><span lang=EN-US style='font-size:9.0pt;color:black'>4.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span
+  class=normaltextrun><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif;
+  color:black'>Hover a mouse over <i>Condition</i> to ensure it is set to <i>Whenever
+  the Administrative Activity Log “Delete Security Rule
+  (networkSecurityGroups/securityRules)” has “any” level with “any” status and
+  event is initiated by “any</i>”</span></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=paragraph style='margin:0in'><span class=eop><span lang=EN-US
+style='font-family:"Arial",sans-serif'>&nbsp;</span></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0in;margin-bottom:
+3.0pt;margin-left:0in;background:white'><span lang=EN style='font-size:16.0pt;
+font-family:"Arial",sans-serif;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0in;margin-bottom:
+3.0pt;margin-left:0in;background:white'><span lang=EN style='font-size:16.0pt;
+font-family:"Arial",sans-serif;color:black'>References</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-top:12.0pt;margin-right:0in;
+margin-bottom:3.0pt;margin-left:.5in;text-indent:-.25in'><span lang=EN
+style='font-family:"Arial",sans-serif'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US><a
+href="https://b0k103-cportal2.mitre.org/carnal0wnage/weirdAAL/wiki/,DanaInfo=.agjvkygFjwv,SSL+Usage"><span
+lang=EN style='font-family:"Arial",sans-serif;color:windowtext;text-decoration:
+none'>https://github.com/carnal0wnage/weirdAAL/wiki/Usage</span></a></span><span
+lang=EN style='font-family:"Arial",sans-serif'> - Accessed Feb 22,2020</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:12.0pt;margin-right:0in;
+margin-bottom:3.0pt;margin-left:.5in;text-indent:-.25in'><span lang=EN>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US><a href="https://github.com/RhinoSecurityLabs/pacu"><span lang=EN
+style='font-family:"Arial",sans-serif;color:windowtext;text-decoration:none'>https://github.com/RhinoSecurityLabs/pacu</span></a></span><span
+lang=EN style='font-family:"Arial",sans-serif'>. Accessed August 5, 2020.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:12.0pt;margin-right:0in;
+margin-bottom:3.0pt;margin-left:.5in;text-indent:-.25in'><span lang=EN>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US><a
+href="https://gist.github.com/pahud/1e875cb1252a622173cc2236be5c2963"><span
+lang=EN style='font-family:"Arial",sans-serif;color:windowtext;text-decoration:
+none'>https://gist.github.com/pahud/1e875cb1252a622173cc2236be5c2963</span></a></span><span
+lang=EN style='font-family:"Arial",sans-serif'>. Accessed August 5, 2020.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:12.0pt;margin-right:0in;
+margin-bottom:3.0pt;margin-left:.5in;text-indent:-.25in'><span lang=EN>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US><a
+href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-delete-trails-console.html"><span
+lang=EN style='font-family:"Arial",sans-serif;color:windowtext;text-decoration:
+none'>https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-delete-trails-console.html</span></a></span><span
+lang=EN style='font-family:"Arial",sans-serif'>. Accessed August 5, 2020.</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-top:12.0pt;margin-right:0in;
+margin-bottom:3.0pt;margin-left:.5in;text-indent:-.25in'><span lang=EN>5.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US><a
+href="https://docs.microsoft.com/en-us/azure/azure-monitor/platform/delete-workspace"><span
+lang=EN style='font-family:"Arial",sans-serif;color:windowtext;text-decoration:
+none'>https://docs.microsoft.com/en-us/azure/azure-monitor/platform/delete-workspace</span></a></span><span
+lang=EN style='font-family:"Arial",sans-serif'>. Accessed August 5, 2020.</span></p>
+
+<p class=MsoNormal style='margin-bottom:1.2pt;margin-left:38.4pt;background:
+white'><span lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;
+color:#252525'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>

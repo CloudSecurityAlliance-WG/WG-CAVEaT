@@ -1,0 +1,44 @@
+<html><head></head><body link="blue" vlink="#954F72"><div><p>Unencrypted Network Traffic(version 1.0)</p>
+
+<p><b>Cloud Service Label: IaaS</b></p>
+
+<p>Description</p>
+<p>Adversaries may be able to intercept network traffic. Some cloud services can utilize insecure comms that lead to plaintext information being transmitted. In some cases, the plaintext information being sent are credentials which may lead adversaries to gain access to specific cloud services, as well as, perform lateral movement.</p>
+
+<p>Examples</p>
+<table border="1" cellpadding="0" cellspacing="0"><tr><td valign="top" width="312"><p><b>Name</b></p>
+</td>
+<td valign="top" width="312"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Jenkins Azure AD Plugin</p>
+</td>
+<td valign="top" width="312"><p>This<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-2119">CVE</a>outlines a vulnerability in the Jenkins Azure AD Plugin 1.1.2 and earlier.The plain text credentials are transmitted as a global configuration form</p>
+<p>resulting in possible exposure via intercepted network traffic, browser extensions, and cross-site scripting vulnerabilities.</p>
+</td>
+</tr>
+</table>
+<p>Mitigations</p>
+<table border="1" cellpadding="0" cellspacing="0"><tr><td valign="top" width="312"><p><b>Mitigation</b></p>
+</td>
+<td valign="top" width="312"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>VPN</p>
+</td>
+<td valign="top" width="312"><p>Utilizing a VPN can mitigate the risk due to application data being unencrypted.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Managed Service within Cloud Environment</p>
+</td>
+<td valign="top" width="312"><p>Use a managed service over custom uploaded services or code within a cloud environment. Cloud service providers automatically update and patch their managed services whereas a custom service would have to be manually monitored and patched.</p>
+</td>
+</tr>
+</table>
+<p>Detection</p>
+<p>This can be detected by monitoring network traffic to check for plaintext credentials when implementing new services or upgrading current services. Adversaries can also be detected if monitoring for rouge connections on the network.</p>
+
+<p><a name="scite-1"></a>References</p>
+<p>1.https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-2119. Accessed May 14, 2020.</p>
+<p>2.<a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-security-enforcing-tls.html">https://docs.aws.amazon.com/cli/latest/userguide/cli-security-enforcing-tls.html</a>. Accessed July 27, 2020.</p>
+</div></body></html>

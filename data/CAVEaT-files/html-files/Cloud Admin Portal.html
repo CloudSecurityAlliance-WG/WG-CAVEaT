@@ -1,0 +1,832 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Segoe UI";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+span.normaltextrun
+	{mso-style-name:normaltextrun;}
+.MsoChpDefault
+	{font-size:12.0pt;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-CA link=blue vlink=purple style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:24.0pt;font-family:"Arial",sans-serif'>Cloud
+Admin Portal/API </span><span lang=EN style='font-family:"Arial",sans-serif'>(version
+1.0)</span></p>
+
+<p class=MsoNormal><b><span lang=EN-US style='font-size:14.0pt;font-family:
+"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span lang=EN-US style='font-size:14.0pt;font-family:
+"Arial",sans-serif;color:#404040'>Cloud Service Label:  IaaS, PaaS, SaaS</span></b></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:22.0pt;font-family:"Arial",sans-serif;
+color:#404040'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:16.0pt;font-family:"Arial",sans-serif'>Description</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Arial",sans-serif'>The
+cloud admin portal/API is accessible from any place in the world.  By design,
+all Azure and AWS resources are theoretically accessible from this universal
+interface.  Only identity credentials stand in the way of anyone accessing
+anyone else’s resources and information. The circumstance is not much improved
+for unclassified government only clouds, which also widely expose their portal
+and API and again rely on credentials to arbitrate access.  </span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Arial",sans-serif;
+color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Arial",sans-serif'>An
+adversary may use a portal with stolen credentials to gain useful information
+from an operational cloud environment, such as specific services, resources,
+and features. For example, the GCP Command Center can be used to view all
+assets, findings of potential security risks, and to run additional queries,
+such as finding public IP addresses and open ports. </span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Arial",sans-serif'> </span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Arial",sans-serif'>Passwords
+to gain access to the portal/API can be stolen from administrator or privileged
+user workstations that interact with the portal/API through traditional
+harvesting techniques like spear phishing.  2FA greatly reduces the chance that
+such attacks will work.  However even with 2FA, it may be possible for
+adversaries to use the token obtained after 2FA authentication for some brief
+period of time to gain access to your resources, if they have access to the
+machine that was granted access by 2FA.  Within AWS, other accounts without 2FA
+may still be granted access to some or all of your resources through IAM roles.
+The portal/APIs themselves are complex web applications that change constantly.
+ As such they may have intermittent security flaws that enable adversaries to
+by-pass the credential process and gain access to your resources.</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:8.0pt;font-family:"Arial",sans-serif'> </span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:16.0pt;font-family:"Arial",sans-serif'> </span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:16.0pt;font-family:"Arial",sans-serif'>Examples</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=624
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=214 valign=top style='width:160.5pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='font-family:"Arial",sans-serif'>Name</span></b><span
+  lang=EN-US style='font-family:"Arial",sans-serif'>&nbsp;</span></p>
+  </td>
+  <td width=410 valign=top style='width:307.5pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='font-family:"Arial",sans-serif'>Description</span></b><span
+  lang=EN-US style='font-family:"Arial",sans-serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=214 valign=top style='width:160.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>Azure
+  Portal Vulnerability</span></p>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+  </td>
+  <td width=410 valign=top style='width:307.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif;
+  color:#595959'>Azure API was theorized to have a significant flaw checking
+  credentials for certain API routines based on successful demonstrations on
+  Azure Stack Hub version of the portal.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:8.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:8.0pt;font-family:"Arial",sans-serif'>                                                                                                  </span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:16.0pt;font-family:"Arial",sans-serif'>Mitigations
+</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=216 colspan=2 valign=top style='width:2.25in;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='font-family:"Arial",sans-serif'>Mitigation</span></b></p>
+  </td>
+  <td width=407 valign=top style='width:305.25pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='font-family:"Arial",sans-serif'>Description</span></b><span
+  lang=EN-US style='font-family:"Arial",sans-serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=216 colspan=2 valign=top style='width:2.25in;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US><a
+  href="https://attack.mitre.org/mitigations/M1032"><span style='font-size:
+  9.0pt;font-family:"Arial",sans-serif;color:windowtext;text-decoration:none'>Multi-factor
+  Authentication</span></a></span></p>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+  </td>
+  <td width=407 valign=top style='width:305.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif;
+  color:#595959'>Use multi-factor authentication for user and privileged
+  accounts. Do not manage Cloud portals from machines that perform user email
+  and web browsing tasks. All users should be required to utilize two factor
+  authentication.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=100 valign=top style='width:75.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+  </td>
+  <td width=116 valign=top style='width:87.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><i><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>AWS</span></i></p>
+  </td>
+  <td width=407 valign=top style='width:305.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif;
+  color:#595959'>This can be enforced by first creating a policy that would
+  prohibit actions except those that allow a user to change their password or
+  manage 2FA, then attaching a policy to a group that includes all user
+  accounts where they can be allowed all access if they sign in with 2FA. Once
+  these actions are completed it should be tested to verify the access is given
+  correctly. To see full details on how to complete this view AWS documentation
+  at: <b>https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_users-self-manage-mfa-and-creds.html.</b></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=100 valign=top style='width:75.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+  </td>
+  <td width=116 valign=top style='width:87.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><i><span lang=EN-US style='font-size:9.0pt;font-family:
+  "Arial",sans-serif'>Azure</span></i></p>
+  </td>
+  <td width=407 valign=top style='width:305.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif;
+  color:#595959'>This can be done by creating a MFA registration policy. It can
+  than be assigned to all users (with the ability to exclude some if need be,
+  but is not recommended). Make sure once the policy is created and added to
+  users that it is then being enforced, once enforced it should be tested for
+  verification. To see full details on how to complete this view Azure
+  documentation at: <b>https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/howto-identity-protection-configure-mfa-policy.</b></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=100 valign=top style='width:75.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+  </td>
+  <td width=116 valign=top style='width:87.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><i><span lang=EN-US style='font-size:9.0pt;font-family:
+  "Arial",sans-serif'>GCP</span></i></p>
+  </td>
+  <td width=407 valign=top style='width:305.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif;
+  color:#595959'>This can be done by first enabling it on the current account
+  being used by admin to assign the roles, then enable two factor on an
+  instance by instance or project by project basis, then assigning the
+  requirements based on IAM roles and applying it to all users. To see full
+  details on how to complete this view Azure documentation at: <b>https://cloud.google.com/compute/docs/oslogin/setup-two-factor-authentication.</b></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=216 colspan=2 valign=top style='width:2.25in;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>Least
+  Privilege</span></p>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+  </td>
+  <td width=407 valign=top style='width:305.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>All
+  access given to users in the cloud environment should be assigned by the
+  necessary privileges needed for team members to complete their job
+  responsibilities.<span class=normaltextrun><span style='color:#222A35'>
+  Ensure that temporary access tokens are issued rather than permanent
+  credentials, especially when access is being granted to entities outside of
+  the internal security boundary.</span></span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=100 valign=top style='width:75.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+  </td>
+  <td width=116 valign=top style='width:87.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><i><span lang=EN-US style='font-size:9.0pt;font-family:
+  "Arial",sans-serif'>AWS</span></i></p>
+  </td>
+  <td width=407 valign=top style='width:305.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>To
+  implement least privilege in an AWS environment IAM policies will be used.
+  This gives the ability to allow users to perform list, read, write,
+  permissions management, or tagging actions. AWS suggests utilizing <i>last
+  accessed information</i> and A<i>WS CloudTrail event history</i> to get a
+  better understanding of privileges that might be needed or reduced based on a
+  specific role. Full details can be found at <b>https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#grant-least-privilege.</b></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=100 valign=top style='width:75.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+  </td>
+  <td width=116 valign=top style='width:87.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><i><span lang=EN-US style='font-size:9.0pt;font-family:
+  "Arial",sans-serif'>Azure</span></i></p>
+  </td>
+  <td width=407 valign=top style='width:305.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>To
+  implement least privilege in an Azure environment Azure Active Directory
+  roles will be used. Azure outlines different tasks and the least privileged
+  role that are suggested to be associated with the task. Those details can be
+  found at:<b>
+  https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/roles-delegate-by-task.</b>
+  To learn how to assign specific roles it can be done via the Azure Active
+  Directory Portal. Instructions on how to assign roles can be found here: <b>https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-manage-roles-portal.</b></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=100 valign=top style='width:75.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+  </td>
+  <td width=116 valign=top style='width:87.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><i><span lang=EN-US style='font-size:9.0pt;font-family:
+  "Arial",sans-serif'>GCP</span></i></p>
+  </td>
+  <td width=407 valign=top style='width:305.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>To
+  implement least privilege in GCP it is recommended to use predefined roles
+  (which allow for granular access permissions) instead of primitive roles
+  (roles/owner, roles/editor, and roles/viewer). Full details on the difference
+  between types of roles can be found here: <b>https://cloud.google.com/iam/docs/understanding-roles.</b>
+  To assign these roles IAM service accounts are used and complete details can
+  be found at: <b>https://cloud.google.com/iam/docs/using-iam-securely#least_privilege.</b></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:16.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:16.0pt;font-family:"Arial",sans-serif'>Detection
+</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'> </span><span
+lang=EN-US style='font-family:"Arial",sans-serif'>Monitor account activity logs
+to see actions performed and activity associated with the cloud service
+management console. Some cloud providers, such as AWS and Azure, provide
+distinct log events for login attempts to the management console. </span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><b><span lang=EN-US
+  style='font-family:"Arial",sans-serif'>Detection</span></b></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><b><span lang=EN-US
+  style='font-family:"Arial",sans-serif'>Description</span></b><span
+  lang=EN-US style='font-family:"Arial",sans-serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>Create
+  Log Metric Filters and Alarms for AWS</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>To create
+  a metric filter and alarm:</span></p>
+  <p class=MsoListParagraphCxSpFirst style='margin-bottom:8.0pt;text-indent:
+  -.25in;line-height:107%'><span lang=EN-US style='font-size:9.0pt;line-height:
+  107%'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;line-height:107%;
+  font-family:"Arial",sans-serif'>Create a metric filter that checks for IAM
+  policy changes and the <i>&lt;cloudtrail_log_group_name&gt;</i></span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in;line-height:107%'><span lang=EN-US style='font-size:9.0pt;line-height:
+  107%'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;line-height:107%;
+  font-family:"Arial",sans-serif'>Create an SNS topic</span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in;line-height:107%'><span lang=EN-US style='font-size:9.0pt;line-height:
+  107%'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;line-height:107%;
+  font-family:"Arial",sans-serif'>Create an SNS subscription to the above topic</span></p>
+  <p class=MsoListParagraphCxSpLast style='margin-bottom:8.0pt;text-indent:
+  -.25in;line-height:107%'><span lang=EN-US style='font-size:9.0pt;line-height:
+  107%'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;line-height:107%;
+  font-family:"Arial",sans-serif'>Create an alarm associated with the filter
+  and SNS topic created in steps 1 and 2 respectively</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>Monitor
+  Activity in AWS Account</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>Various
+  services in AWS offer logging features that allow for detection capabilities.
+  These include CloudFront, CloudTrail, CloudWatch, Config, and S3. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>Monitor
+  for Suspicious Activity in Azure</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>Azure
+  AD can generate anomaly reports than can be run on a daily basis. Azure AD
+  Identity Protection show current risks in its dashboard and provides daily
+  email summary notifications. Policies can also be configured to alert to
+  specific issues.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>Create
+  Log Metric Filters and Alarms for CloudTrail</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>To
+  create a metric filter and alarm:</span></p>
+  <p class=MsoListParagraphCxSpFirst style='margin-bottom:8.0pt;text-indent:
+  -.25in;line-height:107%'><span lang=EN-US style='font-size:9.0pt;line-height:
+  107%'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;line-height:107%;
+  font-family:"Arial",sans-serif'>Create a filter that checks for CloudTrail
+  changes and the specific <i>&lt;cloudtrail_log_group_name&gt;</i></span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in;line-height:107%'><span lang=EN-US style='font-size:9.0pt;line-height:
+  107%'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;line-height:107%;
+  font-family:"Arial",sans-serif'>Create an SNS topic that the alarm will
+  notify</span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in;line-height:107%'><span lang=EN-US style='font-size:9.0pt;line-height:
+  107%'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;line-height:107%;
+  font-family:"Arial",sans-serif'>Create an SNS subscription to the above topic</span></p>
+  <p class=MsoListParagraphCxSpLast style='margin-bottom:8.0pt;text-indent:
+  -.25in;line-height:107%'><span lang=EN-US style='font-size:9.0pt;line-height:
+  107%'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;line-height:107%;
+  font-family:"Arial",sans-serif'>Create an alarm associated with the filter
+  from step 1 and SNS topic in step 2</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>Create
+  Activity Log Alerts in Azure</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>To
+  create log activity alerts for deletion in the Azure Console:</span></p>
+  <p class=MsoListParagraphCxSpFirst style='margin-bottom:8.0pt;text-indent:
+  -.25in;line-height:107%'><span lang=EN-US style='font-size:9.0pt;line-height:
+  107%'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;line-height:107%;
+  font-family:"Arial",sans-serif'>Navigate to <i>Monitor’ / ‘Alerts</i></span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in;line-height:107%'><span lang=EN-US style='font-size:9.0pt;line-height:
+  107%'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;line-height:107%;
+  font-family:"Arial",sans-serif'>Select <i>Manage alert rules</i></span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in;line-height:107%'><span lang=EN-US style='font-size:9.0pt;line-height:
+  107%'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;line-height:107%;
+  font-family:"Arial",sans-serif'>Click on the Alert <i>Name</i> where
+  Condition contains <i>operationName equals
+  Microsoft.Network/networkSecurityGroups/securityRules/delete</i></span></p>
+  <p class=MsoListParagraphCxSpLast style='margin-bottom:8.0pt;text-indent:
+  -.25in;line-height:107%'><span lang=EN-US style='font-size:9.0pt;line-height:
+  107%'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;line-height:107%;
+  font-family:"Arial",sans-serif'>Hover a mouse over <i>Condition</i> to ensure
+  it is set to <i>Whenever the Administrative Activity Log “Delete Security
+  Rule (networkSecurityGroups/securityRules)” has “any” level with “any” status
+  and event is initiated by “any</i>”</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>Create,
+  View, and Manage Activity Alerts in Azure Monitor</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>To
+  create a log alert in the Azure portal:</span></p>
+  <p class=MsoListParagraphCxSpFirst style='margin-bottom:8.0pt;text-indent:
+  -.25in;line-height:107%'><span lang=EN-US style='font-size:9.0pt;line-height:
+  107%'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;line-height:107%;
+  font-family:"Arial",sans-serif'>Select <b>Monitor -&gt; Alerts</b></span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in;line-height:107%'><span lang=EN-US style='font-size:9.0pt;line-height:
+  107%'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;line-height:107%;
+  font-family:"Arial",sans-serif'>Select <b>New alert rule</b> of the <b>Alerts</b>
+  window</span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in;line-height:107%'><span lang=EN-US style='font-size:9.0pt;line-height:
+  107%'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;line-height:107%;
+  font-family:"Arial",sans-serif'>Provide information in <b>Define alert
+  condition</b></span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in;line-height:107%'><span lang=EN-US style='font-size:9.0pt;line-height:
+  107%'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;line-height:107%;
+  font-family:"Arial",sans-serif'>Provide details in <b>Define alert details</b></span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in;line-height:107%'><span lang=EN-US style='font-size:9.0pt;line-height:
+  107%'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;line-height:107%;
+  font-family:"Arial",sans-serif'>Specify action group for new alert rule under
+  <b>Action group</b>, or create a new action group with + <b>New group</b></span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in;line-height:107%'><span lang=EN-US style='font-size:9.0pt;line-height:
+  107%'>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;line-height:107%;
+  font-family:"Arial",sans-serif'>Select <b>Yes</b> for the <b>Enable rule upon
+  creation</b> option</span></p>
+  <p class=MsoListParagraphCxSpLast style='margin-bottom:8.0pt;text-indent:
+  -.25in;line-height:107%'><span lang=EN-US style='font-size:9.0pt;line-height:
+  107%'>7.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;line-height:107%;
+  font-family:"Arial",sans-serif'>Select <b>Create alert rule</b></span></p>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>To
+  view and manage alerts:</span></p>
+  <p class=MsoListParagraphCxSpFirst style='margin-bottom:8.0pt;text-indent:
+  -.25in;line-height:107%'><span lang=EN-US style='font-size:9.0pt;line-height:
+  107%'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;line-height:107%;
+  font-family:"Arial",sans-serif'>Select <b>Monitor -&gt; Alerts -&gt; Manage
+  alert rules</b></span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in;line-height:107%'><span lang=EN-US style='font-size:9.0pt;line-height:
+  107%'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;line-height:107%;
+  font-family:"Arial",sans-serif'>Select the rule you want to modify and
+  double-click to edit the rule options</span></p>
+  <p class=MsoListParagraphCxSpLast style='margin-bottom:8.0pt;text-indent:
+  -.25in;line-height:107%'><span lang=EN-US style='font-size:9.0pt;line-height:
+  107%'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;line-height:107%;
+  font-family:"Arial",sans-serif'>Click <b>Save</b></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>Azure
+  Resource Manager Templates</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>Azure
+  Resource Manager templates in the format of JSON files that can be used to
+  configure metric alerts in Azure Monitor. These templates can be used for
+  simple static and dynamic threshold metric alerts, availability tests, and
+  monitoring multiple resources.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>Enable
+  CloudTrail across all regions in AWS</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>To
+  enable CloudTrail across all regions:</span></p>
+  <p class=MsoListParagraphCxSpFirst style='margin-bottom:8.0pt;text-indent:
+  -.25in;line-height:107%'><span lang=EN-US style='font-size:9.0pt;line-height:
+  107%'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;line-height:107%;
+  font-family:"Arial",sans-serif'>Sign into the AWS Management Console and open
+  the CloudTrail console</span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in;line-height:107%'><span lang=EN-US style='font-size:9.0pt;line-height:
+  107%'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;line-height:107%;
+  font-family:"Arial",sans-serif'>Click on <i>Trails</i> </span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in;line-height:107%'><span lang=EN-US style='font-size:9.0pt;line-height:
+  107%'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;line-height:107%;
+  font-family:"Arial",sans-serif'>Set necessary Trails to All option in the I
+  column</span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in;line-height:107%'><span lang=EN-US style='font-size:9.0pt;line-height:
+  107%'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;line-height:107%;
+  font-family:"Arial",sans-serif'>Click on a trail via the link <i>Name</i>
+  column</span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in;line-height:107%'><span lang=EN-US style='font-size:9.0pt;line-height:
+  107%'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;line-height:107%;
+  font-family:"Arial",sans-serif'>Set <i>Logging</i> to <i>ON</i></span></p>
+  <p class=MsoListParagraphCxSpLast style='margin-bottom:8.0pt;text-indent:
+  -.25in;line-height:107%'><span lang=EN-US style='font-size:9.0pt;line-height:
+  107%'>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;line-height:107%;
+  font-family:"Arial",sans-serif'>Set <i>Apply trail to all regions</i> to <i>Yes</i></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>Configure
+  log profile to capture activity logs for all regions in Azure</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>To
+  set up activity logs for all regions:</span></p>
+  <p class=MsoListParagraphCxSpFirst style='margin-bottom:8.0pt;text-indent:
+  -.25in;line-height:107%'><span lang=EN-US style='font-size:9.0pt;line-height:
+  107%'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;line-height:107%;
+  font-family:"Arial",sans-serif'>Navigate to Azure console</span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in;line-height:107%'><span lang=EN-US style='font-size:9.0pt;line-height:
+  107%'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;line-height:107%;
+  font-family:"Arial",sans-serif'>Go to <i>Activity log</i></span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in;line-height:107%'><span lang=EN-US style='font-size:9.0pt;line-height:
+  107%'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;line-height:107%;
+  font-family:"Arial",sans-serif'>Select <i>Export</i></span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in;line-height:107%'><span lang=EN-US style='font-size:9.0pt;line-height:
+  107%'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;line-height:107%;
+  font-family:"Arial",sans-serif'>Select <i>Subscription</i></span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+  -.25in;line-height:107%'><span lang=EN-US style='font-size:9.0pt;line-height:
+  107%'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;line-height:107%;
+  font-family:"Arial",sans-serif'>Check <i>Select all</i> in <i>Regions</i></span></p>
+  <p class=MsoListParagraphCxSpLast style='margin-bottom:8.0pt;text-indent:
+  -.25in;line-height:107%'><span lang=EN-US style='font-size:9.0pt;line-height:
+  107%'>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=EN-US style='font-size:9.0pt;line-height:107%;
+  font-family:"Arial",sans-serif'>Select <i>Save</i></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:18.0pt;font-family:"Arial",sans-serif'>References</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US><a
+href="https://aws.amazon.com/blogs/security/how-do-i-protect-cross-account-access-using-mfa-2/"><span
+style='font-family:"Arial",sans-serif;color:windowtext;text-decoration:none'>https://aws.amazon.com/blogs/security/how-do-i-protect-cross-account-access-using-mfa-2/</span></a></span><span
+lang=EN-US style='font-family:"Arial",sans-serif'>. Accessed February 15, 2020</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+lang=EN-US style='font-family:"Arial",sans-serif'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US><a
+href="https://research.checkpoint.com/2020/remote-cloud-execution-critical-vulnerabilities-in-azure-cloud-infrastructure-part-i/"><span
+style='font-family:"Arial",sans-serif;color:windowtext;text-decoration:none'>https://research.checkpoint.com/2020/remote-cloud-execution-critical-vulnerabilities-in-azure-cloud-infrastructure-part-i/</span></a></span><span
+lang=EN-US style='font-family:"Arial",sans-serif'>. Accessed February 15, 2020</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+lang=EN-US>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US><a
+href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_users-self-manage-mfa-and-creds.html"><span
+style='font-family:"Arial",sans-serif;color:black;text-decoration:none'>https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_users-self-manage-mfa-and-creds.html</span></a></span><span
+lang=EN-US style='font-family:"Arial",sans-serif;color:black'>. Accessed July
+28, 2020</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+lang=EN-US>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US><a
+href="https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/howto-identity-protection-configure-mfa-policy"><span
+style='font-family:"Arial",sans-serif;color:black;text-decoration:none'>https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/howto-identity-protection-configure-mfa-policy</span></a></span><span
+lang=EN-US style='font-family:"Arial",sans-serif;color:black'>. Accessed July
+28, 2020</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+lang=EN-US style='color:black'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Arial",sans-serif;
+color:black'>https://cloud.google.com/compute/docs/oslogin/setup-two-factor-authentication.
+Accessed July 28, 2020</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+lang=EN-US style='color:black'>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US><a
+href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#grant-least-privilege"><span
+style='font-family:"Arial",sans-serif;color:windowtext'>https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#grant-least-privilege</span></a></span><u><span
+lang=EN-US style='font-family:"Arial",sans-serif'>. <span style='color:black'>Accessed
+July 29, 2020</span></span></u></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+lang=EN-US style='font-family:"Arial",sans-serif'>7.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US><a
+href="https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/roles-delegate-by-task"><span
+style='font-family:"Arial",sans-serif;color:windowtext'>https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/roles-delegate-by-task</span></a></span><u><span
+lang=EN-US style='font-family:"Arial",sans-serif'>.</span></u><span lang=EN-US
+style='font-family:"Arial",sans-serif'> <span style='color:black'>Accessed July
+29, 2020</span></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+lang=EN-US style='font-family:"Arial",sans-serif'>8.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US><a
+href="https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-manage-roles-portal"><span
+style='font-family:"Arial",sans-serif;color:windowtext;text-decoration:none'>https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-manage-roles-portal</span></a></span><span
+lang=EN-US style='font-family:"Arial",sans-serif'>. <span style='color:black'>Accessed
+July 29, 2020</span></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+lang=EN-US>9.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US><a
+href="https://cloud.google.com/iam/docs/understanding-roles"><span
+style='font-family:"Arial",sans-serif;color:windowtext;text-decoration:none'>https://cloud.google.com/iam/docs/understanding-roles</span></a></span><span
+lang=EN-US style='font-family:"Arial",sans-serif'>. <span style='color:black'>Accessed
+July 29, 2020</span></span></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in'><b><span
+lang=EN-US style='color:black'>10.<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></b><span lang=EN-US><a
+href="https://cloud.google.com/iam/docs/using-iam-securely#least_privilege"><span
+style='font-family:"Arial",sans-serif;color:windowtext;text-decoration:none'>https://cloud.google.com/iam/docs/using-iam-securely#least_privilege</span></a></span><span
+lang=EN-US style='font-family:"Arial",sans-serif'>. <span style='color:black'>Accessed
+July 29, 2020</span></span><span lang=EN-US><br>
+<br>
+</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:"Arial",sans-serif'> </span></p>
+
+<p class=MsoNormal><span lang=EN-US><br>
+<br>
+<br>
+</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>

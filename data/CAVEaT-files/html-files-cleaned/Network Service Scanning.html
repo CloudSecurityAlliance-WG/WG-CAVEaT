@@ -1,0 +1,47 @@
+<html><head></head><body link="blue" vlink="#954F72"><div><p>Network Service Scanning(version 1.0)</p>
+<p><b>Cloud Service Label: IaaS</b></p>
+
+<p>Adversaries may attempt to get a listing of services running on remote hosts, including those that may be vulnerable to remote software exploitation. Methods to acquire this information include port scans and vulnerability scans using tools that are brought onto a system.</p>
+<p>Within cloud environments, adversaries may attempt to discover services running on other cloud hosts or cloud services enabled within the environment. Additionally, if the cloud environment is connected to a on-premises environment, adversaries may be able to identify services running on non-cloud systems. The most frequently targeted services and ports on the cloud are port 22 (SSH) and port 3389 (RDP). Cloud administrators often leave these services open to enable quick remote access to IaaS resources. In Azure by default these ports are open to the world when a VM is first created and need to be purposefully secured after creation.</p>
+
+<h2>Examples</h2><table border="1" cellpadding="0" cellspacing="0"><tr><td valign="top" width="312"><p><b>Name</b></p>
+</td>
+<td valign="top" width="312"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Flan Scan</p>
+</td>
+<td valign="top" width="312"><p>Lightweight network vulnerability scanner created by Cloudflare that can be used to find open ports, identify services, and provide list of CVEs and vulnerabilities. Easier to run inside cloud environment</p>
+</td>
+</tr>
+</table>
+<p>Mitigations</p>
+<table border="1" cellpadding="0" cellspacing="0"><tr><td valign="top" width="312"><p><b>Name</b></p>
+</td>
+<td valign="top" width="312"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Disable or Remove Feature or Program</p>
+</td>
+<td valign="top" width="312"><p>Ensure that unnecessary ports and services are closed to prevent risk of discovery and potential exploitation.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Network Intrusion Prevention</p>
+</td>
+<td valign="top" width="312"><p>Use network intrusion detection/prevention systems to detect and prevent remote service scans.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Network Segmentation</p>
+</td>
+<td valign="top" width="312"><p>Ensure proper network segmentation is followed to protect critical servers and devices.</p>
+</td>
+</tr>
+</table>
+<p>Detection</p>
+<p>System and network discovery techniques normally occur throughout an operation as an adversary learns the environment. Data and events should not be viewed in isolation, but as part of a chain of behavior that could lead to other activities, such as Lateral Movement, based on the information obtained.</p>
+<p>Normal, benign system and network events from legitimate remote service scanning may be uncommon, depending on the environment and how they are used. Legitimate open port and vulnerability scanning may be conducted within the environment and will need to be deconflicted with any detection capabilities developed. Network intrusion detection systems can also be used to identify scanning activity. Monitor for process use of the networks and inspect intra-network flows to detect port scans. Routinely inspect SSH and RDP logs on hosts to detect brute force or other probing attacks.</p>
+
+<p>References</p>
+<p><a name="scite-1"></a><a name="scite-2"></a><a name="scite-3"></a><a name="scite-4"></a><a name="scite-5"></a><a name="scite-6"></a><a name="scite-7"></a><a name="scite-8"></a><a name="scite-9"></a><a name="scite-10"></a><a name="scite-11"></a><a name="scite-12"></a><a name="scite-13"></a><a name="scite-14"></a>1.<a href="https://github.com/cloudflare/flan">https://github.com/cloudflare/flan</a>. Accessed July 24, 2020.</p>
+
+</div></body></html>

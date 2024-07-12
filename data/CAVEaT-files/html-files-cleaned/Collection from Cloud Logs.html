@@ -1,0 +1,119 @@
+<html><head></head><body link="blue" vlink="#954F72"><div><p>Collecting Data from Cloud Logs(version 1.0)</p>
+
+<p><b>Cloud Service Label: IaaS, PaaS</b></p>
+
+<p>Description</p>
+<p>Adversaries may be able to use the cloud’s extensive logging capabilities, and the information written to them, as a way to gain information/access to a system. Ultimately, this can lead to the adversary gaining access to user data of a sensitive nature. Logging is essential for many aspects of day to day operations but logging of all information is not always necessary once a system is in production. Some types of log files that can be utilized are server log files, debugging logs, plugin logs, etc.</p>
+<p>The Cloud depends on copious logging to make things more transparent to customers who no longer have access to underlying hardware and software layers. The cloud also enables these logs to be distributed to several different locations such as storage accounts, event queues, SIEMS, on premise repositories, etc. Cloud logs can be very informative, telling an adversary what assets are available and how they are protected. Sensitive data may also be exposed in these logs. In Azure for example, Key Vault secrets that would normally be very difficult to obtain may be logged in Logic function logs in the clear by default. The availability and integrity of logs is often stressed by security professionals. The confidentiality of these logs is often not given priority.</p>
+
+<p>Examples</p>
+<table border="1" cellpadding="0" cellspacing="0"><tr><td valign="top" width="312"><p><b>Name</b></p>
+</td>
+<td valign="top" width="312"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>CVE-2020-7599</p>
+</td>
+<td valign="top" width="312"><p>Adversaries may exploit a vulnerability in com.gradle.plugin-publish versions prior to 0.11.0 where an author publishes a plugin where the build log is public and the –info flag is used. Under these circumstances the build log will contain an AWS pre-signed URL that would allow an adversary to access the pre-signed URL, of a plugin that was recently uploaded, and replace it with their own plugin.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>CVE-2019-4284</p>
+</td>
+<td valign="top" width="312"><p>IBM Cloud Private versions 2.1.0, 3.1.0, 3.1.1, and 3.1.2 contain a vulnerability that allows a local privileged user to view OpenID Connect tokens that could be printed to log files. These tokens could be utilized to log into the system as other users.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>CVE-2019-1003062</p>
+</td>
+<td valign="top" width="312"><p>Jenkins AWS CloudWatch Logs Publisher Plugin stores unencrypted credentials in its global configuration file, which can be viewed by users who have access to the master file system.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>CVE-2019-4143</p>
+
+</td>
+<td valign="top" width="312"><p>The Private Key Management Service in IBM Cloud Private versions 3.1.1 and 3.1.2 allows for a user to potentially obtain sensitive information from the KMS plugin log.</p>
+</td>
+</tr>
+</table>
+
+<p>Mitigations</p>
+<table border="1" cellpadding="0" cellspacing="0"><tr><td valign="top" width="312"><p><b>Mitigation</b></p>
+</td>
+<td valign="top" width="312"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Log Configurations</p>
+</td>
+<td valign="top" width="312"><p>Make the decision on what is necessary to be logged and what is not.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Log File Permissions</p>
+</td>
+<td valign="top" width="312"><p>Make sure that log files have permissions in place to avoid unauthorized read/write access.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>AWS CIS Benchmark Standards</p>
+</td>
+<td valign="top" width="312"><p>Refer to the logging section of the AWS CIS Benchmark Standards. These include ensuring CloudTrail is enabled in all regions, enabling log file validation, removing public access to S3 buckets, encrypting CloudTrail logs at rest using KMS CMKs, and enabling VPC flow logging in all VPCs, and integrating CloudTrail trails with CloudWatch Logs.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>AWS CloudWatch Logs Documentation</p>
+</td>
+<td valign="top" width="312"><p>IAM Identities (identity-based policies) can be attached to specific writing permissions policies. CloudWatch Log policies use AWS condition keys to express conditions.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Azure CIS Benchmark Standards</p>
+</td>
+<td valign="top" width="312"><p>Refer to the logging section of the Azure CIS Benchmark Standards. These include ensuring that activity logs for storage containers are not publicly accessible and that they are encrypted with BYOK (Bring Your Own Key)</p>
+</td>
+</tr>
+</table>
+<p>Detection</p>
+<table border="1" cellpadding="0" cellspacing="0"><tr><td valign="top" width="312"><p><b>Detection</b></p>
+</td>
+<td valign="top" width="312"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Create Log Metric Filters and Alarms for CloudTrail</p>
+</td>
+<td valign="top" width="312"><p>To create a metric filter and alarm:</p>
+<p>1.Create a filter that checks for CloudTrail changes and the specific<i>&lt;cloudtrail_log_group_name&gt;</i></p>
+<p>2.Create an SNS topic that the alarm will notify</p>
+<p>3.Create an SNS subscription to the above topic</p>
+<p>4.Create an alarm associated with the filter from step 1 and SNS topic in step 2</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Create, View, and Manage Activity Alerts in Azure Monitor</p>
+</td>
+<td valign="top" width="312"><p>To create a log alert in the Azure portal:</p>
+<p>1.Select<b>Monitor -&gt; Alerts</b></p>
+<p>2.Select<b>New alert rule</b>of the<b>Alerts</b>window</p>
+<p>3.Provide information in<b>Define alert condition</b></p>
+<p>4.Provide details in<b>Define alert details</b></p>
+<p>5.Specify action group for new alert rule under<b>Action group</b>, or create a new action group with +<b>New group</b></p>
+<p>6.Select<b>Yes</b>for the<b>Enable rule upon creation</b>option</p>
+<p>7.Select<b>Create alert rule</b></p>
+
+<p>To view and manage alerts:</p>
+<p>1.Select<b>Monitor -&gt; Alerts -&gt; Manage alert rules</b></p>
+<p>2.Select the rule you want to modify and double-click to edit the rule options</p>
+<p>3.Click<b>Save</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Azure Resource Manager Templates</p>
+</td>
+<td valign="top" width="312"><p>Azure Resource Manager templates in the format of JSON files that can be used to configure metric alerts in Azure Monitor. These templates can be used for simple static and dynamic threshold metric alerts, availability tests, and monitoring multiple resources.</p>
+</td>
+</tr>
+</table>
+<div><p>References</p>
+</div><p>1.<a href="https://cwe.mitre.org/data/definitions/532.html">CWE. (Feb 20, 2020). CWE-532: Insertion of Sensitive Information into Log File. Retrieved June 9, 2020.</a></p>
+<p>2.<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-7599">CVE. (Jan 21, 2020). CVE-2020-7599. Retrieved June 9, 2020.</a></p>
+<p>3.<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-4284">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-4284</a>. Accessed August 6, 2020.</p>
+<p>4.<a href="https://www.youtube.com/watch?v=PgujSug1ZbI">https://www.youtube.com/watch?v=PgujSug1ZbI</a>. Accessed June 22, 2020.</p>
+<p>5.<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1003062">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1003062</a>. Accessed July 17. 2020.</p>
+<p>6.https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-4143. Accessed August 6, 2020.</p>
+<p>7.<a href="https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-activity-log">https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-activity-log</a>. Accessed August 6, 2020.</p>
+<p>8.<a href="https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-metric-create-templates#template-for-a-metric-alert-that-monitors-multiple-resources">https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-metric-create-templates#template-for-a-metric-alert-that-monitors-multiple-resources</a>. Accessed August 6, 2020.</p>
+
+
+</div></body></html>

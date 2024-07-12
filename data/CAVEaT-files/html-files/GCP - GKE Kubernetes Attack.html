@@ -1,0 +1,223 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Segoe UI";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{color:#0563C1;
+	text-decoration:underline;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+.MsoChpDefault
+	{font-size:12.0pt;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-CA link="#0563C1" vlink="#954F72" style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:24.0pt;font-family:"Arial",sans-serif'>GKE
+(Google Kubernetes Engine) Kubernetes Attack<b> </b></span><span lang=EN
+style='font-family:"Arial",sans-serif;color:black'>(version 1.1)</span></p>
+
+<p class=MsoNormal><b><span lang=EN-US style='font-size:14.0pt;font-family:
+"Arial",sans-serif;color:#39434C'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span lang=EN-US style='font-size:14.0pt;font-family:
+"Arial",sans-serif;color:#39434C'>Cloud Service Label:  IaaS, PaaS</span></b></p>
+
+<p class=MsoNormal><b><span lang=EN-US style='font-size:14.0pt;font-family:
+"Arial",sans-serif;color:#39434C'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:16.0pt;font-family:"Arial",sans-serif'>Description</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Arial",sans-serif;
+color:black;background:white'>Kubernetes is becoming extremely popular and due
+to containers being popular in the cloud this has led to many clients of
+providers such as GCP, AWS, and Azure utilizing Kubernetes to orchestrate
+containerized applications. Google Kubernetes Engine (GKE) is Google Cloud
+Platform’s Kubernetes management system. There are ways that an adversary might
+exploit GKE to perform privilege escalation. </span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:16.0pt;font-family:"Arial",sans-serif'>Examples</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='font-family:"Arial",sans-serif'>Name</span></b><span
+  lang=EN-US style='font-family:"Arial",sans-serif'>&nbsp;</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='font-family:"Arial",sans-serif'>Description</span></b><span
+  lang=EN-US style='font-family:"Arial",sans-serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>Rhino
+  Security Labs </span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif;
+  color:#404040'>Start with compromised GCP Credentials. Then list compute
+  engine VM instances and log HTTP requests and responses. Then adversary would
+  steal Kubelet bootstrap TLS credentials from the HTTP requests and responses
+  log file that was listed. They would then submit certificate signing request
+  to Kubernetes control plane, act as Kubernetes worker node, and steal
+  Kubernetes secrets with worker node credentials; these steps can be repeated
+  until the adversary is able to gain cluster-admin access. Once the cluster-admin
+  access is gained they can list Kubernetes pods, execute into container, steal
+  container service account, access the computer engine instance meta data
+  server, steal GCP service account token, and access GCP cloud resources. </span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:16.0pt;font-family:"Arial",sans-serif'>Mitigations</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=624
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='font-family:"Arial",sans-serif'>Mitigation</span></b></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='font-family:"Arial",sans-serif'>Description</span></b><span
+  lang=EN-US style='font-family:"Arial",sans-serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>Two
+  Factor Authentication</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif;
+  color:#404040'>Use two factor authentication for user accounts.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>Enable
+  GKE Metadata Server</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif;
+  color:#404040'>Consider enabling&nbsp;GKE Metadata Server&nbsp;which improves
+  security and replaces Compute Engine VM instances Metadata Server.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>Least
+  Privilege </span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif;
+  color:#404040'>Use the concept of least privilege for management accounts.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:18.0pt;font-family:"Arial",sans-serif;
+color:black'> </span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:16.0pt;font-family:"Arial",sans-serif'>Detection</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:16.0pt;font-family:"Arial",sans-serif'>References</span></p>
+
+<p class=MsoListParagraph style='text-indent:-.25in'><span lang=EN-US
+style='font-family:"Arial",sans-serif'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US><a
+href="https://cseweb.ucsd.edu/~savage/papers/CCS09.pdf"><span style='font-family:
+"Arial",sans-serif;color:windowtext;text-decoration:none'>https://cseweb.ucsd.edu/~savage/papers/CCS09.pdf</span></a></span><span
+lang=EN-US style='font-family:"Arial",sans-serif'>. Accessed July 2, 2020.</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:22.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>

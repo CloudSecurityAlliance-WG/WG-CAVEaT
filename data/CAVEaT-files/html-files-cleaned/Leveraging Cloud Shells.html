@@ -1,0 +1,70 @@
+<html><head></head><body link="blue" vlink="#954F72"><div><p>Leveraging Cloud Shells(version 1.0)</p>
+
+<p><b>Cloud Service Label: PaaS, IaaS</b></p>
+
+<p>Description</p>
+<p>Cloud Service providers like Azure and Google now offer command line interfaces directly from the web console. These interfaces are actually full fledged Docker containers in a CSP-maintained cluster. To avoid bearing the full cost of maintaining these containers, CSP’s place the container images within the customer’s own cloud storage. The Docker image as a result usually remains persistent and enables an adversary with even temporary access to the cloud console to leverage the container environment to place hidden executables and configurations that ensure access can be maintained even after an intrusion supposedly has been remediated. A reverse shell over the web protocol for example from a customer’s container will actually originate from a CSP controlled host and will not be visible in a customer’s logs nor can it be blocked by customer firewall or NSG rules.</p>
+
+<p>Examples</p>
+<table border="1" cellpadding="0" cellspacing="0"><tr><td valign="top" width="312"><p><b>Name</b></p>
+</td>
+<td valign="top" width="312"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>S2 Security</p>
+</td>
+<td valign="top" width="312"><p>Demonstrated a proof of concept at Black Hat Training session on Google Cloud Platform.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Escaping the Google Cloud Shell Container</p>
+</td>
+<td valign="top" width="312"><p>A blog on Offensi covers escaping a container hosted within Google cloud by exploiting open Docker unix sockets: one found in<i>/run/docker.sock</i>and<i>/google/host/var/run/docker.sock</i>. Once the container has been escaped, the Kubernetes pod can be re-configured to run all the containers in privileged mode.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>GCP Git Exploits</p>
+</td>
+<td valign="top" width="312"><p>When opening a cloud shell within GCP, the<i>cloudshell_git_repo</i>parameter in the URL can be used to pass in a GitHub repository that automatically launches the Python Language Server and executes malicious code hidden with the _init_.py file. Another example is pointing to a malicious Git repo with the following URL https<i>://ssh.cloud.google.com/console/editor?cloudshell_git_repo=https://github.com/offensi/git-poc&amp;cloudshell_git_branch=master&amp;cloudshell_working_dir=evilgitdirectory.</i></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>GCP Go and Get</p>
+</td>
+<td valign="top" width="312"><p>A Cloud Shell user could be tricked into executing malicious code by taking advantage of the go get cloud shell function through CVE-2019-3902 and navigating to the<i>https://ssh.cloud.google.com/cloudshell/editor?cloudshell_go_get_repo=https://go.offensi.com/go.html.</i></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Azure Cross-Account Command Execution</p>
+</td>
+<td valign="top" width="312"><p>A NetSPI blog covers the idea of abusing the “Contributor” role in Azure, which allows a user to download any cloud shell .IMG file, including user accounts that have the “Global Administrator” role. Malicious code could be embedded in the shell image file, re-uploaded to the Azure Storage Account, and run under the context of that said Global Admin.</p>
+</td>
+</tr>
+</table>
+<p>Mitigations</p>
+<table border="1" cellpadding="0" cellspacing="0"><tr><td valign="top" width="312"><p><b>Mitigation</b></p>
+</td>
+<td valign="top" width="312"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Delete IMG Files in Azure Customer Storage Accounts</p>
+</td>
+<td valign="top" width="312"><p>Customers can reset their containers whenever they want in Azure by deleting the .IMG file within their cloud console storage account. Do this especially if it is suspected an account compromise for a user has occurred.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Locking down IP addresses and ports</p>
+</td>
+<td valign="top" width="312"><p>Run container images with minimal functionality, whitelist specific IP addresses and ports for required services, and remove all unnecessary tools on the machine, being a Docker container or a virtual machine.</p>
+</td>
+</tr>
+</table>
+<p>Detection</p>
+<p>Detection will be nearly impossible since activities occur on non-customer controlled cloud assets. A tool like Sysdig Secure or Falco, which both monitor and secure containers and kubernetes clusters within cloud environments, has the capability to detect reverse shells with out-of-the-box rules. For example, Sysdig Secure will generate alerts based on suspicious processes being run inside containers, like<i>sh</i>or<i>ls</i>.</p>
+<div><p>References</p>
+</div><p>1.Proprietary S2 training materials. Presented March 5, 2020.</p>
+<p>2.<a href="https://sysdig.com/blog/reverse-shell-falco-sysdig-secure/">https://sysdig.com/blog/reverse-shell-falco-sysdig-secure/</a>. Accessed July 28, 2020.</p>
+<p>3.<a href="https://www.netsparker.com/blog/web-security/understanding-reverse-shells">https://www.netsparker.com/blog/web-security/understanding-reverse-shells</a>. Accessed July 29, 2020.</p>
+<p>4.<a href="https://offensi.com/2019/12/16/4-google-cloud-shell-bugs-explained-introduction/">https://offensi.com/2019/12/16/4-google-cloud-shell-bugs-explained-introduction/</a>. Accessed July 29, 2020.</p>
+<p>5.<a href="https://offensi.com/2019/12/16/4-google-cloud-shell-bugs-explained-bug-4/">https://offensi.com/2019/12/16/4-google-cloud-shell-bugs-explained-bug-4/</a>. Accessed July 29, 2020.</p>
+<p>6.<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-3902">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-3902</a>. Accessed July 29, 2020.</p>
+<p>7.<a href="https://blog.netspi.com/attacking-azure-cloud-shell/">https://blog.netspi.com/attacking-azure-cloud-shell/</a>. Accessed July 30, 2020.</p>
+
+
+
+</div></body></html>

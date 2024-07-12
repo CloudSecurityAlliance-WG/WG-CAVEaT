@@ -1,0 +1,65 @@
+<html><head></head><body link="blue" vlink="purple"><div><p>System (VM) Information Discovery(version 1.1)</p>
+
+<p><b>Cloud Service Label: IaaS</b></p>
+
+<p>Description</p>
+<p>An adversary may attempt to get detailed information about the operating system and hardware, including version, patches, hotfixes, service packs, and architecture. Adversaries may use the information during automated discovery to shape follow-on behaviors, including whether or not the adversary fully infects the target and/or attempts specific actions.</p>
+
+<p>Examples</p>
+<table border="1" cellpadding="0" cellspacing="0"><tr><td valign="top" width="312"><p><b>Name</b></p>
+</td>
+<td valign="top" width="312"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Windows</p>
+</td>
+<td valign="top" width="312"><p>Example commands and utilities that obtain this information include ver, Systeminfo, and dir within cmd for identifying information based on present files and directories.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Application Discovery Service (AWS)</p>
+</td>
+<td valign="top" width="312"><p>In Amazon Web Services (AWS), the Application Discovery Service may be used by an adversary to identify servers, virtual machines, software, and software dependencies running.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Google Cloud Platform (GCP)</p>
+</td>
+<td valign="top" width="312"><p>GET /v1beta1/{{parent=organizations/}}/assets or</p>
+<p>POST/v1beta1/{{parent=organizations/}}/assets:runDiscovery may be used to list an organizations cloud assets, or perform asset discovery on a cloud environment.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>API Request (Azure)</p>
+</td>
+<td valign="top" width="312"><p>In Azure, the API request GET<a href="https://management.azure.com/subscriptions/%7b%7bsubscriptionId%7d%7d/resourceGroups/%7b%7bresourceGroupName%7d%7d/providers/Microsoft.Compute/virtualMachines/%7b%7bvmName%7d%7d?api-version=2019-03-01">https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroupName}}/providers/Microsoft.Compute/virtualMachines/{{vmName}}?api-version=2019-03-01</a></p>
+<p>may be used to retrieve information about the model or instance view of a virtual machine.</p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Co-residence identification and Information Leakage detailed in academic papers</p>
+</td>
+<td valign="top" width="312"><p>Specific information in hypervisors like privileged VM IP addresses and access keys used by machine admins can theoretically be inferred by occupying a VM on the same physical host as the target and performing clever cache queries to infer Information that normally would be protected by Cloud identity and access solutions.</p>
+</td>
+</tr>
+</table>
+<p>Mitigations</p>
+<table border="1" cellpadding="0" cellspacing="0"><tr><td valign="top" width="312"><p><b>Mitigation</b></p>
+</td>
+<td valign="top" width="312"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312">
+</td>
+<td valign="top" width="312"><p>This type of attack technique cannot be easily mitigated with preventive controls since it is based on the abuse of cloud system features.</p>
+</td>
+</tr>
+</table>
+
+<p>Detection</p>
+<p>Monitor processes and command-line arguments for actions that could be taken to gather system and network information. Remote access tools with built-in features may interact directly with the Windows API to gather information. Information may also be acquired through<a href="https://attack.mitre.org/techniques/T1086">PowerShell</a>. And the CLI in cloud-based systems, native logging can be used to identify access to certain APIs and dashboards that may contain system information. Depending on how the environment is used, that data alone may not be useful due to benign use during normal operations.</p>
+
+<p><a name="scite-1">References</a></p>
+<p>1.<a href="https://docs.aws.amazon.com/en_pv/application-discovery/latest/userguide/what-is-appdiscovery.html" target="_blank">Amazon. (n.d.). What Is AWS Application Discovery Service?. Retrieved October 8, 2019.</a></p>
+<p><a name="scite-2">2.</a><a href="https://cloud.google.com/security-command-center/docs/quickstart-scc-dashboard" target="_blank">Google. (2019, October 3). Quickstart: Using the dashboard. Retrieved October 8, 2019.</a></p>
+<p><a name="scite-3">3.</a><a href="https://docs.microsoft.com/en-us/rest/api/compute/virtualmachines/get" target="_blank">Microsoft. (2019, March 1). Virtual Machines - Get. Retrieved October 8, 2019.</a></p>
+<p><a name="scite-4"></a><a name="scite-5"></a><a name="scite-6"></a><a name="scite-7"></a><a name="scite-8"></a><a name="scite-9"></a><a name="scite-10"></a><a name="scite-11"></a><a name="scite-12"></a><a name="scite-13"></a><a name="scite-14"></a><a name="scite-15"></a><a name="scite-16"></a><a name="scite-17"></a><a name="scite-18"></a><a name="scite-19"></a><a name="scite-20"></a><a name="scite-21"></a><a name="scite-22"></a><a name="scite-23"></a><a name="scite-24"></a><a name="scite-25"></a><a name="scite-26"></a><a name="scite-27"></a><a name="scite-28"></a><a name="scite-29"></a><a name="scite-30"></a><a name="scite-31"></a><a name="scite-32"></a><a name="scite-33"></a><a name="scite-34"></a><a name="scite-35"></a><a name="scite-36"></a><a name="scite-37"></a><a name="scite-38"></a><a name="scite-39"></a><a name="scite-40"></a><a name="scite-41"></a><a name="scite-42"></a><a name="scite-43"></a><a name="scite-44"></a><a name="scite-45"></a><a name="scite-46"></a><a name="scite-47"></a><a name="scite-48"></a><a name="scite-49"></a><a name="scite-50"></a><a name="scite-51"></a><a name="scite-52"></a><a name="scite-53"></a><a name="scite-54"></a><a name="scite-55"></a><a name="scite-56"></a><a name="scite-57"></a><a name="scite-58"></a><a name="scite-59"></a><a name="scite-60"></a><a name="scite-61"></a><a name="scite-62"></a><a name="scite-63"></a><a name="scite-64"></a><a name="scite-65"></a><a name="scite-66"></a><a name="scite-67"></a><a name="scite-68"></a><a name="scite-69"></a><a name="scite-70"></a><a name="scite-71"></a><a name="scite-72"></a><a name="scite-73"></a><a name="scite-74"></a><a name="scite-75"></a><a name="scite-76"></a><a name="scite-77"></a><a name="scite-78"></a><a name="scite-79"></a><a name="scite-80"></a><a name="scite-81"></a><a name="scite-82"></a><a name="scite-83"></a><a name="scite-84"></a><a name="scite-85"></a><a name="scite-86"></a><a name="scite-87"></a><a name="scite-88"></a><a name="scite-89"></a><a name="scite-90"></a><a name="scite-91"></a><a name="scite-92"></a><a name="scite-93"></a><a name="scite-94"></a><a name="scite-95"></a><a name="scite-96"></a><a name="scite-97"></a><a name="scite-98"></a><a name="scite-99"></a><a name="scite-100"></a><a name="scite-101"></a><a name="scite-102"></a><a name="scite-103"></a><a name="scite-104"></a><a name="scite-105"></a><a name="scite-106"></a><a name="scite-107"></a><a name="scite-108"></a><a name="scite-109"></a><a name="scite-110"></a><a name="scite-111"></a><a name="scite-112"></a><a name="scite-113"></a><a name="scite-114"></a><a name="scite-115"></a><a name="scite-116"></a><a name="scite-117"></a><a name="scite-118"></a><a name="scite-119"></a><a name="scite-120"></a><a name="scite-121"></a><a name="scite-122"></a><a name="scite-123"></a><a name="scite-124"></a><a name="scite-125"></a><a name="scite-126"></a><a name="scite-127"></a><a name="scite-128"></a><a name="scite-129"></a><a name="scite-130"></a><a name="scite-131"></a><a name="scite-132"></a><a name="scite-133"></a><a name="scite-134"></a><a name="scite-135"></a><a name="scite-136"></a><a name="scite-137"></a><a name="scite-138"></a><a name="scite-139"></a><a name="scite-140"></a><a name="scite-141"></a><a name="scite-142"></a><a name="scite-143"></a><a name="scite-144"></a><a name="scite-145"></a><a name="scite-146"></a><a name="scite-147"></a><a name="scite-148"></a><a name="scite-149"></a><a name="scite-150"></a><a name="scite-151"></a><a name="scite-152"></a><a name="scite-153"></a><a name="scite-154"></a><a name="scite-155"></a><a name="scite-156"></a><a name="scite-157"></a><a name="scite-158"></a><a name="scite-159"></a><a name="scite-160"></a><a name="scite-161"></a><a name="scite-162"></a><a name="scite-163"></a><a name="scite-164"></a><a name="scite-165"></a><a name="scite-166"></a><a name="scite-167"></a><a name="scite-168"></a><a name="scite-169"></a><a name="scite-170"></a><a name="scite-171"></a><a name="scite-172"></a><a name="scite-173"></a><a name="scite-174"></a><a name="scite-175"></a><a name="scite-176"></a><a name="scite-177"></a><a name="scite-178"></a><a name="scite-179"></a><a name="scite-180"></a><a name="scite-181"></a><a name="scite-182"></a><a name="scite-183"></a><a name="scite-184"></a><a name="scite-185"></a><a name="scite-186"></a><a name="scite-187"></a>4.<a href="https://cseweb.ucsd.edu/~savage/papers/CCS09.pdf">https://cseweb.ucsd.edu/~savage/papers/CCS09.pdf</a>. Accessed July 2, 2020.</p>
+<p>5.Wait a minute! A fast, Cross-VM attack on AES Gorka Irazoqui, Mehmet Sinan Inci, Thomas Eisenbarth, and Berk Sunar Worcester Polytechnic Institute, Worcester, MA, USA – Accessed August 6,2020</p>
+
+</div></body></html>

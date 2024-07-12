@@ -1,0 +1,359 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Segoe UI";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+p.paragraph, li.paragraph, div.paragraph
+	{mso-style-name:paragraph;
+	margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+span.normaltextrun
+	{mso-style-name:normaltextrun;}
+span.eop
+	{mso-style-name:eop;}
+.MsoChpDefault
+	{font-size:12.0pt;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-CA link=blue vlink="#954F72" style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:white'><span lang=EN style='font-size:24.0pt;
+font-family:"Arial",sans-serif;color:black'>Leveraging Cloud Shells </span><span
+lang=EN style='font-family:"Arial",sans-serif;color:black'>(version 1.0)</span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:white'><span lang=EN style='font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt'><b><span lang=EN-US
+style='font-size:14.0pt;font-family:"Arial",sans-serif;color:black'>Cloud
+Service Label:  PaaS, IaaS</span></b></p>
+
+<p class=MsoNormal><b><span lang=EN-US style='font-size:14.0pt;font-family:
+"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:6.0pt;
+margin-left:0in;background:white'><span lang=EN style='font-size:16.0pt;
+font-family:"Arial",sans-serif;color:black'>Description</span></p>
+
+<p class=MsoNormal style='background:white'><span lang=EN style='font-family:
+"Arial",sans-serif;color:black'>Cloud Service providers like Azure and Google
+now offer command line interfaces directly from the web console.  These
+interfaces are actually full fledged Docker containers in a CSP-maintained
+cluster.  To avoid bearing the full cost of maintaining these containers, CSP’s
+place the container images within the customer’s own cloud storage.  The Docker
+image as a result usually remains persistent and enables an adversary with even
+temporary access to the cloud console to leverage the container environment to place
+hidden executables and configurations that ensure  access can be maintained
+even after an intrusion supposedly has been remediated.  A reverse shell over
+the web protocol for example from a customer’s container will actually
+originate from a CSP controlled host and will not be visible in a customer’s
+logs nor can it be blocked by customer firewall or NSG rules.</span></p>
+
+<p class=MsoNormal style='background:white;vertical-align:baseline'><span
+lang=EN style='font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='vertical-align:baseline'><span lang=EN-US
+style='font-size:16.0pt;font-family:"Arial",sans-serif'>Examples</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='font-family:"Arial",sans-serif'>Name</span></b><span
+  lang=EN-US style='font-family:"Arial",sans-serif'>&nbsp;</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='font-family:"Arial",sans-serif'>Description</span></b><span
+  lang=EN-US style='font-family:"Arial",sans-serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>S2
+  Security</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-right:.1in'><span lang=EN-US
+  style='font-size:9.0pt;font-family:"Arial",sans-serif;color:#404040'>Demonstrated
+  a proof of concept at Black Hat Training session on Google Cloud Platform.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>Escaping
+  the Google Cloud Shell Container</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif;
+  color:black'>A blog on Offensi covers escaping a container hosted within
+  Google cloud by exploiting open Docker unix sockets: one found in <i>/run/docker.sock</i>
+  and <i>/google/host/var/run/docker.sock</i>. Once the container has been
+  escaped, the Kubernetes pod can be re-configured to run all the containers in
+  privileged mode.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>GCP Git
+  Exploits</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif;
+  color:black'>When opening a cloud shell within GCP, the <i>cloudshell_git_repo</i>
+  parameter in the URL can be used to pass in a GitHub repository that
+  automatically launches the Python Language Server and executes malicious code
+  hidden with the _init_.py file. Another example is pointing to a malicious
+  Git repo with the following URL https<i>://ssh.cloud.google.com/console/editor?cloudshell_git_repo=https://github.com/offensi/git-poc&amp;cloudshell_git_branch=master&amp;cloudshell_working_dir=evilgitdirectory.</i></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='line-height:107%'><span lang=EN-US
+  style='font-size:9.0pt;line-height:107%;font-family:"Arial",sans-serif'>GCP
+  Go and Get </span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif;
+  color:black'>A Cloud Shell user could be tricked into executing malicious
+  code by taking advantage of the go get cloud shell function through
+  CVE-2019-3902 and navigating to the <i>https://ssh.cloud.google.com/cloudshell/editor?cloudshell_go_get_repo=https://go.offensi.com/go.html.</i></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>Azure
+  Cross-Account Command Execution</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>A
+  NetSPI blog covers the idea of abusing the “Contributor” role in Azure, which
+  allows a user to download any cloud shell .IMG file, including user accounts
+  that have the “Global Administrator” role. Malicious code could be embedded
+  in the shell image file, re-uploaded to the Azure Storage Account, and run
+  under the context of that said Global Admin.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='vertical-align:baseline'><span lang=EN
+style='font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='vertical-align:baseline'><span lang=EN-US
+style='font-size:16.0pt;font-family:"Arial",sans-serif'>Mitigations</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='font-family:"Arial",sans-serif'>Mitigation</span></b></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='font-family:"Arial",sans-serif'>Description</span></b><span
+  lang=EN-US style='font-family:"Arial",sans-serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>Delete
+  IMG Files in Azure Customer Storage Accounts</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-right:.1in'><span lang=EN-US
+  style='font-size:9.0pt;font-family:"Arial",sans-serif;color:#404040'>Customers
+  can reset their containers whenever they want in Azure by deleting the .IMG
+  file within their cloud console storage account. Do this especially if it is
+  suspected an account compromise for a user has occurred.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=312 valign=top style='width:3.25in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif'>Locking
+  down IP addresses and ports</span></p>
+  </td>
+  <td width=312 valign=top style='width:3.25in;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif;
+  color:black'>Run container images with minimal functionality, whitelist
+  specific IP addresses and ports for required services, and remove all
+  unnecessary tools on the machine, being a Docker container or a virtual
+  machine.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=paragraph style='margin:0in;vertical-align:baseline'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=paragraph style='margin:0in;vertical-align:baseline'><span
+class=normaltextrun><span lang=EN-US style='font-size:16.0pt;font-family:"Arial",sans-serif'>Detection</span></span><span
+class=eop><span lang=EN-US style='font-size:16.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></span></p>
+
+<p class=paragraph style='margin:0in;vertical-align:baseline'><span class=eop><span
+lang=EN-US style='font-family:"Arial",sans-serif'>Detection will be nearly
+impossible since activities occur on non-customer controlled cloud assets. A
+tool like Sysdig Secure or Falco, which both monitor and secure containers and
+kubernetes clusters within cloud environments, has the capability to detect
+reverse shells with out-of-the-box rules. For example, Sysdig Secure will
+generate alerts based on suspicious processes being run inside containers, like
+<i>sh </i>or <i>ls</i>. </span></span></p>
+
+<div style='border:none;border-bottom:solid #A2A9B1 1.0pt;padding:0in 0in 0in 0in;
+background:white'>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0in;margin-bottom:
+3.0pt;margin-left:0in;background:white;border:none;padding:0in'><span lang=EN
+style='font-size:16.0pt;font-family:"Arial",sans-serif;color:black'>References</span></p>
+
+</div>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'><span lang=EN-US
+style='font-family:"Arial",sans-serif;color:black'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Arial",sans-serif'>Proprietary
+S2 training materials. Presented March 5, 2020.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+lang=EN-US>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US><a
+href="https://sysdig.com/blog/reverse-shell-falco-sysdig-secure/"><span
+style='font-family:"Arial",sans-serif;color:windowtext'>https://sysdig.com/blog/reverse-shell-falco-sysdig-secure/</span></a></span><span
+lang=EN-US style='font-family:"Arial",sans-serif'>. Accessed July 28, 2020.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+lang=EN-US>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US><a
+href="https://www.netsparker.com/blog/web-security/understanding-reverse-shells"><span
+style='font-family:"Arial",sans-serif;color:windowtext'>https://www.netsparker.com/blog/web-security/understanding-reverse-shells</span></a></span><span
+lang=EN-US style='font-family:"Arial",sans-serif'>. Accessed July 29, 2020.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+lang=EN-US>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US><a
+href="https://offensi.com/2019/12/16/4-google-cloud-shell-bugs-explained-introduction/"><span
+style='font-family:"Arial",sans-serif;color:windowtext'>https://offensi.com/2019/12/16/4-google-cloud-shell-bugs-explained-introduction/</span></a></span><span
+lang=EN-US style='font-family:"Arial",sans-serif'>. Accessed July 29, 2020.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+lang=EN-US>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US><a
+href="https://offensi.com/2019/12/16/4-google-cloud-shell-bugs-explained-bug-4/"><span
+style='font-family:"Arial",sans-serif;color:windowtext'>https://offensi.com/2019/12/16/4-google-cloud-shell-bugs-explained-bug-4/</span></a></span><span
+lang=EN-US style='font-family:"Arial",sans-serif'>. Accessed July 29, 2020.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+lang=EN-US>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US><a
+href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-3902"><span
+style='font-family:"Arial",sans-serif;color:windowtext'>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-3902</span></a></span><span
+lang=EN-US style='font-family:"Arial",sans-serif'>. Accessed July 29, 2020.</span></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in'><span lang=EN-US>7.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US><a href="https://blog.netspi.com/attacking-azure-cloud-shell/"><span
+style='font-family:"Arial",sans-serif;color:windowtext'>https://blog.netspi.com/attacking-azure-cloud-shell/</span></a></span><span
+lang=EN-US style='font-family:"Arial",sans-serif'>. Accessed July 30, 2020.</span></p>
+
+<p class=MsoNormal style='margin-bottom:1.2pt;margin-left:38.4pt;background:
+white'><span lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>

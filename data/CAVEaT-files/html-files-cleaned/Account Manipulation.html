@@ -1,0 +1,147 @@
+<html><head></head><body link="blue" vlink="#954F72"><div><p>Account Manipulation(version 1.0)</p>
+
+<p><b>Cloud Service Label: IaaS, PaaS</b></p>
+
+<p>Description</p>
+<p>Account manipulation may aid adversaries in maintaining access to credentials and certain permission levels within an environment. Manipulation could consist of modifying permissions, modifying credentials, adding or changing permission groups, modifying account settings, or modifying how authentication is performed. These actions could also include account activity designed to subvert security policies, such as performing iterative password updates to subvert password duration policies and preserve the life of compromised credentials. In order to create or manipulate accounts, the adversary must already have sufficient permissions on systems or the domain.</p>
+
+<p><i>Azure AD</i></p>
+<p>In Azure, an adversary can set a password for Service Principals, which is an application specific method of accessing Azure resources. This could facilitate persistence to all Azure services the SP has access to without using an actual user’s credentials. Azure also allows alternative authentication mechanisms such as SAS tokens and certificates to be created and used rather than passwords for Azure services.</p>
+
+<p><i>AWS</i></p>
+<p>AWS policies allow trust between user accounts in different AWS accounts by simply identifying an external Amazon account ID and assigning it to a native role within the existing AWS account. It is then up to the cloud admin to notice that this has happened and that the role assigned to the trusted account is permissible.</p>
+
+<p>Examples</p>
+<table border="1" cellpadding="0" cellspacing="0" width="624"><tr><td valign="top" width="205"><p><b>Name</b></p>
+</td>
+<td valign="top" width="419"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="205"><p>Skeleton Key</p>
+
+</td>
+<td valign="top" width="419"><p>This exploit is possible after an adversary compromises a server that is running an Azure agent. Once compromised the authentication flow that is used to verify credentials can be tampered with. This attack requires privileged access to complete.</p>
+</td>
+</tr>
+</table>
+
+<p>Mitigations</p>
+<table border="1" cellpadding="0" cellspacing="0" width="624"><tr><td colspan="2" valign="top" width="207"><p><b>Mitigation</b></p>
+</td>
+<td valign="top" width="417"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td colspan="2" valign="top" width="207"><p><a href="https://attack.mitre.org/mitigations/M1032">Multi-factor Authentication</a></p>
+
+</td>
+<td valign="top" width="417"><p>Use multi-factor authentication for user and privileged accounts. Do not manage Cloud portals from machines that perform user email and web browsing tasks.</p>
+</td>
+</tr>
+<tr><td valign="top" width="95">
+</td>
+<td valign="top" width="112"><p><i>AWS</i></p>
+</td>
+<td valign="top" width="417"><p>All users should be required to utilize two factor authentication. This can be enforced by first creating a policy that would prohibit actions except those that allow a user to change their password or manage 2FA, then attaching a policy to a group that includes all user accounts where they can be allowed all access if they sign in with 2FA. Once these actions are completed it should be tested to verify the access is given correctly. To see full details on how to complete this view AWS documentation at:<b>https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_users-self-manage-mfa-and-creds.html.</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="95">
+</td>
+<td valign="top" width="112"><p><i>Azure</i></p>
+</td>
+<td valign="top" width="417"><p>All users should be required to utilize two factor authentication. This can be done by creating a MFA registration policy. It can than be assigned to all users (with the ability to exclude some if need be, but is not recommended). Make sure once the policy is created and added to users that it is then being enforced, once enforced it should be tested for verification. To see full details on how to complete this view Azure documentation at:<b>https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/howto-identity-protection-configure-mfa-policy.</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="95">
+</td>
+<td valign="top" width="112"><p><i>GCP</i></p>
+</td>
+<td valign="top" width="417"><p>All users should be required to utilize two factor authentication. This can be done by first enabling it on the current account being used by admin to assign the roles, then enable two factor on an instance by instance or project by project basis, then assigning the requirements based on IAM roles and applying it to all users. To see full details on how to complete this view Azure documentation at:<b>https://cloud.google.com/compute/docs/oslogin/setup-two-factor-authentication.</b></p>
+</td>
+</tr>
+<tr><td colspan="2" valign="top" width="207"><p><a href="https://attack.mitre.org/mitigations/M1030">Account Segmentation</a></p>
+
+</td>
+<td valign="top" width="417"><p>Consider separating different resources under different administrative domains so that credential compromise does not put all assets in danger. In the case of Azure, multiple subscriptions can be created with different administrators that can only access resources within the subscription. The subscriptions can still belong under the same Azure account for overall accounting and administration/policy.</p>
+</td>
+</tr>
+<tr><td colspan="2" valign="top" width="207"><p><a href="https://attack.mitre.org/mitigations/M1028">AD Server Configuration</a></p>
+
+</td>
+<td valign="top" width="417"><p>Use Cloud provided AD services rather than maintaining AD servers in the cloud.</p>
+</td>
+</tr>
+<tr><td colspan="2" valign="top" width="207"><p><a href="https://attack.mitre.org/mitigations/M1026">Privileged Account Management</a></p>
+
+</td>
+<td valign="top" width="417"><p>Do not allow subscription-level administrator accounts to be used for day-to-day operations that may expose them to potential adversaries on unprivileged systems. This can be done by first limiting the access that these accounts have outside of the administrative rights, but then also monitoring (details in detection) for events that might show a compromised account.</p>
+</td>
+</tr>
+<tr><td valign="top" width="95">
+</td>
+<td valign="top" width="112"><p>AWS</p>
+</td>
+<td valign="top" width="417"><p>To manage the access that privileged accounts have on the AWS cloud system to only allow administrators to perform administrative tasks on such accounts can be accomplished utilizing limited IAM administrator accounts. To configure this the administrator would have two accounts; one would have administrative rights and no basic access while the other account has basic access with no administrative rights. To limit the administrative account the IAM limited administrator would be used. This is done by creating a policy that gives a user admin rights, but disallows the other actions using the AWS command line interface. This is outlined at:<a href="https://aws.amazon.com/blogs/security/how-to-create-a-limited-iam-administrator-by-using-managed-policies/"><b>https://aws.amazon.com/blogs/security/how-to-create-a-limited-iam-administrator-by-using-managed-policies/</b></a><b>.</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="95">
+</td>
+<td valign="top" width="112"><p>Azure</p>
+</td>
+<td valign="top" width="417"><p>To manage the access that privilege accounts have on the Azure cloud system to only allow administrators to perform administrative tasks on such accounts can be accomplished utilizing limited IAM administrator accounts. To configure this the administrator would have two accounts; one would have administrative rights and no basic access while the other account has basic access with no administrative rights. To limit the administrative account the specific administrative needs can be picked from a number of options available (Azure DevOps Administrator, Billing Administrator, Cloud Application Administrator, etc.) These different options can be edited to fit the needs and limit the basic access. This is outlined at:<a href="https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles"><b>https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles</b></a><b>.</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="95">
+</td>
+<td valign="top" width="112"><p>GCP</p>
+</td>
+<td valign="top" width="417"><p>To manage the access that privilege accounts have on the Azure cloud system to only allow administrators to perform administrative tasks on such accounts can be accomplished utilizing limited IAM administrator accounts. To configure this the administrator would have two accounts; one would have administrative rights and no basic access while the other account has basic access with no administrative rights. To limit the administrative account pre-defined administrator accounts can be used (mobile admin, Google voice admin, help desk admin, etc.). These accounts can be used with their pre-defined settings, or modified depending on specific use cases. These can limit access to basic functionality needed. This is outlined at:<a href="https://support.google.com/a/answer/2405986?hl=en"><b>https://support.google.com/a/answer/2405986?hl=en</b></a><b>.</b></p>
+</td>
+</tr>
+</table>
+<p><a name="scite-1">Detection</a></p>
+<table border="1" cellpadding="0" cellspacing="0" width="624"><tr><td colspan="2" valign="top" width="191"><p><b>Mitigation</b></p>
+</td>
+<td valign="top" width="433"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td colspan="2" valign="top" width="191"><p>Monitoring</p>
+</td>
+<td valign="top" width="433"><p>Collect events that correlate with changes to account objects on systems and the domain. Monitor for modification of accounts in correlation with other suspicious activity. Changes may occur at unusual times or from unusual systems. Especially flag events where the subject and target accounts differ or that include additional flags such as changing a password without knowledge of the old password. Use of credentials may also occur at unusual times or to unusual systems or services and may correlate with other suspicious activity</p>
+</td>
+</tr>
+<tr><td valign="top" width="88">
+</td>
+<td valign="top" width="103"><p>AWS</p>
+</td>
+<td valign="top" width="433"><p>Various services in AWS offer logging features that allow for detection capabilities. These include CloudFront, CloudTrail, CloudWatch, Config, and S3.</p>
+<p>To create a metric filter and alarm:</p>
+<p>1.Create a metric filter that checks for IAM policy changes and the<i>&lt;cloudtrail_log_group_name&gt;</i></p>
+<p>2.Create an SNS topic</p>
+<p>3.Create an SNS subscription to the above topic</p>
+<p>4.Create an alarm associated with the filter and SNS topic created in steps 1 and 2 respectively</p>
+</td>
+</tr>
+<tr><td valign="top" width="88">
+</td>
+<td valign="top" width="103"><p>Azure</p>
+</td>
+<td valign="top" width="433"><p>Azure AD can generate anomaly reports than can be run on a daily basis. Azure AD Identity Protection show current risks in its dashboard and provides daily email summary notifications. Policies can also be configured to alert to specific issues.</p>
+<p>To create a log alert in the Azure portal:</p>
+<p>1.Select<b>Monitor -&gt; Alerts</b></p>
+<p>2.Select<b>New alert rule</b>of the<b>Alerts</b>window</p>
+<p>3.Provide information in<b>Define alert condition</b></p>
+<p>4.Provide details in<b>Define alert details</b></p>
+<p>5.Specify action group for new alert rule under<b>Action group</b>, or create a new action group with +<b>New group</b></p>
+<p>6.Select<b>Yes</b>for the<b>Enable rule upon creation</b>option</p>
+<p>7.Select<b>Create alert rule</b></p>
+<p>To view and manage alerts:</p>
+<p>1.Select<b>Monitor -&gt; Alerts -&gt; Manage alert rules</b></p>
+<p>2.Select the rule you want to modify and double-click to edit the rule options</p>
+<p>3.Click<b>Save</b></p>
+</td>
+</tr>
+</table>
+<p>References</p>
+<p><a name="scite-2"></a><a name="scite-3"></a><a name="scite-4"></a><a name="scite-5"></a><a name="scite-6"></a><a name="scite-7"></a><a name="scite-8"></a><a name="scite-9"></a><a name="scite-10"></a><a name="scite-11"></a><a name="scite-12"></a><a name="scite-13"></a><a name="scite-14"></a><a name="scite-15"></a><a name="scite-16"></a><a name="scite-17"></a>1.https://www.scmagazineuk.com/hackers-manipulate-azure-agent-using-skeleton-key-attack-cloud-infrastructure/article/1681074. Accessed June 15, 2020</p>
+
+</div></body></html>

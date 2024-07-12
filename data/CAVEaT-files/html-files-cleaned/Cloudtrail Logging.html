@@ -1,0 +1,42 @@
+<html><head></head><body link="blue" vlink="#954F72"><div><p>CloudTrail/Logging Exploits(version 1.0)</p>
+
+<p><b>Cloud Service Label: IaaS, PaaS</b></p>
+
+<p>Description</p>
+<p>AWS CloudTrail and Azure Monitor logs are often parsed by people with increased rights or accesses. An attacker with limited access to a resource in an AWS/Azure account can craft a name for a request to the API that will certainly fail but will be logged by the cloud API logging service. If a cloud admin exports these logs for example to a spreadsheet in Excel or Google sheets, which is a common practice, the failed API request may actually contain a formula that will be executed inside a spreadsheet. This will probably be invisible to the admin who has now just unwittingly allowed one of several possible actions to be executed with his credentials.</p>
+
+<p>Examples</p>
+<table border="1" cellpadding="0" cellspacing="0"><tr><td valign="top" width="312"><p><b>Name</b></p>
+</td>
+<td valign="top" width="312"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Cloudtrail_csv_Injection</p>
+</td>
+<td valign="top" width="312"><p>Open source Pacu module that automates CloudTrail attacks based on manipulation API calls.</p>
+</td>
+</tr>
+</table>
+
+<p>Mitigations</p>
+<table border="1" cellpadding="0" cellspacing="0"><tr><td valign="top" width="312"><p><b>Mitigation</b></p>
+</td>
+<td valign="top" width="312"><p><b>Description</b></p>
+</td>
+</tr>
+<tr><td valign="top" width="312"><p>Review Logs Outside Spreadsheets</p>
+
+</td>
+<td valign="top" width="312"><p>Don’t use spreadsheets to examine cloud-based logs.</p>
+</td>
+</tr>
+</table>
+<p>Detection</p>
+<p>This attack is nearly impossible to detect unless the administrator recognizes a crafted entry is present within cloud API logs before he attempts to examine it inside a spreadsheet.</p>
+
+<div><p>References</p>
+</div><p>1.https://www.we45.com/blog/2017/02/14/csv-injection-theres-devil-in-the-detail- Accessed 02/12/2020</p>
+
+
+
+</div></body></html>
