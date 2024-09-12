@@ -6,9 +6,9 @@ If you are interested in this project feel free to (sign up with your email addr
 
 ## CAVEaT Chatbot:
 
-https://csaurl.org/WG-CAVEaT-Chatbot
+ChatBot URL: [https://csaurl.org/CAVEaT-Chatbot](https://csaurl.org/CAVEaT-Chatbot)
 
-https://github.com/Cloudsecurityalliance-Chatbots/chatbot-CAVEaT-data
+ChatBot data: [https://github.com/Cloudsecurityalliance-Chatbots/chatbot-CAVEaT-data](https://github.com/Cloudsecurityalliance-Chatbots/chatbot-CAVEaT-data)
 
 The prompt is:
 
