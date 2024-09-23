@@ -1,3 +1,9 @@
+# MOVED
+
+CloudSecurityAlliance-DataSets/dataset-public-laws-regulations-standards/MITRE
+
+https://github.com/CloudSecurityAlliance-DataSets/dataset-public-laws-regulations-standards/tree/main/MITRE
+
 # MITRE data
 
 ## ATLAS
