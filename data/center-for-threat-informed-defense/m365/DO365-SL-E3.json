@@ -1,0 +1,105 @@
+{
+    "metadata": {
+        "mapping_version": "",
+        "technology_domain": "enterprise",
+        "attack_version": "14.1",
+        "mapping_framework": "m365",
+        "mapping_framework_version": "12/11/2023",
+        "author": "Center for Threat-Informed Defense",
+        "contact": "ctid@mitre-engenuity.org",
+        "organization": "Center for Threat-Informed Defense",
+        "creation_date": "12/11/2023",
+        "last_update": "03/18/2024",
+        "mapping_types": {
+            "technique_score": {
+                "name": "Technique Scores",
+                "description": ""
+            }
+        },
+        "capability_groups": {
+            "m365-defender": "Microsoft 365 Defender",
+            "entra-id": "Microsoft Entra ID",
+            "eop": "Exchange Online Protection",
+            "purview": "Microsoft Purview"
+        }
+    },
+    "mapping_objects": [
+        {
+            "capability_id": "DO365-SL-E3",
+            "capability_description": "Safe Links",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1204",
+            "attack_object_name": "User Execution",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Microsoft Defender for O365 Safe Links scanning protects your organization from malicious links that are used in phishing and other attacks. Safe Links provides URL scanning and rewriting of inbound email messages during mail flow, and time-of-click verification of URLs and links in email messages, Teams, and supported Office 365 apps. \n\nSafe Links Detects User Execution attacks due to Safe Links immediately checking the URL's before opening the websites. If the URL points to a website that has been determined to be malicious, a malicious website warning page opens.\n\nLicense Requirements:\nMicrosoft Defender for Office 365 plan 1 and plan 2, Microsoft Defender XDR\n",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-links-about?view=o365-worldwide#safe-links-settings-for-email-messages"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-SL-E3",
+            "capability_description": "Safe Links",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1204.001",
+            "attack_object_name": "Malicious Link",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1204",
+            "comments": "Microsoft Defender for O365 Safe Links scanning protects your organization from malicious links that are used in phishing and other attacks. Safe Links provides URL scanning and rewriting of inbound email messages during mail flow, and time-of-click verification of URLs and links in email messages, Teams, and supported Office 365 apps. \n\nSafe Links Detects Malicious Links attacks due to Safe Links immediately checking the URL's before opening the websites. If the URL points to a website that has been determined to be malicious, a malicious website warning page opens.\n\nLicense Requirements:\nMicrosoft Defender for Office 365 plan 1 and plan 2, Microsoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-links-about?view=o365-worldwide#safe-links-settings-for-email-messages"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-SL-E3",
+            "capability_description": "Safe Links",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566",
+            "attack_object_name": "Phishing",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Microsoft Defender for O365 Safe Links scanning protects your organization from malicious links that are used in phishing and other attacks. Safe Links provides URL scanning and rewriting of inbound email messages during mail flow, and time-of-click verification of URLs and links in email messages, Teams, and supported Office 365 apps. \n\nSafe Links Detects Phishing attacks due to Safe Links immediately checking the URL's before opening the websites. If the URL points to a website that has been identified as a phishing attack, a Phishing attempt warning page will open. \n\nLicense Requirements:\nMicrosoft Defender for Office 365 plan 1 and plan 2, Microsoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-links-about?view=o365-worldwide#safe-links-settings-for-email-messages"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-SL-E3",
+            "capability_description": "Safe Links",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566.002",
+            "attack_object_name": "Spearphishing Link",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1566",
+            "comments": "Microsoft Defender for O365 Safe Links scanning protects your organization from malicious links that are used in phishing and other attacks. Safe Links provides URL scanning and rewriting of inbound email messages during mail flow, and time-of-click verification of URLs and links in email messages, Teams, and supported Office 365 apps. \n\nSafe Links Detects Spearphishing attacks due to Safe Links immediately checking the URL's before opening the websites. You can add entries to the existing policies or configure different lists in different Safe Links policies to determine if certain websites are necessary for business operations. If the URL points to a website that has been identified as a phishing attack, a Phishing attempt warning page will open. \n\nLicense Requirements:\nMicrosoft Defender for Office 365 plan 1 and plan 2, Microsoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-links-about?view=o365-worldwide#safe-links-settings-for-email-messages"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-SL-E3",
+            "capability_description": "Safe Links",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1534",
+            "attack_object_name": "Internal Spearphishing",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Microsoft Defender for O365 Safe Links scanning protects your organization from malicious links that are used in phishing and other attacks. Safe Links provides URL scanning and rewriting of inbound email messages during mail flow, and time-of-click verification of URLs and links in email messages, Teams, and supported Office 365 apps. \n\nSafe Links Detects Internal Spearphishing attacks due to Safe Links immediately checking the URL's before opening the websites. You can add entries to the existing policies or configure different lists in different Safe Links policies to determine if certain websites are necessary for business operations. If the URL points to a website that has been identified as a phishing attack, a Phishing attempt warning page will open. \n\nLicense Requirements:\nMicrosoft Defender for Office 365 plan 1 and plan 2, Microsoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-links-about?view=o365-worldwide#safe-links-settings-for-email-messages"
+            ],
+            "status": "complete"
+        }
+    ]
+}

@@ -1,0 +1,390 @@
+{
+    "metadata": {
+        "mapping_version": "",
+        "technology_domain": "enterprise",
+        "attack_version": "14.1",
+        "mapping_framework": "m365",
+        "mapping_framework_version": "12/11/2023",
+        "author": "Center for Threat-Informed Defense",
+        "contact": "ctid@mitre-engenuity.org",
+        "organization": "Center for Threat-Informed Defense",
+        "creation_date": "12/11/2023",
+        "last_update": "03/18/2024",
+        "mapping_types": {
+            "technique_score": {
+                "name": "Technique Scores",
+                "description": ""
+            }
+        },
+        "capability_groups": {
+            "m365-defender": "Microsoft 365 Defender",
+            "entra-id": "Microsoft Entra ID",
+            "eop": "Exchange Online Protection",
+            "purview": "Microsoft Purview"
+        }
+    },
+    "mapping_objects": [
+        {
+            "capability_id": "DEF-SIM-E5",
+            "capability_description": "ATT&CK Simulation Training",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1550",
+            "attack_object_name": "Use Alternate Authentication Material",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "partial",
+            "comments": "M365's Defender Attack Simulation Training allows organizations to automate the simulation of benign real-world cyberattacks. These simulation automations feature social engineering techniques, payloads, and can start on an automated schedule.  This detection focused security control partially improves organizations security posture by continuously conduct attack simulations that fine tune analytics, and provide hands-on training for users and cyber professionals to improve response capabilities. \n\nThe following social engineering techniques are available:\n\nCredential Harvest: Attempts to collect credentials by taking users to a well-known looking website with input boxes to submit a username and password.\nMalware Attachment: Adds a malicious attachment to a message. When the user opens the attachment, arbitrary code is run that helps the attacker compromise the target's device.\nLink in Attachment: A type of credential harvest hybrid. An attacker inserts a URL into an email attachment. The URL within the attachment follows the same technique as credential harvest.\nLink to Malware: Runs some arbitrary code from a file hosted on a well-known file sharing service. The message sent to the user contains a link to this malicious file, opening the file and helping the attacker compromise the target's device.\nDrive-by URL: The malicious URL in the message takes the user to a familiar-looking website that silently runs and/or installs code on the user's device.\nOAuth Consent Grant: The malicious URL asks users to grant permissions to data for a malicious Azure Application.\n\nLicense Requirements: \nMicrosoft 365 E5 or Microsoft Defender for Office 365 Plan 2.",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulation-training-simulation-automations?view=o365-worldwide#select-one-or-more-social-engineering-techniques",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulation-training-simulation-automations?view=o365-worldwide#select-one-or-more-social-engineering-techniques",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulation-training-teams?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulation-training-payloads?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SIM-E5",
+            "capability_description": "ATT&CK Simulation Training",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1550",
+            "attack_object_name": "Use Alternate Authentication Material",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "M365's Defender Attack Simulation Training allows organizations to automate the simulation of benign real-world cyberattacks. These simulation automations feature social engineering techniques, payloads, and can start on an automated schedule.  This detection focused security control partially improves organizations security posture by continuously conduct attack simulations that fine tune analytics, and provide hands-on training for users and cyber professionals to improve response capabilities. \n\nThe following social engineering techniques are available:\n\nCredential Harvest: Attempts to collect credentials by taking users to a well-known looking website with input boxes to submit a username and password.\nMalware Attachment: Adds a malicious attachment to a message. When the user opens the attachment, arbitrary code is run that helps the attacker compromise the target's device.\nLink in Attachment: A type of credential harvest hybrid. An attacker inserts a URL into an email attachment. The URL within the attachment follows the same technique as credential harvest.\nLink to Malware: Runs some arbitrary code from a file hosted on a well-known file sharing service. The message sent to the user contains a link to this malicious file, opening the file and helping the attacker compromise the target's device.\nDrive-by URL: The malicious URL in the message takes the user to a familiar-looking website that silently runs and/or installs code on the user's device.\nOAuth Consent Grant: The malicious URL asks users to grant permissions to data for a malicious Azure Application.\n\nLicense Requirements: \nMicrosoft 365 E5 or Microsoft Defender for Office 365 Plan 2.",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulation-training-simulation-automations?view=o365-worldwide#select-one-or-more-social-engineering-techniques",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulation-training-teams?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulation-training-simulation-automations?view=o365-worldwide#select-one-or-more-social-engineering-techniques"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SIM-E5",
+            "capability_description": "ATT&CK Simulation Training",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1539",
+            "attack_object_name": "Steal Web Session Cookie",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "partial",
+            "comments": "M365's Defender Attack Simulation Training allows organizations to automate the simulation of benign real-world cyberattacks. These simulation automations feature social engineering techniques, payloads, and can start on an automated schedule.  This detection focused security control partially improves organizations security posture by continuously conduct attack simulations that fine tune analytics, and provide hands-on training for users and cyber professionals to improve response capabilities. \n\nThe following social engineering techniques are available:\n\nCredential Harvest: Attempts to collect credentials by taking users to a well-known looking website with input boxes to submit a username and password.\nMalware Attachment: Adds a malicious attachment to a message. When the user opens the attachment, arbitrary code is run that helps the attacker compromise the target's device.\nLink in Attachment: A type of credential harvest hybrid. An attacker inserts a URL into an email attachment. The URL within the attachment follows the same technique as credential harvest.\nLink to Malware: Runs some arbitrary code from a file hosted on a well-known file sharing service. The message sent to the user contains a link to this malicious file, opening the file and helping the attacker compromise the target's device.\nDrive-by URL: The malicious URL in the message takes the user to a familiar-looking website that silently runs and/or installs code on the user's device.\nOAuth Consent Grant: The malicious URL asks users to grant permissions to data for a malicious Azure Application.\n\nLicense Requirements: \nMicrosoft 365 E5 or Microsoft Defender for Office 365 Plan 2.",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulation-training-simulation-automations?view=o365-worldwide#select-one-or-more-social-engineering-techniques",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulation-training-teams?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SIM-E5",
+            "capability_description": "ATT&CK Simulation Training",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1539",
+            "attack_object_name": "Steal Web Session Cookie",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "M365's Defender Attack Simulation Training allows organizations to automate the simulation of benign real-world cyberattacks. These simulation automations feature social engineering techniques, payloads, and can start on an automated schedule.  This detection focused security control partially improves organizations security posture by continuously conduct attack simulations that fine tune analytics, and provide hands-on training for users and cyber professionals to improve response capabilities. \n\nThe following social engineering techniques are available:\n\nCredential Harvest: Attempts to collect credentials by taking users to a well-known looking website with input boxes to submit a username and password.\nMalware Attachment: Adds a malicious attachment to a message. When the user opens the attachment, arbitrary code is run that helps the attacker compromise the target's device.\nLink in Attachment: A type of credential harvest hybrid. An attacker inserts a URL into an email attachment. The URL within the attachment follows the same technique as credential harvest.\nLink to Malware: Runs some arbitrary code from a file hosted on a well-known file sharing service. The message sent to the user contains a link to this malicious file, opening the file and helping the attacker compromise the target's device.\nDrive-by URL: The malicious URL in the message takes the user to a familiar-looking website that silently runs and/or installs code on the user's device.\nOAuth Consent Grant: The malicious URL asks users to grant permissions to data for a malicious Azure Application.\n\nLicense Requirements: \nMicrosoft 365 E5 or Microsoft Defender for Office 365 Plan 2.",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulation-training-simulation-automations?view=o365-worldwide#select-one-or-more-social-engineering-techniques",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulation-training-teams?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SIM-E5",
+            "capability_description": "ATT&CK Simulation Training",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1528",
+            "attack_object_name": "Steal Application Access Token",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "partial",
+            "comments": "M365's Defender Attack Simulation Training allows organizations to automate the simulation of benign real-world cyberattacks. These simulation automations feature social engineering techniques, payloads, and can start on an automated schedule.  This detection focused security control partially improves organizations security posture by continuously conduct attack simulations that fine tune analytics, and provide hands-on training for users and cyber professionals to improve response capabilities. \n\nThe following social engineering techniques are available:\n\nCredential Harvest: Attempts to collect credentials by taking users to a well-known looking website with input boxes to submit a username and password.\nMalware Attachment: Adds a malicious attachment to a message. When the user opens the attachment, arbitrary code is run that helps the attacker compromise the target's device.\nLink in Attachment: A type of credential harvest hybrid. An attacker inserts a URL into an email attachment. The URL within the attachment follows the same technique as credential harvest.\nLink to Malware: Runs some arbitrary code from a file hosted on a well-known file sharing service. The message sent to the user contains a link to this malicious file, opening the file and helping the attacker compromise the target's device.\nDrive-by URL: The malicious URL in the message takes the user to a familiar-looking website that silently runs and/or installs code on the user's device.\nOAuth Consent Grant: The malicious URL asks users to grant permissions to data for a malicious Azure Application.\n\nLicense Requirements: \nMicrosoft 365 E5 or Microsoft Defender for Office 365 Plan 2.",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulation-training-simulation-automations?view=o365-worldwide#select-one-or-more-social-engineering-techniques",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulation-training-teams?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SIM-E5",
+            "capability_description": "ATT&CK Simulation Training",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1528",
+            "attack_object_name": "Steal Application Access Token",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "M365's Defender Attack Simulation Training allows organizations to automate the simulation of benign real-world cyberattacks. These simulation automations feature social engineering techniques, payloads, and can start on an automated schedule.  This detection focused security control partially improves organizations security posture by continuously conduct attack simulations that fine tune analytics, and provide hands-on training for users and cyber professionals to improve response capabilities. \n\nThe following social engineering techniques are available:\n\nCredential Harvest: Attempts to collect credentials by taking users to a well-known looking website with input boxes to submit a username and password.\nMalware Attachment: Adds a malicious attachment to a message. When the user opens the attachment, arbitrary code is run that helps the attacker compromise the target's device.\nLink in Attachment: A type of credential harvest hybrid. An attacker inserts a URL into an email attachment. The URL within the attachment follows the same technique as credential harvest.\nLink to Malware: Runs some arbitrary code from a file hosted on a well-known file sharing service. The message sent to the user contains a link to this malicious file, opening the file and helping the attacker compromise the target's device.\nDrive-by URL: The malicious URL in the message takes the user to a familiar-looking website that silently runs and/or installs code on the user's device.\nOAuth Consent Grant: The malicious URL asks users to grant permissions to data for a malicious Azure Application.\n\nLicense Requirements: \nMicrosoft 365 E5 or Microsoft Defender for Office 365 Plan 2.",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulation-training-simulation-automations?view=o365-worldwide#select-one-or-more-social-engineering-techniques",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulation-training-teams?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SIM-E5",
+            "capability_description": "ATT&CK Simulation Training",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1204.001",
+            "attack_object_name": "Malicious Link",
+            "capability_group": "m365-defender",
+            "comments": "M365's Defender Attack Simulation Training allows organizations to automate the simulation of benign real-world cyberattacks. These simulation automations feature social engineering techniques, payloads, and can start on an automated schedule.  This detection focused security control partially improves organizations security posture by continuously conduct attack simulations that fine tune analytics, and provide hands-on training for users and cyber professionals to improve response capabilities. \n\nThe following social engineering techniques are available:\n\nCredential Harvest: Attempts to collect credentials by taking users to a well-known looking website with input boxes to submit a username and password.\nMalware Attachment: Adds a malicious attachment to a message. When the user opens the attachment, arbitrary code is run that helps the attacker compromise the target's device.\nLink in Attachment: A type of credential harvest hybrid. An attacker inserts a URL into an email attachment. The URL within the attachment follows the same technique as credential harvest.\nLink to Malware: Runs some arbitrary code from a file hosted on a well-known file sharing service. The message sent to the user contains a link to this malicious file, opening the file and helping the attacker compromise the target's device.\nDrive-by URL: The malicious URL in the message takes the user to a familiar-looking website that silently runs and/or installs code on the user's device.\nOAuth Consent Grant: The malicious URL asks users to grant permissions to data for a malicious Azure Application.\n\nLicense Requirements: \nMicrosoft 365 E5 or Microsoft Defender for Office 365 Plan 2.",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulation-training-simulation-automations?view=o365-worldwide#select-one-or-more-social-engineering-techniques"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SIM-E5",
+            "capability_description": "ATT&CK Simulation Training",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1189",
+            "attack_object_name": "Drive-by Compromise",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "partial",
+            "comments": "M365's Defender Attack Simulation Training allows organizations to automate the simulation of benign real-world cyberattacks. These simulation automations feature social engineering techniques, payloads, and can start on an automated schedule.  This detection focused security control partially improves organizations security posture by continuously conduct attack simulations that fine tune analytics, and provide hands-on training for users and cyber professionals to improve response capabilities. \n\nThe following social engineering techniques are available:\n\nCredential Harvest: Attempts to collect credentials by taking users to a well-known looking website with input boxes to submit a username and password.\nMalware Attachment: Adds a malicious attachment to a message. When the user opens the attachment, arbitrary code is run that helps the attacker compromise the target's device.\nLink in Attachment: A type of credential harvest hybrid. An attacker inserts a URL into an email attachment. The URL within the attachment follows the same technique as credential harvest.\nLink to Malware: Runs some arbitrary code from a file hosted on a well-known file sharing service. The message sent to the user contains a link to this malicious file, opening the file and helping the attacker compromise the target's device.\nDrive-by URL: The malicious URL in the message takes the user to a familiar-looking website that silently runs and/or installs code on the user's device.\nOAuth Consent Grant: The malicious URL asks users to grant permissions to data for a malicious Azure Application.\n\nLicense Requirements: \nMicrosoft 365 E5 or Microsoft Defender for Office 365 Plan 2.",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulation-training-simulation-automations?view=o365-worldwide#select-one-or-more-social-engineering-techniques"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SIM-E5",
+            "capability_description": "ATT&CK Simulation Training",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566.002",
+            "attack_object_name": "Spearphishing Link",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "partial",
+            "related_score": "T1566",
+            "comments": "M365's Defender Attack Simulation Training allows organizations to automate the simulation of benign real-world cyberattacks. These simulation automations feature social engineering techniques, payloads, and can start on an automated schedule.  This detection focused security control partially improves organizations security posture by continuously conduct attack simulations that fine tune analytics, and provide hands-on training for users and cyber professionals to improve response capabilities. \n\nThe following social engineering techniques are available:\n\nCredential Harvest: Attempts to collect credentials by taking users to a well-known looking website with input boxes to submit a username and password.\nMalware Attachment: Adds a malicious attachment to a message. When the user opens the attachment, arbitrary code is run that helps the attacker compromise the target's device.\nLink in Attachment: A type of credential harvest hybrid. An attacker inserts a URL into an email attachment. The URL within the attachment follows the same technique as credential harvest.\nLink to Malware: Runs some arbitrary code from a file hosted on a well-known file sharing service. The message sent to the user contains a link to this malicious file, opening the file and helping the attacker compromise the target's device.\nDrive-by URL: The malicious URL in the message takes the user to a familiar-looking website that silently runs and/or installs code on the user's device.\nOAuth Consent Grant: The malicious URL asks users to grant permissions to data for a malicious Azure Application.\n\nLicense Requirements: \nMicrosoft 365 E5 or Microsoft Defender for Office 365 Plan 2.",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulation-training-simulation-automations?view=o365-worldwide#select-one-or-more-social-engineering-techniques"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SIM-E5",
+            "capability_description": "ATT&CK Simulation Training",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1598",
+            "attack_object_name": "Phishing for Information",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "partial",
+            "comments": "M365's Defender Attack Simulation Training allows organizations to automate the simulation of benign real-world cyberattacks. These simulation automations feature social engineering techniques, payloads, and can start on an automated schedule.  This detection focused security control partially improves organizations security posture by continuously conduct attack simulations that fine tune analytics, and provide hands-on training for users and cyber professionals to improve response capabilities. \n\nThe following social engineering techniques are available:\n\nCredential Harvest: Attempts to collect credentials by taking users to a well-known looking website with input boxes to submit a username and password.\nMalware Attachment: Adds a malicious attachment to a message. When the user opens the attachment, arbitrary code is run that helps the attacker compromise the target's device.\nLink in Attachment: A type of credential harvest hybrid. An attacker inserts a URL into an email attachment. The URL within the attachment follows the same technique as credential harvest.\nLink to Malware: Runs some arbitrary code from a file hosted on a well-known file sharing service. The message sent to the user contains a link to this malicious file, opening the file and helping the attacker compromise the target's device.\nDrive-by URL: The malicious URL in the message takes the user to a familiar-looking website that silently runs and/or installs code on the user's device.\nOAuth Consent Grant: The malicious URL asks users to grant permissions to data for a malicious Azure Application.\n\nLicense Requirements: \nMicrosoft 365 E5 or Microsoft Defender for Office 365 Plan 2.",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulation-training-simulation-automations?view=o365-worldwide#select-one-or-more-social-engineering-techniques"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SIM-E5",
+            "capability_description": "ATT&CK Simulation Training",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566.001",
+            "attack_object_name": "Spearphishing Attachment",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "partial",
+            "related_score": "T1566",
+            "comments": "M365's Defender Attack Simulation Training allows organizations to automate the simulation of benign real-world cyberattacks. These simulation automations feature social engineering techniques, payloads, and can start on an automated schedule.  This detection focused security control partially improves organizations security posture by continuously conduct attack simulations that fine tune analytics, and provide hands-on training for users and cyber professionals to improve response capabilities. \n\nThe following social engineering techniques are available:\n\nCredential Harvest: Attempts to collect credentials by taking users to a well-known looking website with input boxes to submit a username and password.\nMalware Attachment: Adds a malicious attachment to a message. When the user opens the attachment, arbitrary code is run that helps the attacker compromise the target's device.\nLink in Attachment: A type of credential harvest hybrid. An attacker inserts a URL into an email attachment. The URL within the attachment follows the same technique as credential harvest.\nLink to Malware: Runs some arbitrary code from a file hosted on a well-known file sharing service. The message sent to the user contains a link to this malicious file, opening the file and helping the attacker compromise the target's device.\nDrive-by URL: The malicious URL in the message takes the user to a familiar-looking website that silently runs and/or installs code on the user's device.\nOAuth Consent Grant: The malicious URL asks users to grant permissions to data for a malicious Azure Application.\n\nLicense Requirements: \nMicrosoft 365 E5 or Microsoft Defender for Office 365 Plan 2.",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulation-training-simulation-automations?view=o365-worldwide#select-one-or-more-social-engineering-techniques"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SIM-E5",
+            "capability_description": "ATT&CK Simulation Training",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566",
+            "attack_object_name": "Phishing",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "partial",
+            "comments": "M365's Defender Attack Simulation Training allows organizations to automate the simulation of benign real-world cyberattacks. These simulation automations feature social engineering techniques, payloads, and can start on an automated schedule.  This detection focused security control partially improves organizations security posture by continuously conduct attack simulations that fine tune analytics, and provide hands-on training for users and cyber professionals to improve response capabilities. \n\nThe following social engineering techniques are available:\n\nCredential Harvest: Attempts to collect credentials by taking users to a well-known looking website with input boxes to submit a username and password.\nMalware Attachment: Adds a malicious attachment to a message. When the user opens the attachment, arbitrary code is run that helps the attacker compromise the target's device.\nLink in Attachment: A type of credential harvest hybrid. An attacker inserts a URL into an email attachment. The URL within the attachment follows the same technique as credential harvest.\nLink to Malware: Runs some arbitrary code from a file hosted on a well-known file sharing service. The message sent to the user contains a link to this malicious file, opening the file and helping the attacker compromise the target's device.\nDrive-by URL: The malicious URL in the message takes the user to a familiar-looking website that silently runs and/or installs code on the user's device.\nOAuth Consent Grant: The malicious URL asks users to grant permissions to data for a malicious Azure Application.\n\nLicense Requirements: \nMicrosoft 365 E5 or Microsoft Defender for Office 365 Plan 2.",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulation-training-simulation-automations?view=o365-worldwide#select-one-or-more-social-engineering-techniques"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SIM-E5",
+            "capability_description": "ATT&CK Simulation Training",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1204.002",
+            "attack_object_name": "Malicious File",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1204",
+            "comments": "M365's Defender Attack Simulation Training allows organizations to automate the simulation of benign real-world cyberattacks. These simulation automations feature social engineering techniques, payloads, and can start on an automated schedule.  This detection focused security control partially improves organizations security posture by continuously conduct attack simulations that fine tune analytics, and provide hands-on training for users and cyber professionals to improve response capabilities. \n\nThe following social engineering techniques are available:\n\nCredential Harvest: Attempts to collect credentials by taking users to a well-known looking website with input boxes to submit a username and password.\nMalware Attachment: Adds a malicious attachment to a message. When the user opens the attachment, arbitrary code is run that helps the attacker compromise the target's device.\nLink in Attachment: A type of credential harvest hybrid. An attacker inserts a URL into an email attachment. The URL within the attachment follows the same technique as credential harvest.\nLink to Malware: Runs some arbitrary code from a file hosted on a well-known file sharing service. The message sent to the user contains a link to this malicious file, opening the file and helping the attacker compromise the target's device.\nDrive-by URL: The malicious URL in the message takes the user to a familiar-looking website that silently runs and/or installs code on the user's device.\nOAuth Consent Grant: The malicious URL asks users to grant permissions to data for a malicious Azure Application.\n\nLicense Requirements: \nMicrosoft 365 E5 or Microsoft Defender for Office 365 Plan 2.",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulation-training-simulation-automations?view=o365-worldwide#select-one-or-more-social-engineering-techniques"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SIM-E5",
+            "capability_description": "ATT&CK Simulation Training",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1204",
+            "attack_object_name": "User Execution",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "partial",
+            "comments": "M365's Defender Attack Simulation Training allows organizations to automate the simulation of benign real-world cyberattacks. These simulation automations feature social engineering techniques, payloads, and can start on an automated schedule.  This detection focused security control partially improves organizations security posture by continuously conduct attack simulations that fine tune analytics, and provide hands-on training for users and cyber professionals to improve response capabilities. \n\nThe following social engineering techniques are available:\n\nCredential Harvest: Attempts to collect credentials by taking users to a well-known looking website with input boxes to submit a username and password.\nMalware Attachment: Adds a malicious attachment to a message. When the user opens the attachment, arbitrary code is run that helps the attacker compromise the target's device.\nLink in Attachment: A type of credential harvest hybrid. An attacker inserts a URL into an email attachment. The URL within the attachment follows the same technique as credential harvest.\nLink to Malware: Runs some arbitrary code from a file hosted on a well-known file sharing service. The message sent to the user contains a link to this malicious file, opening the file and helping the attacker compromise the target's device.\nDrive-by URL: The malicious URL in the message takes the user to a familiar-looking website that silently runs and/or installs code on the user's device.\nOAuth Consent Grant: The malicious URL asks users to grant permissions to data for a malicious Azure Application.\n\nLicense Requirements: \nMicrosoft 365 E5 or Microsoft Defender for Office 365 Plan 2.",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulation-training-payloads?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulation-training-simulation-automations?view=o365-worldwide#select-one-or-more-social-engineering-techniques",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulation-training-teams?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SIM-E5",
+            "capability_description": "ATT&CK Simulation Training",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1204",
+            "attack_object_name": "User Execution",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "M365's Defender Attack Simulation Training allows organizations to automate the simulation of benign real-world cyberattacks. These simulation automations feature social engineering techniques, payloads, and can start on an automated schedule.  This detection focused security control partially improves organizations security posture by continuously conduct attack simulations that fine tune analytics, and provide hands-on training for users and cyber professionals to improve response capabilities. \n\nThe following social engineering techniques are available:\n\nCredential Harvest: Attempts to collect credentials by taking users to a well-known looking website with input boxes to submit a username and password.\nMalware Attachment: Adds a malicious attachment to a message. When the user opens the attachment, arbitrary code is run that helps the attacker compromise the target's device.\nLink in Attachment: A type of credential harvest hybrid. An attacker inserts a URL into an email attachment. The URL within the attachment follows the same technique as credential harvest.\nLink to Malware: Runs some arbitrary code from a file hosted on a well-known file sharing service. The message sent to the user contains a link to this malicious file, opening the file and helping the attacker compromise the target's device.\nDrive-by URL: The malicious URL in the message takes the user to a familiar-looking website that silently runs and/or installs code on the user's device.\nOAuth Consent Grant: The malicious URL asks users to grant permissions to data for a malicious Azure Application.\n\nLicense Requirements: \nMicrosoft 365 E5 or Microsoft Defender for Office 365 Plan 2.",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulation-training-simulation-automations?view=o365-worldwide#select-one-or-more-social-engineering-techniques",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulation-training-teams?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulation-training-payloads?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SIM-E5",
+            "capability_description": "ATT&CK Simulation Training",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1204.002",
+            "attack_object_name": "Malicious File",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1204",
+            "comments": "M365's Defender Attack Simulation Training allows organizations to automate the simulation of benign real-world cyberattacks. These simulation automations feature social engineering techniques, payloads, and can start on an automated schedule.  This detection focused security control partially improves organizations security posture by continuously conduct attack simulations that fine tune analytics, and provide hands-on training for users and cyber professionals to improve response capabilities. \n\nThe following social engineering techniques are available:\n\nCredential Harvest: Attempts to collect credentials by taking users to a well-known looking website with input boxes to submit a username and password.\nMalware Attachment: Adds a malicious attachment to a message. When the user opens the attachment, arbitrary code is run that helps the attacker compromise the target's device.\nLink in Attachment: A type of credential harvest hybrid. An attacker inserts a URL into an email attachment. The URL within the attachment follows the same technique as credential harvest.\nLink to Malware: Runs some arbitrary code from a file hosted on a well-known file sharing service. The message sent to the user contains a link to this malicious file, opening the file and helping the attacker compromise the target's device.\nDrive-by URL: The malicious URL in the message takes the user to a familiar-looking website that silently runs and/or installs code on the user's device.\nOAuth Consent Grant: The malicious URL asks users to grant permissions to data for a malicious Azure Application.\n\nLicense Requirements: \nMicrosoft 365 E5 or Microsoft Defender for Office 365 Plan 2.",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulation-training-payloads?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SIM-E5",
+            "capability_description": "ATT&CK Simulation Training",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566",
+            "attack_object_name": "Phishing",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "M365's Defender Attack Simulation Training allows organizations to automate the simulation of benign real-world cyberattacks. These simulation automations feature social engineering techniques, payloads, and can start on an automated schedule.  This detection focused security control partially improves organizations security posture by continuously conduct attack simulations that fine tune analytics, and provide hands-on training for users and cyber professionals to improve response capabilities. \n\nThe following social engineering techniques are available:\n\nCredential Harvest: Attempts to collect credentials by taking users to a well-known looking website with input boxes to submit a username and password.\nMalware Attachment: Adds a malicious attachment to a message. When the user opens the attachment, arbitrary code is run that helps the attacker compromise the target's device.\nLink in Attachment: A type of credential harvest hybrid. An attacker inserts a URL into an email attachment. The URL within the attachment follows the same technique as credential harvest.\nLink to Malware: Runs some arbitrary code from a file hosted on a well-known file sharing service. The message sent to the user contains a link to this malicious file, opening the file and helping the attacker compromise the target's device.\nDrive-by URL: The malicious URL in the message takes the user to a familiar-looking website that silently runs and/or installs code on the user's device.\nOAuth Consent Grant: The malicious URL asks users to grant permissions to data for a malicious Azure Application.\n\nLicense Requirements: \nMicrosoft 365 E5 or Microsoft Defender for Office 365 Plan 2.",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulation-training-payloads?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SIM-E5",
+            "capability_description": "ATT&CK Simulation Training",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566.001",
+            "attack_object_name": "Spearphishing Attachment",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1566",
+            "comments": "M365's Defender Attack Simulation Training allows organizations to automate the simulation of benign real-world cyberattacks. These simulation automations feature social engineering techniques, payloads, and can start on an automated schedule.  This detection focused security control partially improves organizations security posture by continuously conduct attack simulations that fine tune analytics, and provide hands-on training for users and cyber professionals to improve response capabilities. \n\nThe following social engineering techniques are available:\n\nCredential Harvest: Attempts to collect credentials by taking users to a well-known looking website with input boxes to submit a username and password.\nMalware Attachment: Adds a malicious attachment to a message. When the user opens the attachment, arbitrary code is run that helps the attacker compromise the target's device.\nLink in Attachment: A type of credential harvest hybrid. An attacker inserts a URL into an email attachment. The URL within the attachment follows the same technique as credential harvest.\nLink to Malware: Runs some arbitrary code from a file hosted on a well-known file sharing service. The message sent to the user contains a link to this malicious file, opening the file and helping the attacker compromise the target's device.\nDrive-by URL: The malicious URL in the message takes the user to a familiar-looking website that silently runs and/or installs code on the user's device.\nOAuth Consent Grant: The malicious URL asks users to grant permissions to data for a malicious Azure Application.\n\nLicense Requirements: \nMicrosoft 365 E5 or Microsoft Defender for Office 365 Plan 2.",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulation-training-payloads?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SIM-E5",
+            "capability_description": "ATT&CK Simulation Training",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1598.002",
+            "attack_object_name": "Spearphishing Attachment",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1598",
+            "comments": "M365's Defender Attack Simulation Training allows organizations to automate the simulation of benign real-world cyberattacks. These simulation automations feature social engineering techniques, payloads, and can start on an automated schedule.  This detection focused security control partially improves organizations security posture by continuously conduct attack simulations that fine tune analytics, and provide hands-on training for users and cyber professionals to improve response capabilities. \n\nThe following social engineering techniques are available:\n\nCredential Harvest: Attempts to collect credentials by taking users to a well-known looking website with input boxes to submit a username and password.\nMalware Attachment: Adds a malicious attachment to a message. When the user opens the attachment, arbitrary code is run that helps the attacker compromise the target's device.\nLink in Attachment: A type of credential harvest hybrid. An attacker inserts a URL into an email attachment. The URL within the attachment follows the same technique as credential harvest.\nLink to Malware: Runs some arbitrary code from a file hosted on a well-known file sharing service. The message sent to the user contains a link to this malicious file, opening the file and helping the attacker compromise the target's device.\nDrive-by URL: The malicious URL in the message takes the user to a familiar-looking website that silently runs and/or installs code on the user's device.\nOAuth Consent Grant: The malicious URL asks users to grant permissions to data for a malicious Azure Application.\n\nLicense Requirements: \nMicrosoft 365 E5 or Microsoft Defender for Office 365 Plan 2.",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulation-training-payloads?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SIM-E5",
+            "capability_description": "ATT&CK Simulation Training",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1598",
+            "attack_object_name": "Phishing for Information",
+            "capability_group": "m365-defender",
+            "comments": "M365's Defender Attack Simulation Training allows organizations to automate the simulation of benign real-world cyberattacks. These simulation automations feature social engineering techniques, payloads, and can start on an automated schedule.  This detection focused security control partially improves organizations security posture by continuously conduct attack simulations that fine tune analytics, and provide hands-on training for users and cyber professionals to improve response capabilities. \n\nThe following social engineering techniques are available:\n\nCredential Harvest: Attempts to collect credentials by taking users to a well-known looking website with input boxes to submit a username and password.\nMalware Attachment: Adds a malicious attachment to a message. When the user opens the attachment, arbitrary code is run that helps the attacker compromise the target's device.\nLink in Attachment: A type of credential harvest hybrid. An attacker inserts a URL into an email attachment. The URL within the attachment follows the same technique as credential harvest.\nLink to Malware: Runs some arbitrary code from a file hosted on a well-known file sharing service. The message sent to the user contains a link to this malicious file, opening the file and helping the attacker compromise the target's device.\nDrive-by URL: The malicious URL in the message takes the user to a familiar-looking website that silently runs and/or installs code on the user's device.\nOAuth Consent Grant: The malicious URL asks users to grant permissions to data for a malicious Azure Application.\n\nLicense Requirements: \nMicrosoft 365 E5 or Microsoft Defender for Office 365 Plan 2.",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulation-training-get-started?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SIM-E5",
+            "capability_description": "ATT&CK Simulation Training",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1204.001",
+            "attack_object_name": "Malicious Link",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1204",
+            "comments": "M365's Defender Attack Simulation Training allows organizations to automate the simulation of benign real-world cyberattacks. These simulation automations feature social engineering techniques, payloads, and can start on an automated schedule.  This detection focused security control partially improves organizations security posture by continuously conduct attack simulations that fine tune analytics, and provide hands-on training for users and cyber professionals to improve response capabilities. \n\nThe following social engineering techniques are available:\n\nCredential Harvest: Attempts to collect credentials by taking users to a well-known looking website with input boxes to submit a username and password.\nMalware Attachment: Adds a malicious attachment to a message. When the user opens the attachment, arbitrary code is run that helps the attacker compromise the target's device.\nLink in Attachment: A type of credential harvest hybrid. An attacker inserts a URL into an email attachment. The URL within the attachment follows the same technique as credential harvest.\nLink to Malware: Runs some arbitrary code from a file hosted on a well-known file sharing service. The message sent to the user contains a link to this malicious file, opening the file and helping the attacker compromise the target's device.\nDrive-by URL: The malicious URL in the message takes the user to a familiar-looking website that silently runs and/or installs code on the user's device.\nOAuth Consent Grant: The malicious URL asks users to grant permissions to data for a malicious Azure Application.\n\nLicense Requirements: \nMicrosoft 365 E5 or Microsoft Defender for Office 365 Plan 2.",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulation-training-payloads?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SIM-E5",
+            "capability_description": "ATT&CK Simulation Training",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1189",
+            "attack_object_name": "Drive-by Compromise",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "M365's Defender Attack Simulation Training allows organizations to automate the simulation of benign real-world cyberattacks. These simulation automations feature social engineering techniques, payloads, and can start on an automated schedule.  This detection focused security control partially improves organizations security posture by continuously conduct attack simulations that fine tune analytics, and provide hands-on training for users and cyber professionals to improve response capabilities. \n\nThe following social engineering techniques are available:\n\nCredential Harvest: Attempts to collect credentials by taking users to a well-known looking website with input boxes to submit a username and password.\nMalware Attachment: Adds a malicious attachment to a message. When the user opens the attachment, arbitrary code is run that helps the attacker compromise the target's device.\nLink in Attachment: A type of credential harvest hybrid. An attacker inserts a URL into an email attachment. The URL within the attachment follows the same technique as credential harvest.\nLink to Malware: Runs some arbitrary code from a file hosted on a well-known file sharing service. The message sent to the user contains a link to this malicious file, opening the file and helping the attacker compromise the target's device.\nDrive-by URL: The malicious URL in the message takes the user to a familiar-looking website that silently runs and/or installs code on the user's device.\nOAuth Consent Grant: The malicious URL asks users to grant permissions to data for a malicious Azure Application.\n\nLicense Requirements: \nMicrosoft 365 E5 or Microsoft Defender for Office 365 Plan 2.",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulation-training-payloads?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SIM-E5",
+            "capability_description": "ATT&CK Simulation Training",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566.002",
+            "attack_object_name": "Spearphishing Link",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1566",
+            "comments": "M365's Defender Attack Simulation Training allows organizations to automate the simulation of benign real-world cyberattacks. These simulation automations feature social engineering techniques, payloads, and can start on an automated schedule.  This detection focused security control partially improves organizations security posture by continuously conduct attack simulations that fine tune analytics, and provide hands-on training for users and cyber professionals to improve response capabilities. \n\nThe following social engineering techniques are available:\n\nCredential Harvest: Attempts to collect credentials by taking users to a well-known looking website with input boxes to submit a username and password.\nMalware Attachment: Adds a malicious attachment to a message. When the user opens the attachment, arbitrary code is run that helps the attacker compromise the target's device.\nLink in Attachment: A type of credential harvest hybrid. An attacker inserts a URL into an email attachment. The URL within the attachment follows the same technique as credential harvest.\nLink to Malware: Runs some arbitrary code from a file hosted on a well-known file sharing service. The message sent to the user contains a link to this malicious file, opening the file and helping the attacker compromise the target's device.\nDrive-by URL: The malicious URL in the message takes the user to a familiar-looking website that silently runs and/or installs code on the user's device.\nOAuth Consent Grant: The malicious URL asks users to grant permissions to data for a malicious Azure Application.\n\nLicense Requirements: \nMicrosoft 365 E5 or Microsoft Defender for Office 365 Plan 2.",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulation-training-get-started?view=o365-worldwide"
+            ],
+            "status": "complete"
+        }
+    ]
+}

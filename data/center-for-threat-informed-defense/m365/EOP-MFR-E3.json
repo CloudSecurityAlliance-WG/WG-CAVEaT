@@ -1,0 +1,109 @@
+{
+    "metadata": {
+        "mapping_version": "",
+        "technology_domain": "enterprise",
+        "attack_version": "14.1",
+        "mapping_framework": "m365",
+        "mapping_framework_version": "12/11/2023",
+        "author": "Center for Threat-Informed Defense",
+        "contact": "ctid@mitre-engenuity.org",
+        "organization": "Center for Threat-Informed Defense",
+        "creation_date": "12/11/2023",
+        "last_update": "03/18/2024",
+        "mapping_types": {
+            "technique_score": {
+                "name": "Technique Scores",
+                "description": ""
+            }
+        },
+        "capability_groups": {
+            "m365-defender": "Microsoft 365 Defender",
+            "entra-id": "Microsoft Entra ID",
+            "eop": "Exchange Online Protection",
+            "purview": "Microsoft Purview"
+        }
+    },
+    "mapping_objects": [
+        {
+            "capability_id": "EOP-MFR-E3",
+            "capability_description": "Mail Flow Rules",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1114",
+            "attack_object_name": "Email Collection",
+            "capability_group": "eop",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "In Exchange Online Protection (EOP) organizations without Exchange Online mailboxes can use Exchange Mail Flow Rules (also known as transport rules) to look for specific conditions on messages that pass through your organization and take action on them.  Mail Flow Rules take action on messages while they are in transit, not after the message is delivered to the mailbox. Mail flow rules contain a richer set of conditions, exceptions, and actions, which provides you with the flexibility to implement many types of messaging policies.\n\nMail Flow Rules protects from Email Collection attacks due to the custom rules feature which allows you to define rules to encrypt email messages which provides an added layer of security to sensitive information sent over email.\n\nLicense Requirements: \nMicrosoft Exchange Online Protection, Defender for Office 365 plan 1 and plan 2, Microsoft XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/define-mail-flow-rules-to-encrypt-email",
+                "https://learn.microsoft.com/en-us/exchange/security-and-compliance/mail-flow-rules/mail-flow-rules"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EOP-MFR-E3",
+            "capability_description": "Mail Flow Rules",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1114.002",
+            "attack_object_name": "Remote Email Collection",
+            "capability_group": "eop",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1114",
+            "comments": "In Exchange Online Protection (EOP) organizations without Exchange Online mailboxes can use Exchange Mail Flow Rules (also known as transport rules) to look for specific conditions on messages that pass through your organization and take action on them.  Mail Flow Rules take action on messages while they are in transit, not after the message is delivered to the mailbox. Mail flow rules contain a richer set of conditions, exceptions, and actions, which provides you with the flexibility to implement many types of messaging policies.\n\nMail Flow Rules protects from Remote Email Collection attacks due to the custom rules feature which allows you to define rules to encrypt email messages which provides an added layer of security to sensitive information sent over email.\n\nLicense Requirements: \nMicrosoft Exchange Online Protection, Defender for Office 365 plan 1 and plan 2, Microsoft XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/define-mail-flow-rules-to-encrypt-email",
+                "https://learn.microsoft.com/en-us/exchange/security-and-compliance/mail-flow-rules/mail-flow-rules"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EOP-MFR-E3",
+            "capability_description": "Mail Flow Rules",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1114.003",
+            "attack_object_name": "Email Forwarding Rule",
+            "capability_group": "eop",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1114",
+            "comments": "In Exchange Online Protection (EOP) organizations without Exchange Online mailboxes can use Exchange Mail Flow Rules (also known as transport rules) to look for specific conditions on messages that pass through your organization and take action on them.  Mail Flow Rules take action on messages while they are in transit, not after the message is delivered to the mailbox. Mail flow rules contain a richer set of conditions, exceptions, and actions, which provides you with the flexibility to implement many types of messaging policies.\n\nMail Flow Rules protects from Email Forwarding Rule attacks due to the custom rules feature which allows you to define rules to encrypt email messages which provides an added layer of security to sensitive information sent over email.\n\nLicense Requirements: \nMicrosoft Exchange Online Protection, Defender for Office 365 plan 1 and plan 2, Microsoft XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/define-mail-flow-rules-to-encrypt-email",
+                "https://learn.microsoft.com/en-us/exchange/security-and-compliance/mail-flow-rules/mail-flow-rules"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EOP-MFR-E3",
+            "capability_description": "Mail Flow Rules",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1564",
+            "attack_object_name": "Hide Artifacts",
+            "capability_group": "eop",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "In Exchange Online Protection (EOP) organizations without Exchange Online mailboxes can use Exchange Mail Flow Rules (also known as transport rules) to look for specific conditions on messages that pass through your organization and take action on them.  Mail Flow Rules take action on messages while they are in transit, not after the message is delivered to the mailbox. Mail flow rules contain a richer set of conditions, exceptions, and actions, which provides you with the flexibility to implement many types of messaging policies.\n\nMail Flow Rules detects Hide Artifacts attacks due to the conditions property which examines message header fields that may attempt to hide artifacts associated with their behaviors to evade detection.\n\nLicense Requirements: \nMicrosoft Exchange Online Protection, Defender for Office 365 plan 1 and plan 2, Microsoft XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/exchange/security-and-compliance/mail-flow-rules/mail-flow-rules"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EOP-MFR-E3",
+            "capability_description": "Mail Flow Rules",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1564.008",
+            "attack_object_name": "Email Hiding Rules",
+            "capability_group": "eop",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1564",
+            "comments": "In Exchange Online Protection (EOP) organizations without Exchange Online mailboxes can use Exchange Mail Flow Rules (also known as transport rules) to look for specific conditions on messages that pass through your organization and take action on them.  Mail Flow Rules take action on messages while they are in transit, not after the message is delivered to the mailbox. Mail flow rules contain a richer set of conditions, exceptions, and actions, which provides you with the flexibility to implement many types of messaging policies.\n\nMail Flow Rules protects from Email Hiding Rules attacks due to it's detection mechanisms that include the ability to audit inbox rules on a regular basis as they are in transit.\n\nLicense Requirements: \nMicrosoft Exchange Online Protection, Defender for Office 365 plan 1 and plan 2, Microsoft XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/exchange/security-and-compliance/mail-flow-rules/mail-flow-rules"
+            ],
+            "status": "complete"
+        }
+    ]
+}

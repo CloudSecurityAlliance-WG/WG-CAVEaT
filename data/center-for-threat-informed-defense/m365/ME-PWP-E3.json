@@ -1,0 +1,138 @@
+{
+    "metadata": {
+        "mapping_version": "",
+        "technology_domain": "enterprise",
+        "attack_version": "14.1",
+        "mapping_framework": "m365",
+        "mapping_framework_version": "12/11/2023",
+        "author": "Center for Threat-Informed Defense",
+        "contact": "ctid@mitre-engenuity.org",
+        "organization": "Center for Threat-Informed Defense",
+        "creation_date": "12/11/2023",
+        "last_update": "03/18/2024",
+        "mapping_types": {
+            "technique_score": {
+                "name": "Technique Scores",
+                "description": ""
+            }
+        },
+        "capability_groups": {
+            "m365-defender": "Microsoft 365 Defender",
+            "entra-id": "Microsoft Entra ID",
+            "eop": "Exchange Online Protection",
+            "purview": "Microsoft Purview"
+        }
+    },
+    "mapping_objects": [
+        {
+            "capability_id": "ME-PWP-E3",
+            "capability_description": "Password Policy",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1586.003",
+            "attack_object_name": "Cloud Accounts",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1586",
+            "comments": "Cloud accounts should have complex and unique passwords across all systems on the network. Passwords and access keys should be rotated regularly. By default, an account is locked out after 10 unsuccessful sign-in attempts with the wrong password. Further incorrect sign-in attempts lock out the user in real time for increasing durations of time.\n\nLicense Requirements:\nMicrosoft Entra ID Free, Microsoft Entra ID P1, or Microsoft Entra ID P2",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-policy"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PWP-E3",
+            "capability_description": "Password Policy",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.004",
+            "attack_object_name": "Credential Stuffing",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1110",
+            "comments": "A password policy is applied to all user accounts that are created and managed directly in Microsoft Entra ID. By default, an account is locked out after 10 unsuccessful sign-in attempts with the wrong password. Further incorrect sign-in attempts lock out the user in real time for increasing durations of time.\n\nLicense Requirements:\nMicrosoft Entra ID Free, Microsoft Entra ID P1, or Microsoft Entra ID P2",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-policy"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PWP-E3",
+            "capability_description": "Password Policy",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.003",
+            "attack_object_name": "Password Spraying",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1110",
+            "comments": "A password policy is applied to all user accounts that are created and managed directly in Microsoft Entra ID. By default, an account is locked out after 10 unsuccessful sign-in attempts with the wrong password. Further incorrect sign-in attempts lock out the user in real time for increasing durations of time.\n\nLicense Requirements:\nMicrosoft Entra ID Free, Microsoft Entra ID P1, or Microsoft Entra ID P2",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-policy"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PWP-E3",
+            "capability_description": "Password Policy",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.002",
+            "attack_object_name": "Password Cracking",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1110",
+            "comments": "A password policy is applied to all user accounts that are created and managed directly in Microsoft Entra ID. By default, an account is locked out after 10 unsuccessful sign-in attempts with the wrong password. Further incorrect sign-in attempts lock out the user in real time for increasing durations of time.\n\nLicense Requirements:\nMicrosoft Entra ID Free, Microsoft Entra ID P1, or Microsoft Entra ID P2",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-policy"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PWP-E3",
+            "capability_description": "Password Policy",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.001",
+            "attack_object_name": "Password Guessing",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1110",
+            "comments": "A password policy is applied to all user accounts that are created and managed directly in Microsoft Entra ID. By default, an account is locked out after 10 unsuccessful sign-in attempts with the wrong password. Further incorrect sign-in attempts lock out the user in real time for increasing durations of time.\n\nLicense Requirements:\nMicrosoft Entra ID Free, Microsoft Entra ID P1, or Microsoft Entra ID P2",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-policy"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PWP-E3",
+            "capability_description": "Password Policy",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078",
+            "attack_object_name": "Valid Accounts",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "Accounts should have complex and unique passwords across all systems on the network. Passwords and access keys should be rotated regularly. \n\nLicense Requirements:\nMicrosoft Entra ID Free, Microsoft Entra ID P1, or Microsoft Entra ID P2",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-policy"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PWP-E3",
+            "capability_description": "Password Policy",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110",
+            "attack_object_name": "Brute Force",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "A password policy is applied to all user accounts that are created and managed directly in Microsoft Entra ID. \n\nBy default, an account is locked out after 10 unsuccessful sign-in attempts with the wrong password.\n\nLicense Requirements:\nMicrosoft Entra ID Free, Microsoft Entra ID P1, or Microsoft Entra ID P2",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-policy"
+            ],
+            "status": "complete"
+        }
+    ]
+}

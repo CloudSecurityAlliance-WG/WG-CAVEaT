@@ -1,0 +1,329 @@
+{
+    "metadata": {
+        "mapping_version": "",
+        "technology_domain": "enterprise",
+        "attack_version": "14.1",
+        "mapping_framework": "m365",
+        "mapping_framework_version": "12/11/2023",
+        "author": "Center for Threat-Informed Defense",
+        "contact": "ctid@mitre-engenuity.org",
+        "organization": "Center for Threat-Informed Defense",
+        "creation_date": "12/11/2023",
+        "last_update": "03/18/2024",
+        "mapping_types": {
+            "technique_score": {
+                "name": "Technique Scores",
+                "description": ""
+            }
+        },
+        "capability_groups": {
+            "m365-defender": "Microsoft 365 Defender",
+            "entra-id": "Microsoft Entra ID",
+            "eop": "Exchange Online Protection",
+            "purview": "Microsoft Purview"
+        }
+    },
+    "mapping_objects": [
+        {
+            "capability_id": "ME-CAE-E3",
+            "capability_description": "Conditional Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1556.006",
+            "attack_object_name": "Multi-Factor Authentication",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1556",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/entra/identity-platform/app-resilience-continuous-access-evaluation?tabs=dotnet",
+                "https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks",
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-continuous-access-evaluation-strict-enforcement",
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-continuous-access-evaluation"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-CAE-E3",
+            "capability_description": "Conditional Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1134.001",
+            "attack_object_name": "Token Impersonation/Theft",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1134",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-CAE-E3",
+            "capability_description": "Conditional Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098.006",
+            "attack_object_name": "Additional Container Cluster Roles",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1098",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-continuous-access-evaluation "
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-CAE-E3",
+            "capability_description": "Conditional Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098.003",
+            "attack_object_name": "Additional Cloud Roles",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1098",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-CAE-E3",
+            "capability_description": "Conditional Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1548.005",
+            "attack_object_name": "Temporary Elevated Cloud Access",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1548",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-CAE-E3",
+            "capability_description": "Conditional Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110",
+            "attack_object_name": "Brute Force",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-CAE-E3",
+            "capability_description": "Conditional Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1585.003",
+            "attack_object_name": "Cloud Accounts",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1585",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-CAE-E3",
+            "capability_description": "Conditional Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1585.002",
+            "attack_object_name": "Email Accounts",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1585",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-CAE-E3",
+            "capability_description": "Conditional Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1585",
+            "attack_object_name": "Establish Accounts",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-CAE-E3",
+            "capability_description": "Conditional Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1651",
+            "attack_object_name": "Cloud Administration Command",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-CAE-E3",
+            "capability_description": "Conditional Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1114",
+            "attack_object_name": "Email Collection",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-CAE-E3",
+            "capability_description": "Conditional Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1114.002",
+            "attack_object_name": "Remote Email Collection",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1114",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-CAE-E3",
+            "capability_description": "Conditional Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1586.003",
+            "attack_object_name": "Cloud Accounts",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1586",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-CAE-E3",
+            "capability_description": "Conditional Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1586.002",
+            "attack_object_name": "Email Accounts",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1586",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-CAE-E3",
+            "capability_description": "Conditional Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1586",
+            "attack_object_name": "Compromise Accounts",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-CAE-E3",
+            "capability_description": "Conditional Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1531",
+            "attack_object_name": "Account Access Removal",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-CAE-E3",
+            "capability_description": "Conditional Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1586.003",
+            "attack_object_name": "Cloud Accounts",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1586",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-CAE-E3",
+            "capability_description": "Conditional Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078",
+            "attack_object_name": "Valid Accounts",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-CAE-E3",
+            "capability_description": "Conditional Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1539",
+            "attack_object_name": "Steal Web Session Cookie",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide"
+            ],
+            "status": "complete"
+        }
+    ]
+}

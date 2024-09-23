@@ -1,0 +1,82 @@
+{
+    "metadata": {
+        "mapping_version": "",
+        "technology_domain": "enterprise",
+        "attack_version": "14.1",
+        "mapping_framework": "m365",
+        "mapping_framework_version": "12/11/2023",
+        "author": "Center for Threat-Informed Defense",
+        "contact": "ctid@mitre-engenuity.org",
+        "organization": "Center for Threat-Informed Defense",
+        "creation_date": "12/11/2023",
+        "last_update": "03/18/2024",
+        "mapping_types": {
+            "technique_score": {
+                "name": "Technique Scores",
+                "description": ""
+            }
+        },
+        "capability_groups": {
+            "m365-defender": "Microsoft 365 Defender",
+            "entra-id": "Microsoft Entra ID",
+            "eop": "Exchange Online Protection",
+            "purview": "Microsoft Purview"
+        }
+    },
+    "mapping_objects": [
+        {
+            "capability_id": "EOP-AP-E3",
+            "capability_description": "Anti-Phishing",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1656",
+            "attack_object_name": "Impersonation",
+            "capability_group": "eop",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "Policies to configure anti-phishing protection settings are available in Microsoft 365 organizations with Exchange Online mailboxes, standalone Exchange Online Protection (EOP) organizations without Exchange Online mailboxes, and Microsoft Defender for Office 365 organizations. The features provided with Anti-phishing policies in Defender for Office 365 are: Automatically creating default policies, creating custom policies, common policy settings, spoof settings, first contact safety tips, impersonation settings, and advanced phishing thresholds.\n\nMicrosoft 365's Anti-Phishing protection protects from Phishing attacks due to it's custom policy feature where users can create policies to determine if certain websites used for phishing are necessary for business operations and can block access if activity cannot be monitored well or if it poses a significant risk.\n\nLicense Requirements: \nMicrosoft Exchange Online Protection, Defender for Office 365 plan 1 and plan 2, Microsoft XDR",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EOP-AP-E3",
+            "capability_description": "Anti-Phishing",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566.001",
+            "attack_object_name": "Spearphishing Attachment",
+            "capability_group": "eop",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1566",
+            "comments": "Policies to configure anti-phishing protection settings are available in Microsoft 365 organizations with Exchange Online mailboxes, standalone Exchange Online Protection (EOP) organizations without Exchange Online mailboxes, and Microsoft Defender for Office 365 organizations. The features provided with Anti-phishing policies in Defender for Office 365 are: Automatically creating default policies, creating custom policies, common policy settings, spoof settings, first contact safety tips, impersonation settings, and advanced phishing thresholds.\n\nMicrosoft 365's Anti-Phishing protection protects from Phishing attacks due to it's custom policy feature where users can create policies to determine if certain websites used for phishing are necessary for business operations and can block access if activity cannot be monitored well or if it poses a significant risk.\n\nLicense Requirements: \nMicrosoft Exchange Online Protection, Defender for Office 365 plan 1 and plan 2, Microsoft XDR",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EOP-AP-E3",
+            "capability_description": "Anti-Phishing",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566.002",
+            "attack_object_name": "Spearphishing Link",
+            "capability_group": "eop",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1566",
+            "comments": "Policies to configure anti-phishing protection settings are available in Microsoft 365 organizations with Exchange Online mailboxes, standalone Exchange Online Protection (EOP) organizations without Exchange Online mailboxes, and Microsoft Defender for Office 365 organizations. The features provided with Anti-phishing policies in Defender for Office 365 are: Automatically creating default policies, creating custom policies, common policy settings, spoof settings, first contact safety tips, impersonation settings, and advanced phishing thresholds.\n\nMicrosoft 365's Anti-Phishing protection protects from Phishing attacks due to it's custom policy feature where users can create policies to determine if certain websites used for phishing are necessary for business operations and can block access if activity cannot be monitored well or if it poses a significant risk.\n\nLicense Requirements: \nMicrosoft Exchange Online Protection, Defender for Office 365 plan 1 and plan 2, Microsoft XDR",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EOP-AP-E3",
+            "capability_description": "Anti-Phishing",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566",
+            "attack_object_name": "Phishing",
+            "capability_group": "eop",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "Policies to configure anti-phishing protection settings are available in Microsoft 365 organizations with Exchange Online mailboxes, standalone Exchange Online Protection (EOP) organizations without Exchange Online mailboxes, and Microsoft Defender for Office 365 organizations. The features provided with Anti-phishing policies in Defender for Office 365 are: Automatically creating default policies, creating custom policies, common policy settings, spoof settings, first contact safety tips, impersonation settings, and advanced phishing thresholds.\n\nMicrosoft 365's Anti-Phishing protection protects from Phishing attacks due to it's custom policy feature where users can create policies to determine if certain websites used for phishing are necessary for business operations and can block access if activity cannot be monitored well or if it poses a significant risk.\n\nLicense Requirements: \nMicrosoft Exchange Online Protection, Defender for Office 365 plan 1 and plan 2, Microsoft XDR",
+            "references": [],
+            "status": "complete"
+        }
+    ]
+}

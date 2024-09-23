@@ -1,0 +1,229 @@
+{
+    "metadata": {
+        "mapping_version": "",
+        "technology_domain": "enterprise",
+        "attack_version": "14.1",
+        "mapping_framework": "m365",
+        "mapping_framework_version": "12/11/2023",
+        "author": "Center for Threat-Informed Defense",
+        "contact": "ctid@mitre-engenuity.org",
+        "organization": "Center for Threat-Informed Defense",
+        "creation_date": "12/11/2023",
+        "last_update": "03/18/2024",
+        "mapping_types": {
+            "technique_score": {
+                "name": "Technique Scores",
+                "description": ""
+            }
+        },
+        "capability_groups": {
+            "m365-defender": "Microsoft 365 Defender",
+            "entra-id": "Microsoft Entra ID",
+            "eop": "Exchange Online Protection",
+            "purview": "Microsoft Purview"
+        }
+    },
+    "mapping_objects": [
+        {
+            "capability_id": "PUR-PAM-E5",
+            "capability_description": "Privileged Access Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1586.003",
+            "attack_object_name": "Cloud Accounts",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1586",
+            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-PAM-E5",
+            "capability_description": "Privileged Access Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078.001",
+            "attack_object_name": "Default Accounts",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1078",
+            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-PAM-E5",
+            "capability_description": "Privileged Access Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078",
+            "attack_object_name": "Valid Accounts",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-PAM-E5",
+            "capability_description": "Privileged Access Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1133",
+            "attack_object_name": "External Remote Services",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-PAM-E5",
+            "capability_description": "Privileged Access Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1213",
+            "attack_object_name": "Data from Information Repositories",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-PAM-E5",
+            "capability_description": "Privileged Access Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1213.002",
+            "attack_object_name": "Sharepoint",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1213",
+            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-PAM-E5",
+            "capability_description": "Privileged Access Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1530",
+            "attack_object_name": "Data from Cloud Storage",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-PAM-E5",
+            "capability_description": "Privileged Access Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1059",
+            "attack_object_name": "Command and Scripting Interpreter",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-PAM-E5",
+            "capability_description": "Privileged Access Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1059.009",
+            "attack_object_name": "Cloud API",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1059",
+            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-PAM-E5",
+            "capability_description": "Privileged Access Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1651",
+            "attack_object_name": "Cloud Administration Command",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-PAM-E5",
+            "capability_description": "Privileged Access Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098.001",
+            "attack_object_name": "Additional Cloud Credentials",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1098",
+            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-PAM-E5",
+            "capability_description": "Privileged Access Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098.003",
+            "attack_object_name": "Additional Cloud Roles",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1098",
+            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-PAM-E5",
+            "capability_description": "Privileged Access Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098",
+            "attack_object_name": "Account Manipulation",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
+            ],
+            "status": "complete"
+        }
+    ]
+}

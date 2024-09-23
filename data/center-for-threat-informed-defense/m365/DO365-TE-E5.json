@@ -1,0 +1,110 @@
+{
+    "metadata": {
+        "mapping_version": "",
+        "technology_domain": "enterprise",
+        "attack_version": "14.1",
+        "mapping_framework": "m365",
+        "mapping_framework_version": "12/11/2023",
+        "author": "Center for Threat-Informed Defense",
+        "contact": "ctid@mitre-engenuity.org",
+        "organization": "Center for Threat-Informed Defense",
+        "creation_date": "12/11/2023",
+        "last_update": "03/18/2024",
+        "mapping_types": {
+            "technique_score": {
+                "name": "Technique Scores",
+                "description": ""
+            }
+        },
+        "capability_groups": {
+            "m365-defender": "Microsoft 365 Defender",
+            "entra-id": "Microsoft Entra ID",
+            "eop": "Exchange Online Protection",
+            "purview": "Microsoft Purview"
+        }
+    },
+    "mapping_objects": [
+        {
+            "capability_id": "DO365-TE-E5",
+            "capability_description": "Threat Explorer",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1656",
+            "attack_object_name": "Impersonation",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "Threat Explorer helps your security operations team investigate and respond to threats efficiently. With these tools, you can: See malware detected by Microsoft 365 security features, View phishing URL and click verdict data, Start an automated investigation and response process from a view in Explorer, Investigate malicious email, and more. \n\nThreat Explorer Detects Impersonation attacks by their dashboard capturing and enabling the user to view phishing attempts, including a list of URLs that were allowed, blocked, and overridden. With an organization blocking URL's for users, it mitigates users visiting a website that is used to host the adversary controlled content.\n\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2, Microsoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/threat-explorer-about?view=o365-worldwide#view-phishing-url-and-click-verdict-data",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/threat-explorer-threat-hunting?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-TE-E5",
+            "capability_description": "Threat Explorer",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1189",
+            "attack_object_name": "Drive-by Compromise",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "Threat Explorer helps your security operations team investigate and respond to threats efficiently. With these tools, you can: See malware detected by Microsoft 365 security features, View phishing URL and click verdict data, Start an automated investigation and response process from a view in Explorer, Investigate malicious email, and more. \n\nThreat Explorer Detects Drive-by-Compromise attacks by their dashboard capturing and enabling the user to view phishing attempts, including a list of URLs that were allowed, blocked, and overridden. With an organization blocking URL's for users, it mitigates users visiting a website that is used to host the adversary controlled content.\n\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2, Microsoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/threat-explorer-about?view=o365-worldwide#view-phishing-url-and-click-verdict-data",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/threat-explorer-threat-hunting?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-TE-E5",
+            "capability_description": "Threat Explorer",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566",
+            "attack_object_name": "Phishing",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "Threat Explorer helps your security operations team investigate and respond to threats efficiently. With these tools, you can: See malware detected by Microsoft 365 security features, View phishing URL and click verdict data, Start an automated investigation and response process from a view in Explorer, Investigate malicious email, and more. \n\nThreat Explorer Detects Phishing attacks by their dashboard capturing and enabling the user to view phishing attempts, including a list of URLs that were allowed, blocked, and overridden.\n\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2, Microsoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/threat-explorer-about?view=o365-worldwide#view-phishing-url-and-click-verdict-data",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/threat-explorer-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-TE-E5",
+            "capability_description": "Threat Explorer",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566.002",
+            "attack_object_name": "Spearphishing Link",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1566",
+            "comments": "Threat Explorer helps your security operations team investigate and respond to threats efficiently. With these tools, you can: See malware detected by Microsoft 365 security features, View phishing URL and click verdict data, Start an automated investigation and response process from a view in Explorer, Investigate malicious email, and more. \n\nThreat Explorer Detects Spearphishing Link attacks by their dashboard capturing and enabling the user to view phishing attempts, including a list of URLs that were allowed, blocked, and overridden.\n\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2, Microsoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/threat-explorer-about?view=o365-worldwide#view-phishing-url-and-click-verdict-data",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/threat-explorer-threat-hunting?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-TE-E5",
+            "capability_description": "Threat Explorer",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566.001",
+            "attack_object_name": "Spearphishing Attachment",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1566",
+            "comments": "Threat Explorer helps your security operations team investigate and respond to threats efficiently. With these tools, you can: See malware detected by Microsoft 365 security features, View phishing URL and click verdict data, Start an automated investigation and response process from a view in Explorer, Investigate malicious email, and more. \n\nThreat Explorer Detects Spearphishing Attachment attacks by using Threat Explorer's System Override feature. The File extension blocked by org policy value, enables An organization's security team to block a file name extension through the anti-malware policy settings. These values will now be displayed in email details to help with investigations. Secops teams can also use the rich-filtering capability to filter on blocked file extensions.\n\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2, Microsoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/threat-explorer-about?view=o365-worldwide#view-phishing-url-and-click-verdict-data",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/threat-explorer-threat-hunting?view=o365-worldwide"
+            ],
+            "status": "complete"
+        }
+    ]
+}

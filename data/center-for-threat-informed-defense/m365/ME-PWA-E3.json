@@ -1,0 +1,257 @@
+{
+    "metadata": {
+        "mapping_version": "",
+        "technology_domain": "enterprise",
+        "attack_version": "14.1",
+        "mapping_framework": "m365",
+        "mapping_framework_version": "12/11/2023",
+        "author": "Center for Threat-Informed Defense",
+        "contact": "ctid@mitre-engenuity.org",
+        "organization": "Center for Threat-Informed Defense",
+        "creation_date": "12/11/2023",
+        "last_update": "03/18/2024",
+        "mapping_types": {
+            "technique_score": {
+                "name": "Technique Scores",
+                "description": ""
+            }
+        },
+        "capability_groups": {
+            "m365-defender": "Microsoft 365 Defender",
+            "entra-id": "Microsoft Entra ID",
+            "eop": "Exchange Online Protection",
+            "purview": "Microsoft Purview"
+        }
+    },
+    "mapping_objects": [
+        {
+            "capability_id": "ME-PWA-E3",
+            "capability_description": "Passwordless Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1539",
+            "attack_object_name": "Steal Web Session Cookie",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "Microsoft recommended the use of Passwordless authentication. This method provides the most secure MFA sign-in process by replacing the password with something you have, plus something you are or something you know.(e.g., Biometric, FIDO2 security keys, Microsoft\u2019s Authenticator app). \n\nWhen combined with Conditional Access policies, Passwordless Authentication can significantly protect against the likelihood of adversary activity from credential attacks (e.g., token theft, etc.). \n\nLicense Requirements: \nAll Microsoft Entra ID licenses",
+            "references": [
+                "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/all-your-creds-are-belong-to-us/ba-p/855124",
+                "https://m365maps.com/files/Entra-ID-All.htm",
+                "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods",
+                "https://d3fend.mitre.org/technique/d3f:BiometricAuthentication/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PWA-E3",
+            "capability_description": "Passwordless Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1021.007",
+            "attack_object_name": "Cloud Services",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1021",
+            "comments": "Microsoft recommended the use of Passwordless authentication. This method provides the most secure MFA sign-in process by replacing the password with something you have, plus something you are or something you know.(e.g., Biometric, FIDO2 security keys, Microsoft\u2019s Authenticator app). \n\nWhen combined with Conditional Access policies, use of strong two-factor for remote service accounts will mitigate an adversary's ability to leverage stolen credentials.\n\nLicense Requirements: \nAll Microsoft Entra ID licenses",
+            "references": [
+                "https://d3fend.mitre.org/technique/d3f:BiometricAuthentication/",
+                "https://m365maps.com/files/Entra-ID-All.htm",
+                "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods",
+                "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/all-your-creds-are-belong-to-us/ba-p/855124"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PWA-E3",
+            "capability_description": "Passwordless Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.004",
+            "attack_object_name": "Credential Stuffing",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1110",
+            "comments": "Microsoft recommended the use of Passwordless authentication. This method provides the most secure MFA sign-in process by replacing the password with something you have, plus something you are or something you know.(e.g., Biometric, FIDO2 security keys, Microsoft\u2019s Authenticator app). \n\nWhen combined with Conditional Access policies, Passwordless Authentication can significantly protect against the likelihood of adversary activity from credential attacks (e.g., brute force, token theft, etc.). \n\nLicense Requirements: \nAll Microsoft Entra ID licenses",
+            "references": [
+                "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/all-your-creds-are-belong-to-us/ba-p/855124",
+                "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods",
+                "https://m365maps.com/files/Entra-ID-All.htm",
+                "https://d3fend.mitre.org/technique/d3f:BiometricAuthentication/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PWA-E3",
+            "capability_description": "Passwordless Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.003",
+            "attack_object_name": "Password Spraying",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1110",
+            "comments": "Microsoft recommended the use of Passwordless authentication. This method provides the most secure MFA sign-in process by replacing the password with something you have, plus something you are or something you know.(e.g., Biometric, FIDO2 security keys, Microsoft\u2019s Authenticator app). \n\nWhen combined with Conditional Access policies, Passwordless Authentication can significantly protect against the likelihood of adversary activity from credential attacks (e.g., brute force, token theft, etc.). \n\nLicense Requirements: \nAll Microsoft Entra ID licenses",
+            "references": [
+                "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/all-your-creds-are-belong-to-us/ba-p/855124",
+                "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods",
+                "https://m365maps.com/files/Entra-ID-All.htm",
+                "https://d3fend.mitre.org/technique/d3f:BiometricAuthentication/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PWA-E3",
+            "capability_description": "Passwordless Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.002",
+            "attack_object_name": "Password Cracking",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1110",
+            "comments": "Microsoft recommended the use of Passwordless authentication. This method provides the most secure MFA sign-in process by replacing the password with something you have, plus something you are or something you know.(e.g., Biometric, FIDO2 security keys, Microsoft\u2019s Authenticator app). \n\nWhen combined with Conditional Access policies, Passwordless Authentication can significantly protect against the likelihood of adversary activity from credential attacks (e.g., brute force, token theft, etc.). \n\nLicense Requirements: \nAll Microsoft Entra ID licenses",
+            "references": [
+                "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/all-your-creds-are-belong-to-us/ba-p/855124",
+                "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods",
+                "https://m365maps.com/files/Entra-ID-All.htm",
+                "https://d3fend.mitre.org/technique/d3f:BiometricAuthentication/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PWA-E3",
+            "capability_description": "Passwordless Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.001",
+            "attack_object_name": "Password Guessing",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1110",
+            "comments": "Microsoft recommended the use of Passwordless authentication. This method provides the most secure MFA sign-in process by replacing the password with something you have, plus something you are or something you know.(e.g., Biometric, FIDO2 security keys, Microsoft\u2019s Authenticator app). \n\nWhen combined with Conditional Access policies, Passwordless Authentication can significantly protect against the likelihood of adversary activity from credential attacks (e.g., brute force, token theft, etc.). \n\nLicense Requirements: \nAll Microsoft Entra ID licenses",
+            "references": [
+                "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/all-your-creds-are-belong-to-us/ba-p/855124",
+                "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods",
+                "https://m365maps.com/files/Entra-ID-All.htm",
+                "https://d3fend.mitre.org/technique/d3f:BiometricAuthentication/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PWA-E3",
+            "capability_description": "Passwordless Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110",
+            "attack_object_name": "Brute Force",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "Microsoft recommended the use of Passwordless authentication. This method provides the most secure MFA sign-in process by replacing the password with something you have, plus something you are or something you know.(e.g., Biometric, FIDO2 security keys, Microsoft\u2019s Authenticator app). \n\nWhen combined with Conditional Access policies, Passwordless Authentication can significantly protect against the likelihood of adversary activity from credential attacks (e.g., brute force, token theft, etc.). \n\nLicense Requirements: \nAll Microsoft Entra ID licenses",
+            "references": [
+                "https://d3fend.mitre.org/technique/d3f:BiometricAuthentication/",
+                "https://m365maps.com/files/Entra-ID-All.htm",
+                "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/all-your-creds-are-belong-to-us/ba-p/855124",
+                "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PWA-E3",
+            "capability_description": "Passwordless Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1136.003",
+            "attack_object_name": "Cloud Account",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1136",
+            "comments": "Microsoft recommended the use of Passwordless authentication. This method provides the most secure MFA sign-in process by replacing the password with something you have, plus something you are or something you know.(e.g., Biometric, FIDO2 security keys, Microsoft\u2019s Authenticator app). \n\nWhen combined with Conditional Access policies, Passwordless Authentication can significantly protect against the likelihood of adversary activity (e.g., account creation, etc.). \n\nLicense Requirements: \nAll Microsoft Entra ID licenses",
+            "references": [
+                "https://d3fend.mitre.org/technique/d3f:BiometricAuthentication/",
+                "https://m365maps.com/files/Entra-ID-All.htm",
+                "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/your-pa-word-doesn-t-matter/ba-p/731984",
+                "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/all-your-creds-are-belong-to-us/ba-p/855124",
+                "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PWA-E3",
+            "capability_description": "Passwordless Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098.001",
+            "attack_object_name": "Additional Cloud Credentials",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1098",
+            "comments": "Microsoft recommended the use of Passwordless authentication. This method provides the most secure MFA sign-in process by replacing the password with something you have, plus something you are or something you know.(e.g., Biometric, FIDO2 security keys, Microsoft\u2019s Authenticator app). \n\nWhen combined with Conditional Access policies, Passwordless Authentication can significantly protect against the likelihood of adversary activity (e.g., additional cloud permissions, etc.). \n\nLicense Requirements: \nAll Microsoft Entra ID licenses",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods",
+                "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/all-your-creds-are-belong-to-us/ba-p/855124",
+                "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/your-pa-word-doesn-t-matter/ba-p/731984",
+                "https://m365maps.com/files/Entra-ID-All.htm",
+                "https://d3fend.mitre.org/technique/d3f:BiometricAuthentication/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PWA-E3",
+            "capability_description": "Passwordless Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098.003",
+            "attack_object_name": "Additional Cloud Roles",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1098",
+            "comments": "Microsoft recommended the use of Passwordless authentication. This method provides the most secure MFA sign-in process by replacing the password with something you have, plus something you are or something you know.(e.g., Biometric, FIDO2 security keys, Microsoft\u2019s Authenticator app). \n\nWhen combined with Conditional Access policies, Passwordless Authentication can significantly protect against the likelihood of adversary activity (e.g., additional cloud roles, etc.). \n\nLicense Requirements: \nAll Microsoft Entra ID licenses",
+            "references": [
+                "https://d3fend.mitre.org/technique/d3f:BiometricAuthentication/",
+                "https://m365maps.com/files/Entra-ID-All.htm",
+                "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/your-pa-word-doesn-t-matter/ba-p/731984",
+                "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/all-your-creds-are-belong-to-us/ba-p/855124",
+                "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PWA-E3",
+            "capability_description": "Passwordless Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1531",
+            "attack_object_name": "Account Access Removal",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "Microsoft recommended the use of Passwordless authentication. This method provides the most secure MFA sign-in process by replacing the password with something you have, plus something you are or something you know.(e.g., Biometric, FIDO2 security keys, Microsoft\u2019s Authenticator app). \n\nWhen combined with Conditional Access policies, Passwordless Authentication can significantly protect against the likelihood of adversary activity (e.g., account creation, account deletion etc.). \n\nLicense Requirements: \nAll Microsoft Entra ID licenses",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods",
+                "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/your-pa-word-doesn-t-matter/ba-p/731984",
+                "https://m365maps.com/files/Entra-ID-All.htm",
+                "https://d3fend.mitre.org/technique/d3f:BiometricAuthentication/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PWA-E3",
+            "capability_description": "Passwordless Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078.004",
+            "attack_object_name": "Cloud Accounts",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1078",
+            "comments": "Microsoft recommended the use of Passwordless authentication. This method provides the most secure MFA sign-in process by replacing the password with something you have, plus something you are or something you know.(e.g., Biometric, FIDO2 security keys, Microsoft\u2019s Authenticator app). \n\nWhen combined with Conditional Access policies, Passwordless Authentication can significantly protect against the likelihood of adversary activity from credential attacks (e.g., brute force, token theft, etc.). \n\nLicense Requirements: \nAll Microsoft Entra ID licenses",
+            "references": [
+                "https://d3fend.mitre.org/technique/d3f:BiometricAuthentication/",
+                "https://m365maps.com/files/Entra-ID-All.htm",
+                "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/your-pa-word-doesn-t-matter/ba-p/731984",
+                "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/all-your-creds-are-belong-to-us/ba-p/855124",
+                "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods"
+            ],
+            "status": "complete"
+        }
+    ]
+}

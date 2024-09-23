@@ -1,0 +1,493 @@
+{
+    "metadata": {
+        "mapping_version": "",
+        "technology_domain": "enterprise",
+        "attack_version": "14.1",
+        "mapping_framework": "m365",
+        "mapping_framework_version": "12/11/2023",
+        "author": "Center for Threat-Informed Defense",
+        "contact": "ctid@mitre-engenuity.org",
+        "organization": "Center for Threat-Informed Defense",
+        "creation_date": "12/11/2023",
+        "last_update": "03/18/2024",
+        "mapping_types": {
+            "technique_score": {
+                "name": "Technique Scores",
+                "description": ""
+            }
+        },
+        "capability_groups": {
+            "m365-defender": "Microsoft 365 Defender",
+            "entra-id": "Microsoft Entra ID",
+            "eop": "Exchange Online Protection",
+            "purview": "Microsoft Purview"
+        }
+    },
+    "mapping_objects": [
+        {
+            "capability_id": "ME-RBAC-E3",
+            "capability_description": "Role Based Access Control",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078.001",
+            "attack_object_name": "Default Accounts",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1078",
+            "comments": "The RBAC control can be used to implement the principle of least privilege for account management, reducing the available actions an adversary can perform with a default account. This scores Partial for its ability to minimize the overall accounts with management privileges.  \n\n\nLicense Requirements: \nME-ID Built-in Roles (Free) ",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices",
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-RBAC-E3",
+            "capability_description": "Role Based Access Control",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1213.002",
+            "attack_object_name": "Sharepoint",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1213",
+            "comments": "The RBAC control can be used to implement the principle of least privilege for access to SharePoint repositories to only those required for an account. This scores Partial for its ability to minimize the attack surface of accounts with access to potentially valuable information.   \n\nLicense Requirements: \nME-ID Built-in Roles (Free) ",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices",
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-RBAC-E3",
+            "capability_description": "Role Based Access Control",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1213",
+            "attack_object_name": "Data from Information Repositories",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "The RBAC control can generally be used to protect against and limit adversary access to valuable information repositories. Although it does not have full coverage of this technique's sub-techniques, it also helps protect against Procedure examples, resulting in an overall score of Partial. \n\nLicense Requirements: \nME-ID Built-in Roles (Free) ",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices",
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-RBAC-E3",
+            "capability_description": "Role Based Access Control",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1199",
+            "attack_object_name": "Trusted Relationship",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "The RBAC control can be used to implement the principle of least privilege to properly manage accounts and permissions of parties in trusted relationships. This scores Partial for its ability to minimize the the potential abuse by the party and if it is comprised by an adversary. \n\nLicense Requirements: \nME-ID Built-in Roles (Free) ",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference",
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices",
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-RBAC-E3",
+            "capability_description": "Role Based Access Control",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1562.008",
+            "attack_object_name": "Disable or Modify Cloud Logs",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1562",
+            "comments": "The RBAC control can be used to implement the principle of least privilege to limit users with permission to modify logging policies to those required. This scores Partial for its ability to minimize the overall accounts with the ability to modify cloud logging capabilities. \n\nLicense Requirements: \nME-ID Built-in Roles (Free) ",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices",
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-RBAC-E3",
+            "capability_description": "Role Based Access Control",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1562",
+            "attack_object_name": "Impair Defenses",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "minimal",
+            "comments": "The RBAC control can be used to partially protect against the ability to Disable or Modify Cloud Logs, but has minimal coverage against this technique's other sub-techniques and example procedures. Due to its Minimal coverage score, it receives an overall score of minimal. \n\n\nLicense Requirements: \nME-ID Built-in Roles (Free) ",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices",
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-RBAC-E3",
+            "capability_description": "Role Based Access Control",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1530",
+            "attack_object_name": "Data from Cloud Storage",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "The RBAC control can be used to implement the principle of least privilege for cloud data storage access to only those required. This scores Partial for its ability to minimize the attack surface of accounts with storage solution access.   \n\nLicense Requirements: \nME-ID Built-in Roles (Free) ",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices",
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-RBAC-E3",
+            "capability_description": "Role Based Access Control",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1484.002",
+            "attack_object_name": "Domain Trust Modification",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1484",
+            "comments": "The RBAC control can be used to implement the principle of least privilege to limit accounts with the access to domain trusts. This scores Partial for its ability to minimize the overall accounts with these privileges.  \n\n\nLicense Requirements: \nME-ID Built-in Roles (Free) ",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/concept-understand-roles",
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/manage-admins",
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices",
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-RBAC-E3",
+            "capability_description": "Role Based Access Control",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1484",
+            "attack_object_name": "Domain Policy Modification",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "The RBAC control can be used to implement the principle of least privilege to limit administrative accounts. This scores Partial for its ability to minimize the overall accounts that can modify domain policies. \n\nLicense Requirements: \nME-ID Built-in Roles (Free) ",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/concept-understand-roles",
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices",
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-RBAC-E3",
+            "capability_description": "Role Based Access Control",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1556.007",
+            "attack_object_name": "Hybrid Identity",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1556",
+            "comments": "The RBAC control can be used to implement the principle of least privilege to limit Global Administrator accounts, and ensure these accounts are cloud-only. This scores Partial for its ability to minimize hybrid accounts with administrative privileges.  \n\nLicense Requirements: \nME-ID Built-in Roles (Free) ",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices",
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-RBAC-E3",
+            "capability_description": "Role Based Access Control",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1556.006",
+            "attack_object_name": "Multi-Factor Authentication",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1556",
+            "comments": "The RBAC control can be used to implement the principle of least privilege to limit account management control of MFA. This scores Partial for its ability to minimize overall accounts with the ability to change or disable MFA. \n\n\nLicense Requirements: \nME-ID Built-in Roles (Free) ",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices",
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-RBAC-E3",
+            "capability_description": "Role Based Access Control",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1556",
+            "attack_object_name": "Modify Authentication Process",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "minimal",
+            "comments": "The RBAC control can be used to limit cloud accounts with authentication modification relevant privileges, but does not provide protection against this technique's other sub-techniques or example procedures. Due to its Minimal coverage score, it receives a score of minimal. \n\nLicense Requirements: \nME-ID Built-in Roles (Free) ",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices",
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-RBAC-E3",
+            "capability_description": "Role Based Access Control",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1648",
+            "attack_object_name": "Serverless Execution",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "The RBAC control can be used to implement the principle of least privilege to limit accounts with permissions for serverless services to those required. This scores Partial for its ability to minimize the overall accounts with this ability. \n\n\nLicense Requirements: \nME-ID Built-in Roles (Free) ",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices",
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-RBAC-E3",
+            "capability_description": "Role Based Access Control",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1059.009",
+            "attack_object_name": "Cloud API",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1059",
+            "comments": "The RBAC control can be used to implement the principle of least privilege to limit API functionality administrative accounts can take. This scores Partial for its ability to minimize the actions these accounts can perform. \n\n\nLicense Requirements: \nME-ID Built-in Roles (Free) ",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices",
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-RBAC-E3",
+            "capability_description": "Role Based Access Control",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1059",
+            "attack_object_name": "Command and Scripting Interpreter",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "minimal",
+            "comments": "The RBAC control can be used to partially protect against the abuse of Cloud APIs but does not provide protection against this technique's other sub-techniques or other example procedures. Due to its Minimal coverage score, it receives a score of minimal. \n\nLicense Requirements: \nME-ID Built-in Roles (Free) ",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices",
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-RBAC-E3",
+            "capability_description": "Role Based Access Control",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1651",
+            "attack_object_name": "Cloud Administration Command",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "The RBAC control can be used to implement the principle of least privilege for account management, limiting the number of Global and Intune administrators to those required. This scores Partial for its ability to minimize the overall accounts with associated privileges.   \n\n\nLicense Requirements: \nME-ID Built-in Roles (Free) ",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices",
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-RBAC-E3",
+            "capability_description": "Role Based Access Control",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1528",
+            "attack_object_name": "Steal Application Access Token",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "The RBAC control can be used to implement the principle of least privilege, limiting accounts with access to application tokens. This receives a score of Partial for its ability to minimize the attack surface of accounts this ability. \n\nLicense Requirements: \nME-ID Built-in Roles (Free) ",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices",
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-RBAC-E3",
+            "capability_description": "Role Based Access Control",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1538",
+            "attack_object_name": "Cloud Service Dashboard",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "The RBAC control can be used to implement the principle of least privilege, limiting dashboard visibility to necessary accounts. This receives a score of Partial for its ability to minimize the discovery value a dashboard may have in the event of a compromised account. \n\nLicense Requirements: \nME-ID Built-in Roles (Free) ",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices",
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-RBAC-E3",
+            "capability_description": "Role Based Access Control",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098.003",
+            "attack_object_name": "Additional Cloud Roles",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1098",
+            "comments": "The RBAC control can be used to implement the principle of least privilege for account management in order to limit the number of accounts with the ability to add additional cloud roles. This receives a score of Partial for its ability to minimize known accounts with the ability to add roles. \n\nLicense Requirements: \nME-ID Built-in Roles (Free) ",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices",
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-RBAC-E3",
+            "capability_description": "Role Based Access Control",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098.001",
+            "attack_object_name": "Additional Cloud Credentials",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1098",
+            "comments": "The RBAC control can be used to implement the principle of least privilege for account management in order to limit the number of accounts with the ability to add additional cloud credentials.  This receives a score of Partial for its ability to minimize known accounts with the ability to add credentials.\n\nLicense Requirements: \nME-ID Built-in Roles (Free) ",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices",
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-RBAC-E3",
+            "capability_description": "Role Based Access Control",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098",
+            "attack_object_name": "Account Manipulation",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "The RBAC control can generally be used to  implement the principle of least privilege to protect against the number of accounts with management capabilities. This has Partial coverage of Account Manipulation sub-techniques, resulting in an overall score of Partial. \n\nLicense Requirements: \nME-ID Built-in Roles (Free) ",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices",
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-RBAC-E3",
+            "capability_description": "Role Based Access Control",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1136.003",
+            "attack_object_name": "Cloud Account",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1136",
+            "comments": "The RBAC control can be used to implement the principle of least privilege for account management in order to limit the number of accounts that can create new accounts. This receives a score of Partial for its ability to minimize known accounts with the ability to create new accounts. \n\n\nLicense Requirements: \nME-ID Built-in Roles (Free) ",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices",
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-RBAC-E3",
+            "capability_description": "Role Based Access Control",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1136",
+            "attack_object_name": "Create Account",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "minimal",
+            "comments": "The RBAC control can generally be used to implement the principle of least privilege to protect against account creation. For the given product space, this control helps protect against only against Cloud Account creation, and none of this technique\u2019s other sub-techniques or procedures. Due to overall Minimal coverage, it receives an overall score of Minimal. \n\n\nLicense Requirements: \nME-ID Built-in Roles (Free) ",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices",
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-RBAC-E3",
+            "capability_description": "Role Based Access Control",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078.004",
+            "attack_object_name": "Cloud Accounts",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1078",
+            "comments": "The RBAC control can be used to implement the principle of least privilege for account management, reducing the available actions an adversary can perform with a cloud account. This scores Partial for its ability to minimize the overall accounts with management privileges.  \n\n\nLicense Requirements: \nME-ID Built-in Roles (Free) ",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices",
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-RBAC-E3",
+            "capability_description": "Role Based Access Control",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078",
+            "attack_object_name": "Valid Accounts",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "minimal",
+            "comments": "The RBAC control can be used to implement the principle of least privilege for account management, reducing the potential actions that can be taken with Valid Default and Cloud Accounts. Although RBAC can limit the actions the adversary can take if a Valid Account has been compromised, it does not protect against different variations of the technique's procedure. Due to overall Minimal coverage, it receives an overall score of Minimal. \n\n\nLicense Requirements: \nME-ID Built-in Roles (Free) \n\nLicense Requirements: \nME-ID Built-in Roles (Free) ",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices",
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-RBAC-E3",
+            "capability_description": "Role Based Access Control",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1087.004",
+            "attack_object_name": "Cloud Account",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1087",
+            "comments": "The RBAC control can be used to implement the principle of least privilege for account management, limiting the accounts that can be used to perform account discovery. This scores Partial for its ability to minimize the overall accounts with these role privileges.  \n\nLicense Requirements: \nME-ID Built-in Roles (Free) ",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices",
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-RBAC-E3",
+            "capability_description": "Role Based Access Control",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1087",
+            "attack_object_name": "Account Discovery",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "minimal",
+            "comments": "The RBAC control can be used to partially protect against Cloud Account Discovery, but does not provide protection against this technique's other sub-techniques or example procedures. Due to its Minimal coverage score, it receives an overall score of minimal. \n\nLicense Requirements: \nME-ID Built-in Roles (Free) ",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices",
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-RBAC-E3",
+            "capability_description": "Role Based Access Control",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1548.005",
+            "attack_object_name": "Temporary Elevated Cloud Access",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "minimal",
+            "related_score": "T1548",
+            "comments": "The RBAC control can be used to implement the principle of least privilege to limit the ability of cloud accounts to assume, create, or impersonate only required privileges. This scores Minimal for its ability to protect against the actions temporary elevated accounts can take. \n\nLicense Requirements: \nME-ID Built-in Roles (Free) ",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices",
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/custom-overview"
+            ],
+            "status": "complete"
+        }
+    ]
+}

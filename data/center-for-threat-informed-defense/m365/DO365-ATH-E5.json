@@ -1,0 +1,545 @@
+{
+    "metadata": {
+        "mapping_version": "",
+        "technology_domain": "enterprise",
+        "attack_version": "14.1",
+        "mapping_framework": "m365",
+        "mapping_framework_version": "12/11/2023",
+        "author": "Center for Threat-Informed Defense",
+        "contact": "ctid@mitre-engenuity.org",
+        "organization": "Center for Threat-Informed Defense",
+        "creation_date": "12/11/2023",
+        "last_update": "03/18/2024",
+        "mapping_types": {
+            "technique_score": {
+                "name": "Technique Scores",
+                "description": ""
+            }
+        },
+        "capability_groups": {
+            "m365-defender": "Microsoft 365 Defender",
+            "entra-id": "Microsoft Entra ID",
+            "eop": "Exchange Online Protection",
+            "purview": "Microsoft Purview"
+        }
+    },
+    "mapping_objects": [
+        {
+            "capability_id": "DO365-ATH-E5",
+            "capability_description": "Advanced Threat Hunting",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1087",
+            "attack_object_name": "Account Discovery",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Advanced hunting is a query-based threat hunting tool that lets you explore up to 30 days of raw data. Advanced hunting in Microsoft Defender XDR allows you to proactively hunt for threats across: Devices managed by Microsoft Defender for Endpoint, Emails processed by Microsoft 365, Cloud app activities, authentication events, and domain controller activities. With this level of visibility, you can quickly hunt for threats that traverse sections of your network, including sophisticated intrusions that arrive on email or the web, elevate local privileges, acquire privileged domain credentials, and move laterally to across your devices. Advanced hunting supports two modes, guided and advanced. Users use advanced mode if they are comfortable using Kusto Query Language (KQL) to create queries from scratch.\n\nAdvanced Threat Hunting Detects Account Discovery attacks due to the DeviceProcessEvents table in the advanced hunting schema that contains information about process creation and related events which monitors for processes that can be used to enumerate user accounts and groups. \n\nLicense Requirements: \nMicrosoft Defender XDR, Microsoft Defender for Cloud Apps,  Microsoft Defender for Office 365 plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-deviceprocessevents-table?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-schema-tables?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-query-emails-devices?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-ATH-E5",
+            "capability_description": "Advanced Threat Hunting",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1087.004",
+            "attack_object_name": "Cloud Account",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1087",
+            "comments": "Advanced hunting is a query-based threat hunting tool that lets you explore up to 30 days of raw data. Advanced hunting in Microsoft Defender XDR allows you to proactively hunt for threats across: Devices managed by Microsoft Defender for Endpoint, Emails processed by Microsoft 365, Cloud app activities, authentication events, and domain controller activities. With this level of visibility, you can quickly hunt for threats that traverse sections of your network, including sophisticated intrusions that arrive on email or the web, elevate local privileges, acquire privileged domain credentials, and move laterally to across your devices. Advanced hunting supports two modes, guided and advanced. Users use advanced mode if they are comfortable using Kusto Query Language (KQL) to create queries from scratch.\n\nAdvanced Threat Hunting Detects Cloud Account attacks due to the DeviceProcessEvents table in the advanced hunting schema that contains information about process creation and related events which monitors logs for actions that could be taken to gather information about cloud accounts.\n\nLicense Requirements: \nMicrosoft Defender XDR, Microsoft Defender for Cloud Apps,  Microsoft Defender for Office 365 plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-deviceprocessevents-table?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-schema-tables?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-query-emails-devices?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-ATH-E5",
+            "capability_description": "Advanced Threat Hunting",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110",
+            "attack_object_name": "Brute Force",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Advanced hunting is a query-based threat hunting tool that lets you explore up to 30 days of raw data. Advanced hunting in Microsoft Defender XDR allows you to proactively hunt for threats across: Devices managed by Microsoft Defender for Endpoint, Emails processed by Microsoft 365, Cloud app activities, authentication events, and domain controller activities. With this level of visibility, you can quickly hunt for threats that traverse sections of your network, including sophisticated intrusions that arrive on email or the web, elevate local privileges, acquire privileged domain credentials, and move laterally to across your devices. Advanced hunting supports two modes, guided and advanced. Users use advanced mode if they are comfortable using Kusto Query Language (KQL) to create queries from scratch.\n\nAdvanced Threat Hunting Detects Brute Force attacks due to the IdentityLogonEvents table in the advanced hunting schema which contains information about all authentication activities related to Microsoft online services captured by Microsoft Defender for Cloud Apps which monitors authentication logs for system and application login failures of Valid Accounts.\n\nLicense Requirements: \nMicrosoft Defender XDR, Microsoft Defender for Cloud Apps,  Microsoft Defender for Office 365 plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-identitylogonevents-table?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-schema-tables?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-query-emails-devices?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-ATH-E5",
+            "capability_description": "Advanced Threat Hunting",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.001",
+            "attack_object_name": "Password Guessing",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1110",
+            "comments": "Advanced hunting is a query-based threat hunting tool that lets you explore up to 30 days of raw data. Advanced hunting in Microsoft Defender XDR allows you to proactively hunt for threats across: Devices managed by Microsoft Defender for Endpoint, Emails processed by Microsoft 365, Cloud app activities, authentication events, and domain controller activities. With this level of visibility, you can quickly hunt for threats that traverse sections of your network, including sophisticated intrusions that arrive on email or the web, elevate local privileges, acquire privileged domain credentials, and move laterally to across your devices. Advanced hunting supports two modes, guided and advanced. Users use advanced mode if they are comfortable using Kusto Query Language (KQL) to create queries from scratch.\n\nAdvanced hunting is a query-based threat hunting tool that lets you explore up to 30 days of raw data. Advanced hunting in Microsoft Defender XDR allows you to proactively hunt for threats across: Devices managed by Microsoft Defender for Endpoint, Emails processed by Microsoft 365, Cloud app activities, authentication events, and domain controller activities. With this level of visibility, you can quickly hunt for threats that traverse sections of your network, including sophisticated intrusions that arrive on email or the web, elevate local privileges, acquire privileged domain credentials, and move laterally to across your devices. Advanced hunting supports two modes, guided and advanced. Users use advanced mode if they are comfortable using Kusto Query Language (KQL) to create queries from scratch.\n\nAdvanced Threat Hunting Detects Password Guessing attacks due to the IdentityLogonEvents table in the advanced hunting schema which contains information about all authentication activities related to Microsoft online services captured by Microsoft Defender for Cloud Apps which monitors authentication logs for system and application login failures of Valid Accounts.\n\nLicense Requirements: \nMicrosoft Defender XDR, Microsoft Defender for Cloud Apps,  Microsoft Defender for Office 365 plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-identitylogonevents-table?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-identitylogonevents-table?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-schema-tables?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-query-emails-devices?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-ATH-E5",
+            "capability_description": "Advanced Threat Hunting",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.002",
+            "attack_object_name": "Password Cracking",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1110",
+            "comments": "Advanced hunting is a query-based threat hunting tool that lets you explore up to 30 days of raw data. Advanced hunting in Microsoft Defender XDR allows you to proactively hunt for threats across: Devices managed by Microsoft Defender for Endpoint, Emails processed by Microsoft 365, Cloud app activities, authentication events, and domain controller activities. With this level of visibility, you can quickly hunt for threats that traverse sections of your network, including sophisticated intrusions that arrive on email or the web, elevate local privileges, acquire privileged domain credentials, and move laterally to across your devices. Advanced hunting supports two modes, guided and advanced. Users use advanced mode if they are comfortable using Kusto Query Language (KQL) to create queries from scratch.\n\nAdvanced Threat Hunting Detects Password Cracking attacks due to the IdentityLogonEvents table in the advanced hunting schema which contains information about all authentication activities related to Microsoft online services captured by Microsoft Defender for Cloud Apps which monitors authentication logs for system and application login failures of Valid Accounts.\n\nLicense Requirements: \nMicrosoft Defender XDR, Microsoft Defender for Cloud Apps,  Microsoft Defender for Office 365 plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-identitylogonevents-table?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-schema-tables?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-query-emails-devices?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-ATH-E5",
+            "capability_description": "Advanced Threat Hunting",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.003",
+            "attack_object_name": "Password Spraying",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1110",
+            "comments": "Advanced hunting is a query-based threat hunting tool that lets you explore up to 30 days of raw data. Advanced hunting in Microsoft Defender XDR allows you to proactively hunt for threats across: Devices managed by Microsoft Defender for Endpoint, Emails processed by Microsoft 365, Cloud app activities, authentication events, and domain controller activities. With this level of visibility, you can quickly hunt for threats that traverse sections of your network, including sophisticated intrusions that arrive on email or the web, elevate local privileges, acquire privileged domain credentials, and move laterally to across your devices. Advanced hunting supports two modes, guided and advanced. Users use advanced mode if they are comfortable using Kusto Query Language (KQL) to create queries from scratch.\n\nAdvanced Threat Hunting Detects Password Spraying attacks due to the IdentityLogonEvents table in the advanced hunting schema which contains information about all authentication activities related to Microsoft online services captured by Microsoft Defender for Cloud Apps which monitors authentication logs for system and application login failures of Valid Accounts.\n\nLicense Requirements: \nMicrosoft Defender XDR, Microsoft Defender for Cloud Apps,  Microsoft Defender for Office 365 plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-identitylogonevents-table?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-schema-tables?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-query-emails-devices?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-ATH-E5",
+            "capability_description": "Advanced Threat Hunting",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.004",
+            "attack_object_name": "Credential Stuffing",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1110",
+            "comments": "Advanced hunting is a query-based threat hunting tool that lets you explore up to 30 days of raw data. Advanced hunting in Microsoft Defender XDR allows you to proactively hunt for threats across: Devices managed by Microsoft Defender for Endpoint, Emails processed by Microsoft 365, Cloud app activities, authentication events, and domain controller activities. With this level of visibility, you can quickly hunt for threats that traverse sections of your network, including sophisticated intrusions that arrive on email or the web, elevate local privileges, acquire privileged domain credentials, and move laterally to across your devices. Advanced hunting supports two modes, guided and advanced. Users use advanced mode if they are comfortable using Kusto Query Language (KQL) to create queries from scratch.\n\nAdvanced Threat Hunting Detects Credential Stuffing attacks due to the IdentityLogonEvents table in the advanced hunting schema which contains information about all authentication activities related to Microsoft online services captured by Microsoft Defender for Cloud Apps which monitors authentication logs for system and application login failures of Valid Accounts.\n\nLicense Requirements: \nMicrosoft Defender XDR, Microsoft Defender for Cloud Apps,  Microsoft Defender for Office 365 plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-identitylogonevents-table?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-schema-tables?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-query-emails-devices?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-ATH-E5",
+            "capability_description": "Advanced Threat Hunting",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1538",
+            "attack_object_name": "Cloud Service Dashboard",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Advanced hunting is a query-based threat hunting tool that lets you explore up to 30 days of raw data. Advanced hunting in Microsoft Defender XDR allows you to proactively hunt for threats across: Devices managed by Microsoft Defender for Endpoint, Emails processed by Microsoft 365, Cloud app activities, authentication events, and domain controller activities. With this level of visibility, you can quickly hunt for threats that traverse sections of your network, including sophisticated intrusions that arrive on email or the web, elevate local privileges, acquire privileged domain credentials, and move laterally to across your devices. Advanced hunting supports two modes, guided and advanced. Users use advanced mode if they are comfortable using Kusto Query Language (KQL) to create queries from scratch.\n\nAdvanced Threat Hunting Detects Cloud Service Dashboard attacks due to the IdentityInfo and IdentityLogonEvents tables in the advanced hunting schema which contains information about all authentication activities related to Microsoft online services captured by Microsoft Defender for Cloud Apps and information about user accounts obtained from various services, including Microsoft Entra ID.\n\nLicense Requirements: \nMicrosoft Defender XDR, Microsoft Defender for Cloud Apps,  Microsoft Defender for Office 365 plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-identityinfo-table?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-identitylogonevents-table?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-schema-tables?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-query-emails-devices?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-ATH-E5",
+            "capability_description": "Advanced Threat Hunting",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1189",
+            "attack_object_name": "Drive-by Compromise",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "Advanced hunting is a query-based threat hunting tool that lets you explore up to 30 days of raw data. Advanced hunting in Microsoft Defender XDR allows you to proactively hunt for threats across: Devices managed by Microsoft Defender for Endpoint, Emails processed by Microsoft 365, Cloud app activities, authentication events, and domain controller activities. With this level of visibility, you can quickly hunt for threats that traverse sections of your network, including sophisticated intrusions that arrive on email or the web, elevate local privileges, acquire privileged domain credentials, and move laterally to across your devices. Advanced hunting supports two modes, guided and advanced. Users use advanced mode if they are comfortable using Kusto Query Language (KQL) to create queries from scratch.\n\nAdvanced Threat Hunting Detects Drive-by-Compromise attacks due to the UrlClickEvents table in the advanced hunting schema which contains information about Safe Links clicks from email messages, Microsoft Teams, and Office 365 apps which can inspect URLs for potentially known-bad domains or parameters.\n\nLicense Requirements: \nMicrosoft Defender XDR, Microsoft Defender for Cloud Apps,  Microsoft Defender for Office 365 plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-urlclickevents-table?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-schema-tables?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-query-emails-devices?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-ATH-E5",
+            "capability_description": "Advanced Threat Hunting",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1114",
+            "attack_object_name": "Email Collection",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Advanced hunting is a query-based threat hunting tool that lets you explore up to 30 days of raw data. Advanced hunting in Microsoft Defender XDR allows you to proactively hunt for threats across: Devices managed by Microsoft Defender for Endpoint, Emails processed by Microsoft 365, Cloud app activities, authentication events, and domain controller activities. With this level of visibility, you can quickly hunt for threats that traverse sections of your network, including sophisticated intrusions that arrive on email or the web, elevate local privileges, acquire privileged domain credentials, and move laterally to across your devices. Advanced hunting supports two modes, guided and advanced. Users use advanced mode if they are comfortable using Kusto Query Language (KQL) to create queries from scratch.\n\nAdvanced Threat Hunting Detects Email Collection attacks due to the IdentityLogonEvents table in the advanced hunting schema which contains information about all authentication activities related to Microsoft online services captured by Microsoft Defender for Cloud Apps which monitors for unusual login activity from unknown or abnormal locations, especially for privileged accounts.\n\nLicense Requirements: \nMicrosoft Defender XDR, Microsoft Defender for Cloud Apps,  Microsoft Defender for Office 365 plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-identitylogonevents-table?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-schema-tables?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-query-emails-devices?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-ATH-E5",
+            "capability_description": "Advanced Threat Hunting",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1114.002",
+            "attack_object_name": "Remote Email Collection",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1114",
+            "comments": "Advanced hunting is a query-based threat hunting tool that lets you explore up to 30 days of raw data. Advanced hunting in Microsoft Defender XDR allows you to proactively hunt for threats across: Devices managed by Microsoft Defender for Endpoint, Emails processed by Microsoft 365, Cloud app activities, authentication events, and domain controller activities. With this level of visibility, you can quickly hunt for threats that traverse sections of your network, including sophisticated intrusions that arrive on email or the web, elevate local privileges, acquire privileged domain credentials, and move laterally to across your devices. Advanced hunting supports two modes, guided and advanced. Users use advanced mode if they are comfortable using Kusto Query Language (KQL) to create queries from scratch.\n\nAdvanced Threat Hunting Detects Remote Email Collection attacks due to the IdentityLogonEvents table in the advanced hunting schema which contains information about all authentication activities related to Microsoft online services captured by Microsoft Defender for Cloud Apps which monitors for unusual login activity from unknown or abnormal locations, especially for privileged accounts.\n\nLicense Requirements: \nMicrosoft Defender XDR, Microsoft Defender for Cloud Apps,  Microsoft Defender for Office 365 plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-identitylogonevents-table?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-schema-tables?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-query-emails-devices?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-ATH-E5",
+            "capability_description": "Advanced Threat Hunting",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1546",
+            "attack_object_name": "Event Triggered Execution",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Advanced hunting is a query-based threat hunting tool that lets you explore up to 30 days of raw data. Advanced hunting in Microsoft Defender XDR allows you to proactively hunt for threats across: Devices managed by Microsoft Defender for Endpoint, Emails processed by Microsoft 365, Cloud app activities, authentication events, and domain controller activities. With this level of visibility, you can quickly hunt for threats that traverse sections of your network, including sophisticated intrusions that arrive on email or the web, elevate local privileges, acquire privileged domain credentials, and move laterally to across your devices. Advanced hunting supports two modes, guided and advanced. Users use advanced mode if they are comfortable using Kusto Query Language (KQL) to create queries from scratch.\n\nAdvanced Threat Hunting Detects Event-Triggered Execution attacks due to the DeviceFileEvents table in the advanced hunting schema which contains information about file creation, modification, and other file events.\n\nLicense Requirements: \nMicrosoft Defender XDR, Microsoft Defender for Cloud Apps,  Microsoft Defender for Office 365 plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-devicefileevents-table?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-schema-tables?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-query-emails-devices?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-ATH-E5",
+            "capability_description": "Advanced Threat Hunting",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1567",
+            "attack_object_name": "Exfiltration Over Web Service",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Advanced hunting is a query-based threat hunting tool that lets you explore up to 30 days of raw data. Advanced hunting in Microsoft Defender XDR allows you to proactively hunt for threats across: Devices managed by Microsoft Defender for Endpoint, Emails processed by Microsoft 365, Cloud app activities, authentication events, and domain controller activities. With this level of visibility, you can quickly hunt for threats that traverse sections of your network, including sophisticated intrusions that arrive on email or the web, elevate local privileges, acquire privileged domain credentials, and move laterally to across your devices. Advanced hunting supports two modes, guided and advanced. Users use advanced mode if they are comfortable using Kusto Query Language (KQL) to create queries from scratch.\n\nAdvanced Threat Hunting Detects Exfiltration Over Web Service attacks due to the DeviceNetworkEvents table in the advanced hunting schema which contains information about network connections and related events which monitors for newly constructed network connections.\n\nLicense Requirements: \nMicrosoft Defender XDR, Microsoft Defender for Cloud Apps,  Microsoft Defender for Office 365 plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-devicenetworkevents-table?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-schema-tables?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-query-emails-devices?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-ATH-E5",
+            "capability_description": "Advanced Threat Hunting",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1567.004",
+            "attack_object_name": "Exfiltration Over Webhook",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1567",
+            "comments": "Advanced hunting is a query-based threat hunting tool that lets you explore up to 30 days of raw data. Advanced hunting in Microsoft Defender XDR allows you to proactively hunt for threats across: Devices managed by Microsoft Defender for Endpoint, Emails processed by Microsoft 365, Cloud app activities, authentication events, and domain controller activities. With this level of visibility, you can quickly hunt for threats that traverse sections of your network, including sophisticated intrusions that arrive on email or the web, elevate local privileges, acquire privileged domain credentials, and move laterally to across your devices. Advanced hunting supports two modes, guided and advanced. Users use advanced mode if they are comfortable using Kusto Query Language (KQL) to create queries from scratch.\n\nAdvanced Threat Hunting Detects Exfiltration Over Webhook attacks due to the DeviceNetworkEvents table in the advanced hunting schema which contains information about network connections and related events which monitor network data for uncommon data flows.\n\nLicense Requirements: \nMicrosoft Defender XDR, Microsoft Defender for Cloud Apps,  Microsoft Defender for Office 365 plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-devicenetworkevents-table?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-schema-tables?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-query-emails-devices?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-ATH-E5",
+            "capability_description": "Advanced Threat Hunting",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1048",
+            "attack_object_name": "Exfiltration Over Alternative Protocol",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Advanced hunting is a query-based threat hunting tool that lets you explore up to 30 days of raw data. Advanced hunting in Microsoft Defender XDR allows you to proactively hunt for threats across: Devices managed by Microsoft Defender for Endpoint, Emails processed by Microsoft 365, Cloud app activities, authentication events, and domain controller activities. With this level of visibility, you can quickly hunt for threats that traverse sections of your network, including sophisticated intrusions that arrive on email or the web, elevate local privileges, acquire privileged domain credentials, and move laterally to across your devices. Advanced hunting supports two modes, guided and advanced. Users use advanced mode if they are comfortable using Kusto Query Language (KQL) to create queries from scratch.\n\nAdvanced Threat Hunting Detects Exfiltration Over Alternative Protocol attacks due to the DeviceNetworkEvents table in the advanced hunting schema which contains information about network connections and related events which monitors for newly constructed network connections.\n\nLicense Requirements: \nMicrosoft Defender XDR, Microsoft Defender for Cloud Apps,  Microsoft Defender for Office 365 plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-devicenetworkevents-table?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-schema-tables?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-query-emails-devices?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-ATH-E5",
+            "capability_description": "Advanced Threat Hunting",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1606",
+            "attack_object_name": "Forge Web Credentials",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Advanced hunting is a query-based threat hunting tool that lets you explore up to 30 days of raw data. Advanced hunting in Microsoft Defender XDR allows you to proactively hunt for threats across: Devices managed by Microsoft Defender for Endpoint, Emails processed by Microsoft 365, Cloud app activities, authentication events, and domain controller activities. With this level of visibility, you can quickly hunt for threats that traverse sections of your network, including sophisticated intrusions that arrive on email or the web, elevate local privileges, acquire privileged domain credentials, and move laterally to across your devices. Advanced hunting supports two modes, guided and advanced. Users use advanced mode if they are comfortable using Kusto Query Language (KQL) to create queries from scratch.\n\nAdvanced Threat Hunting Detects Forge Web Credential attacks due to the IdentityLogonEvents table in the advanced hunting schema which contains information about all authentication activities related to Microsoft online services captured by Microsoft Defender for Cloud Apps which monitors for anomalous authentication activity.\n\nLicense Requirements: \nMicrosoft Defender XDR, Microsoft Defender for Cloud Apps,  Microsoft Defender for Office 365 plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-identitylogonevents-table?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-schema-tables?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-query-emails-devices?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-ATH-E5",
+            "capability_description": "Advanced Threat Hunting",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1562",
+            "attack_object_name": "Impair Defenses",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Advanced hunting is a query-based threat hunting tool that lets you explore up to 30 days of raw data. Advanced hunting in Microsoft Defender XDR allows you to proactively hunt for threats across: Devices managed by Microsoft Defender for Endpoint, Emails processed by Microsoft 365, Cloud app activities, authentication events, and domain controller activities. With this level of visibility, you can quickly hunt for threats that traverse sections of your network, including sophisticated intrusions that arrive on email or the web, elevate local privileges, acquire privileged domain credentials, and move laterally to across your devices. Advanced hunting supports two modes, guided and advanced. Users use advanced mode if they are comfortable using Kusto Query Language (KQL) to create queries from scratch.\n\nAdvanced Threat Hunting Detects Impair Defense attacks due to the DeviceNetworkEvents table in the advanced hunting schema which contains information about network connections and related events which monitors for the abnormal execution of API functions. \n\nLicense Requirements: \nMicrosoft Defender XDR, Microsoft Defender for Cloud Apps,  Microsoft Defender for Office 365 plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-devicenetworkevents-table?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-schema-tables?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-query-emails-devices?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-ATH-E5",
+            "capability_description": "Advanced Threat Hunting",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1562.008",
+            "attack_object_name": "Disable or Modify Cloud Logs",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1562",
+            "comments": "Advanced hunting is a query-based threat hunting tool that lets you explore up to 30 days of raw data. Advanced hunting in Microsoft Defender XDR allows you to proactively hunt for threats across: Devices managed by Microsoft Defender for Endpoint, Emails processed by Microsoft 365, Cloud app activities, authentication events, and domain controller activities. With this level of visibility, you can quickly hunt for threats that traverse sections of your network, including sophisticated intrusions that arrive on email or the web, elevate local privileges, acquire privileged domain credentials, and move laterally to across your devices. Advanced hunting supports two modes, guided and advanced. Users use advanced mode if they are comfortable using Kusto Query Language (KQL) to create queries from scratch.\n\nAdvanced Threat Hunting Detects Disabling or Modifying Cloud Log attacks due to the DeviceNetworkEvents table in the advanced hunting schema which contains information about network connections and related events which monitors logs for API calls to disable logging. \n\nLicense Requirements: \nMicrosoft Defender XDR, Microsoft Defender for Cloud Apps,  Microsoft Defender for Office 365 plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-devicenetworkevents-table?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-schema-tables?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-query-emails-devices?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-ATH-E5",
+            "capability_description": "Advanced Threat Hunting",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1534",
+            "attack_object_name": "Internal Spearphishing",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Advanced hunting is a query-based threat hunting tool that lets you explore up to 30 days of raw data. Advanced hunting in Microsoft Defender XDR allows you to proactively hunt for threats across: Devices managed by Microsoft Defender for Endpoint, Emails processed by Microsoft 365, Cloud app activities, authentication events, and domain controller activities. With this level of visibility, you can quickly hunt for threats that traverse sections of your network, including sophisticated intrusions that arrive on email or the web, elevate local privileges, acquire privileged domain credentials, and move laterally to across your devices. Advanced hunting supports two modes, guided and advanced. Users use advanced mode if they are comfortable using Kusto Query Language (KQL) to create queries from scratch.\n\nAdvanced Threat Hunting Detects Internal Spearphishing attacks due to the DeviceNetworkEvents table in the advanced hunting schema which contains information about network connections and related events which monitors network data for uncommon data flows\n\nLicense Requirements: \nMicrosoft Defender XDR, Microsoft Defender for Cloud Apps,  Microsoft Defender for Office 365 plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-devicenetworkevents-table?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-schema-tables?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-query-emails-devices?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-ATH-E5",
+            "capability_description": "Advanced Threat Hunting",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1556",
+            "attack_object_name": "Modify Authentication Process",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Advanced hunting is a query-based threat hunting tool that lets you explore up to 30 days of raw data. Advanced hunting in Microsoft Defender XDR allows you to proactively hunt for threats across: Devices managed by Microsoft Defender for Endpoint, Emails processed by Microsoft 365, Cloud app activities, authentication events, and domain controller activities. With this level of visibility, you can quickly hunt for threats that traverse sections of your network, including sophisticated intrusions that arrive on email or the web, elevate local privileges, acquire privileged domain credentials, and move laterally to across your devices. Advanced hunting supports two modes, guided and advanced. Users use advanced mode if they are comfortable using Kusto Query Language (KQL) to create queries from scratch.\n\nAdvanced Threat Hunting Detects Modify-Authentication Process attacks due to the IdentityLogonEvents table in the advanced hunting schema which contains information about all authentication activities related to Microsoft online services captured by Microsoft Defender for Cloud Apps.\n\nLicense Requirements: \nMicrosoft Defender XDR, Microsoft Defender for Cloud Apps,  Microsoft Defender for Office 365 plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-identitylogonevents-table?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-schema-tables?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-query-emails-devices?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-ATH-E5",
+            "capability_description": "Advanced Threat Hunting",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1556.006",
+            "attack_object_name": "Multi-Factor Authentication",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1556",
+            "comments": "Advanced hunting is a query-based threat hunting tool that lets you explore up to 30 days of raw data. Advanced hunting in Microsoft Defender XDR allows you to proactively hunt for threats across: Devices managed by Microsoft Defender for Endpoint, Emails processed by Microsoft 365, Cloud app activities, authentication events, and domain controller activities. With this level of visibility, you can quickly hunt for threats that traverse sections of your network, including sophisticated intrusions that arrive on email or the web, elevate local privileges, acquire privileged domain credentials, and move laterally to across your devices. Advanced hunting supports two modes, guided and advanced. Users use advanced mode if they are comfortable using Kusto Query Language (KQL) to create queries from scratch.\n\nAdvanced Threat Hunting Detects Multi-Factor Authentication attacks due to the IdentityLogonEvents table in the advanced hunting schema which contains information about all authentication activities related to Microsoft online services captured by Microsoft Defender for Cloud Apps.\n\nLicense Requirements: \nMicrosoft Defender XDR, Microsoft Defender for Cloud Apps,  Microsoft Defender for Office 365 plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-identitylogonevents-table?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-schema-tables?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-query-emails-devices?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-ATH-E5",
+            "capability_description": "Advanced Threat Hunting",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1621",
+            "attack_object_name": "Multi-Factor Authentication Request Generation",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Advanced hunting is a query-based threat hunting tool that lets you explore up to 30 days of raw data. Advanced hunting in Microsoft Defender XDR allows you to proactively hunt for threats across: Devices managed by Microsoft Defender for Endpoint, Emails processed by Microsoft 365, Cloud app activities, authentication events, and domain controller activities. With this level of visibility, you can quickly hunt for threats that traverse sections of your network, including sophisticated intrusions that arrive on email or the web, elevate local privileges, acquire privileged domain credentials, and move laterally to across your devices. Advanced hunting supports two modes, guided and advanced. Users use advanced mode if they are comfortable using Kusto Query Language (KQL) to create queries from scratch.\n\nAdvanced Threat Hunting Detects Multi-Factor Authentication Request Generation attacks due to the IdentityLogonEvents table in the advanced hunting schema which contains information about all authentication activities related to Microsoft online services captured by Microsoft Defender for Cloud Apps.\n\nLicense Requirements: \nMicrosoft Defender XDR, Microsoft Defender for Cloud Apps,  Microsoft Defender for Office 365 plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-identitylogonevents-table?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-schema-tables?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-query-emails-devices?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-ATH-E5",
+            "capability_description": "Advanced Threat Hunting",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566",
+            "attack_object_name": "Phishing",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Advanced hunting is a query-based threat hunting tool that lets you explore up to 30 days of raw data. Advanced hunting in Microsoft Defender XDR allows you to proactively hunt for threats across: Devices managed by Microsoft Defender for Endpoint, Emails processed by Microsoft 365, Cloud app activities, authentication events, and domain controller activities. With this level of visibility, you can quickly hunt for threats that traverse sections of your network, including sophisticated intrusions that arrive on email or the web, elevate local privileges, acquire privileged domain credentials, and move laterally to across your devices. Advanced hunting supports two modes, guided and advanced. Users use advanced mode if they are comfortable using Kusto Query Language (KQL) to create queries from scratch.\n\nAdvanced Threat Hunting Detects Phishing attacks due to the DeviceNetworkEvents table in the advanced hunting schema which contains information about network connections and related events which monitors for the abnormal execution of API functions which monitors network data for uncommon data flows. \n\nLicense Requirements: \nMicrosoft Defender XDR, Microsoft Defender for Cloud Apps,  Microsoft Defender for Office 365 plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-devicenetworkevents-table?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-schema-tables?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-query-emails-devices?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-ATH-E5",
+            "capability_description": "Advanced Threat Hunting",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566.002",
+            "attack_object_name": "Spearphishing Link",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1566",
+            "comments": "Advanced hunting is a query-based threat hunting tool that lets you explore up to 30 days of raw data. Advanced hunting in Microsoft Defender XDR allows you to proactively hunt for threats across: Devices managed by Microsoft Defender for Endpoint, Emails processed by Microsoft 365, Cloud app activities, authentication events, and domain controller activities. With this level of visibility, you can quickly hunt for threats that traverse sections of your network, including sophisticated intrusions that arrive on email or the web, elevate local privileges, acquire privileged domain credentials, and move laterally to across your devices. Advanced hunting supports two modes, guided and advanced. Users use advanced mode if they are comfortable using Kusto Query Language (KQL) to create queries from scratch.\n\nAdvanced Threat Hunting Detects Spearphishing Link attacks due to the UrlClickEvents table in the advanced hunting schema which contains information about Safe Links clicks from email messages, Microsoft Teams, and Office 365 apps which can inspect URLs for potentially known-bad domains or parameters.\n\nLicense Requirements: \nMicrosoft Defender XDR, Microsoft Defender for Cloud Apps,  Microsoft Defender for Office 365 plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-urlclickevents-table?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-schema-tables?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-query-emails-devices?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-ATH-E5",
+            "capability_description": "Advanced Threat Hunting",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1199",
+            "attack_object_name": "Trusted Relationship",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Advanced hunting is a query-based threat hunting tool that lets you explore up to 30 days of raw data. Advanced hunting in Microsoft Defender XDR allows you to proactively hunt for threats across: Devices managed by Microsoft Defender for Endpoint, Emails processed by Microsoft 365, Cloud app activities, authentication events, and domain controller activities. With this level of visibility, you can quickly hunt for threats that traverse sections of your network, including sophisticated intrusions that arrive on email or the web, elevate local privileges, acquire privileged domain credentials, and move laterally to across your devices. Advanced hunting supports two modes, guided and advanced. Users use advanced mode if they are comfortable using Kusto Query Language (KQL) to create queries from scratch.\n\nAdvanced Threat Hunting Detects Trusted Relationship attacks due to the IdentityLogonEvents table in the advanced hunting schema which contains information about all authentication activities related to Microsoft online services captured by Microsoft Defender for Cloud Apps which monitors for newly constructed logon behavior.\n\nLicense Requirements: \nMicrosoft Defender XDR, Microsoft Defender for Cloud Apps,  Microsoft Defender for Office 365 plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-identitylogonevents-table?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-schema-tables?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-query-emails-devices?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-ATH-E5",
+            "capability_description": "Advanced Threat Hunting",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1552",
+            "attack_object_name": "Unsecured Credentials",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Advanced hunting is a query-based threat hunting tool that lets you explore up to 30 days of raw data. Advanced hunting in Microsoft Defender XDR allows you to proactively hunt for threats across: Devices managed by Microsoft Defender for Endpoint, Emails processed by Microsoft 365, Cloud app activities, authentication events, and domain controller activities. With this level of visibility, you can quickly hunt for threats that traverse sections of your network, including sophisticated intrusions that arrive on email or the web, elevate local privileges, acquire privileged domain credentials, and move laterally to across your devices. Advanced hunting supports two modes, guided and advanced. Users use advanced mode if they are comfortable using Kusto Query Language (KQL) to create queries from scratch.\n\nAdvanced Threat Hunting Detects Unsecured Credentials attacks due to the IdentityLogonEvents table in the advanced hunting schema which contains information about all authentication activities related to Microsoft online services captured by Microsoft Defender for Cloud Apps.\n\nLicense Requirements: \nMicrosoft Defender XDR, Microsoft Defender for Cloud Apps,  Microsoft Defender for Office 365 plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-identitylogonevents-table?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-schema-tables?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-query-emails-devices?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-ATH-E5",
+            "capability_description": "Advanced Threat Hunting",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078",
+            "attack_object_name": "Valid Accounts",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Advanced hunting is a query-based threat hunting tool that lets you explore up to 30 days of raw data. Advanced hunting in Microsoft Defender XDR allows you to proactively hunt for threats across: Devices managed by Microsoft Defender for Endpoint, Emails processed by Microsoft 365, Cloud app activities, authentication events, and domain controller activities. With this level of visibility, you can quickly hunt for threats that traverse sections of your network, including sophisticated intrusions that arrive on email or the web, elevate local privileges, acquire privileged domain credentials, and move laterally to across your devices. Advanced hunting supports two modes, guided and advanced. Users use advanced mode if they are comfortable using Kusto Query Language (KQL) to create queries from scratch.\n\nAdvanced Threat Hunting Detects Valid Account attacks due to the IdentityLogonEvents table in the advanced hunting schema which contains information about all authentication activities related to Microsoft online services captured by Microsoft Defender for Cloud Apps which monitors for newly constructed logon behavior.\n\nLicense Requirements: \nMicrosoft Defender XDR, Microsoft Defender for Cloud Apps,  Microsoft Defender for Office 365 plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-identitylogonevents-table?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-schema-tables?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-query-emails-devices?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-ATH-E5",
+            "capability_description": "Advanced Threat Hunting",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078.004",
+            "attack_object_name": "Cloud Accounts",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1078",
+            "comments": "Advanced hunting is a query-based threat hunting tool that lets you explore up to 30 days of raw data. Advanced hunting in Microsoft Defender XDR allows you to proactively hunt for threats across: Devices managed by Microsoft Defender for Endpoint, Emails processed by Microsoft 365, Cloud app activities, authentication events, and domain controller activities. With this level of visibility, you can quickly hunt for threats that traverse sections of your network, including sophisticated intrusions that arrive on email or the web, elevate local privileges, acquire privileged domain credentials, and move laterally to across your devices. Advanced hunting supports two modes, guided and advanced. Users use advanced mode if they are comfortable using Kusto Query Language (KQL) to create queries from scratch.\n\nAdvanced Threat Hunting Detects Cloud Account attacks due to the IdentityLogonEvents table in the advanced hunting schema which contains information about all authentication activities related to Microsoft online services captured by Microsoft Defender for Cloud Apps.\n\nLicense Requirements: \nMicrosoft Defender XDR, Microsoft Defender for Cloud Apps,  Microsoft Defender for Office 365 plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-identitylogonevents-table?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-schema-tables?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-query-emails-devices?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/advanced-hunting-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        }
+    ]
+}

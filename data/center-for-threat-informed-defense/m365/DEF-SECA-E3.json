@@ -1,0 +1,660 @@
+{
+    "metadata": {
+        "mapping_version": "",
+        "technology_domain": "enterprise",
+        "attack_version": "14.1",
+        "mapping_framework": "m365",
+        "mapping_framework_version": "12/11/2023",
+        "author": "Center for Threat-Informed Defense",
+        "contact": "ctid@mitre-engenuity.org",
+        "organization": "Center for Threat-Informed Defense",
+        "creation_date": "12/11/2023",
+        "last_update": "03/18/2024",
+        "mapping_types": {
+            "technique_score": {
+                "name": "Technique Scores",
+                "description": ""
+            }
+        },
+        "capability_groups": {
+            "m365-defender": "Microsoft 365 Defender",
+            "entra-id": "Microsoft Entra ID",
+            "eop": "Exchange Online Protection",
+            "purview": "Microsoft Purview"
+        }
+    },
+    "mapping_objects": [
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1011",
+            "attack_object_name": "Exfiltration Over Other Network Medium",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/credential-access-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1550.002",
+            "attack_object_name": "Pass the Hash",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1550",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/credential-access-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1557.001",
+            "attack_object_name": "LLMNR/NBT-NS Poisoning and SMB Relay",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1557",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/credential-access-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1550",
+            "attack_object_name": "Use Alternate Authentication Material",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/credential-access-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1557",
+            "attack_object_name": "Adversary-in-the-Middle",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/credential-access-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1606",
+            "attack_object_name": "Forge Web Credentials",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/credential-access-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1187",
+            "attack_object_name": "Forced Authentication",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/credential-access-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1552.004",
+            "attack_object_name": "Private Keys",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1552",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/credential-access-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1003.006",
+            "attack_object_name": "DCSync",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1003",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/credential-access-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1003",
+            "attack_object_name": "OS Credential Dumping",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/credential-access-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1134.001",
+            "attack_object_name": "Token Impersonation/Theft",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1134",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/credential-access-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1134",
+            "attack_object_name": "Access Token Manipulation",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/credential-access-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1558.004",
+            "attack_object_name": "AS-REP Roasting",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1558",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/credential-access-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1558.003",
+            "attack_object_name": "Kerberoasting",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1558",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/credential-access-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1555",
+            "attack_object_name": "Credentials from Password Stores",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/alerts-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1558.001",
+            "attack_object_name": "Golden Ticket",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1558",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/credential-access-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.003",
+            "attack_object_name": "Password Spraying",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1110",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/credential-access-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.001",
+            "attack_object_name": "Password Guessing",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1110",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/credential-access-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110",
+            "attack_object_name": "Brute Force",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/credential-access-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1484.001",
+            "attack_object_name": "Group Policy Modification",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1484",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/persistence-privilege-escalation-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078",
+            "attack_object_name": "Valid Accounts",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/persistence-privilege-escalation-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1484",
+            "attack_object_name": "Domain Policy Modification",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/persistence-privilege-escalation-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1134.005",
+            "attack_object_name": "SID-History Injection",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1134",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/persistence-privilege-escalation-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1134",
+            "attack_object_name": "Access Token Manipulation",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/persistence-privilege-escalation-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1484",
+            "attack_object_name": "Domain Policy Modification",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/persistence-privilege-escalation-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098",
+            "attack_object_name": "Account Manipulation",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/persistence-privilege-escalation-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1556.001",
+            "attack_object_name": "Domain Controller Authentication",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1556",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/persistence-privilege-escalation-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1556",
+            "attack_object_name": "Modify Authentication Process",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/persistence-privilege-escalation-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1210",
+            "attack_object_name": "Exploitation of Remote Services",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/persistence-privilege-escalation-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1068",
+            "attack_object_name": "Exploitation for Privilege Escalation",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/persistence-privilege-escalation-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1558.001",
+            "attack_object_name": "Golden Ticket",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1558",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/persistence-privilege-escalation-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1558",
+            "attack_object_name": "Steal or Forge Kerberos Tickets",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/persistence-privilege-escalation-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1134.001",
+            "attack_object_name": "Token Impersonation/Theft",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1134",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/persistence-privilege-escalation-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1202",
+            "attack_object_name": "Indirect Command Execution",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                " https://learn.microsoft.com/en-us/defender-for-identity/credential-access-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1069.002",
+            "attack_object_name": "Domain Groups",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1069",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/reconnaissance-discovery-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1069",
+            "attack_object_name": "Permission Groups Discovery",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/reconnaissance-discovery-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1049",
+            "attack_object_name": "System Network Connections Discovery",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/reconnaissance-discovery-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1018",
+            "attack_object_name": "Remote System Discovery",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/reconnaissance-discovery-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1046",
+            "attack_object_name": "Network Service Discovery",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/reconnaissance-discovery-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1087",
+            "attack_object_name": "Account Discovery",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/reconnaissance-discovery-alerts"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SECA-E3",
+            "capability_description": "Security Alerts",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1087.002",
+            "attack_object_name": "Domain Account",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1087",
+            "comments": "Microsoft Defender security alerts explain the suspicious activities detected by Defender for Identity sensors on your network, and the actors and computers involved in each threat. Alert evidence lists contain direct links to the involved users and computers, to help make your investigations easy and direct.\n\nDefender security alerts are divided into the following categories or phases, like the phases seen in a typical cyber-attack kill chain. Learn more about each phase, the alerts designed to detect each attack, and how to use the alerts to help protect your network using the following links:\n\nReconnaissance and discovery alerts\nPersistence and privilege escalation alerts\nCredential access alerts\nLateral movement alerts\nOther alerts\n\n\nLicense: A Microsoft 365 security product license entitles customer use \n of Microsoft Defender XDR.",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/reconnaissance-discovery-alerts"
+            ],
+            "status": "complete"
+        }
+    ]
+}

@@ -1,0 +1,272 @@
+{
+    "metadata": {
+        "mapping_version": "",
+        "technology_domain": "enterprise",
+        "attack_version": "14.1",
+        "mapping_framework": "m365",
+        "mapping_framework_version": "12/11/2023",
+        "author": "Center for Threat-Informed Defense",
+        "contact": "ctid@mitre-engenuity.org",
+        "organization": "Center for Threat-Informed Defense",
+        "creation_date": "12/11/2023",
+        "last_update": "03/18/2024",
+        "mapping_types": {
+            "technique_score": {
+                "name": "Technique Scores",
+                "description": ""
+            }
+        },
+        "capability_groups": {
+            "m365-defender": "Microsoft 365 Defender",
+            "entra-id": "Microsoft Entra ID",
+            "eop": "Exchange Online Protection",
+            "purview": "Microsoft Purview"
+        }
+    },
+    "mapping_objects": [
+        {
+            "capability_id": "ME-MFA-E3",
+            "capability_description": "Multi-factor Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078.004",
+            "attack_object_name": "Cloud Accounts",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1078",
+            "comments": "Requiring the use of MFA for all users can significantly reduce the likelihood of adversaries gaining access to the environment's cloud accounts.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-all-users-mfa"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-MFA-E3",
+            "capability_description": "Multi-factor Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1136.003",
+            "attack_object_name": "Cloud Account",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1136",
+            "comments": "Requiring the use of MFA along with conditional access policies may reduce the likelihood of adversaries making modifications, such as creating cloud accounts. ",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-all-users-mfa"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-MFA-E3",
+            "capability_description": "Multi-factor Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098.002",
+            "attack_object_name": "Additional Email Delegate Permissions",
+            "capability_group": "entra-id",
+            "comments": "Requiring the use of MFA along with conditional access policies may reduce the likelihood of adversaries making modifications, such as changes to email delegate permissions. ",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-all-users-mfa"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-MFA-E3",
+            "capability_description": "Multi-factor Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098.003",
+            "attack_object_name": "Additional Cloud Roles",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1098",
+            "comments": "Requiring the use of MFA along with conditional access policies may reduce the likelihood of adversaries making credential modifications, administrator changes, account manipulation, changes to permissions, etc.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-all-users-mfa"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-MFA-E3",
+            "capability_description": "Multi-factor Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098.001",
+            "attack_object_name": "Additional Cloud Credentials",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1098",
+            "comments": "Requiring the use of MFA along with conditional access policies may reduce the likelihood of adversaries making credential modifications, administrator changes, account manipulation, changes to permissions, etc.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-all-users-mfa",
+                "https://www.microsoft.com/en-us/security/blog/2022/01/26/evolved-phishing-device-registration-trick-adds-to-phishers-toolbox-for-victims-without-mfa/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-MFA-E3",
+            "capability_description": "Multi-factor Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098",
+            "attack_object_name": "Account Manipulation",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "minimal",
+            "comments": "Requiring the use of MFA along with conditional access policies may reduce the likelihood of adversaries making credential modifications, administrator changes, account manipulation,  changes to permissions, etc.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-all-users-mfa"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-MFA-E3",
+            "capability_description": "Multi-factor Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.004",
+            "attack_object_name": "Credential Stuffing",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1110",
+            "comments": "MFA can significantly reduce the impact of a password spraying, requiring the adversary to complete an additional authentication method before access is permitted. Based on studies, your account is less likely to get compromised by 99.9% by enabling MFA against the following techniques: phishing, brute force, credential stuffing, key logging, etc.",
+            "references": [
+                "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/your-pa-word-doesn-t-matter/ba-p/731984"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-MFA-E3",
+            "capability_description": "Multi-factor Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.003",
+            "attack_object_name": "Password Spraying",
+            "capability_group": "entra-id",
+            "comments": "MFA can significantly reduce the impact of a password spraying, requiring the adversary to complete an additional authentication method before access is permitted. Based on studies, your account is less likely to get compromised by 99.9% by enabling MFA against the following techniques: phishing, brute force, credential stuffing, key logging, etc.",
+            "references": [
+                "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/your-pa-word-doesn-t-matter/ba-p/731984"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-MFA-E3",
+            "capability_description": "Multi-factor Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.002",
+            "attack_object_name": "Password Cracking",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1110",
+            "comments": "MFA can significantly reduce the impact of a password cracking, requiring the adversary to complete an additional authentication method before access is permitted. Based on studies, your account is less likely to get compromised by 99.9% by enabling MFA against the following techniques, for example: phishing, brute force, credential stuffing, key logging, etc.",
+            "references": [
+                "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/your-pa-word-doesn-t-matter/ba-p/731984"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-MFA-E3",
+            "capability_description": "Multi-factor Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1136.003",
+            "attack_object_name": "Cloud Account",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1136",
+            "comments": "MFA can significantly reduce the impact from adversaries creating accounts by requiring an additional authentication method for verification (e.g., Microsoft Authenticator, Authenticator Lite (in Outlook), Windows Hello for Business, FIDO2 security key, OATH hardware token (preview), OATH software token, SMS, Voice call, etc.)",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mfa-howitworks"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-MFA-E3",
+            "capability_description": "Multi-factor Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.001",
+            "attack_object_name": "Password Guessing",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1110",
+            "comments": "MFA can significantly reduce the impact of a password compromise, requiring the adversary to complete an additional authentication method before access is permitted.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mfa-howitworks"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-MFA-E3",
+            "capability_description": "Multi-factor Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110",
+            "attack_object_name": "Brute Force",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "MFA provides significant protection against password compromises, requiring the adversary to complete an additional authentication method before their access is permitted.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mfa-howitworks"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-MFA-E3",
+            "capability_description": "Multi-factor Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566.001",
+            "attack_object_name": "Spearphishing Attachment",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "related_score": "T1566",
+            "comments": " MFA provides significant/partial/minimal security protection against phishing tactics and related sub-techniques.",
+            "references": [
+                "https://www.microsoft.com/en-us/security/blog/2022/01/26/evolved-phishing-device-registration-trick-adds-to-phishers-toolbox-for-victims-without-mfa/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-MFA-E3",
+            "capability_description": "Multi-factor Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566.002",
+            "attack_object_name": "Spearphishing Link",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "related_score": "T1566",
+            "comments": " MFA provides significant/partial/minimal security protection against phishing tactics and related sub-techniques.",
+            "references": [
+                "https://www.microsoft.com/en-us/security/blog/2022/01/26/evolved-phishing-device-registration-trick-adds-to-phishers-toolbox-for-victims-without-mfa/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-MFA-E3",
+            "capability_description": "Multi-factor Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566",
+            "attack_object_name": "Phishing",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": " MFA provides significant/partial/minimal security protection against phishing tactics and related sub-techniques.",
+            "references": [
+                "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/your-pa-word-doesn-t-matter/ba-p/731984",
+                "https://www.microsoft.com/en-us/security/blog/2022/01/26/evolved-phishing-device-registration-trick-adds-to-phishers-toolbox-for-victims-without-mfa/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-MFA-E3",
+            "capability_description": "Multi-factor Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1530",
+            "attack_object_name": "Data from Cloud Storage",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "MFA provides significant protection by enforcing and restricting access to resources (e.g., cloud storage, APIs, etc.).",
+            "references": [],
+            "status": "complete"
+        }
+    ]
+}

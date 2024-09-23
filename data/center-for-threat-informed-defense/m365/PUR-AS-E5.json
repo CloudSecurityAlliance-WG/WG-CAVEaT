@@ -1,0 +1,488 @@
+{
+    "metadata": {
+        "mapping_version": "",
+        "technology_domain": "enterprise",
+        "attack_version": "14.1",
+        "mapping_framework": "m365",
+        "mapping_framework_version": "12/11/2023",
+        "author": "Center for Threat-Informed Defense",
+        "contact": "ctid@mitre-engenuity.org",
+        "organization": "Center for Threat-Informed Defense",
+        "creation_date": "12/11/2023",
+        "last_update": "03/18/2024",
+        "mapping_types": {
+            "technique_score": {
+                "name": "Technique Scores",
+                "description": ""
+            }
+        },
+        "capability_groups": {
+            "m365-defender": "Microsoft 365 Defender",
+            "entra-id": "Microsoft Entra ID",
+            "eop": "Exchange Online Protection",
+            "purview": "Microsoft Purview"
+        }
+    },
+    "mapping_objects": [
+        {
+            "capability_id": "PUR-AS-E5",
+            "capability_description": "Audit Solutions",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1548",
+            "attack_object_name": "Abuse Elevation Control Mechanism",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "Microsoft Purview auditing solutions provide an integrated solution to help organizations effectively respond to security events, forensic investigations, internal investigations, and compliance obligations. Thousands of user and admin operations performed in dozens of Microsoft 365 services and solutions are captured, recorded, and retained in your organization's unified audit log. Audit records for these events are searchable by security ops, IT admins, insider risk teams, and compliance and legal investigators in your organization. This capability provides visibility into the activities performed across your Microsoft 365 organization.\n\nMicrosoft's Audit Solutions detects Abuse Elevation Control Mechanism attacks due to it's DataInsightsRestApiAudit AuditLogRecord type which logs cloud API calls to assume, create, or impersonate additional roles, policies, and permissions.\n\nLicense Requirements:\nMicrosoft 365 E3 and E5",
+            "references": [
+                "https://learn.microsoft.com/en-us/office/office-365-management-api/office-365-management-activity-api-schema#auditlogrecordtype",
+                "https://learn.microsoft.com/en-us/purview/audit-solutions-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-AS-E5",
+            "capability_description": "Audit Solutions",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1548.005",
+            "attack_object_name": "Temporary Elevated Cloud Access",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1548",
+            "comments": "Microsoft Purview auditing solutions provide an integrated solution to help organizations effectively respond to security events, forensic investigations, internal investigations, and compliance obligations. Thousands of user and admin operations performed in dozens of Microsoft 365 services and solutions are captured, recorded, and retained in your organization's unified audit log. Audit records for these events are searchable by security ops, IT admins, insider risk teams, and compliance and legal investigators in your organization. This capability provides visibility into the activities performed across your Microsoft 365 organization.\n\nMicrosoft's Audit Solutions detects Temporary Elevated Cloud Access attacks due to it's DataInsightsRestApiAudit AuditLogRecord type which logs cloud API calls to assume, create, or impersonate additional roles, policies, and permissions.\n\nLicense Requirements:\nMicrosoft 365 E3 and E5",
+            "references": [
+                "https://learn.microsoft.com/en-us/office/office-365-management-api/office-365-management-activity-api-schema#auditlogrecordtype",
+                "https://learn.microsoft.com/en-us/purview/audit-solutions-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-AS-E5",
+            "capability_description": "Audit Solutions",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1087",
+            "attack_object_name": "Account Discovery",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "Microsoft Purview auditing solutions provide an integrated solution to help organizations effectively respond to security events, forensic investigations, internal investigations, and compliance obligations. Thousands of user and admin operations performed in dozens of Microsoft 365 services and solutions are captured, recorded, and retained in your organization's unified audit log. Audit records for these events are searchable by security ops, IT admins, insider risk teams, and compliance and legal investigators in your organization. This capability provides visibility into the activities performed across your Microsoft 365 organization.\n\nMicrosoft's Audit Solutions detects Account Discovery attacks due to the File and Page Audit Log activities which monitors for access to file resources that contain local accounts and groups information and looks for non-admin objects (such as users or processes) attempting to access restricted file resources.\n\nLicense Requirements:\nMicrosoft 365 E3 and E5",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/audit-log-activities",
+                "https://learn.microsoft.com/en-us/purview/audit-solutions-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-AS-E5",
+            "capability_description": "Audit Solutions",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1087.004",
+            "attack_object_name": "Cloud Account",
+            "capability_group": "purview",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1087",
+            "comments": "Microsoft Purview auditing solutions provide an integrated solution to help organizations effectively respond to security events, forensic investigations, internal investigations, and compliance obligations. Thousands of user and admin operations performed in dozens of Microsoft 365 services and solutions are captured, recorded, and retained in your organization's unified audit log. Audit records for these events are searchable by security ops, IT admins, insider risk teams, and compliance and legal investigators in your organization. This capability provides visibility into the activities performed across your Microsoft 365 organization.\n\nMicrosoft's Audit Solutions protects from Cloud Account attacks due to Audit Solution allowing admins to search and routinely check user permissions to ensure only the expected users have the ability to list IAM identities or otherwise discover cloud accounts.\n\nLicense Requirements:\nMicrosoft 365 E3 and E5",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/audit-solutions-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-AS-E5",
+            "capability_description": "Audit Solutions",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1059",
+            "attack_object_name": "Command and Scripting Interpreter",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "Microsoft Purview auditing solutions provide an integrated solution to help organizations effectively respond to security events, forensic investigations, internal investigations, and compliance obligations. Thousands of user and admin operations performed in dozens of Microsoft 365 services and solutions are captured, recorded, and retained in your organization's unified audit log. Audit records for these events are searchable by security ops, IT admins, insider risk teams, and compliance and legal investigators in your organization. This capability provides visibility into the activities performed across your Microsoft 365 organization.\n\nMicrosoft's Audit Solutions detects Command and Scripting Interpreter attacks due to Audit Solutions providing the visibility to monitor log files for process execution and monitor contextual data about a running process.\n\nLicense Requirements:\nMicrosoft 365 E3 and E5",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/audit-solutions-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-AS-E5",
+            "capability_description": "Audit Solutions",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1059.009",
+            "attack_object_name": "Cloud API",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1059",
+            "comments": "Microsoft Purview auditing solutions provide an integrated solution to help organizations effectively respond to security events, forensic investigations, internal investigations, and compliance obligations. Thousands of user and admin operations performed in dozens of Microsoft 365 services and solutions are captured, recorded, and retained in your organization's unified audit log. Audit records for these events are searchable by security ops, IT admins, insider risk teams, and compliance and legal investigators in your organization. This capability provides visibility into the activities performed across your Microsoft 365 organization.\n\nMicrosoft's Audit Solutions detects Cloud API attacks due to Audit Solutions providing the visibility to review command history and history of executed API commands in cloud audit logs to determine if unauthorized or suspicious commands were executed.\n\nLicense Requirements:\nMicrosoft 365 E3 and E5",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/audit-solutions-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-AS-E5",
+            "capability_description": "Audit Solutions",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1530",
+            "attack_object_name": "Data from Cloud Storage",
+            "capability_group": "purview",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "Microsoft Purview auditing solutions provide an integrated solution to help organizations effectively respond to security events, forensic investigations, internal investigations, and compliance obligations. Thousands of user and admin operations performed in dozens of Microsoft 365 services and solutions are captured, recorded, and retained in your organization's unified audit log. Audit records for these events are searchable by security ops, IT admins, insider risk teams, and compliance and legal investigators in your organization. This capability provides visibility into the activities performed across your Microsoft 365 organization.\n\nMicrosoft's Audit Solutions protects from Data from Cloud Storage attacks due to Audit Solutions providing the visibility to frequently check permissions on cloud storage to ensure proper permissions are set to deny open or unprivileged access to resources.\n\nLicense Requirements:\nMicrosoft 365 E3 and E5",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/audit-solutions-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-AS-E5",
+            "capability_description": "Audit Solutions",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1213",
+            "attack_object_name": "Data from Information Repositories",
+            "capability_group": "purview",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "Microsoft Purview auditing solutions provide an integrated solution to help organizations effectively respond to security events, forensic investigations, internal investigations, and compliance obligations. Thousands of user and admin operations performed in dozens of Microsoft 365 services and solutions are captured, recorded, and retained in your organization's unified audit log. Audit records for these events are searchable by security ops, IT admins, insider risk teams, and compliance and legal investigators in your organization. This capability provides visibility into the activities performed across your Microsoft 365 organization.\n\nMicrosoft's Audit Solutions protects from Data from Information Repository attacks due to Audit Solutions providing the visibility to allow admins to consider periodic review of accounts and privileges for critical and sensitive repositories.\n\nLicense Requirements:\nMicrosoft 365 E3 and E5",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/audit-solutions-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-AS-E5",
+            "capability_description": "Audit Solutions",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1213.002",
+            "attack_object_name": "Sharepoint",
+            "capability_group": "purview",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1213",
+            "comments": "Microsoft Purview auditing solutions provide an integrated solution to help organizations effectively respond to security events, forensic investigations, internal investigations, and compliance obligations. Thousands of user and admin operations performed in dozens of Microsoft 365 services and solutions are captured, recorded, and retained in your organization's unified audit log. Audit records for these events are searchable by security ops, IT admins, insider risk teams, and compliance and legal investigators in your organization. This capability provides visibility into the activities performed across your Microsoft 365 organization.\n\nMicrosoft's Audit Solutions protects from Sharepoint attacks due to Audit Solutions providing the visibility to allow admins to consider periodic review of accounts and privileges for critical and sensitive repositories.\n\nLicense Requirements:\nMicrosoft 365 E3 and E5",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/audit-solutions-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-AS-E5",
+            "capability_description": "Audit Solutions",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1114",
+            "attack_object_name": "Email Collection",
+            "capability_group": "purview",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "Microsoft Purview auditing solutions provide an integrated solution to help organizations effectively respond to security events, forensic investigations, internal investigations, and compliance obligations. Thousands of user and admin operations performed in dozens of Microsoft 365 services and solutions are captured, recorded, and retained in your organization's unified audit log. Audit records for these events are searchable by security ops, IT admins, insider risk teams, and compliance and legal investigators in your organization. This capability provides visibility into the activities performed across your Microsoft 365 organization.\n\nMicrosoft's Audit Solutions protects from Email Collection attacks due to in an Exchange environment, Administrators can use Get-InboxRule to discover and remove potentially malicious auto-forwarding rules.\n\nLicense Requirements:\nMicrosoft 365 E3 and E5",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/audit-log-activities",
+                "https://learn.microsoft.com/en-us/purview/audit-solutions-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-AS-E5",
+            "capability_description": "Audit Solutions",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1114.002",
+            "attack_object_name": "Remote Email Collection",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1114",
+            "comments": "Microsoft Purview auditing solutions provide an integrated solution to help organizations effectively respond to security events, forensic investigations, internal investigations, and compliance obligations. Thousands of user and admin operations performed in dozens of Microsoft 365 services and solutions are captured, recorded, and retained in your organization's unified audit log. Audit records for these events are searchable by security ops, IT admins, insider risk teams, and compliance and legal investigators in your organization. This capability provides visibility into the activities performed across your Microsoft 365 organization.\n\nMicrosoft's Audit Solutions detects Remote Email Collection attacks due to in O365 environments, admins can consider using PurviewAudit to collect MailItemsAccessed events and monitoring for unusual email access behavior.\n\nLicense Requirements:\nMicrosoft 365 E3 and E5",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/audit-log-activities",
+                "https://learn.microsoft.com/en-us/purview/audit-solutions-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-AS-E5",
+            "capability_description": "Audit Solutions",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1114.003",
+            "attack_object_name": "Email Forwarding Rule",
+            "capability_group": "purview",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1114",
+            "comments": "Microsoft Purview auditing solutions provide an integrated solution to help organizations effectively respond to security events, forensic investigations, internal investigations, and compliance obligations. Thousands of user and admin operations performed in dozens of Microsoft 365 services and solutions are captured, recorded, and retained in your organization's unified audit log. Audit records for these events are searchable by security ops, IT admins, insider risk teams, and compliance and legal investigators in your organization. This capability provides visibility into the activities performed across your Microsoft 365 organization.\n\nMicrosoft's Audit Solutions protects from Email Forwarding Rule attacks due to administrators can use Get-InboxRule / Remove-InboxRule and Get-TransportRule / Remove-TransportRule to discover and remove potentially malicious auto-fowarding and transport rules.\n\nLicense Requirements:\nMicrosoft 365 E3 and E5",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/audit-log-activities",
+                "https://learn.microsoft.com/en-us/purview/audit-solutions-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-AS-E5",
+            "capability_description": "Audit Solutions",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1606",
+            "attack_object_name": "Forge Web Credentials",
+            "capability_group": "purview",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "Microsoft Purview auditing solutions provide an integrated solution to help organizations effectively respond to security events, forensic investigations, internal investigations, and compliance obligations. Thousands of user and admin operations performed in dozens of Microsoft 365 services and solutions are captured, recorded, and retained in your organization's unified audit log. Audit records for these events are searchable by security ops, IT admins, insider risk teams, and compliance and legal investigators in your organization. This capability provides visibility into the activities performed across your Microsoft 365 organization.\n\nMicrosoft's Audit Solutions protects from Forge Web Credential attacks due to Audit Solutions providing the visibility to allow administrators to perform an audit of all access lists and the permissions they have been granted to access web applications and services.\n\nLicense Requirements:\nMicrosoft 365 E3 and E5",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/audit-solutions-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-AS-E5",
+            "capability_description": "Audit Solutions",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1564",
+            "attack_object_name": "Hide Artifacts",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "Microsoft Purview auditing solutions provide an integrated solution to help organizations effectively respond to security events, forensic investigations, internal investigations, and compliance obligations. Thousands of user and admin operations performed in dozens of Microsoft 365 services and solutions are captured, recorded, and retained in your organization's unified audit log. Audit records for these events are searchable by security ops, IT admins, insider risk teams, and compliance and legal investigators in your organization. This capability provides visibility into the activities performed across your Microsoft 365 organization.\n\nMicrosoft's Audit Solutions detects Hide Artifacts attacks due to the File and Page Audit Log activities which monitors for newly constructed files, for contextual data about files, and for changes made to files.\n\nLicense Requirements: \nMicrosoft 365 E3 and E5",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/audit-log-activities",
+                "https://learn.microsoft.com/en-us/purview/audit-solutions-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-AS-E5",
+            "capability_description": "Audit Solutions",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1564.008",
+            "attack_object_name": "Email Hiding Rules",
+            "capability_group": "purview",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1564",
+            "comments": "Microsoft Purview auditing solutions provide an integrated solution to help organizations effectively respond to security events, forensic investigations, internal investigations, and compliance obligations. Thousands of user and admin operations performed in dozens of Microsoft 365 services and solutions are captured, recorded, and retained in your organization's unified audit log. Audit records for these events are searchable by security ops, IT admins, insider risk teams, and compliance and legal investigators in your organization. This capability provides visibility into the activities performed across your Microsoft 365 organization.\n\nMicrosoft's Audit Solutions protects from Email Hiding Rule attacks due to administrators can use Get-InboxRule / Remove-InboxRule and Get-TransportRule / Remove-TransportRule to discover and remove potentially malicious auto-fowarding and transport rules.\n\nLicense Requirements:\nMicrosoft 365 E3 and E5",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/audit-log-activities",
+                "https://learn.microsoft.com/en-us/purview/audit-solutions-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-AS-E5",
+            "capability_description": "Audit Solutions",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1546",
+            "attack_object_name": "Event Triggered Execution",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "Microsoft Purview auditing solutions provide an integrated solution to help organizations effectively respond to security events, forensic investigations, internal investigations, and compliance obligations. Thousands of user and admin operations performed in dozens of Microsoft 365 services and solutions are captured, recorded, and retained in your organization's unified audit log. Audit records for these events are searchable by security ops, IT admins, insider risk teams, and compliance and legal investigators in your organization. This capability provides visibility into the activities performed across your Microsoft 365 organization.\n\nMicrosoft's Audit Solutions detects Event Triggered Execution attacks due to the File and Page Audit Log activities which monitors for newly constructed files, for contextual data about files, and for changes made to files.\n\nLicense Requirements: \nMicrosoft 365 E3 and E5",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/audit-log-activities",
+                "https://learn.microsoft.com/en-us/purview/audit-solutions-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-AS-E5",
+            "capability_description": "Audit Solutions",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1562",
+            "attack_object_name": "Impair Defenses",
+            "capability_group": "purview",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "Microsoft Purview auditing solutions provide an integrated solution to help organizations effectively respond to security events, forensic investigations, internal investigations, and compliance obligations. Thousands of user and admin operations performed in dozens of Microsoft 365 services and solutions are captured, recorded, and retained in your organization's unified audit log. Audit records for these events are searchable by security ops, IT admins, insider risk teams, and compliance and legal investigators in your organization. This capability provides visibility into the activities performed across your Microsoft 365 organization.\n\nMicrosoft's Audit Solutions protects from Impair Defense attacks due to Audit Solutions providing the visibility to allow admins to routinely check account role permissions to ensure only expected users and roles have permission to modify defensive tools and settings.\n\nLicense Requirements:\nMicrosoft 365 E3 and E5",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/audit-solutions-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-AS-E5",
+            "capability_description": "Audit Solutions",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1562.008",
+            "attack_object_name": "Disable or Modify Cloud Logs",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1562",
+            "comments": "Microsoft Purview auditing solutions provide an integrated solution to help organizations effectively respond to security events, forensic investigations, internal investigations, and compliance obligations. Thousands of user and admin operations performed in dozens of Microsoft 365 services and solutions are captured, recorded, and retained in your organization's unified audit log. Audit records for these events are searchable by security ops, IT admins, insider risk teams, and compliance and legal investigators in your organization. This capability provides visibility into the activities performed across your Microsoft 365 organization.\n\nMicrosoft's Audit Solutions detects Disable or Modify Cloud Log attacks due to the user administration Audit Log activities which monitors for changes to account settings associated with users that may impact defensive logging capabilities.\n\nLicense Requirements:\nMicrosoft 365 E3 and E5",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/audit-log-activities",
+                "https://learn.microsoft.com/en-us/purview/audit-solutions-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-AS-E5",
+            "capability_description": "Audit Solutions",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1070",
+            "attack_object_name": "Indicator Removal",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "Microsoft Purview auditing solutions provide an integrated solution to help organizations effectively respond to security events, forensic investigations, internal investigations, and compliance obligations. Thousands of user and admin operations performed in dozens of Microsoft 365 services and solutions are captured, recorded, and retained in your organization's unified audit log. Audit records for these events are searchable by security ops, IT admins, insider risk teams, and compliance and legal investigators in your organization. This capability provides visibility into the activities performed across your Microsoft 365 organization.\n\nMicrosoft's Audit Solutions detects Indicator Removal attacks due to the File and Page Audit Log activities which monitors for newly constructed files, for contextual data about files, and for changes made to files.\n\nLicense Requirements: \nMicrosoft 365 E3 and E5",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/audit-log-activities",
+                "https://learn.microsoft.com/en-us/purview/audit-solutions-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-AS-E5",
+            "capability_description": "Audit Solutions",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1070.008",
+            "attack_object_name": "Clear Mailbox Data",
+            "capability_group": "purview",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1070",
+            "comments": "Microsoft Purview auditing solutions provide an integrated solution to help organizations effectively respond to security events, forensic investigations, internal investigations, and compliance obligations. Thousands of user and admin operations performed in dozens of Microsoft 365 services and solutions are captured, recorded, and retained in your organization's unified audit log. Audit records for these events are searchable by security ops, IT admins, insider risk teams, and compliance and legal investigators in your organization. This capability provides visibility into the activities performed across your Microsoft 365 organization.\n\nMicrosoft's Audit Solutions protects from Clear Mailbox Data Rule attacks due to administrators can use use Get-TransportRule / Remove-TransportRule to discover and remove potentially malicious transport rules.\n\nLicense Requirements:\nMicrosoft 365 E3 and E5",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/audit-solutions-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-AS-E5",
+            "capability_description": "Audit Solutions",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1556",
+            "attack_object_name": "Modify Authentication Process",
+            "capability_group": "purview",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "Microsoft Purview auditing solutions provide an integrated solution to help organizations effectively respond to security events, forensic investigations, internal investigations, and compliance obligations. Thousands of user and admin operations performed in dozens of Microsoft 365 services and solutions are captured, recorded, and retained in your organization's unified audit log. Audit records for these events are searchable by security ops, IT admins, insider risk teams, and compliance and legal investigators in your organization. This capability provides visibility into the activities performed across your Microsoft 365 organization.\n\nMicrosoft's Audit Solutions protects from Modify Authentication Process attacks due to Audit Solutions providing the visibility to allow admins to review authentication logs to ensure that mechanisms such as enforcement of MFA are functioning as intended.\n\nLicense Requirements:\nMicrosoft 365 E3 and E5",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/audit-solutions-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-AS-E5",
+            "capability_description": "Audit Solutions",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1556.006",
+            "attack_object_name": "Multi-Factor Authentication",
+            "capability_group": "purview",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1556",
+            "comments": "Microsoft Purview auditing solutions provide an integrated solution to help organizations effectively respond to security events, forensic investigations, internal investigations, and compliance obligations. Thousands of user and admin operations performed in dozens of Microsoft 365 services and solutions are captured, recorded, and retained in your organization's unified audit log. Audit records for these events are searchable by security ops, IT admins, insider risk teams, and compliance and legal investigators in your organization. This capability provides visibility into the activities performed across your Microsoft 365 organization.\n\nMicrosoft's Audit Solutions protects from Multi-Factor Authentication attacks due to Audit Solutions providing the visibility to allow admins to review authentication logs to ensure that mechanisms such as enforcement of MFA are functioning as intended.\n\nLicense Requirements:\nMicrosoft 365 E3 and E5",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/audit-solutions-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-AS-E5",
+            "capability_description": "Audit Solutions",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566",
+            "attack_object_name": "Phishing",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "Microsoft Purview auditing solutions provide an integrated solution to help organizations effectively respond to security events, forensic investigations, internal investigations, and compliance obligations. Thousands of user and admin operations performed in dozens of Microsoft 365 services and solutions are captured, recorded, and retained in your organization's unified audit log. Audit records for these events are searchable by security ops, IT admins, insider risk teams, and compliance and legal investigators in your organization. This capability provides visibility into the activities performed across your Microsoft 365 organization.\n\nMicrosoft's Audit Solutions detects Phishing attacks due to the File and Page Audit Log activities which monitors for newly constructed files from phishing messages.\n\nLicense Requirements: \nMicrosoft 365 E3 and E5",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/audit-log-activities",
+                "https://learn.microsoft.com/en-us/purview/audit-solutions-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-AS-E5",
+            "capability_description": "Audit Solutions",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566.002",
+            "attack_object_name": "Spearphishing Link",
+            "capability_group": "purview",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1566",
+            "comments": "Microsoft Purview auditing solutions provide an integrated solution to help organizations effectively respond to security events, forensic investigations, internal investigations, and compliance obligations. Thousands of user and admin operations performed in dozens of Microsoft 365 services and solutions are captured, recorded, and retained in your organization's unified audit log. Audit records for these events are searchable by security ops, IT admins, insider risk teams, and compliance and legal investigators in your organization. This capability provides visibility into the activities performed across your Microsoft 365 organization.\n\nMicrosoft's Audit Solutions protects from Spearphishing Link Process attacks due to Audit Solutions providing the visibility to allow admins to audit applications and their permissions to ensure access to data and resources are limited based upon necessity and principle of least privilege.\n\nLicense Requirements:\nMicrosoft 365 E3 and E5",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/audit-solutions-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-AS-E5",
+            "capability_description": "Audit Solutions",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1528",
+            "attack_object_name": "Steal Application Access Token",
+            "capability_group": "purview",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "Microsoft Purview auditing solutions provide an integrated solution to help organizations effectively respond to security events, forensic investigations, internal investigations, and compliance obligations. Thousands of user and admin operations performed in dozens of Microsoft 365 services and solutions are captured, recorded, and retained in your organization's unified audit log. Audit records for these events are searchable by security ops, IT admins, insider risk teams, and compliance and legal investigators in your organization. This capability provides visibility into the activities performed across your Microsoft 365 organization.\n\nMicrosoft's Audit Solutions protects from Steal Application Access Token attacks due to Audit Solutions providing the visibility to allow admins to audit all cloud accounts to ensure that they are necessary and that the permissions granted to them are appropriate. Additionally, admins can perform an audit of all OAuth applications and the permissions they have been granted to access organizational data.\n\nLicense Requirements: \nMicrosoft 365 E3 and E5",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/audit-solutions-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-AS-E5",
+            "capability_description": "Audit Solutions",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1552",
+            "attack_object_name": "Unsecured Credentials",
+            "capability_group": "purview",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "Microsoft Purview auditing solutions provide an integrated solution to help organizations effectively respond to security events, forensic investigations, internal investigations, and compliance obligations. Thousands of user and admin operations performed in dozens of Microsoft 365 services and solutions are captured, recorded, and retained in your organization's unified audit log. Audit records for these events are searchable by security ops, IT admins, insider risk teams, and compliance and legal investigators in your organization. This capability provides visibility into the activities performed across your Microsoft 365 organization.\n\nMicrosoft's Audit Solutions protects from Unsecured Credential attacks due to Audit Solutions providing the visibility to allow admins to preemptively search for files containing passwords or other credentials and take actions to reduce the exposure risk when found.\n\nLicense Requirements: \nMicrosoft 365 E3 and E5",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/audit-solutions-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-AS-E5",
+            "capability_description": "Audit Solutions",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1552.008",
+            "attack_object_name": "Chat Messages",
+            "capability_group": "purview",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1552",
+            "comments": "Microsoft Purview auditing solutions provide an integrated solution to help organizations effectively respond to security events, forensic investigations, internal investigations, and compliance obligations. Thousands of user and admin operations performed in dozens of Microsoft 365 services and solutions are captured, recorded, and retained in your organization's unified audit log. Audit records for these events are searchable by security ops, IT admins, insider risk teams, and compliance and legal investigators in your organization. This capability provides visibility into the activities performed across your Microsoft 365 organization.\n\nMicrosoft's Audit Solutions protects from Chat Messages attacks due to Audit Solutions providing the visibility to allow admins to preemptively search through communication services to find shared unsecured credentials.\n\nLicense Requirements: \nMicrosoft 365 E3 and E5",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/audit-solutions-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-AS-E5",
+            "capability_description": "Audit Solutions",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078",
+            "attack_object_name": "Valid Accounts",
+            "capability_group": "purview",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "Microsoft Purview auditing solutions provide an integrated solution to help organizations effectively respond to security events, forensic investigations, internal investigations, and compliance obligations. Thousands of user and admin operations performed in dozens of Microsoft 365 services and solutions are captured, recorded, and retained in your organization's unified audit log. Audit records for these events are searchable by security ops, IT admins, insider risk teams, and compliance and legal investigators in your organization. This capability provides visibility into the activities performed across your Microsoft 365 organization.\n\nMicrosoft's Audit Solutions protects from Valid Account attacks due to Audit Solutions providing the visibility to allow admins to regularly audit user accounts for activity and deactivate or remove any that are no longer needed.\n\nLicense Requirements: \nMicrosoft 365 E3 and E5",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/audit-solutions-overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-AS-E5",
+            "capability_description": "Audit Solutions",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078.004",
+            "attack_object_name": "Cloud Accounts",
+            "capability_group": "purview",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1078",
+            "comments": "Microsoft Purview auditing solutions provide an integrated solution to help organizations effectively respond to security events, forensic investigations, internal investigations, and compliance obligations. Thousands of user and admin operations performed in dozens of Microsoft 365 services and solutions are captured, recorded, and retained in your organization's unified audit log. Audit records for these events are searchable by security ops, IT admins, insider risk teams, and compliance and legal investigators in your organization. This capability provides visibility into the activities performed across your Microsoft 365 organization.\n\nMicrosoft's Audit Solutions protects from Cloud Account attacks due to Audit Solutions providing the visibility to allow admins to regularly audit user accounts for activity and deactivate or remove any that are no longer needed.\n\nLicense Requirements: \nMicrosoft 365 E3 and E5",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/audit-solutions-overview"
+            ],
+            "status": "complete"
+        }
+    ]
+}

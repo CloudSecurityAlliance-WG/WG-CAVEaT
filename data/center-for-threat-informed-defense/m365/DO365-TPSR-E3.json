@@ -1,0 +1,120 @@
+{
+    "metadata": {
+        "mapping_version": "",
+        "technology_domain": "enterprise",
+        "attack_version": "14.1",
+        "mapping_framework": "m365",
+        "mapping_framework_version": "12/11/2023",
+        "author": "Center for Threat-Informed Defense",
+        "contact": "ctid@mitre-engenuity.org",
+        "organization": "Center for Threat-Informed Defense",
+        "creation_date": "12/11/2023",
+        "last_update": "03/18/2024",
+        "mapping_types": {
+            "technique_score": {
+                "name": "Technique Scores",
+                "description": ""
+            }
+        },
+        "capability_groups": {
+            "m365-defender": "Microsoft 365 Defender",
+            "entra-id": "Microsoft Entra ID",
+            "eop": "Exchange Online Protection",
+            "purview": "Microsoft Purview"
+        }
+    },
+    "mapping_objects": [
+        {
+            "capability_id": "DO365-TPSR-E3",
+            "capability_description": "Threat Protection Status Report",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566",
+            "attack_object_name": "Phishing",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "Threat protection status report is a single view that brings together information about malicious content and malicious email detected and blocked by Exchange Online Protection (EOP) and Defender for Office 365. The report provides the count of email messages with malicious content. For example: Files or website addresses (URLs) that were blocked by the anti-malware engine, Files or messages affected by zero-hour auto purge (ZAP), Files or messages that were blocked by Defender for Office 365 features: Safe Links, Safe Attachments, and impersonation protection features in anti-phishing policies.\n\nThreat Protection Status Report Detects Phishing attacks by the report capturing and displaying files or messages that were blocked by Safe Links, Safe Attachments, and impersonation protection features in phishing policies.\n\nLicense Requirements: \nExchange Online Protection, Microsoft Defender for Office 365 plan 1 and plan 2, Microsoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/reports-email-security?view=o365-worldwide#threat-protection-status-report"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-TPSR-E3",
+            "capability_description": "Threat Protection Status Report",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566.001",
+            "attack_object_name": "Spearphishing Attachment",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1566",
+            "comments": "Threat protection status report is a single view that brings together information about malicious content and malicious email detected and blocked by Exchange Online Protection (EOP) and Defender for Office 365. The report provides the count of email messages with malicious content. For example: Files or website addresses (URLs) that were blocked by the anti-malware engine, Files or messages affected by zero-hour auto purge (ZAP), Files or messages that were blocked by Defender for Office 365 features: Safe Links, Safe Attachments, and impersonation protection features in anti-phishing policies.\n\nThreat Protection Status Report Detects Spearphishing Attachment attacks by the report capturing and displaying files or messages that were blocked by Safe Links, Safe Attachments, and impersonation protection features in phishing policies.\n\nLicense Requirements: \nExchange Online Protection, Microsoft Defender for Office 365 plan 1 and plan 2, Microsoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/reports-email-security?view=o365-worldwide#threat-protection-status-report"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-TPSR-E3",
+            "capability_description": "Threat Protection Status Report",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566.002",
+            "attack_object_name": "Spearphishing Link",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1566",
+            "comments": "Threat protection status report is a single view that brings together information about malicious content and malicious email detected and blocked by Exchange Online Protection (EOP) and Defender for Office 365. The report provides the count of email messages with malicious content. For example: Files or website addresses (URLs) that were blocked by the anti-malware engine, Files or messages affected by zero-hour auto purge (ZAP), Files or messages that were blocked by Defender for Office 365 features: Safe Links, Safe Attachments, and impersonation protection features in anti-phishing policies.\n\nThreat Protection Status Report Detects Spearphishing Link attacks by the report capturing and displaying files or messages that were blocked by Safe Links, Safe Attachments, and impersonation protection features in phishing policies.\n\nLicense Requirements: \nExchange Online Protection, Microsoft Defender for Office 365 plan 1 and plan 2, Microsoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/reports-email-security?view=o365-worldwide#threat-protection-status-report"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-TPSR-E3",
+            "capability_description": "Threat Protection Status Report",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1534",
+            "attack_object_name": "Internal Spearphishing",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "Threat protection status report is a single view that brings together information about malicious content and malicious email detected and blocked by Exchange Online Protection (EOP) and Defender for Office 365. The report provides the count of email messages with malicious content. For example: Files or website addresses (URLs) that were blocked by the anti-malware engine, Files or messages affected by zero-hour auto purge (ZAP), Files or messages that were blocked by Defender for Office 365 features: Safe Links, Safe Attachments, and impersonation protection features in anti-phishing policies.\n\nThreat Protection Status Report Detects Internal Spearphishing attacks by the report capturing and displaying files or messages that were blocked by Safe Links, Safe Attachments, and impersonation protection features in phishing policies.\n\nLicense Requirements: \nExchange Online Protection, Microsoft Defender for Office 365 plan 1 and plan 2, Microsoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/reports-email-security?view=o365-worldwide#threat-protection-status-report"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-TPSR-E3",
+            "capability_description": "Threat Protection Status Report",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1656",
+            "attack_object_name": "Impersonation",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "Threat protection status report is a single view that brings together information about malicious content and malicious email detected and blocked by Exchange Online Protection (EOP) and Defender for Office 365. The report provides the count of email messages with malicious content. For example: Files or website addresses (URLs) that were blocked by the anti-malware engine, Files or messages affected by zero-hour auto purge (ZAP), Files or messages that were blocked by Defender for Office 365 features: Safe Links, Safe Attachments, and impersonation protection features in anti-phishing policies.\n\nThreat Protection Status Report Detects Impersonation attacks by the report capturing and displaying files or messages that were blocked by Safe Links, Safe Attachments, and impersonation protection features in phishing policies.\n\nLicense Requirements: \nExchange Online Protection, Microsoft Defender for Office 365 plan 1 and plan 2, Microsoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/reports-email-security?view=o365-worldwide#threat-protection-status-report"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-TPSR-E3",
+            "capability_description": "Threat Protection Status Report",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1189",
+            "attack_object_name": "Drive-by Compromise",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "Threat protection status report is a single view that brings together information about malicious content and malicious email detected and blocked by Exchange Online Protection (EOP) and Defender for Office 365. The report provides the count of email messages with malicious content. For example: Files or website addresses (URLs) that were blocked by the anti-malware engine, Files or messages affected by zero-hour auto purge (ZAP), Files or messages that were blocked by Defender for Office 365 features: Safe Links, Safe Attachments, and impersonation protection features in anti-phishing policies.\n\nThreat Protection Status Report Detects Drive-by-Compromise attacks by the report capturing and displaying files or messages that were blocked by Safe Links, Safe Attachments, and impersonation protection features in phishing policies. With an organization filtering URL's for users, it mitigates users visiting a website that is used to host the adversary controlled content.\n\nLicense Requirements: \nExchange Online Protection, Microsoft Defender for Office 365 plan 1 and plan 2, Microsoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/reports-email-security?view=o365-worldwide#threat-protection-status-report"
+            ],
+            "status": "complete"
+        }
+    ]
+}

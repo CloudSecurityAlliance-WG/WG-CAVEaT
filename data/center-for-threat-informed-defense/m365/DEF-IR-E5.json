@@ -1,0 +1,629 @@
+{
+    "metadata": {
+        "mapping_version": "",
+        "technology_domain": "enterprise",
+        "attack_version": "14.1",
+        "mapping_framework": "m365",
+        "mapping_framework_version": "12/11/2023",
+        "author": "Center for Threat-Informed Defense",
+        "contact": "ctid@mitre-engenuity.org",
+        "organization": "Center for Threat-Informed Defense",
+        "creation_date": "12/11/2023",
+        "last_update": "03/18/2024",
+        "mapping_types": {
+            "technique_score": {
+                "name": "Technique Scores",
+                "description": ""
+            }
+        },
+        "capability_groups": {
+            "m365-defender": "Microsoft 365 Defender",
+            "entra-id": "Microsoft Entra ID",
+            "eop": "Exchange Online Protection",
+            "purview": "Microsoft Purview"
+        }
+    },
+    "mapping_objects": [
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098",
+            "attack_object_name": "Account Manipulation",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack. Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to Account Manipulation attacks due to Incident Response monitoring for persistence and privilege escalation alerts which monitors for newly constructed processes indicative of modifying account settings.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/persistence-privilege-escalation-alerts",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098.001",
+            "attack_object_name": "Additional Cloud Credentials",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "related_score": "T1098",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack. Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to Additional Cloud Credential attacks due to Incident Response monitoring for persistence and privilege escalation alerts which monitors for unexpected changes to cloud user accounts.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/persistence-privilege-escalation-alerts",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098.002",
+            "attack_object_name": "Additional Email Delegate Permissions",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "related_score": "T1098",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack. Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to Additional Email Delegate Permission attacks due to Incident Response monitoring for default alert policies which provides built-in alert policies that help identify Exchange admin permissions abuse and account permissions changes.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/alert-policies",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098.003",
+            "attack_object_name": "Additional Cloud Roles",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "related_score": "T1098",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack. Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to Additional Cloud Role attacks due to Incident Response monitoring for permission alert policies which collect usage logs from cloud administrator accounts to identify unusual activity.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/alert-policies",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1531",
+            "attack_object_name": "Account Access Removal",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack. Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to Account Access Removal attacks due to Incident Response monitoring for password change security alerts which monitors for changes made to user accounts for unexpected modification of properties.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/credential-access-alerts",
+                "https://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-reference#alerts-for-azure-ddos-protection",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110",
+            "attack_object_name": "Brute Force",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack. Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to Brute Force attacks due to its password spray Incident Response playbook which monitors for many failed authentication attempts across various accounts that may result from password spraying attempts.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/security/operations/incident-response-playbooks",
+                "https://learn.microsoft.com/en-us/security/operations/incident-response-playbook-password-spray",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.001",
+            "attack_object_name": "Password Guessing",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "related_score": "T1110",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack. Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to Password Guessing attacks due to its password spray Incident Response playbook which monitors for many failed authentication attempts across various accounts that may result from password guessing attempts.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/security/operations/incident-response-playbooks",
+                "https://learn.microsoft.com/en-us/security/operations/incident-response-playbook-password-spray",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.002",
+            "attack_object_name": "Password Cracking",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "related_score": "T1110",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack. Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to Password Cracking attacks due to its password spray Incident Response playbook which monitors for many failed authentication attempts across various accounts that may result from password spraying attempts.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/security/operations/incident-response-playbooks",
+                "https://learn.microsoft.com/en-us/security/operations/incident-response-playbook-password-spray",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.003",
+            "attack_object_name": "Password Spraying",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "related_score": "T1110",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack. Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to Password Spraying attacks due to its password spray Incident Response playbook which monitors for many failed authentication attempts across various accounts that may result from password spraying attempts.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/security/operations/incident-response-playbooks",
+                "https://learn.microsoft.com/en-us/security/operations/incident-response-playbook-password-spray",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.004",
+            "attack_object_name": "Credential Stuffing",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "related_score": "T1110",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack. Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to Credential Stuffing attacks due to its password spray Incident Response playbook which monitors for many failed authentication attempts across various accounts that may result from credential stuffing attempts.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/security/operations/incident-response-playbooks",
+                "https://learn.microsoft.com/en-us/security/operations/incident-response-playbook-password-spray",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1136",
+            "attack_object_name": "Create Account",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack. Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to Create Account attacks due to Incident Response monitoring for newly executed processes associated with account creations.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-reference#alerts-for-azure-ddos-protection",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1136.003",
+            "attack_object_name": "Cloud Account",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "related_score": "T1136",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack. Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to Cloud Account attacks due to Incident Response monitoring for newly constructed user accounts through the collection of usage logs from cloud user and administrator accounts to identify unusual activity in the creation of new accounts.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-reference#alerts-for-azure-ddos-protection",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1538",
+            "attack_object_name": "Cloud Service Dashboard",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack. Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to Cloud Service Dashboard attacks due to Incident Response monitoring for newly constructed logon behavior across cloud service management consoles and the aggregated alerts allowing admins to correlate security systems with login information, such as user accounts, IP addresses, and login names.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1059",
+            "attack_object_name": "Command and Scripting Interpreter",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack. Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to Command and Scripting Interpreter attacks due to Incident Response monitoring for reconnaissance and discovery alerts which monitors for subsequent behavior related to discovery.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-for-identity/reconnaissance-discovery-alerts",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1059.009",
+            "attack_object_name": "Cloud API",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "related_score": "T1059",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack. Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to Cloud API attacks due to Incident Response monitoring for api activity security alerts which reviews cloud audit logs to determine if unauthorized or suspicious commands were executed.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-reference#alerts-for-azure-ddos-protection",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1530",
+            "attack_object_name": "Data from Cloud Storage",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack. Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to Data from Cloud Storage attacks due to Incident Response monitoring for security alerts that represent unusual queries to the cloud provider's storage service.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1213",
+            "attack_object_name": "Data from Information Repositories",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack. Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to Data from Information Repository attacks due to Incident Response being able to monitor for newly constructed logon behavior within Microsoft SharePoint.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1213.002",
+            "attack_object_name": "Sharepoint",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "related_score": "T1213",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack. Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to Sharepoint attacks due to Incident Response being able to monitor for newly constructed logon behavior within Microsoft SharePoint.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1606",
+            "attack_object_name": "Forge Web Credentials",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack. Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to Forge Web Credentials attacks due to Incident Response monitoring for credential access alert policies which monitors for anomalous authentication activity.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1606.002",
+            "attack_object_name": "SAML Tokens",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "related_score": "T1606",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack. Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to SAML Token attacks due to Incident Response monitoring for credential access alert policies which monitors for anomalous authentication activity.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1564",
+            "attack_object_name": "Hide Artifacts",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack. Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to Hide Artifact attacks due to Incident Response monitoring for newly constructed user accounts, contextual data about accounts, contextual data about files, and newly constructed files.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1564.008",
+            "attack_object_name": "Email Hiding Rules",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "related_score": "T1564",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack. Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to Email Hiding Rules attacks due to Incident Response being able to monitor for creation or modification of suspicious inbox rules.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1562",
+            "attack_object_name": "Impair Defenses",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack. Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to Impair Defense attacks due to Incident Response monitoring for changes to account settings, newly executed processes, and abnormal execution of API functions.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1562.008",
+            "attack_object_name": "Disable or Modify Cloud Logs",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "related_score": "T1562",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack. Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to Disable or Modify Cloud Log attacks due to Incident Response monitoring for changes to account settings and logs for API calls to disable logging.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1556",
+            "attack_object_name": "Modify Authentication Process",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack. Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to Modify Authentication Process attacks due to Incident Response monitoring for newly created files, suspicious modification of files, and newly constructed logon behavior across systems that share accounts.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1556.006",
+            "attack_object_name": "Multi-Factor Authentication",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "related_score": "T1556",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack. Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to Multi-Factor Authentication attacks due to Incident Response monitoring for logon sessions for user accounts that did not require MFA for authentication.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1621",
+            "attack_object_name": "Multi-Factor Authentication Request Generation",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack. Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to Multi-Factor Authentication Request Generation attacks due to Incident Response monitoring MFA application logs for suspicious events.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566",
+            "attack_object_name": "Phishing",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack. Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to Phishing attacks due to its phishing Incident Response playbook which monitors for messaging, and/or other artifacts that may send phishing messages to gain access to victim systems.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/security/operations/incident-response-playbook-phishing",
+                "https://learn.microsoft.com/en-us/security/operations/incident-response-playbooks",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1598.003",
+            "attack_object_name": "Spearphishing Link",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "related_score": "T1598",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack.  Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to spearphishing link attacks due to its phishing Incident Response playbook which monitors for messaging, and/or other artifacts that may send spearphishing emails with a malicious link in an attempt to gain access to victim systems.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/security/operations/incident-response-playbook-phishing",
+                "https://learn.microsoft.com/en-us/security/operations/incident-response-playbooks",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1598.004",
+            "attack_object_name": "Spearphishing Voice",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "related_score": "T1598",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack. Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to spearphishing voice attacks due to its phishing Incident Response playbook which monitors call logs from corporate devices to identify patterns of potential voice phishing.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/security/operations/incident-response-playbook-phishing",
+                "https://learn.microsoft.com/en-us/security/operations/incident-response-playbooks",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1552",
+            "attack_object_name": "Unsecured Credentials",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack. Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to unsecure credential attacks due to Incident Response monitoring for newly executed processes, suspicious file access activity, and application logs for activity that may highlight malicious attempts to access application data.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1552.008",
+            "attack_object_name": "Chat Messages",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "related_score": "T1552",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack. Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to chat messages attacks due to Incident Response monitoring application logs for activity that may highlight malicious attempts to access application data.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1550",
+            "attack_object_name": "Use Alternate Authentication Material",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack. Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to use alternate authentication material attacks due to Incident Response monitoring for third-party application logging, messaging, and/or other artifacts that may use alternate authentication material, and suspicious account behavior across systems that share accounts.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1550.001",
+            "attack_object_name": "Application Access Token",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "related_score": "T1550",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack. Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to application access token attacks due to Incident Response monitoring for the use of application access tokens to interact with resources or services that do not fit the organization baseline.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1550.004",
+            "attack_object_name": "Web Session Cookie",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "related_score": "T1550",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack. Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to web session cookie attacks due to Incident Response monitoring for third-party application logging, messaging, other service artifacts that provide context of user authentication to web applications, and/or anomalous access of websites/cloud-based applications.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078",
+            "attack_object_name": "Valid Accounts",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack. Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to valid account attacks due to Incident Response monitoring for newly constructed logon behavior that may obtain and abuse credentials of existing accounts.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-IR-E5",
+            "capability_description": "Incident Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1087.004",
+            "attack_object_name": "Cloud Account",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "related_score": "T1087",
+            "comments": "An incident in Microsoft Defender XDR is a collection of correlated alerts and associated data that make up the story of an attack. Microsoft 365 services and apps create alerts when they detect a suspicious or malicious event or activity. Individual alerts provide valuable clues about a completed or ongoing attack. Attacks typically employ various techniques against different types of entities, such as devices, users, and mailboxes. The result of this is multiple alerts for multiple entities in your tenant. Piecing the individual alerts together to gain insight into an attack can be challenging and time-consuming, Microsoft Defender XDR automatically aggregates the alerts and their associated information into an incident. A typical Incident Response workflow in Microsoft Defender XDR begins with a triage action, next is the investigate action, and finally is the response action.\n\nMicrosoft 365 Defender Incident Response responds to cloud account attacks due to Incident Response monitoring the activity of cloud accounts to detect abnormal or malicious behavior.\n\nLicense Requirements:\nMicrosoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/defender/incidents-overview?view=o365-worldwide"
+            ],
+            "status": "complete"
+        }
+    ]
+}

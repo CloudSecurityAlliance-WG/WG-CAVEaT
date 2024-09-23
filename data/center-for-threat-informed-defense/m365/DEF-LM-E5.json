@@ -1,0 +1,277 @@
+{
+    "metadata": {
+        "mapping_version": "",
+        "technology_domain": "enterprise",
+        "attack_version": "14.1",
+        "mapping_framework": "m365",
+        "mapping_framework_version": "12/11/2023",
+        "author": "Center for Threat-Informed Defense",
+        "contact": "ctid@mitre-engenuity.org",
+        "organization": "Center for Threat-Informed Defense",
+        "creation_date": "12/11/2023",
+        "last_update": "03/18/2024",
+        "mapping_types": {
+            "technique_score": {
+                "name": "Technique Scores",
+                "description": ""
+            }
+        },
+        "capability_groups": {
+            "m365-defender": "Microsoft 365 Defender",
+            "entra-id": "Microsoft Entra ID",
+            "eop": "Exchange Online Protection",
+            "purview": "Microsoft Purview"
+        }
+    },
+    "mapping_objects": [
+        {
+            "capability_id": "DEF-LM-E5",
+            "capability_description": "Lateral Movements",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078.004",
+            "attack_object_name": "Cloud Accounts",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1078",
+            "comments": "Defender for Identity LMPs are visual guides that help you quickly understand and identify exactly how attackers can move laterally inside your network. The purpose of lateral movements within the cyber-attack kill chain are for attackers to gain and compromise your sensitive accounts using non-sensitive accounts. Compromising your sensitive accounts gets them another step closer to their ultimate goal, domain dominance. To stop these attacks from being successful, Defender for Identity LMPs give you easy to interpret, direct visual guidance on your most vulnerable, sensitive accounts.",
+            "references": [
+                " \thttps://learn.microsoft.com/en-us/defender-for-identity/understand-lateral-movement-paths "
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-LM-E5",
+            "capability_description": "Lateral Movements",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098.003",
+            "attack_object_name": "Additional Cloud Roles",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1098",
+            "comments": "Defender for Identity LMPs are visual guides that help you quickly understand and identify exactly how attackers can move laterally inside your network. The purpose of lateral movements within the cyber-attack kill chain are for attackers to gain and compromise your sensitive accounts using non-sensitive accounts. Compromising your sensitive accounts gets them another step closer to their ultimate goal, domain dominance. To stop these attacks from being successful, Defender for Identity LMPs give you easy to interpret, direct visual guidance on your most vulnerable, sensitive accounts.",
+            "references": [
+                " \thttps://learn.microsoft.com/en-us/defender-for-identity/understand-lateral-movement-paths "
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-LM-E5",
+            "capability_description": "Lateral Movements",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098",
+            "attack_object_name": "Account Manipulation",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "Defender for Identity LMPs are visual guides that help you quickly understand and identify exactly how attackers can move laterally inside your network. The purpose of lateral movements within the cyber-attack kill chain are for attackers to gain and compromise your sensitive accounts using non-sensitive accounts. Compromising your sensitive accounts gets them another step closer to their ultimate goal, domain dominance. To stop these attacks from being successful, Defender for Identity LMPs give you easy to interpret, direct visual guidance on your most vulnerable, sensitive accounts.",
+            "references": [
+                " \thttps://learn.microsoft.com/en-us/defender-for-identity/understand-lateral-movement-paths "
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-LM-E5",
+            "capability_description": "Lateral Movements",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1213.002",
+            "attack_object_name": "Sharepoint",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1213",
+            "comments": "Defender for Identity LMPs are visual guides that help you quickly understand and identify exactly how attackers can move laterally inside your network. The purpose of lateral movements within the cyber-attack kill chain are for attackers to gain and compromise your sensitive accounts using non-sensitive accounts. Compromising your sensitive accounts gets them another step closer to their ultimate goal, domain dominance. To stop these attacks from being successful, Defender for Identity LMPs give you easy to interpret, direct visual guidance on your most vulnerable, sensitive accounts.",
+            "references": [
+                " \thttps://learn.microsoft.com/en-us/defender-for-identity/understand-lateral-movement-paths "
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-LM-E5",
+            "capability_description": "Lateral Movements",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1530",
+            "attack_object_name": "Data from Cloud Storage",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "Defender for Identity LMPs are visual guides that help you quickly understand and identify exactly how attackers can move laterally inside your network. The purpose of lateral movements within the cyber-attack kill chain are for attackers to gain and compromise your sensitive accounts using non-sensitive accounts. Compromising your sensitive accounts gets them another step closer to their ultimate goal, domain dominance. To stop these attacks from being successful, Defender for Identity LMPs give you easy to interpret, direct visual guidance on your most vulnerable, sensitive accounts.",
+            "references": [
+                " \thttps://learn.microsoft.com/en-us/defender-for-identity/understand-lateral-movement-paths "
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-LM-E5",
+            "capability_description": "Lateral Movements",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.004",
+            "attack_object_name": "Credential Stuffing",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1110",
+            "comments": "Defender for Identity LMPs are visual guides that help you quickly understand and identify exactly how attackers can move laterally inside your network. The purpose of lateral movements within the cyber-attack kill chain are for attackers to gain and compromise your sensitive accounts using non-sensitive accounts. Compromising your sensitive accounts gets them another step closer to their ultimate goal, domain dominance. To stop these attacks from being successful, Defender for Identity LMPs give you easy to interpret, direct visual guidance on your most vulnerable, sensitive accounts.",
+            "references": [
+                " \thttps://learn.microsoft.com/en-us/defender-for-identity/understand-lateral-movement-paths "
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-LM-E5",
+            "capability_description": "Lateral Movements",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.002",
+            "attack_object_name": "Password Cracking",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1110",
+            "comments": "Defender for Identity LMPs are visual guides that help you quickly understand and identify exactly how attackers can move laterally inside your network. The purpose of lateral movements within the cyber-attack kill chain are for attackers to gain and compromise your sensitive accounts using non-sensitive accounts. Compromising your sensitive accounts gets them another step closer to their ultimate goal, domain dominance. To stop these attacks from being successful, Defender for Identity LMPs give you easy to interpret, direct visual guidance on your most vulnerable, sensitive accounts.",
+            "references": [
+                " \thttps://learn.microsoft.com/en-us/defender-for-identity/understand-lateral-movement-paths "
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-LM-E5",
+            "capability_description": "Lateral Movements",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.003",
+            "attack_object_name": "Password Spraying",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1110",
+            "comments": "Defender for Identity LMPs are visual guides that help you quickly understand and identify exactly how attackers can move laterally inside your network. The purpose of lateral movements within the cyber-attack kill chain are for attackers to gain and compromise your sensitive accounts using non-sensitive accounts. Compromising your sensitive accounts gets them another step closer to their ultimate goal, domain dominance. To stop these attacks from being successful, Defender for Identity LMPs give you easy to interpret, direct visual guidance on your most vulnerable, sensitive accounts.",
+            "references": [
+                " \thttps://learn.microsoft.com/en-us/defender-for-identity/understand-lateral-movement-paths "
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-LM-E5",
+            "capability_description": "Lateral Movements",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.001",
+            "attack_object_name": "Password Guessing",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1110",
+            "comments": "Defender for Identity LMPs are visual guides that help you quickly understand and identify exactly how attackers can move laterally inside your network. The purpose of lateral movements within the cyber-attack kill chain are for attackers to gain and compromise your sensitive accounts using non-sensitive accounts. Compromising your sensitive accounts gets them another step closer to their ultimate goal, domain dominance. To stop these attacks from being successful, Defender for Identity LMPs give you easy to interpret, direct visual guidance on your most vulnerable, sensitive accounts.",
+            "references": [
+                " \thttps://learn.microsoft.com/en-us/defender-for-identity/understand-lateral-movement-paths "
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-LM-E5",
+            "capability_description": "Lateral Movements",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110",
+            "attack_object_name": "Brute Force",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "Defender for Identity LMPs are visual guides that help you quickly understand and identify exactly how attackers can move laterally inside your network. The purpose of lateral movements within the cyber-attack kill chain are for attackers to gain and compromise your sensitive accounts using non-sensitive accounts. Compromising your sensitive accounts gets them another step closer to their ultimate goal, domain dominance. To stop these attacks from being successful, Defender for Identity LMPs give you easy to interpret, direct visual guidance on your most vulnerable, sensitive accounts.",
+            "references": [
+                " \thttps://learn.microsoft.com/en-us/defender-for-identity/understand-lateral-movement-paths "
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-LM-E5",
+            "capability_description": "Lateral Movements",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1550.002",
+            "attack_object_name": "Pass the Hash",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1550",
+            "comments": "Defender for Identity LMPs are visual guides that help you quickly understand and identify exactly how attackers can move laterally inside your network. The purpose of lateral movements within the cyber-attack kill chain are for attackers to gain and compromise your sensitive accounts using non-sensitive accounts. Compromising your sensitive accounts gets them another step closer to their ultimate goal, domain dominance. To stop these attacks from being successful, Defender for Identity LMPs give you easy to interpret, direct visual guidance on your most vulnerable, sensitive accounts.",
+            "references": [
+                " \thttps://learn.microsoft.com/en-us/defender-for-identity/understand-lateral-movement-paths "
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-LM-E5",
+            "capability_description": "Lateral Movements",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1550.003",
+            "attack_object_name": "Pass the Ticket",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1550",
+            "comments": "Defender for Identity LMPs are visual guides that help you quickly understand and identify exactly how attackers can move laterally inside your network. The purpose of lateral movements within the cyber-attack kill chain are for attackers to gain and compromise your sensitive accounts using non-sensitive accounts. Compromising your sensitive accounts gets them another step closer to their ultimate goal, domain dominance. To stop these attacks from being successful, Defender for Identity LMPs give you easy to interpret, direct visual guidance on your most vulnerable, sensitive accounts.",
+            "references": [
+                " \thttps://learn.microsoft.com/en-us/defender-for-identity/understand-lateral-movement-paths "
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-LM-E5",
+            "capability_description": "Lateral Movements",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1550",
+            "attack_object_name": "Use Alternate Authentication Material",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "Defender for Identity LMPs are visual guides that help you quickly understand and identify exactly how attackers can move laterally inside your network. The purpose of lateral movements within the cyber-attack kill chain are for attackers to gain and compromise your sensitive accounts using non-sensitive accounts. Compromising your sensitive accounts gets them another step closer to their ultimate goal, domain dominance. To stop these attacks from being successful, Defender for Identity LMPs give you easy to interpret, direct visual guidance on your most vulnerable, sensitive accounts.",
+            "references": [
+                " \thttps://learn.microsoft.com/en-us/defender-for-identity/understand-lateral-movement-paths "
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-LM-E5",
+            "capability_description": "Lateral Movements",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1068",
+            "attack_object_name": "Exploitation for Privilege Escalation",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "Defender for Identity LMPs are visual guides that help you quickly understand and identify exactly how attackers can move laterally inside your network. The purpose of lateral movements within the cyber-attack kill chain are for attackers to gain and compromise your sensitive accounts using non-sensitive accounts. Compromising your sensitive accounts gets them another step closer to their ultimate goal, domain dominance. To stop these attacks from being successful, Defender for Identity LMPs give you easy to interpret, direct visual guidance on your most vulnerable, sensitive accounts.",
+            "references": [
+                " \thttps://learn.microsoft.com/en-us/defender-for-identity/understand-lateral-movement-paths "
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-LM-E5",
+            "capability_description": "Lateral Movements",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1210",
+            "attack_object_name": "Exploitation of Remote Services",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "Defender for Identity LMPs are visual guides that help you quickly understand and identify exactly how attackers can move laterally inside your network. The purpose of lateral movements within the cyber-attack kill chain are for attackers to gain and compromise your sensitive accounts using non-sensitive accounts. Compromising your sensitive accounts gets them another step closer to their ultimate goal, domain dominance. To stop these attacks from being successful, Defender for Identity LMPs give you easy to interpret, direct visual guidance on your most vulnerable, sensitive accounts.",
+            "references": [
+                " \thttps://learn.microsoft.com/en-us/defender-for-identity/understand-lateral-movement-paths "
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-LM-E5",
+            "capability_description": "Lateral Movements",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078",
+            "attack_object_name": "Valid Accounts",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "Defender for Identity LMPs are visual guides that help you quickly understand and identify exactly how attackers can move laterally inside your network. The purpose of lateral movements within the cyber-attack kill chain are for attackers to gain and compromise your sensitive accounts using non-sensitive accounts. Compromising your sensitive accounts gets them another step closer to their ultimate goal, domain dominance. To stop these attacks from being successful, Defender for Identity LMPs give you easy to interpret, direct visual guidance on your most vulnerable, sensitive accounts.",
+            "references": [
+                " \thttps://learn.microsoft.com/en-us/defender-for-identity/understand-lateral-movement-paths "
+            ],
+            "status": "complete"
+        }
+    ]
+}

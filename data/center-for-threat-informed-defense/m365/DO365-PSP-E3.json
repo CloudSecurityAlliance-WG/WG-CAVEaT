@@ -1,0 +1,158 @@
+{
+    "metadata": {
+        "mapping_version": "",
+        "technology_domain": "enterprise",
+        "attack_version": "14.1",
+        "mapping_framework": "m365",
+        "mapping_framework_version": "12/11/2023",
+        "author": "Center for Threat-Informed Defense",
+        "contact": "ctid@mitre-engenuity.org",
+        "organization": "Center for Threat-Informed Defense",
+        "creation_date": "12/11/2023",
+        "last_update": "03/18/2024",
+        "mapping_types": {
+            "technique_score": {
+                "name": "Technique Scores",
+                "description": ""
+            }
+        },
+        "capability_groups": {
+            "m365-defender": "Microsoft 365 Defender",
+            "entra-id": "Microsoft Entra ID",
+            "eop": "Exchange Online Protection",
+            "purview": "Microsoft Purview"
+        }
+    },
+    "mapping_objects": [
+        {
+            "capability_id": "DO365-PSP-E3",
+            "capability_description": "Preset Security Policies",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1534",
+            "attack_object_name": "Internal Spearphishing",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "M365 Preset security policies allow you to apply protection features to users based on Microsoft's recommended settings. Unlike custom policies that are infinitely configurable, virtually all of the settings in preset security policies aren't configurable, and are based on observations in Microsoft's datacenters. The settings in preset security policies provide a balance between keeping harmful content away from users while avoiding unnecessary disruptions. \n\nPreset Security Policies Detects Internal Spearphishing attacks due to all recipients in the organization receiving Safe Links and Safe Attachments with the Built-in protection profile by default. Safe Links immediately checking the URL's before opening the websites. You can add entries to the existing policies or configure different lists in different Safe Links policies to determine if certain websites are necessary for business operations. If the URL points to a website that has been identified as a phishing attack, a Phishing attempt warning page will open. \n\nLicense Requirements:\nMicrosoft Defender for Office 365 plan 1 and plan 2, Microsoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-links-policies-configure?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/preset-security-policies?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-PSP-E3",
+            "capability_description": "Preset Security Policies",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1656",
+            "attack_object_name": "Impersonation",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "M365 Preset security policies allow you to apply protection features to users based on Microsoft's recommended settings. Unlike custom policies that are infinitely configurable, virtually all of the settings in preset security policies aren't configurable, and are based on observations in Microsoft's datacenters. The settings in preset security policies provide a balance between keeping harmful content away from users while avoiding unnecessary disruptions. \n\nPreset Security Policies Detects Impersonation attacks due to all recipients in the organization receiving Safe Links and Safe Attachments with the Built-in protection profile by default. Safe Links immediately checks the URL's before opening the websites. If the URL points to a website that has been identified as a phishing attack, a Phishing attempt warning page will open. \n\nLicense Requirements:\nMicrosoft Defender for Office 365 plan 1 and plan 2, Microsoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/preset-security-policies?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-PSP-E3",
+            "capability_description": "Preset Security Policies",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1189",
+            "attack_object_name": "Drive-by Compromise",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "M365 Preset security policies allow you to apply protection features to users based on Microsoft's recommended settings. Unlike custom policies that are infinitely configurable, virtually all of the settings in preset security policies aren't configurable, and are based on observations in Microsoft's datacenters. The settings in preset security policies provide a balance between keeping harmful content away from users while avoiding unnecessary disruptions. \n\nPreset Security Policies Detects Drive-by-Compromise attacks due to all recipients in the organization receiving Safe Links and Safe Attachments with the Built-in protection profile by default. Safe Links immediately checking the URL's before opening the websites. You can add entries to the existing policies or configure different lists in different Safe Links policies to determine if certain websites are necessary for business operations. If the URL points to a website that has been identified as a phishing attack, a Phishing attempt warning page will open. \n\nLicense Requirements:\nMicrosoft Defender for Office 365 plan 1 and plan 2, Microsoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-links-policies-configure?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/preset-security-policies?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-PSP-E3",
+            "capability_description": "Preset Security Policies",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566",
+            "attack_object_name": "Phishing",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "M365 Preset security policies allow you to apply protection features to users based on Microsoft's recommended settings. Unlike custom policies that are infinitely configurable, virtually all of the settings in preset security policies aren't configurable, and are based on observations in Microsoft's datacenters. The settings in preset security policies provide a balance between keeping harmful content away from users while avoiding unnecessary disruptions. \n\nPreset Security Policies Detects Phishing attacks due to all recipients in the organization receiving Safe Links and Safe Attachments with the Built-in protection profile by default. Safe Links immediately checks the URL's before opening the websites. If the URL points to a website that has been identified as a phishing attack, a Phishing attempt warning page will open. \n\nLicense Requirements:\nMicrosoft Defender for Office 365 plan 1 and plan 2, Microsoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-links-policies-configure?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/preset-security-policies?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-PSP-E3",
+            "capability_description": "Preset Security Policies",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566.002",
+            "attack_object_name": "Spearphishing Link",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1566",
+            "comments": "M365 Preset security policies allow you to apply protection features to users based on Microsoft's recommended settings. Unlike custom policies that are infinitely configurable, virtually all of the settings in preset security policies aren't configurable, and are based on observations in Microsoft's datacenters. The settings in preset security policies provide a balance between keeping harmful content away from users while avoiding unnecessary disruptions. \n\nPreset Security Policies Detects Spearphishing Link attacks due to all recipients in the organization receiving Safe Links and Safe Attachments with the Built-in protection profile by default. Safe Links immediately checks the URL's before opening the websites. If the URL points to a website that has been identified as a phishing attack, a Phishing attempt warning page will open. \n\nLicense Requirements:\nMicrosoft Defender for Office 365 plan 1 and plan 2, Microsoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-links-policies-configure?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/preset-security-policies?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-PSP-E3",
+            "capability_description": "Preset Security Policies",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566.001",
+            "attack_object_name": "Spearphishing Attachment",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1566",
+            "comments": "M365 Preset security policies allow you to apply protection features to users based on Microsoft's recommended settings. Unlike custom policies that are infinitely configurable, virtually all of the settings in preset security policies aren't configurable, and are based on observations in Microsoft's datacenters. The settings in preset security policies provide a balance between keeping harmful content away from users while avoiding unnecessary disruptions. \n\nPreset Security Policies Detects Spearphishing Attachment attacks due to the Built-in protection preset security policy providing Safe Attachments protection to all recipients. Safe Attachments uses a virtual environment to check attachments in email messages before they're delivered to recipients (a process known as detonation).\n\nLicense Requirements:\nMicrosoft Defender for Office 365 plan 1 and plan 2, Microsoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-links-policies-configure?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/preset-security-policies?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-PSP-E3",
+            "capability_description": "Preset Security Policies",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1204",
+            "attack_object_name": "User Execution",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "M365 Preset security policies allow you to apply protection features to users based on Microsoft's recommended settings. Unlike custom policies that are infinitely configurable, virtually all of the settings in preset security policies aren't configurable, and are based on observations in Microsoft's datacenters. The settings in preset security policies provide a balance between keeping harmful content away from users while avoiding unnecessary disruptions. \n\nPreset Security Policies Detects User Execution attacks due to all recipients in the organization receiving Safe Links and Safe Attachments with the Built-in protection profile by default. Safe Links immediately checking the URL's before opening the websites. You can add entries to the existing policies or configure different lists in different Safe Links policies to determine if certain websites are necessary for business operations. If the URL points to a website that has been identified as a phishing attack, a Phishing attempt warning page will open. \n\nLicense Requirements:\nMicrosoft Defender for Office 365 plan 1 and plan 2, Microsoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-links-policies-configure?view=o365-worldwide",
+                " https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/preset-security-policies?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-PSP-E3",
+            "capability_description": "Preset Security Policies",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1204.001",
+            "attack_object_name": "Malicious Link",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1204",
+            "comments": "M365 Preset security policies allow you to apply protection features to users based on Microsoft's recommended settings. Unlike custom policies that are infinitely configurable, virtually all of the settings in preset security policies aren't configurable, and are based on observations in Microsoft's datacenters. The settings in preset security policies provide a balance between keeping harmful content away from users while avoiding unnecessary disruptions. \n\nPreset Security Policies Detects Malicious Link attacks due to all recipients in the organization receiving Safe Links and Safe Attachments with the Built-in protection profile by default. Safe Links immediately checks the URL's before opening the websites. If the URL points to a website that has been identified as a phishing attack, a Phishing attempt warning page will open. \n\nLicense Requirements:\nMicrosoft Defender for Office 365 plan 1 and plan 2, Microsoft Defender XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-links-policies-configure?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/preset-security-policies?view=o365-worldwide"
+            ],
+            "status": "complete"
+        }
+    ]
+}

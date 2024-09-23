@@ -1,0 +1,211 @@
+{
+    "metadata": {
+        "mapping_version": "",
+        "technology_domain": "enterprise",
+        "attack_version": "14.1",
+        "mapping_framework": "m365",
+        "mapping_framework_version": "12/11/2023",
+        "author": "Center for Threat-Informed Defense",
+        "contact": "ctid@mitre-engenuity.org",
+        "organization": "Center for Threat-Informed Defense",
+        "creation_date": "12/11/2023",
+        "last_update": "03/18/2024",
+        "mapping_types": {
+            "technique_score": {
+                "name": "Technique Scores",
+                "description": ""
+            }
+        },
+        "capability_groups": {
+            "m365-defender": "Microsoft 365 Defender",
+            "entra-id": "Microsoft Entra ID",
+            "eop": "Exchange Online Protection",
+            "purview": "Microsoft Purview"
+        }
+    },
+    "mapping_objects": [
+        {
+            "capability_id": "PUR-IP-E5",
+            "capability_description": "Information Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1087",
+            "attack_object_name": "Account Discovery",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Defender for Cloud Apps file policies allow you to enforce a wide range of automated processes. Policies can be set to provide Information Protection, including continuous compliance scans, legal eDiscovery tasks, and DLP for sensitive content shared publicly. \n\nInformation Protection Detects Account Discovery attacks due to Information Protection Detecting when certain files that belong to a specific user group are being accessed excessively by a user who is not part of the group, which could be a potential insider threat.\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/policies-information-protection"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-IP-E5",
+            "capability_description": "Information Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1087.004",
+            "attack_object_name": "Cloud Account",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1087",
+            "comments": "Defender for Cloud Apps file policies allow you to enforce a wide range of automated processes. Policies can be set to provide Information Protection, including continuous compliance scans, legal eDiscovery tasks, and DLP for sensitive content shared publicly. \n\nInformation Protection Detects Cloud Account attacks due to Information Protection Detecting when certain files that belong to a specific user group are being accessed excessively by a user who is not part of the group, which could be a potential insider threat.\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/policies-information-protection"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-IP-E5",
+            "capability_description": "Information Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1119",
+            "attack_object_name": "Automated Collection",
+            "capability_group": "purview",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "Defender for Cloud Apps file policies allow you to enforce a wide range of automated processes. Policies can be set to provide Information Protection, including continuous compliance scans, legal eDiscovery tasks, and DLP for sensitive content shared publicly. \n\nInformation Protection Protects from Automated Collection attacks due to it encrypting files containing personally identifying information and other sensitive data that is shared in a cloud app and applying sensitivity labels to limit access only to employees in your company.\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/policies-information-protection"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-IP-E5",
+            "capability_description": "Information Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1020",
+            "attack_object_name": "Automated Exfiltration",
+            "capability_group": "purview",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "Defender for Cloud Apps file policies allow you to enforce a wide range of automated processes. Policies can be set to provide Information Protection, including continuous compliance scans, legal eDiscovery tasks, and DLP for sensitive content shared publicly. \n\nInformation Protection Protects from Automated Exfiltration attacks due to Information Protection preventing company data from being exfiltrated by external users, by blocking file downloads in real time, using the Defender for Cloud Apps session controls.\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/policies-information-protection"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-IP-E5",
+            "capability_description": "Information Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1530",
+            "attack_object_name": "Data from Cloud Storage",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Defender for Cloud Apps file policies allow you to enforce a wide range of automated processes. Policies can be set to provide Information Protection, including continuous compliance scans, legal eDiscovery tasks, and DLP for sensitive content shared publicly. \n\nInformation Protection Protects from Data from Cloud Storage attacks due to it encrypting files containing personally identifying information and other sensitive data that is shared in a cloud app and applying sensitivity labels to limit access only to employees in your company.\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/policies-information-protection"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-IP-E5",
+            "capability_description": "Information Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1048",
+            "attack_object_name": "Exfiltration Over Alternative Protocol",
+            "capability_group": "purview",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "Defender for Cloud Apps file policies allow you to enforce a wide range of automated processes. Policies can be set to provide Information Protection, including continuous compliance scans, legal eDiscovery tasks, and DLP for sensitive content shared publicly. \n\nInformation Protection Protects from Exfiltration Over Alternative Protocol attacks due to it preventing users from uploading unprotected data to the cloud, by using the Defender for Cloud Apps session controls.\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/policies-information-protection"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-IP-E5",
+            "capability_description": "Information Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1567",
+            "attack_object_name": "Exfiltration Over Web Service",
+            "capability_group": "purview",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "Defender for Cloud Apps file policies allow you to enforce a wide range of automated processes. Policies can be set to provide Information Protection, including continuous compliance scans, legal eDiscovery tasks, and DLP for sensitive content shared publicly. \n\nInformation Protection Protects from Exfiltration Over Web Service attacks due to it preventing users from uploading unprotected data to the cloud, by using the Defender for Cloud Apps session controls.\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/policies-information-protection"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-IP-E5",
+            "capability_description": "Information Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1567.004",
+            "attack_object_name": "Exfiltration Over Webhook",
+            "capability_group": "purview",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1567",
+            "comments": "Defender for Cloud Apps file policies allow you to enforce a wide range of automated processes. Policies can be set to provide Information Protection, including continuous compliance scans, legal eDiscovery tasks, and DLP for sensitive content shared publicly. \n\nInformation Protection Protects from Exfiltration Over Webhook attacks due to it preventing users from uploading unprotected data to the cloud, by using the Defender for Cloud Apps session controls.\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/policies-information-protection"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-IP-E5",
+            "capability_description": "Information Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1546",
+            "attack_object_name": "Event Triggered Execution",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Defender for Cloud Apps file policies allow you to enforce a wide range of automated processes. Policies can be set to provide Information Protection, including continuous compliance scans, legal eDiscovery tasks, and DLP for sensitive content shared publicly. \n\nInformation Protection Detects Event Triggered Execution attacks due to Information Protection Detecting when certain files that belong to a specific user group are being accessed excessively by a user who is not part of the group, which could be a potential insider threat.\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/policies-information-protection"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-IP-E5",
+            "capability_description": "Information Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1070",
+            "attack_object_name": "Indicator Removal",
+            "capability_group": "purview",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "Defender for Cloud Apps file policies allow you to enforce a wide range of automated processes. Policies can be set to provide Information Protection, including continuous compliance scans, legal eDiscovery tasks, and DLP for sensitive content shared publicly. \n\nInformation Protection Protects from Indicator Removal attacks due to it encrypting files containing personally identifying information and other sensitive data that is shared in a cloud app and applying sensitivity labels to limit access only to employees in your company.\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/policies-information-protection"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-IP-E5",
+            "capability_description": "Information Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1552",
+            "attack_object_name": "Unsecured Credentials",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Defender for Cloud Apps file policies allow you to enforce a wide range of automated processes. Policies can be set to provide Information Protection, including continuous compliance scans, legal eDiscovery tasks, and DLP for sensitive content shared publicly. \n\nInformation Protection Detects Unsecured Credential attacks due to it detecting and encrypting files containing personally identifying information and other sensitive data that is shared in a cloud app and applying sensitivity labels to limit access only to employees in your company.\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/policies-information-protection"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-IP-E5",
+            "capability_description": "Information Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1552.008",
+            "attack_object_name": "Chat Messages",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1552",
+            "comments": "Defender for Cloud Apps file policies allow you to enforce a wide range of automated processes. Policies can be set to provide Information Protection, including continuous compliance scans, legal eDiscovery tasks, and DLP for sensitive content shared publicly. \n\nInformation Protection Detects Chat message attacks due to it encrypting files containing personally identifying information and other sensitive data that is shared in a cloud app and applying sensitivity labels to limit access only to employees in your company.\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/policies-information-protection"
+            ],
+            "status": "complete"
+        }
+    ]
+}

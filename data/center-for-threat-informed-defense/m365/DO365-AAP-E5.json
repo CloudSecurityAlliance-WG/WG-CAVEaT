@@ -1,0 +1,271 @@
+{
+    "metadata": {
+        "mapping_version": "",
+        "technology_domain": "enterprise",
+        "attack_version": "14.1",
+        "mapping_framework": "m365",
+        "mapping_framework_version": "12/11/2023",
+        "author": "Center for Threat-Informed Defense",
+        "contact": "ctid@mitre-engenuity.org",
+        "organization": "Center for Threat-Informed Defense",
+        "creation_date": "12/11/2023",
+        "last_update": "03/18/2024",
+        "mapping_types": {
+            "technique_score": {
+                "name": "Technique Scores",
+                "description": ""
+            }
+        },
+        "capability_groups": {
+            "m365-defender": "Microsoft 365 Defender",
+            "entra-id": "Microsoft Entra ID",
+            "eop": "Exchange Online Protection",
+            "purview": "Microsoft Purview"
+        }
+    },
+    "mapping_objects": [
+        {
+            "capability_id": "DO365-AAP-E5",
+            "capability_description": "Advanced Anti-phishing ",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1656",
+            "attack_object_name": "Impersonation",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "comments": "The Advanced Anti-phishing control includes several mechanisms that can be used to respond to malicious emails detected that may be part of Impersonation using email communications. Responses include the ability to automatically move suspicious messages to the Junk Email, but additional settings also exist that allow a message to be quarantined or rejected.  Spoof settings also allow for different quarantine policies, which define how users can interact with these messages. This scores Minimal for the Respond category, due to relatively low or no coverage against the scope of the Impersonation technique and its example procedures.\n\nLicense Requirements:\nMicrosoft 365 Enterprise E5 (includes Defender for Office 365 Plan 2)",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-protection-about?view=o365-worldwide",
+                "https://www.microsoft.com/en-us/security/business/security-101/what-is-business-email-compromise-bec#:~:text=Business%20email%20compromise%20(BEC)%20is%20a%20type%20of%20cybercrime%20where,can%20use%20in%20another%20scam."
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AAP-E5",
+            "capability_description": "Advanced Anti-phishing ",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1656",
+            "attack_object_name": "Impersonation",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "minimal",
+            "comments": "The Advanced Anti-phishing control includes several mechanisms that can detect and warn a user against suspicious emails and reduce the likelihood of the user falling victim to suspicious email communications resulting from Impersonation. Detections include implicit email authentication, which include unauthenticated sender indicators that warn the user of potential email spoofing based on SPF or DMARC checks, and first contact safety tip, which will report the first time a user gets a message from a sender, or if they often don\u2019t get messages from that sender. This scores Minimal for the Detect category, due to relatively low or no coverage against the scope of the Impersonation technique and its example procedures. However, against specific email-based implementations, coverage will be near real-time and high for the criteria covered. \n\nLicense Requirements:\nMicrosoft 365 Enterprise E5 (includes Defender for Office 365 Plan 2)",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-protection-about?view=o365-worldwide",
+                "https://www.microsoft.com/en-us/security/business/security-101/what-is-business-email-compromise-bec#:~:text=Business%20email%20compromise%20(BEC)%20is%20a%20type%20of%20cybercrime%20where,can%20use%20in%20another%20scam."
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AAP-E5",
+            "capability_description": "Advanced Anti-phishing ",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1656",
+            "attack_object_name": "Impersonation",
+            "capability_group": "m365-defender",
+            "score_category": "protect",
+            "score_value": "minimal",
+            "comments": "The Advanced Anti-phishing control includes configurable policies that control anti-phishing protection settings that can help protect in the event of business email compromise and email fraud campaigns, which may help protect against some methods of Impersonation. These protection policies are configurable across different user groups, and can be tied to Actions designed to help organizations Respond to the suspicious messages. This scores Minimal in the Protect category given the ability to flag potentially malicious emails provides relatively low or no coverage against the scope of the Impersonation technique and its example procedures. \n\nLicense Requirements:\nMicrosoft 365 Enterprise E5 (includes Defender for Office 365 Plan 2)",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-protection-about?view=o365-worldwide",
+                "https://www.microsoft.com/en-us/security/business/security-101/what-is-business-email-compromise-bec#:~:text=Business%20email%20compromise%20(BEC)%20is%20a%20type%20of%20cybercrime%20where,can%20use%20in%20another%20scam."
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AAP-E5",
+            "capability_description": "Advanced Anti-phishing ",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1534",
+            "attack_object_name": "Internal Spearphishing",
+            "capability_group": "m365-defender",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "The Advanced Anti-phishing control includes features that can be used to Respond to unusual communication patterns that may indicate Internal Spearphishing. AAP for Defender for O365 supports impersonation protection, which provides multiple options in reaction to a detected impersonation attempt. For example, the ability to redirect the email to specified recipients, add new recipients as Bcc, send it to the Junk Email folder, place the message in quarantine, or even automatically delete it. This scores Partial in the Respond category for its ability to potentially contain the impact of or alert others to the need to remediate internal spearphishing attempts.\n\nLicense Requirements:\nMicrosoft 365 Enterprise E5 (includes Defender for Office 365 Plan 2)",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-protection-about?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-about?view=o365-worldwide#impersonation-settings-in-anti-phishing-policies-in-microsoft-defender-for-office-365"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AAP-E5",
+            "capability_description": "Advanced Anti-phishing ",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1534",
+            "attack_object_name": "Internal Spearphishing",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "The Advanced Anti-phishing control includes features that can be used to detect and warn users against unusual communication patterns that may indicate Internal Spearphishing. The first contact safety tip, which will report the first time a user gets a message from a sender, or if they often don\u2019t get messages from that sender may alert users to suspicious communications from legitimate, but unexpected users in their organization. This scores Partial in the Detect category for its near real-time processing and indication of unexpected email communications. Detection of suspicious communication will not be equally accurate, depending on the accounts in question. \n\nLicense Requirements:\nMicrosoft 365 Enterprise E5 (includes Defender for Office 365 Plan 2)",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-protection-about?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-about?view=o365-worldwide#first-contact-safety-tip",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-about?view=o365-worldwide#impersonation-settings-in-anti-phishing-policies-in-microsoft-defender-for-office-365"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AAP-E5",
+            "capability_description": "Advanced Anti-phishing ",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566.002",
+            "attack_object_name": "Spearphishing Link",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "partial",
+            "related_score": "T1566",
+            "comments": "The Advanced Anti-phishing control includes several mechanisms that can be used to respond to malicious emails targeting users with Spearphishing Links. Responses include the ability to automatically move suspicious messages to the Junk Email, but additional settings also exist that allow a message to be quarantined or rejected.  Spoof settings also allow for different quarantine policies, which define how users can interact with these messages. This scores Partial for the Respond category for its ability to contain, possibly quarantine and limit user interaction with flagged emails. Note the response will be insufficient in the event a user clicks on, interacts with, and falls victim to the result of a malicious link. \nLicense Requirements:\nMicrosoft 365 Enterprise E5 (includes Defender for Office 365 Plan 2)",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/quarantine-about?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-about?view=o365-worldwide#spoof-protection-and-sender-dmarc-policies",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AAP-E5",
+            "capability_description": "Advanced Anti-phishing ",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566.002",
+            "attack_object_name": "Spearphishing Link",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1566",
+            "comments": "The Advanced Anti-phishing control includes several mechanisms that can detect and warn a user against suspicious emails and reduce the likelihood of the user falling victim to malicious emails with Spearphishing Links. Detections include implicit email authentication, which include unauthenticated sender indicators that warn the user of potential email spoofing based on SPF or DMARC checks, and first contact safety tip, which will report the first time a user gets a message from a sender, or if they often don\u2019t get messages from that sender. This scores Significant for the Detect category, for its high coverage against email coming emails, near real-time processing of new emails, and fairly accurate detection rates. Note that AAP is focused on detecting suspicious emails, not the processing and detection of potentially malicious email links. \n\nLicense Requirements:\nMicrosoft 365 Enterprise E5 (includes Defender for Office 365 Plan 2)",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-protection-about?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-about?view=o365-worldwide#spoof-settings",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AAP-E5",
+            "capability_description": "Advanced Anti-phishing ",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566.002",
+            "attack_object_name": "Spearphishing Link",
+            "capability_group": "m365-defender",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1566",
+            "comments": "The Advanced Anti-phishing control includes configurable policies that control anti-phishing protection settings that can help protect users by filtering out and even blocking suspicious emails, and reduce the likelihood of the user falling victim to malicious emails with Spearphishing Links. These protection policies are configurable across different user groups, and can be tied to Actions designed to help organizations Respond to the suspicious messages. This scores Partial in the Protect category for its ability to minimize, filter, and flag potentially malicious emails end users receive. However, it should be noted that the AAP control on its own may not further protect against a user proceeding to click on a malicious link in a flagged email, depending on how an organization configures follow up Actions and how a user may interact with the message. \n\nLicense Requirements:\nMicrosoft 365 Enterprise E5 (includes Defender for Office 365 Plan 2)",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-protection-about?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-about?view=o365-worldwide#first-contact-safety-tip",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-about?view=o365-worldwide#unauthenticated-sender-indicators",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AAP-E5",
+            "capability_description": "Advanced Anti-phishing ",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566.001",
+            "attack_object_name": "Spearphishing Attachment",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "partial",
+            "related_score": "T1566",
+            "comments": "The Advanced Anti-phishing control includes several mechanisms that can be used to respond to malicious emails targeting users with Spearphishing Attachments. Responses include the ability to automatically move suspicious messages to the Junk Email, but additional settings also exist that allow a message to be quarantined or rejected.  Spoof settings also allow for different quarantine policies, which define how users can interact with these messages. This scores Partial for the Respond category for its ability to contain, possibly quarantine and limit user interaction with flagged emails. Note the response will be insufficient in the event a user interacts with and executes the malicious Spearphishing attachment.\n\nLicense Requirements:\nMicrosoft 365 Enterprise E5 (includes Defender for Office 365 Plan 2)",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/quarantine-about?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-about?view=o365-worldwide#spoof-protection-and-sender-dmarc-policies",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AAP-E5",
+            "capability_description": "Advanced Anti-phishing ",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566.001",
+            "attack_object_name": "Spearphishing Attachment",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1566",
+            "comments": "The Advanced Anti-phishing control includes several mechanisms that can detect and warn a user against suspicious emails and reduce the likelihood of the user falling victim to malicious emails with Spearphishing Attachments. Detections include implicit email authentication, which include unauthenticated sender indicators that warn the user of potential email spoofing based on SPF or DMARC checks, and first contact safety tip, which will report the first time a user gets a message from a sender, or if they often don\u2019t get messages from that sender. This scores Significant for the Detect category, for its high coverage against email coming emails, near real-time processing of new emails, and fairly accurate detection rates. Note that AAP is focused on detecting malicious emails, not the processing and analysis of attachments.  \n\nLicense Requirements:\nMicrosoft 365 Enterprise E5 (includes Defender for Office 365 Plan 2)",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-protection-about?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-about?view=o365-worldwide#spoof-settings",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AAP-E5",
+            "capability_description": "Advanced Anti-phishing ",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566.001",
+            "attack_object_name": "Spearphishing Attachment",
+            "capability_group": "m365-defender",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1566",
+            "comments": "The Advanced Anti-phishing control includes configurable policies that control anti-phishing protection settings that can help protect users by filtering out and even blocking suspicious emails, and reduce the likelihood of the user falling victim to malicious emails with Spearphishing Attachments. These protection policies are configurable across different user groups, and can be tied to Actions designed to help organizations Respond to the suspicious messages. This scores Partial in the Protect category for its ability to minimize, filter, and flag potentially malicious emails end users receive. However, it should be noted that the AAP control on its own may not further protect against a user proceeding to interact with malicious attachments in a flagged email, depending on how an organization configures follow up Actions and how a user may interact with the message. \n\nLicense Requirements:\nMicrosoft 365 Enterprise E5 (includes Defender for Office 365 Plan 2)",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-protection-about?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-about?view=o365-worldwide#first-contact-safety-tip",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-about?view=o365-worldwide#unauthenticated-sender-indicators",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AAP-E5",
+            "capability_description": "Advanced Anti-phishing ",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566",
+            "attack_object_name": "Phishing",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "partial",
+            "comments": "The Advanced Anti-phishing control includes respond mechanisms that can be used to quarantine and limit user interaction with phishing messages, including those that contain Spearphishing Attachments and Links, that employ email as the means of communication. This covers responses to some, but not all of this technique\u2019s sub-techniques, resulting in an overall score of Partial for the Respond category. \n\nLicense Requirements:\nMicrosoft 365 Enterprise E5 (includes Defender for Office 365 Plan 2)",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/quarantine-about?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-about?view=o365-worldwide#spoof-protection-and-sender-dmarc-policies",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AAP-E5",
+            "capability_description": "Advanced Anti-phishing ",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566",
+            "attack_object_name": "Phishing",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "The Advanced Anti-phishing control includes features that may detect phishing messages, including those that contain Spearphishing Attachments and Links, that employ email as the means of communication. In particular, AAP may identify and isolate spoofing attempts and warn of unusual communication patterns for the sender\u2019s email. This covers detection of some, but not all of this technique\u2019s sub-techniques, resulting in an overall score of Partial for the Detect category. \n\nLicense Requirements:\nMicrosoft 365 Enterprise E5 (includes Defender for Office 365 Plan 2)",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-protection-about?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-about?view=o365-worldwide#spoof-settings",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AAP-E5",
+            "capability_description": "Advanced Anti-phishing ",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566",
+            "attack_object_name": "Phishing",
+            "capability_group": "m365-defender",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "The Advanced Anti-phishing control includes configurable policies that protect against methods of phishing, including those that contain Spearphishing Attachments and Links, that employ email as the means of communication. This covers protection against some, but not all of this technique\u2019s sub-techniques, resulting in an overall score of Partial for the Protect category. \n\nLicense Requirements:\nMicrosoft 365 Enterprise E5 (includes Defender for Office 365 Plan 2)",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-protection-about?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-about?view=o365-worldwide#first-contact-safety-tip",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-about?view=o365-worldwide#unauthenticated-sender-indicators",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        }
+    ]
+}

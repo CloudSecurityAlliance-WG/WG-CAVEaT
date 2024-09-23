@@ -1,0 +1,367 @@
+{
+    "metadata": {
+        "mapping_version": "",
+        "technology_domain": "enterprise",
+        "attack_version": "14.1",
+        "mapping_framework": "m365",
+        "mapping_framework_version": "12/11/2023",
+        "author": "Center for Threat-Informed Defense",
+        "contact": "ctid@mitre-engenuity.org",
+        "organization": "Center for Threat-Informed Defense",
+        "creation_date": "12/11/2023",
+        "last_update": "03/18/2024",
+        "mapping_types": {
+            "technique_score": {
+                "name": "Technique Scores",
+                "description": ""
+            }
+        },
+        "capability_groups": {
+            "m365-defender": "Microsoft 365 Defender",
+            "entra-id": "Microsoft Entra ID",
+            "eop": "Exchange Online Protection",
+            "purview": "Microsoft Purview"
+        }
+    },
+    "mapping_objects": [
+        {
+            "capability_id": "DO365-AG-E5",
+            "capability_description": "App Governance",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1548",
+            "attack_object_name": "Abuse Elevation Control Mechanism",
+            "capability_group": "m365-defender",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "App governance in Defender for Cloud Apps is a set of security and policy management capabilities designed for OAuth-enabled apps registered on Microsoft Entra ID, Google, and Salesforce. App governance delivers visibility, remediation, and governance into how these apps and their users access, use, and share sensitive data in Microsoft 365 and other cloud platforms through actionable insights and automated policy alerts and actions. App governance also enables you to see which user-installed OAuth applications have access to data on Microsoft 365, Google Workspace, and Salesforce. It tells you what permissions the apps have and which users have granted access to their accounts. App governance insights enable you to make informed decisions around blocking or restricting apps that present significant risk to your organization\n\nApp Governance Protects against Abuse Elevation Control Mechanism attacks due to the governance feature where admins can create proactive or reactive policies to protect your users from using noncompliant or malicious apps and limiting the access of risky apps to your data.\n\nLicense Requirements: \nMicrosoft Defender for Cloud Apps",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-manage-app-governance"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AG-E5",
+            "capability_description": "App Governance",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1087",
+            "attack_object_name": "Account Discovery",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "App governance in Defender for Cloud Apps is a set of security and policy management capabilities designed for OAuth-enabled apps registered on Microsoft Entra ID, Google, and Salesforce. App governance delivers visibility, remediation, and governance into how these apps and their users access, use, and share sensitive data in Microsoft 365 and other cloud platforms through actionable insights and automated policy alerts and actions. App governance also enables you to see which user-installed OAuth applications have access to data on Microsoft 365, Google Workspace, and Salesforce. It tells you what permissions the apps have and which users have granted access to their accounts. App governance insights enable you to make informed decisions around blocking or restricting apps that present significant risk to your organization\n\nApp Governance Detects Account Discovery attacks due to App Governance tracking various app attributes and behaviors such as certification, data use, API access errors, and unused permissions that can indicate misuse and risk\n\nLicense Requirements: \nMicrosoft Defender for Cloud Apps",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-faq",
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-manage-app-governance"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AG-E5",
+            "capability_description": "App Governance",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1087.004",
+            "attack_object_name": "Cloud Account",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1087",
+            "comments": "App governance in Defender for Cloud Apps is a set of security and policy management capabilities designed for OAuth-enabled apps registered on Microsoft Entra ID, Google, and Salesforce. App governance delivers visibility, remediation, and governance into how these apps and their users access, use, and share sensitive data in Microsoft 365 and other cloud platforms through actionable insights and automated policy alerts and actions. App governance also enables you to see which user-installed OAuth applications have access to data on Microsoft 365, Google Workspace, and Salesforce. It tells you what permissions the apps have and which users have granted access to their accounts. App governance insights enable you to make informed decisions around blocking or restricting apps that present significant risk to your organization\n\nApp Governance Detects Cloud Account attacks due to App Governance tracking various app attributes and behaviors such as certification, data use, API access errors, and unused permissions that can indicate misuse and risk.\n\nLicense Requirements: \nMicrosoft Defender for Cloud Apps",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-faq",
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-manage-app-governance"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AG-E5",
+            "capability_description": "App Governance",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110",
+            "attack_object_name": "Brute Force",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "App governance in Defender for Cloud Apps is a set of security and policy management capabilities designed for OAuth-enabled apps registered on Microsoft Entra ID, Google, and Salesforce. App governance delivers visibility, remediation, and governance into how these apps and their users access, use, and share sensitive data in Microsoft 365 and other cloud platforms through actionable insights and automated policy alerts and actions. App governance also enables you to see which user-installed OAuth applications have access to data on Microsoft 365, Google Workspace, and Salesforce. It tells you what permissions the apps have and which users have granted access to their accounts. App governance insights enable you to make informed decisions around blocking or restricting apps that present significant risk to your organization\n\nApp Governance Detects Brute Force attacks due to App Governance monitoring aggregated sign-in activity for each app and tracking all risky sign-in's.\n\nLicense Requirements: \nMicrosoft Defender for Cloud Apps",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-anomaly-detection-alerts#initial-access-alerts",
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-manage-app-governance"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AG-E5",
+            "capability_description": "App Governance",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.001",
+            "attack_object_name": "Password Guessing",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1110",
+            "comments": "App governance in Defender for Cloud Apps is a set of security and policy management capabilities designed for OAuth-enabled apps registered on Microsoft Entra ID, Google, and Salesforce. App governance delivers visibility, remediation, and governance into how these apps and their users access, use, and share sensitive data in Microsoft 365 and other cloud platforms through actionable insights and automated policy alerts and actions. App governance also enables you to see which user-installed OAuth applications have access to data on Microsoft 365, Google Workspace, and Salesforce. It tells you what permissions the apps have and which users have granted access to their accounts. App governance insights enable you to make informed decisions around blocking or restricting apps that present significant risk to your organization\n\nApp Governance Detects Password Guessing attacks due to App Governance monitoring aggregated sign-in activity for each app and tracking all risky sign-in's.\n\nLicense Requirements: \nMicrosoft Defender for Cloud Apps",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-anomaly-detection-alerts#initial-access-alerts",
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-manage-app-governance"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AG-E5",
+            "capability_description": "App Governance",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.002",
+            "attack_object_name": "Password Cracking",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1110",
+            "comments": "App governance in Defender for Cloud Apps is a set of security and policy management capabilities designed for OAuth-enabled apps registered on Microsoft Entra ID, Google, and Salesforce. App governance delivers visibility, remediation, and governance into how these apps and their users access, use, and share sensitive data in Microsoft 365 and other cloud platforms through actionable insights and automated policy alerts and actions. App governance also enables you to see which user-installed OAuth applications have access to data on Microsoft 365, Google Workspace, and Salesforce. It tells you what permissions the apps have and which users have granted access to their accounts. App governance insights enable you to make informed decisions around blocking or restricting apps that present significant risk to your organization\n\nApp Governance Detects Password Cracking attacks due to App Governance monitoring aggregated sign-in activity for each app and tracking all risky sign-in's.\n\nLicense Requirements: \nMicrosoft Defender for Cloud Apps",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-anomaly-detection-alerts#initial-access-alerts",
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-manage-app-governance"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AG-E5",
+            "capability_description": "App Governance",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.003",
+            "attack_object_name": "Password Spraying",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1110",
+            "comments": "App governance in Defender for Cloud Apps is a set of security and policy management capabilities designed for OAuth-enabled apps registered on Microsoft Entra ID, Google, and Salesforce. App governance delivers visibility, remediation, and governance into how these apps and their users access, use, and share sensitive data in Microsoft 365 and other cloud platforms through actionable insights and automated policy alerts and actions. App governance also enables you to see which user-installed OAuth applications have access to data on Microsoft 365, Google Workspace, and Salesforce. It tells you what permissions the apps have and which users have granted access to their accounts. App governance insights enable you to make informed decisions around blocking or restricting apps that present significant risk to your organization\n\nApp Governance Detects Password Spraying attacks due to App Governance monitoring aggregated sign-in activity for each app and tracking all risky sign-in's.\n\nLicense Requirements: \nMicrosoft Defender for Cloud Apps",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-anomaly-detection-alerts#initial-access-alerts",
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-manage-app-governance"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AG-E5",
+            "capability_description": "App Governance",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.004",
+            "attack_object_name": "Credential Stuffing",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1110",
+            "comments": "App governance in Defender for Cloud Apps is a set of security and policy management capabilities designed for OAuth-enabled apps registered on Microsoft Entra ID, Google, and Salesforce. App governance delivers visibility, remediation, and governance into how these apps and their users access, use, and share sensitive data in Microsoft 365 and other cloud platforms through actionable insights and automated policy alerts and actions. App governance also enables you to see which user-installed OAuth applications have access to data on Microsoft 365, Google Workspace, and Salesforce. It tells you what permissions the apps have and which users have granted access to their accounts. App governance insights enable you to make informed decisions around blocking or restricting apps that present significant risk to your organization\n\nApp Governance Detects Credential Stuffing attacks due to App Governance monitoring aggregated sign-in activity for each app and tracking all risky sign-in's.\n\nLicense Requirements: \nMicrosoft Defender for Cloud Apps",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-anomaly-detection-alerts#initial-access-alerts",
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-manage-app-governance"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AG-E5",
+            "capability_description": "App Governance",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1538",
+            "attack_object_name": "Cloud Service Dashboard",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "App governance in Defender for Cloud Apps is a set of security and policy management capabilities designed for OAuth-enabled apps registered on Microsoft Entra ID, Google, and Salesforce. App governance delivers visibility, remediation, and governance into how these apps and their users access, use, and share sensitive data in Microsoft 365 and other cloud platforms through actionable insights and automated policy alerts and actions. App governance also enables you to see which user-installed OAuth applications have access to data on Microsoft 365, Google Workspace, and Salesforce. It tells you what permissions the apps have and which users have granted access to their accounts. App governance insights enable you to make informed decisions around blocking or restricting apps that present significant risk to your organization\n\nApp Governance Detects Cloud Service Dashboard attacks due to App Governance monitoring aggregated sign-in activity for each app and tracking all risky sign-in's.\n\nLicense Requirements: \nMicrosoft Defender for Cloud Apps",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-anomaly-detection-alerts#initial-access-alerts",
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-manage-app-governance"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AG-E5",
+            "capability_description": "App Governance",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1606",
+            "attack_object_name": "Forge Web Credentials",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "App governance in Defender for Cloud Apps is a set of security and policy management capabilities designed for OAuth-enabled apps registered on Microsoft Entra ID, Google, and Salesforce. App governance delivers visibility, remediation, and governance into how these apps and their users access, use, and share sensitive data in Microsoft 365 and other cloud platforms through actionable insights and automated policy alerts and actions. App governance also enables you to see which user-installed OAuth applications have access to data on Microsoft 365, Google Workspace, and Salesforce. It tells you what permissions the apps have and which users have granted access to their accounts. App governance insights enable you to make informed decisions around blocking or restricting apps that present significant risk to your organization\n\nApp Governance Detects Forge Web Credentials attacks due to App Governance tracking various app attributes and behaviors such as certification, data use, API access errors, and unused permissions that can indicate misuse and risk.\n\nLicense Requirements: \nMicrosoft Defender for Cloud Apps",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-faq",
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-manage-app-governance"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AG-E5",
+            "capability_description": "App Governance",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1606.002",
+            "attack_object_name": "SAML Tokens",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1606",
+            "comments": "App governance in Defender for Cloud Apps is a set of security and policy management capabilities designed for OAuth-enabled apps registered on Microsoft Entra ID, Google, and Salesforce. App governance delivers visibility, remediation, and governance into how these apps and their users access, use, and share sensitive data in Microsoft 365 and other cloud platforms through actionable insights and automated policy alerts and actions. App governance also enables you to see which user-installed OAuth applications have access to data on Microsoft 365, Google Workspace, and Salesforce. It tells you what permissions the apps have and which users have granted access to their accounts. App governance insights enable you to make informed decisions around blocking or restricting apps that present significant risk to your organization\n\nApp Governance Detects SAML Token attacks due to App Governance monitoring aggregated sign-in activity for each app and tracking all risky sign-in's.\n\nLicense Requirements: \nMicrosoft Defender for Cloud Apps",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-anomaly-detection-alerts#initial-access-alerts",
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-manage-app-governance"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AG-E5",
+            "capability_description": "App Governance",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1562",
+            "attack_object_name": "Impair Defenses",
+            "capability_group": "m365-defender",
+            "comments": "App governance in Defender for Cloud Apps is a set of security and policy management capabilities designed for OAuth-enabled apps registered on Microsoft Entra ID, Google, and Salesforce. App governance delivers visibility, remediation, and governance into how these apps and their users access, use, and share sensitive data in Microsoft 365 and other cloud platforms through actionable insights and automated policy alerts and actions. App governance also enables you to see which user-installed OAuth applications have access to data on Microsoft 365, Google Workspace, and Salesforce. It tells you what permissions the apps have and which users have granted access to their accounts. App governance insights enable you to make informed decisions around blocking or restricting apps that present significant risk to your organization\n\nApp Governance Protects against Impair Defense attacks due to the governance feature where admins can create proactive or reactive policies to protect your users from using noncompliant or malicious apps and limiting the access of risky apps to your data to ensure that only approved security applications are used and running.\n\nLicense Requirements: \nMicrosoft Defender for Cloud Apps",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-manage-app-governance"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AG-E5",
+            "capability_description": "App Governance",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1562.008",
+            "attack_object_name": "Disable or Modify Cloud Logs",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1562",
+            "comments": "App governance in Defender for Cloud Apps is a set of security and policy management capabilities designed for OAuth-enabled apps registered on Microsoft Entra ID, Google, and Salesforce. App governance delivers visibility, remediation, and governance into how these apps and their users access, use, and share sensitive data in Microsoft 365 and other cloud platforms through actionable insights and automated policy alerts and actions. App governance also enables you to see which user-installed OAuth applications have access to data on Microsoft 365, Google Workspace, and Salesforce. It tells you what permissions the apps have and which users have granted access to their accounts. App governance insights enable you to make informed decisions around blocking or restricting apps that present significant risk to your organization\n\nApp Governance Detects Disable or Modify Cloud Log attacks due to App Governance tracking various app attributes and behaviors such as certification, data use, API access errors, and unused permissions that can indicate misuse and risk.\n\nLicense Requirements: \nMicrosoft Defender for Cloud Apps",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-manage-app-governance"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AG-E5",
+            "capability_description": "App Governance",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1556",
+            "attack_object_name": "Modify Authentication Process",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "App governance in Defender for Cloud Apps is a set of security and policy management capabilities designed for OAuth-enabled apps registered on Microsoft Entra ID, Google, and Salesforce. App governance delivers visibility, remediation, and governance into how these apps and their users access, use, and share sensitive data in Microsoft 365 and other cloud platforms through actionable insights and automated policy alerts and actions. App governance also enables you to see which user-installed OAuth applications have access to data on Microsoft 365, Google Workspace, and Salesforce. It tells you what permissions the apps have and which users have granted access to their accounts. App governance insights enable you to make informed decisions around blocking or restricting apps that present significant risk to your organization\n\nApp Governance Detects Modify Authentication attacks due to App Governance monitoring aggregated sign-in activity for each app and tracking all risky sign-in's.\n\nLicense Requirements: \nMicrosoft Defender for Cloud Apps",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-anomaly-detection-alerts#initial-access-alerts",
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-manage-app-governance"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AG-E5",
+            "capability_description": "App Governance",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1556.006",
+            "attack_object_name": "Multi-Factor Authentication",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1556",
+            "comments": "App governance in Defender for Cloud Apps is a set of security and policy management capabilities designed for OAuth-enabled apps registered on Microsoft Entra ID, Google, and Salesforce. App governance delivers visibility, remediation, and governance into how these apps and their users access, use, and share sensitive data in Microsoft 365 and other cloud platforms through actionable insights and automated policy alerts and actions. App governance also enables you to see which user-installed OAuth applications have access to data on Microsoft 365, Google Workspace, and Salesforce. It tells you what permissions the apps have and which users have granted access to their accounts. App governance insights enable you to make informed decisions around blocking or restricting apps that present significant risk to your organization\n\nApp Governance Detects Multi-Factor Authentication attacks due to App Governance monitoring aggregated sign-in activity for each app and tracking all risky sign-in's.\n\nLicense Requirements: \nMicrosoft Defender for Cloud Apps",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-anomaly-detection-alerts#initial-access-alerts",
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-manage-app-governance"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AG-E5",
+            "capability_description": "App Governance",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1621",
+            "attack_object_name": "Multi-Factor Authentication Request Generation",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "App governance in Defender for Cloud Apps is a set of security and policy management capabilities designed for OAuth-enabled apps registered on Microsoft Entra ID, Google, and Salesforce. App governance delivers visibility, remediation, and governance into how these apps and their users access, use, and share sensitive data in Microsoft 365 and other cloud platforms through actionable insights and automated policy alerts and actions. App governance also enables you to see which user-installed OAuth applications have access to data on Microsoft 365, Google Workspace, and Salesforce. It tells you what permissions the apps have and which users have granted access to their accounts. App governance insights enable you to make informed decisions around blocking or restricting apps that present significant risk to your organization\n\nApp Governance Detects Multi-Factor Authentication Request Generation attacks due to App Governance monitoring aggregated sign-in activity for each app and tracking all risky sign-in's.\n\nLicense Requirements: \nMicrosoft Defender for Cloud Apps",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-anomaly-detection-alerts#initial-access-alerts",
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-manage-app-governance"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AG-E5",
+            "capability_description": "App Governance",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566",
+            "attack_object_name": "Phishing",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "App governance in Defender for Cloud Apps is a set of security and policy management capabilities designed for OAuth-enabled apps registered on Microsoft Entra ID, Google, and Salesforce. App governance delivers visibility, remediation, and governance into how these apps and their users access, use, and share sensitive data in Microsoft 365 and other cloud platforms through actionable insights and automated policy alerts and actions. App governance also enables you to see which user-installed OAuth applications have access to data on Microsoft 365, Google Workspace, and Salesforce. It tells you what permissions the apps have and which users have granted access to their accounts. App governance insights enable you to make informed decisions around blocking or restricting apps that present significant risk to your organization\n\nApp Governance Detects Phishing attacks due to App Governance tracking various app attributes and behaviors such as certification, data use, API access errors, and unused permissions that can indicate misuse and risk helping an admin to confirm that the OAuth app is delivered from an unknown source and is performing unusual activities. \n\nLicense Requirements: \nMicrosoft Defender for Cloud Apps",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-anomaly-detection-alerts#initial-access-alerts",
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-manage-app-governance"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AG-E5",
+            "capability_description": "App Governance",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1528",
+            "attack_object_name": "Steal Application Access Token",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "App governance in Defender for Cloud Apps is a set of security and policy management capabilities designed for OAuth-enabled apps registered on Microsoft Entra ID, Google, and Salesforce. App governance delivers visibility, remediation, and governance into how these apps and their users access, use, and share sensitive data in Microsoft 365 and other cloud platforms through actionable insights and automated policy alerts and actions. App governance also enables you to see which user-installed OAuth applications have access to data on Microsoft 365, Google Workspace, and Salesforce. It tells you what permissions the apps have and which users have granted access to their accounts. App governance insights enable you to make informed decisions around blocking or restricting apps that present significant risk to your organization\n\nApp Governance Detects Steal Application Access Token attacks due to App Governance tracking various app attributes and behaviors such as certification, data use, API access errors, and unused permissions that can indicate misuse and risk.\n\nLicense Requirements: \nMicrosoft Defender for Cloud Apps",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-manage-app-governance"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AG-E5",
+            "capability_description": "App Governance",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1199",
+            "attack_object_name": "Trusted Relationship",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "App governance in Defender for Cloud Apps is a set of security and policy management capabilities designed for OAuth-enabled apps registered on Microsoft Entra ID, Google, and Salesforce. App governance delivers visibility, remediation, and governance into how these apps and their users access, use, and share sensitive data in Microsoft 365 and other cloud platforms through actionable insights and automated policy alerts and actions. App governance also enables you to see which user-installed OAuth applications have access to data on Microsoft 365, Google Workspace, and Salesforce. It tells you what permissions the apps have and which users have granted access to their accounts. App governance insights enable you to make informed decisions around blocking or restricting apps that present significant risk to your organization\n\nApp Governance Detects Trusted Relationship attacks due to App Governance monitoring aggregated sign-in activity for each app and tracking all risky sign-in's.\n\nLicense Requirements: \nMicrosoft Defender for Cloud Apps",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-anomaly-detection-alerts#initial-access-alerts",
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-manage-app-governance"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AG-E5",
+            "capability_description": "App Governance",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078",
+            "attack_object_name": "Valid Accounts",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "App governance in Defender for Cloud Apps is a set of security and policy management capabilities designed for OAuth-enabled apps registered on Microsoft Entra ID, Google, and Salesforce. App governance delivers visibility, remediation, and governance into how these apps and their users access, use, and share sensitive data in Microsoft 365 and other cloud platforms through actionable insights and automated policy alerts and actions. App governance also enables you to see which user-installed OAuth applications have access to data on Microsoft 365, Google Workspace, and Salesforce. It tells you what permissions the apps have and which users have granted access to their accounts. App governance insights enable you to make informed decisions around blocking or restricting apps that present significant risk to your organization\n\nApp Governance Detects Valid Account attacks due to App Governance monitoring aggregated sign-in activity for each app and tracking all risky sign-in's.\n\nLicense Requirements: \nMicrosoft Defender for Cloud Apps",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-anomaly-detection-alerts#initial-access-alerts",
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-manage-app-governance"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AG-E5",
+            "capability_description": "App Governance",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078.004",
+            "attack_object_name": "Cloud Accounts",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1078",
+            "comments": "App governance in Defender for Cloud Apps is a set of security and policy management capabilities designed for OAuth-enabled apps registered on Microsoft Entra ID, Google, and Salesforce. App governance delivers visibility, remediation, and governance into how these apps and their users access, use, and share sensitive data in Microsoft 365 and other cloud platforms through actionable insights and automated policy alerts and actions. App governance also enables you to see which user-installed OAuth applications have access to data on Microsoft 365, Google Workspace, and Salesforce. It tells you what permissions the apps have and which users have granted access to their accounts. App governance insights enable you to make informed decisions around blocking or restricting apps that present significant risk to your organization\n\nApp Governance Detects Cloud Account attacks due to App Governance monitoring aggregated sign-in activity for each app and tracking all risky sign-in's.\n\nLicense Requirements: \nMicrosoft Defender for Cloud Apps",
+            "references": [
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-anomaly-detection-alerts#initial-access-alerts",
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/app-governance-manage-app-governance"
+            ],
+            "status": "complete"
+        }
+    ]
+}

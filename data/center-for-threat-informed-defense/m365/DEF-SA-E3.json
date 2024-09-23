@@ -1,0 +1,222 @@
+{
+    "metadata": {
+        "mapping_version": "",
+        "technology_domain": "enterprise",
+        "attack_version": "14.1",
+        "mapping_framework": "m365",
+        "mapping_framework_version": "12/11/2023",
+        "author": "Center for Threat-Informed Defense",
+        "contact": "ctid@mitre-engenuity.org",
+        "organization": "Center for Threat-Informed Defense",
+        "creation_date": "12/11/2023",
+        "last_update": "03/18/2024",
+        "mapping_types": {
+            "technique_score": {
+                "name": "Technique Scores",
+                "description": ""
+            }
+        },
+        "capability_groups": {
+            "m365-defender": "Microsoft 365 Defender",
+            "entra-id": "Microsoft Entra ID",
+            "eop": "Exchange Online Protection",
+            "purview": "Microsoft Purview"
+        }
+    },
+    "mapping_objects": [
+        {
+            "capability_id": "DEF-SA-E3",
+            "capability_description": "Safe Attachments",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566",
+            "attack_object_name": "Phishing",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "comments": "M365's Safe Attachments is a feature that provides advanced email security by scanning attachments for malicious content and using a virtual environment to check for malicious actions in a process known as detonation. Safe Attachments for SharePoint, OneDrive, and Microsoft Teams operates in real-time to detect against emerging threats. If a suspicious file is identified, this file can be quarantined or blocked access to prevent potential harm. \n\nLicense requirements:\nMirosoft 365 E5, Defender for Office Plan 1,  Microsoft 365 E3 with ATP add-on",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-attachments-for-spo-odfb-teams-configure?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/mdo-security-comparison?view=o365-worldwide#defender-for-office-365-plan-1-vs-plan-2-cheat-sheet"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SA-E3",
+            "capability_description": "Safe Attachments",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1598",
+            "attack_object_name": "Phishing for Information",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "comments": "M365's Safe Attachments is a feature that provides advanced email security by scanning attachments for malicious content and using a virtual environment to check for malicious actions in a process known as detonation. Safe Attachments for SharePoint, OneDrive, and Microsoft Teams operates in real-time to detect against emerging threats. If a suspicious file is identified, this file can be quarantined or blocked access to prevent potential harm. \n\nLicense requirements:\nMirosoft 365 E5, Defender for Office Plan 1,  Microsoft 365 E3 with ATP add-on",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-attachments-for-spo-odfb-teams-configure?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/mdo-security-comparison?view=o365-worldwide#defender-for-office-365-plan-1-vs-plan-2-cheat-sheet"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SA-E3",
+            "capability_description": "Safe Attachments",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1204",
+            "attack_object_name": "User Execution",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "comments": "M365's Safe Attachments is a feature that provides advanced email security by scanning attachments for malicious content and using a virtual environment to check for malicious actions in a process known as detonation. Safe Attachments for SharePoint, OneDrive, and Microsoft Teams operates in real-time to detect against emerging threats. If a suspicious file is identified, this file can be quarantined or blocked access to prevent potential harm. \n\nLicense requirements:\nMirosoft 365 E5, Defender for Office Plan 1,  Microsoft 365 E3 with ATP add-on",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-attachments-for-spo-odfb-teams-configure?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/mdo-security-comparison?view=o365-worldwide#defender-for-office-365-plan-1-vs-plan-2-cheat-sheet"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SA-E3",
+            "capability_description": "Safe Attachments",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1204.002",
+            "attack_object_name": "Malicious File",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "related_score": "T1204",
+            "comments": "M365's Safe Attachments is a feature that provides advanced email security by scanning attachments for malicious content and using a virtual environment to check for malicious actions in a process known as detonation. Safe Attachments for SharePoint, OneDrive, and Microsoft Teams operates in real-time to detect against emerging threats. If a suspicious file is identified, this file can be quarantined or blocked access to prevent potential harm. \n\nLicense requirements:\nMirosoft 365 E5, Defender for Office Plan 1,  Microsoft 365 E3 with ATP add-on",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-attachments-for-spo-odfb-teams-configure?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/mdo-security-comparison?view=o365-worldwide#defender-for-office-365-plan-1-vs-plan-2-cheat-sheet"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SA-E3",
+            "capability_description": "Safe Attachments",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1598.002",
+            "attack_object_name": "Spearphishing Attachment",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "related_score": "T1598",
+            "comments": "M365's Safe Attachments is a feature that provides advanced email security by scanning attachments for malicious content and using a virtual environment to check for malicious actions in a process known as detonation. Safe Attachments for SharePoint, OneDrive, and Microsoft Teams operates in real-time to detect against emerging threats. If a suspicious file is identified, this file can be quarantined or blocked access to prevent potential harm. \n\nLicense requirements:\nMirosoft 365 E5, Defender for Office Plan 1,  Microsoft 365 E3 with ATP add-on",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-attachments-for-spo-odfb-teams-configure?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/mdo-security-comparison?view=o365-worldwide#defender-for-office-365-plan-1-vs-plan-2-cheat-sheet"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SA-E3",
+            "capability_description": "Safe Attachments",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566.001",
+            "attack_object_name": "Spearphishing Attachment",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "related_score": "T1566",
+            "comments": "M365's Safe Attachments is a feature that provides advanced email security by scanning attachments for malicious content and using a virtual environment to check for malicious actions in a process known as detonation. Safe Attachments for SharePoint, OneDrive, and Microsoft Teams operates in real-time to detect against emerging threats. If a suspicious file is identified, this file can be quarantined or blocked access to prevent potential harm. \n\nLicense requirements:\nMirosoft 365 E5, Defender for Office Plan 1,  Microsoft 365 E3 with ATP add-on",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-attachments-for-spo-odfb-teams-configure?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/mdo-security-comparison?view=o365-worldwide#defender-for-office-365-plan-1-vs-plan-2-cheat-sheet"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SA-E3",
+            "capability_description": "Safe Attachments",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566.001",
+            "attack_object_name": "Spearphishing Attachment",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1566",
+            "comments": "M365's Safe Attachments is a feature that provides advanced email security by scanning attachments for malicious content and using a virtual environment to check for malicious actions in a process known as detonation. Safe Attachments for SharePoint, OneDrive, and Microsoft Teams operates in real-time to detect against emerging threats. If a suspicious file is identified, this file can be quarantined or blocked access to prevent potential harm. \n\nLicense requirements:\nMirosoft 365 E5, Defender for Office Plan 1,  Microsoft 365 E3 with ATP add-on",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-attachments-for-spo-odfb-teams-configure?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/mdo-security-comparison?view=o365-worldwide#defender-for-office-365-plan-1-vs-plan-2-cheat-sheet",
+                "Ref: https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-attachments-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SA-E3",
+            "capability_description": "Safe Attachments",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566",
+            "attack_object_name": "Phishing",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "M365's Safe Attachments is a feature that provides advanced email security by scanning attachments for malicious content and using a virtual environment to check for malicious actions in a process known as detonation. Safe Attachments for SharePoint, OneDrive, and Microsoft Teams operates in real-time to detect against emerging threats. If a suspicious file is identified, this file can be quarantined or blocked access to prevent potential harm. \n\nLicense requirements:\nMirosoft 365 E5, Defender for Office Plan 1,  Microsoft 365 E3 with ATP add-on",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-attachments-for-spo-odfb-teams-configure?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SA-E3",
+            "capability_description": "Safe Attachments",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1598.002",
+            "attack_object_name": "Spearphishing Attachment",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1598",
+            "comments": "M365's Safe Attachments is a feature that provides advanced email security by scanning attachments for malicious content and using a virtual environment to check for malicious actions in a process known as detonation. Safe Attachments for SharePoint, OneDrive, and Microsoft Teams operates in real-time to detect against emerging threats. If a suspicious file is identified, this file can be quarantined or blocked access to prevent potential harm. \n\nLicense requirements:\nMirosoft 365 E5, Defender for Office Plan 1,  Microsoft 365 E3 with ATP add-on",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-attachments-for-spo-odfb-teams-configure?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SA-E3",
+            "capability_description": "Safe Attachments",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1598",
+            "attack_object_name": "Phishing for Information",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "M365's Safe Attachments is a feature that provides advanced email security by scanning attachments for malicious content and using a virtual environment to check for malicious actions in a process known as detonation. Safe Attachments for SharePoint, OneDrive, and Microsoft Teams operates in real-time to detect against emerging threats. If a suspicious file is identified, this file can be quarantined or blocked access to prevent potential harm. \n\nLicense requirements:\nMirosoft 365 E5, Defender for Office Plan 1,  Microsoft 365 E3 with ATP add-on",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-attachments-for-spo-odfb-teams-configure?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SA-E3",
+            "capability_description": "Safe Attachments",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1204.002",
+            "attack_object_name": "Malicious File",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1204",
+            "comments": "M365's Safe Attachments is a feature that provides advanced email security by scanning attachments for malicious content and using a virtual environment to check for malicious actions in a process known as detonation. Safe Attachments for SharePoint, OneDrive, and Microsoft Teams operates in real-time to detect against emerging threats. If a suspicious file is identified, this file can be quarantined or blocked access to prevent potential harm. \n\nLicense requirements:\nMirosoft 365 E5, Defender for Office Plan 1,  Microsoft 365 E3 with ATP add-on",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-attachments-for-spo-odfb-teams-configure?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-SA-E3",
+            "capability_description": "Safe Attachments",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1204",
+            "attack_object_name": "User Execution",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "M365's Safe Attachments is a feature that provides advanced email security by scanning attachments for malicious content and using a virtual environment to check for malicious actions in a process known as detonation. Safe Attachments for SharePoint, OneDrive, and Microsoft Teams operates in real-time to detect against emerging threats. If a suspicious file is identified, this file can be quarantined or blocked access to prevent potential harm. \n\nLicense requirements:\nMirosoft 365 E5, Defender for Office Plan 1,  Microsoft 365 E3 with ATP add-on",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-attachments-for-spo-odfb-teams-configure?view=o365-worldwide"
+            ],
+            "status": "complete"
+        }
+    ]
+}

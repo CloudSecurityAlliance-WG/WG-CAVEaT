@@ -1,0 +1,238 @@
+{
+    "metadata": {
+        "mapping_version": "",
+        "technology_domain": "enterprise",
+        "attack_version": "14.1",
+        "mapping_framework": "m365",
+        "mapping_framework_version": "12/11/2023",
+        "author": "Center for Threat-Informed Defense",
+        "contact": "ctid@mitre-engenuity.org",
+        "organization": "Center for Threat-Informed Defense",
+        "creation_date": "12/11/2023",
+        "last_update": "03/18/2024",
+        "mapping_types": {
+            "technique_score": {
+                "name": "Technique Scores",
+                "description": ""
+            }
+        },
+        "capability_groups": {
+            "m365-defender": "Microsoft 365 Defender",
+            "entra-id": "Microsoft Entra ID",
+            "eop": "Exchange Online Protection",
+            "purview": "Microsoft Purview"
+        }
+    },
+    "mapping_objects": [
+        {
+            "capability_id": "ME-PIM-E5",
+            "capability_description": "Privileged Identity Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098.003",
+            "attack_object_name": "Additional Cloud Roles",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1098",
+            "comments": "The PIM control can notify administrators when the Global Administrator and other administrator roles are assigned to an account, allowing it to be a method of detection for Additional Cloud Roles execution. PIM supports multiple security alerts, with customizable triggers, including numeric specificity. Following Microsoft's role based access control Best Practices, assignment of Global Administrator, among other administrative roles should be uncommon, resulting in an overall low false positive rate for detecting unexpected privileged role assignments. \n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices",
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts",
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PIM-E5",
+            "capability_description": "Privileged Identity Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098",
+            "attack_object_name": "Account Manipulation",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "minimal",
+            "comments": "The PIM control can assist post-execution detection by alerting on the assignment of privileged Additional Cloud Roles. This is not extendable to detect against the technique's other sub-techniques, resulting in overall minimal detection coverage. \n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PIM-E5",
+            "capability_description": "Privileged Identity Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1651",
+            "attack_object_name": "Cloud Administration Command",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "The PIM control can enforce on-activation requirements for privileged roles, such as Global Administrators. Configuration can include an MFA requirement, which can help limit the overall  privileged accounts available and their ability to execute administration commands. PIM can also be used to assigned privileged roles as \"eligible\" rather than \"active\" to further, requiring activation of the assigned role before use. Due to these features, a score of Significant is assigned. \n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PIM-E5",
+            "capability_description": "Privileged Identity Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098.003",
+            "attack_object_name": "Additional Cloud Roles",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1098",
+            "comments": "The PIM control can enforce on-activation requirements for privileged roles, such as the Global Administrator. Configuration can include an MFA requirement, which can provide additional protection against Additional Cloud Roles. MFA can be required both when assigning these administrative roles, and/or when a user activates the role. \n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-activate-role",
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PIM-E5",
+            "capability_description": "Privileged Identity Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098.001",
+            "attack_object_name": "Additional Cloud Credentials",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1098",
+            "comments": "The PIM control can enforce on-activation requirements for privileged roles, such as the Application Administrator. Configuration can include an MFA requirement, which can provide additional protection against Additional Cloud Credentials. PIM can also be used to assigned privileged roles as \"eligible\" rather than \"active\" to further, requiring activation of the assigned role before use. Due to these features, a score of Significant is assigned. \n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-activate-role",
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PIM-E5",
+            "capability_description": "Privileged Identity Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098",
+            "attack_object_name": "Account Manipulation",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "The PIM control provides significant protection against multiple sub-techniques, although not all, resulting in partial coverage. The control scores Significant for the temporal aspects of its protection, which include requiring activation by eligible privileged roles, and confirming user identity with MFA before execution. \n\n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-activate-role",
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PIM-E5",
+            "capability_description": "Privileged Identity Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1136.003",
+            "attack_object_name": "Cloud Account",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1136",
+            "comments": "The PIM control can enforce on-activation requirements for privileged roles, such as the User Administrator. Configuration can include an MFA requirement, which can provide additional protection against Cloud Account creation. PIM can also be used to assigned privileged roles as \"eligible\" rather than \"active\" to further, requiring activation of the assigned role before use. Due to these features, a score of Significant is assigned. \n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-activate-role",
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PIM-E5",
+            "capability_description": "Privileged Identity Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1136",
+            "attack_object_name": "Create Account",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "The PIM control provides significant protection against Create Account: Cloud Account, but not against the technique's other sub-techniques. An overall score of Partial is provided, although overall coverage for the across the sub-techniques is minimal. \n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PIM-E5",
+            "capability_description": "Privileged Identity Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078.004",
+            "attack_object_name": "Cloud Accounts",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1078",
+            "comments": "The PIM control supports an Access Review feature, which can be created to review privileged access  to avoid stale role assignments. Access Reviews can be scheduled routinely, and used to help evaluate the state of privileged access. Performing this review can help minimize the availability of valid accounts to adversaries. Although this review can be scheduled periodically, it would not occur at real-time frequency, and is therefore assigned Partial. \n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PIM-E5",
+            "capability_description": "Privileged Identity Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078",
+            "attack_object_name": "Valid Accounts",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "minimal",
+            "comments": "The PIM control supports an Access Review feature, which can partially be used to avoid stale role assignment for Valid Accounts: Cloud Accounts. The control does not protect against this technique's other sub-techniques, resulting in a Minimal coverage score, for an overall score of Minimal. \n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PIM-E5",
+            "capability_description": "Privileged Identity Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1556.007",
+            "attack_object_name": "Hybrid Identity",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1556",
+            "comments": "The PIM control can enforce on-activation requirements for privileged roles, such as the Global Administrator, which may be used for modifying the hybrid identity authentication process from the cloud. Ideally, ensure these accounts are dedicated cloud-only rather than hybrid accounts. MFA can be required both when assigning Global Administrator, and/or when a user activates the role. PIM can also be used to assigned privileged roles as \"eligible\" rather than \"active\" to further, requiring activation of the assigned role before use. This scores Significant for its limitation of the overall accounts with these privileges, and the conditions for use. \n\n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PIM-E5",
+            "capability_description": "Privileged Identity Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1556.006",
+            "attack_object_name": "Multi-Factor Authentication",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1556",
+            "comments": "The PIM control can enforce on-activation requirements for privileged roles, such as the Conditional Access Administrator, Global Administrator or Security Administrator, which include privileges necessary to modify certain MFA settings. Configuration can include an MFA requirement, which can provide additional protection against modifying Multi-Factor Authentication. MFA can be required both when assigning these administrative roles, and/or when a user activates the role. PIM can also be used to assigned privileged roles as \"eligible\" rather than \"active\" to further, requiring activation of the assigned role before use. This scores Significant for its limitation of the overall accounts with these privileges, and the conditions for use.\n\n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-azure-mfa",
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts",
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PIM-E5",
+            "capability_description": "Privileged Identity Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1556",
+            "attack_object_name": "Modify Authentication Process",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "minimal",
+            "comments": "The PIM control significantly protects against  the modification of Multi-Factor Authentication by placing limitations and restrictions on relevant privileged accounts. However, this is overall Minimal coverage relative to the all the technique's sub-techniques. \n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
+            ],
+            "status": "complete"
+        }
+    ]
+}

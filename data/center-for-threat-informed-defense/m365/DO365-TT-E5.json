@@ -1,0 +1,59 @@
+{
+    "metadata": {
+        "mapping_version": "",
+        "technology_domain": "enterprise",
+        "attack_version": "14.1",
+        "mapping_framework": "m365",
+        "mapping_framework_version": "12/11/2023",
+        "author": "Center for Threat-Informed Defense",
+        "contact": "ctid@mitre-engenuity.org",
+        "organization": "Center for Threat-Informed Defense",
+        "creation_date": "12/11/2023",
+        "last_update": "03/18/2024",
+        "mapping_types": {
+            "technique_score": {
+                "name": "Technique Scores",
+                "description": ""
+            }
+        },
+        "capability_groups": {
+            "m365-defender": "Microsoft 365 Defender",
+            "entra-id": "Microsoft Entra ID",
+            "eop": "Exchange Online Protection",
+            "purview": "Microsoft Purview"
+        }
+    },
+    "mapping_objects": [
+        {
+            "capability_id": "DO365-TT-E5",
+            "capability_description": "Threat Tracker",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566.001",
+            "attack_object_name": "Spearphishing Attachment",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1566",
+            "comments": "The Threat Tracker control includes noteworthy trackers, which highlights newly detected malicious files found with Safe Attachments, that may alert on malicious Spearphishing Attachments. Specifically, noteworthy trackers will highlight malicious files that were not previously found by Microsoft in your email flow or in other customers\u2019 emails. This scores Partial for Detection,  for the ability to highlight potential new threats , although it is the Safe Attachments control that denotes and analyzes email attachments to begin with. \n\nLicense Requirements:\nMicrosoft 365 Enterprise E5 (includes Defender for Office 365 Plan 2)",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/threat-trackers?view=o365-worldwide#trackers-and-microsoft-defender-for-office-365"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-TT-E5",
+            "capability_description": "Threat Tracker",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566",
+            "attack_object_name": "Phishing",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "minimal",
+            "comments": "The Threat Tracker control includes noteworthy trackers, which highlights newly detected malicious files found with Safe Attachments, that may alert on Phishing emails, if they contain malicious attachments. Specifically, noteworthy trackers will highlight malicious files that were not previously found by Microsoft in your email flow or in other customers\u2019 emails. This scores Minimal for Detection, based on the low coverage of this technique\u2019s sub-techniques and procedures. \n\nLicense Requirements:\nMicrosoft 365 Enterprise E5 (includes Defender for Office 365 Plan 2)",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/threat-trackers?view=o365-worldwide#trackers-and-microsoft-defender-for-office-365"
+            ],
+            "status": "complete"
+        }
+    ]
+}

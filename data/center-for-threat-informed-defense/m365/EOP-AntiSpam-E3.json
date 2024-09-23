@@ -1,0 +1,110 @@
+{
+    "metadata": {
+        "mapping_version": "",
+        "technology_domain": "enterprise",
+        "attack_version": "14.1",
+        "mapping_framework": "m365",
+        "mapping_framework_version": "12/11/2023",
+        "author": "Center for Threat-Informed Defense",
+        "contact": "ctid@mitre-engenuity.org",
+        "organization": "Center for Threat-Informed Defense",
+        "creation_date": "12/11/2023",
+        "last_update": "03/18/2024",
+        "mapping_types": {
+            "technique_score": {
+                "name": "Technique Scores",
+                "description": ""
+            }
+        },
+        "capability_groups": {
+            "m365-defender": "Microsoft 365 Defender",
+            "entra-id": "Microsoft Entra ID",
+            "eop": "Exchange Online Protection",
+            "purview": "Microsoft Purview"
+        }
+    },
+    "mapping_objects": [
+        {
+            "capability_id": "EOP-AntiSpam-E3",
+            "capability_description": "AntiSpam",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566",
+            "attack_object_name": "Phishing",
+            "capability_group": "eop",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "In Microsoft 365 organizations with mailboxes in Exchange Online or standalone Exchange Online Protection (EOP) organizations without Exchange Online mailboxes, email messages are automatically protected against spam (junk email) by EOP.\n\nTo help reduce junk email, EOP includes junk email protection that uses proprietary spam filtering (also known as content filtering) technologies to identify and separate junk email from legitimate email. EOP spam filtering learns from known spam and phishing threats and user feedback from our consumer platform.\n\nLicense requirements: M365 E3",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-spam-policies-configure?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-spam-protection-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EOP-AntiSpam-E3",
+            "capability_description": "AntiSpam",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1656",
+            "attack_object_name": "Impersonation",
+            "capability_group": "eop",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "In Microsoft 365 organizations with mailboxes in Exchange Online or standalone Exchange Online Protection (EOP) organizations without Exchange Online mailboxes, email messages are automatically protected against spam (junk email) by EOP.\n\nTo help reduce junk email, EOP includes junk email protection that uses proprietary spam filtering (also known as content filtering) technologies to identify and separate junk email from legitimate email. EOP spam filtering learns from known spam and phishing threats and user feedback from our consumer platform.\n\nLicense requirements: M365 E3",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-spam-policies-configure?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-spam-protection-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EOP-AntiSpam-E3",
+            "capability_description": "AntiSpam",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566.001",
+            "attack_object_name": "Spearphishing Attachment",
+            "capability_group": "eop",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1566",
+            "comments": "In Microsoft 365 organizations with mailboxes in Exchange Online or standalone Exchange Online Protection (EOP) organizations without Exchange Online mailboxes, email messages are automatically protected against spam (junk email) by EOP.\n\nTo help reduce junk email, EOP includes junk email protection that uses proprietary spam filtering (also known as content filtering) technologies to identify and separate junk email from legitimate email. EOP spam filtering learns from known spam and phishing threats and user feedback from our consumer platform.\n\nLicense requirements: M365 E3",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-spam-policies-configure?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-spam-protection-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EOP-AntiSpam-E3",
+            "capability_description": "AntiSpam",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566.002",
+            "attack_object_name": "Spearphishing Link",
+            "capability_group": "eop",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1566",
+            "comments": "In Microsoft 365 organizations with mailboxes in Exchange Online or standalone Exchange Online Protection (EOP) organizations without Exchange Online mailboxes, email messages are automatically protected against spam (junk email) by EOP.\n\nTo help reduce junk email, EOP includes junk email protection that uses proprietary spam filtering (also known as content filtering) technologies to identify and separate junk email from legitimate email. EOP spam filtering learns from known spam and phishing threats and user feedback from our consumer platform.\n\nLicense requirements: M365 E3",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-spam-policies-configure?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-spam-protection-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EOP-AntiSpam-E3",
+            "capability_description": "AntiSpam",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1534",
+            "attack_object_name": "Internal Spearphishing",
+            "capability_group": "eop",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "In Microsoft 365 organizations with mailboxes in Exchange Online or standalone Exchange Online Protection (EOP) organizations without Exchange Online mailboxes, email messages are automatically protected against spam (junk email) by EOP.\n\nTo help reduce junk email, EOP includes junk email protection that uses proprietary spam filtering (also known as content filtering) technologies to identify and separate junk email from legitimate email. EOP spam filtering learns from known spam and phishing threats and user feedback from our consumer platform.\n\nLicense requirements: M365 E3",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-spam-policies-configure?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-spam-protection-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        }
+    ]
+}

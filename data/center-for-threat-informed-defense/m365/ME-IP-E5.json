@@ -1,0 +1,234 @@
+{
+    "metadata": {
+        "mapping_version": "",
+        "technology_domain": "enterprise",
+        "attack_version": "14.1",
+        "mapping_framework": "m365",
+        "mapping_framework_version": "12/11/2023",
+        "author": "Center for Threat-Informed Defense",
+        "contact": "ctid@mitre-engenuity.org",
+        "organization": "Center for Threat-Informed Defense",
+        "creation_date": "12/11/2023",
+        "last_update": "03/18/2024",
+        "mapping_types": {
+            "technique_score": {
+                "name": "Technique Scores",
+                "description": ""
+            }
+        },
+        "capability_groups": {
+            "m365-defender": "Microsoft 365 Defender",
+            "entra-id": "Microsoft Entra ID",
+            "eop": "Exchange Online Protection",
+            "purview": "Microsoft Purview"
+        }
+    },
+    "mapping_objects": [
+        {
+            "capability_id": "ME-IP-E5",
+            "capability_description": "Identity Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098.003",
+            "attack_object_name": "Additional Cloud Roles",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1098",
+            "comments": "Microsoft Entra ID Protection helps organizations detect, investigate, and remediate identity-based risks. These identity-based risks can be further fed into tools like Conditional Access to make access decisions or fed back to a security information and event management (SIEM) tool for further investigation and correlation. Identity Protection requires users be a Security Reader, Security Operator, Security Administrator, Global Reader, or Global Administrator in order to access the dashboard. \n\nRisk-based Conditional Access policies can be enabled to require access controls such as providing a strong authentication method, perform multi-factor authentication, or perform a secure password reset based on the detected risk level. If the user successfully completes the access control, the risk is automatically remediated.\n\nLicense Requirements: \nMicrosoft Entra ID P2",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-IP-E5",
+            "capability_description": "Identity Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098.001",
+            "attack_object_name": "Additional Cloud Credentials",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1098",
+            "comments": "Microsoft Entra ID Protection helps organizations detect, investigate, and remediate identity-based risks. These identity-based risks can be further fed into tools like Conditional Access to make access decisions or fed back to a security information and event management (SIEM) tool for further investigation and correlation. Identity Protection requires users be a Security Reader, Security Operator, Security Administrator, Global Reader, or Global Administrator in order to access the dashboard. \n\nRisk-based Conditional Access policies can be enabled to require access controls such as providing a strong authentication method, perform multi-factor authentication, or perform a secure password reset based on the detected risk level. If the user successfully completes the access control, the risk is automatically remediated.\n\nLicense Requirements: \nMicrosoft Entra ID P2",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-IP-E5",
+            "capability_description": "Identity Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098",
+            "attack_object_name": "Account Manipulation",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "Microsoft Entra ID Protection helps organizations detect, investigate, and remediate identity-based risks. These identity-based risks can be further fed into tools like Conditional Access to make access decisions or fed back to a security information and event management (SIEM) tool for further investigation and correlation. Identity Protection requires users be a Security Reader, Security Operator, Security Administrator, Global Reader, or Global Administrator in order to access the dashboard.\n\nLicense Requirements: \nMicrosoft Entra ID P2",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-IP-E5",
+            "capability_description": "Identity Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.004",
+            "attack_object_name": "Credential Stuffing",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1110",
+            "comments": "Microsoft Entra ID Protection helps organizations detect, investigate, and remediate identity-based risks. These identity-based risks can be further fed into tools like Conditional Access to make access decisions or fed back to a security information and event management (SIEM) tool for further investigation and correlation. During each sign-in, Identity Protection runs all real-time sign-in detections generating a sign-in session risk level, indicating how likely the sign-in has been compromised. Based on this risk level, policies are then applied to protect the user and the organization. \n\nRisk-based Conditional Access policies can be enabled to require access controls such as providing a strong authentication method, perform multi-factor authentication, or perform a secure password reset based on the detected risk level. If the user successfully completes the access control, the risk is automatically remediated.\n\nLicense Requirements: \nMicrosoft Entra ID P2",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-IP-E5",
+            "capability_description": "Identity Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.003",
+            "attack_object_name": "Password Spraying",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1110",
+            "comments": "Microsoft Entra ID Protection helps organizations detect, investigate, and remediate identity-based risks. These identity-based risks can be further fed into tools like Conditional Access to make access decisions or fed back to a security information and event management (SIEM) tool for further investigation and correlation. During each sign-in, Identity Protection runs all real-time sign-in detections generating a sign-in session risk level, indicating how likely the sign-in has been compromised. Based on this risk level, policies are then applied to protect the user and the organization. \n\nRisk-based Conditional Access policies can be enabled to require access controls such as providing a strong authentication method, perform multi-factor authentication, or perform a secure password reset based on the detected risk level. If the user successfully completes the access control, the risk is automatically remediated.\n\nLicense Requirements: \nMicrosoft Entra ID P2",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-IP-E5",
+            "capability_description": "Identity Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.002",
+            "attack_object_name": "Password Cracking",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1110",
+            "comments": "Microsoft Entra ID Protection helps organizations detect, investigate, and remediate identity-based risks. These identity-based risks can be further fed into tools like Conditional Access to make access decisions or fed back to a security information and event management (SIEM) tool for further investigation and correlation. During each sign-in, Identity Protection runs all real-time sign-in detections generating a sign-in session risk level, indicating how likely the sign-in has been compromised. Based on this risk level, policies are then applied to protect the user and the organization. \n\nRisk-based Conditional Access policies can be enabled to require access controls such as providing a strong authentication method, perform multi-factor authentication, or perform a secure password reset based on the detected risk level. If the user successfully completes the access control, the risk is automatically remediated.\n\nLicense Requirements: \nMicrosoft Entra ID P2",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-IP-E5",
+            "capability_description": "Identity Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.001",
+            "attack_object_name": "Password Guessing",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1110",
+            "comments": "Microsoft Entra ID Protection helps organizations detect, investigate, and remediate identity-based risks. These identity-based risks can be further fed into tools like Conditional Access to make access decisions or fed back to a security information and event management (SIEM) tool for further investigation and correlation. During each sign-in, Identity Protection runs all real-time sign-in detections generating a sign-in session risk level, indicating how likely the sign-in has been compromised. Based on this risk level, policies are then applied to protect the user and the organization. \n\nRisk-based Conditional Access policies can be enabled to require access controls such as providing a strong authentication method, perform multi-factor authentication, or perform a secure password reset based on the detected risk level. If the user successfully completes the access control, the risk is automatically remediated.\n\nLicense Requirements: \nMicrosoft Entra ID P2",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-IP-E5",
+            "capability_description": "Identity Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110",
+            "attack_object_name": "Brute Force",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "Microsoft Entra ID Protection helps organizations detect, investigate, and remediate identity-based risks. These identity-based risks can be further fed into tools like Conditional Access to make access decisions or fed back to a security information and event management (SIEM) tool for further investigation and correlation. During each sign-in, Identity Protection runs all real-time sign-in detections generating a sign-in session risk level, indicating how likely the sign-in has been compromised. Based on this risk level, policies are then applied to protect the user and the organization. \n\nRisk-based Conditional Access policies can be enabled to require access controls such as providing a strong authentication method, perform multi-factor authentication, or perform a secure password reset based on the detected risk level. If the user successfully completes the access control, the risk is automatically remediated.\n\nLicense Requirements: \nMicrosoft Entra ID P2",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-IP-E5",
+            "capability_description": "Identity Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1621",
+            "attack_object_name": "Multi-Factor Authentication Request Generation",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "During each sign-in, Identity Protection runs all real-time sign-in detections generating a sign-in session risk level, indicating how likely the sign-in has been compromised. Based on this risk level, policies are then applied to protect the user and the organization.\n\nRisk-based Conditional Access policies can be enabled to require access controls such as providing a strong authentication method, perform multi-factor authentication, or perform a secure password reset based on the detected risk level. If the user successfully completes the access control, the risk is automatically remediated.\n\nLicense Requirements: \nMicrosoft Entra ID P2",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-risk-policies",
+                "https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-IP-E5",
+            "capability_description": "Identity Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1556.006",
+            "attack_object_name": "Multi-Factor Authentication",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1556",
+            "comments": "During each sign-in, Identity Protection runs all real-time sign-in detections generating a sign-in session risk level, indicating how likely the sign-in has been compromised. Based on this risk level, policies are then applied to protect the user and the organization.\n\nRisk-based Conditional Access policies can be enabled to require access controls such as providing a strong authentication method, perform multi-factor authentication, or perform a secure password reset based on the detected risk level. If the user successfully completes the access control, the risk is automatically remediated.\n\nLicense Requirements: \nMicrosoft Entra ID P2",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-risk-policies",
+                "https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-IP-E5",
+            "capability_description": "Identity Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1556",
+            "attack_object_name": "Modify Authentication Process",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "minimal",
+            "comments": "During each sign-in, Identity Protection runs all real-time sign-in detections generating a sign-in session risk level, indicating how likely the sign-in has been compromised. Based on this risk level, policies are then applied to protect the user and the organization.\n\nRisk-based Conditional Access policies can be enabled to require access controls such as providing a strong authentication method, perform multi-factor authentication, or perform a secure password reset based on the detected risk level. If the user successfully completes the access control, the risk is automatically remediated.\n\nLicense Requirements: \nMicrosoft Entra ID P2",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-risk-policies",
+                "https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-IP-E5",
+            "capability_description": "Identity Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1586.003",
+            "attack_object_name": "Cloud Accounts",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1586",
+            "comments": "Cloud accounts should have complex and unique passwords across all systems on the network. Microsoft Entra ID Protection helps organizations detect, investigate, and remediate identity-based risks. These identity-based risks can be further fed into tools like Conditional Access to make access decisions or fed back to a security information and event management (SIEM) tool for further investigation and correlation. During each sign-in, Identity Protection runs all real-time sign-in detections generating a sign-in session risk level, indicating how likely the sign-in has been compromised. Based on this risk level, policies are then applied to protect the user and the organization.\n\nLicense Requirements: \nMicrosoft Entra ID P2",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-IP-E5",
+            "capability_description": "Identity Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078",
+            "attack_object_name": "Valid Accounts",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "Accounts should have complex and unique passwords across all systems on the network. Microsoft Entra ID Protection helps organizations detect, investigate, and remediate identity-based risks. These identity-based risks can be further fed into tools like Conditional Access to make access decisions or fed back to a security information and event management (SIEM) tool for further investigation and correlation. During each sign-in, Identity Protection runs all real-time sign-in detections generating a sign-in session risk level, indicating how likely the sign-in has been compromised. Based on this risk level, policies are then applied to protect the user and the organization.\n\nLicense Requirements: \nMicrosoft Entra ID P2\n",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection"
+            ],
+            "status": "complete"
+        }
+    ]
+}

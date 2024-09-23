@@ -1,0 +1,341 @@
+{
+    "metadata": {
+        "mapping_version": "",
+        "technology_domain": "enterprise",
+        "attack_version": "14.1",
+        "mapping_framework": "m365",
+        "mapping_framework_version": "12/11/2023",
+        "author": "Center for Threat-Informed Defense",
+        "contact": "ctid@mitre-engenuity.org",
+        "organization": "Center for Threat-Informed Defense",
+        "creation_date": "12/11/2023",
+        "last_update": "03/18/2024",
+        "mapping_types": {
+            "technique_score": {
+                "name": "Technique Scores",
+                "description": ""
+            }
+        },
+        "capability_groups": {
+            "m365-defender": "Microsoft 365 Defender",
+            "entra-id": "Microsoft Entra ID",
+            "eop": "Exchange Online Protection",
+            "purview": "Microsoft Purview"
+        }
+    },
+    "mapping_objects": [
+        {
+            "capability_id": "DEF-AIR-E5",
+            "capability_description": "Automated Investigation and Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1137",
+            "attack_object_name": "Office Application Startup",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "comments": "Microsoft Defender for Office 365 includes powerful automated investigation and response (AIR) capabilities that can save your security operations team time and effort. As alerts are triggered, it's up to your security operations team to review, prioritize, and respond to those alerts. Keeping up with the volume of incoming alerts can be overwhelming. Automating some of those tasks can help.\nAIR enables your security operations team to operate more efficiently and effectively. AIR capabilities include automated investigation processes in response to well-known threats that exist today. Appropriate remediation actions await approval, enabling your security operations team to respond effectively to detected threats. With AIR, your security operations team can focus on higher-priority tasks without losing sight of important alerts that are triggered. Examples include: Soft delete email messages or clusters, Block URL (time-of-click), Turn off external mail forwarding, Turn off delegation, etc.\n\nRequired licenses\nE5 or Microsoft Defender for Office 365 Plan 2 licenses. ",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/email-analysis-investigations?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/detect-and-remediate-illicit-consent-grants?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/address-compromised-users-quickly?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/air-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-AIR-E5",
+            "capability_description": "Automated Investigation and Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1048",
+            "attack_object_name": "Exfiltration Over Alternative Protocol",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "comments": "Microsoft Defender for Office 365 includes powerful automated investigation and response (AIR) capabilities that can save your security operations team time and effort. As alerts are triggered, it's up to your security operations team to review, prioritize, and respond to those alerts. Keeping up with the volume of incoming alerts can be overwhelming. Automating some of those tasks can help.\nAIR enables your security operations team to operate more efficiently and effectively. AIR capabilities include automated investigation processes in response to well-known threats that exist today. Appropriate remediation actions await approval, enabling your security operations team to respond effectively to detected threats. With AIR, your security operations team can focus on higher-priority tasks without losing sight of important alerts that are triggered. Examples include: Soft delete email messages or clusters, Block URL (time-of-click), Turn off external mail forwarding, Turn off delegation, etc.\n\nRequired licenses\nE5 or Microsoft Defender for Office 365 Plan 2 licenses. ",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/email-analysis-investigations?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/detect-and-remediate-illicit-consent-grants?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/address-compromised-users-quickly?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/air-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-AIR-E5",
+            "capability_description": "Automated Investigation and Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1567",
+            "attack_object_name": "Exfiltration Over Web Service",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "comments": "Microsoft Defender for Office 365 includes powerful automated investigation and response (AIR) capabilities that can save your security operations team time and effort. As alerts are triggered, it's up to your security operations team to review, prioritize, and respond to those alerts. Keeping up with the volume of incoming alerts can be overwhelming. Automating some of those tasks can help.\nAIR enables your security operations team to operate more efficiently and effectively. AIR capabilities include automated investigation processes in response to well-known threats that exist today. Appropriate remediation actions await approval, enabling your security operations team to respond effectively to detected threats. With AIR, your security operations team can focus on higher-priority tasks without losing sight of important alerts that are triggered. Examples include: Soft delete email messages or clusters, Block URL (time-of-click), Turn off external mail forwarding, Turn off delegation, etc.\n\nRequired licenses\nE5 or Microsoft Defender for Office 365 Plan 2 licenses. ",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/email-analysis-investigations?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/detect-and-remediate-illicit-consent-grants?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/address-compromised-users-quickly?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/air-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-AIR-E5",
+            "capability_description": "Automated Investigation and Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1564.008",
+            "attack_object_name": "Email Hiding Rules",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "related_score": "T1564",
+            "comments": "Microsoft Defender for Office 365 includes powerful automated investigation and response (AIR) capabilities that can save your security operations team time and effort. As alerts are triggered, it's up to your security operations team to review, prioritize, and respond to those alerts. Keeping up with the volume of incoming alerts can be overwhelming. Automating some of those tasks can help.\nAIR enables your security operations team to operate more efficiently and effectively. AIR capabilities include automated investigation processes in response to well-known threats that exist today. Appropriate remediation actions await approval, enabling your security operations team to respond effectively to detected threats. With AIR, your security operations team can focus on higher-priority tasks without losing sight of important alerts that are triggered. Examples include: Soft delete email messages or clusters, Block URL (time-of-click), Turn off external mail forwarding, Turn off delegation, etc.\n\nRequired licenses\nE5 or Microsoft Defender for Office 365 Plan 2 licenses. ",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/email-analysis-investigations?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/detect-and-remediate-illicit-consent-grants?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/address-compromised-users-quickly?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/air-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-AIR-E5",
+            "capability_description": "Automated Investigation and Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1114",
+            "attack_object_name": "Email Collection",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "comments": "Microsoft Defender for Office 365 includes powerful automated investigation and response (AIR) capabilities that can save your security operations team time and effort. As alerts are triggered, it's up to your security operations team to review, prioritize, and respond to those alerts. Keeping up with the volume of incoming alerts can be overwhelming. Automating some of those tasks can help.\nAIR enables your security operations team to operate more efficiently and effectively. AIR capabilities include automated investigation processes in response to well-known threats that exist today. Appropriate remediation actions await approval, enabling your security operations team to respond effectively to detected threats. With AIR, your security operations team can focus on higher-priority tasks without losing sight of important alerts that are triggered. Examples include: Soft delete email messages or clusters, Block URL (time-of-click), Turn off external mail forwarding, Turn off delegation, etc.\n\nRequired licenses\nE5 or Microsoft Defender for Office 365 Plan 2 licenses. ",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/email-analysis-investigations?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/detect-and-remediate-illicit-consent-grants?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/address-compromised-users-quickly?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/air-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-AIR-E5",
+            "capability_description": "Automated Investigation and Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1114.003",
+            "attack_object_name": "Email Forwarding Rule",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "related_score": "T1114",
+            "comments": "Microsoft Defender for Office 365 includes powerful automated investigation and response (AIR) capabilities that can save your security operations team time and effort. As alerts are triggered, it's up to your security operations team to review, prioritize, and respond to those alerts. Keeping up with the volume of incoming alerts can be overwhelming. Automating some of those tasks can help.\nAIR enables your security operations team to operate more efficiently and effectively. AIR capabilities include automated investigation processes in response to well-known threats that exist today. Appropriate remediation actions await approval, enabling your security operations team to respond effectively to detected threats. With AIR, your security operations team can focus on higher-priority tasks without losing sight of important alerts that are triggered. Examples include: Soft delete email messages or clusters, Block URL (time-of-click), Turn off external mail forwarding, Turn off delegation, etc.\n\nRequired licenses\nE5 or Microsoft Defender for Office 365 Plan 2 licenses. ",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/email-analysis-investigations?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/detect-and-remediate-illicit-consent-grants?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/address-compromised-users-quickly?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/air-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-AIR-E5",
+            "capability_description": "Automated Investigation and Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1550",
+            "attack_object_name": "Use Alternate Authentication Material",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "comments": "Microsoft Defender for Office 365 includes powerful automated investigation and response (AIR) capabilities that can save your security operations team time and effort. As alerts are triggered, it's up to your security operations team to review, prioritize, and respond to those alerts. Keeping up with the volume of incoming alerts can be overwhelming. Automating some of those tasks can help.\nAIR enables your security operations team to operate more efficiently and effectively. AIR capabilities include automated investigation processes in response to well-known threats that exist today. Appropriate remediation actions await approval, enabling your security operations team to respond effectively to detected threats. With AIR, your security operations team can focus on higher-priority tasks without losing sight of important alerts that are triggered. Examples include: Soft delete email messages or clusters, Block URL (time-of-click), Turn off external mail forwarding, Turn off delegation, etc.\n\nRequired licenses\nE5 or Microsoft Defender for Office 365 Plan 2 licenses. ",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/email-analysis-investigations?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/detect-and-remediate-illicit-consent-grants?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/address-compromised-users-quickly?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/air-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-AIR-E5",
+            "capability_description": "Automated Investigation and Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1204.002",
+            "attack_object_name": "Malicious File",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "related_score": "T1204",
+            "comments": "Microsoft Defender for Office 365 includes powerful automated investigation and response (AIR) capabilities that can save your security operations team time and effort. As alerts are triggered, it's up to your security operations team to review, prioritize, and respond to those alerts. Keeping up with the volume of incoming alerts can be overwhelming. Automating some of those tasks can help.\nAIR enables your security operations team to operate more efficiently and effectively. AIR capabilities include automated investigation processes in response to well-known threats that exist today. Appropriate remediation actions await approval, enabling your security operations team to respond effectively to detected threats. With AIR, your security operations team can focus on higher-priority tasks without losing sight of important alerts that are triggered. Examples include: Soft delete email messages or clusters, Block URL (time-of-click), Turn off external mail forwarding, Turn off delegation, etc.\n\nRequired licenses\nE5 or Microsoft Defender for Office 365 Plan 2 licenses. ",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/email-analysis-investigations?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/detect-and-remediate-illicit-consent-grants?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/address-compromised-users-quickly?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/air-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-AIR-E5",
+            "capability_description": "Automated Investigation and Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1204.001",
+            "attack_object_name": "Malicious Link",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "related_score": "T1204",
+            "comments": "Microsoft Defender for Office 365 includes powerful automated investigation and response (AIR) capabilities that can save your security operations team time and effort. As alerts are triggered, it's up to your security operations team to review, prioritize, and respond to those alerts. Keeping up with the volume of incoming alerts can be overwhelming. Automating some of those tasks can help.\nAIR enables your security operations team to operate more efficiently and effectively. AIR capabilities include automated investigation processes in response to well-known threats that exist today. Appropriate remediation actions await approval, enabling your security operations team to respond effectively to detected threats. With AIR, your security operations team can focus on higher-priority tasks without losing sight of important alerts that are triggered. Examples include: Soft delete email messages or clusters, Block URL (time-of-click), Turn off external mail forwarding, Turn off delegation, etc.\n\nRequired licenses\nE5 or Microsoft Defender for Office 365 Plan 2 licenses. ",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/email-analysis-investigations?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/detect-and-remediate-illicit-consent-grants?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/address-compromised-users-quickly?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/air-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-AIR-E5",
+            "capability_description": "Automated Investigation and Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078.004",
+            "attack_object_name": "Cloud Accounts",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "related_score": "T1078",
+            "comments": "Microsoft Defender for Office 365 includes powerful automated investigation and response (AIR) capabilities that can save your security operations team time and effort. As alerts are triggered, it's up to your security operations team to review, prioritize, and respond to those alerts. Keeping up with the volume of incoming alerts can be overwhelming. Automating some of those tasks can help.\nAIR enables your security operations team to operate more efficiently and effectively. AIR capabilities include automated investigation processes in response to well-known threats that exist today. Appropriate remediation actions await approval, enabling your security operations team to respond effectively to detected threats. With AIR, your security operations team can focus on higher-priority tasks without losing sight of important alerts that are triggered. Examples include: Soft delete email messages or clusters, Block URL (time-of-click), Turn off external mail forwarding, Turn off delegation, etc.\n\nRequired licenses\nE5 or Microsoft Defender for Office 365 Plan 2 licenses. ",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/email-analysis-investigations?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/detect-and-remediate-illicit-consent-grants?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/address-compromised-users-quickly?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/air-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-AIR-E5",
+            "capability_description": "Automated Investigation and Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078",
+            "attack_object_name": "Valid Accounts",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "comments": "Microsoft Defender for Office 365 includes powerful automated investigation and response (AIR) capabilities that can save your security operations team time and effort. As alerts are triggered, it's up to your security operations team to review, prioritize, and respond to those alerts. Keeping up with the volume of incoming alerts can be overwhelming. Automating some of those tasks can help.\nAIR enables your security operations team to operate more efficiently and effectively. AIR capabilities include automated investigation processes in response to well-known threats that exist today. Appropriate remediation actions await approval, enabling your security operations team to respond effectively to detected threats. With AIR, your security operations team can focus on higher-priority tasks without losing sight of important alerts that are triggered. Examples include: Soft delete email messages or clusters, Block URL (time-of-click), Turn off external mail forwarding, Turn off delegation, etc.\n\nRequired licenses\nE5 or Microsoft Defender for Office 365 Plan 2 licenses. ",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/email-analysis-investigations?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/detect-and-remediate-illicit-consent-grants?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/address-compromised-users-quickly?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/air-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-AIR-E5",
+            "capability_description": "Automated Investigation and Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1534",
+            "attack_object_name": "Internal Spearphishing",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "comments": "Microsoft Defender for Office 365 includes powerful automated investigation and response (AIR) capabilities that can save your security operations team time and effort. As alerts are triggered, it's up to your security operations team to review, prioritize, and respond to those alerts. Keeping up with the volume of incoming alerts can be overwhelming. Automating some of those tasks can help.\nAIR enables your security operations team to operate more efficiently and effectively. AIR capabilities include automated investigation processes in response to well-known threats that exist today. Appropriate remediation actions await approval, enabling your security operations team to respond effectively to detected threats. With AIR, your security operations team can focus on higher-priority tasks without losing sight of important alerts that are triggered. Examples include: Soft delete email messages or clusters, Block URL (time-of-click), Turn off external mail forwarding, Turn off delegation, etc.\n\nRequired licenses\nE5 or Microsoft Defender for Office 365 Plan 2 licenses. ",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/email-analysis-investigations?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/detect-and-remediate-illicit-consent-grants?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/address-compromised-users-quickly?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/air-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-AIR-E5",
+            "capability_description": "Automated Investigation and Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1656",
+            "attack_object_name": "Impersonation",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "comments": "Microsoft Defender for Office 365 includes powerful automated investigation and response (AIR) capabilities that can save your security operations team time and effort. As alerts are triggered, it's up to your security operations team to review, prioritize, and respond to those alerts. Keeping up with the volume of incoming alerts can be overwhelming. Automating some of those tasks can help.\nAIR enables your security operations team to operate more efficiently and effectively. AIR capabilities include automated investigation processes in response to well-known threats that exist today. Appropriate remediation actions await approval, enabling your security operations team to respond effectively to detected threats. With AIR, your security operations team can focus on higher-priority tasks without losing sight of important alerts that are triggered. Examples include: Soft delete email messages or clusters, Block URL (time-of-click), Turn off external mail forwarding, Turn off delegation, etc.\n\nRequired licenses\nE5 or Microsoft Defender for Office 365 Plan 2 licenses. ",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/email-analysis-investigations?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/detect-and-remediate-illicit-consent-grants?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/address-compromised-users-quickly?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/air-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-AIR-E5",
+            "capability_description": "Automated Investigation and Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566.001",
+            "attack_object_name": "Spearphishing Attachment",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "related_score": "T1566",
+            "comments": "Microsoft Defender for Office 365 includes powerful automated investigation and response (AIR) capabilities that can save your security operations team time and effort. As alerts are triggered, it's up to your security operations team to review, prioritize, and respond to those alerts. Keeping up with the volume of incoming alerts can be overwhelming. Automating some of those tasks can help.\nAIR enables your security operations team to operate more efficiently and effectively. AIR capabilities include automated investigation processes in response to well-known threats that exist today. Appropriate remediation actions await approval, enabling your security operations team to respond effectively to detected threats. With AIR, your security operations team can focus on higher-priority tasks without losing sight of important alerts that are triggered. Examples include: Soft delete email messages or clusters, Block URL (time-of-click), Turn off external mail forwarding, Turn off delegation, etc.\n\nRequired licenses\nE5 or Microsoft Defender for Office 365 Plan 2 licenses. ",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/email-analysis-investigations?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/detect-and-remediate-illicit-consent-grants?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/address-compromised-users-quickly?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/air-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-AIR-E5",
+            "capability_description": "Automated Investigation and Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566.002",
+            "attack_object_name": "Spearphishing Link",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "related_score": "T1566",
+            "comments": "Microsoft Defender for Office 365 includes powerful automated investigation and response (AIR) capabilities that can save your security operations team time and effort. As alerts are triggered, it's up to your security operations team to review, prioritize, and respond to those alerts. Keeping up with the volume of incoming alerts can be overwhelming. Automating some of those tasks can help.\nAIR enables your security operations team to operate more efficiently and effectively. AIR capabilities include automated investigation processes in response to well-known threats that exist today. Appropriate remediation actions await approval, enabling your security operations team to respond effectively to detected threats. With AIR, your security operations team can focus on higher-priority tasks without losing sight of important alerts that are triggered. Examples include: Soft delete email messages or clusters, Block URL (time-of-click), Turn off external mail forwarding, Turn off delegation, etc.\n\nRequired licenses\nE5 or Microsoft Defender for Office 365 Plan 2 licenses. ",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/email-analysis-investigations?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/detect-and-remediate-illicit-consent-grants?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/address-compromised-users-quickly?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/air-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-AIR-E5",
+            "capability_description": "Automated Investigation and Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566",
+            "attack_object_name": "Phishing",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "comments": "Microsoft Defender for Office 365 includes powerful automated investigation and response (AIR) capabilities that can save your security operations team time and effort. As alerts are triggered, it's up to your security operations team to review, prioritize, and respond to those alerts. Keeping up with the volume of incoming alerts can be overwhelming. Automating some of those tasks can help.\nAIR enables your security operations team to operate more efficiently and effectively. AIR capabilities include automated investigation processes in response to well-known threats that exist today. Appropriate remediation actions await approval, enabling your security operations team to respond effectively to detected threats. With AIR, your security operations team can focus on higher-priority tasks without losing sight of important alerts that are triggered. Examples include: Soft delete email messages or clusters, Block URL (time-of-click), Turn off external mail forwarding, Turn off delegation, etc.\n\nRequired licenses\nE5 or Microsoft Defender for Office 365 Plan 2 licenses. ",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/email-analysis-investigations?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/detect-and-remediate-illicit-consent-grants?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/address-compromised-users-quickly?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/air-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-AIR-E5",
+            "capability_description": "Automated Investigation and Response",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1189",
+            "attack_object_name": "Drive-by Compromise",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "comments": "Microsoft Defender for Office 365 includes powerful automated investigation and response (AIR) capabilities that can save your security operations team time and effort. As alerts are triggered, it's up to your security operations team to review, prioritize, and respond to those alerts. Keeping up with the volume of incoming alerts can be overwhelming. Automating some of those tasks can help.\nAIR enables your security operations team to operate more efficiently and effectively. AIR capabilities include automated investigation processes in response to well-known threats that exist today. Appropriate remediation actions await approval, enabling your security operations team to respond effectively to detected threats. With AIR, your security operations team can focus on higher-priority tasks without losing sight of important alerts that are triggered. Examples include: Soft delete email messages or clusters, Block URL (time-of-click), Turn off external mail forwarding, Turn off delegation, etc.\n\nRequired licenses\nE5 or Microsoft Defender for Office 365 Plan 2 licenses. ",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/email-analysis-investigations?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/detect-and-remediate-illicit-consent-grants?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/address-compromised-users-quickly?view=o365-worldwide",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/air-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        }
+    ]
+}

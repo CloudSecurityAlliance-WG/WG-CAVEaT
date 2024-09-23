@@ -1,0 +1,106 @@
+{
+    "metadata": {
+        "mapping_version": "",
+        "technology_domain": "enterprise",
+        "attack_version": "14.1",
+        "mapping_framework": "m365",
+        "mapping_framework_version": "12/11/2023",
+        "author": "Center for Threat-Informed Defense",
+        "contact": "ctid@mitre-engenuity.org",
+        "organization": "Center for Threat-Informed Defense",
+        "creation_date": "12/11/2023",
+        "last_update": "03/18/2024",
+        "mapping_types": {
+            "technique_score": {
+                "name": "Technique Scores",
+                "description": ""
+            }
+        },
+        "capability_groups": {
+            "m365-defender": "Microsoft 365 Defender",
+            "entra-id": "Microsoft Entra ID",
+            "eop": "Exchange Online Protection",
+            "purview": "Microsoft Purview"
+        }
+    },
+    "mapping_objects": [
+        {
+            "capability_id": "ME-PP-E3",
+            "capability_description": "Password Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1586.003",
+            "attack_object_name": "Cloud Accounts",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1586",
+            "comments": "Cloud accounts should have complex and unique passwords across all systems on the network. When a password is changed or reset for any user in a Microsoft Entra tenant, the current version of the global banned password list is used to validate the strength of the password. This validation check results in stronger passwords for all Microsoft Entra customers.\n\nLicense Requirements:\nMicrosoft Entra ID Free, Microsoft Entra ID P1, or Microsoft Entra ID P2",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-password-ban-bad"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PP-E3",
+            "capability_description": "Password Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078",
+            "attack_object_name": "Valid Accounts",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "Accounts should have complex and unique passwords across all systems on the network. When a password is changed or reset for any user in a Microsoft Entra tenant, the current version of the global banned password list is used to validate the strength of the password. This validation check results in stronger passwords for all Microsoft Entra customers.\n\nLicense Requirements:\nMicrosoft Entra ID Free, Microsoft Entra ID P1, or Microsoft Entra ID P2",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-password-ban-bad"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PP-E3",
+            "capability_description": "Password Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.004",
+            "attack_object_name": "Credential Stuffing",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1110",
+            "comments": "With Microsoft Entra Password Protection, you can define entries in a custom banned password list. When a password is changed or reset for any user in a Microsoft Entra tenant, the current version of the global banned password list is used to validate the strength of the password. This validation check results in stronger passwords for all Microsoft Entra customers.\n\n\nLicense Requirements:\nMicrosoft Entra ID Free, Microsoft Entra ID P1, or Microsoft Entra ID P2",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-password-ban-bad"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PP-E3",
+            "capability_description": "Password Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.003",
+            "attack_object_name": "Password Spraying",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1110",
+            "comments": "Microsoft Entra Password Protection efficiently blocks all known weak passwords likely to be used in password spray attacks. \n\n\nLicense Requirements:\nMicrosoft Entra ID Free, Microsoft Entra ID P1, or Microsoft Entra ID P2",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-password-ban-bad"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PP-E3",
+            "capability_description": "Password Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110",
+            "attack_object_name": "Brute Force",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "With Microsoft Entra Password Protection, default global banned password lists are automatically applied to all users in a Microsoft Entra tenant. To support your own business and security needs, you can define entries in a custom banned password list.\nWhen a password is changed or reset for any user in a Microsoft Entra tenant, the current version of the global banned password list is used to validate the strength of the password. This validation check results in stronger passwords for all Microsoft Entra customers.\n\nLicense Requirements:\nMicrosoft Entra ID Free, Microsoft Entra ID P1, or Microsoft Entra ID P2",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-password-ban-bad"
+            ],
+            "status": "complete"
+        }
+    ]
+}

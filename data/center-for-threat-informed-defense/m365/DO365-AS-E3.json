@@ -1,0 +1,89 @@
+{
+    "metadata": {
+        "mapping_version": "",
+        "technology_domain": "enterprise",
+        "attack_version": "14.1",
+        "mapping_framework": "m365",
+        "mapping_framework_version": "12/11/2023",
+        "author": "Center for Threat-Informed Defense",
+        "contact": "ctid@mitre-engenuity.org",
+        "organization": "Center for Threat-Informed Defense",
+        "creation_date": "12/11/2023",
+        "last_update": "03/18/2024",
+        "mapping_types": {
+            "technique_score": {
+                "name": "Technique Scores",
+                "description": ""
+            }
+        },
+        "capability_groups": {
+            "m365-defender": "Microsoft 365 Defender",
+            "entra-id": "Microsoft Entra ID",
+            "eop": "Exchange Online Protection",
+            "purview": "Microsoft Purview"
+        }
+    },
+    "mapping_objects": [
+        {
+            "capability_id": "DO365-AS-E3",
+            "capability_description": "Anti-Spoofing",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566",
+            "attack_object_name": "Phishing",
+            "capability_group": "m365-defender",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "The anti-spoofing technology in Microsoft O365 specifically examines forgery of the From header in the message body, because that header value is the message sender that's shown in email clients. When EOP has high confidence that the From header is forged, the message is identified as spoofed. The following anti-spoofing technologies are available in Microsoft O365: email authentication, spoof intelligence insight, allow or block spoofed senders in the tenant allow/block List, anti-phishing policies, and spoof detections report\n\nMicrosoft O365's anti-spoofing technology protects from Phishing attacks due to it's mechanisms provided which provides email authentication by DKIM, and anti-phishing policies\n\nLicense Requirements: \nMicrosoft Exchange Online Protection, Defender for Office 365 plan 1 and plan 2, Microsoft XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-protection-spoofing-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AS-E3",
+            "capability_description": "Anti-Spoofing",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566.002",
+            "attack_object_name": "Spearphishing Link",
+            "capability_group": "m365-defender",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1566",
+            "comments": "The anti-spoofing technology in Microsoft O365 specifically examines forgery of the From header in the message body, because that header value is the message sender that's shown in email clients. When EOP has high confidence that the From header is forged, the message is identified as spoofed. The following anti-spoofing technologies are available in Microsoft O365: email authentication, spoof intelligence insight, allow or block spoofed senders in the tenant allow/block List, anti-phishing policies, and spoof detections report\n\nMicrosoft O365's anti-spoofing technology protects from Spearphishing Link attacks due to it's mechanisms provided which provides email authentication by DKIM, and anti-phishing policies\n\nLicense Requirements: \nMicrosoft Exchange Online Protection, Defender for Office 365 plan 1 and plan 2, Microsoft XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-protection-spoofing-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AS-E3",
+            "capability_description": "Anti-Spoofing",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1656",
+            "attack_object_name": "Impersonation",
+            "capability_group": "m365-defender",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "The anti-spoofing technology in Microsoft O365 specifically examines forgery of the From header in the message body, because that header value is the message sender that's shown in email clients. When EOP has high confidence that the From header is forged, the message is identified as spoofed. The following anti-spoofing technologies are available in Microsoft O365: email authentication, spoof intelligence insight, allow or block spoofed senders in the tenant allow/block List, anti-phishing policies, and spoof detections report\n\nMicrosoft O365's anti-spoofing technology protects from Impersonation attacks due to impersonation protection provided with anti-phishing policies.\n\nLicense Requirements: \nMicrosoft Exchange Online Protection, Defender for Office 365 plan 1 and plan 2, Microsoft XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-protection-spoofing-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AS-E3",
+            "capability_description": "Anti-Spoofing",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1534",
+            "attack_object_name": "Internal Spearphishing",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "The anti-spoofing technology in Microsoft O365 specifically examines forgery of the From header in the message body, because that header value is the message sender that's shown in email clients. When EOP has high confidence that the From header is forged, the message is identified as spoofed. The following anti-spoofing technologies are available in Microsoft O365: email authentication, spoof intelligence insight, allow or block spoofed senders in the tenant allow/block List, anti-phishing policies, and spoof detections report\n\nMicrosoft O365's anti-spoofing technology detects Internal Spearphishing attacks due to spoof detections report, where users can view information about phishing attempts \n\nLicense Requirements: \nMicrosoft Exchange Online Protection, Defender for Office 365 plan 1 and plan 2, Microsoft XDR",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-protection-spoofing-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        }
+    ]
+}

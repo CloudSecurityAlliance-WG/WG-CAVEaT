@@ -1,0 +1,271 @@
+{
+    "metadata": {
+        "mapping_version": "",
+        "technology_domain": "enterprise",
+        "attack_version": "14.1",
+        "mapping_framework": "m365",
+        "mapping_framework_version": "12/11/2023",
+        "author": "Center for Threat-Informed Defense",
+        "contact": "ctid@mitre-engenuity.org",
+        "organization": "Center for Threat-Informed Defense",
+        "creation_date": "12/11/2023",
+        "last_update": "03/18/2024",
+        "mapping_types": {
+            "technique_score": {
+                "name": "Technique Scores",
+                "description": ""
+            }
+        },
+        "capability_groups": {
+            "m365-defender": "Microsoft 365 Defender",
+            "entra-id": "Microsoft Entra ID",
+            "eop": "Exchange Online Protection",
+            "purview": "Microsoft Purview"
+        }
+    },
+    "mapping_objects": [
+        {
+            "capability_id": "DEF-Quarantine-E3",
+            "capability_description": "Quarantine Policies",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1213",
+            "attack_object_name": "Data from Information Repositories",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "comments": "In Exchange Online Protection (EOP) and Microsoft Defender for Office 365, quarantine policies allow admins to define the user experience for quarantined messages.\n   \nTraditionally, users have been allowed or denied levels of interactivity with quarantine messages based on why the message was quarantined. For example, users can view and release messages that were quarantined as spam or bulk, but they can't view or release messages that were quarantined as high confidence phishing or malware.\n\nThe following M365 features are supported by quarantine policies, \u201cResponse\u201d to Anti-malware and Anti-Phishing tagged items. Files that are quarantined as malware by Safe Attachments for SharePoint, OneDrive, and Microsoft Teams. \n\nLicense requirements: M365 E3 (or Defender for Office plan 1)",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/quarantine-about?view=o365-worldwide",
+                "https://security.microsoft.com/quarantinePolicies.",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/quarantine-policies?view=o365-worldwide#anatomy-of-a-quarantine-policy"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-Quarantine-E3",
+            "capability_description": "Quarantine Policies",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1213.002",
+            "attack_object_name": "Sharepoint",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "related_score": "T1213",
+            "comments": "In Exchange Online Protection (EOP) and Microsoft Defender for Office 365, quarantine policies allow admins to define the user experience for quarantined messages.\n   \nTraditionally, users have been allowed or denied levels of interactivity with quarantine messages based on why the message was quarantined. For example, users can view and release messages that were quarantined as spam or bulk, but they can't view or release messages that were quarantined as high confidence phishing or malware.\n\nThe following M365 features are supported by quarantine policies, \u201cResponse\u201d to Anti-malware and Anti-Phishing tagged items. Files that are quarantined as malware by Safe Attachments for SharePoint, OneDrive, and Microsoft Teams. \n\nLicense requirements: M365 E3 (or Defender for Office plan 1)",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/quarantine-about?view=o365-worldwide",
+                "https://security.microsoft.com/quarantinePolicies.",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/quarantine-policies?view=o365-worldwide#anatomy-of-a-quarantine-policy"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-Quarantine-E3",
+            "capability_description": "Quarantine Policies",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1530",
+            "attack_object_name": "Data from Cloud Storage",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "comments": "In Exchange Online Protection (EOP) and Microsoft Defender for Office 365, quarantine policies allow admins to define the user experience for quarantined messages.\n   \nTraditionally, users have been allowed or denied levels of interactivity with quarantine messages based on why the message was quarantined. For example, users can view and release messages that were quarantined as spam or bulk, but they can't view or release messages that were quarantined as high confidence phishing or malware.\n\nThe following M365 features are supported by quarantine policies, \u201cResponse\u201d to Anti-malware and Anti-Phishing tagged items. Files that are quarantined as malware by Safe Attachments for SharePoint, OneDrive, and Microsoft Teams. \n\nLicense requirements: M365 E3 (or Defender for Office plan 1)",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/quarantine-about?view=o365-worldwide",
+                "https://security.microsoft.com/quarantinePolicies.",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/quarantine-policies?view=o365-worldwide#anatomy-of-a-quarantine-policy"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-Quarantine-E3",
+            "capability_description": "Quarantine Policies",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1204.001",
+            "attack_object_name": "Malicious Link",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "related_score": "T1204",
+            "comments": "In Exchange Online Protection (EOP) and Microsoft Defender for Office 365, quarantine policies allow admins to define the user experience for quarantined messages.\n   \nTraditionally, users have been allowed or denied levels of interactivity with quarantine messages based on why the message was quarantined. For example, users can view and release messages that were quarantined as spam or bulk, but they can't view or release messages that were quarantined as high confidence phishing or malware.\n\nThe following M365 features are supported by quarantine policies, \u201cResponse\u201d to Anti-malware and Anti-Phishing tagged items. Files that are quarantined as malware by Safe Attachments for SharePoint, OneDrive, and Microsoft Teams. \n\nLicense requirements: M365 E3 (or Defender for Office plan 1)",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/quarantine-about?view=o365-worldwide",
+                "https://security.microsoft.com/quarantinePolicies.",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/quarantine-policies?view=o365-worldwide#anatomy-of-a-quarantine-policy"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-Quarantine-E3",
+            "capability_description": "Quarantine Policies",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1204.002",
+            "attack_object_name": "Malicious File",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "related_score": "T1204",
+            "comments": "In Exchange Online Protection (EOP) and Microsoft Defender for Office 365, quarantine policies allow admins to define the user experience for quarantined messages.\n   \nTraditionally, users have been allowed or denied levels of interactivity with quarantine messages based on why the message was quarantined. For example, users can view and release messages that were quarantined as spam or bulk, but they can't view or release messages that were quarantined as high confidence phishing or malware.\n\nThe following M365 features are supported by quarantine policies, \u201cResponse\u201d to Anti-malware and Anti-Phishing tagged items. Files that are quarantined as malware by Safe Attachments for SharePoint, OneDrive, and Microsoft Teams. \n\nLicense requirements: M365 E3 (or Defender for Office plan 1)",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/quarantine-about?view=o365-worldwide",
+                "https://security.microsoft.com/quarantinePolicies.",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/quarantine-policies?view=o365-worldwide#anatomy-of-a-quarantine-policy"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-Quarantine-E3",
+            "capability_description": "Quarantine Policies",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1204",
+            "attack_object_name": "User Execution",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "comments": "In Exchange Online Protection (EOP) and Microsoft Defender for Office 365, quarantine policies allow admins to define the user experience for quarantined messages.\n   \nTraditionally, users have been allowed or denied levels of interactivity with quarantine messages based on why the message was quarantined. For example, users can view and release messages that were quarantined as spam or bulk, but they can't view or release messages that were quarantined as high confidence phishing or malware.\n\nThe following M365 features are supported by quarantine policies, \u201cResponse\u201d to Anti-malware and Anti-Phishing tagged items. Files that are quarantined as malware by Safe Attachments for SharePoint, OneDrive, and Microsoft Teams. \n\nLicense requirements: M365 E3 (or Defender for Office plan 1)",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/quarantine-about?view=o365-worldwide",
+                "https://security.microsoft.com/quarantinePolicies.",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/quarantine-policies?view=o365-worldwide#anatomy-of-a-quarantine-policy"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-Quarantine-E3",
+            "capability_description": "Quarantine Policies",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1080",
+            "attack_object_name": "Taint Shared Content",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "comments": "In Exchange Online Protection (EOP) and Microsoft Defender for Office 365, quarantine policies allow admins to define the user experience for quarantined messages.\n   \nTraditionally, users have been allowed or denied levels of interactivity with quarantine messages based on why the message was quarantined. For example, users can view and release messages that were quarantined as spam or bulk, but they can't view or release messages that were quarantined as high confidence phishing or malware.\n\nThe following M365 features are supported by quarantine policies, \u201cResponse\u201d to Anti-malware and Anti-Phishing tagged items. Files that are quarantined as malware by Safe Attachments for SharePoint, OneDrive, and Microsoft Teams. \n\nLicense requirements: M365 E3 (or Defender for Office plan 1)",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/quarantine-about?view=o365-worldwide",
+                "https://security.microsoft.com/quarantinePolicies.",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/quarantine-policies?view=o365-worldwide#anatomy-of-a-quarantine-policy"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-Quarantine-E3",
+            "capability_description": "Quarantine Policies",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1027",
+            "attack_object_name": "Obfuscated Files or Information",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "comments": "In Exchange Online Protection (EOP) and Microsoft Defender for Office 365, quarantine policies allow admins to define the user experience for quarantined messages.\n   \nTraditionally, users have been allowed or denied levels of interactivity with quarantine messages based on why the message was quarantined. For example, users can view and release messages that were quarantined as spam or bulk, but they can't view or release messages that were quarantined as high confidence phishing or malware.\n\nThe following M365 features are supported by quarantine policies, \u201cResponse\u201d to Anti-malware and Anti-Phishing tagged items. Files that are quarantined as malware by Safe Attachments for SharePoint, OneDrive, and Microsoft Teams. \n\nLicense requirements: M365 E3 (or Defender for Office plan 1)",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/quarantine-about?view=o365-worldwide",
+                "https://security.microsoft.com/quarantinePolicies.",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/quarantine-policies?view=o365-worldwide#anatomy-of-a-quarantine-policy"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-Quarantine-E3",
+            "capability_description": "Quarantine Policies",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1036",
+            "attack_object_name": "Masquerading",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "comments": "In Exchange Online Protection (EOP) and Microsoft Defender for Office 365, quarantine policies allow admins to define the user experience for quarantined messages.\n   \nTraditionally, users have been allowed or denied levels of interactivity with quarantine messages based on why the message was quarantined. For example, users can view and release messages that were quarantined as spam or bulk, but they can't view or release messages that were quarantined as high confidence phishing or malware.\n\nThe following M365 features are supported by quarantine policies, \u201cResponse\u201d to Anti-malware and Anti-Phishing tagged items. Files that are quarantined as malware by Safe Attachments for SharePoint, OneDrive, and Microsoft Teams. \n\nLicense requirements: M365 E3 (or Defender for Office plan 1)",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/quarantine-about?view=o365-worldwide",
+                "https://security.microsoft.com/quarantinePolicies.",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/quarantine-policies?view=o365-worldwide#anatomy-of-a-quarantine-policy"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-Quarantine-E3",
+            "capability_description": "Quarantine Policies",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1656",
+            "attack_object_name": "Impersonation",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "comments": "In Exchange Online Protection (EOP) and Microsoft Defender for Office 365, quarantine policies allow admins to define the user experience for quarantined messages.\n   \nTraditionally, users have been allowed or denied levels of interactivity with quarantine messages based on why the message was quarantined. For example, users can view and release messages that were quarantined as spam or bulk, but they can't view or release messages that were quarantined as high confidence phishing or malware.\n\nThe following M365 features are supported by quarantine policies, \u201cResponse\u201d to Anti-malware and Anti-Phishing tagged items. Files that are quarantined as malware by Safe Attachments for SharePoint, OneDrive, and Microsoft Teams. \n\nLicense requirements: M365 E3 (or Defender for Office plan 1)",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/quarantine-about?view=o365-worldwide",
+                "https://security.microsoft.com/quarantinePolicies.",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/quarantine-policies?view=o365-worldwide#anatomy-of-a-quarantine-policy"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-Quarantine-E3",
+            "capability_description": "Quarantine Policies",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1534",
+            "attack_object_name": "Internal Spearphishing",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "comments": "In Exchange Online Protection (EOP) and Microsoft Defender for Office 365, quarantine policies allow admins to define the user experience for quarantined messages.\n   \nTraditionally, users have been allowed or denied levels of interactivity with quarantine messages based on why the message was quarantined. For example, users can view and release messages that were quarantined as spam or bulk, but they can't view or release messages that were quarantined as high confidence phishing or malware.\n\nThe following M365 features are supported by quarantine policies, \u201cResponse\u201d to Anti-malware and Anti-Phishing tagged items. Files that are quarantined as malware by Safe Attachments for SharePoint, OneDrive, and Microsoft Teams. \n\nLicense requirements: M365 E3 (or Defender for Office plan 1)",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/quarantine-about?view=o365-worldwide",
+                "https://security.microsoft.com/quarantinePolicies.",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/quarantine-policies?view=o365-worldwide#anatomy-of-a-quarantine-policy"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-Quarantine-E3",
+            "capability_description": "Quarantine Policies",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566.002",
+            "attack_object_name": "Spearphishing Link",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "related_score": "T1566",
+            "comments": "In Exchange Online Protection (EOP) and Microsoft Defender for Office 365, quarantine policies allow admins to define the user experience for quarantined messages.\n   \nTraditionally, users have been allowed or denied levels of interactivity with quarantine messages based on why the message was quarantined. For example, users can view and release messages that were quarantined as spam or bulk, but they can't view or release messages that were quarantined as high confidence phishing or malware.\n\nThe following M365 features are supported by quarantine policies, \u201cResponse\u201d to Anti-malware and Anti-Phishing tagged items. Files that are quarantined as malware by Safe Attachments for SharePoint, OneDrive, and Microsoft Teams. \n\nLicense requirements: M365 E3 (or Defender for Office plan 1)",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/quarantine-about?view=o365-worldwide",
+                "https://security.microsoft.com/quarantinePolicies.",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/quarantine-policies?view=o365-worldwide#anatomy-of-a-quarantine-policy"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-Quarantine-E3",
+            "capability_description": "Quarantine Policies",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566",
+            "attack_object_name": "Phishing",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "comments": "In Exchange Online Protection (EOP) and Microsoft Defender for Office 365, quarantine policies allow admins to define the user experience for quarantined messages.\n   \nTraditionally, users have been allowed or denied levels of interactivity with quarantine messages based on why the message was quarantined. For example, users can view and release messages that were quarantined as spam or bulk, but they can't view or release messages that were quarantined as high confidence phishing or malware.\n\nThe following M365 features are supported by quarantine policies, \u201cResponse\u201d to Anti-malware and Anti-Phishing tagged items. Files that are quarantined as malware by Safe Attachments for SharePoint, OneDrive, and Microsoft Teams. \n\nLicense requirements: M365 E3 (or Defender for Office plan 1)",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/quarantine-about?view=o365-worldwide",
+                "https://security.microsoft.com/quarantinePolicies.",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/quarantine-policies?view=o365-worldwide#anatomy-of-a-quarantine-policy"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DEF-Quarantine-E3",
+            "capability_description": "Quarantine Policies",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1566.001",
+            "attack_object_name": "Spearphishing Attachment",
+            "capability_group": "m365-defender",
+            "score_category": "respond",
+            "score_value": "significant",
+            "related_score": "T1566",
+            "comments": "In Exchange Online Protection (EOP) and Microsoft Defender for Office 365, quarantine policies allow admins to define the user experience for quarantined messages.\n   \nTraditionally, users have been allowed or denied levels of interactivity with quarantine messages based on why the message was quarantined. For example, users can view and release messages that were quarantined as spam or bulk, but they can't view or release messages that were quarantined as high confidence phishing or malware.\n\nThe following M365 features are supported by quarantine policies, \u201cResponse\u201d to Anti-malware and Anti-Phishing tagged items. Files that are quarantined as malware by Safe Attachments for SharePoint, OneDrive, and Microsoft Teams. \n\nLicense requirements: M365 E3 (or Defender for Office plan 1)",
+            "references": [
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/quarantine-about?view=o365-worldwide",
+                "https://security.microsoft.com/quarantinePolicies.",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/quarantine-policies?view=o365-worldwide#anatomy-of-a-quarantine-policy"
+            ],
+            "status": "complete"
+        }
+    ]
+}
