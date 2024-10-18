@@ -2,6 +2,8 @@
 
 Generated via: https://chatgpt.com/g/g-xXpnPwHaD-cloud-adversarial-vectors-and-threat-solutions-v3/c/6712bc2a-4be8-8013-92ef-14f91d5dd979
 
+[Discuss this entry on Circle](https://circle.cloudsecurityalliance.org/discussion/discussion-of-the-single-stepping-attack-entry?ReturnUrl=%2fcommunity-home1%2fdigestviewer%3fListKey%3d0d628799-b5e6-41b2-b57d-018c352d3ca8%26CommunityKey%3dcce2fd58-ba71-4280-9e3d-018c352d4100)
+
 **ID**: CAVEAT-XXXX  
 **Name**: Single-Stepping CPU Attacks  
 **Category**: Side-Channel & Timing-Based Attacks  
