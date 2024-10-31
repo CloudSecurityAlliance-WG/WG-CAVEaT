@@ -6,7 +6,9 @@ If you are interested in this project feel free to (sign up with your email addr
 
 ## CAVEaT Chatbot:
 
-ChatBot URL: [https://csaurl.org/CAVEaT-Chatbot](https://csaurl.org/CAVEaT-Chatbot)
+ChatBot URL: [https://csaurl.org/CAVEaT-Chatbot](https://csaurl.org/CAVEaT-Chatbot) v2
+
+ChatBot New URL:[https://chatgpt.com/g/g-xXpnPwHaD-cloud-adversarial-vectors-and-threat-solutions-v3](https://chatgpt.com/g/g-xXpnPwHaD-cloud-adversarial-vectors-and-threat-solutions-v3) v3
 
 ChatBot data: [https://github.com/Cloudsecurityalliance-Chatbots/chatbot-CAVEaT-data](https://github.com/Cloudsecurityalliance-Chatbots/chatbot-CAVEaT-data)
 
