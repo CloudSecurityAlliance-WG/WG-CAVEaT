@@ -1,0 +1,3562 @@
+{
+    "languages": null,
+    "filetype": "pdf",
+    "toc": [
+        {
+            "title": "Security Pillar",
+            "level": 0,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 0,
+            "view_mode": "XYZ",
+            "view_pos": [
+                0.0,
+                543.0,
+                0.0
+            ]
+        },
+        {
+            "title": "Table of Contents",
+            "level": 0,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 2,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                744.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Security Pillar - AWS Well-Architected Framework",
+            "level": 0,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 6,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                744.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Introduction",
+            "level": 1,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 6,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                609.5170288085938,
+                0.0
+            ]
+        },
+        {
+            "title": "Security foundations",
+            "level": 0,
+            "is_closed": true,
+            "n_kids": 36,
+            "page_index": 7,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                744.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Design principles",
+            "level": 1,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 7,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                634.5,
+                0.0
+            ]
+        },
+        {
+            "title": "Definition",
+            "level": 1,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 8,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                744.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Shared responsibility",
+            "level": 1,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 8,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                503.0400085449219,
+                0.0
+            ]
+        },
+        {
+            "title": "Governance",
+            "level": 1,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 10,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                350.1000061035156,
+                0.0
+            ]
+        },
+        {
+            "title": "AWS account management and separation",
+            "level": 1,
+            "is_closed": true,
+            "n_kids": 6,
+            "page_index": 12,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                726.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC01-BP01 Separate workloads using accounts",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 2,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                609.5,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC01-BP02 Secure account root user and properties",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 2,
+            "page_index": 16,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                536.0999755859375,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "Operating your workloads securely",
+            "level": 1,
+            "is_closed": true,
+            "n_kids": 24,
+            "page_index": 21,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                471.29998779296875,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC01-BP03 Identify and validate control objectives",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 22,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                215.39999389648438,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 4,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC01-BP04 Stay up to date with security threats and recommendations",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 25,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                702.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC01-BP05 Reduce security management scope",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 26,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                168.0,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 4,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC01-BP06 Automate deployment of standard security controls",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 29,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                456.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC01-BP07 Identify threats and prioritize mitigations using a threat model",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 32,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                591.2999877929688,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 4,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC01-BP08 Evaluate and implement new security services and features regularly",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 36,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                422.1000061035156,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 4,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "Identity and access management",
+            "level": 0,
+            "is_closed": true,
+            "n_kids": 53,
+            "page_index": 39,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                744.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Identity management",
+            "level": 1,
+            "is_closed": true,
+            "n_kids": 21,
+            "page_index": 39,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                482.1460266113281,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC02-BP01 Use strong sign-in mechanisms",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 2,
+            "page_index": 40,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                658.5,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC02-BP02 Use temporary credentials",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 43,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                744.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 4,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC02-BP03 Store and use secrets securely",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 2,
+            "page_index": 46,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                744.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC02-BP04 Rely on a centralized identity provider",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 51,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                463.9320068359375,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 4,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC02-BP05 Audit and rotate credentials periodically",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 2,
+            "page_index": 55,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                489.7799987792969,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC02-BP06 Employ user groups and attributes",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 58,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                744.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 4,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "Permissions management",
+            "level": 1,
+            "is_closed": true,
+            "n_kids": 30,
+            "page_index": 60,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                360.8399963378906,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC03-BP01 Define access requirements",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 2,
+            "page_index": 62,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                418.0199890136719,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC03-BP02 Grant least privilege access",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 2,
+            "page_index": 66,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                582.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC03-BP03 Establish emergency access process",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 70,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                744.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 4,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC03-BP04 Reduce permissions continuously",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 2,
+            "page_index": 77,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                629.7000122070312,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC03-BP05 Define permission guardrails for your organization",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 79,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                563.5020141601562,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC03-BP06 Manage access based on lifecycle",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 82,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                430.0360107421875,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 4,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC03-BP07 Analyze public and cross-account access",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 2,
+            "page_index": 84,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                153.13999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC03-BP08 Share resources securely within your organization",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 2,
+            "page_index": 87,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                582.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC03-BP09 Share resources securely with a third party",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 2,
+            "page_index": 91,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                407.70001220703125,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "Detection",
+            "level": 0,
+            "is_closed": true,
+            "n_kids": 15,
+            "page_index": 96,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                744.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC04-BP01 Configure service and application logging",
+            "level": 1,
+            "is_closed": true,
+            "n_kids": 2,
+            "page_index": 97,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                744.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 2,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 2,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC04-BP02 Capture logs, findings, and metrics in standardized locations",
+            "level": 1,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 101,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                294.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 2,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 2,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 2,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC04-BP03 Correlate and enrich security alerts",
+            "level": 1,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 105,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                444.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 2,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC04-BP04 Initiate remediation for non-compliant resources",
+            "level": 1,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 108,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                601.302001953125,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 2,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "Infrastructure protection",
+            "level": 0,
+            "is_closed": true,
+            "n_kids": 36,
+            "page_index": 112,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                744.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Protecting networks",
+            "level": 1,
+            "is_closed": true,
+            "n_kids": 16,
+            "page_index": 113,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                344.5799865722656,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC05-BP01 Create network layers",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 114,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                606.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 4,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC05-BP02 Control traffic flow within your network layers",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 116,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                150.89999389648438,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 4,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC05-BP03 Implement inspection-based protection",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 120,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                672.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC05-BP04 Automate network protection",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 122,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                154.58799743652344,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "Protecting compute",
+            "level": 1,
+            "is_closed": true,
+            "n_kids": 18,
+            "page_index": 125,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                414.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC06-BP01 Perform vulnerability management",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 2,
+            "page_index": 126,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                744.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC06-BP02 Provision compute from hardened images",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 129,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                744.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC06-BP03 Reduce manual management and interactive access",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 131,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                171.22500610351562,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 4,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC06-BP04 Validate software integrity",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 2,
+            "page_index": 134,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                528.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC06-BP05 Automate compute protection",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 136,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                428.57000732421875,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 4,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "Data protection",
+            "level": 0,
+            "is_closed": true,
+            "n_kids": 45,
+            "page_index": 140,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                744.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Data classification",
+            "level": 1,
+            "is_closed": true,
+            "n_kids": 16,
+            "page_index": 140,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                428.6100158691406,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC07-BP01 Understand your data classification scheme",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 140,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                206.7899932861328,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 4,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC07-BP02 Apply data protection controls based on data sensitivity",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 143,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                630.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 4,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC07-BP03 Automate identification and classification",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 145,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                239.33999633789062,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 4,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC07-BP04 Define scalable data lifecycle management",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 148,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                608.0999755859375,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 4,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "Protecting data at rest",
+            "level": 1,
+            "is_closed": true,
+            "n_kids": 15,
+            "page_index": 150,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                288.8399963378906,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC08-BP01 Implement secure key management",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 151,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                311.70001220703125,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 4,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC08-BP02 Enforce encryption at rest",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 2,
+            "page_index": 155,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                744.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC08-BP03 Automate data at rest protection",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 157,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                284.79400634765625,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance\u00a0",
+            "level": 3,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 4,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC08-BP04 Enforce access control",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 161,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                679.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 4,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "Protecting data in transit",
+            "level": 1,
+            "is_closed": true,
+            "n_kids": 11,
+            "page_index": 163,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                431.5950012207031,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC09-BP01 Implement secure key and certificate management",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 164,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                659.7000122070312,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 4,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC09-BP02 Enforce encryption in transit",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 2,
+            "page_index": 167,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                506.87200927734375,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC09-BP03 Authenticate network communications",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 169,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                449.4720153808594,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 4,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "Incident response",
+            "level": 0,
+            "is_closed": true,
+            "n_kids": 36,
+            "page_index": 174,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                744.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Aspects of AWS incident response",
+            "level": 1,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 174,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                388.5,
+                0.0
+            ]
+        },
+        {
+            "title": "Design goals of cloud response",
+            "level": 1,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 175,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                346.125,
+                0.0
+            ]
+        },
+        {
+            "title": "Preparation",
+            "level": 1,
+            "is_closed": true,
+            "n_kids": 27,
+            "page_index": 176,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                264.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC10-BP01 Identify key personnel and external resources",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 177,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                330.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC10-BP02 Develop incident management plans",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 180,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                506.6150207519531,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC10-BP03 Prepare forensic capabilities",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 184,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                681.2999877929688,
+                0.0
+            ]
+        },
+        {
+            "title": "",
+            "level": 3,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 4,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC10-BP04 Develop and test security incident response playbooks",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 187,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                579.1499633789062,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 4,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC10-BP05 Pre-provision access",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 2,
+            "page_index": 188,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                193.2830047607422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC10-BP06 Pre-deploy tools",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 192,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                185.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 4,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC10-BP07 Run simulations",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 195,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                657.5399780273438,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "Operations",
+            "level": 1,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 197,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                469.5,
+                0.0
+            ]
+        },
+        {
+            "title": "Post-incident activity",
+            "level": 1,
+            "is_closed": true,
+            "n_kids": 4,
+            "page_index": 198,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                422.8799743652344,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC10-BP08 Establish a framework for learning from incidents",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 198,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                168.00599670410156,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 3,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 4,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "Application security",
+            "level": 0,
+            "is_closed": true,
+            "n_kids": 34,
+            "page_index": 202,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                744.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC11-BP01 Train for application security",
+            "level": 1,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 203,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                589.760009765625,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 2,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC11-BP02 Automate testing throughout the development and release lifecycle",
+            "level": 1,
+            "is_closed": true,
+            "n_kids": 5,
+            "page_index": 205,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                323.1000061035156,
+                0.0
+            ]
+        },
+        {
+            "title": "",
+            "level": 2,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 206,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                600.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "",
+            "level": 2,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 206,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                442.5,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 2,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC11-BP03 Perform regular penetration testing",
+            "level": 1,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 209,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                744.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 2,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC11-BP04 Manual code reviews",
+            "level": 1,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 211,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                543.7640380859375,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 212,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                599.4820556640625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 2,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 212,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                346.99200439453125,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC11-BP05 Centralize services for packages and dependencies",
+            "level": 1,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 213,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                600.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps:",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 2,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC11-BP06 Deploy software programmatically",
+            "level": 1,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 215,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                487.5,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 2,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC11-BP07 Regularly assess security properties of the pipelines",
+            "level": 1,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 217,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                382.5,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 2,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "SEC11-BP08 Build a program that embeds security ownership in workload teams",
+            "level": 1,
+            "is_closed": true,
+            "n_kids": 3,
+            "page_index": 219,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                587.7000122070312,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation guidance",
+            "level": 2,
+            "is_closed": true,
+            "n_kids": 1,
+            "page_index": 13,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                162.6999969482422,
+                0.0
+            ]
+        },
+        {
+            "title": "Implementation steps",
+            "level": 3,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 24,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                642.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Resources",
+            "level": 2,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 15,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                432.8999938964844,
+                0.0
+            ]
+        },
+        {
+            "title": "Conclusion",
+            "level": 0,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 222,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                744.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Contributors",
+            "level": 0,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 223,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                744.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Further reading",
+            "level": 0,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 225,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                744.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Document revisions",
+            "level": 0,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 226,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                744.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "Notices",
+            "level": 0,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 229,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                744.9000244140625,
+                0.0
+            ]
+        },
+        {
+            "title": "AWS Glossary",
+            "level": 0,
+            "is_closed": null,
+            "n_kids": 0,
+            "page_index": 230,
+            "view_mode": "XYZ",
+            "view_pos": [
+                36.0,
+                744.9000244140625,
+                0.0
+            ]
+        }
+    ],
+    "pages": 231,
+    "ocr_stats": {
+        "ocr_pages": 4,
+        "ocr_failed": 0,
+        "ocr_success": 4,
+        "ocr_engine": "surya"
+    },
+    "block_stats": {
+        "header_footer": 923,
+        "code": 0,
+        "table": 16,
+        "equations": {
+            "successful_ocr": 0,
+            "unsuccessful_ocr": 0,
+            "equations": 0
+        }
+    },
+    "postprocess_stats": {
+        "edit": {}
+    }
+}

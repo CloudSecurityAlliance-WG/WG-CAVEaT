@@ -1,0 +1,2920 @@
+# Audit and Assurance Policy and Procedures
+
+**Control Domain:** Audit & Assurance
+
+**Control ID:** A&A-01
+
+**Control Specification:**
+
+Establish, document, approve, communicate, apply, evaluate and maintain
+audit and assurance policies and procedures and standards. Review and update
+the policies and procedures at least annually.
+
+
+---
+
+# Independent Assessments
+
+**Control Domain:** Audit & Assurance
+
+**Control ID:** A&A-02
+
+**Control Specification:**
+
+Conduct independent audit and assurance assessments according to
+relevant standards at least annually.
+
+
+---
+
+# Risk Based Planning Assessment
+
+**Control Domain:** Audit & Assurance
+
+**Control ID:** A&A-03
+
+**Control Specification:**
+
+Perform independent audit and assurance assessments according to
+risk-based plans and policies.
+
+
+---
+
+# Requirements Compliance
+
+**Control Domain:** Audit & Assurance
+
+**Control ID:** A&A-04
+
+**Control Specification:**
+
+Verify compliance with all relevant standards, regulations, legal/contractual,
+and statutory requirements applicable to the audit.
+
+
+---
+
+# Audit Management Process
+
+**Control Domain:** Audit & Assurance
+
+**Control ID:** A&A-05
+
+**Control Specification:**
+
+Define and implement an Audit Management process to support audit
+planning, risk analysis, security control assessment, conclusion, remediation
+schedules, report generation, and review of past reports and supporting evidence.
+
+
+---
+
+# Remediation
+
+**Control Domain:** Audit & Assurance
+
+**Control ID:** A&A-06
+
+**Control Specification:**
+
+Establish, document, approve, communicate, apply, evaluate and maintain
+a risk-based corrective action plan to remediate audit findings, review and
+report remediation status to relevant stakeholders.
+
+
+---
+
+# Application and Interface Security Policy and Procedures
+
+**Control Domain:** Application & Interface Security
+
+**Control ID:** AIS-01
+
+**Control Specification:**
+
+Establish, document, approve, communicate, apply, evaluate and maintain
+policies and procedures for application security to provide guidance to the
+appropriate planning, delivery and support of the organization's application
+security capabilities. Review and update the policies and procedures at least
+annually.
+
+
+---
+
+# Application Security Baseline Requirements
+
+**Control Domain:** Application & Interface Security
+
+**Control ID:** AIS-02
+
+**Control Specification:**
+
+Establish, document and maintain baseline requirements for securing
+different applications.
+
+
+---
+
+# Application Security Metrics
+
+**Control Domain:** Application & Interface Security
+
+**Control ID:** AIS-03
+
+**Control Specification:**
+
+Define and implement technical and operational metrics in alignment
+with business objectives, security requirements, and compliance obligations.
+
+
+---
+
+# Secure Application Design and Development
+
+**Control Domain:** Application & Interface Security
+
+**Control ID:** AIS-04
+
+**Control Specification:**
+
+Define and implement a SDLC process for application design, development,
+deployment, and operation in accordance with security requirements defined by
+the organization.
+
+
+---
+
+# Automated Application Security Testing
+
+**Control Domain:** Application & Interface Security
+
+**Control ID:** AIS-05
+
+**Control Specification:**
+
+Implement a testing strategy, including criteria for acceptance of
+new information systems, upgrades and new versions, which provides application
+security assurance and maintains compliance while enabling organizational speed
+of delivery goals. Automate when applicable and possible.
+
+
+---
+
+# Automated Secure Application Deployment
+
+**Control Domain:** Application & Interface Security
+
+**Control ID:** AIS-06
+
+**Control Specification:**
+
+Establish and implement strategies and capabilities for secure, standardized,
+and compliant application deployment. Automate where possible.
+
+
+---
+
+# Application Vulnerability Remediation
+
+**Control Domain:** Application & Interface Security
+
+**Control ID:** AIS-07
+
+**Control Specification:**
+
+Define and implement a process to remediate application security
+vulnerabilities, automating remediation when possible.
+
+
+---
+
+# Business Continuity Management Policy and Procedures
+
+**Control Domain:** Business Continuity Management and Operational Resilience
+
+**Control ID:** BCR-01
+
+**Control Specification:**
+
+Establish, document, approve, communicate, apply, evaluate and maintain
+business continuity management and operational resilience policies and procedures.
+Review and update the policies and procedures at least annually.
+
+
+---
+
+# Risk Assessment and Impact Analysis
+
+**Control Domain:** Business Continuity Management and Operational Resilience
+
+**Control ID:** BCR-02
+
+**Control Specification:**
+
+Determine the impact of business disruptions and risks to establish
+criteria for developing business continuity and operational resilience strategies
+and capabilities.
+
+
+---
+
+# Business Continuity Strategy
+
+**Control Domain:** Business Continuity Management and Operational Resilience
+
+**Control ID:** BCR-03
+
+**Control Specification:**
+
+Establish strategies to reduce the impact of, withstand, and recover
+from business disruptions within risk appetite.
+
+
+---
+
+# Business Continuity Planning
+
+**Control Domain:** Business Continuity Management and Operational Resilience
+
+**Control ID:** BCR-04
+
+**Control Specification:**
+
+Establish, document, approve, communicate, apply, evaluate and maintain
+a business continuity plan based on the results of the operational resilience
+strategies and capabilities.
+
+
+---
+
+# Documentation
+
+**Control Domain:** Business Continuity Management and Operational Resilience
+
+**Control ID:** BCR-05
+
+**Control Specification:**
+
+Develop, identify, and acquire documentation that is relevant to
+support the business continuity and operational resilience programs. Make the
+documentation available to authorized stakeholders and review periodically.
+
+
+---
+
+# Business Continuity Exercises
+
+**Control Domain:** Business Continuity Management and Operational Resilience
+
+**Control ID:** BCR-06
+
+**Control Specification:**
+
+Exercise and test business continuity and operational resilience
+plans at least annually or upon significant changes.
+
+
+---
+
+# Communication
+
+**Control Domain:** Business Continuity Management and Operational Resilience
+
+**Control ID:** BCR-07
+
+**Control Specification:**
+
+Establish communication with stakeholders and participants in the
+course of business continuity and resilience procedures.
+
+
+---
+
+# Backup
+
+**Control Domain:** Business Continuity Management and Operational Resilience
+
+**Control ID:** BCR-08
+
+**Control Specification:**
+
+Periodically backup data stored in the cloud. Ensure the confidentiality,
+integrity and availability of the backup, and verify data restoration from backup
+for resiliency.
+
+
+---
+
+# Disaster Response Plan
+
+**Control Domain:** Business Continuity Management and Operational Resilience
+
+**Control ID:** BCR-09
+
+**Control Specification:**
+
+Establish, document, approve, communicate, apply, evaluate and maintain
+a disaster response plan to recover from natural and man-made disasters. Update
+the plan at least annually or upon significant changes.
+
+
+---
+
+# Response Plan Exercise
+
+**Control Domain:** Business Continuity Management and Operational Resilience
+
+**Control ID:** BCR-10
+
+**Control Specification:**
+
+Exercise the disaster response plan annually or upon significant
+changes, including if possible local emergency authorities.
+
+
+---
+
+# Equipment Redundancy
+
+**Control Domain:** Business Continuity Management and Operational Resilience
+
+**Control ID:** BCR-11
+
+**Control Specification:**
+
+Supplement business-critical equipment with redundant equipment independently
+located at a reasonable minimum distance in accordance with applicable industry
+standards.
+
+
+---
+
+# Change Management Policy and Procedures
+
+**Control Domain:** Change Control and Configuration Management
+
+**Control ID:** CCC-01
+
+**Control Specification:**
+
+Establish, document, approve, communicate, apply, evaluate and maintain
+policies and procedures for managing the risks associated with applying changes
+to organization assets, including application, systems, infrastructure, configuration,
+etc., regardless of whether the assets are managed internally or externally
+(i.e., outsourced). Review and update the policies and procedures at least annually.
+
+
+---
+
+# Quality Testing
+
+**Control Domain:** Change Control and Configuration Management
+
+**Control ID:** CCC-02
+
+**Control Specification:**
+
+Follow a defined quality change control, approval and testing process
+with established baselines, testing, and release standards.
+
+
+---
+
+# Change Management Technology
+
+**Control Domain:** Change Control and Configuration Management
+
+**Control ID:** CCC-03
+
+**Control Specification:**
+
+Manage the risks associated with applying changes to organization
+assets, including application, systems, infrastructure, configuration, etc.,
+regardless of whether the assets are managed internally or externally (i.e.,
+outsourced).
+
+
+---
+
+# Unauthorized Change Protection
+
+**Control Domain:** Change Control and Configuration Management
+
+**Control ID:** CCC-04
+
+**Control Specification:**
+
+Restrict the unauthorized addition, removal, update, and management
+of organization assets.
+
+
+---
+
+# Change Agreements
+
+**Control Domain:** Change Control and Configuration Management
+
+**Control ID:** CCC-05
+
+**Control Specification:**
+
+Include provisions limiting changes directly impacting CSCs owned
+environments/tenants to explicitly authorized requests within service level
+agreements between CSPs and CSCs.
+
+
+---
+
+# Change Management Baseline
+
+**Control Domain:** Change Control and Configuration Management
+
+**Control ID:** CCC-06
+
+**Control Specification:**
+
+Establish change management baselines for all relevant authorized
+changes on organization assets.
+
+
+---
+
+# Detection of Baseline Deviation
+
+**Control Domain:** Change Control and Configuration Management
+
+**Control ID:** CCC-07
+
+**Control Specification:**
+
+Implement detection measures with proactive notification in case
+of changes deviating from the established baseline.
+
+
+---
+
+# Exception Management
+
+**Control Domain:** Change Control and Configuration Management
+
+**Control ID:** CCC-08
+
+**Control Specification:**
+
+'Implement a procedure for the management of exceptions, including
+emergencies, in the change and configuration process. Align the procedure with
+the requirements of GRC-04: Policy Exception Process.'
+
+
+---
+
+# Change Restoration
+
+**Control Domain:** Change Control and Configuration Management
+
+**Control ID:** CCC-09
+
+**Control Specification:**
+
+Define and implement a process to proactively roll back changes to
+a previous known good state in case of errors or security concerns.
+
+
+---
+
+# Encryption and Key Management Policy and Procedures
+
+**Control Domain:** Cryptography, Encryption & Key Management
+
+**Control ID:** CEK-01
+
+**Control Specification:**
+
+Establish, document, approve, communicate, apply, evaluate and maintain
+policies and procedures for Cryptography, Encryption and Key Management. Review
+and update the policies and procedures at least annually.
+
+
+---
+
+# CEK Roles and Responsibilities
+
+**Control Domain:** Cryptography, Encryption & Key Management
+
+**Control ID:** CEK-02
+
+**Control Specification:**
+
+Define and implement cryptographic, encryption and key management
+roles and responsibilities.
+
+
+---
+
+# Data Encryption
+
+**Control Domain:** Cryptography, Encryption & Key Management
+
+**Control ID:** CEK-03
+
+**Control Specification:**
+
+Provide cryptographic protection to data at-rest and in-transit,
+using cryptographic libraries certified to approved standards.
+
+
+---
+
+# Encryption Algorithm
+
+**Control Domain:** Cryptography, Encryption & Key Management
+
+**Control ID:** CEK-04
+
+**Control Specification:**
+
+Use encryption algorithms that are appropriate for data protection,
+considering the classification of data, associated risks, and usability of the
+encryption technology.
+
+
+---
+
+# Encryption Change Management
+
+**Control Domain:** Cryptography, Encryption & Key Management
+
+**Control ID:** CEK-05
+
+**Control Specification:**
+
+Establish a standard change management procedure, to accommodate
+changes from internal and external sources, for review, approval, implementation
+and communication of cryptographic, encryption and key management technology
+changes.
+
+
+---
+
+# Encryption Change Cost Benefit Analysis
+
+**Control Domain:** Cryptography, Encryption & Key Management
+
+**Control ID:** CEK-06
+
+**Control Specification:**
+
+Manage and adopt changes to cryptography-, encryption-, and key management-related
+systems (including policies and procedures) that fully account for downstream
+effects of proposed changes, including residual risk, cost, and benefits analysis.
+
+
+---
+
+# Encryption Risk Management
+
+**Control Domain:** Cryptography, Encryption & Key Management
+
+**Control ID:** CEK-07
+
+**Control Specification:**
+
+Establish and maintain an encryption and key management risk program
+that includes provisions for risk assessment, risk treatment, risk context,
+monitoring, and feedback.
+
+
+---
+
+# CSC Key Management Capability
+
+**Control Domain:** Cryptography, Encryption & Key Management
+
+**Control ID:** CEK-08
+
+**Control Specification:**
+
+CSPs must provide the capability for CSCs to manage their own data
+encryption keys.
+
+
+---
+
+# Encryption and Key Management Audit
+
+**Control Domain:** Cryptography, Encryption & Key Management
+
+**Control ID:** CEK-09
+
+**Control Specification:**
+
+Audit encryption and key management systems, policies, and processes
+with a frequency that is proportional to the risk exposure of the system with
+audit occurring preferably continuously but at least annually and after any
+security event(s).
+
+
+---
+
+# Key Generation
+
+**Control Domain:** Cryptography, Encryption & Key Management
+
+**Control ID:** CEK-10
+
+**Control Specification:**
+
+Generate Cryptographic keys using industry accepted cryptographic
+libraries specifying the algorithm strength and the random number generator
+used.
+
+
+---
+
+# Key Purpose
+
+**Control Domain:** Cryptography, Encryption & Key Management
+
+**Control ID:** CEK-11
+
+**Control Specification:**
+
+Manage cryptographic secret and private keys that are provisioned
+for a unique purpose.
+
+
+---
+
+# Key Rotation
+
+**Control Domain:** Cryptography, Encryption & Key Management
+
+**Control ID:** CEK-12
+
+**Control Specification:**
+
+Rotate cryptographic keys in accordance with the calculated cryptoperiod,
+which includes provisions for considering the risk of information disclosure
+and legal and regulatory requirements.
+
+
+---
+
+# Key Revocation
+
+**Control Domain:** Cryptography, Encryption & Key Management
+
+**Control ID:** CEK-13
+
+**Control Specification:**
+
+Define, implement and evaluate processes, procedures and technical
+measures to revoke and remove cryptographic keys prior to the end of its established
+cryptoperiod, when a key is compromised, or an entity is no longer part of the
+organization, which include provisions for legal and regulatory requirements.
+
+
+---
+
+# Key Destruction
+
+**Control Domain:** Cryptography, Encryption & Key Management
+
+**Control ID:** CEK-14
+
+**Control Specification:**
+
+Define, implement and evaluate processes, procedures and technical
+measures to destroy keys stored outside a secure environment and revoke keys
+stored in Hardware Security Modules (HSMs) when they are no longer needed, which
+include provisions for legal and regulatory requirements.
+
+
+---
+
+# Key Activation
+
+**Control Domain:** Cryptography, Encryption & Key Management
+
+**Control ID:** CEK-15
+
+**Control Specification:**
+
+Define, implement and evaluate processes, procedures and technical
+measures to create keys in a pre-activated state when they have been generated
+but not authorized for use, which include provisions for legal and regulatory
+requirements.
+
+
+---
+
+# Key Suspension
+
+**Control Domain:** Cryptography, Encryption & Key Management
+
+**Control ID:** CEK-16
+
+**Control Specification:**
+
+Define, implement and evaluate processes, procedures and technical
+measures to monitor, review and approve key transitions from any state to/from
+suspension, which include provisions for legal and regulatory requirements.
+
+
+---
+
+# Key Deactivation
+
+**Control Domain:** Cryptography, Encryption & Key Management
+
+**Control ID:** CEK-17
+
+**Control Specification:**
+
+Define, implement and evaluate processes, procedures and technical
+measures to deactivate keys at the time of their expiration date, which include
+provisions for legal and regulatory requirements.
+
+
+---
+
+# Key Archival
+
+**Control Domain:** Cryptography, Encryption & Key Management
+
+**Control ID:** CEK-18
+
+**Control Specification:**
+
+Define, implement and evaluate processes, procedures and technical
+measures to manage archived keys in a secure repository requiring least privilege
+access, which include provisions for legal and regulatory requirements.
+
+
+---
+
+# Key Compromise
+
+**Control Domain:** Cryptography, Encryption & Key Management
+
+**Control ID:** CEK-19
+
+**Control Specification:**
+
+Define, implement and evaluate processes, procedures and technical
+measures to use compromised keys to encrypt information only in controlled circumstance,
+and thereafter exclusively for decrypting data and never for encrypting data,
+which include provisions for legal and regulatory requirements.
+
+
+---
+
+# Key Recovery
+
+**Control Domain:** Cryptography, Encryption & Key Management
+
+**Control ID:** CEK-20
+
+**Control Specification:**
+
+Define, implement and evaluate processes, procedures and technical
+measures to assess the risk to operational continuity versus the risk of the
+keying material and the information it protects being exposed if control of
+the keying material is lost, which include provisions for legal and regulatory
+requirements.
+
+
+---
+
+# Key Inventory Management
+
+**Control Domain:** Cryptography, Encryption & Key Management
+
+**Control ID:** CEK-21
+
+**Control Specification:**
+
+Define, implement and evaluate processes, procedures and technical
+measures in order for the key management system to track and report all cryptographic
+materials and changes in status, which include provisions for legal and regulatory
+requirements.
+
+
+---
+
+# Off-Site Equipment Disposal Policy and Procedures
+
+**Control Domain:** Datacenter Security
+
+**Control ID:** DCS-01
+
+**Control Specification:**
+
+Establish, document, approve, communicate, apply, evaluate and maintain
+policies and procedures for the secure disposal of equipment used outside the
+organization's premises. If the equipment is not physically destroyed a data
+destruction procedure that renders recovery of information impossible must be
+applied. Review and update the policies and procedures at least annually.
+
+
+---
+
+# Off-Site Transfer Authorization Policy and Procedures
+
+**Control Domain:** Datacenter Security
+
+**Control ID:** DCS-02
+
+**Control Specification:**
+
+Establish, document, approve, communicate, apply, evaluate and maintain
+policies and procedures for the relocation or transfer of hardware, software,
+or data/information to an offsite or alternate location. The relocation or transfer
+request requires the written or cryptographically verifiable authorization.
+Review and update the policies and procedures at least annually.
+
+
+---
+
+# Secure Area Policy and Procedures
+
+**Control Domain:** Datacenter Security
+
+**Control ID:** DCS-03
+
+**Control Specification:**
+
+Establish, document, approve, communicate, apply, evaluate and maintain
+policies and procedures for maintaining a safe and secure working environment
+in offices, rooms, and facilities. Review and update the policies and procedures
+at least annually.
+
+
+---
+
+# Secure Media Transportation Policy and Procedures
+
+**Control Domain:** Datacenter Security
+
+**Control ID:** DCS-04
+
+**Control Specification:**
+
+Establish, document, approve, communicate, apply, evaluate and maintain
+policies and procedures for the secure transportation of physical media. Review
+and update the policies and procedures at least annually.
+
+
+---
+
+# Assets Classification
+
+**Control Domain:** Datacenter Security
+
+**Control ID:** DCS-05
+
+**Control Specification:**
+
+Classify and document the physical, and logical assets (e.g., applications)
+based on the organizational business risk.
+
+
+---
+
+# Assets Cataloguing and Tracking
+
+**Control Domain:** Datacenter Security
+
+**Control ID:** DCS-06
+
+**Control Specification:**
+
+Catalogue and track all relevant physical and logical assets located
+at all of the CSP's sites within a secured system.
+
+
+---
+
+# Controlled Access Points
+
+**Control Domain:** Datacenter Security
+
+**Control ID:** DCS-07
+
+**Control Specification:**
+
+Implement physical security perimeters to safeguard personnel, data,
+and information systems. Establish physical security perimeters between the
+administrative and business areas and the data storage and processing facilities
+areas.
+
+
+---
+
+# Equipment Identification
+
+**Control Domain:** Datacenter Security
+
+**Control ID:** DCS-08
+
+**Control Specification:**
+
+Use equipment identification as a method for connection authentication.
+
+
+---
+
+# Secure Area Authorization
+
+**Control Domain:** Datacenter Security
+
+**Control ID:** DCS-09
+
+**Control Specification:**
+
+Allow only authorized personnel access to secure areas, with all
+ingress and egress points restricted, documented, and monitored by physical
+access control mechanisms. Retain access control records on a periodic basis
+as deemed appropriate by the organization.
+
+
+---
+
+# Surveillance System
+
+**Control Domain:** Datacenter Security
+
+**Control ID:** DCS-10
+
+**Control Specification:**
+
+Implement, maintain, and operate datacenter surveillance systems
+at the external perimeter and at all the ingress and egress points to detect
+unauthorized ingress and egress attempts.
+
+
+---
+
+# Unauthorized Access Response Training
+
+**Control Domain:** Datacenter Security
+
+**Control ID:** DCS-11
+
+**Control Specification:**
+
+Train datacenter personnel to respond to unauthorized ingress or
+egress attempts.
+
+
+---
+
+# Cabling Security
+
+**Control Domain:** Datacenter Security
+
+**Control ID:** DCS-12
+
+**Control Specification:**
+
+Define, implement and evaluate processes, procedures and technical
+measures that ensure a risk-based protection of power and telecommunication
+cables from a threat of interception, interference or damage at all facilities,
+offices and rooms.
+
+
+---
+
+# Environmental Systems
+
+**Control Domain:** Datacenter Security
+
+**Control ID:** DCS-13
+
+**Control Specification:**
+
+Implement and maintain data center environmental control systems
+that monitor, maintain and test for continual effectiveness the temperature
+and humidity conditions within accepted industry standards.
+
+
+---
+
+# Secure Utilities
+
+**Control Domain:** Datacenter Security
+
+**Control ID:** DCS-14
+
+**Control Specification:**
+
+Secure, monitor, maintain, and test utilities services for continual
+effectiveness at planned intervals.
+
+
+---
+
+# Equipment Location
+
+**Control Domain:** Datacenter Security
+
+**Control ID:** DCS-15
+
+**Control Specification:**
+
+Keep business-critical equipment away from locations subject to high
+probability for environmental risk events.
+
+
+---
+
+# Security and Privacy Policy and Procedures
+
+**Control Domain:** Data Security and Privacy Lifecycle Management
+
+**Control ID:** DSP-01
+
+**Control Specification:**
+
+Establish, document, approve, communicate, apply, evaluate and maintain
+policies and procedures for the classification, protection and handling of data
+throughout its lifecycle, and according to all applicable laws and regulations,
+standards, and risk level. Review and update the policies and procedures at
+least annually.
+
+
+---
+
+# Secure Disposal
+
+**Control Domain:** Data Security and Privacy Lifecycle Management
+
+**Control ID:** DSP-02
+
+**Control Specification:**
+
+Apply industry accepted methods for the secure disposal of data from
+storage media such that data is not recoverable by any forensic means.
+
+
+---
+
+# Data Inventory
+
+**Control Domain:** Data Security and Privacy Lifecycle Management
+
+**Control ID:** DSP-03
+
+**Control Specification:**
+
+Create and maintain a data inventory, at least for any sensitive
+data and personal data.
+
+
+---
+
+# Data Classification
+
+**Control Domain:** Data Security and Privacy Lifecycle Management
+
+**Control ID:** DSP-04
+
+**Control Specification:**
+
+Classify data according to its type and sensitivity level.
+
+
+---
+
+# Data Flow Documentation
+
+**Control Domain:** Data Security and Privacy Lifecycle Management
+
+**Control ID:** DSP-05
+
+**Control Specification:**
+
+Create data flow documentation to identify what data is processed,
+stored or transmitted where. Review data flow documentation at defined intervals,
+at least annually, and after any change.
+
+
+---
+
+# Data Ownership and Stewardship
+
+**Control Domain:** Data Security and Privacy Lifecycle Management
+
+**Control ID:** DSP-06
+
+**Control Specification:**
+
+Document ownership and stewardship of all relevant documented personal
+and sensitive data. Perform review at least annually.
+
+
+---
+
+# Data Protection by Design and Default
+
+**Control Domain:** Data Security and Privacy Lifecycle Management
+
+**Control ID:** DSP-07
+
+**Control Specification:**
+
+Develop systems, products, and business practices based upon a principle
+of security by design and industry best practices.
+
+
+---
+
+# Data Privacy by Design and Default
+
+**Control Domain:** Data Security and Privacy Lifecycle Management
+
+**Control ID:** DSP-08
+
+**Control Specification:**
+
+Develop systems, products, and business practices based upon a principle
+of privacy by design and industry best practices. Ensure that systems' privacy
+settings are configured by default, according to all applicable laws and regulations.
+
+
+---
+
+# Data Protection Impact Assessment
+
+**Control Domain:** Data Security and Privacy Lifecycle Management
+
+**Control ID:** DSP-09
+
+**Control Specification:**
+
+Conduct a Data Protection Impact Assessment (DPIA) to evaluate the
+origin, nature, particularity and severity of the risks upon the processing
+of personal data, according to any applicable laws, regulations and industry
+best practices.
+
+
+---
+
+# Sensitive Data Transfer
+
+**Control Domain:** Data Security and Privacy Lifecycle Management
+
+**Control ID:** DSP-10
+
+**Control Specification:**
+
+Define, implement and evaluate processes, procedures and technical
+measures that ensure any transfer of personal or sensitive data is protected
+from unauthorized access and only processed within scope as permitted by the
+respective laws and regulations.
+
+
+---
+
+# Personal Data Access, Reversal, Rectification and Deletion
+
+**Control Domain:** Data Security and Privacy Lifecycle Management
+
+**Control ID:** DSP-11
+
+**Control Specification:**
+
+Define and implement, processes, procedures and technical measures
+to enable data subjects to request access to, modification, or deletion of their
+personal data, according to any applicable laws and regulations.
+
+
+---
+
+# Limitation of Purpose in Personal Data Processing
+
+**Control Domain:** Data Security and Privacy Lifecycle Management
+
+**Control ID:** DSP-12
+
+**Control Specification:**
+
+Define, implement and evaluate processes, procedures and technical
+measures to ensure that personal data is processed according to any applicable
+laws and regulations and for the purposes declared to the data subject.
+
+
+---
+
+# Personal Data Sub-processing
+
+**Control Domain:** Data Security and Privacy Lifecycle Management
+
+**Control ID:** DSP-13
+
+**Control Specification:**
+
+Define, implement and evaluate processes, procedures and technical
+measures for the transfer and sub-processing of personal data within the service
+supply chain, according to any applicable laws and regulations.
+
+
+---
+
+# Disclosure of Data Sub-processors
+
+**Control Domain:** Data Security and Privacy Lifecycle Management
+
+**Control ID:** DSP-14
+
+**Control Specification:**
+
+Define, implement and evaluate processes, procedures and technical
+measures to disclose the details of any personal or sensitive data access by
+sub-processors to the data owner prior to initiation of that processing.
+
+
+---
+
+# Limitation of Production Data Use
+
+**Control Domain:** Data Security and Privacy Lifecycle Management
+
+**Control ID:** DSP-15
+
+**Control Specification:**
+
+Obtain authorization from data owners, and manage associated risk
+before replicating or using production data in non-production environments.
+
+
+---
+
+# Data Retention and Deletion
+
+**Control Domain:** Data Security and Privacy Lifecycle Management
+
+**Control ID:** DSP-16
+
+**Control Specification:**
+
+Data retention, archiving and deletion is managed in accordance with
+business requirements, applicable laws and regulations.
+
+
+---
+
+# Sensitive Data Protection
+
+**Control Domain:** Data Security and Privacy Lifecycle Management
+
+**Control ID:** DSP-17
+
+**Control Specification:**
+
+Define and implement, processes, procedures and technical measures
+to protect sensitive data throughout it's lifecycle.
+
+
+---
+
+# Disclosure Notification
+
+**Control Domain:** Data Security and Privacy Lifecycle Management
+
+**Control ID:** DSP-18
+
+**Control Specification:**
+
+The CSP must have in place, and describe to CSCs the procedure to
+manage and respond to requests for disclosure of Personal Data by Law Enforcement
+Authorities according to applicable laws and regulations. The CSP must give
+special attention to the notification procedure to interested CSCs, unless otherwise
+prohibited, such as a prohibition under criminal law to preserve confidentiality
+of a law enforcement investigation.
+
+
+---
+
+# Data Location
+
+**Control Domain:** Data Security and Privacy Lifecycle Management
+
+**Control ID:** DSP-19
+
+**Control Specification:**
+
+Define and implement, processes, procedures and technical measures
+to specify and document the physical locations of data, including any locations
+in which data is processed or backed up.
+
+
+---
+
+# Governance Program Policy and Procedures
+
+**Control Domain:** Governance, Risk and Compliance
+
+**Control ID:** GRC-01
+
+**Control Specification:**
+
+Establish, document, approve, communicate, apply, evaluate and maintain
+policies and procedures for an information governance program, which is sponsored
+by the leadership of the organization. Review and update the policies and procedures
+at least annually.
+
+
+---
+
+# Risk Management Program
+
+**Control Domain:** Governance, Risk and Compliance
+
+**Control ID:** GRC-02
+
+**Control Specification:**
+
+Establish a formal, documented, and leadership-sponsored Enterprise
+Risk Management (ERM) program that includes policies and procedures for identification,
+evaluation, ownership, treatment, and acceptance of cloud security and privacy
+risks.
+
+
+---
+
+# Organizational Policy Reviews
+
+**Control Domain:** Governance, Risk and Compliance
+
+**Control ID:** GRC-03
+
+**Control Specification:**
+
+Review all relevant organizational policies and associated procedures
+at least annually or when a substantial change occurs within the organization.
+
+
+---
+
+# Policy Exception Process
+
+**Control Domain:** Governance, Risk and Compliance
+
+**Control ID:** GRC-04
+
+**Control Specification:**
+
+Establish and follow an approved exception process as mandated by
+the governance program whenever a deviation from an established policy occurs.
+
+
+---
+
+# Information Security Program
+
+**Control Domain:** Governance, Risk and Compliance
+
+**Control ID:** GRC-05
+
+**Control Specification:**
+
+Develop and implement an Information Security Program, which includes
+programs for all the relevant domains of the CCM.
+
+
+---
+
+# Governance Responsibility Model
+
+**Control Domain:** Governance, Risk and Compliance
+
+**Control ID:** GRC-06
+
+**Control Specification:**
+
+Define and document roles and responsibilities for planning, implementing,
+operating, assessing, and improving governance programs.
+
+
+---
+
+# Information System Regulatory Mapping
+
+**Control Domain:** Governance, Risk and Compliance
+
+**Control ID:** GRC-07
+
+**Control Specification:**
+
+Identify and document all relevant standards, regulations, legal/contractual,
+and statutory requirements, which are applicable to your organization.
+
+
+---
+
+# Special Interest Groups
+
+**Control Domain:** Governance, Risk and Compliance
+
+**Control ID:** GRC-08
+
+**Control Specification:**
+
+Establish and maintain contact with cloud-related special interest
+groups and other relevant entities in line with business context.
+
+
+---
+
+# Background Screening Policy and Procedures
+
+**Control Domain:** Human Resources
+
+**Control ID:** HRS-01
+
+**Control Specification:**
+
+Establish, document, approve, communicate, apply, evaluate and maintain
+policies and procedures for background verification of all new employees (including
+but not limited to remote employees, contractors, and third parties) according
+to local laws, regulations, ethics, and contractual constraints and proportional
+to the data classification to be accessed, the business requirements, and acceptable
+risk. Review and update the policies and procedures at least annually.
+
+
+---
+
+# Acceptable Use of Technology Policy and Procedures
+
+**Control Domain:** Human Resources
+
+**Control ID:** HRS-02
+
+**Control Specification:**
+
+Establish, document, approve, communicate, apply, evaluate and maintain
+policies and procedures for defining allowances and conditions for the acceptable
+use of organizationally-owned or managed assets. Review and update the policies
+and procedures at least annually.
+
+
+---
+
+# Clean Desk Policy and Procedures
+
+**Control Domain:** Human Resources
+
+**Control ID:** HRS-03
+
+**Control Specification:**
+
+Establish, document, approve, communicate, apply, evaluate and maintain
+policies and procedures that require unattended workspaces to not have openly
+visible confidential data. Review and update the policies and procedures at
+least annually.
+
+
+---
+
+# Remote and Home Working Policy and Procedures
+
+**Control Domain:** Human Resources
+
+**Control ID:** HRS-04
+
+**Control Specification:**
+
+Establish, document, approve, communicate, apply, evaluate and maintain
+policies and procedures to protect information accessed, processed or stored
+at remote sites and locations. Review and update the policies and procedures
+at least annually.
+
+
+---
+
+# Asset returns
+
+**Control Domain:** Human Resources
+
+**Control ID:** HRS-05
+
+**Control Specification:**
+
+Establish and document procedures for the return of organization-owned
+assets by terminated employees.
+
+
+---
+
+# Employment Termination
+
+**Control Domain:** Human Resources
+
+**Control ID:** HRS-06
+
+**Control Specification:**
+
+Establish, document, and communicate to all personnel the procedures
+outlining the roles and responsibilities concerning changes in employment.
+
+
+---
+
+# Employment Agreement Process
+
+**Control Domain:** Human Resources
+
+**Control ID:** HRS-07
+
+**Control Specification:**
+
+Employees sign the employee agreement prior to being granted access
+to organizational information systems, resources and assets.
+
+
+---
+
+# Employment Agreement Content
+
+**Control Domain:** Human Resources
+
+**Control ID:** HRS-08
+
+**Control Specification:**
+
+The organization includes within the employment agreements provisions
+and/or terms for adherence to established information governance and security
+policies.
+
+
+---
+
+# Personnel Roles and Responsibilities
+
+**Control Domain:** Human Resources
+
+**Control ID:** HRS-09
+
+**Control Specification:**
+
+Document and communicate roles and responsibilities of employees,
+as they relate to information assets and security.
+
+
+---
+
+# Non-Disclosure Agreements
+
+**Control Domain:** Human Resources
+
+**Control ID:** HRS-10
+
+**Control Specification:**
+
+Identify, document, and review, at planned intervals, requirements
+for non-disclosure/confidentiality agreements reflecting the organization's
+needs for the protection of data and operational details.
+
+
+---
+
+# Security Awareness Training
+
+**Control Domain:** Human Resources
+
+**Control ID:** HRS-11
+
+**Control Specification:**
+
+Establish, document, approve, communicate, apply, evaluate and maintain
+a security awareness training program for all employees of the organization
+and provide regular training updates.
+
+
+---
+
+# Personal and Sensitive Data Awareness and Training
+
+**Control Domain:** Human Resources
+
+**Control ID:** HRS-12
+
+**Control Specification:**
+
+Provide all employees with access to sensitive organizational and
+personal data with appropriate security awareness training and regular updates
+in organizational procedures, processes, and policies relating to their professional
+function relative to the organization.
+
+
+---
+
+# Compliance User Responsibility
+
+**Control Domain:** Human Resources
+
+**Control ID:** HRS-13
+
+**Control Specification:**
+
+Make employees aware of their roles and responsibilities for maintaining
+awareness and compliance with established policies and procedures and applicable
+legal, statutory, or regulatory compliance obligations.
+
+
+---
+
+# Identity and Access Management Policy and Procedures
+
+**Control Domain:** Identity & Access Management
+
+**Control ID:** IAM-01
+
+**Control Specification:**
+
+Establish, document, approve, communicate, implement, apply, evaluate
+and maintain policies and procedures for identity and access management. Review
+and update the policies and procedures at least annually.
+
+
+---
+
+# Strong Password Policy and Procedures
+
+**Control Domain:** Identity & Access Management
+
+**Control ID:** IAM-02
+
+**Control Specification:**
+
+Establish, document, approve, communicate, implement, apply, evaluate
+and maintain strong password policies and procedures. Review and update the
+policies and procedures at least annually.
+
+
+---
+
+# Identity Inventory
+
+**Control Domain:** Identity & Access Management
+
+**Control ID:** IAM-03
+
+**Control Specification:**
+
+Manage, store, and review the information of system identities, and
+level of access.
+
+
+---
+
+# Separation of Duties
+
+**Control Domain:** Identity & Access Management
+
+**Control ID:** IAM-04
+
+**Control Specification:**
+
+Employ the separation of duties principle when implementing information
+system access.
+
+
+---
+
+# Least Privilege
+
+**Control Domain:** Identity & Access Management
+
+**Control ID:** IAM-05
+
+**Control Specification:**
+
+Employ the least privilege principle when implementing information
+system access.
+
+
+---
+
+# User Access Provisioning
+
+**Control Domain:** Identity & Access Management
+
+**Control ID:** IAM-06
+
+**Control Specification:**
+
+Define and implement a user access provisioning process which authorizes,
+records, and communicates access changes to data and assets.
+
+
+---
+
+# User Access Changes and Revocation
+
+**Control Domain:** Identity & Access Management
+
+**Control ID:** IAM-07
+
+**Control Specification:**
+
+De-provision or respectively modify access of movers / leavers or
+system identity changes in a timely manner in order to effectively adopt and
+communicate identity and access management policies.
+
+
+---
+
+# User Access Review
+
+**Control Domain:** Identity & Access Management
+
+**Control ID:** IAM-08
+
+**Control Specification:**
+
+Review and revalidate user access for least privilege and separation
+of duties with a frequency that is commensurate with organizational risk tolerance.
+
+
+---
+
+# Segregation of Privileged Access Roles
+
+**Control Domain:** Identity & Access Management
+
+**Control ID:** IAM-09
+
+**Control Specification:**
+
+Define, implement and evaluate processes, procedures and technical
+measures for the segregation of privileged access roles such that administrative
+access to data, encryption and key management capabilities and logging capabilities
+are distinct and separated.
+
+
+---
+
+# Management of Privileged Access Roles
+
+**Control Domain:** Identity & Access Management
+
+**Control ID:** IAM-10
+
+**Control Specification:**
+
+Define and implement an access process to ensure privileged access
+roles and rights are granted for a time limited period, and implement procedures
+to prevent the culmination of segregated privileged access.
+
+
+---
+
+# CSCs Approval for Agreed Privileged Access Roles
+
+**Control Domain:** Identity & Access Management
+
+**Control ID:** IAM-11
+
+**Control Specification:**
+
+Define, implement and evaluate processes and procedures for customers
+to participate, where applicable, in the granting of access for agreed, high
+risk (as defined by the organizational risk assessment) privileged access roles.
+
+
+---
+
+# Safeguard Logs Integrity
+
+**Control Domain:** Identity & Access Management
+
+**Control ID:** IAM-12
+
+**Control Specification:**
+
+Define, implement and evaluate processes, procedures and technical
+measures to ensure the logging infrastructure is read-only for all with write
+access, including privileged access roles, and that the ability to disable it
+is controlled through a procedure that ensures the segregation of duties and
+break glass procedures.
+
+
+---
+
+# Uniquely Identifiable Users
+
+**Control Domain:** Identity & Access Management
+
+**Control ID:** IAM-13
+
+**Control Specification:**
+
+Define, implement and evaluate processes, procedures and technical
+measures that ensure users are identifiable through unique IDs or which can
+associate individuals to the usage of user IDs.
+
+
+---
+
+# Strong Authentication
+
+**Control Domain:** Identity & Access Management
+
+**Control ID:** IAM-14
+
+**Control Specification:**
+
+Define, implement and evaluate processes, procedures and technical
+measures for authenticating access to systems, application and data assets,
+including multifactor authentication for at least privileged user and sensitive
+data access. Adopt digital certificates or alternatives which achieve an equivalent
+level of security for system identities.
+
+
+---
+
+# Passwords Management
+
+**Control Domain:** Identity & Access Management
+
+**Control ID:** IAM-15
+
+**Control Specification:**
+
+Define, implement and evaluate processes, procedures and technical
+measures for the secure management of passwords.
+
+
+---
+
+# Authorization Mechanisms
+
+**Control Domain:** Identity & Access Management
+
+**Control ID:** IAM-16
+
+**Control Specification:**
+
+Define, implement and evaluate processes, procedures and technical
+measures to verify access to data and system functions is authorized.
+
+
+---
+
+# Interoperability and Portability Policy and Procedures
+
+**Control Domain:** Interoperability & Portability
+
+**Control ID:** IPY-01
+
+**Control Specification:**
+
+Establish, document, approve, communicate, apply, evaluate and maintain
+policies and procedures for interoperability and portability including
+requirements for:
+a. Communications between application interfaces
+b. Information processing interoperability
+c. Application development portability
+d. Information/Data exchange, usage, portability, integrity, and persistence
+Review and update the policies and procedures at least annually.
+
+
+---
+
+# Application Interface Availability
+
+**Control Domain:** Interoperability & Portability
+
+**Control ID:** IPY-02
+
+**Control Specification:**
+
+Provide application interface(s) to CSCs so that they programmatically
+retrieve their data to enable interoperability and portability.
+
+
+---
+
+# Secure Interoperability and Portability Management
+
+**Control Domain:** Interoperability & Portability
+
+**Control ID:** IPY-03
+
+**Control Specification:**
+
+Implement cryptographically secure and standardized network protocols
+for the management, import and export of data.
+
+
+---
+
+# Data Portability Contractual Obligations
+
+**Control Domain:** Interoperability & Portability
+
+**Control ID:** IPY-04
+
+**Control Specification:**
+
+Agreements must include provisions specifying CSCs access to data
+upon contract termination and will include:
+a. Data format
+b. Length of time the data will be stored
+c. Scope of the data retained and made available to the CSCs
+d. Data deletion policy
+
+
+---
+
+# Infrastructure and Virtualization Security Policy and Procedures
+
+**Control Domain:** Infrastructure & Virtualization Security
+
+**Control ID:** IVS-01
+
+**Control Specification:**
+
+Establish, document, approve, communicate, apply, evaluate and maintain
+policies and procedures for infrastructure and virtualization security. Review
+and update the policies and procedures at least annually.
+
+
+---
+
+# Capacity and Resource Planning
+
+**Control Domain:** Infrastructure & Virtualization Security
+
+**Control ID:** IVS-02
+
+**Control Specification:**
+
+Plan and monitor the availability, quality, and adequate capacity
+of resources in order to deliver the required system performance as determined
+by the business.
+
+
+---
+
+# Network Security
+
+**Control Domain:** Infrastructure & Virtualization Security
+
+**Control ID:** IVS-03
+
+**Control Specification:**
+
+Monitor, encrypt and restrict communications between environments
+to only authenticated and authorized connections, as justified by the business.
+Review these configurations at least annually, and support them by a documented
+justification of all allowed services, protocols, ports, and compensating controls.
+
+
+---
+
+# OS Hardening and Base Controls
+
+**Control Domain:** Infrastructure & Virtualization Security
+
+**Control ID:** IVS-04
+
+**Control Specification:**
+
+Harden host and guest OS, hypervisor or infrastructure control plane
+according to their respective best practices, and supported by technical controls,
+as part of a security baseline.
+
+
+---
+
+# Production and Non-Production Environments
+
+**Control Domain:** Infrastructure & Virtualization Security
+
+**Control ID:** IVS-05
+
+**Control Specification:**
+
+Separate production and non-production environments.
+
+
+---
+
+# Segmentation and Segregation
+
+**Control Domain:** Infrastructure & Virtualization Security
+
+**Control ID:** IVS-06
+
+**Control Specification:**
+
+Design, develop, deploy and configure applications and infrastructures
+such that CSP and CSC (tenant) user access and intra-tenant access is appropriately
+segmented and segregated, monitored and restricted from other tenants.
+
+
+---
+
+# Migration to Cloud Environments
+
+**Control Domain:** Infrastructure & Virtualization Security
+
+**Control ID:** IVS-07
+
+**Control Specification:**
+
+Use secure and encrypted communication channels when migrating servers,
+services, applications, or data to cloud environments. Such channels must include
+only up-to-date and approved protocols.
+
+
+---
+
+# Network Architecture Documentation
+
+**Control Domain:** Infrastructure & Virtualization Security
+
+**Control ID:** IVS-08
+
+**Control Specification:**
+
+Identify and document high-risk environments.
+
+
+---
+
+# Network Defense
+
+**Control Domain:** Infrastructure & Virtualization Security
+
+**Control ID:** IVS-09
+
+**Control Specification:**
+
+Define, implement and evaluate processes, procedures and defense-in-depth
+techniques for protection, detection, and timely response to network-based attacks.
+
+
+---
+
+# Logging and Monitoring Policy and Procedures
+
+**Control Domain:** Logging and Monitoring
+
+**Control ID:** LOG-01
+
+**Control Specification:**
+
+Establish, document, approve, communicate, apply, evaluate and maintain
+policies and procedures for logging and monitoring. Review and update the policies
+and procedures at least annually.
+
+
+---
+
+# Audit Logs Protection
+
+**Control Domain:** Logging and Monitoring
+
+**Control ID:** LOG-02
+
+**Control Specification:**
+
+Define, implement and evaluate processes, procedures and technical
+measures to ensure the security and retention of audit logs.
+
+
+---
+
+# Security Monitoring and Alerting
+
+**Control Domain:** Logging and Monitoring
+
+**Control ID:** LOG-03
+
+**Control Specification:**
+
+Identify and monitor security-related events within applications
+and the underlying infrastructure. Define and implement a system to generate
+alerts to responsible stakeholders based on such events and corresponding metrics.
+
+
+---
+
+# Audit Logs Access and Accountability
+
+**Control Domain:** Logging and Monitoring
+
+**Control ID:** LOG-04
+
+**Control Specification:**
+
+Restrict audit logs access to authorized personnel and maintain records
+that provide unique access accountability.
+
+
+---
+
+# Audit Logs Monitoring and Response
+
+**Control Domain:** Logging and Monitoring
+
+**Control ID:** LOG-05
+
+**Control Specification:**
+
+Monitor security audit logs to detect activity outside of typical
+or expected patterns. Establish and follow a defined process to review and take
+appropriate and timely actions on detected anomalies.
+
+
+---
+
+# Clock Synchronization
+
+**Control Domain:** Logging and Monitoring
+
+**Control ID:** LOG-06
+
+**Control Specification:**
+
+Use a reliable time source across all relevant information processing
+systems.
+
+
+---
+
+# Logging Scope
+
+**Control Domain:** Logging and Monitoring
+
+**Control ID:** LOG-07
+
+**Control Specification:**
+
+Establish, document and implement which information meta/data system
+events should be logged. Review and update the scope at least annually or whenever
+there is a change in the threat environment.
+
+
+---
+
+# Log Records
+
+**Control Domain:** Logging and Monitoring
+
+**Control ID:** LOG-08
+
+**Control Specification:**
+
+Generate audit records containing relevant security information.
+
+
+---
+
+# Log Protection
+
+**Control Domain:** Logging and Monitoring
+
+**Control ID:** LOG-09
+
+**Control Specification:**
+
+The information system protects audit records from unauthorized access,
+modification, and deletion.
+
+
+---
+
+# Encryption Monitoring and Reporting
+
+**Control Domain:** Logging and Monitoring
+
+**Control ID:** LOG-10
+
+**Control Specification:**
+
+Establish and maintain a monitoring and internal reporting capability
+over the operations of cryptographic, encryption and key management policies,
+processes, procedures, and controls.
+
+
+---
+
+# Transaction/Activity Logging
+
+**Control Domain:** Logging and Monitoring
+
+**Control ID:** LOG-11
+
+**Control Specification:**
+
+Log and monitor key lifecycle management events to enable auditing
+and reporting on usage of cryptographic keys.
+
+
+---
+
+# Access Control Logs
+
+**Control Domain:** Logging and Monitoring
+
+**Control ID:** LOG-12
+
+**Control Specification:**
+
+Monitor and log physical access using an auditable access control
+system.
+
+
+---
+
+# Failures and Anomalies Reporting
+
+**Control Domain:** Logging and Monitoring
+
+**Control ID:** LOG-13
+
+**Control Specification:**
+
+Define, implement and evaluate processes, procedures and technical
+measures for the reporting of anomalies and failures of the monitoring system
+and provide immediate notification to the accountable party.
+
+
+---
+
+# Security Incident Management Policy and Procedures
+
+**Control Domain:** Security Incident Management, E-Discovery, & Cloud Forensics
+
+**Control ID:** SEF-01
+
+**Control Specification:**
+
+Establish, document, approve, communicate, apply, evaluate and maintain
+policies and procedures for Security Incident Management, E-Discovery, and Cloud
+Forensics. Review and update the policies and procedures at least annually.
+
+
+---
+
+# Service Management Policy and Procedures
+
+**Control Domain:** Security Incident Management, E-Discovery, & Cloud Forensics
+
+**Control ID:** SEF-02
+
+**Control Specification:**
+
+Establish, document, approve, communicate, apply, evaluate and maintain
+policies and procedures for the timely management of security incidents. Review
+and update the policies and procedures at least annually.
+
+
+---
+
+# Incident Response Plans
+
+**Control Domain:** Security Incident Management, E-Discovery, & Cloud Forensics
+
+**Control ID:** SEF-03
+
+**Control Specification:**
+
+'Establish, document, approve, communicate, apply, evaluate and maintain
+a security incident response plan, which includes but is not limited to: relevant
+internal departments, impacted CSCs, and other business critical relationships
+(such as supply-chain) that may be impacted.'
+
+
+---
+
+# Incident Response Testing
+
+**Control Domain:** Security Incident Management, E-Discovery, & Cloud Forensics
+
+**Control ID:** SEF-04
+
+**Control Specification:**
+
+Test and update as necessary incident response plans at planned intervals
+or upon significant organizational or environmental changes for effectiveness.
+
+
+---
+
+# Incident Response Metrics
+
+**Control Domain:** Security Incident Management, E-Discovery, & Cloud Forensics
+
+**Control ID:** SEF-05
+
+**Control Specification:**
+
+Establish and monitor information security incident metrics.
+
+
+---
+
+# Event Triage Processes
+
+**Control Domain:** Security Incident Management, E-Discovery, & Cloud Forensics
+
+**Control ID:** SEF-06
+
+**Control Specification:**
+
+Define, implement and evaluate processes, procedures and technical
+measures supporting business processes to triage security-related events.
+
+
+---
+
+# Security Breach Notification
+
+**Control Domain:** Security Incident Management, E-Discovery, & Cloud Forensics
+
+**Control ID:** SEF-07
+
+**Control Specification:**
+
+Define and implement, processes, procedures and technical measures
+for security breach notifications. Report security breaches and assumed security
+breaches including any relevant supply chain breaches, as per applicable SLAs,
+laws and regulations.
+
+
+---
+
+# Points of Contact Maintenance
+
+**Control Domain:** Security Incident Management, E-Discovery, & Cloud Forensics
+
+**Control ID:** SEF-08
+
+**Control Specification:**
+
+Maintain points of contact for applicable regulation authorities,
+national and local law enforcement, and other legal jurisdictional authorities.
+
+
+---
+
+# SSRM Policy and Procedures
+
+**Control Domain:** Supply Chain Management, Transparency, and Accountability
+
+**Control ID:** STA-01
+
+**Control Specification:**
+
+Establish, document, approve, communicate, apply, evaluate and maintain
+policies and procedures for the application of the Shared Security Responsibility
+Model (SSRM) within the organization. Review and update the policies and procedures
+at least annually.
+
+
+---
+
+# SSRM Supply Chain
+
+**Control Domain:** Supply Chain Management, Transparency, and Accountability
+
+**Control ID:** STA-02
+
+**Control Specification:**
+
+Apply, document, implement and manage the SSRM throughout the supply
+chain for the cloud service offering.
+
+
+---
+
+# SSRM Guidance
+
+**Control Domain:** Supply Chain Management, Transparency, and Accountability
+
+**Control ID:** STA-03
+
+**Control Specification:**
+
+Provide SSRM Guidance to the CSC detailing information about the
+SSRM applicability throughout the supply chain.
+
+
+---
+
+# SSRM Control Ownership
+
+**Control Domain:** Supply Chain Management, Transparency, and Accountability
+
+**Control ID:** STA-04
+
+**Control Specification:**
+
+Delineate the shared ownership and applicability of all CSA CCM controls
+according to the SSRM for the cloud service offering.
+
+
+---
+
+# SSRM Documentation Review
+
+**Control Domain:** Supply Chain Management, Transparency, and Accountability
+
+**Control ID:** STA-05
+
+**Control Specification:**
+
+Review and validate SSRM documentation for all cloud services offerings
+the organization uses.
+
+
+---
+
+# SSRM Control Implementation
+
+**Control Domain:** Supply Chain Management, Transparency, and Accountability
+
+**Control ID:** STA-06
+
+**Control Specification:**
+
+Implement, operate, and audit or assess the portions of the SSRM
+which the organization is responsible for.
+
+
+---
+
+# Supply Chain Inventory
+
+**Control Domain:** Supply Chain Management, Transparency, and Accountability
+
+**Control ID:** STA-07
+
+**Control Specification:**
+
+Develop and maintain an inventory of all supply chain relationships.
+
+
+---
+
+# Supply Chain Risk Management
+
+**Control Domain:** Supply Chain Management, Transparency, and Accountability
+
+**Control ID:** STA-08
+
+**Control Specification:**
+
+CSPs periodically review risk factors associated with all organizations
+within their supply chain.
+
+
+---
+
+# Primary Service and Contractual Agreement
+
+**Control Domain:** Supply Chain Management, Transparency, and Accountability
+
+**Control ID:** STA-09
+
+**Control Specification:**
+
+Service agreements between CSPs and CSCs (tenants) must incorporate at least the following mutually-agreed upon provisions and/or terms:
+• Scope, characteristics and location of business relationship and services offered
+• Information security requirements (including SSRM)
+• Change management process
+• Logging and monitoring capability
+• Incident management and communication procedures
+• Right to audit and third party assessment
+• Service termination
+• Interoperability and portability requirements
+• Data privacy
+
+
+---
+
+# Supply Chain Agreement Review
+
+**Control Domain:** Supply Chain Management, Transparency, and Accountability
+
+**Control ID:** STA-10
+
+**Control Specification:**
+
+Review supply chain agreements between CSPs and CSCs at least annually.
+
+
+---
+
+# Internal Compliance Testing
+
+**Control Domain:** Supply Chain Management, Transparency, and Accountability
+
+**Control ID:** STA-11
+
+**Control Specification:**
+
+Define and implement a process for conducting internal assessments
+to confirm conformance and effectiveness of standards, policies, procedures,
+and service level agreement activities at least annually.
+
+
+---
+
+# Supply Chain Service Agreement Compliance
+
+**Control Domain:** Supply Chain Management, Transparency, and Accountability
+
+**Control ID:** STA-12
+
+**Control Specification:**
+
+Implement policies requiring all CSPs throughout the supply chain
+to comply with information security, confidentiality, access control, privacy,
+audit, personnel policy and service level requirements and standards.
+
+
+---
+
+# Supply Chain Governance Review
+
+**Control Domain:** Supply Chain Management, Transparency, and Accountability
+
+**Control ID:** STA-13
+
+**Control Specification:**
+
+Periodically review the organization's supply chain partners' IT
+governance policies and procedures.
+
+
+---
+
+# Supply Chain Data Security Assessment
+
+**Control Domain:** Supply Chain Management, Transparency, and Accountability
+
+**Control ID:** STA-14
+
+**Control Specification:**
+
+Define and implement a process for conducting security assessments
+periodically for all organizations within the supply chain.
+
+
+---
+
+# Threat and Vulnerability Management Policy and Procedures
+
+**Control Domain:** Threat & Vulnerability Management
+
+**Control ID:** TVM-01
+
+**Control Specification:**
+
+Establish, document, approve, communicate, apply, evaluate and maintain
+policies and procedures to identify, report and prioritize the remediation of
+vulnerabilities, in order to protect systems against vulnerability exploitation.
+Review and update the policies and procedures at least annually.
+
+
+---
+
+# Malware Protection Policy and Procedures
+
+**Control Domain:** Threat & Vulnerability Management
+
+**Control ID:** TVM-02
+
+**Control Specification:**
+
+Establish, document, approve, communicate, apply, evaluate and maintain
+policies and procedures to protect against malware on managed assets. Review
+and update the policies and procedures at least annually.
+
+
+---
+
+# Vulnerability Remediation Schedule
+
+**Control Domain:** Threat & Vulnerability Management
+
+**Control ID:** TVM-03
+
+**Control Specification:**
+
+Define, implement and evaluate processes, procedures and technical
+measures to enable both scheduled and emergency responses to vulnerability identifications,
+based on the identified risk.
+
+
+---
+
+# Detection Updates
+
+**Control Domain:** Threat & Vulnerability Management
+
+**Control ID:** TVM-04
+
+**Control Specification:**
+
+Define, implement and evaluate processes, procedures and technical
+measures to update detection tools, threat signatures, and indicators of compromise
+on a weekly, or more frequent basis.
+
+
+---
+
+# External Library Vulnerabilities
+
+**Control Domain:** Threat & Vulnerability Management
+
+**Control ID:** TVM-05
+
+**Control Specification:**
+
+Define, implement and evaluate processes, procedures and technical
+measures to identify updates for applications which use third party or open
+source libraries according to the organization's vulnerability management policy.
+
+
+---
+
+# Penetration Testing
+
+**Control Domain:** Threat & Vulnerability Management
+
+**Control ID:** TVM-06
+
+**Control Specification:**
+
+Define, implement and evaluate processes, procedures and technical
+measures for the periodic performance of penetration testing by independent
+third parties.
+
+
+---
+
+# Vulnerability Identification
+
+**Control Domain:** Threat & Vulnerability Management
+
+**Control ID:** TVM-07
+
+**Control Specification:**
+
+Define, implement and evaluate processes, procedures and technical
+measures for the detection of vulnerabilities on organizationally managed assets
+at least monthly.
+
+
+---
+
+# Vulnerability Prioritization
+
+**Control Domain:** Threat & Vulnerability Management
+
+**Control ID:** TVM-08
+
+**Control Specification:**
+
+Use a risk-based model for effective prioritization of vulnerability
+remediation using an industry recognized framework.
+
+
+---
+
+# Vulnerability Management Reporting
+
+**Control Domain:** Threat & Vulnerability Management
+
+**Control ID:** TVM-09
+
+**Control Specification:**
+
+Define and implement a process for tracking and reporting vulnerability
+identification and remediation activities that includes stakeholder notification.
+
+
+---
+
+# Vulnerability Management Metrics
+
+**Control Domain:** Threat & Vulnerability Management
+
+**Control ID:** TVM-10
+
+**Control Specification:**
+
+Establish, monitor and report metrics for vulnerability identification
+and remediation at defined intervals.
+
+
+---
+
+# Endpoint Devices Policy and Procedures
+
+**Control Domain:** Universal Endpoint Management
+
+**Control ID:** UEM-01
+
+**Control Specification:**
+
+Establish, document, approve, communicate, apply, evaluate and maintain
+policies and procedures for all endpoints. Review and update the policies and
+procedures at least annually.
+
+
+---
+
+# Application and Service Approval
+
+**Control Domain:** Universal Endpoint Management
+
+**Control ID:** UEM-02
+
+**Control Specification:**
+
+Define, document, apply and evaluate a list of approved services,
+applications and sources of applications (stores) acceptable for use by endpoints
+when accessing or storing organization-managed data.
+
+
+---
+
+# Compatibility
+
+**Control Domain:** Universal Endpoint Management
+
+**Control ID:** UEM-03
+
+**Control Specification:**
+
+Define and implement a process for the validation of the endpoint
+device's compatibility with operating systems and applications.
+
+
+---
+
+# Endpoint Inventory
+
+**Control Domain:** Universal Endpoint Management
+
+**Control ID:** UEM-04
+
+**Control Specification:**
+
+Maintain an inventory of all endpoints used to store and access company
+data.
+
+
+---
+
+# Endpoint Management
+
+**Control Domain:** Universal Endpoint Management
+
+**Control ID:** UEM-05
+
+**Control Specification:**
+
+Define, implement and evaluate processes, procedures and technical
+measures to enforce policies and controls for all endpoints permitted to access
+systems and/or store, transmit, or process organizational data.
+
+
+---
+
+# Automatic Lock Screen
+
+**Control Domain:** Universal Endpoint Management
+
+**Control ID:** UEM-06
+
+**Control Specification:**
+
+Configure all relevant interactive-use endpoints to require an automatic
+lock screen.
+
+
+---
+
+# Operating Systems
+
+**Control Domain:** Universal Endpoint Management
+
+**Control ID:** UEM-07
+
+**Control Specification:**
+
+Manage changes to endpoint operating systems, patch levels, and/or
+applications through the company's change management processes.
+
+
+---
+
+# Storage Encryption
+
+**Control Domain:** Universal Endpoint Management
+
+**Control ID:** UEM-08
+
+**Control Specification:**
+
+Protect information from unauthorized disclosure on managed endpoint
+devices with storage encryption.
+
+
+---
+
+# Anti-Malware Detection and Prevention
+
+**Control Domain:** Universal Endpoint Management
+
+**Control ID:** UEM-09
+
+**Control Specification:**
+
+Configure managed endpoints with anti-malware detection and prevention
+technology and services.
+
+
+---
+
+# Software Firewall
+
+**Control Domain:** Universal Endpoint Management
+
+**Control ID:** UEM-10
+
+**Control Specification:**
+
+Configure managed endpoints with properly configured software firewalls.
+
+
+---
+
+# Data Loss Prevention
+
+**Control Domain:** Universal Endpoint Management
+
+**Control ID:** UEM-11
+
+**Control Specification:**
+
+Configure managed endpoints with Data Loss Prevention (DLP) technologies
+and rules in accordance with a risk assessment.
+
+
+---
+
+# Remote Locate
+
+**Control Domain:** Universal Endpoint Management
+
+**Control ID:** UEM-12
+
+**Control Specification:**
+
+Enable remote geo-location capabilities for all managed mobile endpoints.
+
+
+---
+
+# Remote Wipe
+
+**Control Domain:** Universal Endpoint Management
+
+**Control ID:** UEM-13
+
+**Control Specification:**
+
+Define, implement and evaluate processes, procedures and technical
+measures to enable the deletion of company data remotely on managed endpoint
+devices.
+
+
+---
+
+# Third-Party Endpoint Security Posture
+
+**Control Domain:** Universal Endpoint Management
+
+**Control ID:** UEM-14
+
+**Control Specification:**
+
+Define, implement and evaluate processes, procedures and technical
+and/or contractual measures to maintain proper security of third-party endpoints
+with access to organizational assets.
+
+
+---
+
