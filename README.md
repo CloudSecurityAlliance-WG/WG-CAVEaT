@@ -35,7 +35,7 @@ Using the STIX format allows:
 The CAVEaT Chatbot is an AI-powered tool that helps security professionals navigate the CAVEaT framework and implement practical security controls. The chatbot serves as an interactive reference for cloud security threats and their mitigations.
 
 - **ChatBot URL (v2)**: [https://csaurl.org/CAVEaT-Chatbot](https://csaurl.org/CAVEaT-Chatbot)
-- **ChatBot URL (v3)**: [https://chatgpt.com/g/g-xXpnPwHaD-cloud-adversarial-vectors-and-threat-solutions-v3](https://chatgpt.com/g/g-xXpnPwHaD-cloud-adversarial-vectors-and-threat-solutions-v3)
+- **ChatBot URL (v3.2)**: [https://chatgpt.com/g/g-xXpnPwHaD-cloud-adversarial-vectors-and-threat-chatbot-v3-2](https://chatgpt.com/g/g-xXpnPwHaD-cloud-adversarial-vectors-and-threat-chatbot-v3-2)
 - **ChatBot data**: [https://github.com/Cloudsecurityalliance-Chatbots/chatbot-CAVEaT-data](https://github.com/Cloudsecurityalliance-Chatbots/chatbot-CAVEaT-data)
 
 ### Chatbot Capabilities
