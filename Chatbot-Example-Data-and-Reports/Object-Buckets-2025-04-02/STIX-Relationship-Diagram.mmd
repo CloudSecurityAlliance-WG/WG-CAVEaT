@@ -1,0 +1,13 @@
+graph TD
+    AP[Attack Pattern: Cloud Storage Bucket Takeover] --> V1[Vulnerability: Deleted Bucket Re-registration]
+    AP --> V2[Vulnerability: Abandoned DNS Records]
+    V1 --> CoA1[CoA: Implement Bucket Retention]
+    V1 --> CoA2[CoA: Enable MFA Delete/Soft Delete]
+    V2 --> CoA3[CoA: Clean DNS Records Before Deletion]
+    V2 --> CoA4[CoA: Resource/Deletion Locks]
+    AP --> I1[Impact: Malware Distribution]
+    AP --> I2[Impact: Supply Chain Compromise]
+    AP --> I3[Impact: Data Interception]
+    I1 --> D1[Detection: Monitor Delete Operations]
+    I2 --> D2[Detection: Validate Supply Chain Integrity]
+    I3 --> D3[Detection: Monitor Data Access Patterns]

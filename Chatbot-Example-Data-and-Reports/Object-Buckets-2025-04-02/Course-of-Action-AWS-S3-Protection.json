@@ -1,0 +1,25 @@
+{
+    "type": "course-of-action",
+    "spec_version": "2.1",
+    "id": "course-of-action--aws-s3-bucket-protection",
+    "created": "2025-04-02T10:00:00.000Z",
+    "modified": "2025-04-02T10:00:00.000Z",
+    "name": "Protect AWS S3 Buckets from Re-registration Attacks",
+    "description": "Implementation steps to protect AWS S3 buckets from re-registration attacks, including MFA Delete, bucket retention policies, DNS cleanup procedures, and monitoring for deletion events.",
+    "x_implementation_details": {
+        "aws_console": [
+            "Enable S3 bucket versioning through Properties > Object Lock",
+            "Remove DNS records before bucket deletion via Route53 console",
+            "Implement CloudWatch alerts for bucket deletion operations"
+        ],
+        "aws_cli": [
+            "aws s3api put-bucket-versioning --bucket BUCKET_NAME --versioning-configuration Status=Enabled,MFADelete=Enabled --mfa 'MFA_SERIAL_NUMBER MFA_CODE'",
+            "aws route53 change-resource-record-sets --hosted-zone-id HOSTED_ZONE_ID --change-batch file://delete-record.json",
+            "aws cloudtrail put-event-selectors for S3 bucket deletion monitoring"
+        ],
+        "aws_api": [
+            "Python boto3 examples for implementing retention policies and MFA Delete"
+        ]
+    },
+    "x_caveat_labels": ["aws", "s3", "bucket-protection"]
+}
