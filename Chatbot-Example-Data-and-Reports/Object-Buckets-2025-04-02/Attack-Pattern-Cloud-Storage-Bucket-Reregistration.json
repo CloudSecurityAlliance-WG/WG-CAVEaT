@@ -1,0 +1,32 @@
+{
+    "type": "attack-pattern",
+    "spec_version": "2.1",
+    "id": "attack-pattern--cloud-storage-bucket-reregistration",
+    "created": "2025-04-02T10:00:00.000Z",
+    "modified": "2025-04-02T10:00:00.000Z",
+    "name": "Cloud Storage Bucket Re-registration Attack",
+    "description": "This technique involves threat actors identifying deleted cloud storage buckets (such as AWS S3, Azure Blob Storage, or Google Cloud Storage) that still have valid DNS or service references, and then re-registering those buckets under their control. After re-registration, attackers can serve malicious content through previously trusted domains, intercept data intended for the original owner, or execute supply chain attacks by distributing malware through trusted distribution channels.",
+    "kill_chain_phases": [
+        {
+            "kill_chain_name": "mitre-attack",
+            "phase_name": "persistence"
+        },
+        {
+            "kill_chain_name": "mitre-attack",
+            "phase_name": "defense-evasion"
+        }
+    ],
+    "external_references": [
+        {
+            "source_name": "The Register",
+            "description": "Research on reused AWS S3 buckets as supply chain security weakness",
+            "url": "https://www.theregister.com/2025/02/04/abandoned_aws_s3"
+        },
+        {
+            "source_name": "MITRE ATT&CK",
+            "external_id": "T1530",
+            "url": "https://attack.mitre.org/techniques/T1530/"
+        }
+    ],
+    "x_caveat_labels": ["cloud", "aws", "azure", "gcp", "storage", "supply-chain"]
+}
