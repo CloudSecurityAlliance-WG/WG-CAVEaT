@@ -1,0 +1,29 @@
+{
+    "type": "course-of-action",
+    "spec_version": "2.1",
+    "id": "course-of-action--tenant-namespacing",
+    "created": "2025-04-02T14:30:00.000Z",
+    "modified": "2025-04-02T14:30:00.000Z",
+    "name": "Implement Tenant Namespacing for Cloud Storage Resources",
+    "description": "Cloud providers should implement tenant-specific namespacing for storage resources to prevent bucket re-registration attacks. This architectural change ensures that resource names are permanently associated with specific tenants or organizations, making it impossible for attackers to re-register previously used names belonging to other tenants.",
+    "x_implementation_details": {
+        "platform_architecture": [
+            "Automatically prefix all bucket names with a unique tenant ID or hash that remains reserved to that tenant",
+            "Implement a hierarchical namespace structure where all tenant resources exist within their own protected namespace",
+            "Create organization-level reserved name registries that persist even after resource deletion",
+            "Develop tenant-specific DNS zones for resources to prevent cross-tenant takeovers"
+        ],
+        "implementation_considerations": [
+            "Implement backward compatibility measures for existing applications",
+            "Provide transparent access mechanisms to preserve current API interfaces",
+            "Develop migration paths for existing resources to the new namespaced architecture",
+            "Create monitoring systems to detect attempted cross-tenant resource registrations"
+        ],
+        "industry_standards": [
+            "Follow ISO/IEC 27001 controls for multi-tenant environments",
+            "Implement NIST SP 800-53 SC-4 (Information in Shared Resources) controls",
+            "Adhere to CSA Cloud Controls Matrix domain isolation requirements"
+        ]
+    },
+    "x_caveat_labels": ["cloud-provider", "architecture", "tenant-isolation", "platform-design"]
+}

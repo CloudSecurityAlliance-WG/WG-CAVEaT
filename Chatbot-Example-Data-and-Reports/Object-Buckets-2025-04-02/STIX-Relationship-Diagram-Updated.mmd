@@ -1,0 +1,37 @@
+graph TD
+    AP[Attack Pattern: Cloud Storage Bucket Takeover] --> V1[Vulnerability: Deleted Bucket Re-registration]
+    AP --> V2[Vulnerability: Abandoned DNS Records]
+    
+    %% Provider-specific mitigations
+    V1 --> CoA1[CoA: Implement Bucket Retention]
+    V1 --> CoA2[CoA: Enable MFA Delete/Soft Delete]
+    V2 --> CoA3[CoA: Clean DNS Records Before Deletion]
+    V2 --> CoA4[CoA: Resource/Deletion Locks]
+    
+    %% Platform-level architectural mitigations
+    V1 --> CoA5[CoA: Tenant Namespacing]
+    V1 --> CoA6[CoA: DNS Name Reservation]
+    V1 --> CoA7[CoA: Strong Identity Binding]
+    V1 --> CoA8[CoA: Enhanced Resource Lifecycle Management]
+    V1 --> CoA9[CoA: Resource Abstraction Layer]
+    
+    %% Impact and detection
+    AP --> I1[Impact: Malware Distribution]
+    AP --> I2[Impact: Supply Chain Compromise]
+    AP --> I3[Impact: Data Interception]
+    I1 --> D1[Detection: Monitor Delete Operations]
+    I2 --> D2[Detection: Validate Supply Chain Integrity]
+    I3 --> D3[Detection: Monitor Data Access Patterns]
+    
+    %% Styling
+    classDef vulnerability fill:#ff9999,stroke:#333,stroke-width:2px;
+    classDef coa fill:#99ccff,stroke:#333,stroke-width:2px;
+    classDef platformCoa fill:#66aaff,stroke:#333,stroke-width:2px,stroke-dasharray: 5 5;
+    classDef impact fill:#ffcc99,stroke:#333,stroke-width:2px;
+    classDef detection fill:#ccff99,stroke:#333,stroke-width:2px;
+    
+    class V1,V2 vulnerability;
+    class CoA1,CoA2,CoA3,CoA4 coa;
+    class CoA5,CoA6,CoA7,CoA8,CoA9 platformCoa;
+    class I1,I2,I3 impact;
+    class D1,D2,D3 detection;

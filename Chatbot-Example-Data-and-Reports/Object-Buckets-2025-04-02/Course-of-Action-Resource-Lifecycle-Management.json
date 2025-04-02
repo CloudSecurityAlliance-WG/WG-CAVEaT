@@ -1,0 +1,30 @@
+{
+    "type": "course-of-action",
+    "spec_version": "2.1",
+    "id": "course-of-action--resource-lifecycle-management",
+    "created": "2025-04-02T14:30:00.000Z",
+    "modified": "2025-04-02T14:30:00.000Z",
+    "name": "Implement Enhanced Resource Lifecycle Management",
+    "description": "Cloud providers should implement comprehensive resource lifecycle management mechanisms that protect against accidental or malicious deletion and prevent resource name reuse attacks. These mechanisms should track dependencies, implement staged deletion processes, and provide recovery options.",
+    "x_implementation_details": {
+        "platform_architecture": [
+            "Implement deletion protection by default for public-facing resources, requiring explicit steps to fully delete resources",
+            "Develop automatic dependency tracking systems that warn or prevent deletion of resources with external references",
+            "Create intelligent resource retirement processes that gradually disable functionality while keeping names reserved",
+            "Implement soft-delete with extended retention periods as the default behavior for all storage resources",
+            "Provide automated validation of resource references to detect dangling pointers before deletion"
+        ],
+        "implementation_considerations": [
+            "Balance protection with customer control over their resources",
+            "Ensure visibility into resource dependencies and reference tracking",
+            "Create clear governance processes for permanent resource retirement",
+            "Develop cost models for extended resource reservation periods"
+        ],
+        "industry_standards": [
+            "Align with IT Infrastructure Library (ITIL) standards for service lifecycle management",
+            "Follow ISO/IEC 20000 IT Service Management best practices",
+            "Implement controls based on NIST SP 800-53 CM (Configuration Management) requirements"
+        ]
+    },
+    "x_caveat_labels": ["cloud-provider", "resource-lifecycle", "deletion-protection", "platform-design"]
+}

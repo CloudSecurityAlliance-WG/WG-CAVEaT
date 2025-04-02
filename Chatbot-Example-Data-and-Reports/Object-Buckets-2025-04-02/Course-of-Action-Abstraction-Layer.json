@@ -1,0 +1,30 @@
+{
+    "type": "course-of-action",
+    "spec_version": "2.1",
+    "id": "course-of-action--resource-abstraction-layer",
+    "created": "2025-04-02T14:30:00.000Z",
+    "modified": "2025-04-02T14:30:00.000Z",
+    "name": "Implement Resource Abstraction Layer Architecture",
+    "description": "Cloud providers should implement an architectural abstraction layer that separates user-facing resource names from internal resource identifiers. This separation allows resources to be moved, replaced, or protected without changing their public identifiers, preventing name reuse attacks.",
+    "x_implementation_details": {
+        "platform_architecture": [
+            "Implement an additional abstraction layer that separates the user-facing resource name from the internal resource identifier",
+            "Create a resource redirection service that maintains a mapping of resource names to actual resources",
+            "Develop a global resource registry for high-risk or widely referenced resource names",
+            "Implement URI-based resource addressing that includes tenant-specific information",
+            "Create versioned resource addressing schemes that prevent name collisions"
+        ],
+        "implementation_considerations": [
+            "Ensure backward compatibility with existing APIs and application integrations",
+            "Minimize performance impact of additional abstraction layers",
+            "Provide clear migration paths for existing resources",
+            "Create management tools for abstraction layer configuration and monitoring"
+        ],
+        "industry_standards": [
+            "Follow RESTful API design best practices for resource addressing",
+            "Implement URI design patterns from IETF RFCs",
+            "Adhere to microservice architecture principles for service isolation"
+        ]
+    },
+    "x_caveat_labels": ["cloud-provider", "architecture", "abstraction-layer", "platform-design"]
+}
