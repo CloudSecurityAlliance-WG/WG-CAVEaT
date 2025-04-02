@@ -51,6 +51,28 @@ The GPT-powered chatbot is designed to assist users in exploring and understandi
 
 The chatbot prioritizes delivering practical, implementable security controls that organizations can use to strengthen their cloud security posture.
 
+### Current Chatbot Version
+
+The current prompt version is v4 (April 2025), which includes significant enhancements:
+- Expanded focus on platform-level architectural solutions that cloud providers could implement
+- Comprehensive course of action development for both customer-level and provider-level mitigations
+- Improved STIX data quality with descriptive IDs instead of random UUIDs
+- Enhanced relationship mapping and visualization capabilities
+- See `/Chatbot/prompts/ChatBot-v4.md` for the complete prompt specification
+
+### Example Work
+
+The repository includes example research and STIX objects for several cloud security threats:
+- **Object Bucket Re-registration Attack** (April 2025): A comprehensive analysis of the vulnerability where deleted cloud storage buckets can be re-registered by attackers, enabling supply chain attacks and malware distribution. This example includes:
+  * Attack pattern documentation
+  * Vulnerability analysis
+  * Cross-provider impact assessment (AWS, Azure, GCP)
+  * Customer-level mitigation strategies
+  * Platform-level architectural solutions
+  * STIX objects with descriptive IDs
+  * Relationship mapping and visualization
+  * See `/Chatbot-Example-Data-and-Reports/Object-Buckets-2025-04-02/` for this example
+
 ## Current Work and Roadmap
 
 ### In Progress
@@ -96,6 +118,8 @@ The chatbot prioritizes delivering practical, implementable security controls th
 ## Repository Organization
 
 - `/Chatbot/`: Contains the chatbot implementation and knowledge base
+- `/Chatbot/prompts/`: Contains the prompt specifications for different chatbot versions
+- `/Chatbot-Example-Data-and-Reports/`: Contains example STIX objects and research reports
 - `/data/`: Contains core CAVEaT entries and mappings
 - `/file-utils/`: Utilities for file conversion and processing
 - `/mapping-attempts/`: Mapping CAVEaT entries to other security frameworks
