@@ -1,0 +1,24 @@
+{
+  "type": "indicator",
+  "spec_version": "2.1",
+  "id": "indicator--certificate-change-events",
+  "created": "2025-04-04T12:00:00.000Z",
+  "modified": "2025-04-04T12:00:00.000Z",
+  "name": "SAML Certificate Change Events",
+  "description": "Unexpected or unauthorized changes to SAML signing certificates in cloud identity providers may indicate preparation for a Silver SAML attack. Monitor audit logs for certificate changes, especially changes to PreferredTokenSigningKeyThumbprint and addition of new certificates.",
+  "indicator_types": ["anomalous-activity"],
+  "pattern": "[azure-audit-log:operation = 'UpdateServicePrincipal' AND azure-audit-log:properties.target.PreferredTokenSigningKeyThumbprint EXISTS]",
+  "pattern_type": "stix",
+  "valid_from": "2025-04-04T12:00:00.000Z",
+  "external_references": [
+    {
+      "source_name": "Semperis",
+      "url": "https://www.semperis.com/blog/meet-silver-saml/",
+      "description": "Monitoring recommendations for Silver SAML"
+    }
+  ],
+  "x_caveat_cloud_affected_providers": ["Microsoft Azure", "AWS", "GCP"],
+  "x_caveat_cloud_affected_services": ["Microsoft Entra ID", "AWS IAM", "GCP Identity Platform"],
+  "x_caveat_creation_date": "2025-04-04",
+  "x_caveat_last_modified": "2025-04-04"
+}

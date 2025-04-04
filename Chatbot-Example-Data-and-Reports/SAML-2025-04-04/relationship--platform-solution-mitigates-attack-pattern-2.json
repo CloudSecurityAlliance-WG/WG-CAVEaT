@@ -1,0 +1,13 @@
+{
+  "type": "relationship",
+  "spec_version": "2.1",
+  "id": "relationship--platform-solution-mitigates-attack-pattern-2",
+  "created": "2025-04-04T12:00:00.000Z",
+  "modified": "2025-04-04T12:00:00.000Z",
+  "relationship_type": "mitigates",
+  "source_ref": "x-caveat-platform-solution--strong-identity-binding",
+  "target_ref": "attack-pattern--silver-saml-federation-forgery",
+  "description": "Strong identity binding in SAML assertions would mitigate Silver SAML attacks by requiring additional validation parameters tied to user identity that cannot be easily forged, even with access to the signing certificate.",
+  "x_caveat_creation_date": "2025-04-04",
+  "x_caveat_last_modified": "2025-04-04"
+}

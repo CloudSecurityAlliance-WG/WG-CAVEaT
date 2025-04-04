@@ -1,0 +1,42 @@
+{
+  "type": "course-of-action",
+  "spec_version": "2.1",
+  "id": "course-of-action--implement-strict-access-controls",
+  "created": "2025-04-04T12:00:00.000Z",
+  "modified": "2025-04-04T12:00:00.000Z",
+  "name": "Implement Strict Access Controls for SAML Certificate Management",
+  "description": "Implement strict access controls for SAML certificate management across all cloud providers. Limit who can manage SAML configurations, apply just-in-time privileged access for identity administration, and use privileged access workstations for identity management tasks.",
+  "external_references": [
+    {
+      "source_name": "Semperis",
+      "url": "https://www.semperis.com/blog/meet-silver-saml/",
+      "description": "Recommendations for access control to prevent Silver SAML"
+    },
+    {
+      "source_name": "Microsoft",
+      "url": "https://learn.microsoft.com/en-us/azure/active-directory/roles/security-planning",
+      "description": "Entra ID privileged role security planning"
+    }
+  ],
+  "x_caveat_implementation_details": {
+    "azure": {
+      "console": "Use Privileged Identity Management (PIM) to enable just-in-time access to roles that can manage SAML certificates",
+      "cli": "Use az role assignment create with time-limited role assignments",
+      "api": "Use Microsoft Graph API to implement just-in-time role assignments"
+    },
+    "aws": {
+      "console": "Implement strict IAM policies for users who can manage SAML providers",
+      "cli": "Use aws iam put-role-policy to restrict SAML provider management",
+      "api": "Use IAM API to implement least privilege for SAML management"
+    },
+    "gcp": {
+      "console": "Use custom IAM roles with least privilege for SAML management",
+      "cli": "gcloud iam roles create with minimal permissions",
+      "api": "Use Identity and Access Management API to create restricted roles"
+    }
+  },
+  "x_caveat_creation_date": "2025-04-04",
+  "x_caveat_last_modified": "2025-04-04",
+  "x_caveat_effectiveness_rating": "MEDIUM",
+  "x_caveat_implementation_complexity": "MEDIUM"
+}

@@ -1,0 +1,24 @@
+{
+  "type": "indicator",
+  "spec_version": "2.1",
+  "id": "indicator--unusual-saml-authentication-patterns",
+  "created": "2025-04-04T12:00:00.000Z",
+  "modified": "2025-04-04T12:00:00.000Z",
+  "name": "Unusual SAML Authentication Patterns",
+  "description": "Unusual SAML authentication patterns, such as IdP-initiated SAML flows that bypass normal authentication processes or SAML authentications with no corresponding sign-in events in the identity provider's audit logs, may indicate a Silver SAML attack in progress.",
+  "indicator_types": ["anomalous-activity"],
+  "pattern": "[application-log:event_type = 'authentication' AND application-log:authentication_method = 'saml' AND NOT idp-log:event_type = 'sign-in' AND idp-log:user_id = application-log:user_id]",
+  "pattern_type": "stix",
+  "valid_from": "2025-04-04T12:00:00.000Z",
+  "external_references": [
+    {
+      "source_name": "Semperis",
+      "url": "https://www.semperis.com/blog/meet-silver-saml/",
+      "description": "SAML authentication flow analysis for detecting Silver SAML attacks"
+    }
+  ],
+  "x_caveat_cloud_affected_providers": ["Microsoft Azure", "AWS", "GCP"],
+  "x_caveat_cloud_affected_services": ["Microsoft Entra ID", "AWS IAM Identity Center", "GCP Identity Platform"],
+  "x_caveat_creation_date": "2025-04-04",
+  "x_caveat_last_modified": "2025-04-04"
+}

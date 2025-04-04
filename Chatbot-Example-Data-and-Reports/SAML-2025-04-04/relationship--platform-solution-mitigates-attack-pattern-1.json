@@ -1,0 +1,13 @@
+{
+  "type": "relationship",
+  "spec_version": "2.1",
+  "id": "relationship--platform-solution-mitigates-attack-pattern-1",
+  "created": "2025-04-04T12:00:00.000Z",
+  "modified": "2025-04-04T12:00:00.000Z",
+  "relationship_type": "mitigates",
+  "source_ref": "x-caveat-platform-solution--enhanced-certificate-validation",
+  "target_ref": "attack-pattern--silver-saml-federation-forgery",
+  "description": "Enhanced certificate validation by cloud providers would mitigate Silver SAML attacks by preventing the use of external certificates or implementing additional validation steps that would make forged SAML responses ineffective.",
+  "x_caveat_creation_date": "2025-04-04",
+  "x_caveat_last_modified": "2025-04-04"
+}

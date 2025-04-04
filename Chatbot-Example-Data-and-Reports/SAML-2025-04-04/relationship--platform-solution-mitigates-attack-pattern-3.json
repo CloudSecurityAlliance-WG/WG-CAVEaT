@@ -1,0 +1,13 @@
+{
+  "type": "relationship",
+  "spec_version": "2.1",
+  "id": "relationship--platform-solution-mitigates-attack-pattern-3",
+  "created": "2025-04-04T12:00:00.000Z",
+  "modified": "2025-04-04T12:00:00.000Z",
+  "relationship_type": "mitigates",
+  "source_ref": "x-caveat-platform-solution--advanced-federation-security",
+  "target_ref": "attack-pattern--silver-saml-federation-forgery",
+  "description": "A more advanced federation security architecture would fundamentally address the Silver SAML attack by replacing or enhancing the SAML protocol with more secure federation mechanisms that are not vulnerable to certificate theft and forgery.",
+  "x_caveat_creation_date": "2025-04-04",
+  "x_caveat_last_modified": "2025-04-04"
+}

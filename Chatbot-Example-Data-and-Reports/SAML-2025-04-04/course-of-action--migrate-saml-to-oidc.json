@@ -1,0 +1,42 @@
+{
+  "type": "course-of-action",
+  "spec_version": "2.1",
+  "id": "course-of-action--migrate-saml-to-oidc",
+  "created": "2025-04-04T12:00:00.000Z",
+  "modified": "2025-04-04T12:00:00.000Z",
+  "name": "Migrate from SAML to OIDC",
+  "description": "When possible, migrate applications from SAML-based authentication to OpenID Connect (OIDC). OIDC uses JSON Web Tokens (JWTs) and doesn't rely on certificates in the same way SAML does, making it less vulnerable to this type of attack.",
+  "external_references": [
+    {
+      "source_name": "Semperis",
+      "url": "https://www.semperis.com/blog/meet-silver-saml/",
+      "description": "OIDC recommendation to mitigate Silver SAML attacks"
+    },
+    {
+      "source_name": "OpenID Foundation",
+      "url": "https://openid.net/connect/",
+      "description": "OpenID Connect specification"
+    }
+  ],
+  "x_caveat_implementation_details": {
+    "azure": {
+      "console": "Configure applications to use OIDC protocol instead of SAML in Entra ID",
+      "cli": "Use az ad app create/update commands with OIDC configuration",
+      "api": "PATCH https://graph.microsoft.com/v1.0/applications/{id} with OIDC configuration"
+    },
+    "aws": {
+      "console": "Configure OIDC identity providers in IAM or IAM Identity Center",
+      "cli": "aws iam create-open-id-connect-provider to create OIDC provider",
+      "api": "CreateOpenIDConnectProvider API to configure OIDC"
+    },
+    "gcp": {
+      "console": "Configure OIDC providers in GCP Identity Platform",
+      "cli": "gcloud beta identity platform configs update-provider with OIDC configuration",
+      "api": "Use Identity Platform API to configure OIDC providers"
+    }
+  },
+  "x_caveat_creation_date": "2025-04-04",
+  "x_caveat_last_modified": "2025-04-04",
+  "x_caveat_effectiveness_rating": "HIGH",
+  "x_caveat_implementation_complexity": "MEDIUM"
+}

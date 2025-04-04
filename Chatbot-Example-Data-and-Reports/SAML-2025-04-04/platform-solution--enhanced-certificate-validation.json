@@ -1,0 +1,28 @@
+{
+  "type": "x-caveat-platform-solution",
+  "spec_version": "2.1",
+  "id": "x-caveat-platform-solution--enhanced-certificate-validation",
+  "created": "2025-04-04T12:00:00.000Z",
+  "modified": "2025-04-04T12:00:00.000Z",
+  "name": "Enhanced Certificate Validation for SAML",
+  "description": "Cloud providers should implement stricter validation of certificates used for SAML signing, preventing the use of externally-generated certificates or implementing additional validation steps. This architectural change would fundamentally address the vulnerability exploited in Silver SAML attacks.",
+  "solution_type": "architectural",
+  "implementation_timeframe": "medium-term",
+  "external_references": [
+    {
+      "source_name": "Semperis",
+      "url": "https://www.semperis.com/blog/meet-silver-saml/",
+      "description": "Platform-level architectural recommendations"
+    }
+  ],
+  "x_caveat_cloud_affected_providers": ["Microsoft Azure", "AWS", "GCP"],
+  "x_caveat_cloud_affected_services": ["Microsoft Entra ID", "AWS IAM Identity Center", "GCP Identity Platform"],
+  "x_caveat_creation_date": "2025-04-04",
+  "x_caveat_last_modified": "2025-04-04",
+  "x_caveat_implementation_considerations": [
+    "Potential backward compatibility issues with existing applications",
+    "Progressive implementation through configuration options",
+    "Provider-specific certificate validation chains",
+    "Enhanced certificate transparency and provenance tracking"
+  ]
+}

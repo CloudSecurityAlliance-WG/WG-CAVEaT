@@ -1,0 +1,13 @@
+{
+  "type": "x-caveat-visualization",
+  "spec_version": "2.1",
+  "id": "x-caveat-visualization--silver-saml-diagram",
+  "created": "2025-04-04T12:00:00.000Z",
+  "modified": "2025-04-04T12:00:00.000Z",
+  "name": "Silver SAML Attack Relationship Diagram",
+  "description": "Visualization of the relationships between Silver SAML attack pattern, vulnerabilities, courses of action, indicators, and platform solutions.",
+  "visualization_type": "mermaid",
+  "content": "graph TD\n    A[\"Attack Pattern: Silver SAML\"] --> B[\"Vulnerability: External Certificate Import\"]\n    A --> C[\"Vulnerability: SAML Design Limitations\"]\n    A --> D[\"Vulnerability: Key Vault Access Control\"]\n    \n    E[\"Course of Action: Use Built-in Certificates\"] --> B\n    F[\"Course of Action: Migrate to OIDC\"] --> C\n    G[\"Course of Action: Implement Strict Access Controls\"] --> D\n    \n    H[\"Indicator: Certificate Change Events\"] --> A\n    I[\"Indicator: Unusual SAML Authentication Patterns\"] --> A\n    \n    J[\"Platform Solution: Enhanced Certificate Validation\"] --> A\n    K[\"Platform Solution: Strong Identity Binding\"] --> A\n    L[\"Platform Solution: Advanced Federation Security\"] --> A\n    \n    style A fill:#ff9999\n    style B fill:#ffcc99\n    style C fill:#ffcc99\n    style D fill:#ffcc99\n    style E fill:#99ff99\n    style F fill:#99ff99\n    style G fill:#99ff99\n    style H fill:#9999ff\n    style I fill:#9999ff\n    style J fill:#ffff99\n    style K fill:#ffff99\n    style L fill:#ffff99",
+  "x_caveat_creation_date": "2025-04-04",
+  "x_caveat_last_modified": "2025-04-04"
+}

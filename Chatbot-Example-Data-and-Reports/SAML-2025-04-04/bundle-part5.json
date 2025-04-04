@@ -1,0 +1,72 @@
+{
+  "type": "bundle",
+  "id": "bundle--silver-saml-attack-2025-04-04-part5",
+  "spec_version": "2.1",
+  "objects": [
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--indicator-indicates-attack-pattern-2",
+      "created": "2025-04-04T12:00:00.000Z",
+      "modified": "2025-04-04T12:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--unusual-saml-authentication-patterns",
+      "target_ref": "attack-pattern--silver-saml-federation-forgery",
+      "description": "Unusual SAML authentication patterns, such as IdP-initiated flows that bypass normal authentication processes or authentications with no corresponding identity provider sign-in events, may indicate a Silver SAML attack in progress.",
+      "x_caveat_creation_date": "2025-04-04",
+      "x_caveat_last_modified": "2025-04-04"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--platform-solution-mitigates-attack-pattern-1",
+      "created": "2025-04-04T12:00:00.000Z",
+      "modified": "2025-04-04T12:00:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "x-caveat-platform-solution--enhanced-certificate-validation",
+      "target_ref": "attack-pattern--silver-saml-federation-forgery",
+      "description": "Enhanced certificate validation by cloud providers would mitigate Silver SAML attacks by preventing the use of external certificates or implementing additional validation steps that would make forged SAML responses ineffective.",
+      "x_caveat_creation_date": "2025-04-04",
+      "x_caveat_last_modified": "2025-04-04"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--platform-solution-mitigates-attack-pattern-2",
+      "created": "2025-04-04T12:00:00.000Z",
+      "modified": "2025-04-04T12:00:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "x-caveat-platform-solution--strong-identity-binding",
+      "target_ref": "attack-pattern--silver-saml-federation-forgery",
+      "description": "Strong identity binding in SAML assertions would mitigate Silver SAML attacks by requiring additional validation parameters tied to user identity that cannot be easily forged, even with access to the signing certificate.",
+      "x_caveat_creation_date": "2025-04-04",
+      "x_caveat_last_modified": "2025-04-04"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--platform-solution-mitigates-attack-pattern-3",
+      "created": "2025-04-04T12:00:00.000Z",
+      "modified": "2025-04-04T12:00:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "x-caveat-platform-solution--advanced-federation-security",
+      "target_ref": "attack-pattern--silver-saml-federation-forgery",
+      "description": "A more advanced federation security architecture would fundamentally address the Silver SAML attack by replacing or enhancing the SAML protocol with more secure federation mechanisms that are not vulnerable to certificate theft and forgery.",
+      "x_caveat_creation_date": "2025-04-04",
+      "x_caveat_last_modified": "2025-04-04"
+    },
+    {
+      "type": "x-caveat-visualization",
+      "spec_version": "2.1",
+      "id": "x-caveat-visualization--silver-saml-diagram",
+      "created": "2025-04-04T12:00:00.000Z",
+      "modified": "2025-04-04T12:00:00.000Z",
+      "name": "Silver SAML Attack Relationship Diagram",
+      "description": "Visualization of the relationships between Silver SAML attack pattern, vulnerabilities, courses of action, indicators, and platform solutions.",
+      "visualization_type": "mermaid",
+      "content": "graph TD\n    A[\"Attack Pattern: Silver SAML\"] --> B[\"Vulnerability: External Certificate Import\"]\n    A --> C[\"Vulnerability: SAML Design Limitations\"]\n    A --> D[\"Vulnerability: Key Vault Access Control\"]\n    \n    E[\"Course of Action: Use Built-in Certificates\"] --> B\n    F[\"Course of Action: Migrate to OIDC\"] --> C\n    G[\"Course of Action: Implement Strict Access Controls\"] --> D\n    \n    H[\"Indicator: Certificate Change Events\"] --> A\n    I[\"Indicator: Unusual SAML Authentication Patterns\"] --> A\n    \n    J[\"Platform Solution: Enhanced Certificate Validation\"] --> A\n    K[\"Platform Solution: Strong Identity Binding\"] --> A\n    L[\"Platform Solution: Advanced Federation Security\"] --> A\n    \n    style A fill:#ff9999\n    style B fill:#ffcc99\n    style C fill:#ffcc99\n    style D fill:#ffcc99\n    style E fill:#99ff99\n    style F fill:#99ff99\n    style G fill:#99ff99\n    style H fill:#9999ff\n    style I fill:#9999ff\n    style J fill:#ffff99\n    style K fill:#ffff99\n    style L fill:#ffff99",
+      "x_caveat_creation_date": "2025-04-04",
+      "x_caveat_last_modified": "2025-04-04"
+    }
+  ]
+}

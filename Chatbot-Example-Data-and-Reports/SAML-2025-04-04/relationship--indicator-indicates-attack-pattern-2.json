@@ -1,0 +1,13 @@
+{
+  "type": "relationship",
+  "spec_version": "2.1",
+  "id": "relationship--indicator-indicates-attack-pattern-2",
+  "created": "2025-04-04T12:00:00.000Z",
+  "modified": "2025-04-04T12:00:00.000Z",
+  "relationship_type": "indicates",
+  "source_ref": "indicator--unusual-saml-authentication-patterns",
+  "target_ref": "attack-pattern--silver-saml-federation-forgery",
+  "description": "Unusual SAML authentication patterns, such as IdP-initiated flows that bypass normal authentication processes or authentications with no corresponding identity provider sign-in events, may indicate a Silver SAML attack in progress.",
+  "x_caveat_creation_date": "2025-04-04",
+  "x_caveat_last_modified": "2025-04-04"
+}

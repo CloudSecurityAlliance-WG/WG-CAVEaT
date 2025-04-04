@@ -1,0 +1,13 @@
+{
+  "type": "relationship",
+  "spec_version": "2.1",
+  "id": "relationship--indicator-indicates-attack-pattern-1",
+  "created": "2025-04-04T12:00:00.000Z",
+  "modified": "2025-04-04T12:00:00.000Z",
+  "relationship_type": "indicates",
+  "source_ref": "indicator--certificate-change-events",
+  "target_ref": "attack-pattern--silver-saml-federation-forgery",
+  "description": "Unexpected or unauthorized changes to SAML signing certificates in cloud identity providers may indicate preparation for a Silver SAML attack.",
+  "x_caveat_creation_date": "2025-04-04",
+  "x_caveat_last_modified": "2025-04-04"
+}
