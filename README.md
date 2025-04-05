@@ -30,6 +30,166 @@ Using the STIX format allows:
 - Mapping CAVEaT entries to ATT&CK and other frameworks
 - Consistent representation of tactics, techniques, and procedures
 
+## CAVEaT Local Setup
+
+### Introduction
+
+Setting up a local environment for CAVEaT work provides several important benefits:
+
+- **Privacy and control**: Work with sensitive security information without exposing it to external services
+- **Offline capabilities**: Continue development without requiring constant internet connectivity
+- **Customization**: Tailor the environment to your specific workflow and preferences
+- **Direct file access**: Seamlessly integrate with local git repositories and file systems
+- **Consistency**: Ensure everyone on the team is using the same tooling and workflow
+
+This guide will walk you through the process of setting up your local environment for contributing to the CAVEaT project, including repository configuration and AI tooling with Model Context Protocol support.
+
+### Git Repository Setup for CTI Data Contributions
+
+The CAVEaT project stores threat intelligence data in the CTI repository. To contribute to this data:
+
+1. **Fork the repository**:
+   - Visit https://github.com/CloudSecurityAlliance/cti/
+   - Click the "Fork" button in the upper right corner
+   - This creates your own copy of the repository under your GitHub account
+
+2. **Clone your fork locally**:
+   ```bash
+   git clone https://github.com/YOUR-USERNAME/cti.git
+   cd cti
+   ```
+
+3. **Add the upstream remote**:
+   ```bash
+   git remote add upstream https://github.com/CloudSecurityAlliance/cti.git
+   ```
+   This allows you to keep your fork synchronized with the main repository.
+
+4. **Create a branch for your work**:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+5. **Make changes, commit, and push to your fork**:
+   ```bash
+   git add .
+   git commit -m "Description of your changes"
+   git push origin feature/your-feature-name
+   ```
+
+6. **Create a Pull Request**:
+   - Visit your fork on GitHub
+   - Click "Pull Request"
+   - Select your branch and the main repository's main branch
+   - Provide a description of your changes
+   - Submit the pull request
+
+### Git Repository Setup for WG-CAVEaT Tools and Research Contributions
+
+To contribute to the tools, prompts, and research components of CAVEaT:
+
+1. **Fork the WG-CAVEaT repository**:
+   - Visit https://github.com/CloudSecurityAlliance-WG/WG-CAVEaT
+   - Click the "Fork" button in the upper right corner
+
+2. **Clone your fork locally**:
+   ```bash
+   git clone https://github.com/YOUR-USERNAME/WG-CAVEaT.git
+   cd WG-CAVEaT
+   ```
+
+3. **Add the upstream remote**:
+   ```bash
+   git remote add upstream https://github.com/CloudSecurityAlliance-WG/WG-CAVEaT.git
+   ```
+
+4. **Create a branch for your contributions**:
+   ```bash
+   git checkout -b feature/your-contribution-name
+   ```
+
+5. **Make changes, commit, and push to your fork**:
+   ```bash
+   git add .
+   git commit -m "Description of your changes"
+   git push origin feature/your-contribution-name
+   ```
+
+6. **Create a Pull Request**:
+   - Visit your fork on GitHub
+   - Click "Pull Request"
+   - Select your branch and the main repository's main branch
+   - Provide a description of your changes
+   - Submit the pull request
+
+### Setting Up Local AI with Model Context Protocol Support
+
+The Model Context Protocol (MCP) allows AI assistants to interact with your local environment, including file systems and web services. This is essential for working effectively with the CAVEaT framework.
+
+1. **Install MCP servers**:
+   - Visit the official repository: http://github.com/modelcontextprotocol/servers/
+   - Follow the installation instructions for your operating system
+   - The CSA AI Tool Setup repository also provides helpful scripts: https://github.com/CloudSecurityAlliance/CSA-AI-Tool-Setup
+
+2. **Required MCP servers**:
+   - **Filesystem MCP server**: Allows the AI to read and write files on your system
+   - **Fetch MCP server**: Enables retrieval of online resources
+   - **Web search MCP server**: Provides search capabilities for research
+   - **Git MCP server**: Allows direct interaction with git repositories
+
+3. **Configuration**:
+   - Each server requires specific configuration for permissions and access
+   - Refer to the documentation in the CSA-AI-Tool-Setup repository for recommended configurations
+   - Ensure you restrict file system access to only the necessary directories
+
+### Working with the CAVEaT Prompts
+
+The CAVEaT project maintains a collection of prompts that instruct AI assistants on how to work with the framework:
+
+1. **Access the latest prompts**:
+   - Browse the prompt directory: https://github.com/CloudSecurityAlliance-WG/WG-CAVEaT/tree/main/Chatbot/prompts
+   - Clone this repository if you haven't already:
+     ```bash
+     git clone https://github.com/CloudSecurityAlliance-WG/WG-CAVEaT.git
+     ```
+
+2. **Loading prompts into your AI assistant**:
+   - Use clear instructions to direct your AI to read the prompt file:
+     ```
+     Please read the latest prompt file in /User/KurtSeifried/GitHub/WG_CAVEaT/Chatbot/prompts/
+     ```
+   - Adapt the path to match your local directory structure
+
+3. **Working with the CTI repository**:
+   - Instruct the AI to output to your fork of the CTI repository:
+     ```
+     I want you to write the output files to the appropriate directories in /User/KurtSeifried/GitHub/cti/ in STIX format, using UUID's and make sure they are referenced correctly and so on
+     ```
+   - Again, adjust paths to match your local setup
+
+### Claude Desktop-Specific Instructions
+
+Claude Desktop can be configured to work with the CAVEaT framework:
+
+1. **Installation**:
+   - Download and install Claude Desktop from the official Anthropic website
+   - Follow the standard installation instructions for your operating system
+
+2. **MCP Integration**:
+   - Claude Desktop supports the Model Context Protocol
+   - Configure Claude to connect to your local MCP servers
+   - This typically involves providing the server endpoints in Claude's settings
+
+3. **Working with prompts**:
+   - Start a new conversation
+   - Ask Claude to read the prompt file from your local file system
+   - Provide clear instructions about file paths and expected outputs
+
+4. **Additional tips**:
+   - For complex tasks, consider breaking them down into smaller steps
+   - Verify Claude's understanding by asking it to summarize the task
+   - Review generated STIX objects carefully before committing them to your repository
+
 ## CAVEaT Chatbot
 
 The CAVEaT Chatbot is an AI-powered tool that helps security professionals navigate the CAVEaT framework and implement practical security controls. The chatbot serves as an interactive reference for cloud security threats and their mitigations.
