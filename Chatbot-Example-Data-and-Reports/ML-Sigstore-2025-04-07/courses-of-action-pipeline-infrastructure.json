@@ -1,0 +1,118 @@
+{
+  "type": "bundle",
+  "id": "bundle--ml-pipeline-infrastructure-courses-of-action",
+  "objects": [
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--secure-model-deployment-pipelines",
+      "created": "2025-04-07T14:35:00.000Z",
+      "modified": "2025-04-07T14:35:00.000Z",
+      "name": "Create Secure ML Model Deployment Pipelines",
+      "description": "Build secure CI/CD pipelines specifically designed for ML model development and deployment in cloud environments. This mitigates risks associated with pipeline compromise, unauthorized model modifications, and supply chain attacks by implementing security controls throughout the model lifecycle.",
+      "external_references": [
+        {
+          "source_name": "CAVEaT",
+          "external_id": "CAVEaT-CoA-ML-007",
+          "url": "https://github.com/cloudsecurityalliance/caveat/wiki/course-of-action--secure-model-deployment-pipelines"
+        }
+      ],
+      "x_cloud_implementation": {
+        "aws": {
+          "console": "Implement secure ML pipelines in AWS. Use SageMaker Pipelines with code signing and model validation steps. Configure CodePipeline with source integrity checks for ML code. Deploy AWS CodeBuild with hardened build environments. Implement security testing stages that validate model behavior before deployment.",
+          "cli": "aws sagemaker create-pipeline --pipeline-name SecureMLPipeline --pipeline-definition file://pipeline-definition.json --pipeline-description \"Secure ML Pipeline with signing and validation\" --role-arn arn:aws:iam::account:role/PipelineRole",
+          "api": "Use the SageMaker SDK to programmatically create and manage secure ML pipelines with built-in security controls.",
+          "verification": "Verify pipeline security using: aws sagemaker describe-pipeline --pipeline-name SecureMLPipeline && aws codepipeline get-pipeline --name ML-Deployment-Pipeline"
+        },
+        "azure": {
+          "console": "Implement secure ML pipelines in Azure. Use Azure Pipelines with secure build agents for ML workflows. Configure Azure ML Pipelines with model validation steps. Implement Azure Policy to enforce security controls on pipeline resources. Enable security testing stages that validate model behavior before deployment.",
+          "cli": "az ml pipeline create --workspace-name workspace-name --resource-group resource-group --file secure-pipeline.yml && az pipelines create --name ML-Deployment --repository repo-name --branch main --yml-path build/ml-secure-deploy.yml",
+          "api": "Use the Azure ML SDK and Azure DevOps API to programmatically create and manage secure ML pipelines.",
+          "verification": "Verify pipeline security using: az ml pipeline show --name secure-pipeline --workspace-name workspace-name --resource-group resource-group"
+        },
+        "gcp": {
+          "console": "Implement secure ML pipelines in GCP. Use Vertex AI Pipelines with security validation components. Configure Cloud Build with secure build environments for ML code. Implement Binary Authorization to enforce signature verification. Deploy security testing stages that validate model behavior before deployment.",
+          "cli": "gcloud ai pipelines create --pipeline-file=secure-pipeline.json --service-account=sa-name@project-id.iam.gserviceaccount.com && gcloud builds submit --config=ml-deploy-cloudbuild.yaml --substitutions=_PROJECT_ID=project-id",
+          "api": "Use the Vertex AI SDK and Cloud Build API to programmatically create and manage secure ML pipelines.",
+          "verification": "Verify pipeline security using: gcloud ai pipelines describe pipeline-id && gcloud builds list --filter=buildTriggerId=trigger-id"
+        },
+        "platform_architectural_solution": "Cloud providers should implement ML-specific secure pipeline frameworks that:\n1. Provide specialized ML build environments with security hardening\n2. Implement automatic model validation with security checks\n3. Enforce model provenance verification in pipelines\n4. Include adversarial testing capabilities in deployment gates\n5. Support policy-based deployment controls for ML assets\n6. Enable pipeline intrusion detection and anomaly monitoring"
+      }
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--implement-model-verification",
+      "created": "2025-04-07T14:35:00.000Z",
+      "modified": "2025-04-07T14:35:00.000Z",
+      "name": "Implement ML Model Verification Testing",
+      "description": "Establish comprehensive verification testing for ML models before deployment to production environments. This mitigates risks associated with model tampering, backdoors, and adversarial vulnerabilities by systematically evaluating model behavior against security requirements.",
+      "external_references": [
+        {
+          "source_name": "CAVEaT",
+          "external_id": "CAVEaT-CoA-ML-008",
+          "url": "https://github.com/cloudsecurityalliance/caveat/wiki/course-of-action--implement-model-verification"
+        }
+      ],
+      "x_cloud_implementation": {
+        "aws": {
+          "console": "Implement ML model verification in AWS. Use SageMaker Processing jobs to run security testing suites against models before deployment. Configure SageMaker Model Monitor for drift detection. Create automated test suites that check for backdoors and adversarial vulnerabilities. Implement model explainability checks using SageMaker Clarify.",
+          "cli": "aws sagemaker create-processing-job --processing-job-name security-verification --app-specification {\"ImageUri\":\"image-uri\",\"ContainerArguments\":[\"--model-path\",\"s3://model-bucket/model.tar.gz\"]} --role-arn role-arn --processing-resources {...}",
+          "api": "Use the SageMaker SDK to programmatically run security verification tests on models before deployment.",
+          "verification": "Verify test results using: aws sagemaker describe-processing-job --processing-job-name security-verification"
+        },
+        "azure": {
+          "console": "Implement ML model verification in Azure. Use Azure ML Pipelines to run security testing suites against models before deployment. Configure Azure ML dataset and model monitoring for drift detection. Create automated test suites that check for backdoors and adversarial vulnerabilities. Implement model explainability checks using Interpretability SDK.",
+          "cli": "az ml job create --workspace-name workspace-name --resource-group resource-group --file verification-job.yml && az ml model deploy --name secure-endpoint --model-name model-name --inference-config inference.yml --deploy-config deploy.yml --overwrite",
+          "api": "Use the Azure ML SDK to programmatically run security verification tests on models before deployment.",
+          "verification": "Verify test results using: az ml job show --name verification-job --workspace-name workspace-name --resource-group resource-group"
+        },
+        "gcp": {
+          "console": "Implement ML model verification in GCP. Use Vertex AI custom training jobs to run security testing suites against models before deployment. Configure Vertex AI model monitoring for drift detection. Create automated test suites that check for backdoors and adversarial vulnerabilities. Implement model explainability checks using Vertex Explainable AI.",
+          "cli": "gcloud ai custom-jobs create --region=region --display-name=security-verification --config=verification-config.yaml && gcloud ai endpoints deploy-model --region=region --endpoint=endpoint-id --model=model-id --display-name=verified-model",
+          "api": "Use the Vertex AI SDK to programmatically run security verification tests on models before deployment.",
+          "verification": "Verify test results using: gcloud ai custom-jobs describe job-id --region=region"
+        },
+        "platform_architectural_solution": "Cloud providers should implement specialized ML model verification frameworks that:\n1. Provide automated adversarial testing capabilities\n2. Include backdoor detection and removal tools\n3. Support privacy leakage assessment for models\n4. Implement formal verification for model security properties\n5. Enable comparative analysis against known-good model behaviors\n6. Support continuous verification throughout model lifecycle"
+      }
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--implement-ml-runtime-security",
+      "created": "2025-04-07T14:35:00.000Z",
+      "modified": "2025-04-07T14:35:00.000Z",
+      "name": "Implement ML Model Runtime Security",
+      "description": "Deploy comprehensive security controls for ML model runtime environments in cloud infrastructure. This mitigates risks associated with container breakouts, privilege escalation, and lateral movement by implementing defense-in-depth for model serving infrastructure.",
+      "external_references": [
+        {
+          "source_name": "CAVEaT",
+          "external_id": "CAVEaT-CoA-ML-009",
+          "url": "https://github.com/cloudsecurityalliance/caveat/wiki/course-of-action--implement-ml-runtime-security"
+        }
+      ],
+      "x_cloud_implementation": {
+        "aws": {
+          "console": "Implement ML runtime security in AWS. Configure SageMaker endpoints with network isolation and VPC constraints. Deploy GuardDuty for runtime threat detection. Use AWS App Mesh for zero-trust service communication. Implement container security scanning and runtime monitoring. Configure enhanced network policies and security groups for ML endpoints.",
+          "cli": "aws sagemaker create-endpoint-config --endpoint-config-name secure-config --production-variants \"[{\\\"ModelName\\\":\\\"model-name\\\",\\\"VariantName\\\":\\\"secure\\\",\\\"InitialInstanceCount\\\":1,\\\"InstanceType\\\":\\\"ml.c5.xlarge\\\"}]\" --enable-network-isolation --execution-role-arn role-arn",
+          "api": "Use the AWS SDK to programmatically configure and deploy secure ML runtime environments.",
+          "verification": "Verify runtime security using: aws sagemaker describe-endpoint-config --endpoint-config-name secure-config"
+        },
+        "azure": {
+          "console": "Implement ML runtime security in Azure. Configure Azure ML compute instances with network isolation. Deploy Azure Security Center for runtime threat detection. Use Azure Service Mesh for zero-trust service communication. Implement container security scanning and runtime monitoring. Configure NSGs and Azure Firewall for ML services.",
+          "cli": "az ml compute create --name secure-compute --workspace-name workspace-name --resource-group resource-group --type AmlCompute --vm-size Standard_DS3_v2 --min-nodes 0 --max-nodes 4 --subnet-name subnet-name --vnet-name vnet-name --vnet-resourcegroup-name vnet-resource-group",
+          "api": "Use the Azure ML SDK to programmatically configure and deploy secure ML runtime environments.",
+          "verification": "Verify runtime security using: az ml compute show --name secure-compute --workspace-name workspace-name --resource-group resource-group"
+        },
+        "gcp": {
+          "console": "Implement ML runtime security in GCP. Configure Vertex AI endpoints with VPC Service Controls. Deploy Security Command Center for runtime threat detection. Use Cloud Service Mesh for zero-trust service communication. Implement container security scanning and runtime monitoring. Configure firewall policies and network security for ML services.",
+          "cli": "gcloud ai endpoints deploy-model --region=region --endpoint=endpoint-id --model=model-id --machine-type=n1-standard-4 --min-replica-count=1 --max-replica-count=5 --traffic-split=0=100 --network=network-name --enable-container-logging",
+          "api": "Use the Vertex AI SDK to programmatically configure and deploy secure ML runtime environments.",
+          "verification": "Verify runtime security using: gcloud ai endpoints describe endpoint-id --region=region"
+        },
+        "platform_architectural_solution": "Cloud providers should implement specialized ML runtime security frameworks that:\n1. Provide ML-specific container hardening profiles\n2. Implement secure multi-tenant model serving capabilities\n3. Support confidential computing for sensitive model inference\n4. Enable runtime anomaly detection for model behavior\n5. Implement ML-specific intrusion detection and prevention\n6. Support zero-trust architectures for model serving infrastructure"
+      }
+    }
+  ],
+  "spec_version": "2.1"
+}

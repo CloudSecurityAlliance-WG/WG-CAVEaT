@@ -1,0 +1,204 @@
+{
+  "type": "bundle",
+  "id": "bundle--ml-access-infrastructure-vulnerabilities",
+  "objects": [
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
+      "id": "vulnerability--inadequate-ml-access-controls",
+      "created": "2025-04-07T14:20:00.000Z",
+      "modified": "2025-04-07T14:20:00.000Z",
+      "name": "Inadequate Access Controls for ML Resources",
+      "description": "This vulnerability exists when cloud-based ML resources lack proper access control mechanisms. Insufficient permissions on model storage, registries, training pipelines, or deployment processes enable unauthorized access, modifications, or exfiltration. Common issues include overly permissive IAM policies, lack of resource-level permissions, missing authorization checks, and inadequate separation of duties between ML development, operations, and security teams.",
+      "external_references": [
+        {
+          "source_name": "CAVEaT",
+          "external_id": "CAVEaT-VUL-ML-005",
+          "url": "https://github.com/cloudsecurityalliance/caveat/wiki/vulnerability--inadequate-ml-access-controls"
+        }
+      ],
+      "x_cloud_affected_services": {
+        "aws": [
+          "SageMaker",
+          "S3",
+          "IAM",
+          "ECR"
+        ],
+        "azure": [
+          "Azure Machine Learning",
+          "Azure Active Directory",
+          "Azure RBAC"
+        ],
+        "gcp": [
+          "Vertex AI",
+          "Cloud IAM",
+          "Artifact Registry"
+        ]
+      }
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
+      "id": "vulnerability--unencrypted-model-transfer",
+      "created": "2025-04-07T14:20:00.000Z",
+      "modified": "2025-04-07T14:20:00.000Z",
+      "name": "Unencrypted ML Model Transfer",
+      "description": "This vulnerability exists when ML models and related assets are transmitted without adequate encryption between cloud services or components. Lack of encryption during transfer enables man-in-the-middle attacks, model theft, or tampering. This affects model distribution from registries to deployment targets, transfers between cloud regions or providers, and communications between ML pipeline components.",
+      "external_references": [
+        {
+          "source_name": "CAVEaT",
+          "external_id": "CAVEaT-VUL-ML-006",
+          "url": "https://github.com/cloudsecurityalliance/caveat/wiki/vulnerability--unencrypted-model-transfer"
+        }
+      ],
+      "x_cloud_affected_services": {
+        "aws": [
+          "SageMaker",
+          "S3",
+          "ECR"
+        ],
+        "azure": [
+          "Azure Machine Learning",
+          "Azure Container Registry"
+        ],
+        "gcp": [
+          "Vertex AI",
+          "Cloud Storage",
+          "Artifact Registry"
+        ]
+      }
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
+      "id": "vulnerability--weak-ml-pipeline-authentication",
+      "created": "2025-04-07T14:20:00.000Z",
+      "modified": "2025-04-07T14:20:00.000Z",
+      "name": "Weak ML Pipeline Authentication",
+      "description": "This vulnerability exists when cloud-based ML pipelines have insufficient authentication mechanisms between components. Inadequate service-to-service authentication, lack of mutual TLS, reliance on shared secrets, or improper credential management enables attackers to impersonate legitimate pipeline components and introduce malicious elements. This affects automated ML workflows, CI/CD pipelines for ML, and interactions between microservices in ML platforms.",
+      "external_references": [
+        {
+          "source_name": "CAVEaT",
+          "external_id": "CAVEaT-VUL-ML-007",
+          "url": "https://github.com/cloudsecurityalliance/caveat/wiki/vulnerability--weak-ml-pipeline-authentication"
+        }
+      ],
+      "x_cloud_affected_services": {
+        "aws": [
+          "SageMaker Pipelines",
+          "CodePipeline",
+          "CodeBuild"
+        ],
+        "azure": [
+          "Azure DevOps",
+          "Azure Pipelines",
+          "Azure Machine Learning Pipelines"
+        ],
+        "gcp": [
+          "Vertex AI Pipelines",
+          "Cloud Build",
+          "Cloud Deploy"
+        ]
+      }
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
+      "id": "vulnerability--exposed-model-endpoints",
+      "created": "2025-04-07T14:20:00.000Z",
+      "modified": "2025-04-07T14:20:00.000Z",
+      "name": "Exposed ML Model Endpoints",
+      "description": "This vulnerability exists when ML model inference endpoints in cloud environments are publicly accessible without proper security controls. Lack of API gateway protection, missing authentication, insufficient rate limiting, or absent input validation enables unauthorized access, model probing, extraction attacks, or denial of service. This affects model serving infrastructure across all cloud ML platforms.",
+      "external_references": [
+        {
+          "source_name": "CAVEaT",
+          "external_id": "CAVEaT-VUL-ML-008",
+          "url": "https://github.com/cloudsecurityalliance/caveat/wiki/vulnerability--exposed-model-endpoints"
+        }
+      ],
+      "x_cloud_affected_services": {
+        "aws": [
+          "SageMaker Endpoints",
+          "API Gateway",
+          "Lambda"
+        ],
+        "azure": [
+          "Azure Machine Learning Endpoints",
+          "API Management",
+          "Azure Functions"
+        ],
+        "gcp": [
+          "Vertex AI Endpoints",
+          "API Gateway",
+          "Cloud Functions"
+        ]
+      }
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
+      "id": "vulnerability--shared-tenancy-ml-risks",
+      "created": "2025-04-07T14:20:00.000Z",
+      "modified": "2025-04-07T14:20:00.000Z",
+      "name": "Shared Tenancy Risks in Cloud ML Platforms",
+      "description": "This vulnerability exists when cloud-based ML platforms have insufficient isolation between tenants or workloads. Inadequate compute isolation, resource namespace conflicts, or shared caches can lead to information leakage, resource contention attacks, or cross-tenant vulnerabilities. This affects multi-tenant ML platforms, shared inference services, and managed ML environments where multiple customers' workloads run on shared infrastructure.",
+      "external_references": [
+        {
+          "source_name": "CAVEaT",
+          "external_id": "CAVEaT-VUL-ML-009",
+          "url": "https://github.com/cloudsecurityalliance/caveat/wiki/vulnerability--shared-tenancy-ml-risks"
+        }
+      ],
+      "x_cloud_affected_services": {
+        "aws": [
+          "SageMaker",
+          "EKS",
+          "ECS"
+        ],
+        "azure": [
+          "Azure Machine Learning",
+          "Azure Kubernetes Service"
+        ],
+        "gcp": [
+          "Vertex AI",
+          "Google Kubernetes Engine"
+        ]
+      }
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
+      "id": "vulnerability--excessive-model-permissions",
+      "created": "2025-04-07T14:20:00.000Z",
+      "modified": "2025-04-07T14:20:00.000Z",
+      "name": "Excessive ML Model Runtime Permissions",
+      "description": "This vulnerability exists when ML models run with more permissions than required in cloud environments. Models deployed with broad IAM roles, excessive container privileges, or unnecessary system access enable privilege escalation or lateral movement if compromised. This affects containerized model deployments, serverless inference functions, and other model serving infrastructures where the principle of least privilege is not enforced.",
+      "external_references": [
+        {
+          "source_name": "CAVEaT",
+          "external_id": "CAVEaT-VUL-ML-010",
+          "url": "https://github.com/cloudsecurityalliance/caveat/wiki/vulnerability--excessive-model-permissions"
+        }
+      ],
+      "x_cloud_affected_services": {
+        "aws": [
+          "SageMaker",
+          "Lambda",
+          "ECS",
+          "EKS"
+        ],
+        "azure": [
+          "Azure Machine Learning",
+          "Azure Functions",
+          "Azure Kubernetes Service"
+        ],
+        "gcp": [
+          "Vertex AI",
+          "Cloud Functions",
+          "Google Kubernetes Engine"
+        ]
+      }
+    }
+  ],
+  "spec_version": "2.1"
+}

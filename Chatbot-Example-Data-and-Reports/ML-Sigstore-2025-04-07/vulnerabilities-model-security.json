@@ -1,0 +1,136 @@
+{
+  "type": "bundle",
+  "id": "bundle--ml-model-security-vulnerabilities",
+  "objects": [
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
+      "id": "vulnerability--unsigned-ml-models",
+      "created": "2025-04-07T14:15:00.000Z",
+      "modified": "2025-04-07T14:15:00.000Z",
+      "name": "Unsigned ML Models in Cloud Environments",
+      "description": "This vulnerability exists when ML models deployed in cloud environments lack cryptographic signatures for verification. Without digital signatures, organizations cannot verify model authenticity, integrity, or provenance during deployment or runtime, allowing attackers to substitute malicious models without detection. This vulnerability affects model distribution pipelines, deployment processes, and runtime environments in cloud ML platforms.",
+      "external_references": [
+        {
+          "source_name": "CAVEaT",
+          "external_id": "CAVEaT-VUL-ML-001",
+          "url": "https://github.com/cloudsecurityalliance/caveat/wiki/vulnerability--unsigned-ml-models"
+        }
+      ],
+      "x_cloud_affected_services": {
+        "aws": [
+          "SageMaker",
+          "S3",
+          "ECR"
+        ],
+        "azure": [
+          "Azure Machine Learning",
+          "Azure Container Registry"
+        ],
+        "gcp": [
+          "Vertex AI",
+          "Artifact Registry"
+        ]
+      }
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
+      "id": "vulnerability--inadequate-ml-provenance",
+      "created": "2025-04-07T14:15:00.000Z",
+      "modified": "2025-04-07T14:15:00.000Z",
+      "name": "Inadequate ML Model Provenance Tracking",
+      "description": "This vulnerability exists when ML systems in cloud environments lack proper mechanisms to track and verify the complete lineage of models and training data. Without comprehensive provenance tracking, organizations cannot verify model origins, training methodologies, data sources, or processing steps, enabling supply chain attacks and making tampering difficult to detect. This affects model governance, compliance verification, and security auditing in ML systems.",
+      "external_references": [
+        {
+          "source_name": "CAVEaT",
+          "external_id": "CAVEaT-VUL-ML-002",
+          "url": "https://github.com/cloudsecurityalliance/caveat/wiki/vulnerability--inadequate-ml-provenance"
+        }
+      ],
+      "x_cloud_affected_services": {
+        "aws": [
+          "SageMaker",
+          "S3",
+          "AWS Glue"
+        ],
+        "azure": [
+          "Azure Machine Learning",
+          "Azure Data Factory"
+        ],
+        "gcp": [
+          "Vertex AI",
+          "Cloud Storage",
+          "Dataflow"
+        ]
+      }
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
+      "id": "vulnerability--unversioned-model-assets",
+      "created": "2025-04-07T14:15:00.000Z",
+      "modified": "2025-04-07T14:15:00.000Z",
+      "name": "Unversioned ML Model Assets",
+      "description": "This vulnerability exists when ML models, training datasets, and configurations in cloud environments lack proper versioning controls. Without immutable versioning, organizations cannot ensure consistency between development, testing, and production environments, or reliably roll back to known-good states after discovering issues. This enables attackers to manipulate models or data without leaving an audit trail, complicating security incident response.",
+      "external_references": [
+        {
+          "source_name": "CAVEaT",
+          "external_id": "CAVEaT-VUL-ML-003",
+          "url": "https://github.com/cloudsecurityalliance/caveat/wiki/vulnerability--unversioned-model-assets"
+        }
+      ],
+      "x_cloud_affected_services": {
+        "aws": [
+          "SageMaker",
+          "S3",
+          "ECR",
+          "AWS Glue"
+        ],
+        "azure": [
+          "Azure Machine Learning",
+          "Azure Blob Storage",
+          "Azure Container Registry"
+        ],
+        "gcp": [
+          "Vertex AI",
+          "Cloud Storage",
+          "Artifact Registry"
+        ]
+      }
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
+      "id": "vulnerability--insecure-model-serialization",
+      "created": "2025-04-07T14:15:00.000Z",
+      "modified": "2025-04-07T14:15:00.000Z",
+      "name": "Insecure ML Model Serialization",
+      "description": "This vulnerability exists when ML systems use insecure serialization formats for model storage and distribution in cloud environments. Formats like pickle in Python can contain arbitrary code that executes when deserialized, allowing attackers who can manipulate serialized models to achieve remote code execution. This affects model storage, transfer between services, and deployment processes in cloud ML platforms.",
+      "external_references": [
+        {
+          "source_name": "CAVEaT",
+          "external_id": "CAVEaT-VUL-ML-004",
+          "url": "https://github.com/cloudsecurityalliance/caveat/wiki/vulnerability--insecure-model-serialization"
+        }
+      ],
+      "x_cloud_affected_services": {
+        "aws": [
+          "SageMaker",
+          "S3",
+          "Lambda"
+        ],
+        "azure": [
+          "Azure Machine Learning",
+          "Azure Functions"
+        ],
+        "gcp": [
+          "Vertex AI",
+          "Cloud Storage",
+          "Cloud Functions"
+        ]
+      }
+    }
+  ],
+  "spec_version": "2.1"
+}

@@ -1,0 +1,177 @@
+{
+  "type": "bundle",
+  "id": "bundle--ml-model-integrity-attacks",
+  "objects": [
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--ml-model-tampering",
+      "created": "2025-04-07T14:00:00.000Z",
+      "modified": "2025-04-07T14:00:00.000Z",
+      "name": "ML Model Tampering in Cloud Environments",
+      "description": "Adversaries modify legitimate ML models during deployment or storage in cloud environments. By accessing model storage, CI/CD pipelines, or model registries, attackers can replace or modify legitimate models with malicious versions that produce altered outputs, leak data, or compromise systems utilizing the model.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "persistence"
+        },
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "impact"
+        }
+      ],
+      "external_references": [
+        {
+          "source_name": "CAVEaT",
+          "external_id": "CAVEaT-AP-ML-001",
+          "url": "https://github.com/cloudsecurityalliance/caveat/wiki/attack-pattern--ml-model-tampering"
+        }
+      ],
+      "x_cloud_affected_services": {
+        "aws": [
+          "SageMaker",
+          "S3",
+          "ECR",
+          "Lambda"
+        ],
+        "azure": [
+          "Azure Machine Learning",
+          "Azure Blob Storage",
+          "Azure Container Registry"
+        ],
+        "gcp": [
+          "Vertex AI",
+          "Cloud Storage",
+          "Artifact Registry",
+          "Cloud Functions"
+        ]
+      }
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--ml-model-injection",
+      "created": "2025-04-07T14:00:00.000Z",
+      "modified": "2025-04-07T14:00:00.000Z",
+      "name": "ML Model Injection in Cloud Environments",
+      "description": "Adversaries insert unauthorized or malicious ML models into production environments. Rather than modifying existing models, attackers may deploy entirely new models by exploiting weaknesses in model deployment processes, insufficient access controls, or vulnerabilities in model registries. Injected models may contain backdoors, biases, or malicious functionality.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "persistence"
+        },
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "impact"
+        }
+      ],
+      "external_references": [
+        {
+          "source_name": "CAVEaT",
+          "external_id": "CAVEaT-AP-ML-002",
+          "url": "https://github.com/cloudsecurityalliance/caveat/wiki/attack-pattern--ml-model-injection"
+        }
+      ],
+      "x_cloud_affected_services": {
+        "aws": [
+          "SageMaker",
+          "S3",
+          "ECR",
+          "Lambda"
+        ],
+        "azure": [
+          "Azure Machine Learning",
+          "Azure Blob Storage",
+          "Azure Container Registry"
+        ],
+        "gcp": [
+          "Vertex AI",
+          "Cloud Storage",
+          "Artifact Registry",
+          "Cloud Functions"
+        ]
+      }
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--ml-model-checkpoint-hijacking",
+      "created": "2025-04-07T14:00:00.000Z",
+      "modified": "2025-04-07T14:00:00.000Z",
+      "name": "ML Model Checkpoint Hijacking",
+      "description": "Adversaries intercept and replace model checkpoints during the training process in cloud environments. By targeting the storage locations where partial model states are saved during training, attackers can substitute malicious checkpoints that, when loaded for continued training or deployment, introduce backdoors or vulnerabilities into the final model.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "persistence"
+        },
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "impact"
+        }
+      ],
+      "external_references": [
+        {
+          "source_name": "CAVEaT",
+          "external_id": "CAVEaT-AP-ML-003",
+          "url": "https://github.com/cloudsecurityalliance/caveat/wiki/attack-pattern--ml-model-checkpoint-hijacking"
+        }
+      ],
+      "x_cloud_affected_services": {
+        "aws": [
+          "SageMaker",
+          "S3"
+        ],
+        "azure": [
+          "Azure Machine Learning",
+          "Azure Blob Storage"
+        ],
+        "gcp": [
+          "Vertex AI",
+          "Cloud Storage"
+        ]
+      }
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--ml-registry-manipulation",
+      "created": "2025-04-07T14:00:00.000Z",
+      "modified": "2025-04-07T14:00:00.000Z",
+      "name": "ML Model Registry Manipulation",
+      "description": "Adversaries gain unauthorized access to cloud-based model registries to swap legitimate ML models with malicious ones or modify metadata and version information. Attackers exploit weak access controls, lack of registry monitoring, or vulnerabilities in the registry service to gain write access to stored models. This enables them to replace production models with backdoored versions or redirect production systems to use unofficial models.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "persistence"
+        },
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "impact"
+        }
+      ],
+      "external_references": [
+        {
+          "source_name": "CAVEaT",
+          "external_id": "CAVEaT-AP-ML-004",
+          "url": "https://github.com/cloudsecurityalliance/caveat/wiki/attack-pattern--ml-registry-manipulation"
+        }
+      ],
+      "x_cloud_affected_services": {
+        "aws": [
+          "SageMaker Model Registry",
+          "ECR"
+        ],
+        "azure": [
+          "Azure Machine Learning Registry",
+          "Azure Container Registry"
+        ],
+        "gcp": [
+          "Vertex AI Model Registry",
+          "Artifact Registry"
+        ]
+      }
+    }
+  ],
+  "spec_version": "2.1"
+}

@@ -1,0 +1,118 @@
+{
+  "type": "bundle",
+  "id": "bundle--ml-model-integrity-courses-of-action",
+  "objects": [
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--implement-ml-model-signing",
+      "created": "2025-04-07T14:25:00.000Z",
+      "modified": "2025-04-07T14:25:00.000Z",
+      "name": "Implement ML Model Signing with Sigstore",
+      "description": "Implement cryptographic signing of machine learning models using Sigstore to verify authenticity and integrity throughout the model lifecycle. This mitigates risks associated with model tampering, unauthorized model deployment, and supply chain attacks in cloud environments.",
+      "external_references": [
+        {
+          "source_name": "CAVEaT",
+          "external_id": "CAVEaT-CoA-ML-001",
+          "url": "https://github.com/cloudsecurityalliance/caveat/wiki/course-of-action--implement-ml-model-signing"
+        }
+      ],
+      "x_cloud_implementation": {
+        "aws": {
+          "console": "Use AWS Signer to sign SageMaker model artifacts. Navigate to AWS Signer in the console, create a signing profile specific to ML models, and configure your SageMaker pipelines to require signed models before deployment. Integrate with CodeBuild to automatically sign models as part of CI/CD.",
+          "cli": "aws signer put-signing-profile --profile-name MLModelSigning --platform-id \"ml-models\" && aws signer start-signing-job --source \"s3://your-bucket/model.tar.gz\" --destination \"s3://your-bucket/signed-model.tar.gz\" --profile-name MLModelSigning",
+          "api": "Use the AWS SDK to automate model signing as part of your deployment process by calling the PutSigningProfile and StartSigningJob methods of the Signer API.",
+          "verification": "Verify model signatures using: aws signer get-signing-profile --profile-name MLModelSigning && aws signer describe-signing-job --job-id <job-id>"
+        },
+        "azure": {
+          "console": "Use Azure Key Vault to manage signing keys. In the Azure portal, create a Key Vault, add a certificate, then configure your ML pipeline to sign models during the build process. Use Azure Policy to enforce that only signed models can be deployed to production.",
+          "cli": "az keyvault certificate create --vault-name YourKeyVault --name MLModelCert --policy \"@cert-policy.json\" && az ml model deploy --name model-endpoint --model-path outputs/model --code-signing-certificate-path \"@cert-path\"",
+          "api": "Use the Azure Key Vault SDK and Azure ML SDK to programmatically sign models during the build and deployment process.",
+          "verification": "Verify signatures using: az keyvault certificate show --vault-name YourKeyVault --name MLModelCert && az ml model show --name your-model-name --resource-group your-resource-group --workspace-name your-workspace"
+        },
+        "gcp": {
+          "console": "Use Google Cloud Build with Binary Authorization to sign and verify ML models. In the Cloud Console, configure Cloud Build to use Cloud KMS for signing model artifacts during the build process and set up Binary Authorization to verify signatures before deployment.",
+          "cli": "gcloud kms keys create ml-model-signing --keyring=ml-keys --location=global --purpose=asymmetric-signing && gcloud builds submit --config=cloudbuild.yaml --substitutions=_KMS_KEY=projects/your-project/locations/global/keyRings/ml-keys/cryptoKeys/ml-model-signing",
+          "api": "Use the Cloud KMS API for signing operations and the Artifact Registry API for storage and verification of signed models.",
+          "verification": "Verify deployed model signatures using: gcloud artifacts docker images describe gcr.io/your-project/model-image:tag --show-provenance"
+        },
+        "platform_architectural_solution": "Cloud providers should implement native model signing capabilities directly integrated with their ML platforms. This would include:\n1. Built-in signing during model training completion\n2. Signature verification at model deployment time\n3. Runtime verification of signatures when models are loaded\n4. Central management of signing authorities\n5. Integration with existing CNCF Sigstore project\n6. Immutable audit logs of all signature creation and verification events"
+      }
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--establish-model-provenance",
+      "created": "2025-04-07T14:25:00.000Z",
+      "modified": "2025-04-07T14:25:00.000Z",
+      "name": "Establish ML Model Provenance Framework",
+      "description": "Implement a comprehensive ML model provenance tracking system to document and verify the complete lineage of models from training data through deployment. This mitigates risks associated with unauthorized models, training data poisoning, and supply chain attacks by creating verifiable records of model origins, training methodologies, and processing steps.",
+      "external_references": [
+        {
+          "source_name": "CAVEaT",
+          "external_id": "CAVEaT-CoA-ML-002",
+          "url": "https://github.com/cloudsecurityalliance/caveat/wiki/course-of-action--establish-model-provenance"
+        }
+      ],
+      "x_cloud_implementation": {
+        "aws": {
+          "console": "Use AWS SageMaker ML Lineage Tracking to document model provenance. In the SageMaker console, enable lineage tracking for your ML workflows. Use SageMaker Projects to create standardized provenance-aware ML pipelines. Implement Amazon EventBridge rules to monitor and alert on unauthorized lineage events.",
+          "cli": "aws sagemaker create-context --context-name \"ModelTraining\" --context-type \"Training\" --source {\"SourceUri\":\"s3://training-data\"} && aws sagemaker create-lineage-group --lineage-group-name \"ModelProvenance\"",
+          "api": "Use the SageMaker SDK's Lineage Tracking API to programmatically document and verify model provenance throughout the ML lifecycle.",
+          "verification": "Verify model provenance using: aws sagemaker list-associations --source-arn \"arn:aws:sagemaker:region:account:model/model-name\""
+        },
+        "azure": {
+          "console": "Use Azure Machine Learning MLflow tracking to document model provenance. In the Azure ML workspace, enable MLflow tracking for all experiments. Configure Azure Logic Apps workflows to validate and process lineage data. Use Azure Monitor to alert on provenance anomalies.",
+          "cli": "az ml model register --name model-name --path outputs/model --asset-path outputs/model-info.json --property provenance.training_dataset=\"dataset-id\" --property provenance.training_run=\"run-id\"",
+          "api": "Use the Azure ML SDK's MLflow tracking client to programmatically log and verify model provenance information.",
+          "verification": "Verify model provenance using: az ml model show --name model-name --resource-group resource-group --workspace-name workspace-name --include-provenance"
+        },
+        "gcp": {
+          "console": "Use Vertex AI Metadata to track model provenance. In the Google Cloud Console, enable Metadata Store for your Vertex AI projects. Configure Vertex Pipelines to automatically record lineage information for models, datasets, and training jobs. Set up Cloud Monitoring to alert on provenance violations.",
+          "cli": "gcloud ai metadata-stores create metadata-store-id --region=region && gcloud ai metadata-stores artifacts create --metadata-store=metadata-store-id --schema-title=\"ML_MODEL\" --schema-version=\"1.0.0\" --artifact-id=model-id --uri=gs://your-bucket/model",
+          "api": "Use the Vertex AI Metadata API to programmatically record and verify model provenance throughout your ML workflow.",
+          "verification": "Verify model provenance using: gcloud ai metadata-stores artifacts describe --metadata-store=metadata-store-id --region=region --artifact=model-id"
+        },
+        "platform_architectural_solution": "Cloud providers should implement a standardized ML Bill of Materials (MLBOM) framework that:\n1. Creates cryptographically verifiable records of all components used in model creation\n2. Documents all datasets, hyperparameters, and training environments\n3. Tracks all transformations and processing steps applied to data and models\n4. Integrates with existing supply chain security tools\n5. Supports cross-platform verification and interoperability\n6. Provides tamper-proof historical records of model lineage"
+      }
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--implement-model-versioning",
+      "created": "2025-04-07T14:25:00.000Z",
+      "modified": "2025-04-07T14:25:00.000Z",
+      "name": "Implement Immutable ML Model Versioning",
+      "description": "Establish immutable versioning for ML models, training datasets, and configurations to ensure consistency across environments and enable reliable rollbacks. This mitigates risks associated with unauthorized modifications, tampering, and improper model deployments by maintaining cryptographically verifiable historical records.",
+      "external_references": [
+        {
+          "source_name": "CAVEaT",
+          "external_id": "CAVEaT-CoA-ML-003",
+          "url": "https://github.com/cloudsecurityalliance/caveat/wiki/course-of-action--implement-model-versioning"
+        }
+      ],
+      "x_cloud_implementation": {
+        "aws": {
+          "console": "Use AWS SageMaker Model Registry for versioned model management. In the SageMaker console, create a model package group and configure model approval workflows. Use versioned S3 buckets with object lock for immutable storage of model artifacts. Implement AWS Config rules to enforce version controls.",
+          "cli": "aws sagemaker create-model-package-group --model-package-group-name \"ModelGroup\" && aws sagemaker create-model-package --model-package-group-name \"ModelGroup\" --model-package-description \"v1.0\" --inference-specification {...}",
+          "api": "Use the SageMaker SDK to automate model registration with version controls as part of your ML pipeline.",
+          "verification": "Verify model versions using: aws sagemaker list-model-packages --model-package-group-name \"ModelGroup\""
+        },
+        "azure": {
+          "console": "Use Azure Machine Learning Model Registry for versioned model management. In the Azure ML workspace, register models with versions and stage information. Configure approval workflows for production deployments. Use immutable storage with legal holds for model artifacts.",
+          "cli": "az ml model register --name model-name --version 1 --path outputs/model --asset-path outputs/model-info.json && az ml model create-version --name model-name --version 2 --path outputs/model-v2",
+          "api": "Use the Azure ML SDK to programmatically manage model versions and control the promotion between environments.",
+          "verification": "Verify model versions using: az ml model list --name model-name --resource-group resource-group --workspace-name workspace-name"
+        },
+        "gcp": {
+          "console": "Use Vertex AI Model Registry for versioned model management. In the Google Cloud Console, create a model registry and configure approval workflows. Use versioned Cloud Storage buckets with object immutability for model artifacts. Set up access controls specific to each model version.",
+          "cli": "gcloud ai models upload --region=region --display-name=model-name --container-image-uri=gcr.io/project/image:tag --artifact-uri=gs://bucket/model --version-aliases=v1,production",
+          "api": "Use the Vertex AI SDK to programmatically manage model versions and deployment environments.",
+          "verification": "Verify model versions using: gcloud ai models list --region=region --filter=display_name=model-name"
+        },
+        "platform_architectural_solution": "Cloud providers should implement native immutable model registries that:\n1. Use content-addressable storage for all model artifacts\n2. Provide cryptographic proof of version integrity\n3. Enforce approval workflows for version promotion\n4. Maintain immutable audit logs of all version changes\n5. Support automatic rollback capabilities\n6. Implement policy-based controls for version deployment"
+      }
+    }
+  ],
+  "spec_version": "2.1"
+}

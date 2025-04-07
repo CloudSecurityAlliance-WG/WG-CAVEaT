@@ -1,0 +1,94 @@
+{
+  "type": "bundle",
+  "id": "bundle--ml-infrastructure-attacks",
+  "objects": [
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--ml-pipeline-compromise",
+      "created": "2025-04-07T14:10:00.000Z",
+      "modified": "2025-04-07T14:10:00.000Z",
+      "name": "ML Pipeline Compromise in Cloud Environments",
+      "description": "Adversaries attack CI/CD pipelines used for ML model development and deployment in cloud environments. By compromising build servers, source code repositories, or deployment mechanisms, attackers can insert malicious code into model training scripts, modify model architecture, or tamper with the deployment process. This enables persistent attacks that can survive model updates and retraining cycles.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "persistence"
+        },
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "impact"
+        }
+      ],
+      "external_references": [
+        {
+          "source_name": "CAVEaT",
+          "external_id": "CAVEaT-AP-ML-009",
+          "url": "https://github.com/cloudsecurityalliance/caveat/wiki/attack-pattern--ml-pipeline-compromise"
+        }
+      ],
+      "x_cloud_affected_services": {
+        "aws": [
+          "CodePipeline",
+          "CodeBuild",
+          "SageMaker Pipelines"
+        ],
+        "azure": [
+          "Azure DevOps",
+          "Azure Pipelines",
+          "Azure Machine Learning Pipelines"
+        ],
+        "gcp": [
+          "Cloud Build",
+          "Cloud Deploy",
+          "Vertex AI Pipelines"
+        ]
+      }
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--ml-framework-exploitation",
+      "created": "2025-04-07T14:10:00.000Z",
+      "modified": "2025-04-07T14:10:00.000Z",
+      "name": "ML Framework Exploitation in Cloud Environments",
+      "description": "Adversaries leverage vulnerabilities in ML libraries and frameworks deployed in cloud environments. By exploiting known or zero-day vulnerabilities in popular ML frameworks like TensorFlow, PyTorch, or their dependencies, attackers can execute arbitrary code, gain control of cloud resources, access sensitive data, or manipulate models during training or inference.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "execution"
+        },
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "privilege-escalation"
+        }
+      ],
+      "external_references": [
+        {
+          "source_name": "CAVEaT",
+          "external_id": "CAVEaT-AP-ML-010",
+          "url": "https://github.com/cloudsecurityalliance/caveat/wiki/attack-pattern--ml-framework-exploitation"
+        }
+      ],
+      "x_cloud_affected_services": {
+        "aws": [
+          "SageMaker",
+          "EC2",
+          "ECS",
+          "EKS"
+        ],
+        "azure": [
+          "Azure Machine Learning",
+          "Azure Kubernetes Service",
+          "Azure Container Instances"
+        ],
+        "gcp": [
+          "Vertex AI",
+          "Compute Engine",
+          "Google Kubernetes Engine"
+        ]
+      }
+    }
+  ],
+  "spec_version": "2.1"
+}

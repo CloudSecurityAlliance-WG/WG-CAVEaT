@@ -1,0 +1,161 @@
+{
+  "type": "bundle",
+  "id": "bundle--ml-data-security-attacks",
+  "objects": [
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--ml-training-data-poisoning",
+      "created": "2025-04-07T14:05:00.000Z",
+      "modified": "2025-04-07T14:05:00.000Z",
+      "name": "ML Training Data Poisoning in Cloud Environments",
+      "description": "Adversaries contaminate ML training datasets stored in cloud environments to influence model behavior. By gaining access to data storage or data pipelines feeding ML training processes, attackers can introduce malicious samples that cause the model to learn harmful patterns, create backdoors triggered by specific inputs, or reduce model accuracy for targeted classes of inputs.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "persistence"
+        },
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "impact"
+        }
+      ],
+      "external_references": [
+        {
+          "source_name": "CAVEaT",
+          "external_id": "CAVEaT-AP-ML-005",
+          "url": "https://github.com/cloudsecurityalliance/caveat/wiki/attack-pattern--ml-training-data-poisoning"
+        }
+      ],
+      "x_cloud_affected_services": {
+        "aws": [
+          "S3",
+          "SageMaker Data Wrangler",
+          "AWS Glue"
+        ],
+        "azure": [
+          "Azure Blob Storage",
+          "Azure Data Factory",
+          "Azure Databricks"
+        ],
+        "gcp": [
+          "Cloud Storage",
+          "Dataflow",
+          "BigQuery",
+          "Dataprep"
+        ]
+      }
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--ml-model-extraction",
+      "created": "2025-04-07T14:05:00.000Z",
+      "modified": "2025-04-07T14:05:00.000Z",
+      "name": "ML Model Extraction from Cloud Services",
+      "description": "Adversaries perform repeated queries to ML model endpoints hosted in cloud environments to steal model functionality. By systematically probing the model with carefully crafted inputs and recording outputs, attackers can reconstruct a functionally similar model without access to the original training data or model architecture. This allows intellectual property theft, circumvention of model access controls, or discovery of model vulnerabilities for subsequent attacks.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "exfiltration"
+        }
+      ],
+      "external_references": [
+        {
+          "source_name": "CAVEaT",
+          "external_id": "CAVEaT-AP-ML-006",
+          "url": "https://github.com/cloudsecurityalliance/caveat/wiki/attack-pattern--ml-model-extraction"
+        }
+      ],
+      "x_cloud_affected_services": {
+        "aws": [
+          "SageMaker Endpoints",
+          "Lambda"
+        ],
+        "azure": [
+          "Azure Machine Learning Endpoints",
+          "Azure Functions"
+        ],
+        "gcp": [
+          "Vertex AI Endpoints",
+          "Cloud Functions"
+        ]
+      }
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--ml-inference-data-exfiltration",
+      "created": "2025-04-07T14:05:00.000Z",
+      "modified": "2025-04-07T14:05:00.000Z",
+      "name": "ML Inference Data Exfiltration",
+      "description": "Adversaries extract sensitive data used for inference in cloud-based ML systems. By compromising ML services, modifying models, or exploiting vulnerabilities in inference pipelines, attackers can cause models to leak information about input data through outputs, timestamps, or side channels. This enables extraction of confidential information from legitimate inference requests.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "exfiltration"
+        }
+      ],
+      "external_references": [
+        {
+          "source_name": "CAVEaT",
+          "external_id": "CAVEaT-AP-ML-007",
+          "url": "https://github.com/cloudsecurityalliance/caveat/wiki/attack-pattern--ml-inference-data-exfiltration"
+        }
+      ],
+      "x_cloud_affected_services": {
+        "aws": [
+          "SageMaker Endpoints",
+          "Lambda"
+        ],
+        "azure": [
+          "Azure Machine Learning Endpoints",
+          "Azure Functions"
+        ],
+        "gcp": [
+          "Vertex AI Endpoints",
+          "Cloud Functions"
+        ]
+      }
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--ml-adversarial-example-attacks",
+      "created": "2025-04-07T14:05:00.000Z",
+      "modified": "2025-04-07T14:05:00.000Z",
+      "name": "ML Adversarial Example Attacks on Cloud Services",
+      "description": "Adversaries craft inputs specifically designed to cause ML models deployed in cloud environments to produce incorrect outputs. By making subtle, often imperceptible modifications to legitimate inputs, attackers can cause image classifiers to misidentify objects, text models to generate harmful content, or security models to misclassify malicious content as benign. These attacks exploit fundamental limitations in how ML models generalize from training data.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "impact"
+        }
+      ],
+      "external_references": [
+        {
+          "source_name": "CAVEaT",
+          "external_id": "CAVEaT-AP-ML-008",
+          "url": "https://github.com/cloudsecurityalliance/caveat/wiki/attack-pattern--ml-adversarial-example-attacks"
+        }
+      ],
+      "x_cloud_affected_services": {
+        "aws": [
+          "SageMaker Endpoints",
+          "Rekognition",
+          "Comprehend"
+        ],
+        "azure": [
+          "Azure Machine Learning Endpoints",
+          "Cognitive Services"
+        ],
+        "gcp": [
+          "Vertex AI Endpoints",
+          "Vision AI",
+          "Natural Language AI"
+        ]
+      }
+    }
+  ],
+  "spec_version": "2.1"
+}

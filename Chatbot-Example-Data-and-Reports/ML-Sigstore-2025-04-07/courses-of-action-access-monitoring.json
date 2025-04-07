@@ -1,0 +1,118 @@
+{
+  "type": "bundle",
+  "id": "bundle--ml-access-monitoring-courses-of-action",
+  "objects": [
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--deploy-model-access-controls",
+      "created": "2025-04-07T14:30:00.000Z",
+      "modified": "2025-04-07T14:30:00.000Z",
+      "name": "Deploy ML-Specific Access Controls",
+      "description": "Implement comprehensive least-privilege access controls for ML resources across cloud environments. This mitigates risks associated with unauthorized access, tampering, and exfiltration by restricting permissions on model storage, registries, training pipelines, and deployment processes.",
+      "external_references": [
+        {
+          "source_name": "CAVEaT",
+          "external_id": "CAVEaT-CoA-ML-004",
+          "url": "https://github.com/cloudsecurityalliance/caveat/wiki/course-of-action--deploy-model-access-controls"
+        }
+      ],
+      "x_cloud_implementation": {
+        "aws": {
+          "console": "Implement fine-grained IAM policies for SageMaker resources. In the IAM console, create role-specific policies that limit access to ML pipelines, models, and endpoints based on least privilege. Use resource-based policies for S3 buckets containing model artifacts. Configure VPC endpoints to restrict network access to ML services.",
+          "cli": "aws iam create-policy --policy-name MLModelReadOnly --policy-document file://ml-readonly-policy.json && aws iam attach-role-policy --role-name MLInferenceRole --policy-arn arn:aws:iam::account:policy/MLModelReadOnly",
+          "api": "Use the AWS SDK to programmatically manage IAM permissions and resource policies for ML workflows.",
+          "verification": "Verify access controls using: aws iam simulate-principal-policy --policy-source-arn arn:aws:iam::account:role/MLInferenceRole --action-names sagemaker:InvokeEndpoint"
+        },
+        "azure": {
+          "console": "Implement Azure RBAC with custom roles for ML resources. In the Azure portal, create custom roles with precise permissions for ML resources. Use Managed Identities for authentication between services. Configure Private Endpoints for Azure ML workspaces to restrict network access.",
+          "cli": "az role definition create --role-definition @ml-custom-role.json && az role assignment create --assignee \"user@example.com\" --role \"ML Model Deployer\" --scope \"/subscriptions/{subscription-id}/resourceGroups/{resource-group}/providers/Microsoft.MachineLearningServices/workspaces/{workspace-name}\"",
+          "api": "Use the Azure SDK to programmatically manage RBAC assignments and custom roles for ML workflows.",
+          "verification": "Verify access controls using: az role assignment list --assignee \"user@example.com\" --scope \"/subscriptions/{subscription-id}/resourceGroups/{resource-group}/providers/Microsoft.MachineLearningServices/workspaces/{workspace-name}\""
+        },
+        "gcp": {
+          "console": "Implement fine-grained IAM policies for Vertex AI resources. In the Google Cloud Console, create custom roles with specific permissions for ML resources. Use service accounts with limited permissions for ML workflows. Configure VPC Service Controls to restrict access to ML services.",
+          "cli": "gcloud iam roles create MLModelDeployer --project=project-id --file=role-definition.yaml && gcloud projects add-iam-policy-binding project-id --member=\"user:user@example.com\" --role=\"projects/project-id/roles/MLModelDeployer\"",
+          "api": "Use the Cloud IAM API to programmatically manage permissions and service accounts for ML workflows.",
+          "verification": "Verify access controls using: gcloud iam roles describe --project=project-id MLModelDeployer"
+        },
+        "platform_architectural_solution": "Cloud providers should implement ML-specific identity and access management frameworks that:\n1. Define standardized ML-specific roles and permissions\n2. Support attribute-based access control for ML resources\n3. Implement just-in-time access for sensitive ML operations\n4. Provide ML resource-specific policy validation tools\n5. Support automatic permission recommendations based on activity analysis\n6. Enable cross-service privileges management for ML workflows"
+      }
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--enable-model-encryption",
+      "created": "2025-04-07T14:30:00.000Z",
+      "modified": "2025-04-07T14:30:00.000Z",
+      "name": "Enable End-to-End ML Model Encryption",
+      "description": "Implement comprehensive encryption for ML models at rest and in transit throughout the model lifecycle. This mitigates risks associated with unauthorized access, model theft, and tampering by ensuring that model artifacts and related data are always protected with appropriate cryptographic controls.",
+      "external_references": [
+        {
+          "source_name": "CAVEaT",
+          "external_id": "CAVEaT-CoA-ML-005",
+          "url": "https://github.com/cloudsecurityalliance/caveat/wiki/course-of-action--enable-model-encryption"
+        }
+      ],
+      "x_cloud_implementation": {
+        "aws": {
+          "console": "Implement encryption for SageMaker resources. In the console, enable default encryption for SageMaker, using KMS customer managed keys. Configure S3 bucket encryption for model artifacts. Enable VPC endpoints with TLS for secure transit. Use SageMaker notebook instance encryption and volume encryption for training jobs.",
+          "cli": "aws s3 cp --sse-kms-key-id aws/kms model.tar.gz s3://bucket/model.tar.gz && aws sagemaker create-model --model-name model-name --execution-role-arn role-arn --primary-container {...} --vpc-config {...} --enable-network-isolation",
+          "api": "Use the AWS SDK to programmatically enforce encryption settings for all ML resources and operations.",
+          "verification": "Verify encryption settings using: aws s3api get-bucket-encryption --bucket bucket-name && aws kms list-keys"
+        },
+        "azure": {
+          "console": "Implement encryption for Azure ML resources. In the Azure portal, enable customer-managed keys for the ML workspace. Configure storage account encryption. Use private endpoints for secure connectivity. Enable encryption for compute instances and attached disks.",
+          "cli": "az storage account create --name account-name --resource-group resource-group --encryption-services blob --encryption-key-type-for-blob Account && az ml workspace create --name workspace-name --resource-group resource-group --encryption-key-source Microsoft.KeyVault --encryption-key-id \"https://keyvault-name.vault.azure.net/keys/key-name\"",
+          "api": "Use the Azure SDK to programmatically enforce encryption settings for all ML resources and operations.",
+          "verification": "Verify encryption settings using: az ml workspace show --name workspace-name --resource-group resource-group"
+        },
+        "gcp": {
+          "console": "Implement encryption for Vertex AI resources. In the Google Cloud Console, configure Cloud KMS for customer-managed encryption keys. Enable default encryption for Cloud Storage buckets containing model artifacts. Use VPC Service Controls and Private Google Access for secure connectivity.",
+          "cli": "gcloud kms keys create ml-encryption-key --keyring=ml-keys --location=global && gcloud storage buckets create gs://model-artifacts --location=US --default-encryption-key=projects/project-id/locations/global/keyRings/ml-keys/cryptoKeys/ml-encryption-key",
+          "api": "Use the Google Cloud SDK to programmatically enforce encryption settings for all ML resources and operations.",
+          "verification": "Verify encryption settings using: gcloud storage buckets describe gs://model-artifacts && gcloud kms keys list --keyring=ml-keys --location=global"
+        },
+        "platform_architectural_solution": "Cloud providers should implement ML-specific encryption frameworks that:\n1. Provide transparent model-level encryption that preserves model functionality\n2. Enable privacy-preserving inference without decryption\n3. Support homomorphic encryption for select ML operations\n4. Implement secure enclaves for sensitive model execution\n5. Enable model-specific key management and rotation\n6. Support federated model deployment with distributed key management"
+      }
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--deploy-model-monitoring",
+      "created": "2025-04-07T14:30:00.000Z",
+      "modified": "2025-04-07T14:30:00.000Z",
+      "name": "Deploy ML-Specific Monitoring and Threat Detection",
+      "description": "Implement comprehensive monitoring and threat detection specifically designed for ML systems in cloud environments. This mitigates risks associated with model tampering, poisoning, and adversarial attacks by detecting suspicious activities, anomalous behaviors, and security violations throughout the ML lifecycle.",
+      "external_references": [
+        {
+          "source_name": "CAVEaT",
+          "external_id": "CAVEaT-CoA-ML-006",
+          "url": "https://github.com/cloudsecurityalliance/caveat/wiki/course-of-action--deploy-model-monitoring"
+        }
+      ],
+      "x_cloud_implementation": {
+        "aws": {
+          "console": "Implement ML-specific monitoring in AWS. Configure CloudTrail to log all SageMaker API calls. Set up CloudWatch alarms for abnormal model behavior, unexpected inference patterns, and unauthorized access attempts. Deploy SageMaker Model Monitor to detect data and concept drift. Use AWS Security Hub with custom ML security standards.",
+          "cli": "aws cloudtrail create-trail --name MLSecurityTrail --s3-bucket-name trail-bucket && aws cloudwatch put-metric-alarm --alarm-name MLModelDrift --metric-name ModelDrift --namespace SageMaker --statistic Maximum --period 300 --threshold 0.5 --comparison-operator GreaterThanThreshold",
+          "api": "Use the AWS SDK to programmatically configure monitoring and alerting for ML workflows.",
+          "verification": "Verify monitoring setup using: aws cloudtrail get-trail-status --name MLSecurityTrail && aws cloudwatch describe-alarms --alarm-names MLModelDrift"
+        },
+        "azure": {
+          "console": "Implement ML-specific monitoring in Azure. Configure Azure Monitor to track ML workspace activities. Set up Azure Security Center with ML-specific security policies. Deploy Azure ML dataset and model monitoring to detect drift and anomalies. Create custom log analytics queries and alerts for ML security events.",
+          "cli": "az monitor diagnostic-settings create --name ml-diagnostics --resource /subscriptions/{subscription-id}/resourceGroups/{resource-group}/providers/Microsoft.MachineLearningServices/workspaces/{workspace-name} --logs '[{\"category\":\"AmlComputeClusterEvent\",\"enabled\":true}]' --workspace /subscriptions/{subscription-id}/resourceGroups/{resource-group}/providers/microsoft.operationalinsights/workspaces/{workspace-name}",
+          "api": "Use the Azure Monitor API to programmatically configure logging and alerting for ML resources.",
+          "verification": "Verify monitoring setup using: az monitor diagnostic-settings show --name ml-diagnostics --resource /subscriptions/{subscription-id}/resourceGroups/{resource-group}/providers/Microsoft.MachineLearningServices/workspaces/{workspace-name}"
+        },
+        "gcp": {
+          "console": "Implement ML-specific monitoring in GCP. Configure Cloud Audit Logs to track all Vertex AI API calls. Set up Cloud Monitoring with custom ML security metrics and alerts. Deploy model monitoring to detect drift and anomalies. Use Security Command Center with ML-specific security findings.",
+          "cli": "gcloud logging sinks create ml-security-sink storage.googleapis.com/ml-security-logs --log-filter 'resource.type=aiplatform.googleapis.com' && gcloud alpha monitoring policies create --policy-from-file=ml-alert-policy.json",
+          "api": "Use the Cloud Monitoring API to programmatically configure logging and alerting for ML resources.",
+          "verification": "Verify monitoring setup using: gcloud logging sinks describe ml-security-sink && gcloud alpha monitoring policies list"
+        },
+        "platform_architectural_solution": "Cloud providers should implement ML-specific security monitoring frameworks that:\n1. Provide specialized detection for ML-specific attack patterns\n2. Monitor model behavior for signs of poisoning or backdoors\n3. Implement adversarial example detection capabilities\n4. Track model lineage and provenance changes\n5. Perform automated security scanning of model artifacts\n6. Support federated security monitoring across multi-cloud ML deployments"
+      }
+    }
+  ],
+  "spec_version": "2.1"
+}

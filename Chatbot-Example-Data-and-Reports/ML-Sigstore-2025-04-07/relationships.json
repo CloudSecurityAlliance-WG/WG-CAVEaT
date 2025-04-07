@@ -1,0 +1,282 @@
+{
+  "type": "bundle",
+  "id": "bundle--ml-security-relationships",
+  "objects": [
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--model-signing-mitigates-tampering",
+      "created": "2025-04-07T14:40:00.000Z",
+      "modified": "2025-04-07T14:40:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--implement-ml-model-signing",
+      "target_ref": "attack-pattern--ml-model-tampering",
+      "description": "Implementing ML model signing with Sigstore mitigates the risk of model tampering by providing cryptographic verification of model integrity and authenticity."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--model-signing-mitigates-injection",
+      "created": "2025-04-07T14:40:00.000Z",
+      "modified": "2025-04-07T14:40:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--implement-ml-model-signing",
+      "target_ref": "attack-pattern--ml-model-injection",
+      "description": "Implementing ML model signing with Sigstore mitigates the risk of model injection by verifying that only authorized models can be deployed to production environments."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--model-signing-mitigates-checkpoint-hijacking",
+      "created": "2025-04-07T14:40:00.000Z",
+      "modified": "2025-04-07T14:40:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--implement-ml-model-signing",
+      "target_ref": "attack-pattern--ml-model-checkpoint-hijacking",
+      "description": "Implementing ML model signing with Sigstore mitigates the risk of checkpoint hijacking by enabling verification of checkpoint integrity during the training process."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--model-signing-mitigates-registry-manipulation",
+      "created": "2025-04-07T14:40:00.000Z",
+      "modified": "2025-04-07T14:40:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--implement-ml-model-signing",
+      "target_ref": "attack-pattern--ml-registry-manipulation",
+      "description": "Implementing ML model signing with Sigstore mitigates the risk of registry manipulation by enabling verification of model authenticity when retrieving models from registries."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--model-signing-addresses-unsigned-models",
+      "created": "2025-04-07T14:40:00.000Z",
+      "modified": "2025-04-07T14:40:00.000Z",
+      "relationship_type": "addresses",
+      "source_ref": "course-of-action--implement-ml-model-signing",
+      "target_ref": "vulnerability--unsigned-ml-models",
+      "description": "Implementing ML model signing with Sigstore directly addresses the vulnerability of unsigned ML models in cloud environments."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--model-provenance-mitigates-data-poisoning",
+      "created": "2025-04-07T14:40:00.000Z",
+      "modified": "2025-04-07T14:40:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--establish-model-provenance",
+      "target_ref": "attack-pattern--ml-training-data-poisoning",
+      "description": "Establishing ML model provenance frameworks mitigates the risk of training data poisoning by tracking and verifying the sources and transformations of training data."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--model-provenance-addresses-inadequate-provenance",
+      "created": "2025-04-07T14:40:00.000Z",
+      "modified": "2025-04-07T14:40:00.000Z",
+      "relationship_type": "addresses",
+      "source_ref": "course-of-action--establish-model-provenance",
+      "target_ref": "vulnerability--inadequate-ml-provenance",
+      "description": "Establishing ML model provenance frameworks directly addresses the vulnerability of inadequate ML model provenance tracking in cloud environments."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--model-versioning-mitigates-checkpoint-hijacking",
+      "created": "2025-04-07T14:40:00.000Z",
+      "modified": "2025-04-07T14:40:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--implement-model-versioning",
+      "target_ref": "attack-pattern--ml-model-checkpoint-hijacking",
+      "description": "Implementing immutable ML model versioning mitigates the risk of checkpoint hijacking by maintaining cryptographically verifiable historical records of model states."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--model-versioning-addresses-unversioned-assets",
+      "created": "2025-04-07T14:40:00.000Z",
+      "modified": "2025-04-07T14:40:00.000Z",
+      "relationship_type": "addresses",
+      "source_ref": "course-of-action--implement-model-versioning",
+      "target_ref": "vulnerability--unversioned-model-assets",
+      "description": "Implementing immutable ML model versioning directly addresses the vulnerability of unversioned ML model assets in cloud environments."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--access-controls-mitigates-registry-manipulation",
+      "created": "2025-04-07T14:40:00.000Z",
+      "modified": "2025-04-07T14:40:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--deploy-model-access-controls",
+      "target_ref": "attack-pattern--ml-registry-manipulation",
+      "description": "Deploying ML-specific access controls mitigates the risk of registry manipulation by restricting write access to model registries and implementing proper authorization checks."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--access-controls-addresses-inadequate-access-controls",
+      "created": "2025-04-07T14:40:00.000Z",
+      "modified": "2025-04-07T14:40:00.000Z",
+      "relationship_type": "addresses",
+      "source_ref": "course-of-action--deploy-model-access-controls",
+      "target_ref": "vulnerability--inadequate-ml-access-controls",
+      "description": "Deploying ML-specific access controls directly addresses the vulnerability of inadequate access controls for ML resources in cloud environments."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--encryption-mitigates-model-extraction",
+      "created": "2025-04-07T14:40:00.000Z",
+      "modified": "2025-04-07T14:40:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--enable-model-encryption",
+      "target_ref": "attack-pattern--ml-model-extraction",
+      "description": "Enabling end-to-end ML model encryption mitigates the risk of model extraction by protecting model artifacts from unauthorized access during storage and transfer."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--encryption-addresses-unencrypted-transfer",
+      "created": "2025-04-07T14:40:00.000Z",
+      "modified": "2025-04-07T14:40:00.000Z",
+      "relationship_type": "addresses",
+      "source_ref": "course-of-action--enable-model-encryption",
+      "target_ref": "vulnerability--unencrypted-model-transfer",
+      "description": "Enabling end-to-end ML model encryption directly addresses the vulnerability of unencrypted ML model transfer in cloud environments."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--monitoring-mitigates-adversarial-examples",
+      "created": "2025-04-07T14:40:00.000Z",
+      "modified": "2025-04-07T14:40:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--deploy-model-monitoring",
+      "target_ref": "attack-pattern--ml-adversarial-example-attacks",
+      "description": "Deploying ML-specific monitoring and threat detection mitigates the risk of adversarial example attacks by identifying unusual input patterns and abnormal model behavior."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--monitoring-mitigates-inference-exfiltration",
+      "created": "2025-04-07T14:40:00.000Z",
+      "modified": "2025-04-07T14:40:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--deploy-model-monitoring",
+      "target_ref": "attack-pattern--ml-inference-data-exfiltration",
+      "description": "Deploying ML-specific monitoring and threat detection mitigates the risk of inference data exfiltration by detecting suspicious data access patterns and unusual model outputs."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--secure-pipelines-mitigates-pipeline-compromise",
+      "created": "2025-04-07T14:40:00.000Z",
+      "modified": "2025-04-07T14:40:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--secure-model-deployment-pipelines",
+      "target_ref": "attack-pattern--ml-pipeline-compromise",
+      "description": "Creating secure ML model deployment pipelines mitigates the risk of pipeline compromise by implementing security controls throughout the CI/CD process for ML models."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--secure-pipelines-addresses-weak-authentication",
+      "created": "2025-04-07T14:40:00.000Z",
+      "modified": "2025-04-07T14:40:00.000Z",
+      "relationship_type": "addresses",
+      "source_ref": "course-of-action--secure-model-deployment-pipelines",
+      "target_ref": "vulnerability--weak-ml-pipeline-authentication",
+      "description": "Creating secure ML model deployment pipelines directly addresses the vulnerability of weak ML pipeline authentication in cloud environments."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--model-verification-mitigates-data-poisoning",
+      "created": "2025-04-07T14:40:00.000Z",
+      "modified": "2025-04-07T14:40:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--implement-model-verification",
+      "target_ref": "attack-pattern--ml-training-data-poisoning",
+      "description": "Implementing ML model verification testing mitigates the risk of training data poisoning by detecting abnormal model behaviors that may result from poisoned training data."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--model-verification-mitigates-adversarial-examples",
+      "created": "2025-04-07T14:40:00.000Z",
+      "modified": "2025-04-07T14:40:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--implement-model-verification",
+      "target_ref": "attack-pattern--ml-adversarial-example-attacks",
+      "description": "Implementing ML model verification testing mitigates the risk of adversarial example attacks by evaluating model robustness against manipulated inputs."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--runtime-security-mitigates-framework-exploitation",
+      "created": "2025-04-07T14:40:00.000Z",
+      "modified": "2025-04-07T14:40:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--implement-ml-runtime-security",
+      "target_ref": "attack-pattern--ml-framework-exploitation",
+      "description": "Implementing ML model runtime security mitigates the risk of ML framework exploitation by hardening container environments and implementing defense-in-depth for model serving infrastructure."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--runtime-security-addresses-exposed-endpoints",
+      "created": "2025-04-07T14:40:00.000Z",
+      "modified": "2025-04-07T14:40:00.000Z",
+      "relationship_type": "addresses",
+      "source_ref": "course-of-action--implement-ml-runtime-security",
+      "target_ref": "vulnerability--exposed-model-endpoints",
+      "description": "Implementing ML model runtime security directly addresses the vulnerability of exposed ML model endpoints in cloud environments."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--runtime-security-addresses-excessive-permissions",
+      "created": "2025-04-07T14:40:00.000Z",
+      "modified": "2025-04-07T14:40:00.000Z",
+      "relationship_type": "addresses",
+      "source_ref": "course-of-action--implement-ml-runtime-security",
+      "target_ref": "vulnerability--excessive-model-permissions",
+      "description": "Implementing ML model runtime security directly addresses the vulnerability of excessive ML model runtime permissions in cloud environments."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--runtime-security-addresses-shared-tenancy",
+      "created": "2025-04-07T14:40:00.000Z",
+      "modified": "2025-04-07T14:40:00.000Z",
+      "relationship_type": "addresses",
+      "source_ref": "course-of-action--implement-ml-runtime-security",
+      "target_ref": "vulnerability--shared-tenancy-ml-risks",
+      "description": "Implementing ML model runtime security directly addresses the vulnerability of shared tenancy risks in cloud ML platforms."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--tampering-exploits-unsigned-models",
+      "created": "2025-04-07T14:40:00.000Z",
+      "modified": "2025-04-07T14:40:00.000Z",
+      "relationship_type": "exploits",
+      "source_ref": "attack-pattern--ml-model-tampering",
+      "target_ref": "vulnerability--unsigned-ml-models",
+      "description": "The ML model tampering attack pattern exploits the vulnerability of unsigned ML models in cloud environments."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--injection-exploits-inadequate-access",
+      "created": "2025-04-07T14:40:00.000Z",
+      "modified": "2025-04-07T14:40:00.000Z",
+      "relationship_type": "exploits",
+      "source_ref": "attack-pattern--ml-model-injection",
+      "target_ref": "vulnerability--inadequate-ml-access-controls",
+      "description": "The ML model injection attack pattern exploits the vulnerability of inadequate access controls for ML resources in cloud environments."
+    }
+  ],
+  "spec_version": "2.1"
+}
