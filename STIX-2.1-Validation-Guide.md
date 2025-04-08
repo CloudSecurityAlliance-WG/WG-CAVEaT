@@ -4,6 +4,8 @@
 
 Structured Threat Information Expression (STIX) is a standardized language for cyber threat intelligence. Proper validation of STIX files ensures that they conform to the specification and can be correctly interpreted by other systems. This guide covers practical approaches for validating STIX 2.1 files, including examples, common issues, and recommended tools.
 
+https://github.com/oasis-open/cti-stix2-json-schemas
+
 ## Understanding STIX 2.1 Structure
 
 STIX 2.1 content typically consists of:
