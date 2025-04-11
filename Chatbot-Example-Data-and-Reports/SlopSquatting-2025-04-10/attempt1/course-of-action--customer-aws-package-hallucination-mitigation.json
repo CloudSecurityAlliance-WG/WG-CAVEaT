@@ -1,0 +1,68 @@
+{
+  "type": "course-of-action",
+  "spec_version": "2.1",
+  "id": "course-of-action--customer-aws-package-hallucination-mitigation",
+  "created": "2025-04-10T12:00:00.000Z",
+  "modified": "2025-04-10T12:00:00.000Z",
+  "name": "AWS Package Hallucination Mitigation (Customer-Level)",
+  "description": "Recommended actions for AWS customers to mitigate risks from package hallucinations in code-generating LLMs. These measures focus on implementation in AWS Lambda, CodeBuild, and other AWS services that manage code dependencies.",
+  "external_references": [
+    {
+      "source_name": "CAVEaT",
+      "external_id": "CAVEaT-COA-001",
+      "url": "https://github.com/cloudsecurityalliance/caveat/wiki/course-of-action--customer-aws-package-hallucination-mitigation"
+    }
+  ],
+  "x_mitre_version": "1.0",
+  "x_caveat_implementation": {
+    "web_console": [
+      "1. Enable and configure AWS CodeArtifact as a private repository proxy:",
+      "   - Navigate to the AWS CodeArtifact console",
+      "   - Create a domain and repository",
+      "   - Configure repository to use upstream repositories (PyPI, npm) with strict policies",
+      "   - Enable package origin controls to track the source of all packages",
+      "2. Configure AWS CodeBuild to use vulnerability scanning:",
+      "   - In the CodeBuild console, navigate to your build project",
+      "   - Under 'Build specifications', enable vulnerability scanning",
+      "   - Configure to block builds that include unknown or potentially hallucinated packages",
+      "3. Set up AWS Lambda Layer with pre-verified dependencies:",
+      "   - In the Lambda console, create a Layer containing verified dependencies",
+      "   - Update Lambda functions to use these validated Layers rather than installing packages during deployment"
+    ],
+    "cli": [
+      "1. Create a CodeArtifact domain and repository:",
+      "   aws codeartifact create-domain --domain your-domain",
+      "   aws codeartifact create-repository --domain your-domain --repository your-repo --upstreams repositories=public-repo",
+      "2. Configure CodeBuild project with vulnerability scanning:",
+      "   aws codebuild update-project --name your-project --environment-variables name=SCAN_DEPENDENCIES,value=true,type=PLAINTEXT",
+      "3. Create Lambda Layer with verified dependencies:",
+      "   aws lambda publish-layer-version --layer-name verified-deps --zip-file fileb://verified-deps.zip",
+      "4. Configure Lambda to use verified Layer:",
+      "   aws lambda update-function-configuration --function-name your-function --layers arn:aws:lambda:region:account:layer:verified-deps:1"
+    ],
+    "api": [
+      "// Create a CodeArtifact domain and repository",
+      "const AWS = require('aws-sdk');",
+      "const codeartifact = new AWS.CodeArtifact();",
+      "await codeartifact.createDomain({ domain: 'your-domain' }).promise();",
+      "await codeartifact.createRepository({",
+      "  domain: 'your-domain',",
+      "  repository: 'your-repo',",
+      "  upstreams: [{ repositoryName: 'public-repo' }]",
+      "}).promise();",
+      "",
+      "// Create Lambda Layer with verified dependencies",
+      "const lambda = new AWS.Lambda();",
+      "await lambda.publishLayerVersion({",
+      "  LayerName: 'verified-deps',",
+      "  Content: { ZipFile: verifiedDepsZipBuffer }",
+      "}).promise();",
+      "",
+      "// Update Lambda to use verified Layer",
+      "await lambda.updateFunctionConfiguration({",
+      "  FunctionName: 'your-function',",
+      "  Layers: ['arn:aws:lambda:region:account:layer:verified-deps:1']",
+      "}).promise();"
+    ]
+  }
+}

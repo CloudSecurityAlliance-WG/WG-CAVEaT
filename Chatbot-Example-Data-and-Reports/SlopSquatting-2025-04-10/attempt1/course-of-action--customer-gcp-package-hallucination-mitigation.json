@@ -1,0 +1,81 @@
+{
+  "type": "course-of-action",
+  "spec_version": "2.1",
+  "id": "course-of-action--customer-gcp-package-hallucination-mitigation",
+  "created": "2025-04-10T12:00:00.000Z",
+  "modified": "2025-04-10T12:00:00.000Z",
+  "name": "GCP Package Hallucination Mitigation (Customer-Level)",
+  "description": "Recommended actions for Google Cloud Platform customers to mitigate risks from package hallucinations in code-generating LLMs. These measures focus on implementation in Google Cloud Functions, Cloud Build, and other GCP services that manage code dependencies.",
+  "external_references": [
+    {
+      "source_name": "CAVEaT",
+      "external_id": "CAVEaT-COA-003",
+      "url": "https://github.com/cloudsecurityalliance/caveat/wiki/course-of-action--customer-gcp-package-hallucination-mitigation"
+    }
+  ],
+  "x_mitre_version": "1.0",
+  "x_caveat_implementation": {
+    "web_console": [
+      "1. Set up Artifact Registry as a private package registry:",
+      "   - Navigate to the GCP Console -> Artifact Registry",
+      "   - Create a new repository for your language (Python/npm)",
+      "   - Configure upstream access to public repositories with package filtering",
+      "   - Set up vulnerability scanning for all uploaded packages",
+      "2. Configure Cloud Build with binary authorization:",
+      "   - In the GCP Console, go to Cloud Build -> Triggers",
+      "   - Edit your build configuration to include dependency verification steps",
+      "   - Enable Binary Authorization to verify packages before deployment",
+      "3. Implement Cloud Functions dependency controls:",
+      "   - For Python functions, create and upload a custom runtime with pre-verified dependencies",
+      "   - For Node.js functions, implement a package.json with exact version pinning",
+      "   - Enable the 'Require Cloud Build for Deployment' option in Cloud Functions security settings"
+    ],
+    "cli": [
+      "1. Create an Artifact Registry repository with upstream configuration:",
+      "   gcloud artifacts repositories create secure-repo --repository-format=python --location=us-central1 --description=\"Verified packages repository\"",
+      "   gcloud artifacts repositories add-upstream secure-repo --location=us-central1 --upstream-url=\"https://pypi.org\" --upstream-type=pypi",
+      "2. Configure Cloud Build with security scanning:",
+      "   gcloud builds submit --config=cloudbuild.yaml --substitutions=_DEPENDENCY_SCAN=true",
+      "3. Deploy Cloud Functions with verified dependencies:",
+      "   gcloud functions deploy your-function --runtime python310 --source=. --entry-point=your_function --security-level=secure-always --repository=projects/your-project/locations/us-central1/repositories/secure-repo"
+    ],
+    "api": [
+      "// Create an Artifact Registry repository with upstream configuration",
+      "const {ArtifactRegistryClient} = require('@google-cloud/artifact-registry');",
+      "const client = new ArtifactRegistryClient();",
+      "",
+      "await client.createRepository({",
+      "  parent: `projects/${projectId}/locations/us-central1`,",
+      "  repositoryId: 'secure-repo',",
+      "  repository: {",
+      "    format: 'PYTHON',",
+      "    description: 'Verified packages repository',",
+      "    upstreamPolicies: [{",
+      "      id: 'pypi',",
+      "      repositoryType: 'REMOTE_REPOSITORY',",
+      "      priority: 1,",
+      "      remoteRepository: 'https://pypi.org'",
+      "    }]",
+      "  }",
+      "});",
+      "",
+      "// Deploy Cloud Functions with verified dependencies",
+      "const {CloudFunctionsServiceClient} = require('@google-cloud/functions');",
+      "const functionsClient = new CloudFunctionsServiceClient();",
+      "",
+      "await functionsClient.createFunction({",
+      "  parent: `projects/${projectId}/locations/us-central1`,",
+      "  function: {",
+      "    name: `projects/${projectId}/locations/us-central1/functions/your-function`,",
+      "    entryPoint: 'your_function',",
+      "    runtime: 'python310',",
+      "    sourceRepository: {",
+      "      url: `https://source.developers.google.com/projects/${projectId}/repos/github_your_org_your_repo/moveable-aliases/main`",
+      "    },",
+      "    securityLevel: 'SECURE_ALWAYS',",
+      "    artifactRepository: `projects/${projectId}/locations/us-central1/repositories/secure-repo`",
+      "  }",
+      "});"
+    ]
+  }
+}
