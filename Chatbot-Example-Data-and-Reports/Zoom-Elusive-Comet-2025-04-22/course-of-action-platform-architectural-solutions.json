@@ -1,0 +1,129 @@
+{
+  "type": "course-of-action",
+  "spec_version": "2.1",
+  "id": "course-of-action--zoom-platform-solutions",
+  "created": "2025-04-22T12:00:00.000Z",
+  "modified": "2025-04-22T12:00:00.000Z",
+  "name": "Platform-Level Architectural Solutions for Zoom Remote Control Vulnerability",
+  "description": "This course of action outlines fundamental architectural changes that Zoom could implement to address the remote control feature vulnerability at a platform level. Unlike tactical mitigations that rely on user or administrator actions, these solutions represent systemic changes to the Zoom platform itself that would fundamentally eliminate or significantly reduce the risk posed by the remote control feature. These recommendations are directed at the cloud service provider (Zoom) rather than end users, though they could be advocated for by enterprise customers and security researchers.",
+  "external_references": [
+    {
+      "source_name": "CAVEaT",
+      "external_id": "CAVEaT-COA-ZOOM-006",
+      "url": "https://github.com/cloudsecurityalliance/caveat/wiki/course-of-action--zoom-platform-solutions"
+    }
+  ],
+  "x_caveat_cloud_specific_data": {
+    "affected_cloud_providers": [
+      {
+        "provider_name": "Zoom Cloud Services",
+        "affected_services": ["Zoom Meetings"],
+        "implementation_complexity": "High",
+        "effectiveness": "High",
+        "implementation_responsibility": "Service Provider (Zoom)",
+        "platform_solutions": [
+          {
+            "name": "Enhanced Permission UX Design",
+            "description": "Redesign the remote control request interface to clearly distinguish between system notifications and participant actions, prevent display name spoofing of system components, and provide explicit security context in permission requests.",
+            "implementation_details": [
+              "1. Visually differentiate system notifications from participant actions using distinct colors, icons, and positioning",
+              "2. Prevent participants from using display names that could be confused with system components (e.g., 'Zoom', 'System', 'Admin')",
+              "3. Explicitly indicate security implications in permission dialogs with clear warnings about the level of access being granted",
+              "4. Implement a countdown timer or 'cooling period' before high-risk permissions can be granted",
+              "5. Include the requester's full information (name, email if authenticated) in the permission dialog",
+              "6. Add visual security indicators that show when remote control is active"
+            ],
+            "implementation_complexity": "Medium",
+            "effectiveness": "High",
+            "timeframe": "Short-term"
+          },
+          {
+            "name": "Tiered Authentication for Remote Control",
+            "description": "Implement additional authentication factors or verification steps before remote control can be granted, especially for first-time connections or connections from outside the organization.",
+            "implementation_details": [
+              "1. Require additional authentication (e.g., PIN, password) before remote control can be granted to new or external users",
+              "2. Implement risk-based authentication that considers factors such as meeting history with the requester, organizational relationship, and authentication level",
+              "3. Allow administrators to set policies requiring approval from a designated security contact before first-time remote control can be granted",
+              "4. Create a 'trusted remote control partners' list that can bypass additional authentication",
+              "5. Implement verification callbacks via alternative channels (email/phone) for high-risk remote control requests",
+              "6. Provide administrators with APIs to build custom verification workflows"
+            ],
+            "implementation_complexity": "High",
+            "effectiveness": "Very High",
+            "timeframe": "Medium-term"
+          },
+          {
+            "name": "Context-Aware Security Boundaries",
+            "description": "Develop more granular permission models that limit which system resources can be accessed during remote control sessions, implement behavior monitoring to detect suspicious activities, and provide real-time alerts.",
+            "implementation_details": [
+              "1. Implement application sandboxing for remote control sessions that limits access to only the application being shared",
+              "2. Create permission categories that allow for limiting remote control to specific functions (e.g., mouse movement only, no keyboard input)",
+              "3. Develop behavioral analysis to detect suspicious activities during remote control (e.g., rapid file access, access to credential stores)",
+              "4. Implement real-time alerts for potentially malicious actions during remote control sessions",
+              "5. Create an audit log of all actions performed during remote control sessions",
+              "6. Provide a 'quick disconnect' emergency button that is always visible during remote control sessions",
+              "7. Implement automatic session timeouts for remote control after periods of inactivity"
+            ],
+            "implementation_complexity": "Very High",
+            "effectiveness": "Very High",
+            "timeframe": "Long-term"
+          },
+          {
+            "name": "Organization-Aware Trust Model",
+            "description": "Redesign the Zoom security model to be organization-aware by default, with clear distinctions between internal and external participants and corresponding security boundaries.",
+            "implementation_details": [
+              "1. Make organizational boundaries a core part of the security model rather than a configurable option",
+              "2. Visually distinguish internal vs. external participants in all meeting interfaces",
+              "3. Automatically apply stricter security policies for interactions between internal and external participants",
+              "4. Require explicit opt-in for enabling high-risk features for external participants",
+              "5. Create a security gateway for cross-organizational feature usage",
+              "6. Implement domain verification to prevent spoofing of organizational identities",
+              "7. Provide administrators with templates for different security postures based on meeting context (internal, vendor, public)"
+            ],
+            "implementation_complexity": "High",
+            "effectiveness": "High",
+            "timeframe": "Medium-term"
+          },
+          {
+            "name": "Browser-Based Remote Assistance Model",
+            "description": "Redesign the remote control feature to use a browser-based WebRTC model with stronger isolation from system resources, similar to secure remote support tools.",
+            "implementation_details": [
+              "1. Move remote control functionality to a browser-based implementation using WebRTC",
+              "2. Leverage browser security model and sandboxing to limit system access",
+              "3. Implement the remote control feature as a separate component with its own permission model",
+              "4. Create clear visual indicators when a browser tab has remote control enabled",
+              "5. Provide granular permissions for specific browser-based actions",
+              "6. Integrate with browser permission models for accessing system resources",
+              "7. Separate technical support use cases from collaborative use cases with different security models"
+            ],
+            "implementation_complexity": "Very High",
+            "effectiveness": "Very High",
+            "timeframe": "Long-term"
+          }
+        ],
+        "advocacy_recommendations": [
+          "1. Enterprise customers should communicate these architectural concerns to Zoom during contract negotiations",
+          "2. Include secure remote control requirements in vendor security assessments",
+          "3. Submit formal feature requests through Zoom's product feedback channels",
+          "4. Participate in Zoom's customer advisory boards to advocate for these security changes",
+          "5. Security researchers should conduct and publish detailed analyses of the current implementation",
+          "6. Industry organizations should develop standards for secure remote control implementations"
+        ]
+      }
+    ],
+    "implementation_considerations": {
+      "backwards_compatibility": "Changes must balance security improvements with maintaining functionality for legitimate use cases",
+      "user_experience": "Security improvements must not significantly degrade usability for legitimate collaborative scenarios",
+      "competitive_landscape": "Implementation should consider industry best practices and competitive pressures",
+      "regulatory_compliance": "Solutions should align with emerging regulatory requirements for secure collaboration tools"
+    },
+    "security_principles_applied": [
+      "Defense in depth",
+      "Principle of least privilege",
+      "Secure by default",
+      "Separation of concerns",
+      "Zero trust architecture",
+      "User-centered security design"
+    ]
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "type": "course-of-action",
+  "spec_version": "2.1",
+  "id": "course-of-action--macos-tcc-monitoring",
+  "created": "2025-04-22T12:00:00.000Z",
+  "modified": "2025-04-22T12:00:00.000Z",
+  "name": "Implement Active TCC Database Monitoring for Zoom Permissions",
+  "description": "This course of action involves implementing a system that actively monitors and removes Zoom accessibility permissions from the macOS Transparency, Consent, and Control (TCC) database. While PPPC profiles prevent new permission grants, this approach addresses permissions that may have been previously granted. By regularly scanning for and removing these permissions, organizations can ensure that even if a user had previously authorized Zoom access, that authorization cannot be exploited in an attack. This approach can be implemented alongside PPPC profiles for a comprehensive defense-in-depth strategy.",
+  "external_references": [
+    {
+      "source_name": "CAVEaT",
+      "external_id": "CAVEaT-COA-ZOOM-004",
+      "url": "https://github.com/cloudsecurityalliance/caveat/wiki/course-of-action--macos-tcc-monitoring"
+    },
+    {
+      "source_name": "Trail of Bits",
+      "description": "Mitigating ELUSIVE COMET Zoom remote control attacks",
+      "url": "https://blog.trailofbits.com/2025/04/17/mitigating-elusive-comet-zoom-remote-control-attacks/"
+    }
+  ],
+  "x_caveat_cloud_specific_data": {
+    "affected_cloud_providers": [
+      {
+        "provider_name": "Zoom Cloud Services",
+        "affected_services": ["Zoom Meetings"],
+        "platform_specific": "macOS only",
+        "implementation_complexity": "Medium",
+        "effectiveness": "High",
+        "implementation_instructions": {
+          "script_deployment": [
+            "1. Create a bash script named 'disable_zoom_accessibility.bash' with the following content:",
+            "```bash",
+            "#!/bin/bash",
+            "",
+            "# Script to check for and remove Zoom accessibility permissions",
+            "# Recommended to run every 15 minutes via a LaunchDaemon",
+            "",
+            "# Log file path",
+            "LOG_FILE=\"/var/log/zoom_accessibility_monitor.log\"",
+            "",
+            "# Ensure log file exists and is writable",
+            "touch \"$LOG_FILE\"",
+            "chmod 644 \"$LOG_FILE\"",
+            "",
+            "# Function to log messages",
+            "log_message() {",
+            "  echo \"$(date '+%Y-%m-%d %H:%M:%S') - $1\" >> \"$LOG_FILE\"",
+            "}",
+            "",
+            "log_message \"Checking for Zoom accessibility permissions...\"",
+            "",
+            "# Check for Zoom in the TCC database",
+            "# We need to check both system and user TCC databases",
+            "",
+            "# System TCC database",
+            "SYSTEM_TCC_DB=\"/Library/Application Support/com.apple.TCC/TCC.db\"",
+            "if [ -f \"$SYSTEM_TCC_DB\" ]; then",
+            "  # Check if Zoom has accessibility permissions in the system database",
+            "  ZOOM_PERMISSIONS=$(sqlite3 \"$SYSTEM_TCC_DB\" \"SELECT * FROM access WHERE client LIKE '%zoom%' AND service = 'kTCCServiceAccessibility'\" 2>/dev/null)",
+            "  ",
+            "  if [ ! -z \"$ZOOM_PERMISSIONS\" ]; then",
+            "    log_message \"Found Zoom accessibility permissions in system TCC database. Removing...\"",
+            "    sqlite3 \"$SYSTEM_TCC_DB\" \"DELETE FROM access WHERE client LIKE '%zoom%' AND service = 'kTCCServiceAccessibility'\" 2>/dev/null",
+            "    log_message \"Removed Zoom accessibility permissions from system TCC database.\"",
+            "  else",
+            "    log_message \"No Zoom accessibility permissions found in system TCC database.\"",
+            "  fi",
+            "else",
+            "  log_message \"System TCC database not found at $SYSTEM_TCC_DB\"",
+            "fi",
+            "",
+            "# User TCC databases - check for all users",
+            "for USER_HOME in /Users/*; do",
+            "  if [ -d \"$USER_HOME\" ]; then",
+            "    USER_NAME=$(basename \"$USER_HOME\")",
+            "    USER_TCC_DB=\"$USER_HOME/Library/Application Support/com.apple.TCC/TCC.db\"",
+            "    ",
+            "    if [ -f \"$USER_TCC_DB\" ]; then",
+            "      # Check if Zoom has accessibility permissions in this user's database",
+            "      ZOOM_PERMISSIONS=$(sqlite3 \"$USER_TCC_DB\" \"SELECT * FROM access WHERE client LIKE '%zoom%' AND service = 'kTCCServiceAccessibility'\" 2>/dev/null)",
+            "      ",
+            "      if [ ! -z \"$ZOOM_PERMISSIONS\" ]; then",
+            "        log_message \"Found Zoom accessibility permissions in $USER_NAME's TCC database. Removing...\"",
+            "        sqlite3 \"$USER_TCC_DB\" \"DELETE FROM access WHERE client LIKE '%zoom%' AND service = 'kTCCServiceAccessibility'\" 2>/dev/null",
+            "        log_message \"Removed Zoom accessibility permissions from $USER_NAME's TCC database.\"",
+            "      else",
+            "        log_message \"No Zoom accessibility permissions found in $USER_NAME's TCC database.\"",
+            "      fi",
+            "    else",
+            "      log_message \"User TCC database not found for $USER_NAME at $USER_TCC_DB\"",
+            "    fi",
+            "  fi",
+            "done",
+            "",
+            "log_message \"Zoom accessibility permission check completed.\"",
+            "```",
+            "2. Make the script executable: chmod +x disable_zoom_accessibility.bash",
+            "3. Create a LaunchDaemon to run the script every 15 minutes"
+          ],
+          "launchdaemon_setup": [
+            "1. Create a LaunchDaemon plist file at /Library/LaunchDaemons/com.company.zoom.accessibility.monitor.plist:",
+            "```xml",
+            "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+            "<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">",
+            "<plist version=\"1.0\">",
+            "<dict>",
+            "    <key>Label</key>",
+            "    <string>com.company.zoom.accessibility.monitor</string>",
+            "    <key>ProgramArguments</key>",
+            "    <array>",
+            "        <string>/path/to/disable_zoom_accessibility.bash</string>",
+            "    </array>",
+            "    <key>StartInterval</key>",
+            "    <integer>900</integer>",
+            "    <key>RunAtLoad</key>",
+            "    <true/>",
+            "    <key>StandardErrorPath</key>",
+            "    <string>/var/log/zoom_accessibility_monitor_error.log</string>",
+            "    <key>StandardOutPath</key>",
+            "    <string>/var/log/zoom_accessibility_monitor_output.log</string>",
+            "</dict>",
+            "</plist>",
+            "```",
+            "2. Set appropriate permissions: chmod 644 /Library/LaunchDaemons/com.company.zoom.accessibility.monitor.plist",
+            "3. Load the LaunchDaemon: launchctl load /Library/LaunchDaemons/com.company.zoom.accessibility.monitor.plist"
+          ],
+          "mdm_deployment": [
+            "1. Package the script and LaunchDaemon for deployment via your MDM solution",
+            "2. Create a custom package or script policy in your MDM",
+            "3. Deploy to all managed macOS devices",
+            "4. Set up compliance monitoring to ensure the script remains active"
+          ],
+          "verification_steps": [
+            "1. Grant Zoom accessibility permissions manually through System Preferences/Settings",
+            "2. Wait for the script to run (or run it manually for testing)",
+            "3. Check that the permissions have been removed from the TCC database",
+            "4. Verify the log file at /var/log/zoom_accessibility_monitor.log for successful execution",
+            "5. Try to use Zoom's remote control feature and confirm it does not function"
+          ]
+        }
+      }
+    ],
+    "implementation_considerations": {
+      "prerequisites": "Administrative access to macOS systems; understanding of LaunchDaemons and TCC database",
+      "potential_impacts": "Users will need to re-grant permissions if legitimate use of accessibility features is required",
+      "alternative_workflows": "For organizations that require selective use of the remote control feature, modify the script to only apply to specific users or exclude certain users"
+    },
+    "mitigation_effectiveness": {
+      "coverage": "Comprehensive for preventing exploitation of previously granted permissions",
+      "limitations": "Only applicable to macOS; must be deployed separately for each operating system"
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "type": "course-of-action",
+  "spec_version": "2.1",
+  "id": "course-of-action--zoom-org-restrictions",
+  "created": "2025-04-22T12:00:00.000Z",
+  "modified": "2025-04-22T12:00:00.000Z",
+  "name": "Restrict Zoom Remote Control to Organization Members Only",
+  "description": "For Zoom Enterprise, Education, and Business accounts, administrators can configure settings to restrict the remote control feature to only be used between members of the same organization. This prevents external threat actors from requesting remote control access during meetings with organization members. This is one of the most effective administrative controls to mitigate this attack vector while still allowing legitimate use of the remote control feature within the organization.",
+  "external_references": [
+    {
+      "source_name": "CAVEaT",
+      "external_id": "CAVEaT-COA-ZOOM-001",
+      "url": "https://github.com/cloudsecurityalliance/caveat/wiki/course-of-action--zoom-org-restrictions"
+    }
+  ],
+  "x_caveat_cloud_specific_data": {
+    "affected_cloud_providers": [
+      {
+        "provider_name": "Zoom Cloud Services",
+        "affected_services": ["Zoom Meetings"],
+        "required_subscription_level": ["Enterprise", "Business", "Education"],
+        "implementation_complexity": "Low",
+        "effectiveness": "High",
+        "implementation_instructions": {
+          "web_console": [
+            "1. Log in to the Zoom Admin Portal at https://admin.zoom.us",
+            "2. Navigate to 'Account Management' > 'Account Settings'",
+            "3. Select the 'Meeting' tab",
+            "4. Locate the 'Remote control' option under 'In Meeting (Basic)'",
+            "5. Ensure the setting is enabled (toggle switch is blue)",
+            "6. Click on the lock icon to make this setting mandatory for all users in your account",
+            "7. Check the option 'Only allow remote control between users in the same organization'",
+            "8. Click 'Save' to apply the changes"
+          ],
+          "api": [
+            "1. Use the Zoom API to update account settings",
+            "2. Endpoint: PATCH https://api.zoom.us/v2/accounts/{accountId}/settings",
+            "3. Request body example:",
+            "{",
+            "  \"in_meeting\": {",
+            "    \"remote_control\": true,",
+            "    \"remote_control_org_only\": true",
+            "  }",
+            "}"
+          ],
+          "verification_steps": [
+            "1. Schedule a test meeting with an external user",
+            "2. Have the external user attempt to request remote control during screen sharing",
+            "3. Verify that the remote control request option is not available to the external user",
+            "4. Test with an internal user to confirm remote control works between organization members"
+          ]
+        }
+      }
+    ],
+    "implementation_considerations": {
+      "prerequisites": "Requires a paid Zoom account with Enterprise, Business, or Education subscription",
+      "potential_impacts": "External collaborators or clients will not be able to request or be granted remote control access",
+      "alternative_workflows": "For legitimate use cases with external parties, consider alternative screen sharing or collaboration tools that have stronger security controls"
+    },
+    "mitigation_effectiveness": {
+      "coverage": "Complete for this specific attack vector",
+      "limitations": "Does not address other potential vulnerabilities in Zoom or prevent social engineering through other channels"
+    }
+  }
+}

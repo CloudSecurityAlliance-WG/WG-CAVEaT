@@ -1,0 +1,160 @@
+{
+  "type": "course-of-action",
+  "spec_version": "2.1",
+  "id": "course-of-action--zoom-user-education",
+  "created": "2025-04-22T12:00:00.000Z",
+  "modified": "2025-04-22T12:00:00.000Z",
+  "name": "User Education and Training for Zoom Remote Control Attacks",
+  "description": "This course of action focuses on educating users about the risks associated with Zoom's remote control feature and training them to recognize and respond appropriately to social engineering attacks that exploit this functionality. While technical controls provide the strongest protection, user awareness forms a critical secondary defense layer, especially for organizations that cannot immediately implement technical mitigations or for individual users without enterprise support.",
+  "external_references": [
+    {
+      "source_name": "CAVEaT",
+      "external_id": "CAVEaT-COA-ZOOM-007",
+      "url": "https://github.com/cloudsecurityalliance/caveat/wiki/course-of-action--zoom-user-education"
+    },
+    {
+      "source_name": "Trail of Bits",
+      "description": "Mitigating ELUSIVE COMET Zoom remote control attacks",
+      "url": "https://blog.trailofbits.com/2025/04/17/mitigating-elusive-comet-zoom-remote-control-attacks/"
+    }
+  ],
+  "x_caveat_cloud_specific_data": {
+    "affected_cloud_providers": [
+      {
+        "provider_name": "Zoom Cloud Services",
+        "affected_services": ["Zoom Meetings"],
+        "implementation_complexity": "Low",
+        "effectiveness": "Medium",
+        "training_components": [
+          {
+            "name": "General Awareness Program",
+            "description": "A broad awareness program about the risks of remote control features in video conferencing software and how they can be exploited.",
+            "key_messages": [
+              "No legitimate business process should ever require giving someone else control of your computer",
+              "Remote control requests should be treated with the same suspicion as requests for passwords",
+              "Be particularly cautious of remote control requests from people you don't know well",
+              "Before granting remote control, always verbally confirm the request with the requester through a trusted channel",
+              "Always maintain visual awareness of your screen when remote control is active",
+              "Know how to immediately terminate remote control (Stop Share or Abort Control options)",
+              "Be alert to display name changes during meetings that might be used to impersonate system notifications"
+            ],
+            "delivery_methods": [
+              "Company-wide email alerts",
+              "Security awareness newsletters",
+              "Intranet security portals",
+              "Mandatory security training modules",
+              "Team meeting security minutes"
+            ]
+          },
+          {
+            "name": "Targeted Training for High-Risk Users",
+            "description": "Specialized training for users who handle cryptocurrency, financial assets, or sensitive information that would be particularly valuable to attackers.",
+            "training_elements": [
+              "1. Recognition of social engineering tactics used by ELUSIVE COMET and similar threat actors",
+              "2. Detailed walkthrough of the attack methodology and indicators",
+              "3. Hands-on exercises to identify suspicious meeting invitations and calendar requests",
+              "4. Simulated attack scenarios to practice appropriate responses",
+              "5. Specialized guidance for separating cryptocurrency operations from general business activities",
+              "6. Development of standard operating procedures for verifying the legitimacy of media or industry inquiries",
+              "7. Technical training on using browser-based alternatives to the Zoom client"
+            ],
+            "delivery_methods": [
+              "Small-group workshops",
+              "One-on-one security consultations",
+              "Role-specific training modules",
+              "Simulated phishing and social engineering exercises"
+            ]
+          },
+          {
+            "name": "Verification Protocol Implementation",
+            "description": "Establishment of formal verification protocols that must be followed before granting remote control access to anyone, even seemingly trusted contacts.",
+            "protocol_elements": [
+              "1. Require phone or secondary channel verification before granting remote control",
+              "2. Implement a 'two-person rule' for approving remote control requests in high-security contexts",
+              "3. Create a pre-approved list of individuals who may be granted remote control",
+              "4. Establish a time-limited approval process for remote control permissions",
+              "5. Document all instances of remote control usage",
+              "6. Require justification for each remote control request",
+              "7. Establish an emergency revocation process if suspicious behavior is observed"
+            ],
+            "implementation_methods": [
+              "Written security policies",
+              "Process flowcharts",
+              "Decision trees for different scenarios",
+              "Integration with existing security policies"
+            ]
+          },
+          {
+            "name": "Media and External Communication Training",
+            "description": "Specialized training for handling external communications, particularly media inquiries or industry networking, which is a common pretext used in these attacks.",
+            "training_elements": [
+              "1. Verification procedures for legitimate media organizations",
+              "2. Red flags that indicate fraudulent media or industry outreach",
+              "3. Procedures for properly routing media requests through official channels",
+              "4. Guidelines for information sharing during external communications",
+              "5. Authorized platforms and tools for media interactions",
+              "6. Social media safety when discussing company activities or cryptocurrency holdings",
+              "7. Development of pre-approved response templates for common inquiries"
+            ],
+            "delivery_methods": [
+              "Media relations training sessions",
+              "Communication department guidance documentation",
+              "Executive briefings",
+              "Role-specific playbooks"
+            ]
+          },
+          {
+            "name": "Security Alert System",
+            "description": "Implementation of a system for rapidly sharing information about ongoing attacks or new tactics observed within the organization.",
+            "system_elements": [
+              "1. Designated channel for reporting suspicious meeting invitations or behavior",
+              "2. Regular security bulletins about new social engineering techniques",
+              "3. Quick-reference guides for identifying attack indicators",
+              "4. Integration with incident response protocols",
+              "5. No-blame reporting culture to encourage sharing of security concerns",
+              "6. Feedback mechanism to improve detection and response",
+              "7. Recognition program for employees who identify and report potential attacks"
+            ],
+            "implementation_methods": [
+              "Dedicated Slack/Teams security channels",
+              "Email alert templates",
+              "Security dashboard on company intranet",
+              "Integration with existing security incident reporting"
+            ]
+          }
+        ],
+        "implementation_instructions": {
+          "for_security_teams": [
+            "1. Develop awareness materials specific to the Zoom remote control vulnerability",
+            "2. Tailor training to different user groups based on risk level and technical sophistication",
+            "3. Create clear, visual guides showing how to identify and respond to remote control requests",
+            "4. Develop and distribute quick reference cards with key security actions",
+            "5. Implement simulated attack exercises to test awareness and response",
+            "6. Measure effectiveness through knowledge assessments and behavior tracking",
+            "7. Continually update training materials as new attack variations emerge"
+          ],
+          "for_individual_users": [
+            "1. Review Zoom security settings and disable remote control if not needed",
+            "2. Learn to recognize legitimate vs. suspicious meeting invitations",
+            "3. Practice verbally confirming any remote control requests before approval",
+            "4. Familiarize yourself with how to quickly terminate remote control access",
+            "5. Be cautious of unexpected media or industry networking opportunities",
+            "6. Keep separate devices for financial/cryptocurrency operations and general business",
+            "7. Report any suspicious experiences to appropriate security contacts"
+          ]
+        }
+      }
+    ],
+    "implementation_considerations": {
+      "behavioral_challenges": "User education alone is often insufficient against sophisticated social engineering; should be combined with technical controls",
+      "training_frequency": "Regular refresher training is essential as attacks evolve and user awareness decays over time",
+      "measurement": "Effectiveness should be measured through simulated attacks and behavior tracking",
+      "psychological_factors": "Training must account for psychological factors that make users vulnerable to social engineering"
+    },
+    "mitigation_effectiveness": {
+      "as_primary_control": "Low to Medium - user education alone cannot reliably prevent sophisticated social engineering attacks",
+      "as_defense_in_depth": "Medium to High - when combined with technical controls, significantly improves overall security posture",
+      "limitations": "Susceptible to human error, stress, social pressure, and authority bias; requires ongoing reinforcement"
+    }
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "type": "bundle",
+  "id": "bundle--zoom-elusive-comet-relationships",
+  "spec_version": "2.1",
+  "objects": [
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--1",
+      "created": "2025-04-22T12:00:00.000Z",
+      "modified": "2025-04-22T12:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--elusive-comet",
+      "target_ref": "attack-pattern--zoom-remote-control-hijacking",
+      "description": "ELUSIVE COMET uses the Zoom remote control hijacking technique to gain unauthorized access to victims' systems"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--2",
+      "created": "2025-04-22T12:00:00.000Z",
+      "modified": "2025-04-22T12:00:00.000Z",
+      "relationship_type": "delivers",
+      "source_ref": "attack-pattern--zoom-remote-control-hijacking",
+      "target_ref": "malware--zoom-goopdate-stealer",
+      "description": "The Zoom remote control hijacking technique is used to deliver the GOOPDATE malware to victim systems"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--3",
+      "created": "2025-04-22T12:00:00.000Z",
+      "modified": "2025-04-22T12:00:00.000Z",
+      "relationship_type": "exploits",
+      "source_ref": "attack-pattern--zoom-remote-control-hijacking",
+      "target_ref": "vulnerability--zoom-remote-control-design",
+      "description": "The Zoom remote control hijacking technique exploits design vulnerabilities in Zoom's remote control feature"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--4",
+      "created": "2025-04-22T12:00:00.000Z",
+      "modified": "2025-04-22T12:00:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--zoom-org-restrictions",
+      "target_ref": "attack-pattern--zoom-remote-control-hijacking",
+      "description": "Restricting Zoom remote control to organization members only mitigates the remote control hijacking attack"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--5",
+      "created": "2025-04-22T12:00:00.000Z",
+      "modified": "2025-04-22T12:00:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--zoom-disable-remote-control",
+      "target_ref": "attack-pattern--zoom-remote-control-hijacking",
+      "description": "Completely disabling Zoom's remote control feature mitigates the remote control hijacking attack"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--6",
+      "created": "2025-04-22T12:00:00.000Z",
+      "modified": "2025-04-22T12:00:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--macos-pppc-profile",
+      "target_ref": "attack-pattern--zoom-remote-control-hijacking",
+      "description": "Implementing macOS PPPC profiles to block Zoom accessibility permissions mitigates the remote control hijacking attack on macOS systems"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--7",
+      "created": "2025-04-22T12:00:00.000Z",
+      "modified": "2025-04-22T12:00:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--macos-tcc-monitoring",
+      "target_ref": "attack-pattern--zoom-remote-control-hijacking",
+      "description": "Implementing active TCC database monitoring to remove Zoom accessibility permissions mitigates the remote control hijacking attack on macOS systems"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--8",
+      "created": "2025-04-22T12:00:00.000Z",
+      "modified": "2025-04-22T12:00:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--uninstall-zoom",
+      "target_ref": "attack-pattern--zoom-remote-control-hijacking",
+      "description": "Completely removing the Zoom client and using browser alternatives mitigates the remote control hijacking attack"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--9",
+      "created": "2025-04-22T12:00:00.000Z",
+      "modified": "2025-04-22T12:00:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--zoom-platform-solutions",
+      "target_ref": "vulnerability--zoom-remote-control-design",
+      "description": "Platform-level architectural solutions address the root design vulnerability in Zoom's remote control feature"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--10",
+      "created": "2025-04-22T12:00:00.000Z",
+      "modified": "2025-04-22T12:00:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--zoom-user-education",
+      "target_ref": "attack-pattern--zoom-remote-control-hijacking",
+      "description": "User education and training about remote control risks and social engineering tactics helps mitigate the remote control hijacking attack"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--11",
+      "created": "2025-04-22T12:00:00.000Z",
+      "modified": "2025-04-22T12:00:00.000Z",
+      "relationship_type": "targets",
+      "source_ref": "threat-actor--elusive-comet",
+      "target_ref": "identity--cryptocurrency-organizations",
+      "description": "ELUSIVE COMET specifically targets cryptocurrency organizations and individuals"
+    },
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--cryptocurrency-organizations",
+      "created": "2025-04-22T12:00:00.000Z",
+      "modified": "2025-04-22T12:00:00.000Z",
+      "name": "Cryptocurrency Organizations and Users",
+      "description": "Organizations and individuals who handle or manage cryptocurrency assets",
+      "identity_class": "class",
+      "sectors": [
+        "financial-services",
+        "technology"
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--12",
+      "created": "2025-04-22T12:00:00.000Z",
+      "modified": "2025-04-22T12:00:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--zoom-org-restrictions",
+      "target_ref": "vulnerability--zoom-remote-control-design",
+      "description": "Organizational restrictions mitigate the design vulnerability in Zoom's remote control feature"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--13",
+      "created": "2025-04-22T12:00:00.000Z",
+      "modified": "2025-04-22T12:00:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--zoom-disable-remote-control",
+      "target_ref": "vulnerability--zoom-remote-control-design",
+      "description": "Disabling the remote control feature entirely mitigates the design vulnerability in Zoom's remote control feature"
+    }
+  ]
+}

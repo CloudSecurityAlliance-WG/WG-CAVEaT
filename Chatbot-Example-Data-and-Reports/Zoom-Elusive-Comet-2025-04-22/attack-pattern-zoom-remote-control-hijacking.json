@@ -1,0 +1,59 @@
+{
+  "type": "attack-pattern",
+  "spec_version": "2.1",
+  "id": "attack-pattern--zoom-remote-control-hijacking",
+  "created": "2025-04-22T12:00:00.000Z",
+  "modified": "2025-04-22T12:00:00.000Z",
+  "name": "Zoom Remote Control Feature Hijacking",
+  "description": "An adversary exploits Zoom's screen sharing remote control feature to gain unauthorized access to a victim's system. The attack begins with social engineering, where the adversary establishes a seemingly legitimate business context (often posing as media representatives) to initiate a Zoom call with the target. During the call, the adversary requests remote control access of the victim's screen. To increase success probability, the adversary may change their display name to 'Zoom' to make the request appear as a system notification rather than a participant action. If the victim grants permission, the adversary gains complete control over the victim's computer, allowing them to install malware, exfiltrate sensitive data, or access cryptocurrency wallets and assets. This technique is particularly effective because it exploits a legitimate feature within a trusted application and occurs during what appears to be normal business activity.",
+  "kill_chain_phases": [
+    {
+      "kill_chain_name": "mitre-attack",
+      "phase_name": "initial-access"
+    },
+    {
+      "kill_chain_name": "mitre-attack",
+      "phase_name": "execution"
+    },
+    {
+      "kill_chain_name": "mitre-attack",
+      "phase_name": "credential-access"
+    }
+  ],
+  "external_references": [
+    {
+      "source_name": "CAVEaT",
+      "external_id": "CAVEaT-AP-ZOOM-001",
+      "url": "https://github.com/cloudsecurityalliance/caveat/wiki/attack-pattern--zoom-remote-control-hijacking"
+    },
+    {
+      "source_name": "Trail of Bits",
+      "description": "Mitigating ELUSIVE COMET Zoom remote control attacks",
+      "url": "https://blog.trailofbits.com/2025/04/17/mitigating-elusive-comet-zoom-remote-control-attacks/"
+    },
+    {
+      "source_name": "Bleeping Computer",
+      "description": "Hackers abuse Zoom remote control feature for crypto-theft attacks",
+      "url": "https://www.bleepingcomputer.com/news/security/hackers-abuse-zoom-remote-control-feature-for-crypto-theft-attacks/"
+    },
+    {
+      "source_name": "SecurityWeek",
+      "description": "North Korean Cryptocurrency Thieves Caught Hijacking Zoom 'Remote Control' Feature",
+      "url": "https://www.securityweek.com/north-korean-cryptocurrency-thieves-caught-hijacking-zoom-remote-control-feature/"
+    }
+  ],
+  "x_caveat_cloud_specific_data": {
+    "affected_cloud_providers": [
+      {
+        "provider_name": "Zoom Cloud Services",
+        "affected_services": ["Zoom Meetings"],
+        "impact_level": "Critical",
+        "details": "This attack leverages a legitimate feature in Zoom's cloud-based video conferencing service. The remote control feature is designed to enable collaborative work and technical support but can be weaponized when social engineering is used to trick users into granting permissions."
+      }
+    ],
+    "attack_vector_type": "Application Feature Misuse",
+    "target_industries": ["Cryptocurrency", "Financial Services", "Technology"],
+    "observed_in_wild": true,
+    "first_observed": "2024-12-01T00:00:00.000Z"
+  }
+}

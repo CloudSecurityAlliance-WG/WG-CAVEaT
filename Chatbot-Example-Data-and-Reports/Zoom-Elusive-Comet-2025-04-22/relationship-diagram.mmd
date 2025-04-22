@@ -1,0 +1,35 @@
+flowchart TD
+    TA[Threat Actor: ELUSIVE COMET] -->|uses| AP[Attack Pattern: Zoom Remote Control Hijacking]
+    TA -->|targets| ID[Identity: Cryptocurrency Organizations and Users]
+    AP -->|exploits| VUL[Vulnerability: Zoom Remote Control Design]
+    AP -->|delivers| MAL[Malware: GOOPDATE Credential Stealer]
+    
+    COA1[Course of Action: Restrict to Organization Members] -->|mitigates| AP
+    COA1 -->|mitigates| VUL
+    
+    COA2[Course of Action: Disable Remote Control] -->|mitigates| AP
+    COA2 -->|mitigates| VUL
+    
+    COA3[Course of Action: macOS PPPC Profiles] -->|mitigates| AP
+    
+    COA4[Course of Action: TCC Database Monitoring] -->|mitigates| AP
+    
+    COA5[Course of Action: Uninstall Zoom] -->|mitigates| AP
+    
+    COA6[Course of Action: Platform Architectural Solutions] -->|mitigates| VUL
+    
+    COA7[Course of Action: User Education and Training] -->|mitigates| AP
+    
+    classDef threatActor fill:#f96,stroke:#333,stroke-width:2px
+    classDef attackPattern fill:#f66,stroke:#333,stroke-width:2px
+    classDef vulnerability fill:#fc9,stroke:#333,stroke-width:2px
+    classDef malware fill:#c9f,stroke:#333,stroke-width:2px
+    classDef courseOfAction fill:#9cf,stroke:#333,stroke-width:2px
+    classDef identity fill:#9fc,stroke:#333,stroke-width:2px
+    
+    class TA threatActor
+    class AP attackPattern
+    class VUL vulnerability
+    class MAL malware
+    class COA1,COA2,COA3,COA4,COA5,COA6,COA7 courseOfAction
+    class ID identity
