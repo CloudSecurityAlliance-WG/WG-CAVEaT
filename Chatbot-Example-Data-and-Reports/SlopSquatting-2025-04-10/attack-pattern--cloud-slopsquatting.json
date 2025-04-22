@@ -1,0 +1,36 @@
+{
+  "type": "attack-pattern",
+  "spec_version": "2.1",
+  "id": "attack-pattern--cloud-slopsquatting",
+  "created": "2025-04-10T12:00:00.000Z",
+  "modified": "2025-04-10T12:00:00.000Z",
+  "name": "Slopsquatting",
+  "description": "Slopsquatting is a supply chain attack technique where adversaries register package names that have been hallucinated by Large Language Models (LLMs) in code generation. Unlike traditional typosquatting which relies on user errors when typing, slopsquatting exploits AI mistakes, targeting developers who use AI coding assistants. When an LLM consistently generates references to non-existent packages, attackers can register these hallucinated names in package repositories (such as npm, PyPI, or Maven) and include malicious code. As AI code assistants become more integrated into development workflows, developers may copy-paste and install these hallucinated packages without verification, leading to compromise of the software supply chain. This attack is particularly effective in cloud environments where rapid development practices and CI/CD automation may reduce package verification steps.",
+  "kill_chain_phases": [
+    {
+      "kill_chain_name": "mitre-attack",
+      "phase_name": "persistence"
+    },
+    {
+      "kill_chain_name": "mitre-attack",
+      "phase_name": "initial-access"
+    }
+  ],
+  "external_references": [
+    {
+      "source_name": "CAVEaT",
+      "external_id": "CAVEaT-AP-SLOPSQUATTING",
+      "url": "https://github.com/cloudsecurityalliance/caveat"
+    },
+    {
+      "source_name": "Socket.dev",
+      "description": "The Rise of Slopsquatting: How AI Hallucinations Are Fueling a New Class of Supply Chain Attacks",
+      "url": "https://socket.dev/blog/slopsquatting-how-ai-hallucinations-are-fueling-a-new-class-of-supply-chain-attacks"
+    },
+    {
+      "source_name": "arXiv",
+      "description": "We Have a Package for You! A Comprehensive Analysis of Package Hallucinations by Code Generating LLMs",
+      "url": "https://arxiv.org/abs/2406.10279"
+    }
+  ]
+}

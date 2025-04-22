@@ -1,0 +1,79 @@
+{
+  "type": "course-of-action",
+  "spec_version": "2.1",
+  "id": "course-of-action--customer-azure-package-hallucination-mitigation",
+  "created": "2025-04-10T12:00:00.000Z",
+  "modified": "2025-04-10T12:00:00.000Z",
+  "name": "Azure Package Hallucination Mitigation (Customer-Level)",
+  "description": "Recommended actions for Azure customers to mitigate risks from package hallucinations in code-generating LLMs. These measures focus on implementation in Azure Functions, Azure DevOps, and other Azure services that manage code dependencies.",
+  "external_references": [
+    {
+      "source_name": "CAVEaT",
+      "external_id": "CAVEaT-COA-002",
+      "url": "https://github.com/cloudsecurityalliance/caveat/wiki/course-of-action--customer-azure-package-hallucination-mitigation"
+    }
+  ],
+  "x_mitre_version": "1.0",
+  "x_caveat_implementation": {
+    "web_console": [
+      "1. Set up Azure Artifacts for package management:",
+      "   - Navigate to Azure DevOps -> Artifacts",
+      "   - Create a new feed for Python/npm packages",
+      "   - Configure upstream sources to public repositories with package filtering",
+      "   - Enable 'Block unrelated upstream packages' to prevent installation of packages not explicitly approved",
+      "2. Configure Azure Pipelines security scanning:",
+      "   - In your Azure DevOps project, go to Pipelines",
+      "   - Edit your pipeline YAML and add package verification tasks",
+      "   - Enable Microsoft Defender for Cloud to scan container images and function apps for vulnerable dependencies",
+      "3. Use Azure Functions Dependency Injection:",
+      "   - In the Azure Portal, navigate to your Function App",
+      "   - Under 'Configuration', set up application settings to use specific validated package versions",
+      "   - Consider using Azure App Service deployment slots to validate applications with their dependencies before promotion to production"
+    ],
+    "cli": [
+      "1. Create an Azure Artifacts feed with filtering:",
+      "   az artifacts feed create --name secure-packages --org 'https://dev.azure.com/your-org' --project your-project",
+      "   az artifacts feed upstream add --feed secure-packages --name pypi --protocol pypi --url https://pypi.org/ --org 'https://dev.azure.com/your-org' --project your-project",
+      "2. Configure Azure Pipelines security scanning:",
+      "   az pipelines run --name your-pipeline --variables DEPENDENCY_SCAN_ENABLED=true",
+      "3. Configure Azure Functions with verified dependencies:",
+      "   az functionapp config appsettings set --name your-function-app --resource-group your-resource-group --settings PACKAGE_VERIFICATION=enabled ALLOWED_PACKAGES=verified-package1,verified-package2"
+    ],
+    "api": [
+      "// Create an Azure Artifacts feed with filtering",
+      "const axios = require('axios');",
+      "await axios({",
+      "  method: 'post',",
+      "  url: 'https://dev.azure.com/{organization}/{project}/_apis/packaging/feeds?api-version=6.0-preview.1',",
+      "  headers: { Authorization: `Bearer ${pat}` },",
+      "  data: {",
+      "    name: 'secure-packages',",
+      "    upstreamSources: [{",
+      "      name: 'pypi',",
+      "      protocol: 'pypi',",
+      "      location: 'https://pypi.org/',",
+      "      upstreamSourceType: 'public'",
+      "    }]",
+      "  }",
+      "});",
+      "",
+      "// Configure Azure Functions with verified dependencies",
+      "const { DefaultAzureCredential } = require('@azure/identity');",
+      "const { WebSiteManagementClient } = require('@azure/arm-website');",
+      "",
+      "const credentials = new DefaultAzureCredential();",
+      "const client = new WebSiteManagementClient(credentials, subscriptionId);",
+      "",
+      "await client.webApps.updateApplicationSettings({",
+      "  resourceGroupName: 'your-resource-group',",
+      "  name: 'your-function-app',",
+      "  appSettings: {",
+      "    properties: {",
+      "      PACKAGE_VERIFICATION: 'enabled',",
+      "      ALLOWED_PACKAGES: 'verified-package1,verified-package2'",
+      "    }",
+      "  }",
+      "});"
+    ]
+  }
+}

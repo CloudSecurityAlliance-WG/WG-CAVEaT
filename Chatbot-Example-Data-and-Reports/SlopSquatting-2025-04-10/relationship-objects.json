@@ -1,0 +1,94 @@
+{
+  "type": "bundle",
+  "id": "bundle--slopsquatting-relationships",
+  "objects": [
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ae92f5d8-db87-4e35-8b5c-6b892397c377",
+      "created": "2025-04-10T12:00:00.000Z",
+      "modified": "2025-04-10T12:00:00.000Z",
+      "relationship_type": "exploits",
+      "source_ref": "attack-pattern--cloud-slopsquatting",
+      "target_ref": "vulnerability--llm-package-hallucination",
+      "description": "The slopsquatting attack pattern exploits the LLM package hallucination vulnerability"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--a2d54bf1-d56d-4758-8152-53eb8fe72a71",
+      "created": "2025-04-10T12:00:00.000Z",
+      "modified": "2025-04-10T12:00:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--aws-slopsquatting-mitigation",
+      "target_ref": "attack-pattern--cloud-slopsquatting",
+      "description": "AWS-specific mitigations for the slopsquatting attack pattern"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--f63ea6e2-bafd-4cb0-831e-e5317d104b9d",
+      "created": "2025-04-10T12:00:00.000Z",
+      "modified": "2025-04-10T12:00:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--azure-slopsquatting-mitigation",
+      "target_ref": "attack-pattern--cloud-slopsquatting",
+      "description": "Azure-specific mitigations for the slopsquatting attack pattern"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--8db93cad-ef23-4a1f-a486-67c52b18f3b7",
+      "created": "2025-04-10T12:00:00.000Z",
+      "modified": "2025-04-10T12:00:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--gcp-slopsquatting-mitigation",
+      "target_ref": "attack-pattern--cloud-slopsquatting",
+      "description": "GCP-specific mitigations for the slopsquatting attack pattern"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--90a2bdf1-eda9-4741-9abc-c9a783d3b1e5",
+      "created": "2025-04-10T12:00:00.000Z",
+      "modified": "2025-04-10T12:00:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--platform-level-slopsquatting-mitigation",
+      "target_ref": "vulnerability--llm-package-hallucination",
+      "description": "Platform-level architectural solutions that mitigate the LLM package hallucination vulnerability"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--db65e367-9fb2-42f8-ad10-42e89c6a3c91",
+      "created": "2025-04-10T12:00:00.000Z",
+      "modified": "2025-04-10T12:00:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--aws-slopsquatting-mitigation",
+      "target_ref": "vulnerability--llm-package-hallucination",
+      "description": "AWS mitigations that help address the underlying LLM package hallucination vulnerability"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--e7c2ee5d-9c2d-4f35-8be3-91ab5c9458e3",
+      "created": "2025-04-10T12:00:00.000Z",
+      "modified": "2025-04-10T12:00:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--azure-slopsquatting-mitigation",
+      "target_ref": "vulnerability--llm-package-hallucination",
+      "description": "Azure mitigations that help address the underlying LLM package hallucination vulnerability"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--2d8f0c5a-1593-4983-93dc-e9ac32a8f490",
+      "created": "2025-04-10T12:00:00.000Z",
+      "modified": "2025-04-10T12:00:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--gcp-slopsquatting-mitigation",
+      "target_ref": "vulnerability--llm-package-hallucination",
+      "description": "GCP mitigations that help address the underlying LLM package hallucination vulnerability"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+flowchart TD
+    A["attack-pattern--cloud-slopsquatting"]
+    V["vulnerability--llm-package-hallucination"]
+    COA_AWS["course-of-action--aws-slopsquatting-mitigation"]
+    COA_AZURE["course-of-action--azure-slopsquatting-mitigation"]
+    COA_GCP["course-of-action--gcp-slopsquatting-mitigation"]
+    COA_PLATFORM["course-of-action--platform-level-slopsquatting-mitigation"]
+    
+    A -- "exploits" --> V
+    COA_AWS -- "mitigates" --> A
+    COA_AZURE -- "mitigates" --> A
+    COA_GCP -- "mitigates" --> A
+    COA_PLATFORM -- "mitigates" --> V
+    COA_AWS -- "mitigates" --> V
+    COA_AZURE -- "mitigates" --> V
+    COA_GCP -- "mitigates" --> V
+    
+    classDef attack fill:#f96,stroke:#333,stroke-width:2px
+    classDef vulnerability fill:#f66,stroke:#333,stroke-width:2px
+    classDef coa fill:#6f6,stroke:#333,stroke-width:2px
+    
+    class A attack
+    class V vulnerability
+    class COA_AWS,COA_AZURE,COA_GCP,COA_PLATFORM coa
