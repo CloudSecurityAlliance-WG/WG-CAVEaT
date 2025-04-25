@@ -1,0 +1,95 @@
+{
+  "type": "bundle",
+  "id": "bundle--6d7e9f3c-8b52-4e93-a791-d2b4f7e1a3c8",
+  "spec_version": "2.1",
+  "objects": [
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--08a71a2c-1e95-4fd1-9c87-3d3b0f7b2a4e",
+      "created": "2025-04-25T14:30:00.000Z",
+      "modified": "2025-04-25T14:30:00.000Z",
+      "relationship_type": "exploits",
+      "source_ref": "attack-pattern--ingress-nginx-admission-controller-rce",
+      "target_ref": "vulnerability--cve-2025-1974",
+      "description": "The Kubernetes Ingress NGINX Admission Controller RCE attack pattern exploits the CVE-2025-1974 vulnerability."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--1b9e2d3f-4c5a-6d7b-8e9f-0a1b2c3d4e5f",
+      "created": "2025-04-25T14:30:00.000Z",
+      "modified": "2025-04-25T14:30:00.000Z",
+      "relationship_type": "related-to",
+      "source_ref": "vulnerability--cve-2025-1974",
+      "target_ref": "vulnerability--cve-2025-1097",
+      "description": "CVE-2025-1974 is related to CVE-2025-1097 as part of the IngressNightmare vulnerability set."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--2c3d4e5f-6a7b-8c9d-0e1f-2a3b4c5d6e7f",
+      "created": "2025-04-25T14:30:00.000Z",
+      "modified": "2025-04-25T14:30:00.000Z",
+      "relationship_type": "related-to",
+      "source_ref": "vulnerability--cve-2025-1974",
+      "target_ref": "vulnerability--cve-2025-1098",
+      "description": "CVE-2025-1974 is related to CVE-2025-1098 as part of the IngressNightmare vulnerability set."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--3d4e5f6a-7b8c-9d0e-1f2a-3b4c5d6e7f8a",
+      "created": "2025-04-25T14:30:00.000Z",
+      "modified": "2025-04-25T14:30:00.000Z",
+      "relationship_type": "related-to",
+      "source_ref": "vulnerability--cve-2025-1974",
+      "target_ref": "vulnerability--cve-2025-24514",
+      "description": "CVE-2025-1974 is related to CVE-2025-24514 as part of the IngressNightmare vulnerability set."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--4e5f6a7b-8c9d-0e1f-2a3b-4c5d6e7f8a9b",
+      "created": "2025-04-25T14:30:00.000Z",
+      "modified": "2025-04-25T14:30:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--update-ingress-nginx-controller",
+      "target_ref": "vulnerability--cve-2025-1974",
+      "description": "Updating the Ingress NGINX Controller to a patched version mitigates the CVE-2025-1974 vulnerability."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--5f6a7b8c-9d0e-1f2a-3b4c-5d6e7f8a9b0c",
+      "created": "2025-04-25T14:30:00.000Z",
+      "modified": "2025-04-25T14:30:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--implement-network-policies",
+      "target_ref": "attack-pattern--ingress-nginx-admission-controller-rce",
+      "description": "Implementing Kubernetes Network Policies restricts access to the admission controllers, mitigating the RCE attack pattern."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--6a7b8c9d-0e1f-2a3b-4c5d-6e7f8a9b0c1d",
+      "created": "2025-04-25T14:30:00.000Z",
+      "modified": "2025-04-25T14:30:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--implement-rbac-restrictions",
+      "target_ref": "attack-pattern--ingress-nginx-admission-controller-rce",
+      "description": "Implementing more restrictive RBAC for the Ingress NGINX Controller limits the potential damage if the controller is compromised."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--7b8c9d0e-1f2a-3b4c-5d6e-7f8a9b0c1d2e",
+      "created": "2025-04-25T14:30:00.000Z",
+      "modified": "2025-04-25T14:30:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--platform-level-solution",
+      "target_ref": "attack-pattern--ingress-nginx-admission-controller-rce",
+      "description": "Implementing platform-level architectural solutions improves security posture against similar vulnerabilities in the future."
+    }
+  ]
+}

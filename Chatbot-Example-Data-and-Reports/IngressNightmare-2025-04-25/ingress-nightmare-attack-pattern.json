@@ -1,0 +1,60 @@
+{
+  "type": "bundle",
+  "id": "bundle--3b6e7db2-9766-4d09-9ea8-13a8ffe82f5e",
+  "spec_version": "2.1",
+  "objects": [
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--ingress-nginx-admission-controller-rce",
+      "created": "2025-04-25T14:30:00.000Z",
+      "modified": "2025-04-25T14:30:00.000Z",
+      "name": "Kubernetes Ingress NGINX Admission Controller RCE",
+      "description": "An adversary exploits unauthenticated access to the admission controller in the Kubernetes Ingress NGINX Controller, allowing remote code execution with the controller's elevated privileges. This vulnerability, known as 'IngressNightmare', can lead to cluster-wide compromise, including access to secrets and service account tokens across all namespaces.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "initial-access"
+        },
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "privilege-escalation"
+        }
+      ],
+      "external_references": [
+        {
+          "source_name": "CAVEaT",
+          "external_id": "CAVEaT-AP-2025-001",
+          "url": "https://github.com/CloudSecurityAlliance-WG/WG-CAVEaT/wiki/attack-pattern--ingress-nginx-admission-controller-rce"
+        },
+        {
+          "source_name": "CVE",
+          "external_id": "CVE-2025-1974",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-1974"
+        },
+        {
+          "source_name": "Wiz",
+          "description": "IngressNightmare in Kubernetes",
+          "url": "https://www.wiz.io/blog/ingress-nginx-kubernetes-vulnerabilities"
+        },
+        {
+          "source_name": "Kubernetes",
+          "description": "Official Kubernetes blog post on CVE-2025-1974",
+          "url": "https://kubernetes.io/blog/2025/03/24/ingress-nginx-cve-2025-1974/"
+        }
+      ],
+      "x_mitre_platforms": [
+        "AWS EKS",
+        "Azure AKS",
+        "Google GKE",
+        "Self-managed Kubernetes"
+      ],
+      "x_cloud_platforms": [
+        "AWS",
+        "Azure",
+        "GCP"
+      ],
+      "x_caveat_version": "2025-04-25"
+    }
+  ]
+}

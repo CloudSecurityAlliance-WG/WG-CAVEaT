@@ -1,0 +1,238 @@
+{
+  "type": "bundle",
+  "id": "bundle--5e8f2b3a-7d21-4c69-b590-c3a9d8e15f27",
+  "spec_version": "2.1",
+  "objects": [
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--update-ingress-nginx-controller",
+      "created": "2025-04-25T14:30:00.000Z",
+      "modified": "2025-04-25T14:30:00.000Z",
+      "name": "Update Ingress NGINX Controller to Patched Version",
+      "description": "Update the Kubernetes Ingress NGINX Controller to a patched version that addresses the IngressNightmare vulnerabilities (CVE-2025-1974, CVE-2025-1097, CVE-2025-1098, CVE-2025-24514).",
+      "x_cloud_platforms": [
+        "AWS",
+        "Azure",
+        "GCP"
+      ],
+      "x_implementation_details": {
+        "general": [
+          "Identify all clusters using the Ingress NGINX Controller",
+          "Verify the current version to determine if it's vulnerable",
+          "Plan a maintenance window for controller updates",
+          "Update the controller using approved methods for your environment"
+        ],
+        "aws": {
+          "web_console": [
+            "Log in to the AWS Management Console",
+            "Navigate to Amazon EKS",
+            "Select the affected cluster",
+            "Use kubectl with proper credentials to update the Ingress NGINX deployment"
+          ],
+          "cli_commands": [
+            "aws eks update-kubeconfig --name <cluster-name> --region <region>",
+            "kubectl get pods -n ingress-nginx -o wide",
+            "kubectl set image deployment/ingress-nginx-controller controller=registry.k8s.io/ingress-nginx/controller:v1.9.5 -n ingress-nginx"
+          ],
+          "api_calls": [
+            "Use the EKS API to retrieve cluster details",
+            "Use the Kubernetes API with proper authentication to update deployments"
+          ]
+        },
+        "azure": {
+          "web_console": [
+            "Log in to the Azure Portal",
+            "Navigate to Azure Kubernetes Service",
+            "Select the affected AKS cluster",
+            "Connect to the cluster using Cloud Shell or kubectl",
+            "Update the Ingress NGINX deployment to a patched version"
+          ],
+          "cli_commands": [
+            "az aks get-credentials --resource-group <resource-group> --name <aks-cluster-name>",
+            "kubectl get pods -n ingress-nginx -o wide",
+            "kubectl set image deployment/ingress-nginx-controller controller=registry.k8s.io/ingress-nginx/controller:v1.9.5 -n ingress-nginx"
+          ],
+          "api_calls": [
+            "Use the Azure Resource Manager API to get AKS cluster details",
+            "Use the Kubernetes API to update deployments"
+          ]
+        },
+        "gcp": {
+          "web_console": [
+            "Log in to the Google Cloud Console",
+            "Navigate to Google Kubernetes Engine",
+            "Select the affected GKE cluster",
+            "Open Cloud Shell or use kubectl to update the Ingress NGINX deployment"
+          ],
+          "cli_commands": [
+            "gcloud container clusters get-credentials <cluster-name> --zone <zone>",
+            "kubectl get pods -n ingress-nginx -o wide",
+            "kubectl set image deployment/ingress-nginx-controller controller=registry.k8s.io/ingress-nginx/controller:v1.9.5 -n ingress-nginx"
+          ],
+          "api_calls": [
+            "Use the GKE API to retrieve cluster details",
+            "Use the Kubernetes API to update deployments"
+          ]
+        }
+      },
+      "x_verification_steps": [
+        "Confirm the new controller version is running: kubectl get pod -n ingress-nginx -o yaml | grep image:",
+        "Verify the controller is functioning correctly by testing an ingress route",
+        "Monitor for any error logs or abnormal behavior"
+      ],
+      "x_caveat_version": "2025-04-25"
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--implement-network-policies",
+      "created": "2025-04-25T14:30:00.000Z",
+      "modified": "2025-04-25T14:30:00.000Z",
+      "name": "Implement Kubernetes Network Policies to Restrict Admission Controller Access",
+      "description": "Apply Kubernetes Network Policies to restrict access to the admission controllers in the Ingress NGINX Controller, preventing unauthorized access even if the vulnerability is present.",
+      "x_cloud_platforms": [
+        "AWS",
+        "Azure",
+        "GCP"
+      ],
+      "x_implementation_details": {
+        "general": [
+          "Create network policies that restrict access to the admission controller webhook endpoints",
+          "Allow only authorized services and pods to communicate with the admission controller",
+          "Block external traffic to admission controller endpoints"
+        ],
+        "network_policy_example": {
+          "apiVersion": "networking.k8s.io/v1",
+          "kind": "NetworkPolicy",
+          "metadata": {
+            "name": "ingress-nginx-webhook-protection",
+            "namespace": "ingress-nginx"
+          },
+          "spec": {
+            "podSelector": {
+              "matchLabels": {
+                "app.kubernetes.io/name": "ingress-nginx"
+              }
+            },
+            "ingress": [
+              {
+                "from": [
+                  {
+                    "namespaceSelector": {
+                      "matchLabels": {
+                        "kubernetes.io/metadata.name": "kube-system"
+                      }
+                    }
+                  }
+                ],
+                "ports": [
+                  {
+                    "port": 8443,
+                    "protocol": "TCP"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "x_verification_steps": [
+        "Verify network policy is applied: kubectl get networkpolicy -n ingress-nginx",
+        "Test that unauthorized access is blocked",
+        "Confirm that legitimate traffic is still permitted"
+      ],
+      "x_caveat_version": "2025-04-25"
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--implement-rbac-restrictions",
+      "created": "2025-04-25T14:30:00.000Z",
+      "modified": "2025-04-25T14:30:00.000Z",
+      "name": "Implement RBAC Restrictions for Ingress NGINX Controller",
+      "description": "Implement more restrictive Role-Based Access Control (RBAC) for the Ingress NGINX Controller to limit the potential damage if the controller is compromised.",
+      "x_cloud_platforms": [
+        "AWS",
+        "Azure",
+        "GCP"
+      ],
+      "x_implementation_details": {
+        "general": [
+          "Review current RBAC permissions assigned to the Ingress NGINX Controller",
+          "Implement the principle of least privilege, granting only the necessary permissions",
+          "Restrict access to secrets and sensitive resources"
+        ],
+        "rbac_example": {
+          "apiVersion": "rbac.authorization.k8s.io/v1",
+          "kind": "ClusterRole",
+          "metadata": {
+            "name": "ingress-nginx-restricted"
+          },
+          "rules": [
+            {
+              "apiGroups": [""],
+              "resources": ["services", "endpoints", "configmaps"],
+              "verbs": ["get", "list", "watch"]
+            },
+            {
+              "apiGroups": ["networking.k8s.io"],
+              "resources": ["ingresses"],
+              "verbs": ["get", "list", "watch"]
+            }
+          ]
+        }
+      },
+      "x_verification_steps": [
+        "Verify RBAC rules are applied: kubectl get clusterrole ingress-nginx-restricted -o yaml",
+        "Confirm the Ingress NGINX Controller is still functioning correctly",
+        "Test that the controller can manage ingresses but has limited access to other resources"
+      ],
+      "x_caveat_version": "2025-04-25"
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--platform-level-solution",
+      "created": "2025-04-25T14:30:00.000Z",
+      "modified": "2025-04-25T14:30:00.000Z",
+      "name": "Implement Platform-Level Architectural Solutions",
+      "description": "Implement architectural changes at the platform level to improve security posture against similar vulnerabilities in the future.",
+      "x_cloud_platforms": [
+        "AWS",
+        "Azure",
+        "GCP"
+      ],
+      "x_implementation_details": {
+        "platform_solutions": [
+          {
+            "name": "Enhanced Admission Controller Security",
+            "description": "Implement additional authentication requirements for admission controller access",
+            "implementation": "Require mutual TLS authentication for all admission controller interactions, with strict certificate validation and rotation policies."
+          },
+          {
+            "name": "Default Network Policies",
+            "description": "Automatically deploy restrictive network policies for sensitive Kubernetes components",
+            "implementation": "Create platform-level templates that apply restrictive network policies by default when deploying components like Ingress controllers."
+          },
+          {
+            "name": "Zero-Trust Control Plane",
+            "description": "Require authentication and authorization for all control plane interactions",
+            "implementation": "Implement a zero-trust architecture where all interactions with the Kubernetes control plane require proper authentication and authorization."
+          },
+          {
+            "name": "Automated Vulnerability Scanning",
+            "description": "Implement continual scanning for vulnerable components in managed Kubernetes offerings",
+            "implementation": "Deploy automated scanning tools that regularly check for known vulnerabilities in all Kubernetes components."
+          }
+        ]
+      },
+      "x_verification_steps": [
+        "Conduct security assessments to validate the effectiveness of platform-level changes",
+        "Perform penetration testing to identify any remaining vulnerabilities",
+        "Review cloud provider security configurations to ensure alignment with best practices"
+      ],
+      "x_caveat_version": "2025-04-25"
+    }
+  ]
+}

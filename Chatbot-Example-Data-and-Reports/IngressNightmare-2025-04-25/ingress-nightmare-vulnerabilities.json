@@ -1,0 +1,148 @@
+{
+  "type": "bundle",
+  "id": "bundle--4c8d2a7c-9e35-4d67-a860-a1d9b1e11adb",
+  "spec_version": "2.1",
+  "objects": [
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
+      "id": "vulnerability--cve-2025-1974",
+      "created": "2025-04-25T14:30:00.000Z",
+      "modified": "2025-04-25T14:30:00.000Z",
+      "name": "CVE-2025-1974: Unauthenticated RCE in Kubernetes Ingress NGINX Controller",
+      "description": "The Kubernetes Ingress NGINX Controller exposes admission controllers without proper authentication, allowing unauthenticated remote attackers to execute arbitrary code with the controller's privileges. As the controller typically has elevated permissions within a Kubernetes cluster, successful exploitation can lead to cluster-wide compromise.",
+      "external_references": [
+        {
+          "source_name": "CVE",
+          "external_id": "CVE-2025-1974",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-1974"
+        },
+        {
+          "source_name": "Wiz",
+          "description": "Wiz Research disclosure of IngressNightmare vulnerabilities",
+          "url": "https://www.wiz.io/blog/ingress-nginx-kubernetes-vulnerabilities"
+        }
+      ],
+      "x_cloud_platforms": [
+        "AWS",
+        "Azure",
+        "GCP"
+      ],
+      "x_affected_products": [
+        {
+          "vendor": "Kubernetes",
+          "product": "Ingress NGINX Controller",
+          "versions": [
+            {
+              "version_affected": "<=",
+              "version_value": "1.9.4"
+            }
+          ]
+        }
+      ],
+      "x_caveat_version": "2025-04-25"
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
+      "id": "vulnerability--cve-2025-1097",
+      "created": "2025-04-25T14:30:00.000Z",
+      "modified": "2025-04-25T14:30:00.000Z",
+      "name": "CVE-2025-1097: Related Vulnerability in Ingress NGINX Controller",
+      "description": "Related vulnerability in the Ingress NGINX Controller for Kubernetes that is part of the 'IngressNightmare' vulnerability set. This vulnerability is part of the attack chain that can lead to cluster compromise.",
+      "external_references": [
+        {
+          "source_name": "CVE",
+          "external_id": "CVE-2025-1097",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-1097"
+        }
+      ],
+      "x_cloud_platforms": [
+        "AWS",
+        "Azure",
+        "GCP"
+      ],
+      "x_affected_products": [
+        {
+          "vendor": "Kubernetes",
+          "product": "Ingress NGINX Controller",
+          "versions": [
+            {
+              "version_affected": "<=",
+              "version_value": "1.9.4"
+            }
+          ]
+        }
+      ],
+      "x_caveat_version": "2025-04-25"
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
+      "id": "vulnerability--cve-2025-1098",
+      "created": "2025-04-25T14:30:00.000Z",
+      "modified": "2025-04-25T14:30:00.000Z",
+      "name": "CVE-2025-1098: Related Vulnerability in Ingress NGINX Controller",
+      "description": "Related vulnerability in the Ingress NGINX Controller for Kubernetes that is part of the 'IngressNightmare' vulnerability set. This vulnerability contributes to the attack surface that can be exploited for cluster compromise.",
+      "external_references": [
+        {
+          "source_name": "CVE",
+          "external_id": "CVE-2025-1098",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-1098"
+        }
+      ],
+      "x_cloud_platforms": [
+        "AWS",
+        "Azure",
+        "GCP"
+      ],
+      "x_affected_products": [
+        {
+          "vendor": "Kubernetes",
+          "product": "Ingress NGINX Controller",
+          "versions": [
+            {
+              "version_affected": "<=",
+              "version_value": "1.9.4"
+            }
+          ]
+        }
+      ],
+      "x_caveat_version": "2025-04-25"
+    },
+    {
+      "type": "vulnerability",
+      "spec_version": "2.1",
+      "id": "vulnerability--cve-2025-24514",
+      "created": "2025-04-25T14:30:00.000Z",
+      "modified": "2025-04-25T14:30:00.000Z",
+      "name": "CVE-2025-24514: Related Vulnerability in Ingress NGINX Controller",
+      "description": "Related vulnerability in the Ingress NGINX Controller for Kubernetes that is part of the 'IngressNightmare' vulnerability set. This vulnerability is part of the attack chain that enables access to cluster secrets.",
+      "external_references": [
+        {
+          "source_name": "CVE",
+          "external_id": "CVE-2025-24514",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-24514"
+        }
+      ],
+      "x_cloud_platforms": [
+        "AWS",
+        "Azure",
+        "GCP"
+      ],
+      "x_affected_products": [
+        {
+          "vendor": "Kubernetes",
+          "product": "Ingress NGINX Controller",
+          "versions": [
+            {
+              "version_affected": "<=",
+              "version_value": "1.9.4"
+            }
+          ]
+        }
+      ],
+      "x_caveat_version": "2025-04-25"
+    }
+  ]
+}
