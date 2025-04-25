@@ -1,0 +1,23 @@
+{
+  "type": "indicator",
+  "spec_version": "2.1",
+  "id": "indicator--c51f8337-d6b4-4d54-b3d9-91c5bc4d1f21",
+  "created": "2025-04-25T14:30:00.000Z",
+  "modified": "2025-04-25T14:30:00.000Z",
+  "name": "AWS S3 Confused Deputy Vulnerability Detection Pattern",
+  "description": "Pattern to detect S3 bucket policies that may be vulnerable to confused deputy attacks by identifying policies that allow service principals without proper context validation.",
+  "indicator_types": [
+    "misconfiguration"
+  ],
+  "pattern": "[aws:resource:type = 's3-bucket' AND aws:s3-bucket:policy:principal = 'Service' AND (aws:s3-bucket:policy:condition:SourceAccount NOT EXISTS OR aws:s3-bucket:policy:condition:SourceArn NOT EXISTS)]",
+  "pattern_type": "aws-resource-query",
+  "valid_from": "2025-04-25T00:00:00Z",
+  "x_aws_detection_tools": [
+    "AWS Config",
+    "IAM Access Analyzer"
+  ],
+  "x_detection_pseudocode": {
+    "language": "pseudocode",
+    "code": "FOR EACH s3_bucket IN aws_account:\n  bucket_policy = get_bucket_policy(s3_bucket)\n  IF bucket_policy CONTAINS service_principal AND\n     (bucket_policy NOT CONTAINS condition.aws:SourceAccount OR\n      bucket_policy NOT CONTAINS condition.aws:SourceArn):\n    REPORT s3_bucket AS 'Potentially vulnerable to confused deputy attacks'\n  END IF\nEND FOR"
+  }
+}

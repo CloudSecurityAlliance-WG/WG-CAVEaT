@@ -1,0 +1,31 @@
+{
+  "type": "attack-pattern",
+  "spec_version": "2.1",
+  "id": "attack-pattern--6a74cd5e-d917-4916-bb8e-ce7e1e5c87c7",
+  "created": "2025-04-25T14:20:00.000Z",
+  "modified": "2025-04-25T14:20:00.000Z",
+  "name": "AWS S3 Confused Deputy",
+  "description": "A confused deputy attack in AWS S3 occurs when a service (the 'deputy') with permissions to access resources can be manipulated by a third party to perform actions that the third party doesn't have permission to perform directly. In the context of S3, this commonly happens with cross-account access scenarios where a bucket policy allows a specific AWS service to access a bucket but doesn't properly restrict which account can use that service to access the bucket.",
+  "kill_chain_phases": [
+    {
+      "kill_chain_name": "mitre-attack",
+      "phase_name": "privilege-escalation"
+    }
+  ],
+  "external_references": [
+    {
+      "source_name": "AWS",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/confused-deputy.html",
+      "description": "AWS documentation on the confused deputy problem"
+    }
+  ],
+  "x_mitre_platforms": [
+    "AWS",
+    "Cloud"
+  ],
+  "x_mitre_data_sources": [
+    "AWS CloudTrail",
+    "IAM Access Analyzer"
+  ],
+  "x_mitre_is_subtechnique": false
+}

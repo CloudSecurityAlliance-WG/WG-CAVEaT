@@ -1,0 +1,14 @@
+{
+  "type": "identity",
+  "spec_version": "2.1",
+  "id": "identity--856f5cb5-2c23-4912-a6bd-5e7d1c4a19f7",
+  "created": "2025-04-25T14:28:00.000Z",
+  "modified": "2025-04-25T14:28:00.000Z",
+  "name": "Amazon Web Services",
+  "description": "Amazon Web Services (AWS) is a cloud service provider offering compute, storage, networking, and other services.",
+  "identity_class": "organization",
+  "sectors": [
+    "technology"
+  ],
+  "contact_information": "https://aws.amazon.com/contact-us/"
+}

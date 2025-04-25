@@ -1,0 +1,36 @@
+{
+  "type": "course-of-action",
+  "spec_version": "2.1",
+  "id": "course-of-action--86c42a7c-2c35-49fb-aae5-5f63f84b8a88",
+  "created": "2025-04-25T14:24:00.000Z",
+  "modified": "2025-04-25T14:24:00.000Z",
+  "name": "Mitigate AWS S3 Confused Deputy Vulnerability",
+  "description": "Actions to mitigate the risk of confused deputy attacks on AWS S3 buckets by implementing proper authorization context checks.",
+  "x_mitre_version": "1.0",
+  "x_mitigation_steps": [
+    {
+      "step": 1,
+      "description": "Audit existing S3 bucket policies for service principals without aws:SourceAccount or aws:SourceArn conditions"
+    },
+    {
+      "step": 2,
+      "description": "Update S3 bucket policies to include the aws:SourceAccount condition key to validate the specific AWS account context"
+    },
+    {
+      "step": 3,
+      "description": "Where possible, further restrict access by using the aws:SourceArn condition key to limit to specific resources"
+    },
+    {
+      "step": 4,
+      "description": "Enable AWS IAM Access Analyzer to continuously monitor for unintended resource access"
+    },
+    {
+      "step": 5,
+      "description": "Configure AWS CloudTrail with S3 data events to monitor all object-level operations"
+    }
+  ],
+  "x_implementation_example": {
+    "language": "json",
+    "code": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Effect\": \"Allow\",\n      \"Principal\": {\n        \"Service\": \"lambda.amazonaws.com\"\n      },\n      \"Action\": \"s3:PutObject\",\n      \"Resource\": \"arn:aws:s3:::example-bucket/*\",\n      \"Condition\": {\n        \"StringEquals\": {\n          \"aws:SourceAccount\": \"123456789012\"\n        },\n        \"ArnLike\": {\n          \"aws:SourceArn\": \"arn:aws:lambda:us-east-1:123456789012:function:specific-function\"\n        }\n      }\n    }\n  ]\n}"
+  }
+}

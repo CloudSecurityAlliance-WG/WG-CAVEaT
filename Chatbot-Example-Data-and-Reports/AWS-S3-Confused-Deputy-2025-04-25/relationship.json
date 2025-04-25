@@ -1,0 +1,50 @@
+{
+  "type": "bundle",
+  "id": "bundle--ee23e861-f4e9-4e7f-9f2d-c1b7ecf63c7e",
+  "objects": [
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--e7205da6-a52b-4b34-9d23-c3a9b631f8b2",
+      "created": "2025-04-25T14:26:00.000Z",
+      "modified": "2025-04-25T14:26:00.000Z",
+      "relationship_type": "delivers",
+      "source_ref": "attack-pattern--6a74cd5e-d917-4916-bb8e-ce7e1e5c87c7",
+      "target_ref": "vulnerability--4c4e8e6a-0e89-4aea-9985-553f2e22b9c1",
+      "description": "The AWS S3 Confused Deputy attack pattern exploits the vulnerability in S3 bucket policies."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--f2bea0fd-f55d-4b1d-b91b-8b70b063f548",
+      "created": "2025-04-25T14:26:00.000Z",
+      "modified": "2025-04-25T14:26:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--86c42a7c-2c35-49fb-aae5-5f63f84b8a88",
+      "target_ref": "attack-pattern--6a74cd5e-d917-4916-bb8e-ce7e1e5c87c7",
+      "description": "The recommended mitigations address the Confused Deputy attack pattern."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--9b27a5a7-c2e3-4f12-aa7c-57c4f3de78c2",
+      "created": "2025-04-25T14:26:00.000Z",
+      "modified": "2025-04-25T14:26:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--86c42a7c-2c35-49fb-aae5-5f63f84b8a88",
+      "target_ref": "vulnerability--4c4e8e6a-0e89-4aea-9985-553f2e22b9c1",
+      "description": "The recommended mitigations resolve the S3 bucket policy vulnerability."
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--3a1ae67c-6c13-49d3-b8f7-1c8dc0af621e",
+      "created": "2025-04-25T14:26:00.000Z",
+      "modified": "2025-04-25T14:26:00.000Z",
+      "relationship_type": "targets",
+      "source_ref": "attack-pattern--6a74cd5e-d917-4916-bb8e-ce7e1e5c87c7",
+      "target_ref": "identity--856f5cb5-2c23-4912-a6bd-5e7d1c4a19f7",
+      "description": "The Confused Deputy attack pattern targets AWS S3 services."
+    }
+  ]
+}
