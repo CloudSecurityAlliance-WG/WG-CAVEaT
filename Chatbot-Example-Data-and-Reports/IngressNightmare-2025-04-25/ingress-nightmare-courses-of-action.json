@@ -8,7 +8,7 @@
       "spec_version": "2.1",
       "id": "course-of-action--update-ingress-nginx-controller",
       "created": "2025-04-25T14:30:00.000Z",
-      "modified": "2025-04-25T14:30:00.000Z",
+      "modified": "2025-04-25T15:45:00.000Z",
       "name": "Update Ingress NGINX Controller to Patched Version",
       "description": "Update the Kubernetes Ingress NGINX Controller to a patched version that addresses the IngressNightmare vulnerabilities (CVE-2025-1974, CVE-2025-1097, CVE-2025-1098, CVE-2025-24514).",
       "x_cloud_platforms": [
@@ -28,6 +28,7 @@
             "Log in to the AWS Management Console",
             "Navigate to Amazon EKS",
             "Select the affected cluster",
+            "Connect to the cluster using the 'Connect' button and follow instructions to configure kubectl",
             "Use kubectl with proper credentials to update the Ingress NGINX deployment"
           ],
           "cli_commands": [
@@ -36,8 +37,26 @@
             "kubectl set image deployment/ingress-nginx-controller controller=registry.k8s.io/ingress-nginx/controller:v1.9.5 -n ingress-nginx"
           ],
           "api_calls": [
-            "Use the EKS API to retrieve cluster details",
-            "Use the Kubernetes API with proper authentication to update deployments"
+            {
+              "api_name": "Amazon EKS DescribeCluster API",
+              "description": "Retrieve information about your EKS cluster",
+              "request_syntax": "GET /clusters/name HTTP/1.1",
+              "example_code": "aws eks describe-cluster --name my-cluster --region us-west-2",
+              "documentation_url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeCluster.html"
+            },
+            {
+              "api_name": "Amazon EKS Kubernetes API",
+              "description": "Update deployments in EKS clusters using the Kubernetes API",
+              "request_syntax": "PATCH /apis/apps/v1/namespaces/{namespace}/deployments/{name}",
+              "example_code": "kubectl patch deployment ingress-nginx-controller -n ingress-nginx -p '{\"spec\":{\"template\":{\"spec\":{\"containers\":[{\"name\":\"controller\",\"image\":\"registry.k8s.io/ingress-nginx/controller:v1.9.5\"}]}}}}' --type=strategic",
+              "documentation_url": "https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#patch-deployment-v1-apps"
+            },
+            {
+              "api_name": "AWS SDK - EKS Client",
+              "description": "Programmatically manage EKS clusters with AWS SDK",
+              "example_code": "import boto3\n\neks_client = boto3.client('eks', region_name='us-west-2')\nresponse = eks_client.describe_cluster(name='my-cluster')",
+              "documentation_url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/eks.html"
+            }
           ]
         },
         "azure": {
@@ -45,7 +64,7 @@
             "Log in to the Azure Portal",
             "Navigate to Azure Kubernetes Service",
             "Select the affected AKS cluster",
-            "Connect to the cluster using Cloud Shell or kubectl",
+            "Select 'Connect' and follow instructions to configure kubectl",
             "Update the Ingress NGINX deployment to a patched version"
           ],
           "cli_commands": [
@@ -54,8 +73,26 @@
             "kubectl set image deployment/ingress-nginx-controller controller=registry.k8s.io/ingress-nginx/controller:v1.9.5 -n ingress-nginx"
           ],
           "api_calls": [
-            "Use the Azure Resource Manager API to get AKS cluster details",
-            "Use the Kubernetes API to update deployments"
+            {
+              "api_name": "Azure Resource Manager API - AKS Get",
+              "description": "Retrieve information about your AKS cluster",
+              "request_syntax": "GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerService/managedClusters/{resourceName}?api-version=2023-10-01",
+              "example_code": "curl -X GET -H \"Authorization: Bearer $TOKEN\" -H \"Content-Type: application/json\" https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerService/managedClusters/{clusterName}?api-version=2023-10-01",
+              "documentation_url": "https://learn.microsoft.com/en-us/rest/api/aks/managed-clusters/get"
+            },
+            {
+              "api_name": "Azure Kubernetes API (via AKS API server)",
+              "description": "Update deployments in AKS clusters using the Kubernetes API",
+              "request_syntax": "PATCH /apis/apps/v1/namespaces/{namespace}/deployments/{name}",
+              "example_code": "import requests\n\nheaders = {'Authorization': f'Bearer {token}', 'Content-Type': 'application/strategic-merge-patch+json'}\npatch_data = {'spec': {'template': {'spec': {'containers': [{'name': 'controller', 'image': 'registry.k8s.io/ingress-nginx/controller:v1.9.5'}]}}}}\n\nresponse = requests.patch(\n    f'{api_server_url}/apis/apps/v1/namespaces/ingress-nginx/deployments/ingress-nginx-controller',\n    headers=headers,\n    json=patch_data\n)",
+              "documentation_url": "https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#patch-deployment-v1-apps"
+            },
+            {
+              "api_name": "Azure SDK for Python - AKS Management",
+              "description": "Programmatically manage AKS clusters with Azure SDK",
+              "example_code": "from azure.mgmt.containerservice import ContainerServiceClient\nfrom azure.identity import DefaultAzureCredential\n\ncredential = DefaultAzureCredential()\nsubscription_id = 'your-subscription-id'\ncontainer_service_client = ContainerServiceClient(credential, subscription_id)\n\ncluster = container_service_client.managed_clusters.get(resource_group_name, cluster_name)",
+              "documentation_url": "https://learn.microsoft.com/en-us/python/api/azure-mgmt-containerservice/azure.mgmt.containerservice.containerserviceclient?view=azure-python"
+            }
           ]
         },
         "gcp": {
@@ -63,16 +100,35 @@
             "Log in to the Google Cloud Console",
             "Navigate to Google Kubernetes Engine",
             "Select the affected GKE cluster",
-            "Open Cloud Shell or use kubectl to update the Ingress NGINX deployment"
+            "Click 'Connect' and then 'Run in Cloud Shell' to configure kubectl",
+            "Use kubectl commands to update the Ingress NGINX deployment"
           ],
           "cli_commands": [
-            "gcloud container clusters get-credentials <cluster-name> --zone <zone>",
+            "gcloud container clusters get-credentials <cluster-name> --zone <zone> --project <project-id>",
             "kubectl get pods -n ingress-nginx -o wide",
             "kubectl set image deployment/ingress-nginx-controller controller=registry.k8s.io/ingress-nginx/controller:v1.9.5 -n ingress-nginx"
           ],
           "api_calls": [
-            "Use the GKE API to retrieve cluster details",
-            "Use the Kubernetes API to update deployments"
+            {
+              "api_name": "Google Kubernetes Engine API - GetCluster",
+              "description": "Retrieve information about your GKE cluster",
+              "request_syntax": "GET https://container.googleapis.com/v1/projects/{projectId}/zones/{zone}/clusters/{clusterId}",
+              "example_code": "curl -X GET -H \"Authorization: Bearer $(gcloud auth print-access-token)\" -H \"Content-Type: application/json\" https://container.googleapis.com/v1/projects/my-project/zones/us-central1-a/clusters/my-cluster",
+              "documentation_url": "https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters/get"
+            },
+            {
+              "api_name": "GKE Kubernetes API",
+              "description": "Update deployments in GKE clusters using the Kubernetes API",
+              "request_syntax": "PATCH /apis/apps/v1/namespaces/{namespace}/deployments/{name}",
+              "example_code": "from kubernetes import client, config\n\nconfig.load_kube_config()\napi_instance = client.AppsV1Api()\n\npatch_body = {\n    'spec': {\n        'template': {\n            'spec': {\n                'containers': [{\n                    'name': 'controller',\n                    'image': 'registry.k8s.io/ingress-nginx/controller:v1.9.5'\n                }]\n            }\n        }\n    }\n}\n\napi_instance.patch_namespaced_deployment(\n    name='ingress-nginx-controller',\n    namespace='ingress-nginx',\n    body=patch_body\n)",
+              "documentation_url": "https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#patch-deployment-v1-apps"
+            },
+            {
+              "api_name": "Google Cloud SDK - GKE Client",
+              "description": "Programmatically manage GKE clusters with Google Cloud SDK",
+              "example_code": "from google.cloud import container_v1\n\nclient = container_v1.ClusterManagerClient()\nproject_id = 'my-project'\nzone = 'us-central1-a'\ncluster_id = 'my-cluster'\nname = f'projects/{project_id}/locations/{zone}/clusters/{cluster_id}'\n\nresponse = client.get_cluster(name=name)",
+              "documentation_url": "https://cloud.google.com/python/docs/reference/container/latest/google.cloud.container_v1.services.cluster_manager"
+            }
           ]
         }
       },
@@ -88,7 +144,7 @@
       "spec_version": "2.1",
       "id": "course-of-action--implement-network-policies",
       "created": "2025-04-25T14:30:00.000Z",
-      "modified": "2025-04-25T14:30:00.000Z",
+      "modified": "2025-04-25T15:45:00.000Z",
       "name": "Implement Kubernetes Network Policies to Restrict Admission Controller Access",
       "description": "Apply Kubernetes Network Policies to restrict access to the admission controllers in the Ingress NGINX Controller, preventing unauthorized access even if the vulnerability is present.",
       "x_cloud_platforms": [
@@ -135,12 +191,53 @@
               }
             ]
           }
+        },
+        "api_calls": {
+          "kubernetes_api": [
+            {
+              "api_name": "Kubernetes NetworkPolicy API",
+              "description": "Create network policies to restrict traffic to admission controllers",
+              "request_syntax": "POST /apis/networking.k8s.io/v1/namespaces/{namespace}/networkpolicies",
+              "example_code": "kubectl apply -f ingress-nginx-webhook-protection.yaml",
+              "documentation_url": "https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#networkpolicy-v1-networking-k8s-io"
+            },
+            {
+              "api_name": "Kubernetes NetworkPolicy API (via code)",
+              "description": "Programmatically apply network policies",
+              "example_code": "from kubernetes import client, config\n\nconfig.load_kube_config()\napi_instance = client.NetworkingV1Api()\n\nnetwork_policy = client.V1NetworkPolicy(\n    api_version=\"networking.k8s.io/v1\",\n    kind=\"NetworkPolicy\",\n    metadata=client.V1ObjectMeta(\n        name=\"ingress-nginx-webhook-protection\",\n        namespace=\"ingress-nginx\"\n    ),\n    spec=client.V1NetworkPolicySpec(\n        pod_selector=client.V1LabelSelector(\n            match_labels={\"app.kubernetes.io/name\": \"ingress-nginx\"}\n        ),\n        ingress=[client.V1NetworkPolicyIngressRule(\n            _from=[client.V1NetworkPolicyPeer(\n                namespace_selector=client.V1LabelSelector(\n                    match_labels={\"kubernetes.io/metadata.name\": \"kube-system\"}\n                )\n            )],\n            ports=[client.V1NetworkPolicyPort(\n                port=8443,\n                protocol=\"TCP\"\n            )]\n        )]\n    )\n)\n\napi_instance.create_namespaced_network_policy(\n    namespace=\"ingress-nginx\",\n    body=network_policy\n)",
+              "documentation_url": "https://github.com/kubernetes-client/python/blob/master/kubernetes/docs/NetworkingV1Api.md#create_namespaced_network_policy"
+            }
+          ],
+          "aws_specific": [
+            {
+              "api_name": "AWS VPC Security Groups",
+              "description": "Additionally secure EKS clusters using VPC security groups",
+              "example_code": "aws ec2 create-security-group --group-name eks-webhook-protection --description \"Restrict webhook access\" --vpc-id vpc-1234567890abcdef0\n\naws ec2 authorize-security-group-ingress --group-id sg-1234567890abcdef0 --protocol tcp --port 8443 --source-group sg-kube-system-pods",
+              "documentation_url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AuthorizeSecurityGroupIngress.html"
+            }
+          ],
+          "azure_specific": [
+            {
+              "api_name": "Azure Network Security Groups",
+              "description": "Additionally secure AKS clusters using Network Security Groups",
+              "example_code": "az network nsg create --resource-group myResourceGroup --name aks-webhook-protection\n\naz network nsg rule create --resource-group myResourceGroup --nsg-name aks-webhook-protection --name AllowWebhookFromKubeSystem --priority 100 --source-address-prefixes 10.0.0.0/16 --source-port-ranges \"*\" --destination-address-prefixes \"*\" --destination-port-ranges 8443 --access Allow --protocol Tcp",
+              "documentation_url": "https://learn.microsoft.com/en-us/cli/azure/network/nsg/rule?view=azure-cli-latest#az-network-nsg-rule-create"
+            }
+          ],
+          "gcp_specific": [
+            {
+              "api_name": "GCP Firewall Rules",
+              "description": "Additionally secure GKE clusters using GCP Firewall Rules",
+              "example_code": "gcloud compute firewall-rules create gke-webhook-protection --network my-network --action allow --direction ingress --rules tcp:8443 --source-tags kube-system --target-tags ingress-nginx",
+              "documentation_url": "https://cloud.google.com/sdk/gcloud/reference/compute/firewall-rules/create"
+            }
+          ]
         }
       },
       "x_verification_steps": [
         "Verify network policy is applied: kubectl get networkpolicy -n ingress-nginx",
-        "Test that unauthorized access is blocked",
-        "Confirm that legitimate traffic is still permitted"
+        "Test that unauthorized access is blocked using a pod from another namespace: kubectl run test --image=nginx -n default -- curl -k https://ingress-nginx-controller-webhook.ingress-nginx.svc:8443",
+        "Confirm that legitimate traffic is still permitted by testing from kube-system namespace"
       ],
       "x_caveat_version": "2025-04-25"
     },
@@ -149,7 +246,7 @@
       "spec_version": "2.1",
       "id": "course-of-action--implement-rbac-restrictions",
       "created": "2025-04-25T14:30:00.000Z",
-      "modified": "2025-04-25T14:30:00.000Z",
+      "modified": "2025-04-25T15:45:00.000Z",
       "name": "Implement RBAC Restrictions for Ingress NGINX Controller",
       "description": "Implement more restrictive Role-Based Access Control (RBAC) for the Ingress NGINX Controller to limit the potential damage if the controller is compromised.",
       "x_cloud_platforms": [
@@ -181,12 +278,61 @@
               "verbs": ["get", "list", "watch"]
             }
           ]
+        },
+        "api_calls": {
+          "kubernetes_api": [
+            {
+              "api_name": "Kubernetes RBAC API - ClusterRole",
+              "description": "Create restricted RBAC roles for Ingress NGINX Controller",
+              "request_syntax": "POST /apis/rbac.authorization.k8s.io/v1/clusterroles",
+              "example_code": "kubectl apply -f ingress-nginx-restricted-role.yaml",
+              "documentation_url": "https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#clusterrole-v1-rbac-authorization-k8s-io"
+            },
+            {
+              "api_name": "Kubernetes RBAC API - ClusterRoleBinding",
+              "description": "Bind the restricted role to the Ingress NGINX service account",
+              "request_syntax": "POST /apis/rbac.authorization.k8s.io/v1/clusterrolebindings",
+              "example_code": "apiVersion: rbac.authorization.k8s.io/v1\nkind: ClusterRoleBinding\nmetadata:\n  name: ingress-nginx-restricted-binding\nsubjects:\n- kind: ServiceAccount\n  name: ingress-nginx\n  namespace: ingress-nginx\nroleRef:\n  apiGroup: rbac.authorization.k8s.io\n  kind: ClusterRole\n  name: ingress-nginx-restricted",
+              "documentation_url": "https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#clusterrolebinding-v1-rbac-authorization-k8s-io"
+            },
+            {
+              "api_name": "Kubernetes RBAC API (via code)",
+              "description": "Programmatically apply RBAC restrictions",
+              "example_code": "from kubernetes import client, config\n\nconfig.load_kube_config()\napi_instance = client.RbacAuthorizationV1Api()\n\ncluster_role = client.V1ClusterRole(\n    api_version=\"rbac.authorization.k8s.io/v1\",\n    kind=\"ClusterRole\",\n    metadata=client.V1ObjectMeta(name=\"ingress-nginx-restricted\"),\n    rules=[\n        client.V1PolicyRule(\n            api_groups=[\"\"],\n            resources=[\"services\", \"endpoints\", \"configmaps\"],\n            verbs=[\"get\", \"list\", \"watch\"]\n        ),\n        client.V1PolicyRule(\n            api_groups=[\"networking.k8s.io\"],\n            resources=[\"ingresses\"],\n            verbs=[\"get\", \"list\", \"watch\"]\n        )\n    ]\n)\n\napi_instance.create_cluster_role(body=cluster_role)",
+              "documentation_url": "https://github.com/kubernetes-client/python/blob/master/kubernetes/docs/RbacAuthorizationV1Api.md#create_cluster_role"
+            }
+          ],
+          "aws_specific": [
+            {
+              "api_name": "AWS IAM API - CreateRole",
+              "description": "Create restricted IAM roles for EKS cluster components",
+              "example_code": "aws iam create-role --role-name eks-ingress-restricted --assume-role-policy-document file://ingress-trust-policy.json\n\naws iam put-role-policy --role-name eks-ingress-restricted --policy-name ingress-permissions --policy-document file://ingress-policy.json",
+              "documentation_url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html"
+            }
+          ],
+          "azure_specific": [
+            {
+              "api_name": "Azure RBAC API",
+              "description": "Apply Azure RBAC restrictions to complement Kubernetes RBAC",
+              "example_code": "az role definition create --role-definition @aks-ingress-role.json\n\naz role assignment create --assignee \"system:serviceaccount:ingress-nginx:ingress-nginx\" --role \"AKS Ingress Restricted\" --scope \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerService/managedClusters/{clusterName}\"",
+              "documentation_url": "https://learn.microsoft.com/en-us/cli/azure/role/definition?view=azure-cli-latest#az-role-definition-create"
+            }
+          ],
+          "gcp_specific": [
+            {
+              "api_name": "GCP IAM API",
+              "description": "Restrict GKE service account permissions",
+              "example_code": "gcloud iam service-accounts create ingress-nginx-sa --display-name=\"Ingress NGINX Service Account\"\n\ngcloud projects add-iam-policy-binding my-project --member=\"serviceAccount:ingress-nginx-sa@my-project.iam.gserviceaccount.com\" --role=\"roles/container.viewer\"",
+              "documentation_url": "https://cloud.google.com/sdk/gcloud/reference/iam/service-accounts/create"
+            }
+          ]
         }
       },
       "x_verification_steps": [
         "Verify RBAC rules are applied: kubectl get clusterrole ingress-nginx-restricted -o yaml",
+        "Verify role binding: kubectl get clusterrolebinding ingress-nginx-restricted-binding -o yaml",
         "Confirm the Ingress NGINX Controller is still functioning correctly",
-        "Test that the controller can manage ingresses but has limited access to other resources"
+        "Test that the controller can manage ingresses but has limited access to other resources: kubectl auth can-i --as=system:serviceaccount:ingress-nginx:ingress-nginx get secrets --all-namespaces"
       ],
       "x_caveat_version": "2025-04-25"
     },
@@ -195,7 +341,7 @@
       "spec_version": "2.1",
       "id": "course-of-action--platform-level-solution",
       "created": "2025-04-25T14:30:00.000Z",
-      "modified": "2025-04-25T14:30:00.000Z",
+      "modified": "2025-04-25T15:45:00.000Z",
       "name": "Implement Platform-Level Architectural Solutions",
       "description": "Implement architectural changes at the platform level to improve security posture against similar vulnerabilities in the future.",
       "x_cloud_platforms": [
@@ -208,29 +354,86 @@
           {
             "name": "Enhanced Admission Controller Security",
             "description": "Implement additional authentication requirements for admission controller access",
-            "implementation": "Require mutual TLS authentication for all admission controller interactions, with strict certificate validation and rotation policies."
+            "implementation": "Require mutual TLS authentication for all admission controller interactions, with strict certificate validation and rotation policies.",
+            "api_details": {
+              "kubernetes": {
+                "api_name": "Kubernetes MutatingWebhookConfiguration API",
+                "description": "Configure secure webhooks with proper authentication",
+                "example_code": "apiVersion: admissionregistration.k8s.io/v1\nkind: MutatingWebhookConfiguration\nmetadata:\n  name: secure-ingress-webhook\nwebhooks:\n- name: webhook.ingress.nginx.io\n  clientConfig:\n    caBundle: \"<base64-encoded-ca-cert>\"\n    service:\n      name: ingress-nginx-controller-admission\n      namespace: ingress-nginx\n      path: \"/mutate\"\n      port: 443\n  rules:\n  - operations: [\"CREATE\", \"UPDATE\"]\n    apiGroups: [\"networking.k8s.io\"]\n    apiVersions: [\"v1\"]\n    resources: [\"ingresses\"]\n  failurePolicy: Fail\n  sideEffects: None\n  admissionReviewVersions: [\"v1\"]\n  timeoutSeconds: 5",
+                "documentation_url": "https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#mutatingwebhookconfiguration-v1-admissionregistration-k8s-io"
+              }
+            }
           },
           {
             "name": "Default Network Policies",
             "description": "Automatically deploy restrictive network policies for sensitive Kubernetes components",
-            "implementation": "Create platform-level templates that apply restrictive network policies by default when deploying components like Ingress controllers."
+            "implementation": "Create platform-level templates that apply restrictive network policies by default when deploying components like Ingress controllers.",
+            "api_details": {
+              "aws": {
+                "api_name": "AWS CloudFormation",
+                "description": "Create templates for secure EKS deployments",
+                "example_code": "AWSTemplateFormatVersion: '2010-09-09'\nResources:\n  NetworkPolicyManifest:\n    Type: 'AWSQS::Kubernetes::Resource'\n    Properties:\n      ClusterName: !Ref EksClusterName\n      Manifest: |\n        apiVersion: networking.k8s.io/v1\n        kind: NetworkPolicy\n        metadata:\n          name: default-deny-all\n          namespace: ingress-nginx\n        spec:\n          podSelector: {}\n          policyTypes:\n          - Ingress\n          - Egress",
+                "documentation_url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html"
+              },
+              "azure": {
+                "api_name": "Azure ARM Templates",
+                "description": "Create templates for secure AKS deployments",
+                "example_code": "{\n  \"$schema\": \"https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#\",\n  \"contentVersion\": \"1.0.0.0\",\n  \"resources\": [\n    {\n      \"type\": \"Microsoft.Resources/deployments\",\n      \"apiVersion\": \"2020-10-01\",\n      \"name\": \"networkPolicyDeployment\",\n      \"properties\": {\n        \"expressionEvaluationOptions\": {\n          \"scope\": \"inner\"\n        },\n        \"mode\": \"Incremental\",\n        \"template\": {\n          \"$schema\": \"https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#\",\n          \"contentVersion\": \"1.0.0.0\",\n          \"resources\": []\n        }\n      },\n      \"dependsOn\": [\n        \"[resourceId('Microsoft.ContainerService/managedClusters', parameters('clusterName'))]\"\n      ]\n    }\n  ]\n}",
+                "documentation_url": "https://learn.microsoft.com/en-us/azure/templates/microsoft.containerservice/managedclusters?pivots=deployment-language-arm-template"
+              },
+              "gcp": {
+                "api_name": "Google Cloud Deployment Manager",
+                "description": "Create templates for secure GKE deployments",
+                "example_code": "resources:\n- name: gke-cluster\n  type: container.v1.cluster\n  properties:\n    zone: us-central1-a\n    cluster:\n      name: secure-gke-cluster\n      networkPolicy:\n        enabled: true\n      initialNodeCount: 3\n      nodeConfig:\n        machineType: e2-medium",
+                "documentation_url": "https://cloud.google.com/deployment-manager/docs/configuration/templates/examples/container_v1_cluster"
+              }
+            }
           },
           {
             "name": "Zero-Trust Control Plane",
             "description": "Require authentication and authorization for all control plane interactions",
-            "implementation": "Implement a zero-trust architecture where all interactions with the Kubernetes control plane require proper authentication and authorization."
+            "implementation": "Implement a zero-trust architecture where all interactions with the Kubernetes control plane require proper authentication and authorization.",
+            "api_details": {
+              "kubernetes": {
+                "api_name": "Kubernetes API Server Configuration",
+                "description": "Configure secure API server settings",
+                "example_code": "apiVersion: v1\nkind: Pod\nmetadata:\n  name: kube-apiserver\nspec:\n  containers:\n  - name: kube-apiserver\n    image: k8s.gcr.io/kube-apiserver:v1.24.0\n    command:\n    - kube-apiserver\n    - --authorization-mode=RBAC,Node\n    - --enable-admission-plugins=NodeRestriction,PodSecurityPolicy\n    - --audit-log-path=/var/log/kubernetes/audit.log\n    - --audit-policy-file=/etc/kubernetes/audit-policy.yaml\n    - --tls-cert-file=/etc/kubernetes/pki/apiserver.crt\n    - --tls-private-key-file=/etc/kubernetes/pki/apiserver.key\n    - --client-ca-file=/etc/kubernetes/pki/ca.crt",
+                "documentation_url": "https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/"
+              }
+            }
           },
           {
             "name": "Automated Vulnerability Scanning",
             "description": "Implement continual scanning for vulnerable components in managed Kubernetes offerings",
-            "implementation": "Deploy automated scanning tools that regularly check for known vulnerabilities in all Kubernetes components."
+            "implementation": "Deploy automated scanning tools that regularly check for known vulnerabilities in all Kubernetes components.",
+            "api_details": {
+              "aws": {
+                "api_name": "Amazon Inspector",
+                "description": "Automatically scan for vulnerabilities in EKS clusters",
+                "example_code": "aws inspector2 enable --resource-types ECR AWS_EC2 --account-ids 123456789012\n\naws inspector2 create-filter --name \"EKS-Scanning\" --action PROCESS --filter-criteria '{\"resourceType\":{\"comparison\":\"EQUALS\", \"value\":\"AWS_EC2\"}, \"resourceTags\":{\"comparison\":\"EQUALS\", \"key\":\"eks-cluster\", \"value\":\"production-cluster\"}}'",
+                "documentation_url": "https://docs.aws.amazon.com/inspector/latest/user/scanning-container-images.html"
+              },
+              "azure": {
+                "api_name": "Microsoft Defender for Containers",
+                "description": "Enable vulnerability scanning for AKS",
+                "example_code": "az security auto-provisioning-setting update --name default --auto-provision on\n\naz aks update -g MyResourceGroup -n MyAKSCluster --enable-defender",
+                "documentation_url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-containers-introduction"
+              },
+              "gcp": {
+                "api_name": "Google Container Security",
+                "description": "Enable container scanning for GKE",
+                "example_code": "gcloud container clusters update my-cluster --zone us-central1-a --enable-master-authorized-networks\n\ngcloud container clusters update my-cluster --zone us-central1-a --security-posture=standard",
+                "documentation_url": "https://cloud.google.com/container-security/docs/concepts/security-posture-management"
+              }
+            }
           }
         ]
       },
       "x_verification_steps": [
         "Conduct security assessments to validate the effectiveness of platform-level changes",
         "Perform penetration testing to identify any remaining vulnerabilities",
-        "Review cloud provider security configurations to ensure alignment with best practices"
+        "Review cloud provider security configurations to ensure alignment with best practices",
+        "Validate proper configuration using provider-specific validation tools: aws eks describe-cluster, az aks show, gcloud container clusters describe"
       ],
       "x_caveat_version": "2025-04-25"
     }
