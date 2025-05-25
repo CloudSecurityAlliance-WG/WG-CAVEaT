@@ -1,8 +1,8 @@
-# WG-CAVEaT (Cloud Adversarial Vectors, Exploits, and Threats)
+# CAVEaT (Cloud Adversarial Vectors, Exploits, and Threats)
 
 ## About the Project
 
-The WG-CAVEaT (Cloud Adversarial Vectors, Exploits, and Threats) Working Group focuses on identifying, documenting, and mitigating cloud-specific security threats and attack vectors. Our mission is to create a comprehensive framework—similar to MITRE ATT&CK—but specifically tailored to cloud environments.
+The CAVEaT (Cloud Adversarial Vectors, Exploits, and Threats) Working Group focuses on identifying, documenting, and mitigating cloud-specific security threats and attack vectors. Our mission is to create a comprehensive framework—similar to MITRE ATT&CK—but specifically tailored to cloud environments.
 
 ### Key Objectives
 
@@ -84,23 +84,23 @@ The CAVEaT project stores threat intelligence data in the CTI repository. To con
    - Provide a description of your changes
    - Submit the pull request
 
-### Git Repository Setup for WG-CAVEaT Tools and Research Contributions
+### Git Repository Setup for CAVEaT Tools and Research Contributions
 
 To contribute to the tools, prompts, and research components of CAVEaT:
 
-1. **Fork the WG-CAVEaT repository**:
-   - Visit https://github.com/CloudSecurityAlliance-WG/WG-CAVEaT
+1. **Fork the CAVEaT repository**:
+   - Visit https://github.com/CloudSecurityAlliance-WG/CAVEaT
    - Click the "Fork" button in the upper right corner
 
 2. **Clone your fork locally**:
    ```bash
-   git clone https://github.com/YOUR-USERNAME/WG-CAVEaT.git
-   cd WG-CAVEaT
+   git clone https://github.com/YOUR-USERNAME/CAVEaT.git
+   cd CAVEaT
    ```
 
 3. **Add the upstream remote**:
    ```bash
-   git remote add upstream https://github.com/CloudSecurityAlliance-WG/WG-CAVEaT.git
+   git remote add upstream https://github.com/CloudSecurityAlliance-WG/CAVEaT.git
    ```
 
 4. **Create a branch for your contributions**:
@@ -147,10 +147,10 @@ The Model Context Protocol (MCP) allows AI assistants to interact with your loca
 The CAVEaT project maintains a collection of prompts that instruct AI assistants on how to work with the framework:
 
 1. **Access the latest prompts**:
-   - Browse the prompt directory: https://github.com/CloudSecurityAlliance-WG/WG-CAVEaT/tree/main/Chatbot/prompts
+   - Browse the prompt directory: https://github.com/CloudSecurityAlliance-WG/CAVEaT/tree/main/Chatbot/prompts
    - Clone this repository if you haven't already:
      ```bash
-     git clone https://github.com/CloudSecurityAlliance-WG/WG-CAVEaT.git
+     git clone https://github.com/CloudSecurityAlliance-WG/CAVEaT.git
      ```
 
 2. **Loading prompts into your AI assistant**:
@@ -259,7 +259,7 @@ The repository includes example research and STIX objects for several cloud secu
 #### MITRE Frameworks
 - [ATLAS](https://atlas.mitre.org/)
 - [ATT&CK](https://attack.mitre.org/)
-- [CAVEaT](https://github.com/CloudSecurityAlliance-WG/WG-CAVEaT/tree/main/CAVEaT-files/md-files)
+- [CAVEaT](https://github.com/CloudSecurityAlliance-WG/CAVEaT/tree/main/CAVEaT-files/md-files)
 - [FIGHT](https://fight.mitre.org/)
 - [ICS](https://attack.mitre.org/techniques/ics/)
 - [CWE](https://cwe.mitre.org/)
